@@ -1,0 +1,35 @@
+$deep-orange: #FF7043;
+
+.navigation {
+  h3 {
+    margin-left: 20px;
+    color: $deep-orange;
+    &:visited {
+      color: $deep-orange;
+    }
+    &:hover {
+      color: $deep-orange;
+    }
+    a {
+      text-decoration: none;
+      color: $deep-orange;
+    }
+  }
+  ul {
+    list-style-type: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
+    li {
+      display: inline;
+      margin-right: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: $deep-orange;
+      }
+    }
+  }
+}

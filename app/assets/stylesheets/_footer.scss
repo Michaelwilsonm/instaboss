@@ -1,0 +1,16 @@
+$deep-orange-light: #FF7043;
+$deep-orange-dark: #F4511E;
+
+.footer {
+  margin-top: 20px;
+  height: 120px;
+  width: 100%;
+  ul {
+    list-style-type: none;
+    float: right;
+    margin: 0px 20px 0px 10px;
+    li {
+      padding: 3px;
+    }
+  }
+}

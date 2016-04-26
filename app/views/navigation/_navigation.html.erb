@@ -1,9 +1,20 @@
 <div class="container">
   <div class="row">
-    <ul>
-      <li>login</li>
-      <li>register</li>
-      <li>sign out</li>
-    </ul>
+    <div class="navigation">
+      <% if current_page?(root_path) %>
+      <h3>home</h3>
+      <% else %>
+      <h3><%= link_to "home", root_path %></h3>
+      <% end %>
+      <ul>
+        <% if current_user %>
+          <li><%= link_to "sign out", destroy_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+          <li><%= link_to "register", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+      <hr>
+    </div>
   </div>
 </div>

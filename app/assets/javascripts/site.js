@@ -1,8 +1,19 @@
 $(document).ready(function(){
-    $("h1").hover(function(){
-        $(this).next().stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500)
+  //allows the fade in and fade out of images on main page
+    $(".col-md-3").hover(function(){
+        $(this).find("img").stop().css({
+          opacity: 0,
+          visibility: "visible"
+        }).animate({
+          opacity: 1
+        }, 500)
     },function(){
-        $(this).next().stop().css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, 500)
+        $(this).find("img").stop().css({
+          opacity: 1,
+          visibility: "visible"
+        }).animate({
+          opacity: 0
+        }, 500)
     });
 });
 

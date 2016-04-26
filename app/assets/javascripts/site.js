@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("h1").hover(function(){
-        $(this).next().fadeIn(500);
+        $(this).next().stop().fadeIn(500);
     },function(){
-        $(this).next().fadeOut(500);
+        $(this).next().stop().fadeOut(500);
     });
 });

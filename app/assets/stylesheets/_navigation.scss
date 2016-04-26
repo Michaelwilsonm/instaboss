@@ -2,6 +2,7 @@ $deep-orange: #FF7043;
 
 .navigation {
   h3 {
+    margin-left: 20px;
     color: $deep-orange;
     &:visited {
       color: $deep-orange;
@@ -18,6 +19,7 @@ $deep-orange: #FF7043;
     list-style-type: none;
     float: right;
     margin-top: -30px;
+    margin-right: 20px;
     li {
       display: inline;
       margin-right: 10px;

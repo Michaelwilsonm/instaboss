@@ -7,8 +7,11 @@
 rake assets:clean assets:precompile
 
 git add .
+
 git commit -m 'Acurate messages please'
+
 git push origin master
+
 git push heroku master
 
 -----

@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160427014842) do
     t.integer  "percentage_off"
     t.decimal  "price",                   precision: 5, scale: 2
     t.string   "unique_affiliate_url"
+    t.string   "shipped_from"
+    t.decimal  "sale_price",              precision: 5, scale: 2, default: 0.0
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
     t.string   "item_image_file_name"

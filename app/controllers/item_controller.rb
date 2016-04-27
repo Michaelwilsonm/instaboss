@@ -1,5 +1,5 @@
 class ItemController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
 
@@ -22,7 +22,9 @@ class ItemController < ApplicationController
   end
 
   private
+
     def fashion_item_params
-      params.require(:fashion_item).permit(:item_image)
+      params.require(:fashion_item).permit(:item_image, :sex, :brand, :description, :category, :sub_category, :sale, :price, :unique_affiliate_url)
     end
+
 end

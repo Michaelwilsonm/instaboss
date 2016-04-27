@@ -1,6 +1,7 @@
 class CreateFashionItems < ActiveRecord::Migration
   def change
     create_table :fashion_items do |t|
+      t.references :user, index: true, foreign_key: true
       t.string :sex
       t.string :brand
       t.string :photo_url

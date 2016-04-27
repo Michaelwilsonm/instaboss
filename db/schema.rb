@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160426233742) do
   enable_extension "plpgsql"
 
   create_table "fashion_items", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "sex"
     t.string   "brand"
     t.string   "photo_url"
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160426233742) do
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
   end
+
+  add_index "fashion_items", ["user_id"], name: "index_fashion_items_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -49,4 +52,5 @@ ActiveRecord::Schema.define(version: 20160426233742) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "fashion_items", "users"
 end

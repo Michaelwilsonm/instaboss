@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426233742) do
+ActiveRecord::Schema.define(version: 20160427014842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,16 @@ ActiveRecord::Schema.define(version: 20160426233742) do
     t.string   "description"
     t.string   "category"
     t.string   "sub_category"
-    t.boolean  "sale",                                         default: false, null: false
+    t.boolean  "sale",                                            default: false, null: false
     t.integer  "percentage_off"
-    t.decimal  "price",                precision: 5, scale: 2
+    t.decimal  "price",                   precision: 5, scale: 2
     t.string   "unique_affiliate_url"
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.string   "item_image_file_name"
+    t.string   "item_image_content_type"
+    t.integer  "item_image_file_size"
+    t.datetime "item_image_updated_at"
   end
 
   add_index "fashion_items", ["user_id"], name: "index_fashion_items_on_user_id", using: :btree

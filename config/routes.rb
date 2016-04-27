@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'men/index'
 
-  get 'women/index'
+  get 'item/index'
 
   devise_for :users
+
+  resources :item
+
   root "site#index"
 
   get 'women' => 'women#index'

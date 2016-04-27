@@ -4,7 +4,6 @@ class CreateFashionItems < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.string :sex
       t.string :brand
-      t.string :photo_url
       t.string :description
       t.string :category
       t.string :sub_category

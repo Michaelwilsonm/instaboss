@@ -2,5 +2,6 @@
 <p>Find me in app/views/women/index.html.erb</p>
 
 <% @items.each do |f| %>
-<%= f.sex %>
+  <%= f.item_image %>
+  <%= image_tag f.item_image.url(:medium) %>
 <% end %>

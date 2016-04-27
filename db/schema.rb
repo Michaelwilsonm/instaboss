@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160427014842) do
     t.integer  "user_id"
     t.string   "sex"
     t.string   "brand"
-    t.string   "photo_url"
     t.string   "description"
     t.string   "category"
     t.string   "sub_category"

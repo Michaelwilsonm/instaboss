@@ -6,11 +6,10 @@ $(document).ready(function() {
   var mensCategories = {'Accessories': ['Underwear & Socks', 'Hats', 'Grooming', 'Jewellery'], 'Formal': ['Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
 
-// Updating fashion it
   var sex = $('#item-sex').val();
   var category = $('#item-category').val();
   var itemSubCategory = $('.item-sub-category').data('temp');
-    i=0;
+  i=0;
 
   if ( sex === 'Mens' ) {
    $.each( mensCategories, function( key, value ) {
@@ -35,8 +34,6 @@ $(document).ready(function() {
       }
    });
   }
-
-
 
   $("#item-category").change(function(){
     $('#item-sub-category').children().remove().end()
@@ -64,8 +61,6 @@ $(document).ready(function() {
         });
       }
     });
-
-// Adding new fashion item
 
   if ($("#new-item-sex").val() === 'Mens') {
     $.each( mensCategories, function( key, value ) {
@@ -116,9 +111,7 @@ $(document).ready(function() {
       }
   });
 
-  // Validate form when adding a new item
-
-  $('.fashion_item_form').validate({ // initialize the plugin
+  $('.fashion_item_form').validate({
     rules: {
         'FashionItem[item_image]' : {
             required: true
@@ -139,9 +132,7 @@ $(document).ready(function() {
     }
   });
 
-  // Validate form when updating an existing item
-
-  $('.edit_fashion_item').validate({ // initialize the plugin
+  $('.edit_fashion_item').validate({
     rules: {
         'FashionItem[category]': {
             required: true
@@ -159,7 +150,6 @@ $(document).ready(function() {
     }
   });
 
-  // Remove / add sale price div
   $("#item-on-sale").change(function(){
     if ($("#item-on-sale").val() === 'true' ) {
       $('#item-sale-price').show();

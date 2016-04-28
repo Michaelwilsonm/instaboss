@@ -30,6 +30,7 @@ Rails.application.configure do
 
   # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   # config.assets.compile = false
+  # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   #devise login In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
@@ -47,7 +48,6 @@ Rails.application.configure do
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

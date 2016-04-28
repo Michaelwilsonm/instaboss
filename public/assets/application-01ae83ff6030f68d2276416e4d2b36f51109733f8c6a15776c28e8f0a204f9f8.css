@@ -1,88 +1,86 @@
-/* line 4, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+/* line 5, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
 .footer {
   margin-top: 20px;
   height: 120px;
   width: 100%;
 }
-/* line 8, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+/* line 9, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
 .footer ul {
   list-style-type: none;
   float: right;
   margin: 0px 20px 0px 10px;
 }
-/* line 12, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
 .footer ul li {
   padding: 3px;
 }
 /* line 4, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+hr {
+  color: #FF7043;
+}
+
+/* line 8, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation h3 {
   margin-left: 20px;
   color: #FF7043;
 }
-/* line 7, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 11, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation h3:visited {
   color: #FF7043;
 }
-/* line 10, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 14, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation h3:hover {
   color: #FF7043;
 }
-/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 17, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation h3 a {
   text-decoration: none;
   color: #FF7043;
 }
-/* line 18, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 22, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation ul {
   list-style-type: none;
   float: right;
   margin-top: -30px;
   margin-right: 20px;
 }
-/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 31, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation ul a {
   text-decoration: none;
   color: black;
 }
-/* line 30, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation ul a:hover {
   color: #FF7043;
 }
-/* line 6, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+/* line 2, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
 .index_main h1 {
   font-family: 'Josefin Sans', sans-serif;
   position: relative;
   z-index: 1;
-  top: 10px;
+  top: 170px;
   text-align: center;
   color: black;
+  font-size: 40px;
   padding: 5px;
-  transition: background-color 0.5s linear;
-  background-color: #fff;
-}
-/* line 16, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
-.index_main h1:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-/* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
-.index_main a:hover {
-  text-decoration: none;
-}
-/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
-.index_main a:visited {
-  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 29, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+/* line 16, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.one a, .two a, .three a, .four a {
+  text-decoration: none !important;
+}
+/* line 19, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
 .one img, .two img, .three img, .four img {
+  overflow: hidden;
   visibility: hidden;
   width: 100%;
-  position: relative;
+  height: 500px;
   z-index: -1;
   margin-top: -80px;
 }
@@ -109,6 +107,12 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
+
+
+.col-md-3, .col-sm-6, .col-xs-12 {
+  padding: 0px !important;
+  margin: 0px !important;
+}
 
 html {
   font-family: sans-serif; /* 1 */

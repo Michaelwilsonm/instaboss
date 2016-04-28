@@ -12362,11 +12362,12 @@ return jQuery;
 }).call(this);
 $(document).ready(function(){
     $("h1").hover(function(){
-        $(this).next().fadeIn(500);
+        $(this).next().stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 500)
     },function(){
-        $(this).next().fadeOut(500);
+        $(this).next().stop().css({opacity: 1, visibility: "visible"}).animate({opacity: 0}, 500)
     });
 });
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

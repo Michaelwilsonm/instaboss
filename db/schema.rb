@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426093212) do
+ActiveRecord::Schema.define(version: 20160427014842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fashion_items", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "sex"
+    t.string   "brand"
+    t.string   "description"
+    t.string   "category"
+    t.string   "sub_category"
+    t.boolean  "sale",                                            default: false, null: false
+    t.integer  "percentage_off"
+    t.decimal  "price",                   precision: 5, scale: 2
+    t.string   "unique_affiliate_url"
+    t.string   "shipped_from"
+    t.decimal  "sale_price",              precision: 5, scale: 2, default: 0.0
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.string   "item_image_file_name"
+    t.string   "item_image_content_type"
+    t.integer  "item_image_file_size"
+    t.datetime "item_image_updated_at"
+  end
+
+  add_index "fashion_items", ["user_id"], name: "index_fashion_items_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +57,5 @@ ActiveRecord::Schema.define(version: 20160426093212) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "fashion_items", "users"
 end

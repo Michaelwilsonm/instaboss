@@ -1,3 +1,91 @@
+/* line 4, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+.footer {
+  margin-top: 20px;
+  height: 120px;
+  width: 100%;
+}
+/* line 8, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+.footer ul {
+  list-style-type: none;
+  float: right;
+  margin: 0px 20px 0px 10px;
+}
+/* line 12, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_footer.scss */
+.footer ul li {
+  padding: 3px;
+}
+/* line 4, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation h3 {
+  margin-left: 20px;
+  color: #FF7043;
+}
+/* line 7, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation h3:visited {
+  color: #FF7043;
+}
+/* line 10, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation h3:hover {
+  color: #FF7043;
+}
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation h3 a {
+  text-decoration: none;
+  color: #FF7043;
+}
+/* line 18, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 20px;
+}
+/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation ul li {
+  display: inline;
+  margin-right: 10px;
+}
+/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation ul a {
+  text-decoration: none;
+  color: black;
+}
+/* line 30, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+.navigation ul a:hover {
+  color: #FF7043;
+}
+/* line 6, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.index_main h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  z-index: 1;
+  top: 10px;
+  text-align: center;
+  color: black;
+  padding: 5px;
+  transition: background-color 0.5s linear;
+  background-color: #fff;
+}
+/* line 16, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.index_main h1:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+/* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.index_main a:hover {
+  text-decoration: none;
+}
+/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.index_main a:visited {
+  color: black;
+}
+
+/* line 29, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/site.scss */
+.one img, .two img, .three img, .four img {
+  visibility: hidden;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  margin-top: -80px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,8 +98,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -20,6 +108,7 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
+
 
 html {
   font-family: sans-serif; /* 1 */

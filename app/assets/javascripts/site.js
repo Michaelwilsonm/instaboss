@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   $(document).on('page:change', function () {
   //allows the fade in and fade out of images on main page

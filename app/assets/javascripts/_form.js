@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $(document).on('page:change', function () {
 
   var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Casual', 'Going Out', 'Summer', 'Work'], 'Jeans, Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Lifestyle': ['Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jumpers & Cardigans', 'Formal'] };
 
@@ -170,4 +171,5 @@ $(document).ready(function() {
   if ($("#item-on-sale").val() === 'false' ) {
     $('#item-sale-price').hide();
   }
+  });
 });

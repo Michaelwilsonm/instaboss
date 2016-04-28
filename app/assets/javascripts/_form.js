@@ -161,6 +161,5 @@ $(document).ready(function() {
   if ($("#item-on-sale").val() === 'false' ) {
     $('#item-sale-price').hide();
   }
-
   });
 });

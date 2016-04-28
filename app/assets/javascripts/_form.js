@@ -1,12 +1,11 @@
-$(document).ready( function() {
+$(document).ready(function() {
 
   var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Casual', 'Going Out', 'Summer', 'Work'], 'Jeans, Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Lifestyle': ['Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jumpers & Cardigans', 'Formal'] };
 
   var mensCategories = {'Accessories': ['Underwear & Socks', 'Hats', 'Grooming', 'Jewellery'], 'Formal': ['Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
 
-// Updating fashion item
-
+// Updating fashion it
   var sex = $('#item-sex').val();
   var category = $('#item-category').val();
   var itemSubCategory = $('.item-sub-category').data('temp');
@@ -100,9 +99,7 @@ $(document).ready( function() {
           if (key.includes( $("#new-item-category").val() ) ) {
             var subCategory = value;
             $.each( subCategory, function( index, value ) {
-              // if (value !== itemSubCategory) {
-                $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
-              // }
+              $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
             });
           }
         });
@@ -111,9 +108,7 @@ $(document).ready( function() {
           if (key.includes( $("#new-item-category").val() ) ) {
             var subCategory = value;
             $.each( subCategory, function( index, value ) {
-              // if (value !== itemSubCategory) {
-                $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
-              // }
+              $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
             });
           }
         });
@@ -136,6 +131,9 @@ $(document).ready( function() {
         'FashionItem[price]': {
             required: true,
             number : true
+        },
+        'FashionItem[unique_affiliate_url]': {
+            required: true
         }
     }
   });
@@ -153,6 +151,9 @@ $(document).ready( function() {
         'FashionItem[price]': {
             required: true,
             number : true
+        },
+        'FashionItem[unique_affiliate_url]': {
+            required: true
         }
     }
   });
@@ -169,10 +170,4 @@ $(document).ready( function() {
   if ($("#item-on-sale").val() === 'false' ) {
     $('#item-sale-price').hide();
   }
-
-
-
-
-
-
-}); // End of Document ready
+});

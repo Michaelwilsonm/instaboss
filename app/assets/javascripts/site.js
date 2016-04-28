@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $(document).on('page:change', function () {
   //allows the fade in and fade out of images on main page
     $(".col-md-3").hover(function(){
         $(this).find("img").stop().css({
@@ -15,5 +16,6 @@ $(document).ready(function(){
           opacity: 0
         }, 500)
     });
+  });
 });
 

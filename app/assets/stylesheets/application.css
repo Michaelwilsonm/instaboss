@@ -21,6 +21,7 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
+
 .col-md-3, .col-sm-6, .col-xs-12 {
   padding: 0px !important;
   margin: 0px !important;

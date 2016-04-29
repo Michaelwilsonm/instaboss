@@ -2,20 +2,19 @@
   <div class="row">
     <div class="navigation">
       <% if current_page?(root_path) %>
-      <h3>instaBOSS</h3>
+      <h1>InstaBoss</h1>
       <% else %>
-      <h3><%= link_to "instaBOSS", root_path %></h3>
+      <h1><%= link_to "InstaBoss", root_path %></h1>
       <% end %>
       <ul>
         <% if current_user %>
-          <li><%= link_to "add an item", new_item_path %></li>
-          <li><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to "sign in", new_user_session_path %></li>
-          <li><%= link_to "register", new_user_registration_path %></li>
+          <li><%= link_to "Add Item", new_item_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+        <% elsif !current_page?(root_path)  %>
+          <li><%= link_to "ClientLogin", new_user_session_path %></li>
         <% end %>
       </ul>
+      <hr>
     </div>
   </div>
 </div>
-<hr>

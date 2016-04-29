@@ -8,6 +8,15 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.all_mens_on_sale
-
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'")
   end
+
+  def self.all_womens_items
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens'")
+  end
+
+  def self.all_womens_on_sale
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'")
+  end
+
 end

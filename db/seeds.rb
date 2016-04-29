@@ -24,5 +24,6 @@ img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
     category: "Accessories",
     sub_category: ['Underwear & Socks','Hats & Grooming', 'Jewellery' ].sample,
     price: 60.0,
+    sale: [true, false].sample,
     )
 end

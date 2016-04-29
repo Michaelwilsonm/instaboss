@@ -1,29 +1,26 @@
 $deep-orange: #FF7043;
+$black: #000;
 
-
-hr {
-  color: $deep-orange;
-}
 .navigation {
-  h3 {
-    margin-left: 20px;
-    color: $deep-orange;
+  h1 {
+    text-align: center;
+    color: $black;
     &:visited {
-      color: $deep-orange;
+      color: $black;
     }
     &:hover {
-      color: $deep-orange;
+      color: $black;
     }
     a {
       text-decoration: none;
-      color: $deep-orange;
+      color: $black;
     }
   }
   ul {
     list-style-type: none;
     float: right;
     margin-top: -30px;
-    margin-right: 20px;
+    margin-right: 10px;
     li {
       display: inline;
       margin-right: 10px;
@@ -32,7 +29,7 @@ hr {
       text-decoration: none;
       color: black;
       &:hover {
-        color: $deep-orange;
+        color: $black;
       }
     }
   }

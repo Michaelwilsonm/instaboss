@@ -14,6 +14,7 @@ img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 15.times do
 
   FashionItem.create(
+    item_image: img,
     unique_affiliate_url: "www.google.com",
     user_id: 1,
     shipped_from: "USA",

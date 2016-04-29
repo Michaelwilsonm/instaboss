@@ -1,2 +1,7 @@
-<h1>Men#index</h1>
-<p>Find me in app/views/men/index.html.erb</p>
+<% @mens.each do |f| %>
+  <%= f.sex %><br>
+  <%= f.brand %><br>
+  <%= f.sex %><br>
+  <img src="<%= f.item_image %>" alt="" width="100" height="100"><br>
+
+<% end %>

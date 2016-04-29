@@ -6,16 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+FashionItem.delete_all
+
+img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
 
-5.times do
+15.times do
 
   FashionItem.create(
-    sex: "Mens",
+    item_image: img,
+    unique_affiliate_url: "www.google.com",
+    user_id: 1,
+    shipped_from: "USA",
+    sex: ["Mens", "Womens"].sample,
     brand: ["Nike", 'Reebok', 'Prada'].sample,
-    description: "HELO",
+    description: "Description of product",
     category: "Accessories",
     sub_category: ['Underwear & Socks','Hats & Grooming', 'Jewellery' ].sample,
-    price: 60.1,
+    price: 60.0,
+    sale: [true, false].sample,
     )
 end

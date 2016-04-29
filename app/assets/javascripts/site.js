@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $(document).on('page:change',function() {
+// $(document).ready(function() {
+//   $(document).on('page:change',function() {
   //allows the fade in and fade out of images on main page
     // $("h2").hover(function() {
     //     $(this).next().stop().css({
@@ -16,6 +16,6 @@ $(document).ready(function() {
     //       opacity: 0
     //     }, 500)
     // });
-  });
-});
+//   });
+// });
 

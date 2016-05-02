@@ -1,14 +1,17 @@
 class ItemController < ApplicationController
+  before_action :find_item, only: [:destroy, :show, :edit, :update]
   before_action :authenticate_user!
-  before_action :authenticate_admin!
 
 
   def index
-    @item = current_user.fashion_items.all
+    @users_items = current_user.fashion_items
+    puts "*" * 50
+    puts @users_items
+    puts "*" * 50
   end
 
   def new
-    @item = FashionItem.new()
+    @item = current_user.fashion_items.build
   end
 
   def create
@@ -25,16 +28,21 @@ class ItemController < ApplicationController
   end
 
   def destroy
-
-
+    @item.destroy
+    redirect_to item_index_path
   end
 
   def update
   end
 
+  def show
+
+  end
+
   private
 
     def find_item
+      @item = FashionItem.find(params[:id])
     end
 
     def fashion_item_params

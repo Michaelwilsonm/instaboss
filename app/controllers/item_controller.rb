@@ -36,7 +36,6 @@ class ItemController < ApplicationController
   end
 
   def show
-
   end
 
   private

@@ -4,4 +4,5 @@
 <% @users_items.each do |item| %>
   <%= item %>
   <%= link_to "delete", item_path(item.id), method: :delete %>
+  <%= link_to "show", item_path(item.id) %>
 <% end %>

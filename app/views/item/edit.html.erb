@@ -1,7 +1,7 @@
 <div>
   <%= image_tag @item.item_image.url(:medium) %>
 </div>
-<%= form_for @item, url: {action: "update"}, html: {class: "fashion_item_form", multipart: true} do |f| %>
+<%= form_for @item, url: {action: "update"}, html: {class: "edit_fashion_item", multipart: true} do |f| %>
  <div class="new-fashion-item">
     <div>
       <span class="label label-default">Image</span>

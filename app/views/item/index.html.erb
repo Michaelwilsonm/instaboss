@@ -1,2 +1,9 @@
 <h1>Item#index</h1>
 <p>Find me in app/views/item/index.html.erb</p>
+
+<% @users_items.each do |item| %>
+  <%= item %>
+  <%= link_to "delete", item_path(item.id), method: :delete %>
+  <%= link_to "show", item_path(item.id) %>
+  <%= link_to "edit", edit_item_path(item.id) %>
+<% end %>

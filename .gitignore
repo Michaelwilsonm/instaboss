@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+#ignore test image
+/app/assets/images/dog.jpg
+/public/system/fashion_items/item_images/*

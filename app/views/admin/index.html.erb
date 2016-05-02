@@ -1,3 +1,6 @@
-<% @all_items.each do |f| %>
-  <%= f.sex %>
+<% @all_items.each do |item| %>
+  <%= item %>
+  <%= link_to "delete", admin_path(item.id), method: :delete %>
+  <%= link_to "show", admin_path(item.id) %>
+  <%= link_to "edit", edit_admin_path(item.id) %>
 <% end %>

@@ -14,7 +14,7 @@ class ItemController < ApplicationController
   def create
     @item = current_user.fashion_items.build(fashion_item_params)
     if @item.save
-      render 'index'
+      redirect_to item_index_path
     else
       render 'new'
     end

@@ -7,10 +7,17 @@
       <h1><%= link_to "InstaBoss", root_path %></h1>
       <% end %>
       <ul>
+        <% if current_admin %>
+          <li><%= link_to "Admin Page", admin_index_path %></li>
+          <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %></li>
+        <% end %>
         <% if current_user %>
+          <li><%= link_to "MENS", men_path %></li>
+          <li><%= link_to "WOMENS", women_path %></li>
+          <li><%= link_to "Your Items", item_index_path %></li>
           <li><%= link_to "Add Item", new_item_path %></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-        <% elsif !current_page?(root_path)  %>
+        <% elsif !current_page?(root_path) %>
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>
           <li><%= link_to "ClientLogin", new_user_session_path %></li>

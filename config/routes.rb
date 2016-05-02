@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'item/index'
+  devise_for :admins
+  get 'admin/index'
+
   get 'site/about'
   get 'site/contact'
 

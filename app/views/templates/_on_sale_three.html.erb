@@ -1,0 +1,9 @@
+<div class="col-md-10 col-sm-10 col-xs-10">
+  <h1>on Sale</h1>
+  <% @special_three.each do |specials| %>
+    <%= image_tag specials.item_image.url(:medium) %>
+    <p><%= specials.sex %></p>
+    <p><%= specials.brand %></p>
+    <p><%= specials.description %></p>
+  <% end %>
+</div>

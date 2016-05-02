@@ -5,40 +5,11 @@
     </div>
   </div>
 </div>
-
 <%= render "templates/item_navigation" %>
 
-<%= render "templates/side_navigation_mens" %>
-<!--
-
 <div class="container">
   <div class="row">
-    <% @mens.each do |f| %>
-    <div class="col-md-3 col-sm-5 col-xs-6">
-      <%= f.id %><br>
-      <%= f.sex %><br>
-      <%= f.brand %><br>
-      <%= f.sex %><br>
-      <%= f.sale %><br>
-      <img src="<%= f.item_image %>" alt="" width="100" height="100"><br>
-    </div>
-    <% end %>
+    <%= render "templates/side_navigation_mens" %>
+    <%= render "templates/on_sale_three" %>
   </div>
 </div>
-
-<hr>
-<div class="container">
-  <div class="row">
-    <h2> ON SALE </h2>
-    <% @sale_mens.each do |f| %>
-    <div class="col-md-3 col-sm-5 col-xs-6">
-      <%= f.id %><br>
-      <%= f.sex %><br>
-      <%= f.brand %><br>
-      <%= f.sex %><br>
-      <%= f.sale %><br>
-      <img src="<%= f.item_image %>" alt="" width="100" height="100"><br>
-    </div>
-    <% end %>
-  </div>
-</div> -->

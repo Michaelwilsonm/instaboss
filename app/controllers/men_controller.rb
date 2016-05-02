@@ -4,6 +4,7 @@ class MenController < ApplicationController
     @items = FashionItem.all
     @mens = @items.all_mens_items
     @sale_mens = @items.all_mens_on_sale
+    @special_three = @items.three_special_items
   end
 
   def formal

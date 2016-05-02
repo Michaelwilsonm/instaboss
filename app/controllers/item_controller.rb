@@ -46,7 +46,7 @@ class ItemController < ApplicationController
     end
 
     def fashion_item_params
-     params.require(:FashionItem).permit(:sex, :brand, :description, :category, :sub_category, :price, :sale, :item_image, :shipped_from, :user_id, :sale_price)
-  end
+      params.require(:FashionItem).permit(:sex, :brand, :description, :category, :sub_category, :price, :sale, :item_image, :shipped_from, :user_id, :sale_price)
+    end
 end
 

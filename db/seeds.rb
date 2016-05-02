@@ -12,6 +12,7 @@ img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
 User.create(email: "mike@mike.com", password: "hello123")
 User.create(email: "mike@email.com", password: "hello123")
+Admin.create(email: "josh@josh.com", password: "hello123")
 
 
 15.times do

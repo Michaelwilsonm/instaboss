@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admins
-  get 'admin/index'
+  resources :admin
 
   get 'site/about'
   get 'site/contact'

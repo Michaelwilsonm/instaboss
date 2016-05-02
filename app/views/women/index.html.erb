@@ -1,31 +1,25 @@
 <div class="container">
   <div class="row">
-    <% @womens.each do |f| %>
-    <div class="col-md-3 col-sm-5 col-xs-6">
-      <%= f.id %><br>
-      <%= f.sex %><br>
-      <%= f.brand %><br>
-      <%= f.sex %><br>
-      <%= f.sale %><br>
-      <img src="<%= f.item_image %>" alt="" width="100" height="100"><br>
+    <div class="main_photo">
+      <img src="assets/main_lambo.jpg" alt="main" style="height: 300px;">
     </div>
-    <% end %>
+  </div>
+</div>
+<h1>WOMENS</h1>
+
+<%= render "templates/item_navigation" %>
+
+<div class="container">
+  <div class="row">
+    <%= render "templates/side_navigation_womens" %>
+    <%= render "templates/on_sale_three" %>
   </div>
 </div>
 
-<hr>
 <div class="container">
+  <hr>
   <div class="row">
-    <h2> ON SALE </h2>
-    <% @sale_womens.each do |f| %>
-    <div class="col-md-3 col-sm-5 col-xs-6">
-      <%= f.id %><br>
-      <%= f.sex %><br>
-      <%= f.brand %><br>
-      <%= f.sex %><br>
-      <%= f.sale %><br>
-      <img src="<%= f.item_image %>" alt="" width="100" height="100"><br>
-    </div>
-    <% end %>
+    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <%= render "templates/all_womens" %>
   </div>
 </div>

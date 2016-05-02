@@ -11,6 +11,15 @@ Rails.application.routes.draw do
   root "site#index"
 
   get 'women' => 'women#index'
+  get 'women/accessorie'
+  get 'women/dress'
+  get 'women/jean_legging'
+  get 'women/lifestyle'
+  get 'women/shoe'
+  get 'women/short_skirt'
+  get 'women/sunglass_watch'
+  get 'women/swim_beachwear'
+  get 'women/top'
 
   get 'men' => 'men#index'
   get 'men/formal'

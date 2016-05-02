@@ -5,9 +5,6 @@ class ItemController < ApplicationController
 
   def index
     @users_items = current_user.fashion_items
-    puts "*" * 50
-    puts @users_items
-    puts "*" * 50
   end
 
   def new
@@ -24,7 +21,6 @@ class ItemController < ApplicationController
   end
 
   def edit
-
   end
 
   def destroy
@@ -33,6 +29,11 @@ class ItemController < ApplicationController
   end
 
   def update
+   if @item.update_attributes(fashion_item_params)
+    redirect_to item_index_path
+   else
+    redirect_to item_path
+   end
   end
 
   def show

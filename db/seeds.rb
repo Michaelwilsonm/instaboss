@@ -10,6 +10,8 @@ FashionItem.delete_all
 
 img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
+User.create(email: "mike@mike.com", password: "hello123")
+
 
 15.times do
 

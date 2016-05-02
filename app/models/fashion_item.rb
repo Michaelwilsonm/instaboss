@@ -19,4 +19,8 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'")
   end
 
+  def self.three_special_items
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'").sample(3)
+  end
+
 end

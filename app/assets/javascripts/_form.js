@@ -134,6 +134,9 @@ $(document).ready(function() {
 
   $('.edit_fashion_item').validate({
     rules: {
+      'FashionItem[item_image]' : {
+            required: false
+        },
         'FashionItem[category]': {
             required: true
         },

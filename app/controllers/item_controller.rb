@@ -1,10 +1,11 @@
 class ItemController < ApplicationController
   before_action :find_item, only: [:destroy, :show, :edit, :update]
   before_action :authenticate_user!
+  helper_method :sort_column, :sort_direction
 
 
   def index
-    @users_items = current_user.fashion_items
+    @users_items = current_user.fashion_items.order(sort_column + ' ' + sort_direction)
   end
 
   def new
@@ -47,6 +48,14 @@ class ItemController < ApplicationController
 
     def fashion_item_params
       params.require(:FashionItem).permit(:sex, :brand, :description, :category, :sub_category, :price, :sale, :item_image, :shipped_from, :user_id, :sale_price)
+    end
+
+    def sort_column
+      FashionItem.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc"
     end
 end
 

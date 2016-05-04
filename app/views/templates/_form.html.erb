@@ -7,9 +7,7 @@
         <div class="new_fashion_item">
           <div class="col-md-10">
             <span>Image</span>
-            <div>
-              <input type="file" name="FashionItem[item_image]" accept="image/*">
-            </div>
+              <input type="file" id="fashion-item-image" name="FashionItem[item_image]" accept="image/*" class="error">
           </div>
 
           <div class="col-md-10">
@@ -23,7 +21,7 @@
           <div class="col-md-10">
             <span>Category</span>
             <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
-            <option value="Accessories" selected>Accessories</option>
+            <option value="Accessories" selected></option>
             </select>
           </div>
 
@@ -86,7 +84,7 @@
 
           <div class="col-md-10">
             <span>Unique URL</span>
-            <input class="form-control" type="text" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
+            <input class="form-control" type="text" id="fashion-item-url" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
           </div>
 
         </div>

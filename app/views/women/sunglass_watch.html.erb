@@ -1,2 +1,14 @@
 <h1>sunglasses/watch</h1>
 <%= render "templates/side_navigation_womens" %>
+
+<div class="col-md-10 col-sm-10 col-xs-10">
+  <% @sunglass_watch.each do |item| %>
+    <div class="box" style="float: left; margin-right: 100px;">
+      <%= image_tag item.item_image.url(:medium), style: "width:200px; height:200px;" %>
+      <p><%= item.sex %></p>
+      <p><%= item.sub_category %></p>
+      <p><%= item.brand %></p>
+      <p><%= item.description %></p>
+    </div>
+  <% end %>
+</div>

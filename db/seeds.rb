@@ -12,7 +12,7 @@ img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
 User.create(email: "mike@mike.com", password: "hello123")
 User.create(email: "mike@email.com", password: "hello123")
-
+Admin.create(email: "josh@josh.com", password: "hello123")
 
 15.times do
 
@@ -24,7 +24,7 @@ User.create(email: "mike@email.com", password: "hello123")
     sex: ["Mens", "Womens"].sample,
     brand: ["Nike", 'Reebok', 'Prada'].sample,
     description: "Description of product",
-    category: "Accessories",
+    category: ["Accessories"]
     sub_category: ['Underwear & Socks','Hats & Grooming', 'Jewellery' ].sample,
     price: 60.0,
     sale: [true, false].sample,

@@ -1,6 +1,11 @@
 <h1>accessorie</h1>
 <%= render "templates/side_navigation_mens" %>
 
+  <tr>
+    <th><strong><%= sortable "Jewellery" %></strong></th>
+  </tr>
+
+
 <div class="col-md-10 col-sm-10 col-xs-10">
   <% @accessorie.each do |item| %>
     <div class="box" style="float: left; margin-right: 100px;">

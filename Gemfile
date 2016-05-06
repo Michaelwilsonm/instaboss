@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem "wice_grid", '3.6.0.pre4'
+gem 'font-awesome-sass',  '~> 4.3'
 gem 'devise'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'sdoc', '~> 0.4.0', group: :doc

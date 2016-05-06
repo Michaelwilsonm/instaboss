@@ -3,6 +3,7 @@ class FashionItem < ActiveRecord::Base
   has_attached_file :item_image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :item_image, content_type: /\Aimage\/.*\Z/
 
+
   def self.all_mens_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens'")
   end
@@ -44,11 +45,11 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.men_short_swimwear
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Shorts & Swimwear'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Shorts'")
   end
 
   def self.men_sunglass_watch
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Sunglasses & Watches'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Sunglasses'")
   end
 
 
@@ -71,11 +72,11 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.women_jean_legging
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Jeans Trousers & Leggings'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Jeans'")
   end
 
   def self.women_lifestyle
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'LifeStyle'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Lifestyle'")
   end
 
   def self.women_dress
@@ -87,19 +88,18 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.women_short_skirt
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Shorts & Skirts'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Shorts'")
   end
 
   def self.women_sunglass_watch
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Sunglasses & Watches'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Sunglasses'")
   end
 
   def self.women_swim_beachwear
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Swim & Beachwear'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Swim'")
   end
 
   def self.women_top
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Tops'")
   end
-
 end

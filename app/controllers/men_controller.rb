@@ -1,5 +1,7 @@
 class MenController < ApplicationController
   before_action :all_fashion
+  helper_method :sort_column, :sort_direction
+
   def index
     @mens = @items.all_mens_items
     @sale_mens = @items.all_mens_on_sale
@@ -11,6 +13,7 @@ class MenController < ApplicationController
   end
 
   def accessorie
+    # @sorted_cities = @items.incl.sort_by { |obj| obj.sub_category.to_s }
     @accessorie = @items.men_accessorie
   end
 
@@ -42,5 +45,13 @@ class MenController < ApplicationController
 
     def all_fashion
       @items = FashionItem.all
+    end
+
+    def sort_column
+      FashionItem.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc"
     end
 end

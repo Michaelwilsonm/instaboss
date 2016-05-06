@@ -3,6 +3,10 @@ class FashionItem < ActiveRecord::Base
   has_attached_file :item_image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :item_image, content_type: /\Aimage\/.*\Z/
 
+  def self.sales
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sale = true")
+  end
+
 
   def self.all_mens_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens'")

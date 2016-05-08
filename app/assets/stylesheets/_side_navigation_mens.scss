@@ -1,6 +1,25 @@
+.main_photo{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 400px;
+  background-image: url("main_lambo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
+  }
+
 .side_nav_mens {
   list-style-type: none;
-  li {
-    padding: 5px;
+  margin-left: -50px;
+  h4{
+    font-family: 'Roboto Slab', serif;
+  }
+  li{
+    padding: 5px 0px 5px 0px;
+    font-family: 'Roboto Slab', serif;
+    a{
+      color: black;
+    }
   }
 }

@@ -11,7 +11,7 @@ img{
   vertical-align: middle;
   max-height: 60%;
   max-width: 80%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .description_item{
@@ -25,6 +25,7 @@ img{
   bottom: 25px;
   width: 100%;
   text-align: center;
+  visibility: hidden;
 }
 
 .specials_table>td {
@@ -32,7 +33,27 @@ img{
   font-family: 'Roboto Slab', serif;
 }
 
+.specials_table>td:nth-child(1){
+  visibility: hidden;
+}
+
 .specials_table>td:nth-child(3){
   background-color: yellow;
   font-size: 20px;
+}
+
+.normal_table>td {
+  padding: 5px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.normal_table>td:nth-child(1){
+  visibility: hidden;
+}
+
+
+.normal_table>td:nth-child(3){
+  background-color: #aaa;
+  font-size: 20px;
+  color: white;
 }

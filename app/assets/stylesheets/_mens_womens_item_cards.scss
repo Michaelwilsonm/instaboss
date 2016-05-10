@@ -5,6 +5,14 @@
   width: 100%;
   text-align: center;
   margin: 0px;
+  background:white;
+  -webkit-transition:background 0.4s;
+  -moz-transition:background 0.4s;
+  -o-transition:background 0.4s;
+  transition:background 0.4s;
+  &:hover{
+    background-color: #eee;
+  }
 }
 
 img{
@@ -35,6 +43,7 @@ img{
 
 .specials_table>td:nth-child(1){
   visibility: hidden;
+  font-size: 20px;
 }
 
 .specials_table>td:nth-child(3){

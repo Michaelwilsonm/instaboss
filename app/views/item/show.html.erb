@@ -1,16 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2 col-sm-1 col-xs-1"></div>
-    <div class="col-md-4 col-sm-5 col-xs-5">
-    <%= image_tag @item.item_image.url(:medium) %>
-      <p><em><%= "this will be the short name of product" %></em></p>
+    <div class="col-md-4 col-sm-5 col-xs-5 show-item-top">
+      <%= image_tag @item.item_image.url(:medium) %>
     </div>
-    <div class="col-md-4 col-sm-5 col-xs-5">
-      <h3><em>$<%= @item.price %>0</em></h3>
-      <p><em><%= @item.description %></em></p>
-      <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
-        <button class="btn btn-success">show now!</button>
-      </a>
+    <div class="col-md-4 col-sm-5 col-xs-5 show-item-bottom">
+      <div class="description-show">
+        <h3><em><%= "this will be the short name of product" %></em></h3>
+        <h3><em>$<%= @item.price %>0</em></h3>
+        <p><em><%= @item.description %></em></p>
+      </div>
+      <div class="show-button">
+        <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
+          <button class="btn btn-success">Show now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
+        </a>
+      </div>
+
     </div>
     <div class="col-md-2 col-sm-1 col-xs-1"></div>
   </div>

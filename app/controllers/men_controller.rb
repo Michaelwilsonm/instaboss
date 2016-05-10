@@ -5,7 +5,7 @@ class MenController < ApplicationController
   def index
     @mens = @items.all_mens_items
     @sale_mens = @items.all_mens_on_sale
-    @special_three = @items.three_special_items_mens
+    @special_three = @items.nine_special_items_mens
   end
 
   def formal

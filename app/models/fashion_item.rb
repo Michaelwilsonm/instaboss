@@ -9,15 +9,15 @@ class FashionItem < ActiveRecord::Base
 
 
   def self.all_mens_items
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'false'")
   end
 
   def self.all_mens_on_sale
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'")
   end
 
-  def self.three_special_items_mens
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'").sample(3)
+  def self.nine_special_items_mens
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'").sample(9)
   end
 
   def self.men_accessorie
@@ -59,7 +59,7 @@ class FashionItem < ActiveRecord::Base
 
 #WOMENS
   def self.all_womens_items
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens'")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'false'")
   end
 
   def self.all_womens_on_sale
@@ -67,8 +67,8 @@ class FashionItem < ActiveRecord::Base
   end
 
 
-  def self.three_special_items_womens
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'").sample(3)
+  def self.nine_special_items_womens
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'").sample(9)
   end
 
   def self.women_accessorie

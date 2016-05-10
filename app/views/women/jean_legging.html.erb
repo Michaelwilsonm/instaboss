@@ -1,14 +1,38 @@
-<h1>jean/legging</h1>
-<%= render "templates/side_navigation_womens" %>
-
-<div class="col-md-10 col-sm-10 col-xs-10">
-  <% @jean_legging.each do |item| %>
-    <div class="box" style="float: left; margin-right: 100px;">
-      <%= image_tag item.item_image.url(:medium), style: "width:200px; height:200px;" %>
-      <p><%= item.sex %></p>
-      <p><%= item.sub_category %></p>
-      <p><%= item.brand %></p>
-      <p><%= item.description %></p>
+<div class="container">
+  <div class="row">
+    <%= render "templates/side_navigation_womens" %>
+    <div class="col-sm-1 col-xs-1"></div>
+    <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
+      <% @jean_legging.each do |jeans_items| %>
+        <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
+          <div class="div_specials">
+            <table style="width: 100%;">
+              <% if jeans_items.sale == false %>
+              <tr class="normal_table">
+                <td style="width: 150px;">&nbsp</td>
+                <td style="width: 150px;">&nbsp</td>
+                <td><em>$<%= jeans_items.price %>0</em></td>
+              </tr>
+            </table>
+            <% else %>
+              <table style="width: 100%;">
+                <tr class="specials_table">
+                  <td><em>25% off</em></td>
+                  <td><strike><em>$<%= jeans_items.price %>0</em></strike></td>
+                  <td>$<%= jeans_items.sale_price %>0</td>
+                </tr>
+              </table>
+            <% end %>
+          </div>
+          <span class="helper"></span>
+          <%= image_tag jeans_items.item_image.url(:medium), class: "box-image;"%>
+          <div class="description_item">
+            <div class="description_content">
+              <%= "short headline here 25 characters max" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>

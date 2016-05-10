@@ -12,10 +12,8 @@ module ApplicationHelper
     percent.round
   end
 
+  def add_zero(price)
+
+  end
+
 end
-
-
-# First: work out the difference (increase) between the two numbers you are comparing.
-# Increase = New Number - Original Number.
-# Then: divide the increase by the original number and multiply the answer by 100.
-# % increase = Increase ÷ Original Number × 100.

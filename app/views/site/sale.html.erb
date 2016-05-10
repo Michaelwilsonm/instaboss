@@ -5,7 +5,7 @@
       <div class="div_specials">
         <table style="width: 100%;">
           <tr class="specials_table">
-            <td><em>25% off</em></td>
+            <td><em><%= percentage(all_specials.price, all_specials.sale_price) %>% off!</em></td>
             <td><strike><em>$<%= all_specials.price %>0</em></strike></td>
             <td>$<%= all_specials.sale_price %>0</td>
           </tr>

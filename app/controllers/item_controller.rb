@@ -1,6 +1,6 @@
 class ItemController < ApplicationController
   before_action :find_item, only: [:destroy, :show, :edit, :update]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:destroy, :edit, :update, :create]
   helper_method :sort_column, :sort_direction
 
 

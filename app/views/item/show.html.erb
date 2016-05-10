@@ -1,1 +1,17 @@
-<%= @item.sex %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-sm-1 col-xs-1"></div>
+    <div class="col-md-4 col-sm-5 col-xs-5">
+    <%= image_tag @item.item_image.url(:medium) %>
+      <p><em><%= "this will be the short name of product" %></em></p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-xs-5">
+      <h3><em>$<%= @item.price %>0</em></h3>
+      <p><em><%= @item.description %></em></p>
+      <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
+        <button class="btn btn-success">show now!</button>
+      </a>
+    </div>
+    <div class="col-md-2 col-sm-1 col-xs-1"></div>
+  </div>
+</div>

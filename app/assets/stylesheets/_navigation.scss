@@ -1,4 +1,3 @@
-$deep-orange: #FF7043;
 $black: #000;
 
 
@@ -6,6 +5,9 @@ $black: #000;
   h1 {
     text-align: center;
     color: $black;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: -20px;
+    font-size: 60px;
     &:visited {
       color: $black;
     }
@@ -20,11 +22,11 @@ $black: #000;
   ul {
     list-style-type: none;
     float: right;
-    margin-top: -30px;
-    margin-right: 10px;
+    margin-top: -10px;
     li {
       display: inline;
-      margin-right: 10px;
+      padding: 10px;
+      font-weight: bold;
     }
     a {
       text-decoration: none;
@@ -35,3 +37,26 @@ $black: #000;
     }
   }
 }
+
+.client-login {
+  position: relative;
+  top: -40px;
+  left: 150px;
+  font-weight: normal;
+
+}
+
+.client-path {
+  position: relative;
+  top: 0px;
+  font-weight: normal;
+
+}
+
+
+
+
+
+
+
+

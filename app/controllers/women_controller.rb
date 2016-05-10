@@ -4,7 +4,7 @@ class WomenController < ApplicationController
   def index
     @womens = @items.all_womens_items
     @sale_womens = @items.all_womens_on_sale
-    @special_three = @items.three_special_items_womens
+    @special_three = @items.nine_special_items_womens
   end
 
   def accessorie

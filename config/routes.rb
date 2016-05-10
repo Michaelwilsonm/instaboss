@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :item
+  get 'site/sale'
 
   root "site#index"
 
@@ -32,8 +33,4 @@ Rails.application.routes.draw do
   get 'men/short_swimwear'
   get 'men/sunglass_watch'
   get 'men/accessorie'
-
-
-  get 'sale' => 'sale#index'
-
 end

@@ -9,8 +9,8 @@
           <% if all_specials.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= all_specials.sale_price %></em></strike></td>
-              <td>$<%= all_specials.price %></td>
+              <td><strike><em>$<%= zeros(all_specials.sale_price) %></em></strike></td>
+              <td>$<%= zeros(all_specials.price) %></td>
             </tr>
           </table>
           <% else %>

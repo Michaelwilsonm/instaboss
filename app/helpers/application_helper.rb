@@ -13,13 +13,14 @@ module ApplicationHelper
   end
 
   def zeros price
-  str_price = price.to_s
-  split = str_price.split(".")
-  if split.last.to_i < 10
-    price = str_price + "#{0}"
-  else
-    price
+    str_price = price.to_s
+    split = str_price.split(".")
+
+    if split.last.to_i < 10 && split.last.length != 2
+      price = str_price + "#{0}"
+    else
+      price.to_s
+    end
   end
-end
 
 end

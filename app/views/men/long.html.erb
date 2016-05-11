@@ -12,15 +12,15 @@
                 <tr class="normal_table">
                   <td style="width: 150px;">&nbsp</td>
                   <td style="width: 150px;">&nbsp</td>
-                  <td><em>$<%= long_items.price %>0</em></td>
+                  <td><em>$<%= zeros(long_items.price) %><em></td>
                 </tr>
               </table>
               <% else %>
                 <table style="width: 100%;">
                   <tr class="specials_table">
                     <td><em><%= percentage(long_items.price, long_items.sale_price) %>% off!</em></td>
-                    <td><strike><em>$<%= long_items.price %>0</em></strike></td>
-                    <td>$<%= long_items.sale_price %>0</td>
+                    <td><strike><em>$<%= zeros(long_items.price) %></em></strike></td>
+                    <td>$<%= zeros(long_items.price) %></td>
                   </tr>
                 </table>
               <% end %>

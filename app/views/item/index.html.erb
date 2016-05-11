@@ -16,7 +16,7 @@
         <td><%= item.brand %></td>
         <td><%= item.description.slice(0..40) %></td>
         <td><%= item.shipped_from %></td>
-        <td>$<%= item.price %></td>
+        <td>$<%= zeros(item.price) %></td>
         <td>
           <%if item.sale == false %>
             <%= 'No' %>

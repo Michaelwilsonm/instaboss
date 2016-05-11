@@ -12,8 +12,14 @@ module ApplicationHelper
     percent.round
   end
 
-  def add_zero(price)
-
+  def zeros price
+  str_price = price.to_s
+  split = str_price.split(".")
+  if split.last.to_i < 10
+    price = str_price + "#{0}"
+  else
+    price
   end
+end
 
 end

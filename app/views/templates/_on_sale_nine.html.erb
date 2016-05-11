@@ -7,8 +7,8 @@
         <table style="width: 100%;">
           <tr class="specials_table">
             <td><em><%= percentage(specials.price, specials.sale_price) %>% off!</em></td>
-            <td><strike><em>$<%= specials.price %></em></strike></td>
-            <td>$<%= specials.sale_price %></td>
+            <td><strike><em>$<%= zeros(specials.price) %></em></strike></td>
+            <td>$<%= zeros(specials.sale_price) %></td>
           </tr>
         </table>
       </div>

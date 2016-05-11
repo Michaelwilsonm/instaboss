@@ -1,8 +1,8 @@
-.box {
+.box{
   width: 300px !important;
 }
 
-.image_div {
+.image_div{
   position: relative;
   width: 280px;
   height: 280px;
@@ -10,9 +10,12 @@
   overflow: hidden;
   border: 1px solid;
   border-color: #eee;
+  a{
+    text-decoration: none !important;
+  }
 }
 
-.image_div img {
+.image_div img{
   position: absolute;
   left: 50%;
   top: 50%;
@@ -25,43 +28,32 @@
 
 .description_content{
   color: white;
-  font-size: 20px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0.1;
+  background-color: rgba(0, 0, 0, 0.3);
   text-align: center;
   visibility: hidden;
   width: 100%;
   height: 100%;
   font-family: 'Roboto Slab', serif;
+  p{
+    font-size: 12px;
+    position: relative;
+    top: 200px;
+  }
 }
 
-.specials_table>td {
-  padding: 5px;
-  font-family: 'Roboto Slab', serif;
+.specials_table>td{
+  background-color: yellow;
+  color: black;
+  padding: 2px;
 }
+
 
 .specials_table>td:nth-child(1){
-  visibility: hidden;
-  font-size: 20px;
+  font-size: 12px;
+  margin-left: 5px;
 }
 
-.specials_table>td:nth-child(3){
-  font-size: 20px;
-}
-
-.normal_table>td {
-  padding: 5px;
-  font-family: 'Roboto Slab', serif;
-}
-
-.normal_table>td:nth-child(1){
-  visibility: hidden;
-}
-
-
-.normal_table>td:nth-child(3){
-  background-color: #aaa;
-  font-size: 20px;
-  color: white;
+.specials_table>td:nth-child(2){
+  font-size: 25px;
 }

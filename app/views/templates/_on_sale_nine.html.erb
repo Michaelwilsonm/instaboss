@@ -3,32 +3,19 @@
   <% @special_three.each do |specials| %>
     <div class="box col-md-4 col-sm-6 col-xs-12">
       <div class="image_div">
-
         <a href="/item/<%= specials.id %>">
-
-
           <%= image_tag specials.item_image.url(:medium) %>
-
-
         <div class="description_content">
-
-          <table style="width: 100%;">
+          <table>
             <tr class="specials_table">
-              <td><em><%= percentage(specials.price, specials.sale_price) %>% off!</em></td>
               <td><strike><em>$<%= specials.price %></em></strike></td>
               <td>$<%= specials.price %></td>
             </tr>
           </table>
-
-
-          <%= "short headline here 25 characters max" %>
-
-
+          <p><%= "short headline here 25 characters max" %></p>
         </div>
         </a>
       </div>
-
     </div>
-
   <% end %>
 </div>

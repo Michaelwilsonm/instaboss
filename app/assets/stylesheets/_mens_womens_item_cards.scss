@@ -1,39 +1,39 @@
-.box{
+.box {
+  width: 300px !important;
+}
+
+.image_div {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 10px 5px 10px 5px;
+  overflow: hidden;
   border: 1px solid;
-  border-color: #ddd;
+  border-color: #eee;
+}
+
+.image_div img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   height: 300px;
-  width: 100%;
-  text-align: center;
-  margin: 0px;
-  background:white;
-  -webkit-transition:background 0.4s;
-  -moz-transition:background 0.4s;
-  -o-transition:background 0.4s;
-  transition:background 0.4s;
-  &:hover{
-    background-color: #eee;
-  }
-}
-
-img{
-  vertical-align: middle;
-  max-height: 60%;
-  max-width: 80%;
-  margin-top: 20px;
-}
-
-.description_item{
-  font-family: 'Roboto Slab', serif;
-  font-size: 15px;
-  font-weight: bold;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 .description_content{
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.1;
   text-align: center;
   visibility: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Slab', serif;
 }
 
 .specials_table>td {
@@ -47,7 +47,6 @@ img{
 }
 
 .specials_table>td:nth-child(3){
-  background-color: yellow;
   font-size: 20px;
 }
 

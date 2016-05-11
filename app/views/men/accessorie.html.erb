@@ -4,7 +4,7 @@
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
       <% @accessorie.each do |accessoire_items| %>
-        <a href="/item/<%= accessorie_items.id %>">
+        <a href="/item/<%= accessoire_items.id %>">
           <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
             <div class="div_specials">
               <table style="width: 100%;">
@@ -18,7 +18,7 @@
               <% else %>
                 <table style="width: 100%;">
                   <tr class="specials_table">
-                    <td><em>25% off</em></td>
+                    <td><em><%= percentage(accessoire_items.price, accessoire_items.sale_price) %>% off!</em></td>
                     <td><strike><em>$<%= accessoire_items.price %>0</em></strike></td>
                     <td>$<%= accessoire_items.sale_price %>0</td>
                   </tr>

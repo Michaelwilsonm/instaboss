@@ -18,7 +18,7 @@
               <% else %>
                 <table style="width: 100%;">
                   <tr class="specials_table">
-                    <td><em>25% off</em></td>
+                    <td><em><%= percentage(long_items.price, long_items.sale_price) %>% off!</em></td>
                     <td><strike><em>$<%= long_items.price %>0</em></strike></td>
                     <td>$<%= long_items.sale_price %>0</td>
                   </tr>

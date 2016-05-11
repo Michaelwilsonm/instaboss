@@ -5,36 +5,30 @@
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
       <% @accessorie.each do |access_items| %>
-        <a href="/item/<%= access_items.id %>">
-          <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
-            <div class="div_specials">
-              <table style="width: 100%;">
-                <% if access_items.sale == false %>
-                <tr class="normal_table">
-                  <td style="width: 150px;">&nbsp</td>
-                  <td style="width: 150px;">&nbsp</td>
-                  <td><em>$<%= access_items.price %>0</em></td>
+        <div class="box col-md-4 col-sm-6 col-xs-12">
+          <div class="image_div">
+            <a href="/item/<%= access_items.id %>">
+              <%= image_tag access_items.item_image.url(:medium) %>
+            <div class="description_content">
+              <% if access_items.sale == true %>
+              <table>
+                <tr class="specials_table">
+                  <td><strike><em>$<%= access_items.sale_price %></em></strike></td>
+                  <td>$<%= access_items.price %></td>
                 </tr>
               </table>
               <% else %>
-                <table style="width: 100%;">
-                  <tr class="specials_table">
-                    <td><em><%= percentage(access_items.price, access_items.sale_price) %>% off!</em></td>
-                    <td><strike><em>$<%= access_items.price %>0</em></strike></td>
-                    <td>$<%= access_items.sale_price %>0</td>
-                  </tr>
-                </table>
+              <table>
+                <tr class="normal_table">
+                  <td>$<%= access_items.price %></td>
+                </tr>
+              </table>
               <% end %>
+              <p><%= "short headline here 25 characters max" %></p>
             </div>
-            <span class="helper"></span>
-            <%= image_tag access_items.item_image.url(:medium), class: "box-image;"%>
-            <div class="description_item">
-              <div class="description_content">
-                <%= "short headline here 25 characters max" %>
-              </div>
-            </div>
+            </a>
           </div>
-        </a>
+        </div>
       <% end %>
     </div>
   </div>

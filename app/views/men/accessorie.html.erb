@@ -4,36 +4,30 @@
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
       <% @accessorie.each do |accessoire_items| %>
-        <a href="/item/<%= accessoire_items.id %>">
-          <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
-            <div class="div_specials">
-              <table style="width: 100%;">
-                <% if accessoire_items.sale == false %>
-                <tr class="normal_table">
-                  <td style="width: 150px;">&nbsp</td>
-                  <td style="width: 150px;">&nbsp</td>
-                  <td><em>$<%= zeros(accessoire_items.price) %></em></td>
+        <div class="box col-md-4 col-sm-6 col-xs-12">
+          <div class="image_div">
+            <a href="/item/<%= accessoire_items.id %>">
+              <%= image_tag accessoire_items.item_image.url(:medium) %>
+            <div class="description_content">
+              <% if accessoire_items.sale == true %>
+              <table>
+                <tr class="specials_table">
+                  <td><strike><em>$<%= accessoire_items.sale_price %></em></strike></td>
+                  <td>$<%= accessoire_items.price %></td>
                 </tr>
               </table>
               <% else %>
-                <table style="width: 100%;">
-                  <tr class="specials_table">
-                    <td><em><%= percentage(accessoire_items.price, accessoire_items.sale_price) %>% off!</em></td>
-                    <td><strike><em>$<%= zeros(accessoire_items.price) %></em></strike></td>
-                    <td>$<%= zeros(accessoire_items.price) %></td>
-                  </tr>
-                </table>
+              <table>
+                <tr class="normal_table">
+                  <td>$<%= accessoire_items.price %></td>
+                </tr>
+              </table>
               <% end %>
+              <p><%= "short headline here 25 characters max" %></p>
             </div>
-            <span class="helper"></span>
-            <%= image_tag accessoire_items.item_image.url(:medium), class: "box-image;"%>
-            <div class="description_item">
-              <div class="description_content">
-                <%= "short headline here 25 characters max" %>
-              </div>
-            </div>
+            </a>
           </div>
-        </a>
+        </div>
       <% end %>
     </div>
   </div>

@@ -45,9 +45,8 @@
 .specials_table>td{
   background-color: yellow;
   color: black;
-  padding: 2px;
+  padding: 0px 4px 0px 4px;
 }
-
 
 .specials_table>td:nth-child(1){
   font-size: 12px;
@@ -56,4 +55,11 @@
 
 .specials_table>td:nth-child(2){
   font-size: 25px;
+}
+
+.normal_table>td{
+  padding: 0px 4px 0px 4px;
+  background-color: white;
+  color: black;
+  font-size: 25px
 }

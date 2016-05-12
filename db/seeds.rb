@@ -27,6 +27,7 @@ Admin.create(email: "josh@josh.com", password: "hello123")
     category: "Accessories",
     sub_category: ['Lingerie & Underwear','Hats', 'Bags & Purses', 'Jewellery' ].sample,
     price: 60.0,
+    short_description: "Too awesome to say",
     sale: [true, false].sample,
     )
 end
@@ -44,6 +45,7 @@ end
     category: "Accessories",
     sub_category: ['Underwear & Socks','Hats & Grooming', 'Jewellery' ].sample,
     price: 60.0,
+    short_description: "Too awesome to say",
     sale: [true, false].sample,
     )
 end

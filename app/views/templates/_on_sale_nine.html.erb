@@ -1,22 +1,20 @@
 <div class="col-md-1 col-sm-1 col-xs-1"></div>
-<div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
+<div class="col-md-10 col-sm-8 col-xs-8">
   <% @special_three.each do |specials| %>
-    <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
-      <div class="div_specials">
-        <table style="width: 100%;">
-          <tr class="specials_table">
-            <td><em>25% off</em></td>
-            <td><strike><em>$<%= specials.price %>0</em></strike></td>
-            <td>$<%= specials.sale_price %>0</td>
-          </tr>
-        </table>
-      </div>
-      <span class="helper"></span>
-      <%= image_tag specials.item_image.url(:medium), class: "box-image;"%>
-      <div class="description_item">
+    <div class="box col-md-4 col-sm-6 col-xs-12">
+      <div class="image_div">
+        <a href="/item/<%= specials.id %>">
+          <%= image_tag specials.item_image.url(:medium) %>
         <div class="description_content">
-          <%= "short headline here 25 characters max" %>
+          <table>
+            <tr class="specials_table">
+              <td><strike><em>$<%= zeros(specials.price) %></em></strike></td>
+              <td>$<%= zeros(specials.sale_price) %></td>
+            </tr>
+          </table>
+          <p><%= specials.short_description %></p>
         </div>
+        </a>
       </div>
     </div>
   <% end %>

@@ -4,32 +4,28 @@
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
       <% @top.each do |top_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12" style="padding: 0px;">
-          <div class="div_specials">
-            <table style="width: 100%;">
-              <% if top_items.sale == false %>
-              <tr class="normal_table">
-                <td style="width: 150px;">&nbsp</td>
-                <td style="width: 150px;">&nbsp</td>
-                <td><em>$<%= top_items.price %>0</em></td>
-              </tr>
-            </table>
-            <% else %>
-              <table style="width: 100%;">
+        <div class="box col-md-4 col-sm-6 col-xs-12">
+          <div class="image_div">
+            <a href="/item/<%= top_items.id %>">
+              <%= image_tag top_items.item_image.url(:medium) %>
+            <div class="description_content">
+              <% if top_items.sale == true %>
+              <table>
                 <tr class="specials_table">
-                  <td><em>25% off</em></td>
-                  <td><strike><em>$<%= top_items.price %>0</em></strike></td>
-                  <td>$<%= top_items.sale_price %>0</td>
+                  <td><strike><em>$<%= top_items.sale_price %></em></strike></td>
+                  <td>$<%= top_items.price %></td>
                 </tr>
               </table>
-            <% end %>
-          </div>
-          <span class="helper"></span>
-          <%= image_tag top_items.item_image.url(:medium), class: "box-image;"%>
-          <div class="description_item">
-            <div class="description_content">
-              <%= "short headline here 25 characters max" %>
+              <% else %>
+              <table>
+                <tr class="normal_table">
+                  <td>$<%= top_items.price %></td>
+                </tr>
+              </table>
+              <% end %>
+              <p><%= top_items.short_description %></p>
             </div>
+            </a>
           </div>
         </div>
       <% end %>

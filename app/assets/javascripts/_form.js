@@ -114,6 +114,10 @@ $(document).ready(function() {
 
     $('.fashion_item_form').validate({
       rules: {
+        'FashionItem[short_description]' : {
+              required: true,
+              maxlength: 25
+          },
           'FashionItem[item_image]' : {
               required: true
           },
@@ -135,6 +139,10 @@ $(document).ready(function() {
 
     $('.edit_fashion_item').validate({
       rules: {
+        'FashionItem[short_description]' : {
+              required: true,
+              maxlength: 25
+          },
         'FashionItem[item_image]' : {
               required: false
           },

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :admin
-  authenticated :user do
-    root "men#index", as: "authenticated_root"
-  end
+  # authenticated :user do
+  #   root "men#index", as: "authenticated_root"
+  # end
 
   get 'site/about'
   get 'site/contact'
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :item
-  get 'site/sale'
+  get 'site/sale_mens'
+  get 'site/sale_womens'
 
   root "site#index"
 

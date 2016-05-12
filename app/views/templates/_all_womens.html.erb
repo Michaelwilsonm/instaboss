@@ -9,18 +9,18 @@
           <% if womens_items.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= womens_items.sale_price %></em></strike></td>
-              <td>$<%= womens_items.price %></td>
+              <td><strike><em>$<%= zeros(womens_items.sale_price) %></em></strike></td>
+              <td>$<%= zeros(womens_items.price) %></td>
             </tr>
           </table>
           <% else %>
           <table>
             <tr class="normal_table">
-              <td>$<%= womens_items.price %></td>
+              <td>$<%= zeros(womens_items.price) %></td>
             </tr>
           </table>
-          <% end %>
-          <p><%= "short headline here 25 characters max" %></p>
+        <% end %>
+          <p><%= womens_items.short_description %></p>
         </div>
         </a>
       </div>

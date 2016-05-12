@@ -8,11 +8,11 @@
         <div class="description_content">
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= specials.price %></em></strike></td>
-              <td>$<%= specials.price %></td>
+              <td><strike><em>$<%= zeros(specials.price) %></em></strike></td>
+              <td>$<%= zeros(specials.sale_price) %></td>
             </tr>
           </table>
-          <p><%= "short headline here 25 characters max" %></p>
+          <p><%= specials.short_description %></p>
         </div>
         </a>
       </div>

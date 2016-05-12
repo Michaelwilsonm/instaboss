@@ -12360,10 +12360,629 @@ return jQuery;
   };
 
 }).call(this);
+(function() {
+  var WiceGridProcessor;
+
+  WiceGridProcessor = (function() {
+    function WiceGridProcessor(name, baseRequestForFilter, baseLinkForShowAllRecords, linkForExport, parameterNameForQueryLoading, parameterNameForFocus, environment) {
+      this.name = name;
+      this.baseRequestForFilter = baseRequestForFilter;
+      this.baseLinkForShowAllRecords = baseLinkForShowAllRecords;
+      this.linkForExport = linkForExport;
+      this.parameterNameForQueryLoading = parameterNameForQueryLoading;
+      this.parameterNameForFocus = parameterNameForFocus;
+      this.environment = environment;
+      this.filterDeclarations = new Array();
+      this.checkIfJsFrameworkIsLoaded();
+    }
+
+    WiceGridProcessor.prototype.checkIfJsFrameworkIsLoaded = function() {
+      if (!jQuery) {
+        return alert("jQuery not loaded, WiceGrid cannot proceed!");
+      }
+    };
+
+    WiceGridProcessor.prototype.toString = function() {
+      return "<WiceGridProcessor instance for grid '" + this.name + "'>";
+    };
+
+    WiceGridProcessor.prototype.process = function(domIdToFocus) {
+      return this.visit(this.buildUrlWithParams(domIdToFocus));
+    };
+
+    WiceGridProcessor.prototype.visit = function(path) {
+      if (typeof Turbolinks !== "undefined" && Turbolinks !== null) {
+        return Turbolinks.visit(path);
+      } else {
+        return window.location = path;
+      }
+    };
+
+    WiceGridProcessor.prototype.setProcessTimer = function(domIdToFocus) {
+      var processor;
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
+      processor = this;
+      return this.timer = setTimeout(function() {
+        return processor.process(domIdToFocus);
+      }, 1000);
+    };
+
+    WiceGridProcessor.prototype.reloadPageForGivenGridState = function(gridState) {
+      var requestPath;
+      requestPath = this.gridStateToRequest(gridState);
+      return this.visit(this.appendToUrl(this.baseLinkForShowAllRecords, requestPath));
+    };
+
+    WiceGridProcessor.prototype.gridStateToRequest = function(gridState) {
+      return jQuery.map(gridState, function(pair) {
+        return encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]);
+      }).join('&');
+    };
+
+    WiceGridProcessor.prototype.appendToUrl = function(url, str) {
+      var sep;
+      sep = url.indexOf('?') !== -1 ? /[&\?]$/.exec(url) ? '' : '&' : '?';
+      return url + sep + str;
+    };
+
+    WiceGridProcessor.prototype.buildUrlWithParams = function(domIdToFocus) {
+      var allFilterParams, res, results;
+      results = new Array();
+      jQuery.each(this.filterDeclarations, (function(_this) {
+        return function(i, filterDeclaration) {
+          var param;
+          param = _this.readValuesAndFormQueryString(filterDeclaration.filterName, filterDeclaration.detached, filterDeclaration.templates, filterDeclaration.ids);
+          if (param && param !== '') {
+            return results.push(param);
+          }
+        };
+      })(this));
+      res = this.baseRequestForFilter;
+      if (results.length !== 0) {
+        allFilterParams = results.join('&');
+        res = this.appendToUrl(res, allFilterParams);
+      }
+      if (domIdToFocus) {
+        res = this.appendToUrl(res, this.parameterNameForFocus + domIdToFocus);
+      }
+      return res;
+    };
+
+    WiceGridProcessor.prototype.reset = function() {
+      return this.visit(this.baseRequestForFilter);
+    };
+
+    WiceGridProcessor.prototype.exportToCsv = function() {
+      return this.visit(this.linkForExport);
+    };
+
+    WiceGridProcessor.prototype.register = function(func) {
+      return this.filterDeclarations.push(func);
+    };
+
+    WiceGridProcessor.prototype.readValuesAndFormQueryString = function(filterName, detached, templates, ids) {
+      var el, i, j, k, l, message, ref, ref1, res, val;
+      res = new Array();
+      for (i = k = 0, ref = templates.length - 1; 0 <= ref ? k <= ref : k >= ref; i = 0 <= ref ? ++k : --k) {
+        if ($(ids[i]) === null) {
+          if (this.environment === "development") {
+            message = 'WiceGrid: Error reading state of filter "' + filterName + '". No DOM element with id "' + ids[i] + '" found.';
+            if (detached) {
+              message += 'You have declared "' + filterName + '" as a detached filter but have not output it anywhere in the template. Read documentation about detached filters.';
+            }
+            alert(message);
+          }
+          return '';
+        }
+        el = $('#' + ids[i]);
+        if (el[0] && el[0].type === 'checkbox') {
+          if (el[0].checked) {
+            val = 1;
+          }
+        } else {
+          val = el.val();
+        }
+        if (val instanceof Array) {
+          for (j = l = 0, ref1 = val.length - 1; 0 <= ref1 ? l <= ref1 : l >= ref1; j = 0 <= ref1 ? ++l : --l) {
+            if (val[j] && val[j] !== "") {
+              res.push(templates[i] + encodeURIComponent(val[j]));
+            }
+          }
+        } else if (val && val !== '') {
+          res.push(templates[i] + encodeURIComponent(val));
+        }
+      }
+      return res.join('&');
+    };
+
+    WiceGridProcessor;
+
+    return WiceGridProcessor;
+
+  })();
+
+  WiceGridProcessor._version = '3.4';
+
+  window['WiceGridProcessor'] = WiceGridProcessor;
+
+}).call(this);
+(function() {
+  var focusElementIfNeeded, getGridProcessorForElement, globalVarForAllGrids, initWiceGrid, isKeySignificant, moveDateBoundIfInvalidPeriod, setupAutoreloadsForExternalFilters, setupAutoreloadsForInternalFilters, setupBootstrapDatepicker, setupBulkToggleForActionColumn, setupCsvExport, setupDatepicker, setupExternalCsvExport, setupExternalSubmitReset, setupHidingShowingOfFilterRow, setupJqueryUiDatepicker, setupMultiSelectToggle, setupShowingAllRecords, setupSubmitReset;
+
+  $(document).on('page:load ready', function() {
+    return initWiceGrid();
+  });
+
+  globalVarForAllGrids = 'wiceGrids';
+
+  initWiceGrid = function() {
+    $(".wice-grid-container").each(function(index, wiceGridContainer) {
+      var dataDiv, filterDeclaration, filterDeclarations, fn, gridName, gridProcessor, i, len, processorInitializerArguments;
+      gridName = wiceGridContainer.id;
+      dataDiv = $(".wg-data", wiceGridContainer);
+      processorInitializerArguments = dataDiv.data("processor-initializer-arguments");
+      filterDeclarations = dataDiv.data("filter-declarations");
+      focusElementIfNeeded(dataDiv.data("foc"));
+      gridProcessor = new WiceGridProcessor(gridName, processorInitializerArguments[0], processorInitializerArguments[1], processorInitializerArguments[2], processorInitializerArguments[3], processorInitializerArguments[4], processorInitializerArguments[5]);
+      fn = function(filterDeclaration) {
+        if (filterDeclaration != null) {
+          return gridProcessor.register({
+            filterName: filterDeclaration.filterName,
+            detached: filterDeclaration.detached,
+            templates: filterDeclaration.declaration.templates,
+            ids: filterDeclaration.declaration.ids
+          });
+        }
+      };
+      for (i = 0, len = filterDeclarations.length; i < len; i++) {
+        filterDeclaration = filterDeclarations[i];
+        fn(filterDeclaration);
+      }
+      if (!window[globalVarForAllGrids]) {
+        window[globalVarForAllGrids] = {};
+      }
+      window[globalVarForAllGrids][gridName] = gridProcessor;
+      setupSubmitReset(wiceGridContainer, gridProcessor);
+      setupCsvExport(wiceGridContainer, gridProcessor);
+      setupHidingShowingOfFilterRow(wiceGridContainer);
+      setupShowingAllRecords(wiceGridContainer, gridProcessor);
+      setupMultiSelectToggle(wiceGridContainer);
+      setupAutoreloadsForInternalFilters(wiceGridContainer, gridProcessor);
+      return setupBulkToggleForActionColumn(wiceGridContainer);
+    });
+    setupAutoreloadsForExternalFilters();
+    setupExternalSubmitReset();
+    setupExternalCsvExport();
+    setupDatepicker();
+    return setupMultiSelectToggle($('.wg-detached-filter'));
+  };
+
+  moveDateBoundIfInvalidPeriod = function(dataFieldNameWithTheOtherDatepicker, datepickerHiddenField, selectedDate, dateFormat, predicate) {
+    var _datepickerId, datepickerId, theOtherDate, theOtherDatepicker;
+    if ((datepickerId = datepickerHiddenField.data(dataFieldNameWithTheOtherDatepicker)) && (theOtherDatepicker = $(_datepickerId = "#" + datepickerId)) && (theOtherDate = theOtherDatepicker.datepicker('getDate')) && predicate(theOtherDate, selectedDate)) {
+      theOtherDatepicker.datepicker("setDate", selectedDate);
+      return theOtherDatepicker.next().next().html($.datepicker.formatDate(dateFormat, selectedDate));
+    }
+  };
+
+  setupDatepicker = function() {
+    if ($('.date-filter.wg-jquery-datepicker').length !== 0) {
+      setupJqueryUiDatepicker();
+    }
+    if ($('.date-filter.wg-bootstrap-datepicker').length !== 0) {
+      return setupBootstrapDatepicker();
+    }
+  };
+
+  setupBootstrapDatepicker = function() {
+    if (!$.fn.datepicker) {
+      alert("Seems like you do not have Bootstrap datepicker gem (https://github.com/Nerian/bootstrap-datepicker-rails)\ninstalled. Either install it pick another filter with :filter_type.");
+      return;
+    }
+    return $('.date-filter.wg-bootstrap-datepicker input:text[data-provide=datepicker]').each(function(index, dateField) {
+      return $(dateField).datepicker().on('hide', function(event) {
+        var $self, $to, eventToTriggerOnChange;
+        $self = $(event.currentTarget);
+        eventToTriggerOnChange = $self.data('close-calendar-event-name');
+        if (eventToTriggerOnChange) {
+          return $self.trigger(eventToTriggerOnChange);
+        } else if ($self.attr('id').split('_').pop() === 'fr') {
+          $to = $self.parent().next().find('input:text.check-for-bsdatepicker');
+          if ($to.length > 0) {
+            return $to.datepicker('show');
+          }
+        }
+      });
+    });
+  };
+
+  setupJqueryUiDatepicker = function() {
+    var locale;
+    if (!$.datepicker) {
+      alert("Seems like you do not have jQuery datepicker (http://jqueryui.com/demos/datepicker/)\ninstalled. Either install it pick another filter with :filter_type.");
+    }
+    if (locale = $('.date-filter.wg-jquery-datepicker input[type=hidden]').data('locale')) {
+      $.datepicker.setDefaults($.datepicker.regional[locale]);
+    }
+    return $('.date-filter.wg-jquery-datepicker .date-label').each(function(index, removeLink) {
+      var dateFormat, datepickerContainer, datepickerHiddenField, eventToTriggerOnChange, labelText, newlyAdded, that, yearRange;
+      datepickerHiddenField = $('#' + $(removeLink).data('dom-id'));
+      eventToTriggerOnChange = datepickerHiddenField.data('close-calendar-event-name');
+      $(removeLink).click(function(event) {
+        $(this).html('');
+        datepickerHiddenField.val('');
+        if (eventToTriggerOnChange) {
+          datepickerHiddenField.trigger(eventToTriggerOnChange);
+        }
+        event.preventDefault();
+        return false;
+      });
+      that = this;
+      dateFormat = datepickerHiddenField.data('date-format');
+      yearRange = datepickerHiddenField.data('date-year-range');
+      labelText = datepickerHiddenField.data('button-text');
+      datepickerHiddenField.datepicker({
+        firstDay: 1,
+        dateFormat: dateFormat,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: yearRange,
+        onSelect: function(dateText, inst) {
+          var selectedDate;
+          selectedDate = $(this).datepicker("getDate");
+          moveDateBoundIfInvalidPeriod('the-other-datepicker-id-to', datepickerHiddenField, selectedDate, dateFormat, function(theOther, selected) {
+            return theOther < selected;
+          });
+          moveDateBoundIfInvalidPeriod('the-other-datepicker-id-from', datepickerHiddenField, selectedDate, dateFormat, function(theOther, selected) {
+            return theOther > selected;
+          });
+          $(that).html(dateText);
+          if (eventToTriggerOnChange) {
+            return datepickerHiddenField.trigger(eventToTriggerOnChange);
+          }
+        }
+      });
+      datepickerContainer = datepickerHiddenField.parent();
+      $(removeLink).before(" <i class=\"fa fa-calendar ui-datepicker-trigger\" title=\"" + labelText + "\" ></i> ");
+      newlyAdded = $('.fa-calendar', datepickerContainer);
+      return newlyAdded.click(function() {
+        return datepickerHiddenField.datepicker("show");
+      });
+    });
+  };
+
+  setupHidingShowingOfFilterRow = function(wiceGridContainer) {
+    var filterRow, hideFilter, showFilter;
+    hideFilter = '.wg-hide-filter';
+    showFilter = '.wg-show-filter';
+    filterRow = '.wg-filter-row';
+    $(hideFilter, wiceGridContainer).click(function() {
+      $(this).hide();
+      $(showFilter, wiceGridContainer).show();
+      return $(filterRow, wiceGridContainer).hide();
+    });
+    return $(showFilter, wiceGridContainer).click(function() {
+      $(this).hide();
+      $(hideFilter, wiceGridContainer).show();
+      return $(filterRow, wiceGridContainer).show();
+    });
+  };
+
+  setupCsvExport = function(wiceGridContainer, gridProcessor) {
+    return $('.export-to-csv-button', wiceGridContainer).click(function() {
+      return gridProcessor.exportToCsv();
+    });
+  };
+
+  setupSubmitReset = function(wiceGridContainer, gridProcessor) {
+    $('.submit', wiceGridContainer).click(function() {
+      return gridProcessor.process();
+    });
+    $('.reset', wiceGridContainer).click(function() {
+      return gridProcessor.reset();
+    });
+    return $('.wg-filter-row input[type=text], .wg-filter-row input:text[data-provide=datepicker]', wiceGridContainer).keydown(function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        return gridProcessor.process();
+      }
+    });
+  };
+
+  focusElementIfNeeded = function(focusId) {
+    var elToFocus, elements;
+    elements = $('#' + focusId);
+    if (elToFocus = elements[0]) {
+      elToFocus.value = elToFocus.value;
+      return elToFocus.focus();
+    }
+  };
+
+  setupAutoreloadsForInternalFilters = function(wiceGridContainer, gridProcessor) {
+    $('select.auto-reload, input.native-datepicker.auto-reload', wiceGridContainer).change(function() {
+      return gridProcessor.process();
+    });
+    $('input.auto-reload', wiceGridContainer).keyup(function(event) {
+      if (isKeySignificant(event.which)) {
+        return gridProcessor.setProcessTimer(this.id);
+      }
+    });
+    $('input.negation-checkbox.auto-reload', wiceGridContainer).click(function() {
+      return gridProcessor.process();
+    });
+    return $(document).bind('wg:calendarChanged_' + gridProcessor.name, function() {
+      return gridProcessor.process();
+    });
+  };
+
+  isKeySignificant = function(keyCode, func) {
+    return [37, 38, 39, 40, 9, 27].indexOf(keyCode) === -1;
+  };
+
+  setupAutoreloadsForExternalFilters = function() {
+    return $('.wg-detached-filter').each(function(index, detachedFilterContainer) {
+      var gridProcessor;
+      gridProcessor = getGridProcessorForElement(detachedFilterContainer);
+      if (gridProcessor) {
+        $('select.auto-reload, input.native-datepicker.auto-reload', detachedFilterContainer).change(function() {
+          return gridProcessor.process();
+        });
+        $('input.auto-reload', detachedFilterContainer).keyup(function(event) {
+          if (isKeySignificant(event.which)) {
+            return gridProcessor.setProcessTimer(this.id);
+          }
+        });
+        return $('input.negation-checkbox.auto-reload', detachedFilterContainer).click(function() {
+          return gridProcessor.process();
+        });
+      }
+    });
+  };
+
+  setupShowingAllRecords = function(wiceGridContainer, gridProcessor) {
+    return $('.wg-show-all-link, .wg-back-to-pagination-link', wiceGridContainer).click(function(event) {
+      var confirmationMessage, gridState, reloadGrid;
+      event.preventDefault();
+      gridState = $(this).data("grid-state");
+      confirmationMessage = $(this).data("confim-message");
+      reloadGrid = function() {
+        return gridProcessor.reloadPageForGivenGridState(gridState);
+      };
+      if (confirmationMessage) {
+        if (confirm(confirmationMessage)) {
+          return reloadGrid();
+        }
+      } else {
+        return reloadGrid();
+      }
+    });
+  };
+
+  setupMultiSelectToggle = function(wiceGridContainer) {
+    $('.expand-multi-select-icon', wiceGridContainer).click(function() {
+      $(this).prev().each(function(index, select) {
+        return select.multiple = true;
+      });
+      $(this).next().show();
+      return $(this).hide();
+    });
+    return $('.collapse-multi-select-icon', wiceGridContainer).click(function() {
+      $(this).prev().prev().each(function(index, select) {
+        return select.multiple = false;
+      });
+      $(this).prev().show();
+      return $(this).hide();
+    });
+  };
+
+  setupBulkToggleForActionColumn = function(wiceGridContainer) {
+    $('.select-all', wiceGridContainer).click(function() {
+      return $('.sel input', wiceGridContainer).prop('checked', true).trigger('change');
+    });
+    $('.deselect-all', wiceGridContainer).click(function() {
+      return $('.sel input', wiceGridContainer).prop('checked', false).trigger('change');
+    });
+    return $('.wg-select-all', wiceGridContainer).click(function() {
+      return $('.sel input', wiceGridContainer).prop('checked', $(this).prop('checked')).trigger('change');
+    });
+  };
+
+  getGridProcessorForElement = function(element) {
+    var gridName;
+    gridName = $(element).data('grid-name');
+    if (gridName && window[globalVarForAllGrids]) {
+      return window[globalVarForAllGrids][gridName];
+    } else {
+      return null;
+    }
+  };
+
+  setupExternalCsvExport = function() {
+    return $(".wg-external-csv-export-button").each(function(index, externalCsvExportButton) {
+      var gridProcessor;
+      gridProcessor = getGridProcessorForElement(externalCsvExportButton);
+      if (gridProcessor) {
+        return $(externalCsvExportButton).click(function(event) {
+          return gridProcessor.exportToCsv();
+        });
+      }
+    });
+  };
+
+  setupExternalSubmitReset = function() {
+    $(".wg-external-submit-button").each(function(index, externalSubmitButton) {
+      var gridProcessor;
+      gridProcessor = getGridProcessorForElement(externalSubmitButton);
+      if (gridProcessor) {
+        return $(externalSubmitButton).click(function(event) {
+          gridProcessor.process();
+          event.preventDefault();
+          return false;
+        });
+      }
+    });
+    $(".wg-external-reset-button").each(function(index, externalResetButton) {
+      var gridProcessor;
+      gridProcessor = getGridProcessorForElement(externalResetButton);
+      if (gridProcessor) {
+        return $(externalResetButton).click(function(event) {
+          gridProcessor.reset();
+          event.preventDefault();
+          return false;
+        });
+      }
+    });
+    return $('.wg-detached-filter').each(function(index, detachedFilterContainer) {
+      var gridProcessor;
+      gridProcessor = getGridProcessorForElement(detachedFilterContainer);
+      if (gridProcessor) {
+        return $('input[type=text], input:text[data-provide=datepicker]', this).keydown(function(event) {
+          if (event.keyCode === 13) {
+            gridProcessor.process();
+            event.preventDefault();
+            return false;
+          }
+        });
+      }
+    });
+  };
+
+  window['getGridProcessorForElement'] = getGridProcessorForElement;
+
+  window['initWiceGrid'] = initWiceGrid;
+
+}).call(this);
+(function() {
+  var deleteQuery, loadQuery, onChangeToQueryList, saveQuery, savedQueriesInit;
+
+  $(document).on('page:load ready', function() {
+    return savedQueriesInit();
+  });
+
+  savedQueriesInit = function() {
+    $('.wice-grid-save-query-field').keydown(function(event) {
+      if (event.keyCode === 13) {
+        return saveQuery($(this).next(), event);
+      }
+    });
+    $(".wice-grid-save-query-button").click(function(event) {
+      return saveQuery(this, event);
+    });
+    $(".wice-grid-delete-query").click(function(event) {
+      return deleteQuery(this, event);
+    });
+    return $(".wice-grid-query-load-link").click(function(event) {
+      return loadQuery(this, event);
+    });
+  };
+
+  loadQuery = function(loadLink, event) {
+    var gridProcessor, queryId, request;
+    if (gridProcessor = window.getGridProcessorForElement(loadLink)) {
+      queryId = $(loadLink).data('query-id');
+      request = gridProcessor.appendToUrl(gridProcessor.buildUrlWithParams(), gridProcessor.parameterNameForQueryLoading + encodeURIComponent(queryId));
+      gridProcessor.visit(request);
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+
+  deleteQuery = function(deleteQueryButton, event) {
+    var confirmation, gridProcessor, invokeConfirmation;
+    confirmation = $(deleteQueryButton).data('wg-confirm');
+    invokeConfirmation = confirmation ? function() {
+      return confirm(confirmation);
+    } : function() {
+      return true;
+    };
+    if (invokeConfirmation() && (gridProcessor = window.getGridProcessorForElement(deleteQueryButton))) {
+      jQuery.ajax({
+        url: $(deleteQueryButton).attr('href'),
+        async: true,
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR) {
+          return onChangeToQueryList(data, gridProcessor.name);
+        },
+        type: 'POST'
+      });
+    }
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+
+  saveQuery = function(saveQueryButton, event) {
+    var _saveQueryButton, basePathToQueryController, gridProcessor, gridState, inputField, inputIds, queryName, requestPath;
+    if (gridProcessor = window.getGridProcessorForElement(saveQueryButton)) {
+      _saveQueryButton = $(saveQueryButton);
+      basePathToQueryController = _saveQueryButton.data('base-path-to-query-controller');
+      gridState = _saveQueryButton.data('parameters');
+      inputIds = _saveQueryButton.data('ids');
+      inputField = _saveQueryButton.prev();
+      if (inputIds instanceof Array) {
+        inputIds.each(function(domId) {
+          return gridState.push(['extra[' + domId + ']', $('#' + domId).val()]);
+        });
+      }
+      queryName = inputField.val();
+      requestPath = gridProcessor.gridStateToRequest(gridState);
+      jQuery.ajax({
+        url: basePathToQueryController,
+        async: true,
+        data: requestPath + '&query_name=' + encodeURIComponent(queryName),
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR) {
+          return onChangeToQueryList(data, gridProcessor.name, queryName, inputField);
+        },
+        type: 'POST'
+      });
+      event.preventDefault();
+      return false;
+    }
+  };
+
+  onChangeToQueryList = function(data, gridName, queryName, inputField) {
+    var errorMessages, gridTitleId, notificationMessages, notificationMessagesDomId, queryListId;
+    notificationMessagesDomId = "#" + gridName + "_notification_messages";
+    gridTitleId = "#" + gridName + "_title";
+    queryListId = "#" + gridName + "_query_list";
+    if (queryName) {
+      inputField.val('');
+    }
+    if (errorMessages = data['error_messages']) {
+      return $(notificationMessagesDomId).text(errorMessages);
+    } else {
+      if (notificationMessages = data['notification_messages']) {
+        $(notificationMessagesDomId).text(notificationMessages);
+      }
+      if (queryName) {
+        $(gridTitleId).html("<h3>" + queryName + "</h3>");
+      }
+      $(queryListId).replaceWith(data['query_list']);
+      if (jQuery.ui) {
+        $(queryListId).effect('highlight');
+      }
+      $(".wice-grid-delete-query", $(queryListId)).click(function(event) {
+        return deleteQuery(this, event);
+      });
+      return $(".wice-grid-query-load-link", $(queryListId)).click(function(event) {
+        return loadQuery(this, event);
+      });
+    }
+  };
+
+}).call(this);
+
+
+
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Casual', 'Going Out', 'Summer', 'Work'], 'Jeans, Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Lifestyle': ['Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jumpers & Cardigans', 'Formal'] };
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Casual', 'Going Out', 'Summer', 'Work'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Lifestyle': ['Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jumpers & Cardigans', 'Formal'] };
 
     var mensCategories = {'Accessories': ['Underwear & Socks', 'Hats', 'Grooming', 'Jewellery'], 'Formal': ['Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -12476,6 +13095,10 @@ $(document).ready(function() {
 
     $('.fashion_item_form').validate({
       rules: {
+        'FashionItem[short_description]' : {
+              required: true,
+              maxlength: 25
+          },
           'FashionItem[item_image]' : {
               required: true
           },
@@ -12497,6 +13120,10 @@ $(document).ready(function() {
 
     $('.edit_fashion_item').validate({
       rules: {
+        'FashionItem[short_description]' : {
+              required: true,
+              maxlength: 25
+          },
         'FashionItem[item_image]' : {
               required: false
           },
@@ -12539,26 +13166,17 @@ $(document).ready(function() {
  * Copyright (c) 2015 JÃ¶rn Zaefferer; Licensed MIT */
 
 !function(a){"function"==typeof define&&define.amd?define(["jquery"],a):a(jQuery)}(function(a){a.extend(a.fn,{validate:function(b){if(!this.length)return void(b&&b.debug&&window.console&&console.warn("Nothing selected, can't validate, returning nothing."));var c=a.data(this[0],"validator");return c?c:(this.attr("novalidate","novalidate"),c=new a.validator(b,this[0]),a.data(this[0],"validator",c),c.settings.onsubmit&&(this.on("click.validate",":submit",function(b){c.settings.submitHandler&&(c.submitButton=b.target),a(this).hasClass("cancel")&&(c.cancelSubmit=!0),void 0!==a(this).attr("formnovalidate")&&(c.cancelSubmit=!0)}),this.on("submit.validate",function(b){function d(){var d,e;return c.settings.submitHandler?(c.submitButton&&(d=a("<input type='hidden'/>").attr("name",c.submitButton.name).val(a(c.submitButton).val()).appendTo(c.currentForm)),e=c.settings.submitHandler.call(c,c.currentForm,b),c.submitButton&&d.remove(),void 0!==e?e:!1):!0}return c.settings.debug&&b.preventDefault(),c.cancelSubmit?(c.cancelSubmit=!1,d()):c.form()?c.pendingRequest?(c.formSubmitted=!0,!1):d():(c.focusInvalid(),!1)})),c)},valid:function(){var b,c,d;return a(this[0]).is("form")?b=this.validate().form():(d=[],b=!0,c=a(this[0].form).validate(),this.each(function(){b=c.element(this)&&b,d=d.concat(c.errorList)}),c.errorList=d),b},rules:function(b,c){var d,e,f,g,h,i,j=this[0];if(b)switch(d=a.data(j.form,"validator").settings,e=d.rules,f=a.validator.staticRules(j),b){case"add":a.extend(f,a.validator.normalizeRule(c)),delete f.messages,e[j.name]=f,c.messages&&(d.messages[j.name]=a.extend(d.messages[j.name],c.messages));break;case"remove":return c?(i={},a.each(c.split(/\s/),function(b,c){i[c]=f[c],delete f[c],"required"===c&&a(j).removeAttr("aria-required")}),i):(delete e[j.name],f)}return g=a.validator.normalizeRules(a.extend({},a.validator.classRules(j),a.validator.attributeRules(j),a.validator.dataRules(j),a.validator.staticRules(j)),j),g.required&&(h=g.required,delete g.required,g=a.extend({required:h},g),a(j).attr("aria-required","true")),g.remote&&(h=g.remote,delete g.remote,g=a.extend(g,{remote:h})),g}}),a.extend(a.expr[":"],{blank:function(b){return!a.trim(""+a(b).val())},filled:function(b){return!!a.trim(""+a(b).val())},unchecked:function(b){return!a(b).prop("checked")}}),a.validator=function(b,c){this.settings=a.extend(!0,{},a.validator.defaults,b),this.currentForm=c,this.init()},a.validator.format=function(b,c){return 1===arguments.length?function(){var c=a.makeArray(arguments);return c.unshift(b),a.validator.format.apply(this,c)}:(arguments.length>2&&c.constructor!==Array&&(c=a.makeArray(arguments).slice(1)),c.constructor!==Array&&(c=[c]),a.each(c,function(a,c){b=b.replace(new RegExp("\\{"+a+"\\}","g"),function(){return c})}),b)},a.extend(a.validator,{defaults:{messages:{},groups:{},rules:{},errorClass:"error",validClass:"valid",errorElement:"label",focusCleanup:!1,focusInvalid:!0,errorContainer:a([]),errorLabelContainer:a([]),onsubmit:!0,ignore:":hidden",ignoreTitle:!1,onfocusin:function(a){this.lastActive=a,this.settings.focusCleanup&&(this.settings.unhighlight&&this.settings.unhighlight.call(this,a,this.settings.errorClass,this.settings.validClass),this.hideThese(this.errorsFor(a)))},onfocusout:function(a){this.checkable(a)||!(a.name in this.submitted)&&this.optional(a)||this.element(a)},onkeyup:function(b,c){var d=[16,17,18,20,35,36,37,38,39,40,45,144,225];9===c.which&&""===this.elementValue(b)||-1!==a.inArray(c.keyCode,d)||(b.name in this.submitted||b===this.lastElement)&&this.element(b)},onclick:function(a){a.name in this.submitted?this.element(a):a.parentNode.name in this.submitted&&this.element(a.parentNode)},highlight:function(b,c,d){"radio"===b.type?this.findByName(b.name).addClass(c).removeClass(d):a(b).addClass(c).removeClass(d)},unhighlight:function(b,c,d){"radio"===b.type?this.findByName(b.name).removeClass(c).addClass(d):a(b).removeClass(c).addClass(d)}},setDefaults:function(b){a.extend(a.validator.defaults,b)},messages:{required:"This field is required.",remote:"Please fix this field.",email:"Please enter a valid email address.",url:"Please enter a valid URL.",date:"Please enter a valid date.",dateISO:"Please enter a valid date ( ISO ).",number:"Please enter a valid number.",digits:"Please enter only digits.",creditcard:"Please enter a valid credit card number.",equalTo:"Please enter the same value again.",maxlength:a.validator.format("Please enter no more than {0} characters."),minlength:a.validator.format("Please enter at least {0} characters."),rangelength:a.validator.format("Please enter a value between {0} and {1} characters long."),range:a.validator.format("Please enter a value between {0} and {1}."),max:a.validator.format("Please enter a value less than or equal to {0}."),min:a.validator.format("Please enter a value greater than or equal to {0}.")},autoCreateRanges:!1,prototype:{init:function(){function b(b){var c=a.data(this.form,"validator"),d="on"+b.type.replace(/^validate/,""),e=c.settings;e[d]&&!a(this).is(e.ignore)&&e[d].call(c,this,b)}this.labelContainer=a(this.settings.errorLabelContainer),this.errorContext=this.labelContainer.length&&this.labelContainer||a(this.currentForm),this.containers=a(this.settings.errorContainer).add(this.settings.errorLabelContainer),this.submitted={},this.valueCache={},this.pendingRequest=0,this.pending={},this.invalid={},this.reset();var c,d=this.groups={};a.each(this.settings.groups,function(b,c){"string"==typeof c&&(c=c.split(/\s/)),a.each(c,function(a,c){d[c]=b})}),c=this.settings.rules,a.each(c,function(b,d){c[b]=a.validator.normalizeRule(d)}),a(this.currentForm).on("focusin.validate focusout.validate keyup.validate",":text, [type='password'], [type='file'], select, textarea, [type='number'], [type='search'], [type='tel'], [type='url'], [type='email'], [type='datetime'], [type='date'], [type='month'], [type='week'], [type='time'], [type='datetime-local'], [type='range'], [type='color'], [type='radio'], [type='checkbox']",b).on("click.validate","select, option, [type='radio'], [type='checkbox']",b),this.settings.invalidHandler&&a(this.currentForm).on("invalid-form.validate",this.settings.invalidHandler),a(this.currentForm).find("[required], [data-rule-required], .required").attr("aria-required","true")},form:function(){return this.checkForm(),a.extend(this.submitted,this.errorMap),this.invalid=a.extend({},this.errorMap),this.valid()||a(this.currentForm).triggerHandler("invalid-form",[this]),this.showErrors(),this.valid()},checkForm:function(){this.prepareForm();for(var a=0,b=this.currentElements=this.elements();b[a];a++)this.check(b[a]);return this.valid()},element:function(b){var c=this.clean(b),d=this.validationTargetFor(c),e=!0;return this.lastElement=d,void 0===d?delete this.invalid[c.name]:(this.prepareElement(d),this.currentElements=a(d),e=this.check(d)!==!1,e?delete this.invalid[d.name]:this.invalid[d.name]=!0),a(b).attr("aria-invalid",!e),this.numberOfInvalids()||(this.toHide=this.toHide.add(this.containers)),this.showErrors(),e},showErrors:function(b){if(b){a.extend(this.errorMap,b),this.errorList=[];for(var c in b)this.errorList.push({message:b[c],element:this.findByName(c)[0]});this.successList=a.grep(this.successList,function(a){return!(a.name in b)})}this.settings.showErrors?this.settings.showErrors.call(this,this.errorMap,this.errorList):this.defaultShowErrors()},resetForm:function(){a.fn.resetForm&&a(this.currentForm).resetForm(),this.submitted={},this.lastElement=null,this.prepareForm(),this.hideErrors();var b,c=this.elements().removeData("previousValue").removeAttr("aria-invalid");if(this.settings.unhighlight)for(b=0;c[b];b++)this.settings.unhighlight.call(this,c[b],this.settings.errorClass,"");else c.removeClass(this.settings.errorClass)},numberOfInvalids:function(){return this.objectLength(this.invalid)},objectLength:function(a){var b,c=0;for(b in a)c++;return c},hideErrors:function(){this.hideThese(this.toHide)},hideThese:function(a){a.not(this.containers).text(""),this.addWrapper(a).hide()},valid:function(){return 0===this.size()},size:function(){return this.errorList.length},focusInvalid:function(){if(this.settings.focusInvalid)try{a(this.findLastActive()||this.errorList.length&&this.errorList[0].element||[]).filter(":visible").focus().trigger("focusin")}catch(b){}},findLastActive:function(){var b=this.lastActive;return b&&1===a.grep(this.errorList,function(a){return a.element.name===b.name}).length&&b},elements:function(){var b=this,c={};return a(this.currentForm).find("input, select, textarea").not(":submit, :reset, :image, :disabled").not(this.settings.ignore).filter(function(){return!this.name&&b.settings.debug&&window.console&&console.error("%o has no name assigned",this),this.name in c||!b.objectLength(a(this).rules())?!1:(c[this.name]=!0,!0)})},clean:function(b){return a(b)[0]},errors:function(){var b=this.settings.errorClass.split(" ").join(".");return a(this.settings.errorElement+"."+b,this.errorContext)},reset:function(){this.successList=[],this.errorList=[],this.errorMap={},this.toShow=a([]),this.toHide=a([]),this.currentElements=a([])},prepareForm:function(){this.reset(),this.toHide=this.errors().add(this.containers)},prepareElement:function(a){this.reset(),this.toHide=this.errorsFor(a)},elementValue:function(b){var c,d=a(b),e=b.type;return"radio"===e||"checkbox"===e?this.findByName(b.name).filter(":checked").val():"number"===e&&"undefined"!=typeof b.validity?b.validity.badInput?!1:d.val():(c=d.val(),"string"==typeof c?c.replace(/\r/g,""):c)},check:function(b){b=this.validationTargetFor(this.clean(b));var c,d,e,f=a(b).rules(),g=a.map(f,function(a,b){return b}).length,h=!1,i=this.elementValue(b);for(d in f){e={method:d,parameters:f[d]};try{if(c=a.validator.methods[d].call(this,i,b,e.parameters),"dependency-mismatch"===c&&1===g){h=!0;continue}if(h=!1,"pending"===c)return void(this.toHide=this.toHide.not(this.errorsFor(b)));if(!c)return this.formatAndAdd(b,e),!1}catch(j){throw this.settings.debug&&window.console&&console.log("Exception occurred when checking element "+b.id+", check the '"+e.method+"' method.",j),j instanceof TypeError&&(j.message+=".  Exception occurred when checking element "+b.id+", check the '"+e.method+"' method."),j}}if(!h)return this.objectLength(f)&&this.successList.push(b),!0},customDataMessage:function(b,c){return a(b).data("msg"+c.charAt(0).toUpperCase()+c.substring(1).toLowerCase())||a(b).data("msg")},customMessage:function(a,b){var c=this.settings.messages[a];return c&&(c.constructor===String?c:c[b])},findDefined:function(){for(var a=0;a<arguments.length;a++)if(void 0!==arguments[a])return arguments[a];return void 0},defaultMessage:function(b,c){return this.findDefined(this.customMessage(b.name,c),this.customDataMessage(b,c),!this.settings.ignoreTitle&&b.title||void 0,a.validator.messages[c],"<strong>Warning: No message defined for "+b.name+"</strong>")},formatAndAdd:function(b,c){var d=this.defaultMessage(b,c.method),e=/\$?\{(\d+)\}/g;"function"==typeof d?d=d.call(this,c.parameters,b):e.test(d)&&(d=a.validator.format(d.replace(e,"{$1}"),c.parameters)),this.errorList.push({message:d,element:b,method:c.method}),this.errorMap[b.name]=d,this.submitted[b.name]=d},addWrapper:function(a){return this.settings.wrapper&&(a=a.add(a.parent(this.settings.wrapper))),a},defaultShowErrors:function(){var a,b,c;for(a=0;this.errorList[a];a++)c=this.errorList[a],this.settings.highlight&&this.settings.highlight.call(this,c.element,this.settings.errorClass,this.settings.validClass),this.showLabel(c.element,c.message);if(this.errorList.length&&(this.toShow=this.toShow.add(this.containers)),this.settings.success)for(a=0;this.successList[a];a++)this.showLabel(this.successList[a]);if(this.settings.unhighlight)for(a=0,b=this.validElements();b[a];a++)this.settings.unhighlight.call(this,b[a],this.settings.errorClass,this.settings.validClass);this.toHide=this.toHide.not(this.toShow),this.hideErrors(),this.addWrapper(this.toShow).show()},validElements:function(){return this.currentElements.not(this.invalidElements())},invalidElements:function(){return a(this.errorList).map(function(){return this.element})},showLabel:function(b,c){var d,e,f,g=this.errorsFor(b),h=this.idOrName(b),i=a(b).attr("aria-describedby");g.length?(g.removeClass(this.settings.validClass).addClass(this.settings.errorClass),g.html(c)):(g=a("<"+this.settings.errorElement+">").attr("id",h+"-error").addClass(this.settings.errorClass).html(c||""),d=g,this.settings.wrapper&&(d=g.hide().show().wrap("<"+this.settings.wrapper+"/>").parent()),this.labelContainer.length?this.labelContainer.append(d):this.settings.errorPlacement?this.settings.errorPlacement(d,a(b)):d.insertAfter(b),g.is("label")?g.attr("for",h):0===g.parents("label[for='"+h+"']").length&&(f=g.attr("id").replace(/(:|\.|\[|\]|\$)/g,"\\$1"),i?i.match(new RegExp("\\b"+f+"\\b"))||(i+=" "+f):i=f,a(b).attr("aria-describedby",i),e=this.groups[b.name],e&&a.each(this.groups,function(b,c){c===e&&a("[name='"+b+"']",this.currentForm).attr("aria-describedby",g.attr("id"))}))),!c&&this.settings.success&&(g.text(""),"string"==typeof this.settings.success?g.addClass(this.settings.success):this.settings.success(g,b)),this.toShow=this.toShow.add(g)},errorsFor:function(b){var c=this.idOrName(b),d=a(b).attr("aria-describedby"),e="label[for='"+c+"'], label[for='"+c+"'] *";return d&&(e=e+", #"+d.replace(/\s+/g,", #")),this.errors().filter(e)},idOrName:function(a){return this.groups[a.name]||(this.checkable(a)?a.name:a.id||a.name)},validationTargetFor:function(b){return this.checkable(b)&&(b=this.findByName(b.name)),a(b).not(this.settings.ignore)[0]},checkable:function(a){return/radio|checkbox/i.test(a.type)},findByName:function(b){return a(this.currentForm).find("[name='"+b+"']")},getLength:function(b,c){switch(c.nodeName.toLowerCase()){case"select":return a("option:selected",c).length;case"input":if(this.checkable(c))return this.findByName(c.name).filter(":checked").length}return b.length},depend:function(a,b){return this.dependTypes[typeof a]?this.dependTypes[typeof a](a,b):!0},dependTypes:{"boolean":function(a){return a},string:function(b,c){return!!a(b,c.form).length},"function":function(a,b){return a(b)}},optional:function(b){var c=this.elementValue(b);return!a.validator.methods.required.call(this,c,b)&&"dependency-mismatch"},startRequest:function(a){this.pending[a.name]||(this.pendingRequest++,this.pending[a.name]=!0)},stopRequest:function(b,c){this.pendingRequest--,this.pendingRequest<0&&(this.pendingRequest=0),delete this.pending[b.name],c&&0===this.pendingRequest&&this.formSubmitted&&this.form()?(a(this.currentForm).submit(),this.formSubmitted=!1):!c&&0===this.pendingRequest&&this.formSubmitted&&(a(this.currentForm).triggerHandler("invalid-form",[this]),this.formSubmitted=!1)},previousValue:function(b){return a.data(b,"previousValue")||a.data(b,"previousValue",{old:null,valid:!0,message:this.defaultMessage(b,"remote")})},destroy:function(){this.resetForm(),a(this.currentForm).off(".validate").removeData("validator")}},classRuleSettings:{required:{required:!0},email:{email:!0},url:{url:!0},date:{date:!0},dateISO:{dateISO:!0},number:{number:!0},digits:{digits:!0},creditcard:{creditcard:!0}},addClassRules:function(b,c){b.constructor===String?this.classRuleSettings[b]=c:a.extend(this.classRuleSettings,b)},classRules:function(b){var c={},d=a(b).attr("class");return d&&a.each(d.split(" "),function(){this in a.validator.classRuleSettings&&a.extend(c,a.validator.classRuleSettings[this])}),c},normalizeAttributeRule:function(a,b,c,d){/min|max/.test(c)&&(null===b||/number|range|text/.test(b))&&(d=Number(d),isNaN(d)&&(d=void 0)),d||0===d?a[c]=d:b===c&&"range"!==b&&(a[c]=!0)},attributeRules:function(b){var c,d,e={},f=a(b),g=b.getAttribute("type");for(c in a.validator.methods)"required"===c?(d=b.getAttribute(c),""===d&&(d=!0),d=!!d):d=f.attr(c),this.normalizeAttributeRule(e,g,c,d);return e.maxlength&&/-1|2147483647|524288/.test(e.maxlength)&&delete e.maxlength,e},dataRules:function(b){var c,d,e={},f=a(b),g=b.getAttribute("type");for(c in a.validator.methods)d=f.data("rule"+c.charAt(0).toUpperCase()+c.substring(1).toLowerCase()),this.normalizeAttributeRule(e,g,c,d);return e},staticRules:function(b){var c={},d=a.data(b.form,"validator");return d.settings.rules&&(c=a.validator.normalizeRule(d.settings.rules[b.name])||{}),c},normalizeRules:function(b,c){return a.each(b,function(d,e){if(e===!1)return void delete b[d];if(e.param||e.depends){var f=!0;switch(typeof e.depends){case"string":f=!!a(e.depends,c.form).length;break;case"function":f=e.depends.call(c,c)}f?b[d]=void 0!==e.param?e.param:!0:delete b[d]}}),a.each(b,function(d,e){b[d]=a.isFunction(e)?e(c):e}),a.each(["minlength","maxlength"],function(){b[this]&&(b[this]=Number(b[this]))}),a.each(["rangelength","range"],function(){var c;b[this]&&(a.isArray(b[this])?b[this]=[Number(b[this][0]),Number(b[this][1])]:"string"==typeof b[this]&&(c=b[this].replace(/[\[\]]/g,"").split(/[\s,]+/),b[this]=[Number(c[0]),Number(c[1])]))}),a.validator.autoCreateRanges&&(null!=b.min&&null!=b.max&&(b.range=[b.min,b.max],delete b.min,delete b.max),null!=b.minlength&&null!=b.maxlength&&(b.rangelength=[b.minlength,b.maxlength],delete b.minlength,delete b.maxlength)),b},normalizeRule:function(b){if("string"==typeof b){var c={};a.each(b.split(/\s/),function(){c[this]=!0}),b=c}return b},addMethod:function(b,c,d){a.validator.methods[b]=c,a.validator.messages[b]=void 0!==d?d:a.validator.messages[b],c.length<3&&a.validator.addClassRules(b,a.validator.normalizeRule(b))},methods:{required:function(b,c,d){if(!this.depend(d,c))return"dependency-mismatch";if("select"===c.nodeName.toLowerCase()){var e=a(c).val();return e&&e.length>0}return this.checkable(c)?this.getLength(b,c)>0:b.length>0},email:function(a,b){return this.optional(b)||/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(a)},url:function(a,b){return this.optional(b)||/^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})).?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(a)},date:function(a,b){return this.optional(b)||!/Invalid|NaN/.test(new Date(a).toString())},dateISO:function(a,b){return this.optional(b)||/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(a)},number:function(a,b){return this.optional(b)||/^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(a)},digits:function(a,b){return this.optional(b)||/^\d+$/.test(a)},creditcard:function(a,b){if(this.optional(b))return"dependency-mismatch";if(/[^0-9 \-]+/.test(a))return!1;var c,d,e=0,f=0,g=!1;if(a=a.replace(/\D/g,""),a.length<13||a.length>19)return!1;for(c=a.length-1;c>=0;c--)d=a.charAt(c),f=parseInt(d,10),g&&(f*=2)>9&&(f-=9),e+=f,g=!g;return e%10===0},minlength:function(b,c,d){var e=a.isArray(b)?b.length:this.getLength(b,c);return this.optional(c)||e>=d},maxlength:function(b,c,d){var e=a.isArray(b)?b.length:this.getLength(b,c);return this.optional(c)||d>=e},rangelength:function(b,c,d){var e=a.isArray(b)?b.length:this.getLength(b,c);return this.optional(c)||e>=d[0]&&e<=d[1]},min:function(a,b,c){return this.optional(b)||a>=c},max:function(a,b,c){return this.optional(b)||c>=a},range:function(a,b,c){return this.optional(b)||a>=c[0]&&a<=c[1]},equalTo:function(b,c,d){var e=a(d);return this.settings.onfocusout&&e.off(".validate-equalTo").on("blur.validate-equalTo",function(){a(c).valid()}),b===e.val()},remote:function(b,c,d){if(this.optional(c))return"dependency-mismatch";var e,f,g=this.previousValue(c);return this.settings.messages[c.name]||(this.settings.messages[c.name]={}),g.originalMessage=this.settings.messages[c.name].remote,this.settings.messages[c.name].remote=g.message,d="string"==typeof d&&{url:d}||d,g.old===b?g.valid:(g.old=b,e=this,this.startRequest(c),f={},f[c.name]=b,a.ajax(a.extend(!0,{mode:"abort",port:"validate"+c.name,dataType:"json",data:f,context:e.currentForm,success:function(d){var f,h,i,j=d===!0||"true"===d;e.settings.messages[c.name].remote=g.originalMessage,j?(i=e.formSubmitted,e.prepareElement(c),e.formSubmitted=i,e.successList.push(c),delete e.invalid[c.name],e.showErrors()):(f={},h=d||e.defaultMessage(c,"remote"),f[c.name]=g.message=a.isFunction(h)?h(b):h,e.invalid[c.name]=!0,e.showErrors(f)),g.valid=j,e.stopRequest(c,j)}},d)),"pending")}}});var b,c={};a.ajaxPrefilter?a.ajaxPrefilter(function(a,b,d){var e=a.port;"abort"===a.mode&&(c[e]&&c[e].abort(),c[e]=d)}):(b=a.ajax,a.ajax=function(d){var e=("mode"in d?d:a.ajaxSettings).mode,f=("port"in d?d:a.ajaxSettings).port;return"abort"===e?(c[f]&&c[f].abort(),c[f]=b.apply(this,arguments),c[f]):b.apply(this,arguments)})});
-// $(document).ready(function() {
-//   $(document).on('page:change',function() {
-  //allows the fade in and fade out of images on main page
-    // $("h2").hover(function() {
-    //     $(this).next().stop().css({
-    //       opacity: 0,
-    //       visibility: "visible"
-    //     }).animate({
-    //       opacity: 1
-    //     }, 500)
-    // },function() {
-    //     $(this).next().stop().css({
-    //       opacity: 1,
-    //       visibility: "visible"
-    //     }).animate({
-    //       opacity: 0
-    //     }, 500)
-    // });
-//   });
-// });
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+    $(".box").hover(function(){
+        var $description = $(".description_content")
+        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
+    }, function(){
+        var $description = $(".description_content")
+        $(this).find($description).stop().animate({opacity: 0}, 400);
+    });
+  });
+});
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
@@ -12572,6 +13190,7 @@ $(document).ready(function() {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 
 
 

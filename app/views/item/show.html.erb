@@ -6,8 +6,14 @@
     </div>
     <div class="col-md-4 col-sm-5 col-xs-5 show-item-bottom">
       <div class="description-show">
-        <h3><em><%= "this will be the short name of product" %></em></h3>
-        <h3><em>$<%= @item.price %></em></h3>
+        <h3><em><%= @item.short_description %></em></h3>
+        <% if @item.sale == true %>
+          <h3><em>$<%= zeros(@item.sale_price) %></em></h3>
+          <p><strike><em>$<%= zeros(@item.price) %></em></strike></p>
+          <p><em>%<%= percentage(@item.price, @item.sale_price) %> off!</em></p>
+        <% else %>
+          <h3><em>$<%= zeros(@item.price) %></em></h3>
+        <% end %>
         <p><em><%= @item.description %></em></p>
       </div>
       <div class="show-button">

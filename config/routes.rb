@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :admin
+  authenticated :user do
+    root "men#index", as: "authenticated_root"
+  end
 
   get 'site/about'
   get 'site/contact'

@@ -1,28 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="navigation">
-      <% if current_page?(root_path) %>
+      <% if current_page?(men_path) %>
       <h1>InstaBoss</h1>
       <% else %>
-      <h1><%= link_to "InstaBoss", root_path %></h1>
+      <h1><%= link_to "InstaBoss", men_path %></h1>
       <% end %>
       <ul>
         <% if current_admin %>
           <li><%= link_to "Admin Page", admin_index_path %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %></li>
         <% end %>
-        <% if user_signed_in? && !current_page?(item_index_path)%>
-          <li><em><%= link_to "ClientPage", item_index_path, class: "client-path" %></em></li>
+
+        <% if user_signed_in? && !current_page?(item_index_path) %>
+          <li><em><%= link_to "ClientPage", item_index_path, class: "client-login" %></em></li>
+          <li><%= link_to "MENS", men_path %></li>
+          <li><%= link_to "WOMENS", women_path %></li>
         <% elsif user_signed_in? && current_page?(item_index_path) %>
-          <li><%= link_to "Your Items", item_index_path %></li>
-          <li><%= link_to "Add Item", new_item_path %></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <li><em><%= link_to "Your Items", item_index_path, class: "client-login" %></em></li>
+          <li><em><%= link_to "Add Item", new_item_path, class: "client-login" %></em></li>
+          <li><em><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "client-login" %></em></li>
+          <li><%= link_to "MENS", men_path %></li>
+          <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
+
         <% if !current_page?(root_path) && !user_signed_in? %>
           <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
+
       </ul>
       <hr style="height:1px; border:none; color:#333; background-color:#333;margin-top:30px;" />
     </div>

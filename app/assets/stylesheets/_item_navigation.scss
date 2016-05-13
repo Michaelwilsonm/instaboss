@@ -1,11 +1,36 @@
 .item_nav {
   list-style-type: none;
-    text-align: center;
-    margin-top: 10px;
-  li{
-    display: inline;
-    border-right: 1px solid;
-    padding: 0px 20px 0 20px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0px;
+}
+.item_nav  > li{
+  font-weight: bold;
+  display: inline;
+  padding: 0px 10px 0 10px;
+  a{
+    color: black;
   }
+}
 
+.nav-cat-div{
+}
+
+.nav-cat-ul{
+  position: relative;
+  bottom: 0px;
+  right: 45px;
+  background-color: white;
+  width: 100%;
+  list-style-type: none;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+  li{
+    padding: 2px;
+    a{
+      color: black;
+      font-weight: bold;
+    }
+  }
 }

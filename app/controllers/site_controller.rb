@@ -2,9 +2,14 @@ class SiteController < ApplicationController
   def index
   end
 
-  def sale
+  def sale_mens
     @items = FashionItem.all
-    @sale = @items.sales
+    @sale_mens = @items.all_mens_on_sale
+  end
+
+  def sale_womens
+    @items = FashionItem.all
+    @sale_womens = @items.all_womens_on_sale
   end
 
   def about

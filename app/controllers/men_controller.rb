@@ -13,7 +13,6 @@ class MenController < ApplicationController
   end
 
   def accessorie
-    # @sorted_cities = @items.incl.sort_by { |obj| obj.sub_category.to_s }
     @accessorie = @items.men_accessorie
   end
 

@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <h1 class="your-items">Tops</h1>
     <%= render "templates/side_navigation_womens" %>
     <div class="col-sm-1 col-xs-1"></div>
     <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
@@ -12,14 +13,14 @@
               <% if top_items.sale == true %>
               <table>
                 <tr class="specials_table">
-                  <td><strike><em>$<%= top_items.sale_price %></em></strike></td>
-                  <td>$<%= top_items.price %></td>
+                  <td><strike><em>$<%= zeros(top_items.sale_price) %></em></strike></td>
+                  <td>$<%= zeros(top_items.price) %></td>
                 </tr>
               </table>
               <% else %>
               <table>
                 <tr class="normal_table">
-                  <td>$<%= top_items.price %></td>
+                  <td>$<%= zeros(top_items.price) %></td>
                 </tr>
               </table>
               <% end %>

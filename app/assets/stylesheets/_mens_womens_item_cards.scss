@@ -1,5 +1,7 @@
 .box{
   width: 300px !important;
+  position: relative;
+  left: 150px;
 }
 
 .image_div{
@@ -34,7 +36,7 @@
   visibility: hidden;
   width: 100%;
   height: 100%;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Calisto MT Regular";
   p{
     font-size: 15px;
     position: relative;

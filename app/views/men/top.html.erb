@@ -1,9 +1,12 @@
+<div class="menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
 <div class="container">
   <div class="row">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
     <h1 class="your-items">Tops</h1>
-    <%= render "templates/side_navigation_mens" %>
-    <div class="col-sm-1 col-xs-1"></div>
-    <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
       <% @top.each do |top_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">

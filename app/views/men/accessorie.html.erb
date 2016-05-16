@@ -1,35 +1,37 @@
+<div class="menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
 <div class="container">
-  <div class="row">
-    <h1 class="your-items">Accessories</h1>
-    <%= render "templates/side_navigation_mens" %>
-    <div class="col-sm-1 col-xs-1"></div>
-    <div class="col-md-10 col-sm-8 col-xs-8" style="padding: 0px;">
-      <% @accessorie.each do |accessoire_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-            <a href="/item/<%= accessoire_items.id %>">
-              <%= image_tag accessoire_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if accessoire_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(accessoire_items.sale_price) %></em></strike></td>
-                  <td>$<%= zeros(accessoire_items.price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(accessoire_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= accessoire_items.short_description %></p>
-            </div>
-            </a>
-          </div>
-        </div>
-      <% end %>
+  <div class="row" style="margin-left: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
     </div>
+    <h1 class="your-items">Accessories</h1>
+    <% @accessorie.each do |accessoire_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= accessoire_items.id %>">
+            <%= image_tag accessoire_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if accessoire_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(accessoire_items.sale_price) %></em></strike></td>
+                <td>$<%= zeros(accessoire_items.price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(accessoire_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= accessoire_items.short_description %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

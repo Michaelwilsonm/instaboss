@@ -1,3 +1,8 @@
+.item_navigation{
+  display: none;
+}
+
+
 .item_nav {
   list-style-type: none;
   text-align: center;
@@ -8,6 +13,7 @@
   font-weight: bold;
   display: inline;
   padding: 0px 10px 0 10px;
+  font-family: "Calisto MT Regular";
   a{
     color: black;
   }
@@ -19,7 +25,7 @@
 .nav-cat-ul{
   position: relative;
   bottom: 0px;
-  right: 45px;
+  right: 30px;
   background-color: white;
   width: 100%;
   list-style-type: none;

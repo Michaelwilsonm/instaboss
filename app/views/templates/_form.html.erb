@@ -59,7 +59,7 @@
 
           <div class="col-md-10">
             <span>Price</span>
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+            <label class="sr-only" for="exampleInputAmount">RRP ($US)</label>
             <div class="input-group">
               <div class="input-group-addon">$</div>
               <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
@@ -76,7 +76,7 @@
 
           <div class="col-md-10">
             <div id="item-sale-price">
-              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <label class="sr-only" for="exampleInputAmount">Sale Price ($US)</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
@@ -90,7 +90,7 @@
           </div>
 
           <div class="col-md-10">
-            <span>Unique URL</span>
+            <span>Product URL</span>
             <input class="form-control" type="text" id="fashion-item-url" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
           </div>
 

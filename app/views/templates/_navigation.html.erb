@@ -8,8 +8,10 @@
       <% end %>
       <ul>
         <% if current_admin %>
-          <li><%= link_to "Admin Page", admin_index_path %></li>
-          <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %></li>
+          <li><%= link_to "Admin Page", admin_index_path, class: "client-login" %></li>
+          <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete, class: "client-login" %></li>
+          <li><%= link_to "MENS", men_path %></li>
+          <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
         <% if user_signed_in? && !current_page?(item_index_path) %>
           <li><em><%= link_to "ClientPage", item_index_path, class: "client-login" %></em></li>
@@ -23,7 +25,7 @@
           <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
 
-        <% if !current_page?(root_path) && !user_signed_in? %>
+        <% if !current_page?(root_path) && !current_user %>
           <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>

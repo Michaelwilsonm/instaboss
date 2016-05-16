@@ -4,8 +4,8 @@ $black: #000;
   h1 {
     text-align: center;
     color: $black;
-    font-family: 'Roboto Slab', serif;
     margin-bottom: -20px;
+    font-family: "Calisto MT Regular";
     font-size: 60px;
     &:visited {
       color: $black;
@@ -24,8 +24,16 @@ $black: #000;
     margin-top: -10px;
     li {
       display: inline;
-      padding: 10px;
+      padding-left: 5px;
       font-weight: bold;
+      font-size: 20px;
+      font-family: "Calisto MT Regular";
+    }
+    li:last-of-type{
+      border-left: 2px solid;
+    }
+    li:nth-of-type(4){
+      border-left: 2px solid;
     }
     a {
       text-decoration: none;
@@ -37,16 +45,18 @@ $black: #000;
   }
 }
 
+
 .client-login {
   position: relative;
   top: -40px;
   left: 150px;
+  font-size: 12px;
   font-weight: normal;
-
 }
 
 .client-path {
   position: relative;
   top: 0px;
+  font-size: 12px;
   font-weight: normal;
 }

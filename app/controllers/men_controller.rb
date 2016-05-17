@@ -6,6 +6,7 @@ class MenController < ApplicationController
     @mens = @items.all_mens_items
     @sale_mens = @items.all_mens_on_sale
     @special_three = @items.nine_special_items_mens
+    @featured_men = @items.featured_mens
   end
 
   def formal

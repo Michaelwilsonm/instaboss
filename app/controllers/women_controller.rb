@@ -5,6 +5,7 @@ class WomenController < ApplicationController
     @womens = @items.all_womens_items
     @sale_womens = @items.all_womens_on_sale
     @special_three = @items.nine_special_items_womens
+    @featured_women = @items.featured_womens
   end
 
   def accessorie

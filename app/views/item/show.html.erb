@@ -1,11 +1,29 @@
+<% if @item.sex == 'Mens' %>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_mens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_mens_subcat" %>
+  </div>
+<% elsif @item.sex == 'Womens' %>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_womens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_womens_subcat" %>
+  </div>
+<% end %>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-md-2 col-sm-1 col-xs-1"></div>
-    <div class="col-md-4 col-sm-5 col-xs-5 show-item-top">
-      <%= image_tag @item.item_image.url(:medium) %>
-    </div>
-    <div class="col-md-4 col-sm-5 col-xs-5 show-item-bottom">
-      <div class="description-show">
+    <div class="show-box">
+      <div class="image-show-box">
+        <%= image_tag @item.item_image.url(:medium) %>
+        <p><em><%= @item.brand %></em></p>
+        <p><em>Shipped from <%= @item.shipped_from %></em></p>
+      </div>
+      <div class="description-show-box">
         <h3><em><%= @item.short_description %></em></h3>
         <% if @item.sale == true %>
           <h3><em>$<%= zeros(@item.sale_price) %></em></h3>
@@ -15,14 +33,12 @@
           <h3><em>$<%= zeros(@item.price) %></em></h3>
         <% end %>
         <p><em><%= @item.description %></em></p>
+        <div class="show-button">
+          <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
+            <button class="btn btn-success">Show now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
+          </a>
+        </div>
       </div>
-      <div class="show-button">
-        <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
-          <button class="btn btn-success">Show now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
-        </a>
-      </div>
-
     </div>
-    <div class="col-md-2 col-sm-1 col-xs-1"></div>
   </div>
 </div>

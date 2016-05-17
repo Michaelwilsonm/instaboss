@@ -10,10 +10,9 @@
   }
 
 .menu-side{
-  position: fixed;
+  position: relative;
   width: 200px;
   height: 100%;
-  margin-top: 70px;
 }
 
 .mens-main-menu-side{
@@ -24,6 +23,7 @@
 
 
 .side_nav_mens {
+  margin-top: 70px;
   width: 150px;
   list-style-type: none;
   h4{

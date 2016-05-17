@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   #   root "men#index", as: "authenticated_root"
   # end
 
+  post 'admin/featured_item'
+
   get 'site/about'
   get 'site/contact'
 

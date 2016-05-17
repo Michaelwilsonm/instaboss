@@ -17,27 +17,72 @@
   }
 
 
-.menu-side{
-  display: none;
-}
+  .menu-side{
+    display: none;
+  }
 
-.box{
-  left: 30px;
-}
+  .box{
+    left: 30px;
+  }
 
-.item-nav{
-  display: inline;
-}
+  .item-nav{
+    display: inline;
+  }
 
-.item_navigation{
-  display: inline;
-}
+  .item_navigation{
+    display: inline;
+  }
 
-.mens-main-menu-side{
-  display: none;
-}
+  .mens-main-menu-side{
+    display: none;
+  }
 
+  .show-box{
+    margin-left: 0px;
+    width: 100%;
+  }
 
+  .image-show-box{
+    text-align: center;
+    width: 100%;
+  }
+
+  .description-show-box{
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    padding: 0px 50px 0px 50px;
+  }
+
+  .image-show-box{
+    position: relative;
+  }
+
+  .description-show-box{
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .item_navigation_top_mens, .item_navigation_top_womens{
+    font-size: 10px;
+  }
+
+  .mens_top{
+  text-align: center;
+    a{
+      font-family: "Calisto MT Regular";
+      margin: 0px 10px 0px 10px;
+    }
+  }
+
+  .womens_top{
+  text-align: center;
+    a{
+      font-family: "Calisto MT Regular";
+      margin: 0px 10px 0px 10px;
+    }
+  }
 
 
 }

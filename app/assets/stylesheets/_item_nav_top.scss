@@ -1,0 +1,44 @@
+.mens_top{
+  text-align: center;
+  a{
+  color: black;
+  font-family: "Calisto MT Regular";
+  margin: 0px 30px 0px 30px;
+  }
+}
+
+.womens_top{
+  text-align: center;
+  a{
+  color: black;
+  font-family: "Calisto MT Regular";
+  margin: 0px 30px 0px 30px;
+  }
+}
+
+.caret{
+
+}
+
+.item_nav_top{
+  position: relative;
+  display: inline-block;
+}
+
+.item_drop_shop_by {
+  display: none;
+  position: absolute;
+  background-color: #eee;
+  min-width: 150px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+
+.item_drop_shop_by a {
+  text-align: left;
+  font-family: "Calisto MT Regular";
+  color: black;
+  padding: 8px 0px;
+  text-decoration: none;
+  display: block;
+}

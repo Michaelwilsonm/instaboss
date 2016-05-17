@@ -10,6 +10,7 @@
         <th><%= sortable "shipped_from" %></th>
         <th><%= sortable "price" %></th>
         <th><%= sortable "sale", "On Sale" %></th>
+        <th><%= sortable "featured_item" %></th>
         <th>Action</th>
       </tr>
       <% @all_items.each do |item| %>
@@ -31,6 +32,13 @@
             <% else %>
               <%= 'Yes' %><br>
               $<%= zeros(item.sale_price) %>
+            <% end %>
+          </td>
+          <td>
+            <%if item.featured_item != true %>
+              <%= 'No' %>
+            <% else %>
+              <%= 'Yes' %><br>
             <% end %>
           </td>
           <td>

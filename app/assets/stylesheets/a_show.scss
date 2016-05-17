@@ -1,16 +1,17 @@
 .show-box{
-  text-align: center;
-  width: 160%;
+  postition: relative;
+  margin-left: 200px;
 }
 
-
 .image-show-box{
-  width: 45%;
+  position: absolute;
+  float: left;
 }
 
 .description-show-box{
-  width: 45%;
-  position: relative;
-  bottom: 350px;
-  left: 350px;
+  margin-left: 330px;
+
+  h3:first-of-type{
+    text-align: center;
+  }
 }

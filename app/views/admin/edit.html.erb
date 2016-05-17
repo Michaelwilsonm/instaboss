@@ -18,7 +18,7 @@
           <div class="col-md-10">
             <span>Short Description</span>
             <p class="descrip_paragraph">Title of product customers will first see</p>
-              <input class="form-control" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="" required>
+              <input class="form-control" placeholder="" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="<%= @item.short_description %>" required>
             <p class="descrip_paragraph"> Must be between 0 & 25 characters</p>
           </div>
 
@@ -57,12 +57,12 @@
 
           <div class="col-md-10">
             <span>Brand</span>
-            <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="" required>
+            <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="<%= @item.brand %>" required>
           </div>
 
           <div class="col-md-10">
-            <span>Price</span>
-            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+            <span>Sell Price ($US)</span>
+            <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
             <div class="input-group">
               <div class="input-group-addon">$</div>
               <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
@@ -78,8 +78,9 @@
           </div>
 
           <div class="col-md-10">
+            <span>Recomended Retail Price ($US)</span>
             <div id="item-sale-price">
-              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($US)</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
@@ -89,12 +90,22 @@
 
           <div class="col-md-10">
             <span>Item Description</span>
-            <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" value="<%= @item.description %>"  required></textarea>
+            <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" required><%= @item.description %>
+            </textarea>
           </div>
 
           <div class="col-md-10">
-            <span>Unique URL</span>
-            <input class="form-control" type="text" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
+            <span>Product URL</span>
+            <input class="form-control" type="text" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>" required>
+            </input>
+          </div>
+
+          <div class="col-md-10">
+            <span>Featured Item</span>
+            <select class="form-control input-sm" id="featured-item" name="FashionItem[featured_item]">
+              <option value="true" selected>featured</option>
+              <option value="false" selected>not featured</option>
+            </select>
           </div>
 
         </div>

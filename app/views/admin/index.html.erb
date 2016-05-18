@@ -1,9 +1,11 @@
+<%= render "templates/admin_navigation" %>
 <div class="affiliate-portal-item">
-  <h1 class="your-items">Your Items</h1>
+  <h1 class="your-items">All Admin Items</h1>
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">
         <th>Image</th>
+        <th><%= sortable "user_email" %></th>
         <th><%= sortable "sex" %></th>
         <th><%= sortable "brand" %></th>
         <th><%= sortable "description" %></th>
@@ -21,6 +23,7 @@
               <p><%= item.short_description %></p>
             </div>
           </td>
+          <td><%= item.user.email %></td>
           <td><%= item.sex %></td>
           <td><%= item.brand %></td>
           <td><%= item.description.slice(0..50) + "...." %></td>
@@ -44,7 +47,7 @@
           <td>
             <p><%= link_to 'Edit', edit_admin_path(item.id) %></p>
             <p><%= link_to 'Delete', admin_path(item.id), method: :delete %></p>
-            <p><%= link_to 'Show', admin_path(item) %></p></td>
+            <!-- <p><%= link_to 'Show', admin_path(item) %></p></td> -->
           </td>
         </tr>
       <% end %>

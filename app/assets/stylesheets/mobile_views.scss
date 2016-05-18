@@ -6,8 +6,7 @@
       margin-left: 10px;
     }
     ul {
-      li {
-      padding: 5px;
+      li:first-of-type{
       }
     }
   }
@@ -92,6 +91,13 @@
     height: 35px;
     float: none;
     margin-top: 8px;
+  }
+
+  .logo-image{
+    display: none;
+  }
+  .main-logo-image{
+    display: none;
   }
 
 

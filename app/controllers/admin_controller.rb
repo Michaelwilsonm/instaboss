@@ -33,7 +33,7 @@ class AdminController < ApplicationController
     end
 
     def fashion_item_params
-      params.require(:FashionItem).permit(:sex, :brand, :description, :category, :sub_category, :price, :sale, :item_image, :shipped_from, :sale_price, :short_description, :featured_item)
+      params.require(:FashionItem).permit(:sex, :brand, :description, :category, :sub_category, :price, :sale, :item_image, :shipped_from, :sale_price, :short_description, :featured_item, :unique_affiliate_url)
     end
 
     def sort_column

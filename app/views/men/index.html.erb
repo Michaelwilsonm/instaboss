@@ -1,3 +1,13 @@
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+<% end %>
+
+<div class="logo-image">
+  <img src="../assets/BEEEE.jpg" alt="" class="image_bee">
+  <h2>MENS</h2>
+</div>
 <div class="item_navigation_top_mens">
   <%= render "templates/item_navigation_mens" %>
 </div>
@@ -18,8 +28,10 @@
 <div class="container">
   <div class="row">
     <%= render "templates/on_sale_nine" %>
-    <h1 class="your-items">Mens Featured</h1>
-    <%= render "templates/featured_mens" %>
+    <% if @featured_men.length >= 1 %>
+      <h1 class="your-items">Mens Featured</h1>
+      <%= render "templates/featured_mens" %>
+    <% end %>
   </div>
 </div>
 

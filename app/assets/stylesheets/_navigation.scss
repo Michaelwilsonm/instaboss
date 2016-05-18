@@ -24,7 +24,7 @@ $black: #000;
     margin-top: -10px;
     li {
       display: inline;
-      padding-left: 5px;
+      padding-left: 20px;
       font-weight: bold;
       font-size: 20px;
       font-family: "Calisto MT Regular";
@@ -32,8 +32,11 @@ $black: #000;
     li:last-of-type{
       border-left: 2px solid;
     }
-    li:nth-of-type(4){
-
+    li:nth-of-type(2){
+    padding-right: 20px;
+    }
+    li:nth-of-type(3){
+    padding-right: 20px;
     }
     a {
       text-decoration: none;

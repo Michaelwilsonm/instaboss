@@ -29,6 +29,9 @@ Admin.create(email: "josh@josh.com", password: "hello123")
     price: 60.0,
     short_description: "Too awesome to say",
     sale: [true, false].sample,
+    featured_item: [true, false].sample,
+    staff_picks: [true, false].sample,
+    wwshipping: [true, false].sample,
     )
 end
 
@@ -47,5 +50,8 @@ end
     price: 60.0,
     short_description: "Too awesome to say",
     sale: [true, false].sample,
+    featured_item: [true, false].sample,
+    staff_picks: [true, false].sample,
+    wwshipping: [true, false].sample,
     )
 end

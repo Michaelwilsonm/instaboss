@@ -12,6 +12,10 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'false'").reverse
   end
 
+  def self.staff_picks_mens_items
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND staff_picks = 'true'").reverse
+  end
+
   def self.featured_mens
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND featured_item = 'true'").reverse
   end
@@ -114,4 +118,9 @@ class FashionItem < ActiveRecord::Base
   def self.women_top
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Tops'").reverse
   end
+
+  def self.staff_picked_women_items
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND staff_picks = 'true'").reverse
+  end
+
 end

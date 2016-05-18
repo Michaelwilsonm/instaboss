@@ -8,7 +8,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 25%;
-  }
+}
+
+.mens-main-menu-side{
+  margin-top: 70px;
+  position: relative;
+  width: 200px;
+  height: 100%;
+  margin-top: 0px;
+}
 
 .menu-side{
   position: relative;
@@ -16,15 +24,7 @@
   height: 100%;
 }
 
-.mens-main-menu-side{
-  position: relative;
-  width: 200px;
-  height: 100%;
-}
-
-
 .side_nav_mens {
-  margin-top: 70px;
   width: 150px;
   list-style-type: none;
   h4{

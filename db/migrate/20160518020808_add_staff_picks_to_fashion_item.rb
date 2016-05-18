@@ -1,5 +1,5 @@
 class AddStaffPicksToFashionItem < ActiveRecord::Migration
   def change
-    add_column :fashion_items, :staff_picks, :string
+    add_column :fashion_items, :staff_picks, :boolean
   end
 end

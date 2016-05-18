@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20160518020851) do
     t.datetime "item_image_updated_at"
     t.string   "short_description"
     t.boolean  "featured_item"
-    t.string   "staff_picks"
-    t.string   "wwshipping"
+    t.boolean  "staff_picks"
+    t.boolean  "wwshipping"
   end
 
   add_index "fashion_items", ["user_id"], name: "index_fashion_items_on_user_id", using: :btree

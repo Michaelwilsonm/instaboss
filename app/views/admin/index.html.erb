@@ -13,6 +13,7 @@
         <th><%= sortable "price" %></th>
         <th><%= sortable "sale", "On Sale" %></th>
         <th><%= sortable "featured_item" %></th>
+        <th><%= sortable "staff_picks" %></th>
         <th>Action</th>
       </tr>
       <% @all_items.each do |item| %>
@@ -39,9 +40,16 @@
           </td>
           <td>
             <%if item.featured_item != true %>
-              <%= 'No' %>
+              <%= 'Featured No' %>
             <% else %>
-              <%= 'Yes' %><br>
+              <%= 'Featured Yes' %><br>
+            <% end %>
+          </td>
+          <td>
+            <%if item.staff_picks != true %>
+              <%= 'Staff picked No' %>
+            <% else %>
+              <%= 'Staff picked Yes' %><br>
             <% end %>
           </td>
           <td>

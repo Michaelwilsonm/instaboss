@@ -29,6 +29,10 @@
       <h1 class="your-items">Womens Featured</h1>
       <%= render "templates/featured_womens" %>
     <% end %>
+    <% if @staff_picked_women.length >= 1 %>
+      <h1 class="your-items">Staff Picks</h1>
+      <%= render "templates/staff_picked_womens" %>
+    <% end %>
   </div>
 </div>
 

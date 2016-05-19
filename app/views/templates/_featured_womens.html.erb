@@ -1,18 +1,25 @@
 <div class="container">
   <div class="row" style="margin-left: 0px;">
-  <% @featured_women.each do |specials| %>
+  <% @featured_women.each do |feature| %>
     <div class="box col-md-4 col-sm-6 col-xs-12">
       <div class="image_div">
-        <a href="/item/<%= specials.id %>">
-          <%= image_tag specials.item_image.url(:medium) %>
+        <a href="/item/<%= feature.id %>">
+          <%= image_tag feature.item_image.url(:medium) %>
         <div class="description_content">
+          <% if feature.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(specials.price) %></em></strike></td>
-              <td>$<%= zeros(specials.sale_price) %></td>
+              <td><strike><em>$<%= zeros(feature.sale_price) %></em></strike></td>
+              <td>$<%= zeros(feature.price) %></td>
             </tr>
           </table>
-          <p><%= specials.short_description %></p>
+          <% else %>
+          <table>
+            <tr class="normal_table">
+              <td>$<%= zeros(feature.price) %></td>
+            </tr>
+          </table>
+        <% end %>
         </div>
         </a>
       </div>

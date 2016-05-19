@@ -80,6 +80,7 @@
           <div class="col-md-10">
             <span>On Sale?</span>
             <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
+              <option value="<%= @item.sale %>"></option>
               <option value="false">No</option>
               <option value="true">Yes</option>
             </select>
@@ -116,13 +117,14 @@
             </select>
           </div>
 
-          <div class="col-md-10">
+          <!-- <div class="col-md-10">
             <span>Staff Pick</span>
             <select class="form-control input-sm" id="staff-item" name="FashionItem[staff_picks]">
+              <option value="false" selected></option>
               <option value="true" selected>Yes staff picked</option>
               <option value="false" selected>No staff picked</option>
             </select>
-          </div>
+          </div> -->
 
         </div>
         <div class="col-md-10"><br>

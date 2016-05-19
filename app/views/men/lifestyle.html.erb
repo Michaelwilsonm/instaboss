@@ -3,14 +3,12 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-<div class="logo-image">
-  <img src="../assets/BEEEE.jpg" alt="" class="image_bee">
-  <h2>MENS</h2>
-</div>
+
 <div class="menu-side">
+  <div class="margin_menu_side" style="margin-top: 80px;"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container">
+<div class="container" style="margin-top: -80px;">
   <div class="row">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
@@ -25,8 +23,8 @@
               <% if life_items.sale == true %>
               <table>
                 <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(life_items.sale_price) %></em></strike></td>
-                  <td>$<%= zeros(life_items.price) %></td>
+                  <td><strike><em>$<%= zeros(life_items.price) %></em></strike></td>
+                  <td>$<%= zeros(life_items.sale_price) %></td>
                 </tr>
               </table>
               <% else %>

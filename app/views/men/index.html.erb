@@ -18,17 +18,17 @@
 </div>
 
 
-<h1 class="your-items">Mens Sale</h1>
 <div class="mens-main-menu-side">
   <%= render "templates/side_navigation_mens" %>
 </div>
 <div class="container">
   <div class="row">
-    <%= render "templates/on_sale_nine" %>
     <% if @featured_men.length >= 1 %>
       <h1 class="your-items">Mens Featured</h1>
       <%= render "templates/featured_mens" %>
     <% end %>
+    <h1 class="your-items">Mens Sale</h1>
+    <%= render "templates/on_sale_nine" %>
 <!--     <% if @staff_picked_men.length >= 1 %>
       <h1 class="your-items">Staff Picks</h1>
       <%= render "templates/staff_picked_mens" %>

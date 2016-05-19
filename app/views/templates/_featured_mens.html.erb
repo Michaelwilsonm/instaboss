@@ -6,13 +6,20 @@
         <a href="/item/<%= feature.id %>">
           <%= image_tag feature.item_image.url(:medium) %>
         <div class="description_content">
+          <% if feature.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(feature.price) %></em></strike></td>
-              <td>$<%= zeros(feature.sale_price) %></td>
+              <td><strike><em>$<%= zeros(feature.sale_price) %></em></strike></td>
+              <td>$<%= zeros(feature.price) %></td>
             </tr>
           </table>
-          <p><%= feature.short_description %></p>
+          <% else %>
+          <table>
+            <tr class="normal_table">
+              <td>$<%= zeros(feature.price) %></td>
+            </tr>
+          </table>
+        <% end %>
         </div>
         </a>
       </div>

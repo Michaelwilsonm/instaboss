@@ -30,7 +30,7 @@
         <h3><em><%= @item.short_description %></em></h3>
         <% if @item.sale == true %>
           <h3><strike><em>$<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>$<%= zeros(@item.sale_price) %></em></h3>
-          <p><em>%<%= percentage(@item.price, @item.sale_price) %> off!</em></p>
+          <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>
         <% else %>
           <h3><em>$<%= zeros(@item.price) %></em></h3>
         <% end %>

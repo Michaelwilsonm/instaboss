@@ -37,6 +37,7 @@
         <p><em>Shipped from <%= @item.shipped_from %></em></p>
         <% if @item.wwshipping == true %>
           <p>Free Worldwide Shipping</p>
+        <% end %>
         <div class="show-button">
           <a href="<%= @item.unique_affiliate_url %>" target="_blank">
             <button class="btn btn-success">Shop now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>

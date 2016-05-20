@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   root "site#index"
 
   get 'women' => 'women#index'
+  get 'women/all'
   get 'women/accessorie'
   get 'women/dress'
   get 'women/jean_legging'
@@ -29,8 +30,11 @@ Rails.application.routes.draw do
   get 'women/sunglass_watch'
   get 'women/swim_beachwear'
   get 'women/top'
+  get 'women/about'
+  get 'women/contact'
 
   get 'men' => 'men#index'
+  get 'men/all'
   get 'men/formal'
   get 'men/lifestyle'
   get 'men/long'
@@ -39,4 +43,6 @@ Rails.application.routes.draw do
   get 'men/short_swimwear'
   get 'men/sunglass_watch'
   get 'men/accessorie'
+  get 'men/about'
+  get 'men/contact'
 end

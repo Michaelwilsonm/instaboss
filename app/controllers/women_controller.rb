@@ -6,8 +6,11 @@ class WomenController < ApplicationController
     @sale_womens = @items.all_womens_on_sale
     @special_three = @items.nine_special_items_womens
     @featured_women = @items.featured_womens.take(12)
-
     @staff_picked_women = @items.staff_picked_women_items
+  end
+
+  def all
+    @womens = @items.all_womens_items_ALL
   end
 
   def accessorie
@@ -44,6 +47,12 @@ class WomenController < ApplicationController
 
   def top
     @top = @items.women_top
+  end
+
+  def about
+  end
+
+  def contact
   end
 
   private

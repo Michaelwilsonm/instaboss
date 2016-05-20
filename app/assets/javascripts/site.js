@@ -7,5 +7,11 @@ $(document).ready(function() {
         var $description = $(".description_content")
         $(this).find($description).stop().animate({opacity: 0}, 400);
     });
+
+
+
+
+
+
   });
 });

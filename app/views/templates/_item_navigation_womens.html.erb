@@ -1,10 +1,10 @@
-<% womens_categories = {'Accessories': '/women/accessorie', 'Dress': '/women/dress', 'Lifestyle': '/women/lifestyle', 'Jeans Trousers & Leggings': '/women/jean_legging' , 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short_skirt', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Tops': '/women/top' }; %>
+<% womens_categories = {'All': '/women/all', 'Accessories': '/women/accessorie', 'Dresses': '/women/dress','Jeans Trousers & Leggings': '/women/jean_legging' , 'Lifestyle': '/women/lifestyle', 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short_skirt', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Tops': '/women/top' }; %>
 
 <div class="container">
   <div class="row">
     <div class="womens_top">
       <%= link_to "HOME", root_path%>
-      <%= link_to "ABOUT", site_about_path %>
+      <%= link_to "ABOUT", women_about_path %>
       <div class="item_nav_top">
         <%= link_to "SHOP BY",  class: "shop_by" %>
         <div class="item_drop_shop_by" id="my_drop_down">
@@ -14,8 +14,8 @@
         </div>
       </div>
         <%= link_to "ON SALE", site_sale_womens_path %>
-        <%= link_to "BRANDS", site_about_path %>
-        <%= link_to "CONTACT", site_contact_path %>
+        <%= link_to "BRANDS", women_about_path %>
+        <%= link_to "CONTACT", women_contact_path %>
         <div class="instagram_logo">
           <a href="https://www.instagram.com/instaboss.co/" target="_blank">
             <img src="assets/instagram_black.jpg" alt="insta">

@@ -10,7 +10,7 @@
       <h1><%= link_to "InstaBoss", root_path %></h1>
       <% end %>
       <ul>
-        <% if current_admin %>
+        <% if current_admin && !current_page?(root_path) %>
           <li><%= link_to "Admin Page", admin_index_path, class: "client-login" %></li>
           <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete, class: "client-login" %></li>
           <li><%= link_to "MENS", men_path %></li>
@@ -30,7 +30,12 @@
         <% end %>
 
 
-        <% if !current_user %>
+        <% if !current_user || !current_admin %>
+          <li></li>
+          <li></li>
+          <li><%= link_to "MENS", men_path %></li>
+          <li><%= link_to "WOMENS", women_path %></li>
+        <% else %>
           <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>

@@ -10,6 +10,10 @@ class MenController < ApplicationController
     @staff_picked_men = @items.staff_picks_mens_items
   end
 
+  def all
+    @mens = @items.all_mens_items_ALL
+  end
+
   def formal
     @formal = @items.men_formal
   end
@@ -40,6 +44,12 @@ class MenController < ApplicationController
 
   def top
     @top = @items.men_top
+  end
+
+  def about
+  end
+
+  def contact
   end
 
   private

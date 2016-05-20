@@ -12,9 +12,4 @@ class SiteController < ApplicationController
     @sale_womens = @items.all_womens_on_sale
   end
 
-  def about
-  end
-
-  def contact
-  end
 end

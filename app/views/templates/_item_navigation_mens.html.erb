@@ -1,11 +1,11 @@
-<% mens_categories = {'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
+<% mens_categories = {'All': '/men/all', 'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
 
 
 <div class="container">
   <div class="row">
     <div class="mens_top">
       <%= link_to "HOME", root_path%>
-      <%= link_to "ABOUT", site_about_path %>
+      <%= link_to "ABOUT", men_about_path %>
       <div class="item_nav_top">
         <%= link_to "SHOP BY",  class: "shop_by" %>
         <div class="item_drop_shop_by" id="my_drop_down">
@@ -15,8 +15,8 @@
         </div>
       </div>
         <%= link_to "ON SALE", site_sale_mens_path %>
-        <%= link_to "BRANDS", site_about_path %>
-        <%= link_to "CONTACT", site_contact_path %>
+        <%= link_to "BRANDS", men_about_path %>
+        <%= link_to "CONTACT", men_contact_path %>
         <div class="instagram_logo">
           <a href="https://www.instagram.com/instaboss.mens/" target="_blank">
             <img src="assets/instagram_black.jpg" alt="insta">

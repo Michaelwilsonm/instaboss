@@ -2,7 +2,7 @@
   <div class="row">
     <div class="navigation">
       <div class="logo-image">
-        <img src="/assets/BEEEE.jpg" alt="" class="image_bee">
+        <img src="/assets/new_bee.jpg" alt="" class="image_bee">
       </div>
       <% if current_page?(root_path) %>
       <h1>InstaBoss</h1>
@@ -30,7 +30,7 @@
         <% end %>
 
 
-        <% if !current_page?(root_path) && !current_user %>
+        <% if !current_user %>
           <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>

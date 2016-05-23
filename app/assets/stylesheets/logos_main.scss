@@ -1,11 +1,20 @@
 .images{
-  height: 12%;
-  width: 12%;
+  height: 10%;
+  width: 10%;
   margin: 15px;
 }
 
 .text{
-  height: 22%;
-  width: 22%;
+  height: 19%;
+  width: 19%;
   margin: 15px;
+}
+
+img[alt*="nike"]{
+  margin-left: 30px;
+}
+
+img[alt*="adidas"]{
+  height: 11%;
+  width: 11%;
 }

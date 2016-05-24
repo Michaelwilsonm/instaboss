@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518020851) do
+ActiveRecord::Schema.define(version: 20160524004151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20160518020851) do
     t.string   "sub_category"
     t.boolean  "sale",                                            default: false, null: false
     t.integer  "percentage_off"
-    t.decimal  "price",                   precision: 5, scale: 2
+    t.decimal  "price",                   precision: 8, scale: 2
     t.string   "unique_affiliate_url"
     t.string   "shipped_from"
-    t.decimal  "sale_price",              precision: 5, scale: 2, default: 0.0
+    t.decimal  "sale_price",              precision: 8, scale: 2, default: 0.0
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
     t.string   "item_image_file_name"

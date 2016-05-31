@@ -145,18 +145,19 @@
           <div class="col-md-5"><br>
             <span>Staff Pick</span><br>
             <% if @item.staff_picks == true %>
-            <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Staff Picked<br>
-            <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked</br>
-
+              <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Staff Picked<br>
+              <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked</br>
             <% elsif @item.staff_picks == false %>
+              <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
+              <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Not Staff Picked<br>
+            <% else %>
             <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
-            <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Not Staff Picked<br>
+              <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked<br>
             <% end %>
           </div>
 
-        </div>
-        <div class="col-md-7"><br>
-          <input type="submit" class="btn btn-default" style="float: right;" value="submit" />
+        <div class="col-md-10"><br>
+          <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
         </div>
     <% end %>
     <div class="col-md-4"></div>

@@ -43,6 +43,12 @@
             <button class="btn btn-success">Shop now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
           </a>
         </div>
+        <% if current_admin %>
+          <div class="admin-delete-edit">
+            <%= link_to 'Edit', edit_admin_path(@item), class: "btn btn-info" %>
+            <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

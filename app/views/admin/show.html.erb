@@ -1,0 +1,49 @@
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+<% end %>
+<% if @item.sex == 'Mens' %>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_mens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_mens_subcat" %>
+  </div>
+<% elsif @item.sex == 'Womens' %>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_womens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_womens_subcat" %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="show-box">
+      <div class="image-show-box">
+        <%= image_tag @item.item_image.url(:medium) %>
+      </div>
+      <div class="description-show-box">
+        <h3><em><%= @item.short_description %></em></h3>
+        <p><em><%= @item.brand %></em></p>
+        <% if @item.sale == true %>
+          <h3><strike><em>US $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>US $<%= zeros(@item.sale_price) %></em></h3>
+          <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>
+        <% else %>
+          <h3><em>US $<%= zeros(@item.price) %></em></h3>
+        <% end %>
+        <p><%= @item.description %></p>
+        <p><em>Ships worldwide from <%= @item.shipped_from %></em></p>
+        <% if @item.wwshipping == true %>
+          <p>Free Worldwide Shipping</p>
+        <% end %>
+        <div class="show-button">
+          <a href="<%= @item.unique_affiliate_url %>" target="_blank">
+            <button class="btn btn-success">Shop now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

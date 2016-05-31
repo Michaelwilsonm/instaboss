@@ -80,7 +80,13 @@
           <div class="col-md-10">
             <span>On Sale?</span>
             <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
-              <option value="<%= @item.sale %>"></option>
+              <option value="<%= @item.sale %>">
+                <% if @item.sale == true %>
+                  Yes
+                <% else %>
+                  No
+                <% end %>
+              </option>
               <option value="false">No</option>
               <option value="true">Yes</option>
             </select>
@@ -110,19 +116,27 @@
           </div>
 
           <div class="col-md-10">
-            <span>Featured Item</span>
-            <select class="form-control input-sm" id="featured-item" name="FashionItem[featured_item]">
-              <option value="true" selected>featured</option>
-              <option value="false" selected>not featured</option>
-            </select>
+            <span>Featured Item</span><br>
+            <% if @item.featured_item == true %>
+            <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Featured<br>
+            <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured</br>
+
+            <% elsif @item.featured_item == false %>
+            <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
+            <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Not Featured<br>
+            <% end %>
           </div>
 
           <div class="col-md-10">
-            <span>Staff Pick</span>
-            <select class="form-control input-sm" id="staff-item" name="FashionItem[staff_picks]">
-              <option value="true" selected>Yes staff picked</option>
-              <option value="false" selected>No staff picked</option>
-            </select>
+            <span>Staff Pick</span><br>
+            <% if @item.staff_picks == true %>
+            <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Staff Picked<br>
+            <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked</br>
+
+            <% elsif @item.staff_picks == false %>
+            <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
+            <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Not Staff Picked<br>
+            <% end %>
           </div>
 
         </div>

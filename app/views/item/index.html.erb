@@ -10,6 +10,7 @@
         <th><%= sortable "shipped_from" %></th>
         <th><%= sortable "price" %></th>
         <th><%= sortable "sale", "On Sale" %></th>
+        <th><%= sortable "created_at" %></th>
         <th>Action</th>
       </tr>
       <% @users_items.each do |item| %>
@@ -32,6 +33,10 @@
               <%= 'Yes' %><br>
               $<%= zeros(item.sale_price) %>
             <% end %>
+          </td>
+          <td>
+            <p><%= item.created_at.strftime("%m/%d/%y") %></p>
+            <p><%= item.created_at.strftime("%I:%M%p") %></p>
           </td>
           <td>
             <p><%= link_to 'Edit', edit_item_path(item.id) %></p>

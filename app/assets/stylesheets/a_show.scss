@@ -7,8 +7,11 @@
 .image-show-box{
   position: absolute;
   float: left;
+  img{
+    width: 400px;
+  }
 }
 
 .description-show-box{
-  margin-left: 330px;
+  margin-left: 430px;
 }

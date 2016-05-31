@@ -10,6 +10,8 @@
 }
 
 .side_nav_mens {
+  position: absolute;
+  top: -35px;
   width: 150px;
   margin-top: 80px;
   list-style-type: none;
@@ -34,8 +36,7 @@
 }
 
 .mens-main-menu-side{
-  margin-top: 70px;
-  position: relative;
+  position: absolute;
   width: 200px;
   height: 100%;
   margin-top: 0px;

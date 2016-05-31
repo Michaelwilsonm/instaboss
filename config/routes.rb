@@ -32,8 +32,10 @@ Rails.application.routes.draw do
   get 'women/top'
   get 'women/about'
   get 'women/contact'
+  get 'women/brand'
 
   get 'men' => 'men#index'
+  get 'men/brand'
   get 'men/all'
   get 'men/formal'
   get 'men/lifestyle'

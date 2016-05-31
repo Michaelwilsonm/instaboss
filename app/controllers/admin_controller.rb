@@ -9,7 +9,12 @@ class AdminController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to admin_index_path
+
+    if params[:from]=="show-page"
+      redirect_to men_path
+    else
+      redirect_to admin_index_path
+    end
   end
 
   def edit

@@ -24,26 +24,35 @@
 <div class="container">
   <div class="row">
     <% if @featured_men.length >= 1 %>
+    <div class="sale_feat_h1">
       <h1 class="your-items">Featured Mens</h1>
+    </div>
       <%= render "templates/featured_mens" %>
     <% end %>
-    <h1 class="your-items">Featured Sale</h1>
-    <%= render "templates/on_sale_nine" %>
-<!--     <% if @staff_picked_men.length >= 1 %>
-      <h1 class="your-items">Staff Picks</h1>
-      <%= render "templates/staff_picked_mens" %>
-    <% end %> -->
   </div>
 </div>
-
-
-
-
-
-
 <div class="container">
   <div class="row">
-    <div class="col-md-2 col-sm-3 col-xs-3"></div>
+    <% if @staff_picked_men.length >= 1 %>
+    <div class="sale_feat_h1">
+      <h1 class="your-items">Staff Picks</h1>
+    </div>
+      <%= render "templates/staff_picked_mens" %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="sale_feat_h1">
+      <h1 class="your-items">Featured Sale</h1>
+    </div>
+    <%= render "templates/on_sale_nine" %>
+  </div>
+</div>
+<!--
+<div class="container">
+  <div class="row">
     <%= render "templates/all_mens" %>
   </div>
 </div>
+ -->

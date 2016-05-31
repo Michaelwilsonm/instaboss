@@ -6,13 +6,22 @@
         <a href="/item/<%= staff_picks.id %>">
           <%= image_tag staff_picks.item_image.url(:medium) %>
         <div class="description_content">
+          <% if staff_picks.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(staff_picks.price) %></em></strike></td>
-              <td>$<%= zeros(staff_picks.sale_price) %></td>
+              <td><strike><em>$<%= zeros(staff_picks.sale_price) %></em></strike></td>
+              <td>$<%= zeros(staff_picks.price) %></td>
             </tr>
           </table>
-          <p><%= staff_picks.short_description %></p>
+          <% else %>
+          <table>
+            <tr class="normal_table">
+              <td>$<%= zeros(staff_picks.price) %></td>
+            </tr>
+          </table>
+        <% end %>
+        <p><%= staff_picks.short_description %></p>
+        <p><%= staff_picks.brand %></p>
         </div>
         </a>
       </div>

@@ -21,22 +21,34 @@
 <div class="container">
   <div class="row">
     <% if @featured_women.length >= 1 %>
+    <div class="sale_feat_h1">
       <h1 class="your-items">Featured Womens</h1>
+    </div>
       <%= render "templates/featured_womens" %>
     <% end %>
-    <h1 class="your-items">Featured Sale</h1>
-    <%= render "templates/on_sale_nine" %>
-<!--     <% if @staff_picked_women.length >= 1 %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% if @staff_picked_women.length >= 1 %>
+    <div class="sale_feat_h1">
       <h1 class="your-items">Staff Picks</h1>
+    </div>
       <%= render "templates/staff_picked_womens" %>
-    <% end %> -->
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="sale_feat_h1">
+      <h1 class="your-items">Featured Sale</h1>
+    </div>
+    <%= render "templates/on_sale_nine" %>
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
-    <hr>
-    <div class="col-md-2 col-sm-3 col-xs-3"></div>
     <%= render "templates/all_womens" %>
   </div>
-</div>
+</div> -->

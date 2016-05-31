@@ -7,9 +7,9 @@ $(document).ready(function() {
 
     if ($("#new-item-sex").val() === 'Mens') {
       $.each( mensCategories, function( key, value ) {
-        $('#new-item-category').append("<option value=" + key + ">" + "mens subvat" +  key + "</option>");
+        $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
       });
-    } else {
+    } else if ($("#new-item-sex").val() === 'Womens') {
       $.each( womensCategories, function( key, value ) {
         $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
       });

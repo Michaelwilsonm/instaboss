@@ -61,6 +61,7 @@ $(document).ready(function() {
         }
       });
 
+
     $('.fashion_item_form').validate({
       rules: {
         'FashionItem[short_description]' : {

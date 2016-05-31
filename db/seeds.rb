@@ -30,7 +30,6 @@ Admin.create(email: "josh@josh.com", password: "hello123")
     short_description: "Too awesome to say",
     sale: [true, false].sample,
     featured_item: [true, false].sample,
-    staff_picks: [true, false].sample,
     wwshipping: [true, false].sample,
     )
 end

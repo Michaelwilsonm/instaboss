@@ -26,14 +26,21 @@
           <div class="col-md-10">
             <span>Gender</span>
             <select class="form-control input-sm" id="new-item-sex" name="FashionItem[sex]">
-              <option value="Mens" selected>Mens </option>
-              <option value="Womens" selected>Womens </option>
+              <% if @item.sex == 'Mens' %>
+                <option value="<%= @item.sex %>" selected><%= @item.sex %></option>
+                <option value="Womens">Womens </option>
+              <% elsif @item.sex == 'Womens' %>
+                <option value="Mens">Mens </option>
+                <option value="<%= @item.sex %>" selected><%= @item.sex %></option>
+              <% end %>
             </select>
           </div>
 
           <div class="col-md-10">
             <span>Category</span>
-            <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]"></select>
+            <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
+              <option value="<%= @item.category %>"><%= @item.category %></option>
+            </select>
           </div>
 
           <div class="col-md-10">

@@ -21,7 +21,7 @@ $(document).ready(function() {
           });
         }
      });
-    } else {
+    } else if (sex == 'Womens') {
       $.each( womensCategories, function( key, value ) {
         if (key === category) {
           var subCategory = value;
@@ -47,7 +47,7 @@ $(document).ready(function() {
               });
             }
           });
-        } else {
+        } else if (sex === 'Womens') {
           $.each( womensCategories, function( key, value ) {
             if (key === $("#item-category").val()) {
               var subCategory = value;
@@ -60,56 +60,6 @@ $(document).ready(function() {
           });
         }
       });
-
-    if ($("#new-item-sex").val() === 'Mens') {
-      $.each( mensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-      });
-    } else {
-      $.each( womensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-      });
-    }
-
-    $("#new-item-sex").change(function(){
-      $('#new-item-category').children().remove().end()
-      var sexNewItem = $('#new-item-sex').val();
-      if ( sexNewItem === 'Mens') {
-        $.each( mensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
-      } else {
-        $.each( womensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
-      }
-    });
-
-
-    $("#new-item-category").change(function(){
-      var sexNewItem = $('#new-item-sex').val();
-      $('#new-item-sub-category').children().remove().end()
-
-      if ( sexNewItem === 'Mens' ) {
-          $.each( mensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, value ) {
-                $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
-              });
-            }
-          });
-        } else {
-          $.each( womensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, value ) {
-                $('#new-item-sub-category').append("<option value=" + value + ">" + value + "</option>");
-              });
-            }
-          });
-        }
-    });
 
     $('.fashion_item_form').validate({
       rules: {

@@ -63,10 +63,9 @@
               <% end %>
 
               <% countries.delete(@item.shipped_from) %>
-              <option value="<%= countries[0] %>"><%= countries[0] %></option>
-              <option value="<%= countries[1] %>"><%= countries[1] %></option>
-              <option value="<%= countries[2] %>"><%= countries[2] %></option>
-              <option value="<%= countries[3] %>"><%= countries[3] %></option>
+              <% countries.each do |all_countries| %>
+                <option value="<%= all_countries %>"><%= all_countries %></option>
+              <% end %>
             </select>
           </div>
 

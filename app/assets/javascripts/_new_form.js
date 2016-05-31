@@ -29,7 +29,6 @@ $(document).ready(function() {
       }
     });
 
-
     $("#new-item-category, #new-item-sex").change(function(){
       $('#new-item-sub-category').children().remove().end()
       var sexNewItem = $('#new-item-sex').val();

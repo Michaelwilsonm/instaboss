@@ -41,7 +41,7 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.men_lifestyle
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'LifeStyle'").reverse
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Lifestyle'").reverse
   end
 
   def self.men_long

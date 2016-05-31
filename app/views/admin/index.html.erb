@@ -14,6 +14,7 @@
         <th><%= sortable "sale", "On Sale" %></th>
         <th><%= sortable "featured_item" %></th>
         <th><%= sortable "staff_picks" %></th>
+        <th><%= sortable "created_at" %></th>
         <th>Action</th>
       </tr>
       <% @all_items.each do |item| %>
@@ -51,6 +52,10 @@
             <% else %>
               <%= 'Staff picked Yes' %><br>
             <% end %>
+          </td>
+          <td>
+            <p><%= item.created_at.strftime("%m/%d/%y") %></p>
+            <p><%= item.created_at.strftime("%I:%M%p") %></p>
           </td>
           <td>
             <p><%= link_to 'Edit', edit_admin_path(item.id) %></p>

@@ -139,6 +139,9 @@
             <% elsif @item.featured_item == false %>
             <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
             <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Not Featured<br>
+            <% else %>
+              <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
+              <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured<br>
             <% end %>
           </div>
 

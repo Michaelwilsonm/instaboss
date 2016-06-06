@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   post 'admin/featured_item'
 
+  post 'projects/search' => 'projects#search', as: 'search_projects'
+
   get 'site/about'
   get 'site/contact'
+
 
   devise_for :users
 
@@ -33,6 +36,7 @@ Rails.application.routes.draw do
   get 'women/about'
   get 'women/contact'
   get 'women/brand'
+
 
   get 'men' => 'men#index'
   get 'men/brand'

@@ -2,14 +2,15 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :admin
-  # authenticated :user do
-  #   root "men#index", as: "authenticated_root"
-  # end
 
   post 'admin/featured_item'
 
+  post 'brand/search' => 'brand#search', as: 'search_brand'
+  post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'
+
   get 'site/about'
   get 'site/contact'
+
 
   devise_for :users
 
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get 'women/about'
   get 'women/contact'
   get 'women/brand'
+
 
   get 'men' => 'men#index'
   get 'men/brand'

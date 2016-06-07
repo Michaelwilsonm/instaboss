@@ -2,13 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :admin
-  # authenticated :user do
-  #   root "men#index", as: "authenticated_root"
-  # end
 
   post 'admin/featured_item'
 
-  post 'projects/search' => 'projects#search', as: 'search_projects'
+  post 'brand/search' => 'brand#search', as: 'search_brand'
+  post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'
 
   get 'site/about'
   get 'site/contact'

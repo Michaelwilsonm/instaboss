@@ -49,6 +49,9 @@ class WomenController < ApplicationController
     @top = @items.women_top
   end
 
+  def brand
+  end
+
   def about
   end
 

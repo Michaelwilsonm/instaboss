@@ -8,10 +8,5 @@ $(document).ready(function() {
         $(this).find($description).stop().animate({opacity: 0}, 400);
     });
 
-
-
-
-
-
   });
 });

@@ -18,7 +18,7 @@
   font-family: "Calisto MT Regular";
   tr{
     &:nth-child(even){
-      background-color: #EEE;
+      background-color: #fff;
     }
   }
   width: 90%;
@@ -28,10 +28,12 @@
   th{
     height: 50px;
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
     a{
-      color: white;
+      padding: 2px;
+      color: black;
     }
   }
   td{

@@ -4,7 +4,7 @@ class FashionItem < ActiveRecord::Base
   has_attached_file :item_image, styles: { original: "600x600>", medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :item_image, content_type: /\Aimage\/.*\Z/
   before_save do
-    self.brand = brand.split.map(&:capitalize).join(' ')
+    self.brand = brand.split.map(&:downcase).join(' ')
   end
 
   def self.sales
@@ -126,6 +126,7 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Tops'").reverse
   end
 
+
   def self.staff_picked_women_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND staff_picks = 'true'").reverse
   end
@@ -134,4 +135,27 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens'").reverse
   end
 
+  def self.women_lorna_jane
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'lorna jane'").reverse
+  end
+
+  def self.women_fcuk
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'fcuk'").reverse
+  end
+
+  def self.women_daniel_wellington
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'daniel wellington'").reverse
+  end
+
+  def self.women_nautica
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'nautica'").reverse
+  end
+
+  def self.women_forever_21
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'forever21'").reverse
+  end
+
+  def self.women_sunday_somewhere
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sunday somewhere'").reverse
+  end
 end

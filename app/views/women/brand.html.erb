@@ -6,8 +6,8 @@
 <div class="menu-side">
   <%= render "templates/side_navigation_womens" %>
 </div><br>
-<div class="col-lg-4"></div>
-  <div class="col-lg-4">
+<div class="col-lg-4 col-md-4 col-sm-2 col-xs-0"></div>
+  <div class="col-lg-4 col-md-4 col-sm-2 col-xs-0">
     <%= form_tag search_brand_path do %>
       <div class="input-group">
         <input name="query" type="text" class="form-control" placeholder="Search for brands">
@@ -17,14 +17,14 @@
       </div>
     <% end %>
   </div>
-<div class="col-lg-4"></div><br><br><br>
+<div class="col-lg-4 col-md-4 col-sm-2 col-xs-0"></div><br><br><br>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
     </div>
     <h1 class="your-items">Brands</h1>
-      <% @items.each do |all_items| %>
+      <% @all_womens.each do |all_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">
             <a href="/item/<%= all_items.id %>">
@@ -45,7 +45,7 @@
               </table>
               <% end %>
               <p><%= all_items.short_description %></p>
-              <p><%= all_items.brand %></p>
+              <p><%= word_branding(all_items.brand) %></p>
             </div>
             </a>
           </div>

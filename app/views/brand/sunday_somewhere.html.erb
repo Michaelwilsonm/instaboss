@@ -12,29 +12,29 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Accessories</h1>
-    <% @accessorie.each do |accessoire_items| %>
+    <h1 class="your-items">Sunday Somewhere</h1>
+    <% @sunday_somewhere.each do |sunday_somewhere_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= accessoire_items.id %>">
-            <%= image_tag accessoire_items.item_image.url(:medium) %>
+          <a href="/item/<%= sunday_somewhere_items.id %>">
+            <%= image_tag sunday_somewhere_items.item_image.url(:medium) %>
           <div class="description_content">
-            <% if accessoire_items.sale == true %>
+            <% if sunday_somewhere_items.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(accessoire_items.price) %></em></strike></td>
-                <td>$<%= zeros(accessoire_items.sale_price) %></td>
+                <td><strike><em>$<%= zeros(sunday_somewhere_items.price) %></em></strike></td>
+                <td>$<%= zeros(sunday_somewhere_items.sale_price) %></td>
               </tr>
             </table>
             <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(accessoire_items.price) %></td>
+                <td>$<%= zeros(sunday_somewhere_items.price) %></td>
               </tr>
             </table>
             <% end %>
-            <p><%= accessoire_items.short_description %></p>
-            <p><%= word_branding(accessoire_items.brand) %></p>
+            <p><%= sunday_somewhere_items.short_description %></p>
+            <p><%= word_branding(sunday_somewhere_items.brand) %></p>
           </div>
           </a>
         </div>

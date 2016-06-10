@@ -8,7 +8,6 @@ $(document).ready(function() {
     var sex = $('#item-sex').val();
     var category = $('#item-category').val();
     var itemSubCategory = $('.item-new-category').data('temp');
-    i=0;
 
     if ( sex === 'Mens' ) {
      $.each( mensCategories, function( key, value ) {

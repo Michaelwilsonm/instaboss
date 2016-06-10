@@ -23,4 +23,20 @@ module ApplicationHelper
     end
   end
 
+  def word_branding brand
+    brand_array = []
+    brand_array << brand
+    new_str = ''
+
+    brand_array.each do |f|
+      if brand_array.include?("fcuk")
+        new_str = f.upcase
+      else
+        new_str = f.titleize
+      end
+    end
+    new_str
+  end
+
+
 end

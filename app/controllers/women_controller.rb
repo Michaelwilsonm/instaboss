@@ -50,6 +50,7 @@ class WomenController < ApplicationController
   end
 
   def brand
+    @all_womens = @items.all_womens_items_ALL
   end
 
   def about

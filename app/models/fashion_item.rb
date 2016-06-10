@@ -32,7 +32,7 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.nine_special_items_mens
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'").sample(9)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'")
   end
 
   def self.men_accessorie
@@ -87,7 +87,7 @@ class FashionItem < ActiveRecord::Base
 
 
   def self.nine_special_items_womens
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'").sample(9)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'")
   end
 
   def self.women_accessorie

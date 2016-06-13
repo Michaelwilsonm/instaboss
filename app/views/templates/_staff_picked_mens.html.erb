@@ -1,3 +1,4 @@
+<%= render "templates/horizontal_line" %>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
   <% @staff_picked_men.each do |staff_picks| %>
@@ -21,7 +22,7 @@
           </table>
         <% end %>
         <p><%= staff_picks.short_description %></p>
-        <p><%= staff_picks.brand %></p>
+        <p><%= word_branding(staff_picks.brand) %></p>
         </div>
         </a>
       </div>

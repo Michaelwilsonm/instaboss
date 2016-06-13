@@ -11,21 +11,23 @@ $(document).ready(function() {
       var mensUrl = "http://www.instaboss.co/men"
       var womensUrl = "http://www.instaboss.co/women"
 
-      if (windowScroll > 580 && mensUrl == document.URL) {
+      if (windowScroll > 603 && mensUrl == document.URL) {
         $(".side_nav_mens").css({position: "fixed"});
-      } else if (windowScroll > 580 && womensUrl == document.URL) {
+      } else if (windowScroll > 603 && womensUrl == document.URL) {
         $(".side_nav_mens").css({position: "fixed"});
       } else {
         $(".side_nav_mens").css({position: "absolute"});
       }
 
-      if (windowScroll > 115) {
+      if (windowScroll > 155) {
         $(".menu-side").css({position: "fixed",
-                              top: "0px"})
-      } else {
+                              top: "-50px"})
+      } else if (windowScroll < 155){
+
         $(".menu-side").css({position: "relative",
-                              top: "200px;"})
+                              top: "0px"})
       }
+
     })
   });
 });

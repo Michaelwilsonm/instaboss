@@ -27,7 +27,7 @@
           </td>
           <td><%= item.user.email %></td>
           <td><%= item.sex %></td>
-          <td><%= item.brand %></td>
+          <td><%= word_branding(item.brand) %></td>
           <td><%= item.description.slice(0..50) + "...." %></td>
           <td><%= item.shipped_from %></td>
           <td>$<%= zeros(item.price) %></td>

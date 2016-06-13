@@ -1,3 +1,4 @@
+<%= render "templates/horizontal_line" %>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
   <% @featured_women.each do |feature| %>
@@ -9,8 +10,8 @@
           <% if feature.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(feature.sale_price) %></em></strike></td>
-              <td>$<%= zeros(feature.price) %></td>
+              <td><strike><em>$<%= zeros(feature.price) %></em></strike></td>
+              <td>$<%= zeros(feature.sale_price) %></td>
             </tr>
           </table>
           <% else %>
@@ -21,7 +22,7 @@
           </table>
         <% end %>
         <p><%= feature.short_description %></p>
-        <p><%= feature.brand %></p>
+        <p><%= word_branding(feature.brand) %></p>
         </div>
         </a>
       </div>

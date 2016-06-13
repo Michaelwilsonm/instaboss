@@ -12,29 +12,29 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">All Men's</h1>
-    <% @mens.each do |all| %>
+    <h1 class="your-items">Lorna Jane</h1>
+    <% @lorna_jane.each do |lorna_jane_item| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= all.id %>">
-            <%= image_tag all.item_image.url(:medium) %>
+          <a href="/item/<%= lorna_jane_item.id %>">
+            <%= image_tag lorna_jane_item.item_image.url(:medium) %>
           <div class="description_content">
-            <% if all.sale == true %>
+            <% if lorna_jane_item.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(all.price) %></em></strike></td>
-                <td>$<%= zeros(all.sale_price) %></td>
+                <td><strike><em>$<%= zeros(lorna_jane_item.price) %></em></strike></td>
+                <td>$<%= zeros(lorna_jane_item.sale_price) %></td>
               </tr>
             </table>
             <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(all.price) %></td>
+                <td>$<%= zeros(lorna_jane_item.price) %></td>
               </tr>
             </table>
             <% end %>
-            <p><%= all.short_description %></p>
-            <p><%= word_branding(all.brand) %></p>
+            <p><%= lorna_jane_item.short_description %></p>
+            <p><%= word_branding(lorna_jane_item.brand) %></p>
           </div>
           </a>
         </div>
@@ -42,5 +42,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render 'templates/mail_chimp_form_womens' %>

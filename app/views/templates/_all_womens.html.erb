@@ -10,8 +10,8 @@
           <% if womens_items.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(womens_items.sale_price) %></em></strike></td>
-              <td>$<%= zeros(womens_items.price) %></td>
+              <td><strike><em>$<%= zeros(womens_items.price) %></em></strike></td>
+              <td>$<%= zeros(womens_items.sale_price) %></td>
             </tr>
           </table>
           <% else %>
@@ -22,7 +22,7 @@
           </table>
         <% end %>
           <p><%= womens_items.short_description %></p>
-          <p><%= womens_items.brand %></p>
+          <p><%= word_branding(womens_items.brand) %></p>
         </div>
         </a>
       </div>

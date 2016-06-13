@@ -26,7 +26,7 @@
       </div>
       <div class="description-show-box">
         <h3><em><%= @item.short_description %></em></h3>
-        <p><em><%= @item.brand %></em></p>
+        <p><em><%= word_branding(@item.brand) %></em></p>
         <% if @item.sale == true %>
           <h3><strike><em>US $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>US $<%= zeros(@item.sale_price) %></em></h3>
           <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>

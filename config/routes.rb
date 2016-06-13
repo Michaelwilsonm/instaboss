@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   post 'admin/featured_item'
 
   post 'brand/search' => 'brand#search', as: 'search_brand'
+  get 'brand/lorna_jane'
+  get 'brand/sunday_somewhere'
+  get 'brand/forever_21'
+  get 'brand/fcuk'
+  get 'brand/nautica'
+  get 'brand/daniel_wellington'
+
+
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'
 
   get 'site/about'

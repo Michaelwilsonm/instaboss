@@ -1,7 +1,9 @@
+<%= render "templates/horizontal_line" %>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
   <% @featured_men.each do |feature| %>
     <div class="box col-md-4 col-sm-6 col-xs-12">
+
       <div class="image_div">
         <a href="/item/<%= feature.id %>">
           <%= image_tag feature.item_image.url(:medium) %>
@@ -9,8 +11,8 @@
           <% if feature.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(feature.sale_price) %></em></strike></td>
-              <td>$<%= zeros(feature.price) %></td>
+              <td><strike><em>$<%= zeros(feature.price) %></em></strike></td>
+              <td>$<%= zeros(feature.sale_price) %></td>
             </tr>
           </table>
           <% else %>
@@ -21,7 +23,7 @@
           </table>
         <% end %>
         <p><%= feature.short_description %></p>
-        <p><%= feature.brand %></p>
+        <p><%= word_branding(feature.brand) %></p>
         </div>
         </a>
       </div>

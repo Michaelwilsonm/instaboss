@@ -5,7 +5,7 @@ class MenController < ApplicationController
   def index
     @mens = @items.all_mens_items
     @sale_mens = @items.all_mens_on_sale
-    @special_three = @items.nine_special_items_mens.take(12)
+    @special_three = @items.nine_special_items_mens.sample(12)
     @featured_men = @items.featured_mens.take(6)
     @staff_picked_men = @items.staff_picks_mens_items.take(12)
   end

@@ -34,11 +34,13 @@
           </table>
           <% end %>
           <p><%= all_specials.short_description %></p>
-          <p><%= all_specials.brand %></p>
+          <p><%= word_branding(all_specials.brand) %></p>
         </div>
         </a>
       </div>
     </div>
   <% end %>
+  </div>
 </div>
-</div>
+
+<%= render 'templates/mail_chimp_form_womens' %>

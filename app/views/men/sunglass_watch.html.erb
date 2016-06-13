@@ -35,7 +35,7 @@
               </table>
               <% end %>
               <p><%= sunglass_items.short_description %></p>
-              <p><%= sunglass_items.brand %></p>
+              <p><%= word_branding(sunglass_items.brand) %></p>
             </div>
             </a>
           </div>
@@ -44,3 +44,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'templates/mail_chimp_form_womens' %>

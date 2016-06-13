@@ -35,7 +35,7 @@
               </table>
               <% end %>
               <p><%= life_items.short_description %></p>
-              <p><%= life_items.brand %></p>
+              <p><%= word_branding(life_items.brand) %></p>
             </div>
             </a>
           </div>
@@ -45,3 +45,5 @@
   </div>
 </div>
 
+
+<%= render 'templates/mail_chimp_form_womens' %>

@@ -1,3 +1,4 @@
+<%= render "templates/horizontal_line" %>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
   <% @special_three.each do |specials| %>
@@ -13,7 +14,7 @@
             </tr>
           </table>
           <p><%= specials.short_description %></p>
-          <p><%= specials.brand %></p>
+          <p><%= word_branding(specials.brand) %></p>
         </div>
         </a>
       </div>

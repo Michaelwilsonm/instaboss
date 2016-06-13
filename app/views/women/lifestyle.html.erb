@@ -12,7 +12,7 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
     </div>
-    <h1 class="your-items">LifeStyle</h1>
+    <h1 class="your-items">Home & LifeStyle</h1>
       <% @lifestyle.each do |life_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">
@@ -34,7 +34,7 @@
               </table>
               <% end %>
               <p><%= life_items.short_description %></p>
-              <p><%= life_items.brand %></p>
+              <p><%= word_branding(life_items.brand) %></p>
             </div>
             </a>
           </div>
@@ -44,3 +44,4 @@
   </div>
 </div>
 
+<%= render 'templates/mail_chimp_form_womens' %>

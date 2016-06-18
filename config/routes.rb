@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'client/client'
+  post 'client/create'
   devise_for :admins
   resources :admin
 

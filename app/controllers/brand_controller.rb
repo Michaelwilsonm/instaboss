@@ -7,6 +7,12 @@ class BrandController < ApplicationController
     @query = @women.where("brand LIKE ?", @query_brand)
   end
 
+  def side_search
+    @query_brand = "#{params[:query]}".split.map(&:downcase).join(' ')
+    @women = FashionItem.where(:sex => "Womens")
+    @query = @women.where("brand LIKE ?", @query_brand)
+  end
+
   def lorna_jane
     @lorna_jane = @women_items.women_lorna_jane
   end

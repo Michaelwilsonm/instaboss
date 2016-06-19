@@ -19,11 +19,12 @@ $(document).ready(function() {
         $(".side_nav_mens").css({position: "absolute"});
       }
 
-      if (windowScroll > 155) {
+      if (windowScroll > 245) {
+        $(".side_search").css({marginTop: "0px"})
         $(".menu-side").css({position: "fixed",
-                              top: "-50px"})
-      } else if (windowScroll < 155){
-
+                              top: "-30px"})
+      } else if (windowScroll < 245){
+        $(".side_search").css({marginTop: "90px"})
         $(".menu-side").css({position: "relative",
                               top: "0px"})
       }

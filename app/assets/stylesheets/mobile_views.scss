@@ -133,12 +133,40 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .hr_main{
+    height: 1px;
+    margin: -10px 0px 0px 10px;
+    width: 130%;
+    border: none;
+    color: #ccc;
+    background-color: #ccc;
+    display: block;
+  }
+
   .show-box{
   margin-left: 70px;
   }
   .image-show-box>img{
     width: 340px;
     margin-left: 70px;
+  }
+
+  .your-items{
+    margin-left: 120px;
+  }
+
+  .image_div img{
+    height: 420px;
+  }
+
+  .image_div{
+    width: 350px;
+    height: 350px;
+  }
+
+  .box{
+    left: 50px;
+    width: 360px !important;
   }
 
 }

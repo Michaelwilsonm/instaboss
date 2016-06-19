@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :find_item, only: [:show, :destroy, :edit, :update]
+  before_action :find_item, only: [:destroy, :edit, :update]
   before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 

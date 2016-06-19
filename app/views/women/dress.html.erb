@@ -6,7 +6,7 @@
 
 <div class="menu-side">
   <div class="margin_menu_side"></div>
-  <%= render "templates/side_navigation_womens" %>
+  <%= render "templates/side_navigation_womens_search" %>
 </div>
 <div class="container">
   <div class="row" style="margin-left: 0px;">
@@ -14,8 +14,11 @@
       <%= render "templates/item_navigation_womens_subcat" %>
     </div>
     <h1 class="your-items">Dresses</h1>
+    <div class="item_sub_cat">
+      <%= render "templates/dress_sub_cat" %>
+    </div>
       <% @dress.each do |dress_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="box col-md-4 col-sm-6 col-xs-12 <%= dress_items.sub_category %>">
           <div class="image_div">
             <a href="/item/<%= dress_items.id %>">
               <%= image_tag dress_items.item_image.url(:medium) %>

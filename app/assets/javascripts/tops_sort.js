@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-    $(".sorting_class_tops>li").click(function(){
+    $(".sorting_class>li").click(function(){
       var subCategory = $(this.id).selector;
       var box = $(".box");
-      $(".sorting_class_tops>li.btn-active").removeClass("btn-active");
+      $(".sorting_class>li.btn-active").removeClass("btn-active");
       $(this).addClass("btn-active");
 
       if (box.hasClass(subCategory)){

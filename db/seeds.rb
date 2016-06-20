@@ -24,7 +24,7 @@ Admin.create(email: "josh@josh.com", password: "hello123")
     sex: "Womens",
     brand: ['Nike', 'Reebok', 'Prada', 'The Verve'].sample,
     description: "Description of product",
-    category: "Accessories",
+    category: "Swim",
     sub_category: ['Lingerie & Underwear','Hats', 'Bags & Purses', 'Jewellery' ].sample,
     price: 60.0,
     short_description: "Too awesome to say",

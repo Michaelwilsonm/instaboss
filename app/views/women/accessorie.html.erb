@@ -1,3 +1,6 @@
+<div class="search_bar">
+  <%= render "templates/side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
@@ -7,13 +10,13 @@
 <div class="menu-side">
 
   <div class="margin_menu_side"></div>
-  <%= render "templates/side_navigation_womens_search" %>
+  <%= render "templates/side_navigation_womens" %>
 </div>
-<div class="container">
-  <div class="row" style="margin-left: 0px;">
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">Accessories</h1>
     <div class="item_sub_cat">
       <%= render "templates/access_sub_cat" %>

@@ -13,7 +13,7 @@ class BrandController < ApplicationController
     puts @query
     puts "*" * 50
     @women = FashionItem.where(:sex => "Womens")
-    @query_all = @women.where("description LIKE ? or short_description LIKE ?", @query,@query)
+    @query_all = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@query)
   end
 
   def lorna_jane

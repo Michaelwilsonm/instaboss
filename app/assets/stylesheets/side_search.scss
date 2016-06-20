@@ -1,5 +1,21 @@
-.side_search{
-  width: 170px;
-  margin-bottom: 30px;
-  margin-top: 90px;
+.top_search{
+  width: 300px;
+  display: block;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+}
+
+.search_bar{
+  display: block;
+  display: none;
+  height: 38px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  z-index: 1;
+  text-align: center;
 }

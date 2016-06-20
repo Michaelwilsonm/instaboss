@@ -21,4 +21,9 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
+.container{
+  padding: 0px;
+  margin: 0px;
+}
+
 @import "wice_grid";

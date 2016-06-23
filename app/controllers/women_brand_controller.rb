@@ -1,4 +1,4 @@
-class BrandController < ApplicationController
+class WomenBrandController < ApplicationController
   before_action :all_women
 
   def search
@@ -32,12 +32,24 @@ class BrandController < ApplicationController
     @daniel_wellington = @women_items.women_daniel_wellington
   end
 
-  def nautica
-    @nautica = @women_items.women_nautica
+  def alice_mccall
+    @alice_mccall = @women_items.women_alice_mccall
   end
 
-  def fcuk
-    @fcuk = @women_items.women_fcuk
+  def auguste
+    @auguste = @women_items.women_auguste
+  end
+
+  def sea_folly
+    @sea_folly = @women_items.women_sea_folly
+  end
+
+  def top_shop
+    @top_shop = @women_items.women_top_shop
+  end
+
+  def victorias_secret
+    @victorias_secret = @women_items.women_victorias_secret
   end
 
   private
@@ -45,9 +57,7 @@ class BrandController < ApplicationController
     def all_women
       @women_items = FashionItem.all
     end
-
     def all_men
       @men_items = FashionItem.all
     end
-
 end

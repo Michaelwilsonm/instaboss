@@ -9,14 +9,17 @@ Rails.application.routes.draw do
 
   post 'admin/featured_item'
 
-  post 'brand/search' => 'brand#search', as: 'search_brand'
-  post 'brand/side_search' => 'brand#side_search', as: 'side_search_brand'
-  get 'brand/lorna_jane'
-  get 'brand/sunday_somewhere'
-  get 'brand/forever_21'
-  get 'brand/fcuk'
-  get 'brand/nautica'
-  get 'brand/daniel_wellington'
+  post 'women_brand/search' => 'brand#search', as: 'search_brand'
+  post 'women_brand/side_search' => 'brand#side_search', as: 'side_search_brand'
+  get 'women_brand/lorna_jane'
+  get 'women_brand/sunday_somewhere'
+  get 'women_brand/forever_21'
+  get 'women_brand/daniel_wellington'
+  get 'women_brand/alice_mccall'
+  get 'women_brand/auguste'
+  get 'women_brand/sea_folly'
+  get 'women_brand/top_shop'
+  get 'women_brand/victorias_secret'
 
 
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'

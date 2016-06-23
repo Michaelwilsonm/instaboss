@@ -1,57 +1,97 @@
+<div class="search_bar">
+    <%= render "templates/women_side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
 <div class="menu-side">
+  <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens" %>
-</div><br>
-<div class="col-lg-4 col-md-4 col-sm-2 col-xs-0"></div>
-  <div class="col-lg-4 col-md-4 col-sm-2 col-xs-0">
-    <%= form_tag search_brand_path do %>
-      <div class="input-group">
-        <input name="query" type="text" class="form-control" placeholder="Search for brands">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">Search</button>
-        </span>
-      </div>
-    <% end %>
-  </div>
-<div class="col-lg-4 col-md-4 col-sm-2 col-xs-0"></div><br><br><br>
-<div class="container">
-  <div class="row" style="margin-left: 0px;">
+</div>
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
+    </div><br>
+    <h1 class="your-items">Womens Brands</h1>
+    <div class="item_sub_cat" style="visibility: hidden;">
+      <%= render "templates/access_sub_cat_mens" %>
     </div>
-    <h1 class="your-items">Brands</h1>
-      <% @all_womens.each do |all_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-            <a href="/item/<%= all_items.id %>">
-              <%= image_tag all_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if all_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(all_items.price) %></em></strike></td>
-                  <td>$<%= zeros(all_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(all_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= all_items.short_description %></p>
-              <p><%= word_branding(all_items.brand) %></p>
-            </div>
-            </a>
-          </div>
+
+    <a href="/women_brand/alice_mccall">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/alice_mccall_brand.jpg" border="0" style="height: 120px;" alt="">
         </div>
-      <% end %>
-    </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/auguste">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/auguste_brand.jpg" border="0" style="height: 160px;" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/daniel_wellington">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/dan_wellington_brand.jpg" border="0" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/forever_21">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/forever_brand.jpg" border="0" style="height: 150px;" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/lorna_jane">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/lorna_brand.jpg" border="0" style="height: 130px;" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/sea_folly">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/sea_folly_brand.jpg" border="0" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/sunday_somewhere">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/brand_ss.png" border="0" style="height: 90px;" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/top_shop">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/top_shop_brand.png" border="0" style="height: 70px;" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="/women_brand/victorias_secret">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/vic_brand.png" border="0" style="height: 90px;" alt="">
+        </div>
+      </div>
+    </a>
+
   </div>
 </div>
 

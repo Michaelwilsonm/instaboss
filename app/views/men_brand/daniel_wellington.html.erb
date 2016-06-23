@@ -1,5 +1,5 @@
 <div class="search_bar">
-  <%= render "templates/women_side_search_bar" %>
+  <%= render "templates/men_side_search_bar" %>
 </div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
@@ -13,37 +13,37 @@
   </div>
 </div>
 <div class="mens-main-menu-side">
-  <%= render "templates/side_navigation_womens" %>
+  <%= render "templates/side_navigation_mens" %>
 </div>
 <div class="container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Forever 21</h1>
+    <h1 class="your-items">Daniel Wellington</h1>
     <%= render "templates/horizontal_line" %>
-    <% @forever_21.each do |forever_21_items| %>
+    <% @daniel_wellington.each do |daniel_wellington_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= forever_21_items.id %>">
-            <%= image_tag forever_21_items.item_image.url(:medium) %>
+          <a href="/item/<%= daniel_wellington_items.id %>">
+            <%= image_tag daniel_wellington_items.item_image.url(:medium) %>
           <div class="description_content">
-            <% if forever_21_items.sale == true %>
+            <% if daniel_wellington_items.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(forever_21_items.price) %></em></strike></td>
-                <td>$<%= zeros(forever_21_items.sale_price) %></td>
+                <td><strike><em>$<%= zeros(daniel_wellington_items.price) %></em></strike></td>
+                <td>$<%= zeros(daniel_wellington_items.sale_price) %></td>
               </tr>
             </table>
             <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(forever_21_items.price) %></td>
+                <td>$<%= zeros(daniel_wellington_items.price) %></td>
               </tr>
             </table>
             <% end %>
-            <p><%= forever_21_items.short_description %></p>
-            <p><%= word_branding(forever_21_items.brand) %></p>
+            <p><%= daniel_wellington_items.short_description %></p>
+            <p><%= word_branding(daniel_wellington_items.brand) %></p>
           </div>
           </a>
         </div>

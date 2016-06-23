@@ -6,49 +6,48 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-<div class="menu-side">
-  <div class="margin_menu_side"></div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="womens_main_photo">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
   <%= render "templates/side_navigation_mens" %>
 </div>
 <div class="container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
-    </div><br>
-    <h1 class="your-items">LifeStyle</h1>
-    <div class="item_sub_cat">
-      <%= render "templates/lifestyle_mens_sub_cat" %>
     </div>
-    <% @lifestyle.each do |life_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12 <%= life_items.sub_category %>">
+    <h1 class="your-items">MVMT</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @mvmt.each do |mvmt_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= life_items.id %>">
-            <%= image_tag life_items.item_image.url(:medium) %>
+          <a href="/item/<%= mvmt_items.id %>">
+            <%= image_tag mvmt_items.item_image.url(:medium) %>
           <div class="description_content">
-            <% if life_items.sale == true %>
+            <% if mvmt_items.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(life_items.price) %></em></strike></td>
-                <td>$<%= zeros(life_items.sale_price) %></td>
+                <td><strike><em>$<%= zeros(mvmt_items.price) %></em></strike></td>
+                <td>$<%= zeros(mvmt_items.sale_price) %></td>
               </tr>
             </table>
             <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(life_items.price) %></td>
+                <td>$<%= zeros(mvmt_items.price) %></td>
               </tr>
             </table>
             <% end %>
-            <p><%= life_items.short_description %></p>
-            <p><%= word_branding(life_items.brand) %></p>
+            <p><%= mvmt_items.short_description %></p>
+            <p><%= word_branding(mvmt_items.brand) %></p>
           </div>
           </a>
         </div>
       </div>
     <% end %>
-    </div>
   </div>
 </div>
-
-
-<%= render 'templates/mail_chimp_form_mens' %>

@@ -9,8 +9,20 @@ Rails.application.routes.draw do
 
   post 'admin/featured_item'
 
-  post 'women_brand/search' => 'brand#search', as: 'search_brand'
-  post 'women_brand/side_search' => 'brand#side_search', as: 'side_search_brand'
+  post 'men_brand/search' => 'men_brand#search', as: 'men_search_brand'
+  post 'men_brand/side_search' => 'men_brand#side_search', as: 'men_side_search_brand'
+  get 'men_brand/bjorn_borg'
+  get 'men_brand/daniel_wellington'
+  get 'men_brand/just_another_fisherman'
+  get 'men_brand/mvmt'
+  get 'men_brand/morepork'
+  get 'men_brand/nautica'
+  get 'men_brand/retro_marine'
+  get 'men_brand/sunday_somewhere'
+  get 'men_brand/timberland'
+
+  post 'women_brand/search' => 'women_brand#search', as: 'women_search_brand'
+  post 'women_brand/side_search' => 'women_brand#side_search', as: 'women_side_search_brand'
   get 'women_brand/lorna_jane'
   get 'women_brand/sunday_somewhere'
   get 'women_brand/forever_21'

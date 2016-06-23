@@ -53,7 +53,7 @@ $black: #000;
 .client-login {
   position: relative;
   top: -40px;
-  left: 150px;
+  left: 133px;
   font-size: 12px;
   font-weight: normal;
 }
@@ -63,4 +63,13 @@ $black: #000;
   top: 0px;
   font-size: 12px;
   font-weight: normal;
+}
+
+.client-add-item, .add-new-client {
+  padding: 10px;
+  margin-left: 130px;
+  color: black;
+  &:hover {
+    color: black;
+  }
 }

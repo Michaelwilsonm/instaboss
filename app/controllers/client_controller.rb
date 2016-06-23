@@ -14,6 +14,16 @@ class ClientController < ApplicationController
     end
   end
 
+  def all
+    @user = User.all
+  end
+
+  def destroy
+    @user = User.find_by(params[:id])
+    @user.destroy!
+    redirect_to client_all_path
+  end
+
   private
 
     def create_user_params

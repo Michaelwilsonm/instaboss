@@ -1,10 +1,6 @@
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(".item_nav_top>a").click(function(e){
-      e.preventDefault()
-    })
-
     $(window).scroll(function(){
       var windowScroll = $(window).scrollTop();
       var windowHeight = $(window).height();

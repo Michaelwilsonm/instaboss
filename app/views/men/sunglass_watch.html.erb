@@ -1,46 +1,51 @@
+<div class="search_bar">
+  <%= render "templates/side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">Sunglasses & Watches</h1>
-      <% @sunglass_watch.each do |sunglass_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-            <a href="/item/<%= sunglass_items.id %>">
-              <%= image_tag sunglass_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if sunglass_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(sunglass_items.price) %></em></strike></td>
-                  <td>$<%= zeros(sunglass_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(sunglass_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= sunglass_items.short_description %></p>
-              <p><%= word_branding(sunglass_items.brand) %></p>
-            </div>
-            </a>
+    <div class="item_sub_cat">
+      <%= render "templates/sunglass_sub_cat_mens" %>
+    </div>
+    <% @sunglass_watch.each do |sunglass_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= sunglass_items.sub_category %>">
+        <div class="image_div">
+          <a href="/item/<%= sunglass_items.id %>">
+            <%= image_tag sunglass_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if sunglass_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(sunglass_items.price) %></em></strike></td>
+                <td>$<%= zeros(sunglass_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(sunglass_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= sunglass_items.short_description %></p>
+            <p><%= word_branding(sunglass_items.brand) %></p>
           </div>
+          </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

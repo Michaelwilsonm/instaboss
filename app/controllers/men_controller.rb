@@ -46,6 +46,10 @@ class MenController < ApplicationController
     @top = @items.men_top
   end
 
+  def brand
+    @all_mens = @items.all_mens_items_ALL
+  end
+
   def about
   end
 

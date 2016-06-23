@@ -1,46 +1,51 @@
+<div class="search_bar">
+  <%= render "templates/side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">LifeStyle</h1>
-      <% @lifestyle.each do |life_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-            <a href="/item/<%= life_items.id %>">
-              <%= image_tag life_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if life_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(life_items.price) %></em></strike></td>
-                  <td>$<%= zeros(life_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(life_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= life_items.short_description %></p>
-              <p><%= word_branding(life_items.brand) %></p>
-            </div>
-            </a>
+    <div class="item_sub_cat">
+      <%= render "templates/lifestyle_mens_sub_cat" %>
+    </div>
+    <% @lifestyle.each do |life_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= life_items.sub_category %>">
+        <div class="image_div">
+          <a href="/item/<%= life_items.id %>">
+            <%= image_tag life_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if life_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(life_items.price) %></em></strike></td>
+                <td>$<%= zeros(life_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(life_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= life_items.short_description %></p>
+            <p><%= word_branding(life_items.brand) %></p>
           </div>
+          </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

@@ -8,7 +8,7 @@ class BrandController < ApplicationController
   end
 
   def side_search
-    @query = "%#{params[:query]}%"
+    @query = "%#{params[:query]}%".split.map(&:downcase).join(' ')
     puts "*" * 50
     puts @query
     puts "*" * 50
@@ -44,6 +44,10 @@ class BrandController < ApplicationController
 
     def all_women
       @women_items = FashionItem.all
+    end
+
+    def all_men
+      @men_items = FashionItem.all
     end
 
 end

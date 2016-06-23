@@ -1,46 +1,51 @@
+<div class="search_bar">
+  <%= render "templates/side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">Shorts & Swimwear</h1>
-      <% @short_swimwear.each do |short_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-            <a href="/item/<%= short_items.id %>">
-              <%= image_tag short_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if short_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(short_items.price) %></em></strike></td>
-                  <td>$<%= zeros(short_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(short_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= short_items.short_description %></p>
-              <p><%= word_branding(short_items.brand) %></p>
-            </div>
-            </a>
+    <div class="item_sub_cat">
+      <%= render "templates/short_sub_cat_mens" %>
+    </div>
+    <% @short_swimwear.each do |short_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= short_items.sub_category %>">
+        <div class="image_div">
+          <a href="/item/<%= short_items.id %>">
+            <%= image_tag short_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if short_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(short_items.price) %></em></strike></td>
+                <td>$<%= zeros(short_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(short_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= short_items.short_description %></p>
+            <p><%= word_branding(short_items.brand) %></p>
           </div>
+          </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

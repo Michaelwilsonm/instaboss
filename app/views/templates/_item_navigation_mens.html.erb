@@ -1,5 +1,7 @@
 <% mens_categories = {'All': '/men/all', 'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
 
+<% mens_brands = {'BJORN BORG': '/brand/bjorn_borg' , 'Daniel Wellington': '/brand/daniel_wellington', 'Just Another Fisherman': '/brand/just_another_fisherman', 'MVMT': '/brand/mvmt', 'Moreporks': '/brand/moreporks', 'Nautica': '/brand/nautica','retromarine': '/brand/retromarine', 'Sunday Somewhere': '/brand/sunday_somewhere', 'Timberland': '/brand/timberland'} %>
+
 
 <div class="container">
   <div class="row">
@@ -15,7 +17,15 @@
         </div>
       </div>
         <%= link_to "ON SALE", site_sale_mens_path %>
-        <%= link_to "BRANDS", men_brand_path %>
+      <div class="item_nav_top_brand">
+        <%= link_to "BRANDS", men_brand_path, class: "shop_by_brand" %>
+        <div class="item_drop_shop_by_brand" id="my_drop_down_brand">
+          <% mens_brands.each do |keys, values| %>
+            <%= link_to keys, values %>
+          <% end %>
+          <!-- <%= link_to "Search all brands", men_brand_path %> -->
+        </div>
+      </div>
         <%= link_to "CONTACT", men_contact_path %>
         <div class="instagram_logo">
           <a href="https://www.instagram.com/instaboss.mens/" target="_blank">

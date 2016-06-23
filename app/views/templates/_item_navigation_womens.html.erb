@@ -1,6 +1,7 @@
 <% womens_categories = {'All': '/women/all', 'Accessories': '/women/accessorie', 'Dresses': '/women/dress','Jeans Trousers & Leggings': '/women/jean_legging' , 'Home & Lifestyle': '/women/lifestyle', 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short_skirt', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Swim & Beachwear': '/women/swim_beachwear', 'Tops': '/women/top' }; %>
 
-<% womens_brands = {'Lorna Jane': '/brand/lorna_jane' , 'Sunday Somewhere': '/brand/sunday_somewhere', 'Forever21': '/brand/forever_21', 'FCUK': '/brand/fcuk', 'Daniel Wellington': '/brand/daniel_wellington', 'Nautica': '/brand/nautica'} %>
+<% womens_brands = {'Alice McCall': '/brand/alice_mccall' , 'Auguste': '/brand/auguste', 'Daniel Wellington': '/brand/daniel_wellington', 'Forever 21': '/brand/forever_21', 'Lorna Jane': '/brand/lorna_jane', 'Sea Folly': '/brand/sea_folly', 'Sunday Somewhere': '/brand/sunday_somewhere_womens', 'Top Shop': '/brand/top_shop', "Victoria's Secret": '/brand/victorias_secret'} %>
+
 
 <div class="container">
   <div class="row">
@@ -22,7 +23,7 @@
           <% womens_brands.each do |keys, values| %>
             <%= link_to keys, values %>
           <% end %>
-<!--           <%= link_to "Search all brands", women_brand_path %> -->
+          <!-- <%= link_to "Search all brands", women_brand_path %> -->
         </div>
       </div>
         <%= link_to "CONTACT", women_contact_path %>

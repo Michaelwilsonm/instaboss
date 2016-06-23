@@ -14,38 +14,38 @@
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">Dresses</h1>
     <div class="item_sub_cat">
       <%= render "templates/dress_sub_cat" %>
     </div>
-      <% @dress.each do |dress_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12 <%= dress_items.sub_category %>">
-          <div class="image_div">
-            <a href="/item/<%= dress_items.id %>">
-              <%= image_tag dress_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if dress_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(dress_items.price) %></em></strike></td>
-                  <td>$<%= zeros(dress_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(dress_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= dress_items.short_description %></p>
-              <p><%= word_branding(dress_items.brand) %></p>
-            </div>
-            </a>
+    <% @dress.each do |dress_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= dress_items.sub_category %>">
+        <div class="image_div">
+          <a href="/item/<%= dress_items.id %>">
+            <%= image_tag dress_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if dress_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(dress_items.price) %></em></strike></td>
+                <td>$<%= zeros(dress_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(dress_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= dress_items.short_description %></p>
+            <p><%= word_branding(dress_items.brand) %></p>
           </div>
+          </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

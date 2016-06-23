@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'client/client'
   post 'client/create'
+  delete 'client/destroy'
+  get 'client/all'
   devise_for :admins
   resources :admin
 

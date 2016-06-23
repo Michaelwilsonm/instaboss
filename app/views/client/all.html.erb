@@ -1,0 +1,17 @@
+<%= render "templates/navigation" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-12"></div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h1>All Clients</h1><hr>
+        <% @user.each do |user| %>
+          <h3 style="margin: 0px;"><%= user.email %></h3>
+          <%= link_to 'Delete', client_destroy_path(user.id), method: :delete, class: "btn btn-danger", style: "float: right; margin-top: -30px;" %>
+          <hr><br>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12"></div>
+  </div>
+</div>

@@ -3,7 +3,8 @@
   <h1 class="your-items">All Admin Items</h1>
 
 
-  <%= link_to 'ADD new Client', client_client_path %>
+  <p><em><%= link_to 'ADD new Client', client_client_path, class: "add-new-client" %></em></p>
+  <p><em><%= link_to 'List of Clients', client_all_path, class: "add-new-client" %></em></p>
 
   <div style="overflow-x: auto;">
     <table class="sort-table">

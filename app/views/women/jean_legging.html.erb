@@ -6,46 +6,46 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-
 <div class="menu-side">
+  <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens" %>
 </div>
 <div class="container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items">Jeans, Trousers & Leggings</h1>
     <div class="item_sub_cat">
       <%= render "templates/jean_sub_cat" %>
     </div>
-      <% @jean_legging.each do |jeans_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12 <%= jeans_items.sub_category %>">
-          <div class="image_div">
-            <a href="/item/<%= jeans_items.id %>">
-              <%= image_tag jeans_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if jeans_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(jeans_items.price) %></em></strike></td>
-                  <td>$<%= zeros(jeans_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(jeans_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= jeans_items.short_description %></p>
-              <p><%= word_branding(jeans_items.brand) %></p>
-            </div>
-            </a>
+    <% @jean_legging.each do |jeans_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= jeans_items.sub_category %>">
+        <div class="image_div">
+          <a href="/item/<%= jeans_items.id %>">
+            <%= image_tag jeans_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if jeans_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(jeans_items.price) %></em></strike></td>
+                <td>$<%= zeros(jeans_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(jeans_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= jeans_items.short_description %></p>
+            <p><%= word_branding(jeans_items.brand) %></p>
           </div>
+          </a>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

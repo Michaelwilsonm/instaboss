@@ -31,6 +31,8 @@ module ApplicationHelper
     brand_array.each do |f|
       if brand_array.include?("fcuk")
         new_str = f.upcase
+      elsif brand_array.include?("mvmt")
+        new_str = f.upcase
       else
         new_str = f.titleize
       end

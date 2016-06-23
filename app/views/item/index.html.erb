@@ -1,5 +1,6 @@
 <%= render "templates/navigation" %>
   <h1 class="your-items">Your Items</h1>
+  <p><em><%= link_to "Add Item", new_item_path, class: "client-add-item" %></em></p>
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">

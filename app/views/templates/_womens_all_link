@@ -1,0 +1,9 @@
+<ul class="sorting_class">
+  <% if current_page?(men_all_path) %>
+    <li class="link_to_all_mens"><%= link_to 'All Mens', men_all_path, style: "font-weight:bold" %></li>
+    <li class="link_to_all_womens"><%= link_to 'All Womens', women_all_path %></li>
+  <% else %>
+    <li class="link_to_all_mens"><%= link_to 'All Mens', men_all_path %></li>
+    <li class="link_to_all_womens"><%= link_to 'All Womens', women_all_path, style: "font-weight:bold" %></li>
+  <% end %>
+</ul><br><br>

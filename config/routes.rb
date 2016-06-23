@@ -2,19 +2,36 @@ Rails.application.routes.draw do
 
   get 'client/client'
   post 'client/create'
+  delete 'client/destroy'
+  get 'client/all'
   devise_for :admins
   resources :admin
 
   post 'admin/featured_item'
 
-  post 'brand/search' => 'brand#search', as: 'search_brand'
-  post 'brand/side_search' => 'brand#side_search', as: 'side_search_brand'
-  get 'brand/lorna_jane'
-  get 'brand/sunday_somewhere'
-  get 'brand/forever_21'
-  get 'brand/fcuk'
-  get 'brand/nautica'
-  get 'brand/daniel_wellington'
+  # post 'men_brand/search' => 'men_brand#search', as: 'men_search_brand'
+  post 'men_brand/side_search' => 'men_brand#side_search', as: 'men_side_search_brand'
+  get 'men_brand/bjorn_borg'
+  get 'men_brand/daniel_wellington'
+  get 'men_brand/just_another_fisherman'
+  get 'men_brand/mvmt'
+  get 'men_brand/morepork'
+  get 'men_brand/nautica'
+  get 'men_brand/retro_marine'
+  get 'men_brand/sunday_somewhere'
+  get 'men_brand/timberland'
+
+  # post 'women_brand/search' => 'women_brand#search', as: 'women_search_brand'
+  post 'women_brand/side_search' => 'women_brand#side_search', as: 'women_side_search_brand'
+  get 'women_brand/lorna_jane'
+  get 'women_brand/sunday_somewhere'
+  get 'women_brand/forever_21'
+  get 'women_brand/daniel_wellington'
+  get 'women_brand/alice_mccall'
+  get 'women_brand/auguste'
+  get 'women_brand/sea_folly'
+  get 'women_brand/top_shop'
+  get 'women_brand/victorias_secret'
 
 
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'

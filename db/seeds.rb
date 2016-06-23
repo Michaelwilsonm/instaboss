@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.delete_all
 FashionItem.delete_all
 
 img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
@@ -21,10 +22,10 @@ Admin.create(email: "josh@josh.com", password: "hello123")
     unique_affiliate_url: "www.google.com",
     user_id: 1,
     shipped_from: "USA",
-    sex: "Womens",
-    brand: ['Nike', 'Reebok', 'Prada', 'The Verve'].sample,
+    sex: "Mens",
+    brand: ['MVMT', 'Morepork', 'just another fisherman', 'timberland'].sample,
     description: "Description of product",
-    category: "Swim",
+    category: "Accessories",
     sub_category: ['Lingerie & Underwear','Hats', 'Bags & Purses', 'Jewellery' ].sample,
     price: 60.0,
     short_description: "Too awesome to say",
@@ -42,7 +43,7 @@ end
     user_id: 2,
     shipped_from: "USA",
     sex: "Mens",
-    brand: ['Nike', 'Reebok', 'Prada', 'The Verve'].sample,
+    brand: ['MVMT', 'Morepork', 'just another fisherman', 'timberland'].sample,
     description: "Description of product",
     category: "Accessories",
     sub_category: ['Underwear & Socks','Hats & Grooming', 'Jewellery' ].sample,

@@ -71,6 +71,47 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Sunglasses'").reverse
   end
 
+  def self.bjorn_borg
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'bjorn borg'").reverse
+  end
+
+  def self.daniel_wellington
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'daniel wellington'").reverse
+  end
+
+  def self.just_another_fisherman
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'just another fisherman'").reverse
+  end
+
+  def self.morepork
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'morepork'").reverse
+  end
+
+  def self.mvmt
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'mvmt'").reverse
+  end
+
+  def self.nautica
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'nautica'").reverse
+  end
+
+  def self.retro_marine
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'retro marine'").reverse
+  end
+
+  def self.sunday_somewhere
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'sunday somewhere'").reverse
+  end
+
+  def self.timberland
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'timberland'").reverse
+  end
+
+
+
+
+
+
 
 #WOMENS
   def self.all_womens_items
@@ -139,17 +180,10 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'lorna jane'").reverse
   end
 
-  def self.women_fcuk
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'fcuk'").reverse
-  end
-
   def self.women_daniel_wellington
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'daniel wellington'").reverse
   end
 
-  def self.women_nautica
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'nautica'").reverse
-  end
 
   def self.women_forever_21
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'forever21'").reverse
@@ -157,5 +191,25 @@ class FashionItem < ActiveRecord::Base
 
   def self.women_sunday_somewhere
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sunday somewhere'").reverse
+  end
+
+  def self.women_sea_folly
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sea folly'").reverse
+  end
+
+  def self.women_top_shop
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'top shop'").reverse
+  end
+
+  def self.women_victorias_secret
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'victoria''s secret'").reverse
+  end
+
+  def self.women_auguste
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'auguste'").reverse
+  end
+
+  def self.women_alice_mccall
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'alice mccall'").reverse
   end
 end

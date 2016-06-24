@@ -1,5 +1,5 @@
 <div class="search_bar">
-    <%= render "templates/men_side_search_bar" %>
+  <%= render "templates/men_side_search_bar" %>
 </div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
@@ -17,7 +17,7 @@
     </div><br>
     <h1 class="your-items">All Men's</h1>
     <div class="item_sub_cat">
-      <%= render "templates/womens_all_link" %>
+      <%= render "templates/men_all_link" %>
     </div>
     <% @mens.each do |all| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">

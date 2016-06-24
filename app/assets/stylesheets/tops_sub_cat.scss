@@ -10,6 +10,9 @@
     display: inline-block;
     margin: 0px 7px;
     cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 

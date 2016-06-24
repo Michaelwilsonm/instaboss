@@ -1,20 +1,26 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-
 <div class="menu-side">
+  <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container">
-  <div class="row" style="margin-left: 0px;">
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
-      <%= render "templates/item_navigation_mens_subcat" %>
+      <%= render "templates/item_navigation_womens_subcat" %>
     </div>
     <h1 class="your-items">Mens Sale</h1>
+    <div class="item_sub_cat">
+      <%= render "templates/sale_mens_sub_cat" %>
+    </div>
   <% @sale_mens.each do |all_specials| %>
-    <div class="box col-md-3 col-sm-4 col-xs-6">
+    <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">
       <div class="image_div">
         <a href="/item/<%= all_specials.id %>">
           <%= image_tag all_specials.item_image.url(:medium) %>

@@ -194,11 +194,11 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.women_sea_folly
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sea folly'").reverse
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'seafolly'").reverse
   end
 
   def self.women_top_shop
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'top shop'").reverse
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'topshop'").reverse
   end
 
   def self.women_victorias_secret

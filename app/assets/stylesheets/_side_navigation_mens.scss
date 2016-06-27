@@ -27,6 +27,34 @@
   }
 }
 
+.menu-side-search-bar{
+  position: absolute;
+  width: 150px;
+  margin-top: 65px;
+  list-style-type: none;
+  h4{
+    font-family: "Calisto MT Regular";
+  }
+  li{
+    padding: 3px 0px 3px 0px;
+    font-family: "Calisto MT Regular";
+    font-size: 16px;
+    a{
+      color: black;
+    }
+  }
+
+}
+
+
+.menu-side-search{
+  position: relative;
+  width: 200px;
+  height: 100%;
+  margin-top: 0px;
+  margin-right: 5px;
+}
+
 .menu-side{
   position: relative;
   width: 200px;

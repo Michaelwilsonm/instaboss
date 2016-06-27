@@ -11,12 +11,16 @@ $(document).ready(function() {
         $(".side_nav_mens").css({position: "absolute", marginTop: "145px"});
       }
 
-        console.log(windowScroll)
-
       if (windowScroll > 685){
         $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-540px"})
       } else if (windowScroll < 685){
         $(".no_picture_side_nav_mens").css({position: "relative", marginTop: "155px"})
+      }
+
+      if (windowScroll > 184){
+        $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
+      } else if (windowScroll < 184){
+        $(".menu-side-search-bar").css({position: "relative", marginTop: "75px"})
       }
 
       if (windowScroll < 10) {

@@ -11,10 +11,11 @@ $(document).ready(function() {
         $(".side_nav_mens").css({position: "absolute", marginTop: "145px"});
       }
 
+        console.log(windowScroll)
 
-      if (windowScroll > 232){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-80px"})
-      } else if (windowScroll < 232){
+      if (windowScroll > 685){
+        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-540px"})
+      } else if (windowScroll < 685){
         $(".no_picture_side_nav_mens").css({position: "relative", marginTop: "155px"})
       }
 

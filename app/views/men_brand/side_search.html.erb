@@ -17,7 +17,8 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Searched Items</h1>
+    <h1 class="your-items">Search Results</h1>
+    <%= render "templates/horizontal_line" %>
       <% @query_all.each do |query_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">

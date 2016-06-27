@@ -27,10 +27,11 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div><br>
-    <h1 class="your-items">LifeStyle</h1>
+    <h1 class="your-items">Lifestyle</h1>
     <div class="item_sub_cat">
       <%= render "templates/lifestyle_mens_sub_cat" %>
     </div>
+    <%= render "templates/horizontal_line" %>
     <% @lifestyle.each do |life_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= life_items.sub_category %>">
         <div class="image_div">

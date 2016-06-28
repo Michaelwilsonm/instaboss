@@ -1,8 +1,8 @@
 class ItemController < ApplicationController
   before_action :find_item, only: [:destroy, :show, :edit, :update]
+  before_action :require_permission, only: [:edit]
   before_action :authenticate_user!, only: [:destroy, :edit, :update, :create]
   helper_method :sort_column, :sort_direction
-
 
   def index
     @users_items = current_user.fashion_items.order(sort_column + ' ' + sort_direction)
@@ -22,7 +22,6 @@ class ItemController < ApplicationController
   end
 
   def edit
-
   end
 
   def destroy
@@ -42,6 +41,12 @@ class ItemController < ApplicationController
   end
 
   private
+
+    def require_permission
+      if current_user != FashionItem.find(params[:id]).user
+        redirect_to root_path
+      end
+    end
 
     def find_item
       @item = FashionItem.find(params[:id])

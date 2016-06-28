@@ -133,6 +133,14 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  image_div>img{
+    height: 50px;
+  }
+
+  .item_sub_cat{
+    margin-left: 120px;
+  }
+
   .hr_main{
     height: 1px;
     margin: -10px 0px 0px 10px;

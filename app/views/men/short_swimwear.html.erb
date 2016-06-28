@@ -6,6 +6,18 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
+
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="short_hero_mens">
+    </div>
+  </div>
+</div>
+
+
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_nav_mens_main" %>
@@ -19,6 +31,7 @@
     <div class="item_sub_cat">
       <%= render "templates/short_sub_cat_mens" %>
     </div>
+    <%= render "templates/horizontal_line" %>
     <% @short_swimwear.each do |short_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= short_items.sub_category %>">
         <div class="image_div">

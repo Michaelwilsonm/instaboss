@@ -6,6 +6,18 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
+
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_womens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="skirt_women">
+    </div>
+  </div>
+</div>
+
+
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens" %>
@@ -19,6 +31,7 @@
     <div class="item_sub_cat">
       <%= render "templates/short_skirt_sub_cat" %>
     </div>
+    <%= render "templates/horizontal_line" %>
     <% @short_skirt.each do |skirt_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= skirt_items.sub_category %>">
         <div class="image_div">

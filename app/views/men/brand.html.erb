@@ -6,9 +6,8 @@
 <% else %>
   <%= render "templates/navigation" %>
 <% end %>
-<div class="menu-side">
-  <div class="margin_menu_side"></div>
-  <%= render "templates/side_nav_mens_main" %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_mens" %>
 </div>
 <div class="container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
@@ -16,10 +15,7 @@
       <%= render "templates/item_navigation_mens_subcat" %>
     </div><br>
     <h1 class="your-items">Featured Brands</h1>
-    <div class="item_sub_cat" style="visibility: hidden;">
-      <%= render "templates/access_sub_cat_mens" %>
-    </div>
-
+    <%= render "templates/horizontal_line" %>
     <a href="/men_brand/bjorn_borg">
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div brands_image_div">

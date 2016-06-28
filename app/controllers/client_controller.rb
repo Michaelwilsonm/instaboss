@@ -1,7 +1,7 @@
 class ClientController < ApplicationController
   before_action :authenticate_admin!
 
-  def client
+  def new
     @user = User.new
   end
 
@@ -19,7 +19,7 @@ class ClientController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
     @user.destroy!
     redirect_to client_all_path
   end

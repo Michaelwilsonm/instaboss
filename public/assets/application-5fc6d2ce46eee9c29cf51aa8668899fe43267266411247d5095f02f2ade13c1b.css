@@ -115,19 +115,24 @@
   text-align: center;
 }
 
-/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+.item_sub_cat {
+  margin-bottom: -10px;
+}
+
+/* line 40, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_nav_top {
   position: relative;
   display: inline-block;
 }
 
-/* line 44, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_nav_top_brand {
   position: relative;
   display: inline-block;
 }
 
-/* line 49, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 50, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_drop_shop_by {
   z-index: 1;
   display: none;
@@ -138,7 +143,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
 }
 
-/* line 59, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 60, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_drop_shop_by a {
   text-align: left;
   font-family: "Calisto MT Regular";
@@ -148,7 +153,7 @@
   display: block;
 }
 
-/* line 68, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 69, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_drop_shop_by_brand {
   z-index: 1;
   display: none;
@@ -159,7 +164,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
 }
 
-/* line 78, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
+/* line 79, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_item_nav_top.scss */
 .item_drop_shop_by_brand a {
   text-align: left;
   font-family: "Calisto MT Regular";
@@ -237,11 +242,11 @@
 }
 
 /* line 21, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
-.brands_image_div img {
+.image_div img {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 120px;
+  height: 300px;
   width: auto;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -355,10 +360,11 @@
 }
 /* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .navigation ul a:hover {
+  text-decoration: underline;
   color: #000;
 }
 
-/* line 53, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 54, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .client-login {
   position: relative;
   top: -40px;
@@ -367,7 +373,7 @@
   font-weight: normal;
 }
 
-/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 62, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .client-path {
   position: relative;
   top: 0px;
@@ -375,13 +381,13 @@
   font-weight: normal;
 }
 
-/* line 68, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 69, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .client-add-item, .add-new-client {
   padding: 10px;
   margin-left: 130px;
   color: black;
 }
-/* line 72, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
+/* line 73, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_navigation.scss */
 .client-add-item:hover, .add-new-client:hover {
   color: black;
 }
@@ -398,28 +404,59 @@
 }
 
 /* line 12, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
-.side_nav_mens {
+.side_nav_mens, .no_picture_side_nav_mens {
   position: absolute;
   width: 150px;
-  margin-top: 145px;
+  margin-top: 149px;
   list-style-type: none;
 }
 /* line 17, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
-.side_nav_mens h4 {
+.side_nav_mens h4, .no_picture_side_nav_mens h4 {
   font-family: "Calisto MT Regular";
 }
 /* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
-.side_nav_mens li {
+.side_nav_mens li, .no_picture_side_nav_mens li {
   padding: 3px 0px 3px 0px;
   font-family: "Calisto MT Regular";
   font-size: 16px;
 }
 /* line 24, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
-.side_nav_mens li a {
+.side_nav_mens li a, .no_picture_side_nav_mens li a {
   color: black;
 }
 
 /* line 30, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+.menu-side-search-bar {
+  position: absolute;
+  width: 150px;
+  margin-top: 65px;
+  list-style-type: none;
+}
+/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+.menu-side-search-bar h4 {
+  font-family: "Calisto MT Regular";
+}
+/* line 38, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+.menu-side-search-bar li {
+  padding: 3px 0px 3px 0px;
+  font-family: "Calisto MT Regular";
+  font-size: 16px;
+}
+/* line 42, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+.menu-side-search-bar li a {
+  color: black;
+}
+
+/* line 50, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+.menu-side-search {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  margin-top: 0px;
+  margin-right: 5px;
+}
+
+/* line 58, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
 .menu-side {
   position: relative;
   width: 200px;
@@ -428,7 +465,7 @@
   margin-right: 5px;
 }
 
-/* line 38, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+/* line 66, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
 .mens-main-menu-side {
   position: absolute;
   width: 200px;
@@ -436,7 +473,7 @@
   margin-top: -75px;
 }
 
-/* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
+/* line 73, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_side_navigation_mens.scss */
 .shop_by {
   font-weight: bold;
 }
@@ -746,6 +783,135 @@ img[alt*="adidas"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 85%;
+  margin-bottom: 20px;
+}
+/* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.accessories_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Accessories.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.all_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("All.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 25, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.formal_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Formal.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 37, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.shoe_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Shoes_main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 49, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.short_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Shorts & Swim.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.long_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Longs.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 73, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.sunglass_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Sunglasses & Watches.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 85, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.top_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Tops.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+  margin-bottom: 20px;
+}
+
+/* line 97, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.life_style_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("lifestyle.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 109, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/men_cat_heros.scss */
+.sale_hero_mens {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("On Sale.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
   margin-bottom: 20px;
 }
 @media only screen and (max-width: 700px) {
@@ -1088,18 +1254,22 @@ img[alt*="adidas"] {
   margin: 0px 7px;
   cursor: pointer;
 }
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
+.sorting_class li:hover {
+  text-decoration: underline;
+}
 
-/* line 17, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
+/* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
 .btn-active {
   color: black;
   font-weight: bold;
 }
 
-/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
+/* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
 .link_to_all_womens a, .link_to_all_mens a {
   color: black;
 }
-/* line 25, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
+/* line 28, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/tops_sub_cat.scss */
 .link_to_all_womens a:hover, .link_to_all_mens a:hover {
   color: black;
 }
@@ -1134,7 +1304,7 @@ img[alt*="adidas"] {
   margin-right: auto;
   width: 100%;
   height: 400px;
-  background-image: url("lorna_hero.jpg");
+  background-image: url("lorna_jane_new_hero.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 10% 25%;
@@ -1199,10 +1369,10 @@ img[alt*="adidas"] {
   margin-right: auto;
   width: 100%;
   height: 400px;
-  background-image: url("topshop_hero.jpg");
+  background-image: url("topshop_new_hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 75%;
+  background-position: 50% 05%;
   margin-bottom: 20px;
 }
 
@@ -1212,10 +1382,10 @@ img[alt*="adidas"] {
   margin-right: auto;
   width: 100%;
   height: 400px;
-  background-image: url("vic_secret_hero.jpg");
+  background-image: url("vic_secret_new_hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 25%;
+  background-position: 50% 15%;
   margin-bottom: 20px;
 }
 
@@ -1229,6 +1399,148 @@ img[alt*="adidas"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 15%;
+  margin-bottom: 20px;
+}
+/* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.all_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("All Womens.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 55%;
+  margin-bottom: 20px;
+}
+
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.all_accessorie_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Accessories_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 15%;
+  margin-bottom: 20px;
+}
+
+/* line 25, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.dress_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Dresses1_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 35%;
+  margin-bottom: 20px;
+}
+
+/* line 37, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.jean_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("JeansLeggings_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 49, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.life_style_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Home & lifestyle_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.shoe_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("shoes_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 73, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.skirt_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Shorts & Skirts_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 85, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.sunglass_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Sunglasses & Watches1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 97, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.swim_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Swim & Beach_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  margin-bottom: 20px;
+}
+
+/* line 109, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.top_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("Tops_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
+  margin-bottom: 20px;
+}
+
+/* line 121, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/women_cat_heros.scss */
+.on_sale_women {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("On Sale_women.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 35%;
   margin-bottom: 20px;
 }
 /*

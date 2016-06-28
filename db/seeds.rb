@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.delete_all
-FashionItem.delete_all
+# User.delete_all
+# FashionItem.delete_all
 
 img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
@@ -20,9 +20,9 @@ Admin.create(email: "josh@josh.com", password: "hello123")
   FashionItem.create(
     item_image: img,
     unique_affiliate_url: "www.google.com",
-    user_id: 1,
+    user_id: 4,
     shipped_from: "USA",
-    sex: "Womens",
+    sex: "Mens",
     brand: ['MVMT', 'Morepork', 'just another fisherman', 'timberland'].sample,
     description: "Description of product",
     category: "Accessories",
@@ -40,7 +40,7 @@ end
   FashionItem.create(
     item_image: img,
     unique_affiliate_url: "www.google.com",
-    user_id: 2,
+    user_id: 3,
     shipped_from: "USA",
     sex: "Womens",
     brand: ['MVMT', 'Morepork', 'just another fisherman', 'timberland'].sample,

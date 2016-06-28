@@ -8,14 +8,19 @@ $(document).ready(function() {
       if (windowScroll > 603) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-470px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "145px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "149px"});
       }
 
+      if (windowScroll > 685){
+        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-540px"})
+      } else if (windowScroll < 685){
+        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "144px"})
+      }
 
-      if (windowScroll > 232){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-80px"})
-      } else if (windowScroll < 232){
-        $(".no_picture_side_nav_mens").css({position: "relative", marginTop: "155px"})
+      if (windowScroll > 184){
+        $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
+      } else if (windowScroll < 184){
+        $(".menu-side-search-bar").css({position: "absolute", marginTop: "85px"})
       }
 
       if (windowScroll < 10) {

@@ -43,6 +43,7 @@ $black: #000;
       text-decoration: none;
       color: black;
       &:hover {
+        text-decoration: underline;
         color: $black;
       }
     }

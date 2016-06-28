@@ -4,6 +4,9 @@
   <%= render "templates/navigation" %>
 <% end %>
 <% if @item.sex == 'Mens' %>
+  <div class="item_navigation_top_mens">
+    <%= render "templates/item_navigation_mens" %>
+  </div>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_mens" %>
   </div>
@@ -11,6 +14,9 @@
     <%= render "templates/item_navigation_mens_subcat" %>
   </div>
 <% elsif @item.sex == 'Womens' %>
+  <div class="item_navigation_top_mens">
+    <%= render "templates/item_navigation_womens" %>
+  </div>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_womens" %>
   </div>

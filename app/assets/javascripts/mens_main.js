@@ -17,6 +17,12 @@ $(document).ready(function() {
         $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "144px"})
       }
 
+      if (windowScroll > 630){
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "90px"})
+      } else if (windowScroll < 630){
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
+      }
+
       if (windowScroll > 184){
         $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
       } else if (windowScroll < 184){

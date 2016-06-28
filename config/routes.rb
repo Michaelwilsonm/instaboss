@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'client/all'
-  delete 'session' => 'sessions#destroy'
+  # delete 'session' => 'sessions#destroy'
 
   resources :client
 

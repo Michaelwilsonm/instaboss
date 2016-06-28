@@ -9,7 +9,6 @@ class AdminController < ApplicationController
 
   def destroy
     @item.destroy
-
     if params[:from]=="show-page"
       redirect_to men_path
     else

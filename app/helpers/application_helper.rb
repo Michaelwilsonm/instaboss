@@ -33,6 +33,8 @@ module ApplicationHelper
         new_str = f.upcase
       elsif brand_array.include?("mvmt")
         new_str = f.upcase
+      elsif brand_array.include?("forever21")
+        new_str = "Forever 21"
       else
         new_str = f.titleize
       end

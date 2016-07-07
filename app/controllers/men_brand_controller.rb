@@ -34,6 +34,10 @@ class MenBrandController < ApplicationController
     @morepork = @men_items.morepork
   end
 
+  def new_balance
+    @new_balance = @men_items.new_balance
+  end
+
   def nautica
     @nautica = @men_items.nautica
   end

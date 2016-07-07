@@ -87,6 +87,10 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'moreporks'").reverse
   end
 
+  def self.new_balance
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'new balance'").reverse
+  end
+
   def self.mvmt
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'mvmt'").reverse
   end
@@ -207,6 +211,10 @@ class FashionItem < ActiveRecord::Base
 
   def self.women_auguste
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'auguste'").reverse
+  end
+
+  def self.women_tony_bianco
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'tony bianco'").reverse
   end
 
   def self.women_alice_mccall

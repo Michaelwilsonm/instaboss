@@ -154,6 +154,7 @@
   .show-box{
   margin-left: 70px;
   }
+
   .image-show-box>img{
     width: 340px;
     margin-left: 70px;
@@ -190,6 +191,9 @@ and (orientation : portrait) {
     width: 340px;
     margin-left: 70px;
   }
+  .box{
+    left: 75px;
+  }
 }
 
 @media only screen
@@ -202,5 +206,43 @@ and (orientation : landscape) {
   .image-show-box>img{
     width: 340px;
     margin-left: 70px;
+  }
+  .box{
+    left: 160px;
+    width: 325px !important;
+  }
+  .hr_main{
+    display: block;
+    width: 79%;
+    margin-left: 70px;
+  }
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape) {
+  .box{
+    left: 75px;
+  }
+  .hr_main{
+    display: block;
+    width: 112%;
+    margin-left: 0px;
+  }
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait) {
+  .box{
+    left: 75px;
+  }
+
+  .hr_main{
+    display: block;
+    width: 136%;
+    margin-left: 0px;
   }
 }

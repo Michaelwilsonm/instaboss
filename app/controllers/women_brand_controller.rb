@@ -26,6 +26,10 @@ class WomenBrandController < ApplicationController
     @forever_21 = @women_items.women_forever_21
   end
 
+  def tony_bianco
+    @tony_bianco = @women_items.women_tony_bianco
+  end
+
   def daniel_wellington
     @daniel_wellington = @women_items.women_daniel_wellington
   end

@@ -8,18 +8,19 @@ $(document).ready(function() {
       if (windowScroll > 603) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-470px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "149px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "137px"});
       }
 
-      if (windowScroll > 685){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-540px"})
-      } else if (windowScroll < 685){
-        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "144px"})
+      if (windowScroll > 634){
+        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-520px"})
+      } else if (windowScroll < 634){
+        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "114px"})
       }
 
-      if (windowScroll > 630){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "90px"})
-      } else if (windowScroll < 630){
+      if (windowScroll > 615){
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "70px"})
+        console.log('hello')
+      } else if (windowScroll < 615){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }
 

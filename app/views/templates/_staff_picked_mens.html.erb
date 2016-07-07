@@ -10,8 +10,8 @@
           <% if staff_picks.sale == true %>
           <table>
             <tr class="specials_table">
-              <td><strike><em>$<%= zeros(staff_picks.sale_price) %></em></strike></td>
-              <td>$<%= zeros(staff_picks.price) %></td>
+              <td><strike><em>$<%= zeros(staff_picks.price) %></em></strike></td>
+              <td>$<%= zeros(staff_picks.sale_price) %></td>
             </tr>
           </table>
           <% else %>

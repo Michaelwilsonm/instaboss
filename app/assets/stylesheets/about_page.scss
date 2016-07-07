@@ -1,10 +1,22 @@
-.about_page{
+.about_header{
+  text-align: center;
   margin-top: 50px;
-  border: 1px solid;
-  padding: 10px;
+  font-family: "Calisto MT Regular";
+}
+
+.contact_header{
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Calisto MT Regular";
+}
+
+.about_page{
+  margin-top: 20px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding: 5px 0px 5px 0px;
   background-color: #fff;
   border-color: #eee;
-  box-shadow: 5px 5px 2.5px #888888;
   font-family: "Calisto MT Regular";
   p{
     font-size: 18px;
@@ -12,12 +24,12 @@
 }
 
 .contact_page{
-  margin-top: 50px;
-  border: 1px solid;
-  padding: 10px;
+  margin-top: 20px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding: 5px 0px 5px 0px;
   background-color: #fff;
   border-color: #eee;
-  box-shadow: 5px 5px 2.5px #888888;
   font-family: "Calisto MT Regular";
   p{
     font-size: 18px;

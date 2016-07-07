@@ -11,7 +11,7 @@
 </div>
 <div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
   <div class="row">
-    <div class="timberland_mens">
+    <div class="i_love_ugly_mens">
     </div>
   </div>
 </div>
@@ -23,30 +23,30 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Timberland</h1>
+    <h1 class="your-items">I Love Ugly</h1>
     <%= render "templates/horizontal_line" %>
-    <% @timberland.each do |timberland_items| %>
+    <% @i_love_ugly.each do |i_love_ugly_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= timberland_items.id %>">
-            <%= image_tag timberland_items.item_image.url(:medium) %>
+          <a href="/item/<%= i_love_ugly_items.id %>">
+            <%= image_tag i_love_ugly_items.item_image.url(:medium) %>
           <div class="description_content">
-            <% if timberland_items.sale == true %>
+            <% if i_love_ugly_items.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(timberland_items.price) %></em></strike></td>
-                <td>$<%= zeros(timberland_items.sale_price) %></td>
+                <td><strike><em>$<%= zeros(i_love_ugly_items.price) %></em></strike></td>
+                <td>$<%= zeros(i_love_ugly_items.sale_price) %></td>
               </tr>
             </table>
             <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(timberland_items.price) %></td>
+                <td>$<%= zeros(i_love_ugly_items.price) %></td>
               </tr>
             </table>
             <% end %>
-            <p><%= timberland_items.short_description %></p>
-            <p><%= word_branding(timberland_items.brand) %></p>
+            <p><%= i_love_ugly_items.short_description %></p>
+            <p><%= word_branding(i_love_ugly_items.brand) %></p>
           </div>
           </a>
         </div>

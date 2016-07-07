@@ -50,8 +50,8 @@ class MenBrandController < ApplicationController
     @sunday_somewhere = @men_items.sunday_somewhere
   end
 
-  def timberland
-    @timberland = @men_items.timberland
+  def i_love_ugly
+    @i_love_ugly = @men_items.i_love_ugly
   end
 
   private

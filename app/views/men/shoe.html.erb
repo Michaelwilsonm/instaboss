@@ -30,8 +30,8 @@
     <h1 class="your-items">Shoes</h1>
     <div class="item_sub_cat">
       <%= render "templates/shoe_sub_cat_mens" %>
-      <%= render "templates/horizontal_line" %>
     </div>
+      <%= render "templates/horizontal_line" %>
     <% @shoe.each do |shoe_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= shoe_items.sub_category %>">
         <div class="image_div">

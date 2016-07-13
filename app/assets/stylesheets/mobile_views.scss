@@ -132,6 +132,10 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .description_content p{
+    top: 250px;
+  }
+
   image_div>img{
     height: 50px;
   }
@@ -154,6 +158,8 @@
     width: 132%;
     margin-left: -120px;
   }
+
+
 
   .show-box{
   margin-left: 70px;
@@ -182,50 +188,13 @@
     width: 360px !important;
   }
 
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-  .show-box{
-  margin-left: 110px;
-  }
-  .image-show-box>img{
-    width: 340px;
-    margin-left: 70px;
-  }
-  .box{
-    left: 75px;
-  }
-  .hr_main{
-    display: block;
-    width: 112%;
-    margin-left: 0px;
-  }
-}
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-  .show-box{
-  margin-left: 200px;
-  }
-  .image-show-box>img{
-    width: 340px;
-    margin-left: 70px;
-  }
-  .box{
-    left: 160px;
-    width: 325px !important;
-  }
-  .hr_main{
-    display: block;
-    width: 79%;
-    margin-left: 70px;
-  }
-}
 
 @media only screen
 and (min-device-width : 414px)
@@ -239,9 +208,14 @@ and (orientation : landscape) {
     width: 112%;
     margin-left: 0px;
   }
+
   .navigation{
     width: 132%;
     margin-left: -120px;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -60px;
   }
 }
 
@@ -268,6 +242,89 @@ and (orientation : portrait) {
     margin-left: 75px;
   }
 
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+  .description_content p{
+    top: 185px;
+  }
+
+  .show-box{
+  margin-left: 60px;
+  }
+
+  .image-show-box>img{
+    width: 340px;
+    margin-left: 70px;
+  }
+  .box{
+    left: 75px;
+  }
+  .hr_main{
+    display: block;
+    width: 112%;
+    margin-left: 0px;
+  }
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+  .description_content p{
+    top: 215px;
+  }
+  .show-box{
+  margin-left: 200px;
+  }
+  .image-show-box>img{
+    width: 340px;
+    margin-left: 70px;
+  }
+  .box{
+    left: 160px;
+    width: 325px !important;
+    padding: 0px;
+  }
+  .hr_main{
+    display: block;
+    width: 84%;
+    margin-left: 70px;
+  }
+  .navigation{
+    width: 111%;
+    margin-left: -80px;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: 18px;
+  }
+
+  .image_div{
+    width: 310px;
+    height: 310px;
+    margin: 7px 7px 7px 7px;
+    img{
+      height: 318px;
+    }
+  }
 
 }
 
@@ -275,6 +332,10 @@ and (orientation : portrait) {
 and (min-device-width : 768px)
 and (max-device-width : 1023px)
 and (orientation : landscape) {
+
+  .description_content p{
+    top: 215px;
+  }
   .show-box{
   margin-left: 200px;
   }
@@ -288,12 +349,11 @@ and (orientation : landscape) {
   }
   .hr_main{
     display: block;
-    width: 115%;
+    width: 123%;
     margin-left: -10px;
   }
-
   .navigation{
-    width: 133%;
+    width: 132%;
     margin-left: -120px;
   }
 
@@ -301,8 +361,7 @@ and (orientation : landscape) {
     margin-left: 25px;
   }
 
-
-
-
-
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
 }

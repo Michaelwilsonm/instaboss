@@ -5,7 +5,11 @@ class ItemController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @users_items = current_user.fashion_items.order(sort_column + ' ' + sort_direction)
+    if !current_user
+      redirect_to root_path
+    else
+      @users_items = current_user.fashion_items.order(sort_column + ' ' + sort_direction)
+    end
   end
 
   def new

@@ -1,3 +1,7 @@
+<% all_men_brands_array = ["bjorn borg" , "i love ugly", "just another fisherman", "mvmt", "moreporks", "nautica", "new balance", "retromarine", "sunday somewhere"] %>
+
+<% all_women_brands_array = ["alice mccall", "auguste","forever 21", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret"] %>
+
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
 <% else %>
@@ -26,7 +30,13 @@
       </div>
       <div class="description-show-box">
         <h3><em><%= @item.short_description %></em></h3>
-        <p><em><%= word_branding(@item.brand) %></em></p>
+        <% if all_men_brands_array.include?(@item.brand) && @item.sex == "Mens" %>
+          <p><a href="<%= link_to_brand_page(@item.brand, @item.sex) %> "><em><%= word_branding(@item.brand) %></em></a></p>
+        <% elsif all_women_brands_array.include?(@item.brand) && @item.sex == "Womens" %>
+          <p><a href="<%= link_to_brand_page(@item.brand, @item.sex) %> "><em><%= word_branding(@item.brand) %></em></a></p>
+        <% else %>
+          <p><em><%= word_branding(@item.brand) %></em></p>
+        <% end %>
         <% if @item.sale == true %>
           <h3><strike><em>US $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>US $<%= zeros(@item.sale_price) %></em></h3>
           <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>

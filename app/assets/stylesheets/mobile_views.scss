@@ -142,12 +142,17 @@
 
   .hr_main{
     height: 1px;
-    margin: -10px 0px 0px 10px;
-    width: 130%;
+    margin: -10px 0px 0px -20px;
+    width: 135%;
     border: none;
     color: #ccc;
     background-color: #ccc;
     display: block;
+  }
+
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
   }
 
   .show-box{
@@ -193,6 +198,11 @@ and (orientation : portrait) {
   .box{
     left: 75px;
   }
+  .hr_main{
+    display: block;
+    width: 112%;
+    margin-left: 0px;
+  }
 }
 
 @media only screen
@@ -229,6 +239,10 @@ and (orientation : landscape) {
     width: 112%;
     margin-left: 0px;
   }
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+  }
 }
 
 @media only screen
@@ -244,6 +258,17 @@ and (orientation : portrait) {
     width: 136%;
     margin-left: 0px;
   }
+
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+  }
+
+  .show-box{
+    margin-left: 75px;
+  }
+
+
 }
 
 @media only screen
@@ -267,11 +292,17 @@ and (orientation : landscape) {
     margin-left: -10px;
   }
 
-  .logo-image{
-    margin-left: 0%;
+  .navigation{
+    width: 133%;
+    margin-left: -120px;
   }
 
-  .navigation>ul{
-    margin-right: -27px;
+  .show-box{
+    margin-left: 25px;
   }
+
+
+
+
+
 }

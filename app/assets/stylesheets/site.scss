@@ -71,14 +71,35 @@
   }
 }
 
-.rectangle{
+.rectangle_left{
+    margin: 60px 0px 100px 0px;
     text-align:center;
-    margin-top: 20px;
+    float: left;
+    width: 50%;
+    border-right: 1px solid;
+    margin-left: -15px;
   img{
     display: inline-block;
-
+    // &:hover{
+    //   cursor: pointer
+    // }
   }
 }
+
+.rectangle_right{
+    margin: 60px 0px 100px 0px;
+    float: right;
+    text-align:center;
+    width: 50%;
+  img{
+    display: inline-block;
+    // &:hover{
+    //   cursor: pointer
+    // }
+  }
+}
+
+
 
 
 @media only screen and (max-width: 700px) {

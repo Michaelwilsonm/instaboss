@@ -19,7 +19,6 @@ $(document).ready(function() {
 
       if (windowScroll > 615){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "70px"})
-        console.log('hello')
       } else if (windowScroll < 615){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }

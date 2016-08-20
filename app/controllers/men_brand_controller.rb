@@ -18,6 +18,10 @@ class MenBrandController < ApplicationController
     @bjorn_borg = @men_items.bjorn_borg
   end
 
+  def leo_joseph
+    @leo_joseph = @men_items.leo_joseph
+  end
+
   def daniel_wellington
     @daniel_wellington = @men_items.daniel_wellington
   end

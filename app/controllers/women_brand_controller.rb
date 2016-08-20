@@ -14,6 +14,26 @@ class WomenBrandController < ApplicationController
     @query_all = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query)
   end
 
+  def mura
+    @mura = @women_items.women_mura
+  end
+
+  def showpo
+    @showpo = @women_items.women_showpo
+  end
+
+  def samantha_wills
+    @samantha_willis = @women_items.women_samantha_willis
+  end
+
+  def esther
+    @esther = @women_items.women_esther
+  end
+
+  def senso
+    @senso = @women_items.women_senso
+  end
+
   def lorna_jane
     @lorna_jane = @women_items.women_lorna_jane
   end

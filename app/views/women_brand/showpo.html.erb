@@ -1,0 +1,57 @@
+<div class="search_bar">
+  <%= render "templates/women_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+<% end %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_womens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="showpo">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_nav_womens_main"%>
+</div>
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
+    <h1 class="your-items">Showpo Boutique</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @showpo.each do |showpo_boutique| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= showpo_boutique.id %>">
+            <%= image_tag showpo_boutique.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if showpo_boutique.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(showpo_boutique.price) %></em></strike></td>
+                <td>$<%= zeros(showpo_boutique.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(showpo_boutique.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= showpo_boutique.short_description %></p>
+            <p><%= word_branding(showpo_boutique.brand) %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'templates/mail_chimp_form_womens' %>

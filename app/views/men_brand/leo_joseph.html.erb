@@ -1,0 +1,57 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+<% end %>
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="leo_joseph">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
+    <h1 class="your-items">Leo Joseph</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @leo_joseph.each do |leo_joseph_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= leo_joseph_items.id %>">
+            <%= image_tag leo_joseph_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if leo_joseph_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(leo_joseph_items.price) %></em></strike></td>
+                <td>$<%= zeros(leo_joseph_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(leo_joseph_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= leo_joseph_items.short_description %></p>
+            <p><%= word_branding(leo_joseph_items.brand) %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'templates/mail_chimp_form_mens' %>

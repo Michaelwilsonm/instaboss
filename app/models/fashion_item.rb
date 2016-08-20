@@ -224,4 +224,24 @@ class FashionItem < ActiveRecord::Base
   def self.women_alice_mccall
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'alice mccall' ORDER BY created_at DESC")
   end
+
+  def self.women_senso
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'senso' ORDER BY created_at DESC")
+  end
+
+  def self.women_samantha_willis
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'samantha willis' ORDER BY created_at DESC")
+  end
+
+  def self.women_mura
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'mura boutique' ORDER BY created_at DESC")
+  end
+
+  def self.women_esther
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'esther boutique' ORDER BY created_at DESC")
+  end
+
+  def self.women_showpo
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'showpo' ORDER BY created_at DESC")
+  end
 end

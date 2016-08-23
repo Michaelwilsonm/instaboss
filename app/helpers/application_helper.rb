@@ -43,8 +43,9 @@ module ApplicationHelper
   end
 
   def link_to_brand_page brand_name, brand_sex
-    womens_hash = {'alice mccall': '/women_brand/alice_mccall' , 'auguste': '/women_brand/auguste','forever 21': '/women_brand/forever_21', 'lorna jane': '/women_brand/lorna_jane', 'seafolly': '/women_brand/sea_folly', 'sunday somewhere': '/women_brand/sunday_somewhere', 'tony bianco': '/women_brand/tony_bianco', 'topshop': '/women_brand/top_shop', "victoria's secret": '/women_brand/victorias_secret'}
-    mens_hash = {'bjorn borg': '/men_brand/bjorn_borg' , 'i love ugly': '/men_brand/i_love_ugly', 'just another fisherman': '/men_brand/just_another_fisherman', 'mvmt': '/men_brand/mvmt', 'moreporks': '/men_brand/morepork', 'nautica': '/men_brand/nautica', 'new balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'sunday somewhere': '/men_brand/sunday_somewhere'}
+    womens_hash = {'Topshop': '/women_brand/top_shop', 'Esther Boutique': '/women_brand/esther', 'Alice McCall': '/women_brand/alice_mccall' , 'Auguste': '/women_brand/auguste', 'Lorna Jane': '/women_brand/lorna_jane', 'Mura Boutique': '/women_brand/mura', 'Samantha Wills': '/women_brand/samantha_wills', 'Seafolly': '/women_brand/sea_folly', 'Senso': '/women_brand/senso', 'Showpo': '/women_brand/showpo', 'Sunday Somewhere': '/women_brand/sunday_somewhere', 'Tony Bianco': '/women_brand/tony_bianco', "Victoria's Secret": '/women_brand/victorias_secret'}
+
+    mens_hash = {'I Love Ugly': '/men_brand/i_love_ugly', 'Just Another Fisherman': '/men_brand/just_another_fisherman', 'Leo Joseph': '/men_brand/leo_joseph', 'MVMT': '/men_brand/mvmt', 'Moreporks': '/men_brand/morepork', 'New Balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'Sunday Somewhere': '/men_brand/sunday_somewhere'}
 
     link_href = ""
     if brand_sex == "Mens"

@@ -33,8 +33,6 @@ module ApplicationHelper
         new_str = f.upcase
       elsif brand_array.include?("mvmt")
         new_str = f.upcase
-      elsif brand_array.include?("forever21")
-        new_str = "Forever 21"
       else
         new_str = f.titleize
       end
@@ -43,9 +41,9 @@ module ApplicationHelper
   end
 
   def link_to_brand_page brand_name, brand_sex
-    womens_hash = {'Topshop': '/women_brand/top_shop', 'Esther Boutique': '/women_brand/esther', 'Alice McCall': '/women_brand/alice_mccall' , 'Auguste': '/women_brand/auguste', 'Lorna Jane': '/women_brand/lorna_jane', 'Mura Boutique': '/women_brand/mura', 'Samantha Wills': '/women_brand/samantha_wills', 'Seafolly': '/women_brand/sea_folly', 'Senso': '/women_brand/senso', 'Showpo': '/women_brand/showpo', 'Sunday Somewhere': '/women_brand/sunday_somewhere', 'Tony Bianco': '/women_brand/tony_bianco', "Victoria's Secret": '/women_brand/victorias_secret'}
+    womens_hash = {'topshop': '/women_brand/top_shop', 'esther boutique': '/women_brand/esther', 'alice mccall': '/women_brand/alice_mccall' , 'auguste': '/women_brand/auguste', 'lorna jane': '/women_brand/lorna_jane', 'mura boutique': '/women_brand/mura', 'samantha wills': '/women_brand/samantha_wills', 'seafolly': '/women_brand/sea_folly', 'senso': '/women_brand/senso', 'showpo': '/women_brand/showpo', 'sunday somewhere': '/women_brand/sunday_somewhere', 'tony bianco': '/women_brand/tony_bianco', "victoria's secret": '/women_brand/victorias_secret'}
 
-    mens_hash = {'I Love Ugly': '/men_brand/i_love_ugly', 'Just Another Fisherman': '/men_brand/just_another_fisherman', 'Leo Joseph': '/men_brand/leo_joseph', 'MVMT': '/men_brand/mvmt', 'Moreporks': '/men_brand/morepork', 'New Balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'Sunday Somewhere': '/men_brand/sunday_somewhere'}
+    mens_hash = {'i love ugly': '/men_brand/i_love_ugly', 'just another fisherman': '/men_brand/just_another_fisherman', 'leo joseph': '/men_brand/leo_joseph', 'mvmt': '/men_brand/mvmt', 'moreporks': '/men_brand/morepork', 'new balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'sunday somewhere': '/men_brand/sunday_somewhere'}
 
     link_href = ""
     if brand_sex == "Mens"
@@ -56,6 +54,7 @@ module ApplicationHelper
       end
     elsif brand_sex == "Womens"
       womens_hash.select do |key, value|
+        p key.to_s == brand_name
         if key.to_s == brand_name
           link_href = value
         end

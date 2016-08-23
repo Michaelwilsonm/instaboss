@@ -56,7 +56,7 @@
           <div class="col-md-10">
             <span>Shipping From</span>
             <select class="form-control input-sm" id="new-item-shipped-from" name="FashionItem[shipped_from]">
-              <% countries = ["U.S.A", "Canada", "UK/Europe", "Asia", "NZ/Aus"] %>
+              <% countries = ["U.S.A", "Canada", "UK / Europe", "Asia", "NZ / Aus"] %>
 
               <% if countries.include?(@item.shipped_from) %>
                 <option value="<%= @item.shipped_from%>" selected><%=@item.shipped_from %> (already selected, click to change)</option>

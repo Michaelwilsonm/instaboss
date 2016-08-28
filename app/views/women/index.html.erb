@@ -22,16 +22,16 @@
 <div class="mens-main-menu-side">
   <%= render "templates/side_nav_womens_main"%>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container mobile_container">
+  <div class="row mobile_row">
     <% if @featured_women.length >= 1 %>
       <h1 class="your-items">Featured Women's</h1>
       <%= render "templates/featured_womens" %>
     <% end %>
   </div>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container mobile_container">
+  <div class="row mobile_row">
     <% if @staff_picked_women.length >= 1 %>
     <div class="sale_feat_h1">
       <h1 class="your-items">Staff Picks</h1>
@@ -40,8 +40,8 @@
     <% end %>
   </div>
 </div>
-<div class="container">
-  <div class="row">
+<div class="container mobile_container">
+  <div class="row mobile_row">
     <div class="sale_feat_h1">
       <h1 class="your-items">Featured Sale</h1>
     </div>

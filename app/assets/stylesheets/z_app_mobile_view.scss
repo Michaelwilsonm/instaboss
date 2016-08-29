@@ -3,6 +3,32 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .hamburger-slider{
+    display: none;
+    background-color: #eee;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    height: 100vh;
+    width: 101vw;
+    right: 1000px;
+    ul{
+      list-style-type: none;
+    }
+    li{
+      font-size: 60px;
+      padding: 3px;
+    }
+  }
+
+  .mobile_nav{
+    display: block;
+  }
+
+  .lap_nav{
+    display: none;
+  }
+
   .col-sm-6{
     width: 100% !important;
   }
@@ -161,6 +187,10 @@
     display: none;
   }
 
+  .item_navigation_top_womens{
+    display: none;
+  }
+
   .navigation{
     h1{
     font-size: 90px;
@@ -203,6 +233,34 @@
   #nav-toggle.active span:after {
     transform: rotate(-45deg);
   }
+
+  .mobile_nav{
+    ul {
+      list-style-type: none;
+      float: right;
+      margin-top: -100px;
+      margin-bottom: 0px;
+      li {
+        display: inline;
+        margin-right: 30px;
+        font-weight: bold;
+        font-size: 50px;
+        font-family: "Calisto MT Regular";
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          text-decoration: underline;
+          color: black;
+        }
+      }
+    }
+  }
+
+  // .client-login{
+  //   top: -60px;
+  // }
 }
 
 

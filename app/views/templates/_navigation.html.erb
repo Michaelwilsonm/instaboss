@@ -32,11 +32,15 @@
         <% end %>
 
 
-        <% if !current_user && !current_admin %>
-          <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
-          <li><%= link_to "MENS", men_path %></li>
-          <li><%= link_to "WOMENS", women_path %></li>
-        <% end %>
+
+        <div class="lap_nav">
+          <% if !current_user && !current_admin %>
+            <li><em><%= link_to "ClientLogin", new_user_session_path, class: "client-login" %></em></li>
+            <li><%= link_to "MENS", men_path %></li>
+            <li><%= link_to "WOMENS", women_path %></li>
+          <% end %>
+        </div>
+
 
       </ul>
       <hr style="height:1px; border:none; color:#333; background-color:#333;margin-top:30px;" />

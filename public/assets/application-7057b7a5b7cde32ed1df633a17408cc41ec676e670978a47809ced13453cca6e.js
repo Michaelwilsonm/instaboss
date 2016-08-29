@@ -12982,9 +12982,9 @@ return jQuery;
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle', 'Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
-    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     var sex = $('#item-sex').val();
     var category = $('#item-category').val();
@@ -13119,15 +13119,14 @@ $(document).ready(function() {
         $(".nav-cat-ul").slideUp(300);
       }
     });
-
   });
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living', 'Lifestyle' ], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Wedges', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
-    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
       // if the value in the form is changed to "Mens" append the objects keys to the item category option
     if ($("#new-item-sex").val() === 'Mens') {
@@ -13242,6 +13241,40 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
+    document.querySelector( "#nav-toggle" )
+    .addEventListener( "click", function() {
+      this.classList.toggle( "active" );
+    });
+
+    var count = 0
+    $("#nav-toggle").click(function(){
+    count ++
+    $(".hamburger-slider").show()
+      if (count % 2 == 0) {
+        $(".hamburger-slider").animate({
+          right: "1000px"},
+          500, function() {
+            console.log("right")
+        });
+      }else if (count % 2 != 0) {
+        $(".hamburger-slider").animate({
+          right: "0px"},
+          500, function() {
+            console.log("0 px")
+        });
+      }
+    })
+
+
+
+
+
+  });
+}); //end
+;
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+
 
 
   });
@@ -13271,6 +13304,23 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
+    // $(".rectangle_left>img").click(function(){
+    //   var brand = $(this).attr("alt")
+    //   window.location.replace("http://www.instaboss.co/men_brand/" + brand)
+    // });
+
+    // $(".rectangle_right>img").click(function(){
+    //   var brand = $(this).attr("alt")
+    //   window.location.replace("http://www.instaboss.co/women_brand/" + brand)
+    // });
+
+
+
+    });
+  });
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+
     $(window).scroll(function(){
       var windowScroll = $(window).scrollTop();
       var windowHeight = $(window).height();
@@ -13278,18 +13328,18 @@ $(document).ready(function() {
       if (windowScroll > 603) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-470px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "149px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "137px"});
       }
 
-      if (windowScroll > 685){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-540px"})
-      } else if (windowScroll < 685){
-        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "144px"})
+      if (windowScroll > 634){
+        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-520px"})
+      } else if (windowScroll < 634){
+        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "114px"})
       }
 
-      if (windowScroll > 630){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "90px"})
-      } else if (windowScroll < 630){
+      if (windowScroll > 615){
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "70px"})
+      } else if (windowScroll < 615){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }
 

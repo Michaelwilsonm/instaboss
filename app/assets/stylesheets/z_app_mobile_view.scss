@@ -47,14 +47,6 @@
     top: 250px;
   }
 
-  image_div>img{
-    height: 50px;
-  }
-
-  .item_sub_cat{
-    margin-left: 120px;
-  }
-
   .hr_main{
     height: 1px;
     margin: -10px 0px 0px -20px;
@@ -68,6 +60,15 @@
   .navigation{
     width: 132%;
     margin-left: -120px;
+    ul{
+      margin-top: -50px;
+      font-size: 50px;
+    }
+  }
+
+  .logo-image{
+    margin-left: 18%;
+    margin-top: 10px;
   }
 
   .show-box{
@@ -80,7 +81,11 @@
   }
 
   .your-items{
-    margin-left: 120px;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 10px;
+    font-size: 70px;
+    border-bottom: 1px solid;
   }
 
   .image_div img{
@@ -115,6 +120,89 @@
     margin: 0px;
   }
 
+  .menu-side{
+    display: none;
+  }
+
+  .item_sub_cat{
+    margin: 20px;
+  }
+
+  .sorting_class{
+     li{
+      font-size: 27px;
+      margin: 5px 20px 0px 20px;
+    }
+  }
+
+  .specials_table > td:nth-child(2){
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  .specials_table > td:nth-child(1){
+    font-size: 35px;
+  }
+
+  .specials_table > td{
+    padding: 0px 4px 0px 70px;
+  }
+
+  .description_content p{
+    font-size: 35px;
+    top: 280px;
+  }
+
+  .normal_table > td{
+    font-size: 45px;
+  }
+
+  .item_navigation_top_mens{
+    display: none;
+  }
+
+  .navigation{
+    h1{
+    font-size: 90px;
+
+    }
+  }
+
+  #nav-toggle { position: absolute; left: 50px; top: 50px; }
+
+  #nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 10px;
+    width: 65px;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+  }
+  #nav-toggle span:before {
+    top: -20px;
+  }
+  #nav-toggle span:after {
+    bottom: -20px;
+  }
+
+  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 250ms ease-in-out;
+  }
+  #nav-toggle.active span {
+    background-color: transparent;
+  }
+  #nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+  }
+  #nav-toggle.active span:before {
+    transform: rotate(45deg);
+  }
+  #nav-toggle.active span:after {
+    transform: rotate(-45deg);
+  }
 }
 
 

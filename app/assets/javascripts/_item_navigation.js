@@ -11,6 +11,10 @@ $(document).ready(function() {
         $(".nav-cat-ul").slideUp(300);
       }
     });
+  });
 
+  document.querySelector( "#nav-toggle" )
+  .addEventListener( "click", function() {
+    this.classList.toggle( "active" );
   });
 });

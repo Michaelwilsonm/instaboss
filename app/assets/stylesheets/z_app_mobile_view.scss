@@ -3,21 +3,55 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .contact_header{
+    font-size: 90px;
+  }
+  .contact_page{
+    p{
+      font-size: 30px;
+    }
+  }
+
+  .about_header{
+    font-size: 90px;
+  }
+  .about_page{
+    p{
+      font-size: 30px;
+    }
+  }
+
   .hamburger-slider{
     display: none;
-    background-color: #eee;
+    background-color: rgba(255,255,255, 1);
     position: absolute;
     z-index: 1;
     overflow: hidden;
     height: 100vh;
-    width: 101vw;
+    width: 105vw;
     right: 1000px;
     ul{
+      margin-left: -50px;
       list-style-type: none;
+      margin-top: 90px;
     }
     li{
-      font-size: 60px;
-      padding: 3px;
+      font-size: 55px;
+      padding: 5px;
+      font-family: "Calisto MT Regular";
+      a{
+        color: black;
+      }
+    }
+    .bottom_list_tags{
+      margin: 50px 0px 50px 0px;
+      padding: 30px 0px 30px 0px;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+    .about_contact_list_tags{
+      text-align: center;
+
     }
   }
 
@@ -65,7 +99,7 @@
 
   .call_to_action{
     h3{
-      font-size: 30px;
+      font-size: 40px;
     }
   }
 
@@ -153,6 +187,9 @@
   .item_sub_cat{
     margin: 20px;
   }
+  .sale{
+    height: 80px;
+  }
 
   .sorting_class{
      li{
@@ -196,6 +233,17 @@
     font-size: 90px;
 
     }
+  }
+
+  .logos{
+    h3{
+      font-size: 50px;
+      margin-top: 0px;
+    }
+  }
+
+  .home-page{
+    margin-left: 5%;
   }
 
   #nav-toggle { position: absolute; left: 50px; top: 50px; }
@@ -258,9 +306,11 @@
     }
   }
 
-  // .client-login{
-  //   top: -60px;
-  // }
+  .index_men_women{
+    h2{
+      font-size: 50px;
+    }
+  }
 }
 
 

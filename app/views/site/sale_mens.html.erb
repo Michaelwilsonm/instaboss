@@ -7,6 +7,7 @@
   <%= render "templates/navigation" %>
   <%= render "templates/navigation_mobile_mens" %>
 <% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
 
 <div class="item_navigation_top_mens">
   <%= render "templates/item_navigation_mens" %>
@@ -23,13 +24,13 @@
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container" style="padding: 0px;">
+<div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
     </div>
     <h1 class="your-items">Men's Sale</h1>
-    <div class="item_sub_cat">
+    <div class="item_sub_cat sale">
       <%= render "templates/sale_mens_sub_cat" %>
     </div>
     <br>

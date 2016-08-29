@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="navigation">
-    <a id="nav-toggle" href="#"><span></span></a>
+    <% if current_page?(root_path) %>
+      <div class="logo-image home-page">
+    <% else %>
+      <a id="nav-toggle" href="#"><span></span></a>
       <div class="logo-image">
+    <% end %>
         <a href="/">
           <img src="/assets/new_bee.jpg" alt="" class="image_bee">
         </a>
@@ -20,7 +24,6 @@
           <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
 
-
         <% if user_signed_in? && !current_page?(item_index_path) %>
           <li><em><%= link_to "ClientPage", item_index_path, class: "client-login" %></em></li>
           <li><%= link_to "MENS", men_path %></li>
@@ -30,8 +33,6 @@
           <li><%= link_to "MENS", men_path %></li>
           <li><%= link_to "WOMENS", women_path %></li>
         <% end %>
-
-
 
         <div class="lap_nav">
           <% if !current_user && !current_admin %>

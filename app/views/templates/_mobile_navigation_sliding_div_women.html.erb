@@ -1,4 +1,4 @@
-  <% womens_categories = {'All': 'all/women', 'Accessories': '/women/accessorie', 'Dresses': '/women/dress','Jeans Trousers & Leggings': '/women/jean_legging' , 'Home & Lifestyle': '/women/lifestyle', 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short_skirt', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Swim & Beachwear': '/women/swim_beachwear', 'Tops': '/women/top' }; %>
+  <% womens_categories = {'All': '/women/all', 'Accessories': '/women/accessorie', 'Dresses': '/women/dress','Jeans Trousers & Leggings': '/women/jean_legging' , 'Home & Lifestyle': '/women/lifestyle', 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short_skirt', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Swim & Beachwear': '/women/swim_beachwear', 'Tops': '/women/top' }; %>
 
 
 <div class="hamburger-slider">
@@ -9,9 +9,13 @@
         <% womens_categories.each do |keys, values| %>
           <li><%= link_to keys, values %></li>
         <% end %>
-        <li>Brands</li>
-        <li>On Sale</li>
-        <li>About / Contact</li>
+        <div class="bottom_list_tags">
+          <li><%= link_to "Brands", women_brand_path %></li>
+          <li><%= link_to "On Sale", site_sale_womens_path %></li>
+        </div>
+        <div class="about_contact_list_tags">
+          <li><%= link_to "About", women_about_path%> | <%= link_to "Contact", women_contact_path %></li>
+        </div>
       </ul>
     </div>
   </div>

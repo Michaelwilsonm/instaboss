@@ -1,4 +1,4 @@
-<% mens_categories = {'All': 'all/men', 'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
+<% mens_categories = {'All': '/men/all', 'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
 
 
 <div class="hamburger-slider">
@@ -14,7 +14,7 @@
           <li><%= link_to "On Sale", site_sale_mens_path %></li>
         </div>
         <div class="about_contact_list_tags">
-          <li><%= link_to "About", men_about_path%> | <%= link_to "Contact", men_contact_path %></li>
+          <li><%= link_to "About", men_about_path%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Contact", men_contact_path %></li>
         </div>
       </ul>
     </div>

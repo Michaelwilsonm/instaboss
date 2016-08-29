@@ -145,7 +145,6 @@
     margin-right: 130px;
     margin-bottom: 10px;
     font-size: 70px;
-    border-bottom: 1px solid;
   }
 
   .image_div img{
@@ -186,9 +185,13 @@
 
   .item_sub_cat{
     margin: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid;
   }
+
   .sale{
     height: 80px;
+    border-bottom: 1px solid;
   }
 
   .sorting_class{

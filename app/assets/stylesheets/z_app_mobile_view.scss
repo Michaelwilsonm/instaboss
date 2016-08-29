@@ -3,9 +3,25 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .arrowed {
+    position: relative;
+  }
+
+  .arrow-1 {
+    height: 100px; width: 100px;
+    border: 65px solid black;
+    border-width: 5px 5px 0 0;
+    transform: rotate(225deg);
+    margin-top: 100px;
+    margin-left: 350px;
+  }
+
+  .arrow-left { transform:rotate(45deg) }
+
   .contact_header{
     font-size: 90px;
   }
+
   .contact_page{
     p{
       font-size: 30px;
@@ -132,12 +148,40 @@
   }
 
   .show-box{
-  margin-left: 70px;
+  margin-left: 0px;
+  height: 1000px;
   }
 
-  .image-show-box>img{
-    width: 340px;
-    margin-left: 70px;
+  .image-show-box{
+    margin-left: 0px;
+    position: relative;
+    float: left;
+    img{
+      width: 755px;
+    }
+  }
+
+  .description-show-box{
+    position: relative;
+    margin: 0px;
+    text-align: center;
+    display: block;
+    display: inline-block;
+    width: 755px;
+    h3{
+      font-size: 45px;
+    }
+    p{
+      font-size: 30px;
+    }
+    .btn{
+      font-size: 45px;
+    }
+  }
+
+  .description_content p{
+    font-size: 35px;
+    top: 280px;
   }
 
   .your-items{
@@ -214,11 +258,6 @@
     padding: 0px 4px 0px 70px;
   }
 
-  .description_content p{
-    font-size: 35px;
-    top: 280px;
-  }
-
   .normal_table > td{
     font-size: 45px;
   }
@@ -285,6 +324,37 @@
     transform: rotate(-45deg);
   }
 
+  #close-cross span, #close-cross span:before, #close-cross span:after{
+    margin-top: 40px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 1px;
+    height: 10px;
+    width: 65px;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 65px;
+  }
+
+  #close-cross span{
+    background-color: transparent;
+  }
+
+  #close-cross span:before {
+    background-color: black;
+    bottom: 0px;
+    transform: rotate(-45deg);
+  }
+  #close-cross span:after {
+    background-color: black;
+    bottom: 0px;
+    transform: rotate(45deg);
+  }
+
   .mobile_nav{
     ul {
       list-style-type: none;
@@ -315,7 +385,6 @@
     }
   }
 }
-
 
 @media only screen
 and (min-device-width : 414px)

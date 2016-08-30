@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'men_brand/retro_marine'
   get 'men_brand/sunday_somewhere'
   get 'men_brand/i_love_ugly'
+  get 'men_brand/nike'
 
   # post 'women_brand/search' => 'women_brand#search', as: 'women_search_brand'
   post 'women_brand/side_search' => 'women_brand#side_search', as: 'women_side_search_brand'
@@ -33,6 +34,8 @@ Rails.application.routes.draw do
   get 'women_brand/esther'
   get 'women_brand/senso'
   get 'women_brand/samantha_wills'
+  get 'women_brand/princess_polly'
+  get 'women_brand/jo_mercer'
   get 'women_brand/daniel_wellington'
   get 'women_brand/alice_mccall'
   get 'women_brand/auguste'

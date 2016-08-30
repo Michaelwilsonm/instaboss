@@ -27,7 +27,7 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <% if @featured_men.length >= 1 %>
-      <h1 class="your-items">Featured Men's</h1>
+      <h1 class="your-items mob-ul">Featured Men's</h1>
       <%= render "templates/featured_mens" %>
     <% end %>
   </div>
@@ -36,7 +36,7 @@
   <div class="row mobile_row">
     <% if @staff_picked_men.length >= 1 %>
     <div class="sale_feat_h1">
-      <h1 class="your-items">Staff Picks</h1>
+      <h1 class="your-items mob-ul">Staff Picks</h1>
     </div>
       <%= render "templates/staff_picked_mens" %>
     <% end %>
@@ -45,7 +45,7 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <div class="sale_feat_h1">
-      <h1 class="your-items">Featured Sale</h1>
+      <h1 class="your-items mob-ul">Featured Sale</h1>
     </div>
     <%= render "templates/on_sale_nine" %>
   </div>

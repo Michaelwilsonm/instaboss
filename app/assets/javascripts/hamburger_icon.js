@@ -16,7 +16,7 @@ $(document).ready(function() {
         },300)
       }else if (toggleNavCount % 2 != 0) {
         $(".hamburger-slider").animate({
-          right: "-10px"
+          right: "-5px"
         },300)
       }
     })

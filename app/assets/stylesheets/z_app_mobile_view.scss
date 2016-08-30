@@ -3,6 +3,14 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .normal_table > td{
+    padding-left: 25px;
+  }
+
+  .search_bar{
+    visibility: hidden;
+  }
+
   .arrowed {
     position: relative;
   }
@@ -39,11 +47,457 @@
 
   .hamburger-slider{
     display: none;
+    top: 130px;
     background-color: rgba(255,255,255, 1);
     position: absolute;
     z-index: 1;
     overflow: hidden;
     height: 100vh;
+    width: 105vw;
+    right: 1000px;
+    ul{
+      margin-left: -50px;
+      list-style-type: none;
+      margin-top: 90px;
+    }
+    li{
+      font-size: 55px;
+      padding: 5px;
+      font-family: "Calisto MT Regular";
+      a{
+        color: black;
+      }
+    }
+    .bottom_list_tags{
+      margin: 50px 0px 50px 0px;
+      padding: 30px 0px 30px 0px;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+    .about_contact_list_tags{
+      text-align: center;
+
+    }
+  }
+
+  .mobile_nav{
+    display: block;
+  }
+
+  .lap_nav{
+    display: none;
+  }
+
+  .col-sm-6{
+    width: 100% !important;
+  }
+
+  .rectangle_left{
+    width: 100%;
+    border-right: 0px;
+  }
+
+  .rectangle_right{
+    margin-top: -50px;
+    width: 100%;
+  }
+
+  .mens-main-menu-side{
+    display: none;
+  }
+
+  .mens_main{
+    height: 350px;
+  }
+
+  .mens_main:hover > .overlay {
+    height: 350px;
+  }
+
+  .womens_main{
+    height: 350px;
+  }
+
+  .womens_main:hover > .overlay {
+    height: 350px;
+  }
+
+  .call_to_action{
+    h3{
+      font-size: 40px;
+    }
+  }
+
+  .description_content p{
+    top: 250px;
+  }
+
+  .hr_main{
+    height: 1px;
+    margin: -10px 0px 0px -20px;
+    width: 135%;
+    border: none;
+    color: #ccc;
+    background-color: #ccc;
+    display: block;
+  }
+
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+    ul{
+      margin-top: -50px;
+      font-size: 50px;
+    }
+  }
+
+  .logo-image{
+    margin-left: 18%;
+    margin-top: 10px;
+  }
+
+  .show-box{
+  margin-left: 0px;
+  height: 1000px;
+  }
+
+  .image-show-box{
+    margin-left: 0px;
+    position: relative;
+    float: left;
+    img{
+      width: 755px;
+    }
+  }
+
+  .description-show-box{
+    position: relative;
+    margin: 0px;
+    text-align: center;
+    display: block;
+    display: inline-block;
+    width: 755px;
+    h3{
+      font-size: 45px;
+    }
+    p{
+      font-size: 30px;
+    }
+    .btn{
+      font-size: 45px;
+    }
+  }
+
+  .description_content p{
+    font-size: 35px;
+    top: 280px;
+  }
+
+  .your-items{
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 10px;
+    font-size: 70px;
+  }
+
+  .mob-ul{
+    border-bottom: 1px solid;
+  }
+
+  .image_div img{
+    height: 460px;
+  }
+
+  .image_div{
+    width: 480px;
+    height: 470px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+  }
+
+  .box{
+    left: 0px;
+    width: 470px !important;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+
+  .mobile_container{
+    width: 100% !important;
+    position: relative;
+  }
+
+  .mobile_row{
+    width: 100% !important;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .menu-side{
+    display: none;
+  }
+
+  .item_sub_cat{
+    margin: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid;
+  }
+
+  .sale{
+    margin: 0px;
+    height: 140px;
+    border-bottom: 1px solid;
+  }
+
+  .sorting_class{
+     li{
+      font-size: 27px;
+      margin: 5px 20px 0px 20px;
+    }
+  }
+
+  .specials_table > td:nth-child(2){
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  .specials_table > td:nth-child(1){
+    font-size: 35px;
+  }
+
+  .specials_table > td{
+    padding: 0px 4px 0px 70px;
+  }
+
+  .normal_table > td{
+    font-size: 45px;
+  }
+
+  .item_navigation_top_mens{
+    display: none;
+  }
+
+  .item_navigation_top_womens{
+    display: none;
+  }
+
+  .navigation{
+    h1{
+    font-size: 90px;
+
+    }
+  }
+
+  .logos{
+    h3{
+      font-size: 50px;
+      margin-top: 0px;
+    }
+  }
+
+  .home-page{
+    margin-left: 5%;
+  }
+
+  #nav-toggle { position: absolute; left: 50px; top: 50px; }
+
+  #nav-toggle { cursor: pointer; padding: 10px 65px 35px 0px; }
+  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 10px;
+    width: 65px;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+  }
+  #nav-toggle span:before {
+    top: -20px;
+  }
+  #nav-toggle span:after {
+    bottom: -20px;
+  }
+
+  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    transition: all 250ms ease-in-out;
+  }
+  #nav-toggle.active span {
+    background-color: transparent;
+  }
+  #nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+  }
+  #nav-toggle.active span:before {
+    transform: rotate(45deg);
+  }
+  #nav-toggle.active span:after {
+    transform: rotate(-45deg);
+  }
+
+  #close-cross span, #close-cross span:before, #close-cross span:after{
+    margin-top: 40px;
+    position: absolute;
+    right: 10px;
+    z-index: 0.1;
+    cursor: pointer;
+    border-radius: 1px;
+    height: 10px;
+    width: 65px;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 65px;
+  }
+
+  #close-cross span{
+    background-color: transparent;
+  }
+
+  #close-cross span:before {
+    background-color: black;
+    bottom: 0px;
+    transform: rotate(-45deg);
+  }
+  #close-cross span:after {
+    background-color: black;
+    bottom: 0px;
+    transform: rotate(45deg);
+  }
+
+  .mobile_nav{
+    ul {
+      list-style-type: none;
+      float: right;
+      margin-top: -100px;
+      margin-bottom: 0px;
+      li {
+        display: inline;
+        margin-right: 30px;
+        font-weight: bold;
+        font-size: 50px;
+        font-family: "Calisto MT Regular";
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          text-decoration: underline;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .index_men_women{
+    h2{
+      font-size: 50px;
+    }
+  }
+
+
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape) {
+  .box{
+    left: 75px;
+  }
+  .hr_main{
+    display: block;
+    width: 112%;
+    margin-left: 0px;
+  }
+
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -60px;
+  }
+
+  .image_div img{
+    height: 420px;
+  }
+
+  .image_div{
+    width: 430px;
+    height: 430px;
+    margin-left: 20px;
+    padding: 0px;
+    border: 0px;
+  }
+
+  .box{
+    left: 0px;
+    width: 430px !important;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+
+  .mobile_container{
+    width: 98% !important;
+    position: relative;
+  }
+
+  .mobile_row{
+    width: 98% !important;
+    padding: 0px;
+    margin: 0px;
+  }
+
+    .arrowed {
+    position: relative;
+  }
+
+  .arrow-1 {
+    height: 100px; width: 100px;
+    border: 65px solid black;
+    border-width: 5px 5px 0 0;
+    transform: rotate(225deg);
+    margin-top: 100px;
+    margin-left: 350px;
+  }
+
+  .arrow-left { transform:rotate(45deg) }
+
+  .contact_header{
+    font-size: 90px;
+  }
+
+  .contact_page{
+    p{
+      font-size: 30px;
+    }
+  }
+
+  .about_header{
+    font-size: 90px;
+  }
+  .about_page{
+    p{
+      font-size: 30px;
+    }
+  }
+
+  .hamburger-slider{
+    display: none;
+    top: 130px;
+    background-color: rgba(255,255,255, 1);
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    height: 1500px;
     width: 105vw;
     right: 1000px;
     ul{
@@ -234,7 +688,7 @@
   }
 
   .sale{
-    height: 80px;
+    height: 140px;
     border-bottom: 1px solid;
   }
 
@@ -260,6 +714,7 @@
 
   .normal_table > td{
     font-size: 45px;
+    padding-left: 25px;
   }
 
   .item_navigation_top_mens{
@@ -328,7 +783,7 @@
     margin-top: 40px;
     position: absolute;
     right: 10px;
-    z-index: 1;
+    z-index: 0.1;
     cursor: pointer;
     border-radius: 1px;
     height: 10px;
@@ -389,64 +844,20 @@
 @media only screen
 and (min-device-width : 414px)
 and (max-device-width : 736px)
-and (orientation : landscape) {
-  .box{
-    left: 75px;
+and (orientation : portrait) {
+  .hamburger-slider{
+    display: none;
+    top: 130px;
+    background-color: rgba(255,255,255, 1);
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    height: 1500px;
+    width: 105vw;
+    right: 1000px;
   }
-  .hr_main{
-    display: block;
-    width: 112%;
-    margin-left: 0px;
-  }
-
-  .navigation{
-    width: 132%;
-    margin-left: -120px;
-  }
-
-  .instagram_logo>a>img{
-    margin-right: -60px;
-  }
-
-  .image_div img{
-    height: 420px;
-  }
-
-  .image_div{
-    width: 430px;
-    height: 430px;
-    margin-left: 20px;
-    padding: 0px;
-    border: 0px;
-  }
-
   .box{
     left: 0px;
-    width: 430px !important;
-  }
-
-  .instagram_logo>a>img{
-    margin-right: -70px;
-  }
-
-  .mobile_container{
-    width: 98% !important;
-    position: relative;
-  }
-
-  .mobile_row{
-    width: 98% !important;
-    padding: 0px;
-    margin: 0px;
-  }
-}
-
-@media only screen
-and (min-device-width : 414px)
-and (max-device-width : 736px)
-and (orientation : portrait) {
-  .box{
-    left: 75px;
   }
 
   .hr_main{

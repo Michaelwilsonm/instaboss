@@ -10,7 +10,9 @@
 <% if @item.sex == 'Mens' %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_mens" %>
+    <%= render "templates/navigation_mobile_mens" %>
   </div>
+  <%= render "/templates/mobile_navigation_sliding_div_mens" %>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_mens" %>
   </div>
@@ -20,6 +22,7 @@
 <% elsif @item.sex == 'Womens' %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_womens" %>
+    <%= render "templates/navigation_mobile_womens" %>
   </div>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_womens" %>

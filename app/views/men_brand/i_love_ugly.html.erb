@@ -5,7 +5,9 @@
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
 <% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
 <div class="item_navigation_top_mens">
   <%= render "templates/item_navigation_mens" %>
 </div>
@@ -18,12 +20,12 @@
 <div class="mens-main-menu-side">
   <%= render "templates/side_navigation_mens" %>
 </div>
-<div class="container" style="padding: 0px;">
+<div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">I Love Ugly</h1>
+    <h1 class="your-items mob-ul">I Love Ugly</h1>
     <%= render "templates/horizontal_line" %>
     <% @i_love_ugly.each do |i_love_ugly_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">

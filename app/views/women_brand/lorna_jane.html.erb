@@ -5,10 +5,12 @@
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_womens" %>
 <% end %>
 <div class="item_navigation_top_womens">
   <%= render "templates/item_navigation_womens" %>
 </div>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
 <div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
   <div class="row">
     <div class="lorna_jane_womens">
@@ -18,12 +20,12 @@
 <div class="mens-main-menu-side">
   <%= render "templates/side_nav_womens_main"%>
 </div>
-<div class="container" style="padding: 0px;">
+<div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Lorna Jane</h1>
+    <h1 class="your-items mob-ul">Lorna Jane</h1>
     <%= render "templates/horizontal_line" %>
     <% @lorna_jane.each do |lorna_jane_item| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">

@@ -4,6 +4,9 @@ class ItemController < ApplicationController
   before_action :authenticate_user!, only: [:destroy, :edit, :update, :create]
   helper_method :sort_column, :sort_direction
 
+  def save_my_previous_url
+  end
+
   def index
     if !current_user
       redirect_to root_path
@@ -28,6 +31,7 @@ class ItemController < ApplicationController
   def edit
   end
 
+
   def destroy
     @item.destroy
     redirect_to item_index_path
@@ -42,6 +46,8 @@ class ItemController < ApplicationController
   end
 
   def show
+    session[:my_previous_url] = URI(request.referer || '').path
+    @back_url = session[:my_previous_url]
   end
 
   private

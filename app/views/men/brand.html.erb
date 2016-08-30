@@ -5,16 +5,18 @@
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
 <% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
 <div class="item_navigation_top_womens">
   <%= render "templates/item_navigation_mens" %>
 </div>
-<div class="container" style="padding: 0px;">
+<div class="container mobile_container"  style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div><br>
-    <h1 class="your-items">Featured Brands</h1>
+    <h1 class="your-items mob-ul">Featured Brands</h1>
     <%= render "templates/horizontal_line" %>
 
 
@@ -66,18 +68,19 @@
       </div>
     </a>
 
-<!--     <a href="/men_brand/nautica">
-      <div class="box col-md-4 col-sm-6 col-xs-12">
-        <div class="image_div brands_image_div">
-          <img src="/assets/NAUTICALogo.jpg" border="0" style="height: 100px;" alt="">
-        </div>
-      </div>
-    </a> -->
 
     <a href="/men_brand/new_balance">
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div brands_image_div">
           <img src="/assets/new-balance-n-logo-0.jpg" border="0" alt="" style="height: 140px;">
+        </div>
+      </div>
+    </a>
+
+    <a href="/men_brand/nike">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/nike logo.png" border="0" style="height: 70px;" alt="">
         </div>
       </div>
     </a>

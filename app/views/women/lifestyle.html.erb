@@ -5,8 +5,9 @@
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_womens" %>
 <% end %>
-
+<%= render "/templates/mobile_navigation_sliding_div_women" %>
 <div class="item_navigation_top_womens">
   <%= render "templates/item_navigation_womens" %>
 </div>
@@ -22,7 +23,7 @@
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens" %>
 </div>
-<div class="container" style="padding: 0px;">
+<div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>

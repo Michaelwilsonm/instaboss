@@ -1,5 +1,9 @@
 $black: #000;
 
+.hamburger-slider{
+    display: none;
+  }
+
 .navigation {
   h1 {
     text-align: center;
@@ -50,6 +54,10 @@ $black: #000;
   }
 }
 
+.mobile_nav{
+  display: none;
+}
+
 
 .client-login {
   position: relative;
@@ -73,4 +81,6 @@ $black: #000;
   &:hover {
     color: black;
   }
+
+
 }

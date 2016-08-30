@@ -18,6 +18,14 @@ class WomenBrandController < ApplicationController
     @mura = @women_items.women_mura
   end
 
+  def princess_polly
+    @princess_polly = @women_items.women_princess_polly
+  end
+
+  def jo_mercer
+    @jo_mercer = @women_items.women_jo_mercer
+  end
+
   def showpo
     @showpo = @women_items.women_showpo
   end

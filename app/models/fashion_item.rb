@@ -79,6 +79,10 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'leo joseph' ORDER BY created_at DESC")
   end
 
+  def self.nike_mens
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'nike' ORDER BY created_at DESC")
+  end
+
   def self.daniel_wellington
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'daniel wellington' ORDER BY created_at DESC")
   end
@@ -235,6 +239,14 @@ class FashionItem < ActiveRecord::Base
 
   def self.women_mura
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'mura boutique' ORDER BY created_at DESC")
+  end
+
+  def self.women_jo_mercer
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'jo mercer' ORDER BY created_at DESC")
+  end
+
+  def self.women_princess_polly
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'princess polly' ORDER BY created_at DESC")
   end
 
   def self.women_esther

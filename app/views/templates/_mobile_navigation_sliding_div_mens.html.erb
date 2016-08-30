@@ -1,0 +1,22 @@
+<% mens_categories = {'All': '/men/all', 'Accessories': '/men/accessorie', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top' }; %>
+
+
+<div class="hamburger-slider">
+  <div class="container">
+    <div class="row">
+      <ul>
+        <li>Shop by</li>
+        <% mens_categories.each do |keys, values| %>
+          <li><%= link_to keys, values %></li>
+        <% end %>
+        <div class="bottom_list_tags">
+          <li><%= link_to "Brands", men_brand_path %></li>
+          <li><%= link_to "On Sale", site_sale_mens_path %></li>
+        </div>
+        <div class="about_contact_list_tags">
+          <li><%= link_to "About", men_about_path%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Contact", men_contact_path %></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

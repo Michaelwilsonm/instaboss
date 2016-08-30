@@ -5,14 +5,16 @@
   <%= render "templates/admin_navigation" %>
 <% else %>
   <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
 <% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
 <div class="item_navigation_top_mens">
   <%= render "templates/item_navigation_mens" %>
 </div>
 <div class="menu-side-search">
   <%= render "templates/mens_search_side_nav" %>
 </div><br>
-<div class="container">
+<div class="container mobile_container">
   <div class="row" style="margin-left: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>

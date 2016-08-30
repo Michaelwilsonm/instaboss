@@ -10,7 +10,9 @@
 <% if @item.sex == 'Mens' %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_mens" %>
+    <%= render "templates/navigation_mobile_mens" %>
   </div>
+  <%= render "/templates/mobile_navigation_sliding_div_mens" %>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_mens" %>
   </div>
@@ -20,6 +22,7 @@
 <% elsif @item.sex == 'Womens' %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_womens" %>
+    <%= render "templates/navigation_mobile_womens" %>
   </div>
   <div class="mens-main-menu-side">
     <%= render "templates/side_navigation_womens" %>
@@ -32,6 +35,7 @@
   <div class="row">
     <div class="show-box">
       <div class="image-show-box">
+      <a id="close-cross" href="<%= @back_url %>"><span></span></a>
         <%= image_tag @item.item_image.url(:original) %>
       </div>
       <div class="description-show-box">
@@ -66,6 +70,11 @@
           </div>
         <% end %>
       </div>
+      <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
   </div>
 </div>

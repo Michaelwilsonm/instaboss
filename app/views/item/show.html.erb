@@ -59,9 +59,10 @@
           <p>Free Worldwide Shipping</p>
         <% end %>
         <div class="show-button">
-          <a href="<%= @item.unique_affiliate_url %>" target="_blank">
-            <button class="btn btn-success">Shop now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
+          <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
+            <img src="/assets/shop now.png">
           </a>
+          <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
         </div>
         <% if current_admin %>
           <div class="admin-delete-edit">

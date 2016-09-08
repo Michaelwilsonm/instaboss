@@ -3,12 +3,22 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .show-button{
+    img{
+      width: 300px;
+    }
+  }
+
   .normal_table > td{
     padding-left: 25px;
   }
 
   .search_bar{
     visibility: hidden;
+  }
+
+  .arrowed-desktop{
+    display: none;
   }
 
   .arrowed {
@@ -409,6 +419,10 @@
     h2{
       font-size: 50px;
     }
+  }
+
+  .worldwide_shipping_main>p{
+      font-size: 35px;
   }
 
 

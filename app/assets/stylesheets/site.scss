@@ -73,7 +73,7 @@
 }
 
 .rectangle_left{
-    margin: 60px 0px 100px 0px;
+    margin: 60px 0px 50px 0px;
     text-align:center;
     float: left;
     width: 50%;
@@ -84,7 +84,7 @@
 }
 
 .rectangle_right{
-    margin: 60px 0px 100px 0px;
+    margin: 60px 0px 50px 0px;
     float: right;
     text-align:center;
     width: 50%;
@@ -93,10 +93,18 @@
   }
 }
 
-
-
-
-@media only screen and (max-width: 700px) {
-  .logos{
+.worldwide_shipping_main{
+  p{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Calisto MT Regular";
+    margin-bottom: 50px;
   }
+  [alt="shipping-icon"]{
+    width: 130px;
+    display: block;
+    margin: 0px auto 0px auto;
+  }
+
+
 }

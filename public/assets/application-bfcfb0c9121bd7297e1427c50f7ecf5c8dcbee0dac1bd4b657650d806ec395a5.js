@@ -13251,12 +13251,14 @@ $(document).ready(function() {
     toggleNavCount ++
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
+        $(".logo-image").fadeIn()
         $(".hamburger-slider").animate({
           right: "1000px"
         },300)
       }else if (toggleNavCount % 2 != 0) {
+        $(".logo-image").fadeOut()
         $(".hamburger-slider").animate({
-          right: "-10px"
+          right: "-5px"
         },300)
       }
     })
@@ -13366,6 +13368,37 @@ $(document).ready(function() {
 
   });
 });
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+
+
+
+    $(".button_staff_path>a").click(function(e){
+      console.log('hello')
+      console.log(this)
+      e.preventDefault()
+    })
+
+    // $($.ajax({
+    //   url: '/path/to/file',
+    //   type: 'POST',
+    //   dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+    //   data: {param1: 'value1'},
+    // })
+    // .done(function() {
+    //   console.log("success");
+    // })
+    // .fail(function() {
+    //   console.log("error");
+    // })
+    // .always(function() {
+    //   console.log("complete");
+    // });
+    // )
+
+  });
+}); //end
+;
 $(document).ready(function() {
   $(document).on('page:change', function () {
 

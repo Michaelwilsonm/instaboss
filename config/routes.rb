@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :admin
 
-  post 'admin/featured_item'
+  post 'admin/:id/update_staff_true' => 'admin#update_staff_true'
+  post 'admin/:id/update_featured_true' => 'admin#update_featured_true'
+  post 'admin/:id/update_staff_false' => 'admin#update_staff_false'
+  post 'admin/:id/update_featured_false' => 'admin#update_featured_false'
+
+  # post 'admin/featured_item'
+  # post 'admin/update_staff'
 
   # post 'men_brand/search' => 'men_brand#search', as: 'men_search_brand'
   post 'men_brand/side_search' => 'men_brand#side_search', as: 'men_side_search_brand'

@@ -11,10 +11,12 @@ $(document).ready(function() {
     toggleNavCount ++
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
+        $(".logo-image").fadeIn()
         $(".hamburger-slider").animate({
           right: "1000px"
         },300)
       }else if (toggleNavCount % 2 != 0) {
+        $(".logo-image").fadeOut()
         $(".hamburger-slider").animate({
           right: "-5px"
         },300)

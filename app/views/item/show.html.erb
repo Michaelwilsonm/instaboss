@@ -1,6 +1,6 @@
-<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph"] %>
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike"] %>
 
-<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo"] %>
+<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo","jo mercer", "princess polly"] %>
 
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
@@ -8,6 +8,7 @@
   <%= render "templates/navigation" %>
 <% end %>
 <% if @item.sex == 'Mens' %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_mens" %>
     <%= render "templates/navigation_mobile_mens" %>
@@ -20,6 +21,7 @@
     <%= render "templates/item_navigation_mens_subcat" %>
   </div>
 <% elsif @item.sex == 'Womens' %>
+<%= render "/templates/mobile_navigation_sliding_div_women" %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_womens" %>
     <%= render "templates/navigation_mobile_womens" %>
@@ -59,15 +61,38 @@
           <p>Free Worldwide Shipping</p>
         <% end %>
         <div class="show-button">
-          <a href="<%= @item.unique_affiliate_url %>" target="_blank">
-            <button class="btn btn-success">Shop now &nbsp<i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i></button>
+          <a href="http://<%= @item.unique_affiliate_url %>" target="_blank">
+            <img src="/assets/shop now.png">
           </a>
+          <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
         </div>
         <% if current_admin %>
           <div class="admin-delete-edit">
             <%= link_to 'Edit', edit_admin_path(@item), class: "btn btn-info" %>
-            <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %>
-          </div>
+            <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %><br>
+            <% if @item.staff_picks == true %>
+              <br>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
+              </div>
+            <% elsif @item.staff_picks == false || @item.staff_picks == nil %>
+              <br>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
+              </div>
+            <% end %>
+            <% if @item.featured_item == true %>
+              <br>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
+              </div>
+            <% elsif @item.featured_item == false || @item.featured_item == nil %>
+              <br>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
+              </div>
+              <br>
+            <% end %>
         <% end %>
       </div>
       <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>

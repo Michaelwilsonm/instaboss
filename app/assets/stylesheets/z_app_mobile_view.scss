@@ -3,12 +3,22 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .show-button{
+    img{
+      width: 300px;
+    }
+  }
+
   .normal_table > td{
     padding-left: 25px;
   }
 
   .search_bar{
     visibility: hidden;
+  }
+
+  .arrowed-desktop{
+    display: none;
   }
 
   .arrowed {
@@ -52,7 +62,7 @@
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    height: 100vh;
+    height: 1800px;
     width: 105vw;
     right: 1000px;
     ul{
@@ -61,7 +71,7 @@
       margin-top: 90px;
     }
     li{
-      font-size: 55px;
+      font-size: 65px;
       padding: 5px;
       font-family: "Calisto MT Regular";
       a{
@@ -182,8 +192,13 @@
     }
     p{
       font-size: 30px;
+      padding: 5px;
+      a{
+        font-size: 50px;
+      }
     }
     .btn{
+      margin-top: 20px;
       font-size: 45px;
     }
   }
@@ -304,12 +319,17 @@
 
   #nav-toggle { position: absolute; left: 50px; top: 50px; }
 
-  #nav-toggle { cursor: pointer; padding: 10px 65px 35px 0px; }
+  #nav-toggle {
+    cursor: pointer;
+    padding: 15px 65px 35px 0px;
+    margin-left: -20px;
+  }
+
   #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
     cursor: pointer;
     border-radius: 1px;
-    height: 10px;
-    width: 65px;
+    height: 4px;
+    width: 105px;
     background: black;
     position: absolute;
     display: block;
@@ -339,9 +359,9 @@
   }
 
   #close-cross span, #close-cross span:before, #close-cross span:after{
-    margin-top: 40px;
+    margin-top: 0px;
     position: absolute;
-    right: 10px;
+    right: 0px;
     z-index: 0.1;
     cursor: pointer;
     border-radius: 1px;
@@ -355,17 +375,19 @@
   }
 
   #close-cross span{
-    background-color: transparent;
+    background-color: white;
+    height: 30px;
+    right: -34px;
   }
 
   #close-cross span:before {
     background-color: black;
-    bottom: 0px;
+    bottom: 25px;
     transform: rotate(-45deg);
   }
   #close-cross span:after {
     background-color: black;
-    bottom: 0px;
+    bottom: 25px;
     transform: rotate(45deg);
   }
 
@@ -397,6 +419,10 @@
     h2{
       font-size: 50px;
     }
+  }
+
+  .worldwide_shipping_main>p{
+      font-size: 35px;
   }
 
 
@@ -497,7 +523,7 @@ and (orientation : landscape) {
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    height: 1500px;
+    height: 1800px;
     width: 105vw;
     right: 1000px;
     ul{
@@ -506,7 +532,7 @@ and (orientation : landscape) {
       margin-top: 90px;
     }
     li{
-      font-size: 55px;
+      font-size: 65px;
       padding: 5px;
       font-family: "Calisto MT Regular";
       a{
@@ -749,8 +775,8 @@ and (orientation : landscape) {
   #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
     cursor: pointer;
     border-radius: 1px;
-    height: 10px;
-    width: 65px;
+    height: 7px;
+    width: 85px;
     background: black;
     position: absolute;
     display: block;
@@ -780,9 +806,9 @@ and (orientation : landscape) {
   }
 
   #close-cross span, #close-cross span:before, #close-cross span:after{
-    margin-top: 40px;
+    margin-top: 0px;
     position: absolute;
-    right: 10px;
+    right: 0px;
     z-index: 0.1;
     cursor: pointer;
     border-radius: 1px;
@@ -796,17 +822,19 @@ and (orientation : landscape) {
   }
 
   #close-cross span{
-    background-color: transparent;
+    background-color: white;
+    height: 30px;
+    right: -34px;
   }
 
   #close-cross span:before {
     background-color: black;
-    bottom: 0px;
+    bottom: 25px;
     transform: rotate(-45deg);
   }
   #close-cross span:after {
     background-color: black;
-    bottom: 0px;
+    bottom: 25px;
     transform: rotate(45deg);
   }
 
@@ -852,7 +880,7 @@ and (orientation : portrait) {
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    height: 1500px;
+    height: 1800px;
     width: 105vw;
     right: 1000px;
   }

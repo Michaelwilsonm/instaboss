@@ -73,23 +73,23 @@
             <% if @item.staff_picks == true %>
               <br>
               <div class="button_staff_path">
-                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
+                <a href="#" method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
               </div>
             <% elsif @item.staff_picks == false || @item.staff_picks == nil %>
               <br>
               <div class="button_staff_path">
-                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
+                <a href="#" method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
               </div>
             <% end %>
             <% if @item.featured_item == true %>
               <br>
               <div class="button_staff_path">
-                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
+                <a href="#" method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
               </div>
             <% elsif @item.featured_item == false || @item.featured_item == nil %>
               <br>
               <div class="button_staff_path">
-                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
+                <a href="#" method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
               </div>
               <br>
             <% end %>

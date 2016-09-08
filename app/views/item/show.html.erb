@@ -8,6 +8,7 @@
   <%= render "templates/navigation" %>
 <% end %>
 <% if @item.sex == 'Mens' %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_mens" %>
     <%= render "templates/navigation_mobile_mens" %>
@@ -20,6 +21,7 @@
     <%= render "templates/item_navigation_mens_subcat" %>
   </div>
 <% elsif @item.sex == 'Womens' %>
+<%= render "/templates/mobile_navigation_sliding_div_women" %>
   <div class="item_navigation_top_mens">
     <%= render "templates/item_navigation_womens" %>
     <%= render "templates/navigation_mobile_womens" %>
@@ -68,6 +70,48 @@
           <div class="admin-delete-edit">
             <%= link_to 'Edit', edit_admin_path(@item), class: "btn btn-info" %>
             <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %>
+
+            <%= @item.staff_picks %>
+            <% if @item.staff_picks == true %>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
+              </div>
+            <% elsif @item.staff_picks == false %>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
+              </div>
+            <% end %>
+
+            <%= @item.featured_item %>
+            <% if @item.featured_item == true %>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
+              </div>
+            <% elsif @item.featured_item == false %>
+              <div class="button_staff_path">
+                <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
+              </div>
+            <% end %>
+
+
+
+
+
+<!--             <% if @item.staff_picks == true %>
+              <div class="btn btn-success staff-picked-true">Staff Picked</div>
+            <% else %>
+              <div class="btn btn-danger staff-picked-false">Currently not Staff Picked</div>
+            <% end %> -->
+
+
+<!--
+            <% if @item.featured_item == true %>
+              <div class="btn btn-success item-featured-true">Item is Featured</div>
+            <% else %>
+              <div class="btn btn-danger item-featured-false">Item is not Featured</div>
+            <% end %>
+ -->
+
           </div>
         <% end %>
       </div>

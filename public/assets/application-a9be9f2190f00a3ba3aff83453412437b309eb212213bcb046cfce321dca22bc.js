@@ -13368,37 +13368,74 @@ $(document).ready(function() {
 
   });
 });
-$(document).ready(function() {
-  $(document).on('page:change',function() {
+$(document).on('page:change', function() {
 
 
-
-    $(".button_staff_path>a").click(function(e){
-      console.log('hello')
-      console.log(this)
-      e.preventDefault()
+  $(".staff-true").click(function(e){
+    console.log("staff-true")
+    e.preventDefault()
+    $(this).html("Currently NOT Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_staff_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
     })
+  })
 
-    // $($.ajax({
-    //   url: '/path/to/file',
-    //   type: 'POST',
-    //   dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-    //   data: {param1: 'value1'},
-    // })
-    // .done(function() {
-    //   console.log("success");
-    // })
-    // .fail(function() {
-    //   console.log("error");
-    // })
-    // .always(function() {
-    //   console.log("complete");
-    // });
-    // )
+  $(".staff-false, .staff-").click(function(e){
+    console.log("staff-false")
+    e.preventDefault()
+    $(this).html("Currently IS Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_staff_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
 
-  });
-}); //end
-;
+  $(".feature-true").click(function(e){
+    console.log("feature-true")
+    e.preventDefault()
+    $(this).html("Currently NOT Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_featured_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-false, .feature-").click(function(e){
+    console.log("feature-false")
+    e.preventDefault()
+    $(this).html("Currently IS Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_featured_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+});
 $(document).ready(function() {
   $(document).on('page:change', function () {
 

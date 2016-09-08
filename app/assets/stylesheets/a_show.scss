@@ -12,7 +12,32 @@
   }
 }
 
+.show-button{
+  img{
+    cursor: pointer;
+    width: 100px;
+    display: block;
+    margin: 40px auto 0px auto;
+  }
+}
+
 .description-show-box{
   margin-left: 430px;
 }
+
+.arrowed-desktop {
+    position: relative;
+  }
+
+.arrow-1-desktop {
+  height: 40px; width: 40px;
+  border: 15px solid black;
+  border-width: 2px 2px 0 0;
+  transform: rotate(225deg);
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 60px;
+}
+
+
 

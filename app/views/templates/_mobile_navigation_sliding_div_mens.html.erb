@@ -5,13 +5,13 @@
   <div class="container">
     <div class="row">
       <ul>
-        <li>Shop by</li>
+        <li><b>Shop by</b></li>
         <% mens_categories.each do |keys, values| %>
           <li><%= link_to keys, values %></li>
         <% end %>
         <div class="bottom_list_tags">
-          <li><%= link_to "Brands", men_brand_path %></li>
-          <li><%= link_to "On Sale", site_sale_mens_path %></li>
+          <li><%= link_to "ALL BRANDS", men_brand_path %></li>
+          <li><%= link_to "ON SALE", site_sale_mens_path %></li>
         </div>
         <div class="about_contact_list_tags">
           <li><%= link_to "About", men_about_path%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Contact", men_contact_path %></li>

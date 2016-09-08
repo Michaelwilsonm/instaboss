@@ -20,6 +20,46 @@ class AdminController < ApplicationController
   end
 
   def show
+    @item = FashionItem.find(params[:id])
+  end
+
+  def update_staff_true
+    @item = FashionItem.find(params[:id])
+    puts "*" * 30
+    puts @item.staff_picks
+    puts "*" * 30
+    @item.update!(staff_picks: false)
+    puts "*" * 30
+    puts @item.staff_picks
+    puts "*" * 30
+     respond_to do |format|
+      format.json { render json: @item }
+    end
+  end
+
+  def update_staff_false
+    @item = FashionItem.find(params[:id])
+    puts @item.staff_picks
+    @item.update!(staff_picks: true)
+     respond_to do |format|
+      format.json { render json: @item }
+    end
+  end
+
+  def update_featured_true
+    @item = FashionItem.find(params[:id])
+    @item.update!(featured_item: false)
+     respond_to do |format|
+      format.json { render json: @item }
+    end
+  end
+
+  def update_featured_false
+    @item = FashionItem.find(params[:id])
+    @item.update!(featured_item: true)
+     respond_to do |format|
+      format.json { render json: @item }
+    end
   end
 
   def update

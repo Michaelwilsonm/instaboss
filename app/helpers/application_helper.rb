@@ -41,9 +41,9 @@ module ApplicationHelper
   end
 
   def link_to_brand_page brand_name, brand_sex
-    womens_hash = {'topshop': '/women_brand/top_shop', 'esther boutique': '/women_brand/esther', 'alice mccall': '/women_brand/alice_mccall' , 'auguste': '/women_brand/auguste', 'lorna jane': '/women_brand/lorna_jane', 'mura boutique': '/women_brand/mura', 'samantha wills': '/women_brand/samantha_wills', 'seafolly': '/women_brand/sea_folly', 'senso': '/women_brand/senso', 'showpo': '/women_brand/showpo', 'sunday somewhere': '/women_brand/sunday_somewhere', 'tony bianco': '/women_brand/tony_bianco', "victoria's secret": '/women_brand/victorias_secret'}
+    womens_hash = {'topshop': '/women_brand/top_shop', 'esther boutique': '/women_brand/esther', 'alice mccall': '/women_brand/alice_mccall' , 'auguste': '/women_brand/auguste', 'lorna jane': '/women_brand/lorna_jane', 'mura boutique': '/women_brand/mura', 'samantha wills': '/women_brand/samantha_wills', 'seafolly': '/women_brand/sea_folly', 'senso': '/women_brand/senso', 'showpo': '/women_brand/showpo', 'sunday somewhere': '/women_brand/sunday_somewhere', 'tony bianco': '/women_brand/tony_bianco', "victoria's secret": '/women_brand/victorias_secret', 'princess polly': '/women_brand/princess_polly', 'jo mercer': '/women_brand/jo_mercer' }
 
-    mens_hash = {'i love ugly': '/men_brand/i_love_ugly', 'just another fisherman': '/men_brand/just_another_fisherman', 'leo joseph': '/men_brand/leo_joseph', 'mvmt': '/men_brand/mvmt', 'moreporks': '/men_brand/morepork', 'new balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'sunday somewhere': '/men_brand/sunday_somewhere'}
+    mens_hash = {'i love ugly': '/men_brand/i_love_ugly', 'just another fisherman': '/men_brand/just_another_fisherman', 'leo joseph': '/men_brand/leo_joseph', 'mvmt': '/men_brand/mvmt', 'moreporks': '/men_brand/morepork', 'new balance': '/men_brand/new_balance', 'retromarine': '/men_brand/retro_marine', 'sunday somewhere': '/men_brand/sunday_somewhere', 'nike': '/men_brand/nike'}
 
     link_href = ""
     if brand_sex == "Mens"
@@ -54,7 +54,7 @@ module ApplicationHelper
       end
     elsif brand_sex == "Womens"
       womens_hash.select do |key, value|
-        p key.to_s == brand_name
+        puts key.to_s == brand_name
         if key.to_s == brand_name
           link_href = value
         end

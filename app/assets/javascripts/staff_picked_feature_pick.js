@@ -14,7 +14,7 @@ $(document).ready(function() {
       })
     })
 
-    $(".staff-false").click(function(e){
+    $(".staff-false, .staff-").click(function(e){
       $(this).html("Currently IS Staff Picked<br>(click to change)")
       $(this).removeClass("btn-danger").addClass("btn-success")
       var id = $(this).attr('id')
@@ -42,7 +42,7 @@ $(document).ready(function() {
       })
     })
 
-    $(".feature-false").click(function(e){
+    $(".feature-false, .feature-").click(function(e){
       $(this).html("Currently IS Feature Picked<br>(click to change)")
       $(this).removeClass("btn-danger").addClass("btn-success")
       var id = $(this).attr('id')

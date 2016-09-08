@@ -69,50 +69,30 @@
         <% if current_admin %>
           <div class="admin-delete-edit">
             <%= link_to 'Edit', edit_admin_path(@item), class: "btn btn-info" %>
-            <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %>
-
-            <%= @item.staff_picks %>
+            <%= link_to 'Delete', admin_path(@item, :from=>"show-page"), method: :delete, class: "btn btn-danger" %><br>
             <% if @item.staff_picks == true %>
+              <br>
               <div class="button_staff_path">
                 <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
               </div>
-            <% elsif @item.staff_picks == false %>
+            <% elsif @item.staff_picks == false || @item.staff_picks == nil %>
+              <br>
               <div class="button_staff_path">
                 <a method="post" id="<%= @item.id %>" class="staff-<%= @item.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
               </div>
             <% end %>
-
-            <%= @item.featured_item %>
             <% if @item.featured_item == true %>
+              <br>
               <div class="button_staff_path">
                 <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
               </div>
-            <% elsif @item.featured_item == false %>
+            <% elsif @item.featured_item == false || @item.featured_item == nil %>
+              <br>
               <div class="button_staff_path">
                 <a method="post" id="<%= @item.id %>" class="feature-<%= @item.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
               </div>
+              <br>
             <% end %>
-
-
-
-
-
-<!--             <% if @item.staff_picks == true %>
-              <div class="btn btn-success staff-picked-true">Staff Picked</div>
-            <% else %>
-              <div class="btn btn-danger staff-picked-false">Currently not Staff Picked</div>
-            <% end %> -->
-
-
-<!--
-            <% if @item.featured_item == true %>
-              <div class="btn btn-success item-featured-true">Item is Featured</div>
-            <% else %>
-              <div class="btn btn-danger item-featured-false">Item is not Featured</div>
-            <% end %>
- -->
-
-          </div>
         <% end %>
       </div>
       <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>

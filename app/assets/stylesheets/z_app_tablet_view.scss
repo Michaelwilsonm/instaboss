@@ -58,7 +58,6 @@
   }
 
   .description-show-box{
-    margin-left: 0px;
     text-align: center;
   }
 
@@ -136,13 +135,17 @@ and (orientation : portrait) {
     top: 185px;
   }
 
+  .description-show-box{
+    margin-left: 365px;
+  }
+
   .show-box{
   margin-left: 60px;
   }
 
   .image-show-box>img{
     width: 340px;
-    margin-left: 70px;
+    margin-left: 10px;
   }
   .box{
     left: 75px;

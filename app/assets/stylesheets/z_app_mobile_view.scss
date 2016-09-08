@@ -255,15 +255,25 @@
     display: none;
   }
 
+
   .item_sub_cat{
     margin: 20px;
     padding-bottom: 50px;
     border-bottom: 1px solid;
   }
+  .womens_top {
+    padding-bottom: 90px;
+  }
 
-  .sale{
+  .sale_women{
     margin: 0px;
     height: 140px;
+    border-bottom: 1px solid;
+  }
+
+  .sale_men{
+    margin: 0px;
+    height: 100px;
     border-bottom: 1px solid;
   }
 

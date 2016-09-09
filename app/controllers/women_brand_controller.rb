@@ -14,6 +14,9 @@ class WomenBrandController < ApplicationController
     @query_all = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query)
   end
 
+  def mobile_women_search
+  end
+
   def mura
     @mura = @women_items.women_mura
   end

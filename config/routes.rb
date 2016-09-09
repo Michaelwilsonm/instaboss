@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   # post 'women_brand/search' => 'women_brand#search', as: 'women_search_brand'
   post 'women_brand/side_search' => 'women_brand#side_search', as: 'women_side_search_brand'
+
+  # post 'women_brand/side_search' => 'women_brand#side_search', as: 'mobile_women_search'
+
+  get 'women_brand/mobile_women_search'
   get 'women_brand/lorna_jane'
   get 'women_brand/tony_bianco'
   get 'women_brand/sunday_somewhere'

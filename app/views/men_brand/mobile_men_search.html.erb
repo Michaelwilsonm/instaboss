@@ -1,0 +1,22 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+
+<%= form_tag men_side_search_brand_path do %>
+  <div class="input-group mobile_search_form">
+    <input name="query" type="text" class="form-control" placeholder="Search">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit"><i class="fa fa-search fa-4x" aria-hidden="true"></i></button>
+    </span>
+  </div>
+<% end %>

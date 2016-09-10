@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # post 'men_brand/search' => 'men_brand#search', as: 'men_search_brand'
   post 'men_brand/side_search' => 'men_brand#side_search', as: 'men_side_search_brand'
+
+  get 'men_brand/mobile_men_search'
   get 'men_brand/leo_joseph'
   get 'men_brand/new_balance'
   get 'men_brand/daniel_wellington'

@@ -11,7 +11,9 @@
 <div class="item_navigation_top_mens">
   <%= render "templates/item_navigation_mens" %>
 </div>
-<div class="menu-side-search">
+
+
+<div class="mens-main-menu-side">
   <%= render "templates/mens_search_side_nav" %>
 </div><br>
 <div class="container mobile_container">
@@ -19,7 +21,7 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items">Search Results</h1>
+    <h1 class="your-items mob-ul">Search Results</h1>
     <%= render "templates/horizontal_line" %>
       <% @query_all.each do |query_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">

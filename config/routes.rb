@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :shop_the_look_items
+  resources :shop_the_look_images
   get 'client/all'
   # delete 'session' => 'sessions#destroy'
 

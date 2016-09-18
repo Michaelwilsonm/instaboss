@@ -1,47 +1,36 @@
 <%= render "templates/navigation" %>
 <div class="container">
   <div class="row">
-    <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <p><em><%= link_to "Just one item?", new_item_path %></em></p>
+    <p><em><%= link_to "Just one item?", new_item_path %></em></p>
 
-        <%= form_for @image_item, url: {action: "create"}, html: {class: "fashion_item_form", multipart: true} do |f| %>
-
-            <div class="new_fashion_item">
-              <div class="col-md-10">
-                <span>Image</span>
-                  <input type="file" id="fashion-item-image" name="ShopTheLookImage[shop_look_image]" accept="image/*" class="error">
-              </div>
-
-              <div class="col-md-10">
-
-              <% item_count = 0 %>
-
-              <% for item in @image_item.shop_the_look_items %>
-
-                <% item_count +=1 %>
-
-                <%= fields_for "...", item do |shop_item| %>
-                  <h1>Item <%= item_count %></h1>
-                  <p>brand</p> <%= shop_item.text_field :brand %>
-                  <p>gender</p> <%= shop_item.text_field :gender %>
-                  <p>category</p> <%= shop_item.text_field :category %>
-                  <p>sub-category</p> <%= shop_item.text_field :sub_category %>
-                <% end %>
-
-              <% end %>
-              </div>
-
-
-
-            <div class="col-md-10"><br>
-              <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
-              <input type="hidden" name="FashionItem[user_id]" value="<%= current_user.id %>">
-            </div>
-        <% end %>
+    <%= form_for :shop_the_look_image, url: {action: "create"}, html: {multipart: true} do |f| %>
+      <div class="new_fashion_item">
+        <div class="col-md-12">
+          <span>Image</span>
+          <%= f.file_field :shop_look_image %>
+        </div>
       </div>
-    <div class="col-md-4"></div>
+
+      <% item_count = 0 %>
+      <% for item in @image_item.shop_the_look_items %>
+        <div class="col-md-4">
+          <% item_count +=1 %>
+
+          <%= fields_for "shop_items[]", item do |shop_item| %>
+            <h1>Item <%= item_count %></h1>
+            <p>brand</p> <%= shop_item.text_field :brand %>
+            <p>gender</p> <%= shop_item.text_field :gender %>
+
+          <% end %>
+        </div>
+      <% end %>
+
+
+      <div class="col-md-12">
+        <%= submit_tag "create" %>
+      </div>
+    <% end %>
 </div>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

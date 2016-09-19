@@ -18,9 +18,25 @@
 
           <%= fields_for "shop_items[]", item do |shop_item| %>
             <h1>Item <%= item_count %></h1>
-            <p>brand</p> <%= shop_item.text_field :brand %>
-            <p>gender</p> <%= shop_item.text_field :gender %>
+            <div class="col-md-8">
 
+            <% gender_array = [['Mens'],["Womens"]] %>
+            <span>Sex</span>
+            <%= shop_item.select "gender", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex-' + item_count.to_s} %>
+
+            <span>category</span>
+            <%= shop_item.select "category", options_for_select(""), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + item_count.to_s} %>
+
+            <span>sub-category</span>
+            <%= shop_item.select "sub_category", options_for_select(""), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm sub-cat-look new-item-look-sub-category-' + item_count.to_s} %>
+
+
+            </div>
+            <!-- <p>Sub-cat</p> <%= shop_item.text_field :sub_category %>
+            <p>Brand</p> <%= shop_item.text_field :brand %>
+            <p>Price</p> <%= shop_item.text_field :price %>
+            <p>Sale</p> <%= shop_item.text_field :sale %>
+            <p>Product URL</p> <%= shop_item.text_field :unique_affiliate_url %> -->
           <% end %>
         </div>
       <% end %>

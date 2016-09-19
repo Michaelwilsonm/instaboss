@@ -14,12 +14,13 @@ class ShopTheLookImagesController < ApplicationController
     params["shop_items"].each do |item|
       @item.shop_the_look_items.create(item_params(item))
     end
+
   end
 
   private
 
     def item_params(my_params)
-      my_params.permit(:gender, :brand)
+      my_params.permit(:gender, :brand, :category, :sub_category, :price, :sale, :unique_affiliate_url)
     end
 
 end

@@ -6,7 +6,11 @@ class ShopTheLookImage < ActiveRecord::Base
   validates_attachment_content_type :shop_look_image, content_type: /\Aimage\/.*\Z/
 
 
-  def self.shop_the_look
+  def self.shop_the_look_women
+    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = 'Womens' ORDER BY created_at DESC")
+  end
+
+  def self.shop_the_look_men
     ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = 'Womens' ORDER BY created_at DESC")
   end
 end

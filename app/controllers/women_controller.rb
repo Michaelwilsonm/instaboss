@@ -55,7 +55,7 @@ class WomenController < ApplicationController
   end
 
   def shop_the_look
-    @shop_the_look_womens = @shop_look_images.shop_the_look
+    @shop_the_look_womens = @shop_look_images.shop_the_look_women
   end
 
   def about

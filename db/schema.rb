@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524004151) do
+ActiveRecord::Schema.define(version: 20160920062930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,38 @@ ActiveRecord::Schema.define(version: 20160524004151) do
 
   add_index "fashion_items", ["user_id"], name: "index_fashion_items_on_user_id", using: :btree
 
+  create_table "shop_the_look_images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "shop_look_image_file_name"
+    t.string   "shop_look_image_content_type"
+    t.integer  "shop_look_image_file_size"
+    t.datetime "shop_look_image_updated_at"
+    t.string   "gender"
+    t.string   "ww_shipping"
+  end
+
+  add_index "shop_the_look_images", ["user_id"], name: "index_shop_the_look_images_on_user_id", using: :btree
+
+  create_table "shop_the_look_items", force: :cascade do |t|
+    t.integer  "shop_the_look_image_id"
+    t.string   "gender"
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "brand"
+    t.decimal  "price",                  precision: 5, scale: 2
+    t.boolean  "sale",                                           default: false, null: false
+    t.decimal  "sale_price",             precision: 5, scale: 2, default: 0.0
+    t.string   "unique_affiliate_url"
+    t.string   "shipped_from"
+    t.integer  "percentage_off"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+  end
+
+  add_index "shop_the_look_items", ["shop_the_look_image_id"], name: "index_shop_the_look_items_on_shop_the_look_image_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -80,4 +112,6 @@ ActiveRecord::Schema.define(version: 20160524004151) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "fashion_items", "users"
+  add_foreign_key "shop_the_look_images", "users"
+  add_foreign_key "shop_the_look_items", "shop_the_look_images"
 end

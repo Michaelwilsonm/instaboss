@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :shop_the_look_items
+  resources :shop_the_look_images
   get 'client/all'
   # delete 'session' => 'sessions#destroy'
 
@@ -71,6 +73,7 @@ Rails.application.routes.draw do
   root "site#index"
 
   get 'women' => 'women#index'
+  get 'women/shop_the_look'
   get 'women/all'
   get 'women/accessorie'
   get 'women/dress'
@@ -87,6 +90,7 @@ Rails.application.routes.draw do
 
 
   get 'men' => 'men#index'
+  get 'men/shop_the_look'
   get 'men/brand'
   get 'men/all'
   get 'men/formal'

@@ -1,0 +1,3 @@
+class ShopTheLookItemsController < ApplicationController
+
+end

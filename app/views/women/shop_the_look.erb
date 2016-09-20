@@ -1,0 +1,59 @@
+<div class="search_bar">
+  <%= render "templates/women_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_womens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_women" %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_womens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="i_love_ugly_mens">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_navigation_womens" %>
+</div>
+<div class="container mobile_container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_womens_subcat" %>
+    </div>
+    <h1 class="your-items mob-ul">Shop The Look</h1>
+    <!-- this is where the sub cat for items was  -->
+    <%= render "templates/horizontal_line" %>
+    <% @shop_the_look_womens.each do |shop_the_look_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/shop_the_look_images/<%= shop_the_look_items.id %>">
+            <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>
+          <div class="description_content">
+            <table>
+              <tr class="specials_table">
+                <td><strike><em></em></strike></td>
+                <td></td>
+              </tr>
+            </table>
+            <table>
+              <tr class="normal_table">
+                <td></td>
+              </tr>
+            </table>
+            <p></p>
+            <p></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'templates/mail_chimp_form_womens' %>

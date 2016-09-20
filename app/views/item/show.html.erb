@@ -8,7 +8,6 @@
   <%= render "templates/navigation" %>
 <% end %>
 
-
 <% if @item.sex == 'Mens' %>
 <%= render "/templates/mobile_navigation_sliding_div_mens" %>
   <div class="item_navigation_top_mens">
@@ -39,7 +38,7 @@
   <div class="row">
     <div class="show-box">
       <div class="image-show-box">
-      <a id="close-cross" href="<%= @back_url %>"><span></span></a>
+        <a id="close-cross" href="<%= @back_url %>"><span></span></a>
         <%= image_tag @item.item_image.url(:original) %>
       </div>
       <div class="description-show-box">

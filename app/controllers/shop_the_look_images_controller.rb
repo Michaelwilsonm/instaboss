@@ -20,6 +20,10 @@ class ShopTheLookImagesController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
 
     def item_params(my_params)

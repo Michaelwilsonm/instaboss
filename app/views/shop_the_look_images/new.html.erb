@@ -25,7 +25,7 @@
         <div class="col-md-2">
           <span>World Wide Shipping?</span>
           <% gender_array = [['Yes', true],["No", false]] %>
-          <%= f.select "ww_shipping", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-shipping'} %>
+          <%= f.select "ww_shipping", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
         </div>
       </div>
 
@@ -67,12 +67,11 @@
         </div>
       <% end %>
 
-
-      <div class="col-md-12">
-        <%= submit_tag "create" %>
-      </div>
+    <div class="col-md-12">
+      <%= submit_tag "create" %>
+    </div>
     <% end %>
+  </div>
 </div>
 
-<br><br><br><br><br><br><br><br>
 

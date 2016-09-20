@@ -8,7 +8,6 @@
   <%= render "templates/navigation_mobile_womens" %>
 <% end %>
 <%= render "/templates/mobile_navigation_sliding_div_women" %>
-
 <div class="item_navigation_top_womens">
   <%= render "templates/item_navigation_womens" %>
 </div>
@@ -28,33 +27,28 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_womens_subcat" %>
     </div><br>
-    <h1 class="your-items">Accessories</h1>
-    <div class="item_sub_cat">
-      <%= render "templates/access_sub_cat" %>
-    </div>
+    <h1 class="your-items">Shop The Look</h1>
+    <!-- this is where the sub cat for items was  -->
     <%= render "templates/horizontal_line" %>
-    <% @accessorie.each do |access_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12 <%= access_items.sub_category %>">
+    <% @shop_the_look_womens.each do |shop_the_look_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= access_items.id %>">
-            <%= image_tag access_items.item_image.url(:medium) %>
+          <a href="/shop_the_look_images/<%= shop_the_look_items.id %>">
+            <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>
           <div class="description_content">
-            <% if access_items.sale == true %>
             <table>
               <tr class="specials_table">
-                <td><strike><em>$<%= zeros(access_items.price) %></em></strike></td>
-                <td>$<%= zeros(access_items.sale_price) %></td>
+                <td><strike><em></em></strike></td>
+                <td></td>
               </tr>
             </table>
-            <% else %>
             <table>
               <tr class="normal_table">
-                <td>$<%= zeros(access_items.price) %></td>
+                <td></td>
               </tr>
             </table>
-            <% end %>
-            <p><%= access_items.short_description %></p>
-            <p><%= word_branding(access_items.brand) %></p>
+            <p></p>
+            <p></p>
           </div>
           </a>
         </div>

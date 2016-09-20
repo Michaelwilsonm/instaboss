@@ -19,16 +19,16 @@ $(document).ready(function() {
     }
 
     $(".gender-look, .cat-look").change(function(){
-      var subCatValue = $(".cat-look").val()
-      var genderValue = $(".gender-look").val()
       var classList = $(this).prop("classList")
       var classNumber = classList[classList.length-1].split("-").last()
       var findCatClass = 'new-item-look-category-' + classNumber
       var findSubCatClass = 'new-item-look-sub-category-' + classNumber
+      var genderValue = $(".new-item-look-sex-" + classNumber).val()
       if ($(this).val() === 'Mens') {
         $("." + findSubCatClass).children().remove()
         categories(findCatClass, mensLookCategories)
       }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Mens') {
+        console.log("running")
         subLookCat(findCatClass, findSubCatClass, mensLookCategories)
       }else if ($(this).val() === 'Womens') {
         $("." + findSubCatClass).children().remove()
@@ -39,6 +39,7 @@ $(document).ready(function() {
     });
 
     function subLookCat(findCatClass, findSubCatClass, cat){
+      console.log("running")
       $("." + findSubCatClass).children().remove()
         $.each( cat, function( key, value ) {
           if (key.includes($("." + findCatClass).val())){

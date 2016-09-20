@@ -10,11 +10,14 @@ class ShopTheLookImagesController < ApplicationController
 
   def create
     @item = current_user.shop_the_look_images.build(params.require(:shop_the_look_image).permit(:shop_look_image, :user_id))
-    @item.save!
-    params["shop_items"].each do |item|
-      @item.shop_the_look_items.create(item_params(item))
+    if @item.save!
+      params["shop_items"].each do |item|
+        @item.shop_the_look_items.create(item_params(item))
+      end
+      redirect_to item_index_path
+    else
+      render 'new'
     end
-
   end
 
   private

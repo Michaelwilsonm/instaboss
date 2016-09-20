@@ -18,37 +18,50 @@ $(document).ready(function() {
       });
     }
 
-    $(".gender-look, .cat-look").change(function(){
+    $(".gender-look").change(function(){
+      if ($(this).val() == 'Mens'){
+        $(".cat-look").children().remove()
+        $(".sub-cat-look").children().remove()
+        $.each( mensLookCategories, function( key, value ) {
+          $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
+        });
+      }
+      else if ($(this).val() == 'Womens'){
+        $(".cat-look").children().remove()
+        $(".sub-cat-look").children().remove()
+        $.each( womensLookCategories, function( key, value ) {
+          $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
+        });
+      }
+    })
+
+    $(".cat-look").change(function(){
       var classList = $(this).prop("classList")
       var classNumber = classList[classList.length-1].split("-").last()
       var findCatClass = 'new-item-look-category-' + classNumber
       var findSubCatClass = 'new-item-look-sub-category-' + classNumber
-      var genderValue = $(".new-item-look-sex-" + classNumber).val()
-      if ($(this).val() === 'Mens') {
+
+      if ($(this).val() === $("." + findCatClass).val() && $(".gender-look") =='Mens') {
         $("." + findSubCatClass).children().remove()
-        categories(findCatClass, mensLookCategories)
-      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Mens') {
-        console.log("running")
         subLookCat(findCatClass, findSubCatClass, mensLookCategories)
-      }else if ($(this).val() === 'Womens') {
+      } else if ($(this).val() === $("." + findCatClass).val() && $(".gender-look" == 'Womens')) {
         $("." + findSubCatClass).children().remove()
-        categories(findCatClass, womensLookCategories)
-      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Womens') {
         subLookCat(findCatClass, findSubCatClass, womensLookCategories)
       }
     });
 
     function subLookCat(findCatClass, findSubCatClass, cat){
-      console.log("running")
       $("." + findSubCatClass).children().remove()
-        $.each( cat, function( key, value ) {
-          if (key.includes($("." + findCatClass).val())){
-            var subCategory = value;
-            $.each( subCategory, function( index, subCatValues ) {
-              $("." + findSubCatClass).append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-            });
-          }
-        });
-      }
+      $.each( cat, function( key, value ) {
+        if (key.includes($("." + findCatClass).val())){
+          var subCategory = value;
+          $.each( subCategory, function( index, subCatValues ) {
+            $("." + findSubCatClass).append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+          });
+        }
+      });
+    }
+
+
   });
 });

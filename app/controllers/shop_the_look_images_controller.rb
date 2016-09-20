@@ -9,7 +9,7 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def create
-    @item = current_user.shop_the_look_images.build(params.require(:shop_the_look_image).permit(:shop_look_image, :user_id))
+    @item = current_user.shop_the_look_images.build(params.require(:shop_the_look_image).permit(:shop_look_image, :user_id, :ww_shipping, :gender))
     if @item.save!
       params["shop_items"].each do |item|
         @item.shop_the_look_items.create(item_params(item))

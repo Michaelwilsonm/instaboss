@@ -6,8 +6,26 @@
     <%= form_for :shop_the_look_image, url: {action: "create"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
       <div class="new_look_item">
         <div class="col-md-12">
-          <span>Image</span>
-          <%= f.file_field :shop_look_image, {required: 'true'} %>
+          <div class="col-md-2">
+            <span>Image</span>
+            <%= f.file_field :shop_look_image, {required: 'true'} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <span>Sex</span>
+          <% gender_array = [['Mens'],["Womens"]] %>
+          <%= f.select "gender", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <span>World Wide Shipping?</span>
+          <% gender_array = [['Yes', true],["No", false]] %>
+          <%= f.select "ww_shipping", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-shipping'} %>
         </div>
       </div>
 
@@ -17,12 +35,8 @@
           <% item_count +=1 %>
 
           <%= fields_for "shop_items[]", item do |shop_item| %>
-            <h1>Item <%= item_count %></h1>
+            <h2>Item <%= item_count %></h2>
             <div class="col-md-8">
-
-            <span>Sex</span>
-            <% gender_array = [['Mens'],["Womens"]] %>
-            <%= shop_item.select "gender", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex-' + item_count.to_s} %>
 
             <span>category</span>
             <%= shop_item.select "category", options_for_select(""), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + item_count.to_s} %>

@@ -1,6 +1,7 @@
 class MenController < ApplicationController
   before_action :all_fashion
   helper_method :sort_column, :sort_direction
+  before_action :all_shop_the_look_images, only: [:shop_the_look]
 
   def index
     @mens = @items.all_mens_items
@@ -8,6 +9,10 @@ class MenController < ApplicationController
     @special_three = @items.nine_special_items_mens.sample(12)
     @featured_men = @items.featured_mens.take(6)
     @staff_picked_men = @items.staff_picks_mens_items.take(12)
+  end
+
+  def shop_the_look
+    @shop_the_look_mens = @shop_look_images.shop_the_look_men
   end
 
   def all
@@ -60,6 +65,10 @@ class MenController < ApplicationController
 
     def all_fashion
       @items = FashionItem.all
+    end
+
+    def all_shop_the_look_images
+      @shop_look_images = ShopTheLookImage.all
     end
 
     def sort_column

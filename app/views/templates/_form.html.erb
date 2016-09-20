@@ -1,9 +1,11 @@
   <div class="container">
   <div class="row">
     <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <p><em><%= link_to "Shop The Look?", new_shop_the_look_image_path %></em></p>
+
     <%= form_for @item, url: {action: "create"}, html: {class: "fashion_item_form", multipart: true} do |f| %>
 
-      <div class="col-md-4">
         <div class="new_fashion_item">
           <div class="col-md-10">
             <span>Image</span>
@@ -106,7 +108,6 @@
         </div>
         <div class="col-md-10"><br>
           <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
-          <input type="hidden" name="FashionItem[user_id]" value="<%= current_user.id %>">
         </div>
     <% end %>
     <div class="col-md-4"></div>

@@ -1,5 +1,6 @@
 class WomenController < ApplicationController
   before_action :all_women
+  before_action :all_shop_the_look_images, only: [:shop_the_look]
 
   def index
     @womens = @items.all_womens_items
@@ -53,6 +54,10 @@ class WomenController < ApplicationController
     @all_womens = @items.all_womens_items_ALL
   end
 
+  def shop_the_look
+    @shop_the_look_womens = @shop_look_images.shop_the_look_women
+  end
+
   def about
   end
 
@@ -60,6 +65,10 @@ class WomenController < ApplicationController
   end
 
   private
+
+    def all_shop_the_look_images
+      @shop_look_images = ShopTheLookImage.all
+    end
 
     def all_women
       @items = FashionItem.all

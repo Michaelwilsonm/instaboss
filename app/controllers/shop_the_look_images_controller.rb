@@ -1,0 +1,37 @@
+class ShopTheLookImagesController < ApplicationController
+  before_action :find_shop_look_image, only: [:show]
+
+  def index
+  end
+
+  def new
+    @image_item = current_user.shop_the_look_images.build
+    3.times { @image_item.shop_the_look_items.build }
+  end
+
+  def create
+    @item = current_user.shop_the_look_images.build(params.require(:shop_the_look_image).permit(:shop_look_image, :user_id, :ww_shipping, :gender))
+    if @item.save!
+      params["shop_items"].each do |item|
+        @item.shop_the_look_items.create(item_params(item))
+      end
+      redirect_to item_index_path
+    else
+      render 'new'
+    end
+  end
+
+  def show
+  end
+
+  private
+
+    def item_params(my_params)
+      my_params.permit(:gender, :brand, :category, :sub_category, :price, :sale, :unique_affiliate_url)
+    end
+
+    def find_shop_look_image
+      @shop_the_look_image = ShopTheLookImage.find(params[:id])
+    end
+
+end

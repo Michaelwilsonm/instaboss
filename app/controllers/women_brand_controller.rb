@@ -90,6 +90,7 @@ class WomenBrandController < ApplicationController
     def all_women
       @women_items = FashionItem.all
     end
+
     def all_men
       @men_items = FashionItem.all
     end

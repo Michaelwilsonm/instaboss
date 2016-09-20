@@ -11,6 +11,6 @@ class ShopTheLookImage < ActiveRecord::Base
   end
 
   def self.shop_the_look_men
-    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = 'Womens' ORDER BY created_at DESC")
+    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = 'Mens' ORDER BY created_at DESC")
   end
 end

@@ -1,4 +1,5 @@
 class ShopTheLookImagesController < ApplicationController
+  before_action :find_shop_look_image, only: [:show]
 
   def index
   end
@@ -21,13 +22,16 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def show
-
   end
 
   private
 
     def item_params(my_params)
       my_params.permit(:gender, :brand, :category, :sub_category, :price, :sale, :unique_affiliate_url)
+    end
+
+    def find_shop_look_image
+      @shop_the_look_image = ShopTheLookImage.find(params[:id])
     end
 
 end

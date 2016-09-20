@@ -1,0 +1,70 @@
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+<% end %>
+
+<% if @shop_the_look_image.gender == 'Mens' %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+  <div class="item_navigation_top_mens">
+    <%= render "templates/item_navigation_mens" %>
+    <%= render "templates/navigation_mobile_mens" %>
+  </div>
+  <%= render "/templates/mobile_navigation_sliding_div_mens" %>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_mens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_mens_subcat" %>
+  </div>
+<% elsif @shop_the_look_image.gender == 'Womens' %>
+<%= render "/templates/mobile_navigation_sliding_div_women" %>
+  <div class="item_navigation_top_mens">
+    <%= render "templates/item_navigation_womens" %>
+    <%= render "templates/navigation_mobile_womens" %>
+  </div>
+  <div class="mens-main-menu-side">
+    <%= render "templates/side_navigation_womens" %>
+  </div>
+  <div class="item_navigation">
+    <%= render "templates/item_navigation_womens_subcat" %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="show-box">
+      <div class="image-show-box">
+      <a id="close-cross" href="<%= @back_url %>"><span></span></a>
+        <%= image_tag @shop_the_look_image.shop_look_image.url(:original) %>
+      </div>
+
+      <div class="description-shop-the-look-show-box">
+        <% @shop_the_look_image.shop_the_look_items.each do |shop_the_look_items| %>
+
+          <h2>description <em><%= shop_the_look_items.sale %></em></h2>
+
+          <h2>brand <em><%= shop_the_look_items.brand %></em></h2>
+
+          <h2>price <em><%= shop_the_look_items.price %></em></h2>
+
+          <div class="show-button">
+            <a href="<%= shop_the_look_items.unique_affiliate_url %>" target="_blank">
+              <img src="/assets/shop now.png">
+            </a>
+            <a class="arrowed-desktop shop-look-arrow" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop shop-look"></div></a>
+          </div>
+
+        <% end %>
+
+        <% if @shop_the_look_image.ww_shipping == true %>
+          <p>Free Worldwide Shipping</p>
+        <% end %>
+      </div>
+      <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>

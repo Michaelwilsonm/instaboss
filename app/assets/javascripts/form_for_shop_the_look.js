@@ -19,17 +19,21 @@ $(document).ready(function() {
     }
 
     $(".gender-look, .cat-look").change(function(){
-      // genderValue = $(".gender-look").val()
+      var subCatValue = $(".cat-look").val()
+      var genderValue = $(".gender-look").val()
       var classList = $(this).prop("classList")
       var classNumber = classList[classList.length-1].split("-").last()
       var findCatClass = 'new-item-look-category-' + classNumber
       var findSubCatClass = 'new-item-look-sub-category-' + classNumber
-      console.log($(this).val())
       if ($(this).val() === 'Mens') {
+        $("." + findSubCatClass).children().remove()
         categories(findCatClass, mensLookCategories)
+      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Mens') {
         subLookCat(findCatClass, findSubCatClass, mensLookCategories)
-      }else if ($(this).val() == 'Womens') {
+      }else if ($(this).val() === 'Womens') {
+        $("." + findSubCatClass).children().remove()
         categories(findCatClass, womensLookCategories)
+      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Womens') {
         subLookCat(findCatClass, findSubCatClass, womensLookCategories)
       }
     });
@@ -45,39 +49,5 @@ $(document).ready(function() {
           }
         });
       }
-    // $(".gender-look, .cat-look").change(function(){
-    //   var classList = $(this).prop("classList")
-    //   var classNumber = classList[classList.length-1].split("-").last()
-    //   var findSubCatClass = 'new-item-look-sub-category-' + classNumber
-    //   var findCatClass = 'new-item-look-category-' + classNumber
-    //   // $("." + findSubCatClass).children().remove()
-    //   // $.each( mensLookCategories, function( key, value ) {
-    //   //   if (key.includes($("." + findCatClass).val())){
-    //   //     var subCategory = value;
-    //   //     $.each( subCategory, function( index, subCatValues ) {
-    //   //       $("." + findSubCatClass).append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-    //   //     });
-    //   //   }
-    //   // });
-    // })
-
-
-    //item on sale id changes
-
-    // $("#item-on-sale").change(function(){
-    //   if ($("#item-on-sale").val() === 'true' ) {
-    //     $('#item-sale-price').show();
-    //     //show the sale price form
-    //   } else if ($("#item-on-sale").val() === 'false' ) {
-    //     $('#item-sale-price').hide();
-    //   }
-    //   //else hide it
-    // });
-
-    //hide it at the beginning of page
-    // if ($("#item-on-sale").val() === 'false' ) {
-    //   $('#item-sale-price').hide();
-    // }
-
   });
 });

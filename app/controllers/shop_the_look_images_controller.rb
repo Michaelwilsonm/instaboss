@@ -10,14 +10,11 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def create
-    @item = current_user.shop_the_look_images.build(params.require(:shop_the_look_image).permit(:shop_look_image, :user_id, :ww_shipping, :gender))
-    if @item.save!
-      params["shop_items"].each do |item|
-        @item.shop_the_look_items.create(item_params(item))
-      end
+    @new_shop_the_look_item = current_user.shop_the_look_images.build(shop_look_image_params)
+    if @new_shop_the_look_item.save
       redirect_to item_index_path
     else
-      render 'new'
+      render action: 'new'
     end
   end
 
@@ -26,8 +23,8 @@ class ShopTheLookImagesController < ApplicationController
 
   private
 
-    def item_params(my_params)
-      my_params.permit(:gender, :brand, :category, :sub_category, :price, :sale, :unique_affiliate_url)
+    def shop_look_image_params
+      params.require(:shop_the_look_image).permit(:gender, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :brand, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])
     end
 
     def find_shop_look_image

@@ -15,3 +15,4 @@
 #ignore test image
 /app/assets/images/dog.jpg
 /public/system/fashion_items/item_images/*
+/public/system/shop_the_look_images/shop_look_images/*

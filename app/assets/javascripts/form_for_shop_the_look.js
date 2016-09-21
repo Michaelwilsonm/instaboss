@@ -41,6 +41,8 @@ $(document).ready(function() {
     }
 
     function categories(itemCategories){
+      $(".cat-look").append("<option value="+">"+"</option>");
+        console.log('hello')
       $.each( itemCategories, function( key, value ) {
         $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
       });

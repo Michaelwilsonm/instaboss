@@ -60,4 +60,22 @@ $(document).ready(function() {
       });
     }
   });
+
+
+  var textCount = 0
+  $(".add-shop-look-item").click(function(){
+    textCount ++
+    $(".form-3").toggle()
+    if (textCount % 2 == 0) {
+      $(this).text("Add Item");
+      $(".new-item-look-category-3").children().first().remove()
+      $(".new-item-look-category-3").prepend("<option value=" + "" +">" + "" + "</option>")
+      $(".new-item-look-sub-category-3").children().first().remove()
+      $(".new-item-look-sub-category-3").prepend("<option value=" + "" +">" + "" + "</option>")
+      $('.item-shop-the-look-3').val('');
+    } else {
+      $(this).text("Remove Item");
+    }
+  })
+
 });

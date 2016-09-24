@@ -13251,33 +13251,44 @@ $(document).ready(function() {
 
     mensLookCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
-    function categories(className, itemCategories){
-      $("." + className).children().remove()
-      $.each( itemCategories, function( key, value ) {
-        $("." + className).append("<option value=" + key + ">"  +  key + "</option>");
-      });
-    }
+    $(".gender-look").change(function(){
+        $(".cat-look").children().remove()
+        $(".sub-cat-look").children().remove()
+      if ( $(this).val() == 'Mens' ){
+        categories(mensLookCategories)
+      } else if ( $(this).val() == 'Womens' ){
+        categories(womensLookCategories)
+      }
+    });
 
-    $(".gender-look, .cat-look").change(function(){
+    $(".cat-look").change(function(){
       var classList = $(this).prop("classList")
       var classNumber = classList[classList.length-1].split("-").last()
       var findCatClass = 'new-item-look-category-' + classNumber
       var findSubCatClass = 'new-item-look-sub-category-' + classNumber
-      var genderValue = $(".new-item-look-sex-" + classNumber).val()
-      if ($(this).val() === 'Mens') {
-        $("." + findSubCatClass).children().remove()
-        categories(findCatClass, mensLookCategories)
-      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Mens') {
-        subLookCat(findCatClass, findSubCatClass, mensLookCategories)
-      }else if ($(this).val() === 'Womens') {
-        $("." + findSubCatClass).children().remove()
-        categories(findCatClass, womensLookCategories)
-      }else if ($(this).val() === $("." + findCatClass).val() && genderValue == 'Womens') {
-        subLookCat(findCatClass, findSubCatClass, womensLookCategories)
-      }
+      _this = $(this)
+      changeCategories(_this, findCatClass, findSubCatClass)
     });
 
-    function subLookCat(findCatClass, findSubCatClass, cat){
+    function changeCategories (_this, findCatClass, findSubCatClass){
+      if (_this.val() === $("." + findCatClass).val() && $(".gender-look").val() =='Mens') {
+        $("." + findSubCatClass).children().remove()
+        subCategories(findCatClass, findSubCatClass, mensLookCategories)
+      } else if (_this.val() === $("." + findCatClass).val() && $(".gender-look").val() == 'Womens') {
+        $("." + findSubCatClass).children().remove()
+        subCategories(findCatClass, findSubCatClass, womensLookCategories)
+      }
+    }
+
+    function categories(itemCategories){
+      $(".cat-look").append("<option value="+">"+"</option>");
+        console.log('hello')
+      $.each( itemCategories, function( key, value ) {
+        $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
+      });
+    }
+
+    function subCategories(findCatClass, findSubCatClass, cat){
       $("." + findSubCatClass).children().remove()
       $.each( cat, function( key, value ) {
         if (key.includes($("." + findCatClass).val())){
@@ -13288,9 +13299,25 @@ $(document).ready(function() {
         }
       });
     }
-
-
   });
+
+
+  var textCount = 0
+  $(".add-shop-look-item").click(function(){
+    textCount ++
+    $(".form-3").toggle()
+    if (textCount % 2 == 0) {
+      $(this).text("Add Item");
+      $(".new-item-look-category-3").children().first().remove()
+      $(".new-item-look-category-3").prepend("<option value=" + "" +">" + "" + "</option>")
+      $(".new-item-look-sub-category-3").children().first().remove()
+      $(".new-item-look-sub-category-3").prepend("<option value=" + "" +">" + "" + "</option>")
+      $('.item-shop-the-look-3').val('');
+    } else {
+      $(this).text("Remove Item");
+    }
+  })
+
 });
 $(document).ready(function() {
   $(document).on('page:change',function() {

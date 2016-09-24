@@ -1,0 +1,33 @@
+<%= render "templates/navigation" %>
+  <h1 class="your-items">Your Shop The Look Items</h1>
+  <p><em><%= link_to "Add Item", new_item_path, class: "client-add-item" %></em></p>
+  <p><em><%= link_to "Shop The Look?", new_shop_the_look_image_path, class: "client-add-item" %></em></p>
+  <div style="overflow-x: auto;">
+    <table class="sort-table">
+      <tr class="sorting-table-rows">
+        <th>Image</th>
+        <th>gender</th>
+        <th>created at></th>
+        <th>Action</th>
+      </tr>
+      <% @users_items.each do |item| %>
+        <tr class="users-sorting-items">
+          <td>
+            <div class="table-image">
+              <%= image_tag item.shop_look_image.url(:thumb), class: "thumbnail" %>
+            </div>
+          </td>
+          <td><%= item.gender %></td>
+          <td>
+            <p><%= item.created_at.strftime("%m/%d/%y") %></p>
+            <p><%= item.created_at.strftime("%I:%M%p") %></p>
+          </td>
+          <td>
+            <p><%= link_to 'Edit', edit_shop_the_look_image_path(item.id) %></p>
+            <p><%= link_to 'Delete', shop_the_look_image_path(item.id), method: :delete %></p>
+            <p><%= link_to 'Show', shop_the_look_image_path(item) %></p></td>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>

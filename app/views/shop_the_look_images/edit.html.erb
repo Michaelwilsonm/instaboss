@@ -5,12 +5,13 @@
 
     <button class=" btn btn-default btn-sm add-shop-look-item">Add item</button>
 
-    <%= form_for @image_item, url: {action: "create"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
+    <%= form_for @shop_the_look_image, url: {action: "update"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
       <div class="new_look_item">
         <div class="col-md-12">
           <div class="col-md-2">
+            <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
             <span>Image</span>
-            <%= f.file_field :shop_look_image, {required: 'true'} %>
+            <%= f.file_field :shop_look_image, {required: 'false'} %>
           </div>
         </div>
       </div>
@@ -18,8 +19,8 @@
       <div class="col-md-12">
         <div class="col-md-2">
           <span>Sex</span>
-          <% gender_array = [['Mens'],["Womens"]] %>
-          <%= f.select "gender", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
+          <% gender_array = [[@shop_the_look_image.gender],['Mens'],["Womens"]] %>
+          <%= f.select "gender", options_for_select(gender_array, @shop_the_look_image.gender), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
         </div>
       </div>
 
@@ -27,7 +28,7 @@
         <div class="col-md-2">
           <span>World Wide Shipping?</span>
           <% gender_array = [['Yes', true],["No", false]] %>
-          <%= f.select "ww_shipping", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
+          <%= f.select "ww_shipping", options_for_select(gender_array, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
         </div>
       </div>
 
@@ -35,18 +36,20 @@
         <div id="items">
           <%= f.fields_for :shop_the_look_items do |shop_item| %>
             <% @item_count +=1 %>
+
             <div class="col-md-4 form-<%= @item_count %>">
 
               <h2>Item <%= @item_count %></h2>
 
               <span>category</span>
-              <%= shop_item.select "category", options_for_select(""), {}, { autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
+
+              <%= shop_item.select "category", options_for_select([@shop_the_look_image.shop_the_look_items[@item_count-1].category],@shop_the_look_image.shop_the_look_items[@item_count-1].category), {}, { autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
 
               <span>sub-category</span>
-              <%= shop_item.select "sub_category", options_for_select(""), {}, { autofocus: 'true', class: 'form-control input-sm sub-cat-look new-item-look-sub-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
+              <%= shop_item.select "sub_category", options_for_select([@shop_the_look_image.shop_the_look_items[@item_count-1].sub_category],@shop_the_look_image.shop_the_look_items[@item_count-1].sub_category), {}, { autofocus: 'true', class: 'form-control input-sm sub-cat-look new-item-look-sub-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
 
               <span>brand</span>
-              <%= shop_item.text_field :brand, class: 'form-control item-shop-the-look-' + @item_count.to_s  %>
+              <%= shop_item.text_field :brand, class: 'form-control item-shop-the-look-' + @item_count.to_s, placeholder: @shop_the_look_image.shop_the_look_items[@item_count-1].brand  %>
 
               <span>Recommended Retail Price ($US)</span>
               <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
@@ -57,7 +60,7 @@
 
               <span>sale</span>
               <% sale_array = [["", nil],["Yes", true],["No", false]] %>
-              <%= shop_item.select "sale", options_for_select(sale_array), {}, { autofocus: 'true', class: 'form-control input-sm item-shop-the-look-child-' + @item_count.to_s} %>
+              <%= shop_item.select "sale", options_for_select(sale_array, @shop_the_look_image.shop_the_look_items[@item_count-1].sale), {}, { autofocus: 'true', class: 'form-control input-sm item-shop-the-look-child-' + @item_count.to_s} %>
 
 
               <span>Product URL</span>

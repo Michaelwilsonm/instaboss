@@ -1,7 +1,8 @@
 class ShopTheLookImagesController < ApplicationController
-  before_action :find_shop_look_image, only: [:show]
+  before_action :find_shop_look_image, only: [:show, :edit, :destroy, :update]
 
   def index
+    @users_items = current_user.shop_the_look_images
   end
 
   def new
@@ -12,13 +13,30 @@ class ShopTheLookImagesController < ApplicationController
   def create
     @new_shop_the_look_item = current_user.shop_the_look_images.build(shop_look_image_params)
     if @new_shop_the_look_item.save
-      redirect_to item_index_path
+      redirect_to shop_the_look_images_path
     else
       render action: 'new'
     end
   end
 
   def show
+  end
+
+  def edit
+    if @item.update_attributes(shop_look_image_params)
+      redirect_to shop_the_look_images_path
+    else
+      redirect_to shop_the_look_image_path
+    end
+  end
+
+  def update
+
+  end
+
+  def destroy
+    @shop_the_look_image.destroy!
+    redirect_to shop_the_look_images_path
   end
 
   private

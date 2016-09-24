@@ -1,8 +1,6 @@
 <%= render "templates/navigation" %>
 <div class="container">
   <div class="row">
-    <p><em><%= link_to "Just one item?", new_item_path %></em></p>
-
     <button class=" btn btn-default btn-sm add-shop-look-item">Add item</button>
 
     <%= form_for @image_item, url: {action: "create"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>

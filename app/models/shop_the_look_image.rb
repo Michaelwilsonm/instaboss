@@ -5,8 +5,9 @@ class ShopTheLookImage < ActiveRecord::Base
   has_attached_file :shop_look_image, styles: { original: "600x600>", medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :shop_look_image, content_type: /\Aimage\/.*\Z/
 
-  validates :gender, :ww_shipping, :shop_look_image, presence: true
-  accepts_nested_attributes_for :shop_the_look_items, reject_if: :all_blank, allow_destroy: true
+  validates :gender, :shop_look_image, presence: true
+  accepts_nested_attributes_for :shop_the_look_items, reject_if: :all_blank,allow_destroy: true
+
 
 
   def self.shop_the_look_women

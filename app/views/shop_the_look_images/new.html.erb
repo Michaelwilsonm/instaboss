@@ -30,7 +30,7 @@
 
       <div class="col-md-12">
         <div id="form-for-shop-look">
-        <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-look" %>
+        <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-link" %>
           <%= f.fields_for :shop_the_look_items do |shop_item| %>
             <%= render "item", f: shop_item %>
           <% end %>

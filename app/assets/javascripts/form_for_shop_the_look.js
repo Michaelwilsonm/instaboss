@@ -1,11 +1,12 @@
 $(document).ready(function() {
   $(document).on('page:change', function () {
+
     womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     mensLookCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
-    if (!Array.prototype.last){
-      Array.prototype.last = function(){
+    if (!Array.prototype.last) {
+      Array.prototype.last = function() {
           return this[this.length - 1];
       };
     };
@@ -15,23 +16,23 @@ $(document).ready(function() {
         task_to_be_added.fadeIn('slow');
       })
       .on('cocoon:after-insert', function(e, added_task) {
-        var thisForm = added_task.find(".cat-look")
-        categories(mensLookCategories, womensLookCategories, thisForm)
+        var thisForm = added_task.find(".cat-look");
+        categories(mensLookCategories, womensLookCategories, thisForm);
 
         thisForm.change(function(){
-          var catVal = $(this).val()
+          var catVal = $(this).val();
           var subCat = $(this).next().next();
-          subCategories(subCat, catVal, mensLookCategories, womensLookCategories)
+          subCategories(subCat, catVal, mensLookCategories, womensLookCategories);
         })
       })
 
     $(".gender-look").change(function(){
-        $(".cat-look").children().remove()
-        $(".sub-cat-look").children().remove()
+        $(".cat-look").children().remove();
+        $(".sub-cat-look").children().remove();
       if ( $(this).val() == 'Mens' ){
-        genderChange(mensLookCategories)
-      } else if ( $(this).val() == 'Womens' ){
-        genderChange(womensLookCategories)
+        genderChange(mensLookCategories);
+      } else if ( $(this).val() == 'Womens' ) {
+        genderChange(womensLookCategories);
       }
     });
 
@@ -44,12 +45,10 @@ $(document).ready(function() {
 
     function categories(menCat, womenCat, thisForm){
       if ($(".gender-look").val() == "Mens") {
-        thisForm.append("<option value="+">"+"</option>");
         $.each( menCat, function( key, value ) {
           thisForm.append("<option value=" + key + ">"  +  key + "</option>");
         });
       } else if ($(".gender-look").val() == "Womens") {
-        thisForm.append("<option value="+">"+"</option>");
         $.each( womenCat, function( key, value ) {
           thisForm.append("<option value=" + key + ">"  +  key + "</option>");
         });
@@ -57,11 +56,11 @@ $(document).ready(function() {
     }
 
     function subCategories(subCat, catVal, menCat, womenCat){
-      subCat.children().remove()
+      subCat.children().remove();
       if ($(".gender-look").val() == 'Mens') {
-        findSubCat(menCat, catVal, subCat)
+        findSubCat(menCat, catVal, subCat);
       } else if ($(".gender-look").val() == 'Womens') {
-        findSubCat(womenCat, catVal, subCat)
+        findSubCat(womenCat, catVal, subCat);
       }
     }
 
@@ -75,7 +74,5 @@ $(document).ready(function() {
         }
       });
     }
-
-
   });
 });

@@ -16,7 +16,7 @@
         <div class="col-md-2">
           <span>Sex</span>
           <% gender_array = [['Mens'],["Womens"]] %>
-          <%= f.select "gender", options_for_select(gender_array, 'Mens'), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
+          <%= f.select "gender", options_for_select(gender_array, 'Mens'), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look'} %>
         </div>
       </div>
 
@@ -29,8 +29,8 @@
       </div>
 
       <div class="col-md-12">
-        <div id="items">
-        <%= link_to_add_association '+ Item', f, :shop_the_look_items %>
+        <div id="form-for-shop-look">
+        <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-look" %>
           <%= f.fields_for :shop_the_look_items do |shop_item| %>
             <%= render "item", f: shop_item %>
           <% end %>

@@ -21,14 +21,6 @@ $(document).ready(function() {
     //   }
     // });
 
-    $(".cat-look").change(function(){
-      var classList = $(this).prop("classList")
-      var classNumber = classList[classList.length-1].split("-").last()
-      var findCatClass = 'new-item-look-category-' + classNumber
-      var findSubCatClass = 'new-item-look-sub-category-' + classNumber
-      _this = $(this)
-      changeCategories(_this, findCatClass, findSubCatClass)
-    });
 
     // function changeCategories (_this, findCatClass, findSubCatClass){
     //   if (_this.val() === $("." + findCatClass).val() && $(".gender-look").val() =='Mens') {
@@ -40,25 +32,40 @@ $(document).ready(function() {
     //   }
     // }
 
-    // function categories(itemCategories){
-    //   $(".cat-look").append("<option value="+">"+"</option>");
-    //     console.log('hello')
-    //   $.each( itemCategories, function( key, value ) {
-    //     $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
-    //   });
-    // }
+    function categories(itemCategories, thisForm){
+      if ($(".gender-look").val() == "Mens") {
+        thisForm.append("<option value="+">"+"</option>");
+        $.each( itemCategories, function( key, value ) {
+          thisForm.append("<option value=" + key + ">"  +  key + "</option>");
+        });
+      }
+    }
 
-    // function subCategories(findCatClass, findSubCatClass, cat){
-    //   $("." + findSubCatClass).children().remove()
-    //   $.each( cat, function( key, value ) {
-    //     if (key.includes($("." + findCatClass).val())){
-    //       var subCategory = value;
-    //       $.each( subCategory, function( index, subCatValues ) {
-    //         $("." + findSubCatClass).append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-    //       });
-    //     }
-    //   });
-    // }
+    $('#form-for-shop-look')
+      .on('cocoon:before-insert', function(e,task_to_be_added) {
+        task_to_be_added.fadeIn('slow');
+      })
+      .on('cocoon:after-insert', function(e, added_task) {
+        var thisForm = added_task.find(".cat-look")
+        categories(mensLookCategories, thisForm)
+        thisForm.change(function(){
+          var catVal = $(this).val()
+          var subCat = $(this).next().next();
+          subCategories(subCat, catVal, mensLookCategories)
+        })
+      })
+
+    function subCategories(subCat, catVal, menCat){
+      subCat.children().remove()
+      $.each( menCat, function( key, value ) {
+        if (key.includes(catVal)) {
+          var subCategory = value;
+          $.each( subCategory, function( index, subCatValues ) {
+            subCat.append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+          });
+        }
+      });
+    }
 
 
 

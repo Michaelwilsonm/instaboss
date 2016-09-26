@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920062930) do
+ActiveRecord::Schema.define(version: 20160926054113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160920062930) do
     t.integer  "percentage_off"
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
+    t.string   "description"
   end
 
   add_index "shop_the_look_items", ["shop_the_look_image_id"], name: "index_shop_the_look_items_on_shop_the_look_image_id", using: :btree

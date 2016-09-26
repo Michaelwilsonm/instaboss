@@ -1,9 +1,8 @@
 <%= render "templates/navigation" %>
 <div class="container">
   <div class="row">
-    <p><em><%= link_to "Just one item?", new_item_path %></em></p>
 
-    <button class=" btn btn-default btn-sm add-shop-look-item">Add item</button>
+    <!-- <button class=" btn btn-danger add-shop-look-item">Add item</button> -->
 
     <%= form_for @shop_the_look_image, url: {action: "update"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
       <div class="new_look_item">
@@ -11,7 +10,7 @@
           <div class="col-md-2">
             <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
             <span>Image</span>
-            <%= f.file_field :shop_look_image, {required: 'false'} %>
+            <%= f.file_field :shop_look_image %>
           </div>
         </div>
       </div>
@@ -19,7 +18,11 @@
       <div class="col-md-12">
         <div class="col-md-2">
           <span>Sex</span>
-          <% gender_array = [[@shop_the_look_image.gender],['Mens'],["Womens"]] %>
+          <% if @shop_the_look_image.gender == 'Mens' %>
+            <% gender_array = [[@shop_the_look_image.gender],["Womens"]] %>
+          <% elsif @shop_the_look_image.gender == 'Womens' %>
+            <% gender_array = [[@shop_the_look_image.gender],["Mens"]] %>
+          <% end %>
           <%= f.select "gender", options_for_select(gender_array, @shop_the_look_image.gender), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
         </div>
       </div>
@@ -40,6 +43,9 @@
             <div class="col-md-4 form-<%= @item_count %>">
 
               <h2>Item <%= @item_count %></h2>
+
+              <span>description</span>
+              <%= shop_item.text_field :description, class: 'form-control item-shop-the-look-' + @item_count.to_s, placeholder: @shop_the_look_image.shop_the_look_items[@item_count-1].description  %>
 
               <span>category</span>
 
@@ -68,13 +74,14 @@
 
             </div>
           <% end %>
-          </div>
-    <div class="col-md-12">
-      <%= submit_tag "create" %>
-    </div>
+        </div>
+      <div class="col-md-12">
+        <%= submit_tag "Edit", class: "btn btn-default btn-lg accept-button" %>
+      </div>
 
     <% end %>
   </div>
 </div>
+<br><br><br><br><br><br><br>
 
 

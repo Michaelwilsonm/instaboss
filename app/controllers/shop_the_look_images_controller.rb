@@ -7,7 +7,6 @@ class ShopTheLookImagesController < ApplicationController
 
   def new
     @image_item = current_user.shop_the_look_images.build
-    3.times { @image_item.shop_the_look_items.build }
   end
 
   def create
@@ -23,15 +22,14 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def edit
-    if @item.update_attributes(shop_look_image_params)
+  end
+
+  def update
+    if @shop_the_look_image.update_attributes(shop_look_image_params)
       redirect_to shop_the_look_images_path
     else
       redirect_to shop_the_look_image_path
     end
-  end
-
-  def update
-
   end
 
   def destroy
@@ -42,7 +40,7 @@ class ShopTheLookImagesController < ApplicationController
   private
 
     def shop_look_image_params
-      params.require(:shop_the_look_image).permit(:gender, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :brand, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])
+      params.require(:shop_the_look_image).permit(:gender, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :description, :brand, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])
     end
 
     def find_shop_look_image

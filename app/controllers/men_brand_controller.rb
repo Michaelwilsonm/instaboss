@@ -11,7 +11,7 @@ class MenBrandController < ApplicationController
     @query = "%#{params[:query]}%"
     @brand_query = "%#{params[:query]}%".split.map(&:downcase).join(' ')
     @men = FashionItem.where(:sex => "Mens")
-    @query_all = @men.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query)
+    @query_all = @men.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query).reverse
   end
 
   def mobile_men_search

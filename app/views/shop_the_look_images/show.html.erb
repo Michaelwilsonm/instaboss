@@ -44,7 +44,7 @@
       <div class="description-shop-the-look-show-box">
         <% @shop_the_look_image.shop_the_look_items.each do |shop_the_look_items| %>
 
-          <h2 class="shop-the-look-description"><em>descript<%= shop_the_look_items.sale %></em></h2>
+          <h2 class="shop-the-look-description"><em><%= shop_the_look_items.description %></em></h2>
 
         <% if all_men_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Mens" %>
           <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, shop_the_look_items.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>

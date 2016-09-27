@@ -1,0 +1,59 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="mj_bale">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
+<div class="container mobile_container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
+    <h1 class="your-items mob-ul">MJ Bale</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @mj_bale.each do |mj_bale_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= mj_bale_items.id %>">
+            <%= image_tag mj_bale_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if mj_bale_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(mj_bale_items.price) %></em></strike></td>
+                <td>$<%= zeros(mj_bale_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(mj_bale_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= mj_bale_items.short_description %></p>
+            <p><%= word_branding(mj_bale_items.brand) %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'templates/mail_chimp_form_mens' %>

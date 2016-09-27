@@ -1,0 +1,59 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="the_modest_vintage_player">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
+<div class="container mobile_container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
+    <h1 class="your-items mob-ul">The Modest Vintage Player</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @the_modest_vintage_player.each do |the_modest_vintage_player_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= the_modest_vintage_player_items.id %>">
+            <%= image_tag the_modest_vintage_player_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if the_modest_vintage_player_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(the_modest_vintage_player_items.price) %></em></strike></td>
+                <td>$<%= zeros(the_modest_vintage_player_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(the_modest_vintage_player_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= the_modest_vintage_player_items.short_description %></p>
+            <p><%= word_branding(the_modest_vintage_player_items.brand) %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'templates/mail_chimp_form_mens' %>

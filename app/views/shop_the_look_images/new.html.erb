@@ -1,9 +1,8 @@
 <%= render "templates/navigation" %>
 <div class="container">
   <div class="row">
-    <p><em><%= link_to "Just one item?", new_item_path %></em></p>
-
-    <%= form_for :shop_the_look_image, url: {action: "create"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
+  <div class="col-md-12">
+    <%= form_for @image_item, url: {action: "create"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
       <div class="new_look_item">
         <div class="col-md-12">
           <div class="col-md-2">
@@ -17,7 +16,7 @@
         <div class="col-md-2">
           <span>Sex</span>
           <% gender_array = [['Mens'],["Womens"]] %>
-          <%= f.select "gender", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
+          <%= f.select "gender", options_for_select(gender_array, 'Mens'), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look'} %>
         </div>
       </div>
 
@@ -25,53 +24,25 @@
         <div class="col-md-2">
           <span>World Wide Shipping?</span>
           <% gender_array = [['Yes', true],["No", false]] %>
-          <%= f.select "ww_shipping", options_for_select(gender_array), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
+          <%= f.select "ww_shipping", options_for_select(gender_array, false), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
         </div>
       </div>
 
-      <% item_count = 0 %>
-      <% for item in @image_item.shop_the_look_items %>
-        <div class="col-md-4">
-          <% item_count +=1 %>
-
-          <%= fields_for "shop_items[]", item do |shop_item| %>
-            <h2>Item <%= item_count %></h2>
-            <div class="col-md-8">
-
-            <span>category</span>
-            <%= shop_item.select "category", options_for_select(""), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + item_count.to_s} %>
-
-            <span>sub-category</span>
-            <%= shop_item.select "sub_category", options_for_select(""), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm sub-cat-look new-item-look-sub-category-' + item_count.to_s} %>
-
-            <span>brand</span>
-            <%= shop_item.text_field :brand, class: 'form-control', required: "true" %>
-
-            <span>Recommended Retail Price ($US)</span>
-            <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
-            <div class="input-group">
-              <div class="input-group-addon">$</div>
-            <%= shop_item.number_field :price, :step => 'any', class: 'form-control fashion-item-price', required: "true", placeholder: "Amount"%>
-            </div>
-
-            <span>sale</span>
-            <% sale_array = [["Yes", true],["No", false]] %>
-            <%= shop_item.select "sale", options_for_select(sale_array), {}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
-
-
-            <span>Product URL</span>
-            <%= shop_item.text_field :unique_affiliate_url, class: 'form-control', required: 'true', type: 'url' %>
-
-            </div>
+      <div class="col-md-12">
+        <div id="form-for-shop-look">
+        <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-link" %>
+          <%= f.fields_for :shop_the_look_items do |shop_item| %>
+            <%= render "item", f: shop_item %>
           <% end %>
         </div>
-      <% end %>
+      </div>
 
-    <div class="col-md-12">
-      <%= submit_tag "create" %>
-    </div>
+      <div class="col-md-12">
+        <%= submit_tag "Create", class: "btn btn-default btn-lg accept-button" %>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>
-
+<br><br><br><br><br><br><br>
 

@@ -1,0 +1,59 @@
+<div class="search_bar">
+  <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_mens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+  <div class="row">
+    <div class="windsor_smith">
+    </div>
+  </div>
+</div>
+<div class="mens-main-menu-side">
+  <%= render "templates/side_navigation_mens" %>
+</div>
+<div class="container mobile_container" style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div>
+    <h1 class="your-items mob-ul">Windsor Smith</h1>
+    <%= render "templates/horizontal_line" %>
+    <% @windsor_smith.each do |windsor_smith_items| %>
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div">
+          <a href="/item/<%= windsor_smith_items.id %>">
+            <%= image_tag windsor_smith_items.item_image.url(:medium) %>
+          <div class="description_content">
+            <% if windsor_smith_items.sale == true %>
+            <table>
+              <tr class="specials_table">
+                <td><strike><em>$<%= zeros(windsor_smith_items.price) %></em></strike></td>
+                <td>$<%= zeros(windsor_smith_items.sale_price) %></td>
+              </tr>
+            </table>
+            <% else %>
+            <table>
+              <tr class="normal_table">
+                <td>$<%= zeros(windsor_smith_items.price) %></td>
+              </tr>
+            </table>
+            <% end %>
+            <p><%= windsor_smith_items.short_description %></p>
+            <p><%= word_branding(windsor_smith_items.brand) %></p>
+          </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'templates/mail_chimp_form_mens' %>

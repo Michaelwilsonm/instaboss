@@ -14,6 +14,22 @@ class WomenBrandController < ApplicationController
     @query_all = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query).reverse
   end
 
+  def windsor_smith
+    @windsor_smith = @women_items.women_windsor_smith
+  end
+
+  def bronze_snake
+    @bronze_snake = @women_items.women_bronze_snake
+  end
+
+  def new_balance
+    @new_balance = @women_items.women_new_balance
+  end
+
+  def coopers_st
+    @coopers_st = @women_items.women_coopers_st
+  end
+
   def mobile_women_search
   end
 

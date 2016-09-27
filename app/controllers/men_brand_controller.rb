@@ -15,7 +15,26 @@ class MenBrandController < ApplicationController
   end
 
   def mobile_men_search
+  end
 
+  def windsor_smith
+    @windsor_smith = @men_items.windsor_smith
+  end
+
+  def bronze_snake
+    @bronze_snake = @men_items.bronze_snake
+  end
+
+  def mj_bale
+    @mj_bale = @men_items.mj_bale
+  end
+
+  def the_modest_vintage_player
+    @the_modest_vintage_player = @men_items.the_modest_vintage_player
+  end
+
+  def adidas
+    @adidas = @men_items.adidas
   end
 
   def bjorn_borg

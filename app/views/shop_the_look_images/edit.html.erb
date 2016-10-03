@@ -28,8 +28,8 @@
       <div class="col-md-12">
         <div class="col-md-2">
           <span>World Wide Shipping?</span>
-          <% gender_array = [['Yes', true],["No", false]] %>
-          <%= f.select "ww_shipping", options_for_select(gender_array, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
+          <% ships_from = [['U.S.A'],["Canada"],["UK / Europe"],["Asia"],["NZ / AUS"]] %>
+          <%= f.select "ww_shipping", options_for_select(ships_from, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
         </div>
       </div>
 

@@ -4,18 +4,23 @@
   and (-webkit-min-device-pixel-ratio: 2) {
 
   #mc_embed_signup label{
-    font-size: 42px;
+    font-size: 40px;
     display: inline;
+    margin-left: 0px;
   }
 
   #mc_embed_signup input.email{
-    width: 70%;
+    width: 60%;
     height: 60px;
     font-size: 40px;
   }
   #mc_embed_signup .button{
     height: 60px;
     font-size: 30px;
+  }
+
+  .womens_chimp input.email{
+    width: 68% !important;
   }
 
   .mobile_search_form{

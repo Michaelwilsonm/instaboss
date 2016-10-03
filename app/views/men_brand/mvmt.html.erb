@@ -27,7 +27,7 @@
     </div>
     <h1 class="your-items mob-ul">MVMT</h1>
     <%= render "templates/horizontal_line" %>
-    <% @mvmt.each do |mvmt_items| %>
+    <% @test.each do |mvmt_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
           <a href="/item/<%= mvmt_items.id %>">
@@ -56,4 +56,5 @@
     <% end %>
   </div>
 </div>
+
 <%= render 'templates/mail_chimp_form_mens' %>

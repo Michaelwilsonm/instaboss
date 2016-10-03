@@ -1,5 +1,5 @@
 class MenBrandController < ApplicationController
-  before_action :all_men
+  before_action :all_men, :all_shop_the_look_images
 
   def search
     @query_brand = "#{params[:query]}".split.map(&:downcase).join(' ')
@@ -55,14 +55,24 @@ class MenBrandController < ApplicationController
 
   def just_another_fisherman
     @just_another_fisherman = @men_items.just_another_fisherman
+    @brand = @shop_the_look_image_all.find_brand('just another fisherman')
   end
 
   def mvmt
     @mvmt = @men_items.mvmt
+    @brand = @shop_the_look_image_all.find_brand('mvmt').to_a
+    @test = []
+    puts "*" * 50
+    @test << @mvmt
+    @test << @brand
+    @test.each do |f| p f end
+    puts @mvmt
+    puts "*" * 50
   end
 
   def morepork
     @morepork = @men_items.morepork
+    @brand = @shop_the_look_image_all.find_brand('moreporks')
   end
 
   def new_balance
@@ -89,4 +99,8 @@ class MenBrandController < ApplicationController
     def all_men
       @men_items = FashionItem.all
     end
+    def all_shop_the_look_images
+      @shop_the_look_image_all = ShopTheLookImage.all
+    end
 end
+

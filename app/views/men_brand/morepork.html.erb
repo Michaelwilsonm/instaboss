@@ -30,27 +30,41 @@
     <% @morepork.each do |morepork_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= morepork_items.id %>">
-            <%= image_tag morepork_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if morepork_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(morepork_items.price) %></em></strike></td>
-                <td>$<%= zeros(morepork_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(morepork_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= morepork_items.short_description %></p>
-            <p><%= word_branding(morepork_items.brand) %></p>
-          </div>
-          </a>
+          <% if morepork_items.class == FashionItem %>
+            <a href="/item/<%= morepork_items.id %>">
+              <%= image_tag morepork_items.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if morepork_items.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(morepork_items.price) %></em></strike></td>
+                    <td>$<%= zeros(morepork_items.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(morepork_items.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= morepork_items.short_description %></p>
+                <p><%= word_branding(morepork_items.brand) %></p>
+              </div>
+            </a>
+          <% elsif morepork_items.class == ShopTheLookImage %>
+            <a href="/shop_the_look_images/<%= morepork_items.id %>">
+              <%= image_tag morepork_items.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                    <td>SHOP THE LOOK</td>
+                  </tr>
+                </table>
+                <p><%= word_branding(morepork_items.shop_the_look_items.first.brand) %></p>
+              </div>
+            </a>
+          <% end %>
         </div>
       </div>
     <% end %>

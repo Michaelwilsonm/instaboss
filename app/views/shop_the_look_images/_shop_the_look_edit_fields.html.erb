@@ -1,0 +1,49 @@
+<div class="nested-fields">
+<div class="form-for-shop-look">
+   <div class="col-md-4">
+    <div class="remove-button-look" style="float: right;">
+      <%= link_to_remove_association "- Item", f, class: "remove-button-link" %>
+    </div>
+    <% count = 0 %>
+      <%= @shop_the_look_image.shop_the_look_items.length %>
+
+      <span>description</span>
+      <%= f.text_field :description, required: 'true', class: 'form-control item-shop-the-look' %>
+
+
+
+
+
+      <span>category</span>
+      <% selected_cat = @shop_the_look_image.shop_the_look_items.first.category %>
+      <%= f.select "category", options_for_select([[selected_cat]], selected_cat), {}, { autofocus: 'true', required: 'true', class: 'form-control input-sm cat-look' } %>
+
+
+
+
+
+      <span>sub-category</span>
+      <% selected_sub_cat = @shop_the_look_image.shop_the_look_items.first.sub_category %>
+      <%= f.select "sub_category", options_for_select([[selected_sub_cat]], selected_sub_cat), {}, { autofocus: 'true', required: 'true', class: 'form-control input-sm sub-cat-look'} %>
+
+      <span>brand</span>
+      <%= f.text_field :brand, required: 'true', class: 'form-control', placeholder: @shop_the_look_image %>
+
+
+      <span>Recommended Retail Price ($US)</span>
+      <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: @shop_the_look_image, required: 'true' %>
+      </div>
+
+      <span>sale</span>
+       <% sale_array = [["Yes", true],["No", false]] %>
+       <%= f.select "sale", options_for_select(sale_array, false), {}, { autofocus: 'true', class: 'form-control input-sm' } %>
+
+
+      <span>Product URL</span>
+      <%= f.text_field :unique_affiliate_url, class: 'form-control',  type: 'url', required: 'true' %>
+  </div>
+  </div>
+</div>

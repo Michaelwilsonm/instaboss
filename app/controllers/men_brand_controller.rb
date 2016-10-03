@@ -19,88 +19,119 @@ class MenBrandController < ApplicationController
 
   def windsor_smith
     @windsor_smith = @men_items.windsor_smith
+    @brand = @shop_the_look_image_all.find_brand_mens('windsor smith')
+    add_brand(@brand, @windsor_smith)
   end
 
   def bronze_snake
     @bronze_snake = @men_items.bronze_snake
+    @brand = @shop_the_look_image_all.find_brand_mens('bronze snake')
+    add_brand(@brand, @bronze_snake)
   end
 
   def mj_bale
     @mj_bale = @men_items.mj_bale
+    @brand = @shop_the_look_image_all.find_brand_mens('mj bale')
+    add_brand(@brand, @mj_bale)
   end
 
   def the_modest_vintage_player
     @the_modest_vintage_player = @men_items.the_modest_vintage_player
+    @brand = @shop_the_look_image_all.find_brand_mens('the modest vintage player')
+    add_brand(@brand, @the_modest_vintage_player)
   end
 
   def adidas
     @adidas = @men_items.adidas
+    @brand = @shop_the_look_image_all.find_brand_mens('adidas')
+    add_brand(@brand, @adidas)
   end
 
   def bjorn_borg
     @bjorn_borg = @men_items.bjorn_borg
+    @brand = @shop_the_look_image_all.find_brand_mens('bjorn borg')
+    add_brand(@brand, @bjorn_borg)
   end
 
   def nike
     @nike = @men_items.nike_mens
+    @brand = @shop_the_look_image_all.find_brand_mens('nike')
+    add_brand(@brand, @nike_mens)
   end
 
   def leo_joseph
     @leo_joseph = @men_items.leo_joseph
+    @brand = @shop_the_look_image_all.find_brand_mens('leo joseph')
+    add_brand(@brand, @leo_joseph)
   end
 
   def daniel_wellington
     @daniel_wellington = @men_items.daniel_wellington
+    @brand = @shop_the_look_image_all.find_brand_mens('daniel wellington')
+    add_brand(@brand, @daniel_wellington)
   end
 
   def just_another_fisherman
     @just_another_fisherman = @men_items.just_another_fisherman
-    @brand = @shop_the_look_image_all.find_brand('just another fisherman')
+    @brand = @shop_the_look_image_all.find_brand_mens('just another fisherman')
+    add_brand(@brand, @just_another_fisherman)
   end
 
   def mvmt
     @mvmt = @men_items.mvmt
-    @brand = @shop_the_look_image_all.find_brand('mvmt').to_a
-    @test = []
-    puts "*" * 50
-    @test << @mvmt
-    @test << @brand
-    @test.each do |f| p f end
-    puts @mvmt
-    puts "*" * 50
+    @brand = @shop_the_look_image_all.find_brand_mens('mvmt')
+    add_brand(@brand, @mvmt)
   end
+
 
   def morepork
     @morepork = @men_items.morepork
-    @brand = @shop_the_look_image_all.find_brand('moreporks')
+    @brand = @shop_the_look_image_all.find_brand_mens('moreporks')
+    add_brand(@brand, @moreporks)
   end
 
   def new_balance
     @new_balance = @men_items.new_balance
+    @brand = @shop_the_look_image_all.find_brand_mens('new balance')
+    add_brand(@brand, @new_balance)
   end
 
   def nautica
     @nautica = @men_items.nautica
+    @brand = @shop_the_look_image_all.find_brand_mens('nautica')
+    add_brand(@brand, @nautica)
   end
 
   def retro_marine
     @retro_marine = @men_items.retro_marine
+    @brand = @shop_the_look_image_all.find_brand_mens('retro marine')
+    add_brand(@brand, @retro_marine)
   end
 
   def sunday_somewhere
     @sunday_somewhere = @men_items.sunday_somewhere
+    @brand = @shop_the_look_image_all.find_brand_mens('sunday somewhere')
+    add_brand(@brand, @sunday_somewhere)
   end
 
   def i_love_ugly
     @i_love_ugly = @men_items.i_love_ugly
+    @brand = @shop_the_look_image_all.find_brand_mens('i love ugly')
+    add_brand(@brand, @i_love_ugly)
   end
 
   private
     def all_men
       @men_items = FashionItem.all
     end
+
     def all_shop_the_look_images
       @shop_the_look_image_all = ShopTheLookImage.all
+    end
+
+    def add_brand(brand, item_brand)
+      brand.each { |f| item_brand << f }
+      item_brand.sort! { |a,b| b.created_at <=> a.created_at }
     end
 end
 

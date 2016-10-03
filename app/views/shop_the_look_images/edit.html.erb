@@ -1,17 +1,17 @@
 <%= render "templates/navigation" %>
 <div class="container">
   <div class="row">
-
-    <%= form_for @shop_the_look_image, url: {action: "update"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
-      <div class="new_look_item">
-        <div class="col-md-12">
-          <div class="col-md-2">
-            <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
-            <span>Image</span>
-            <%= f.file_field :shop_look_image %>
+    <div class="col-md-12">
+      <%= form_for @shop_the_look_image, url: {action: "update"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
+        <div class="new_look_item">
+          <div class="col-md-12">
+            <div class="col-md-2">
+              <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
+              <span>Image</span>
+              <%= f.file_field :shop_look_image %>
+            </div>
           </div>
         </div>
-      </div>
 
       <div class="col-md-12">
         <div class="col-md-2">
@@ -27,59 +27,28 @@
 
       <div class="col-md-12">
         <div class="col-md-2">
-          <span>World Wide Shipping?</span>
+          <span>Ships Worldwide From</span>
           <% ships_from = [['U.S.A'],["Canada"],["UK / Europe"],["Asia"],["NZ / AUS"]] %>
           <%= f.select "ww_shipping", options_for_select(ships_from, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
         </div>
       </div>
 
-        <% @item_count = 0 %>
-        <div id="items">
+      <div class="col-md-12">
+        <div id="form-for-shop-look">
           <%= f.fields_for :shop_the_look_items do |shop_item| %>
-            <% @item_count +=1 %>
-
-            <div class="col-md-4 form-<%= @item_count %>">
-
-              <h2>Item <%= @item_count %></h2>
-
-              <span>description</span>
-              <%= shop_item.text_field :description, class: 'form-control item-shop-the-look-' + @item_count.to_s, placeholder: @shop_the_look_image.shop_the_look_items[@item_count-1].description  %>
-
-              <span>category</span>
-
-              <%= shop_item.select "category", options_for_select([@shop_the_look_image.shop_the_look_items[@item_count-1].category],@shop_the_look_image.shop_the_look_items[@item_count-1].category), {}, { autofocus: 'true', class: 'form-control input-sm cat-look new-item-look-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
-
-              <span>sub-category</span>
-              <%= shop_item.select "sub_category", options_for_select([@shop_the_look_image.shop_the_look_items[@item_count-1].sub_category],@shop_the_look_image.shop_the_look_items[@item_count-1].sub_category), {}, { autofocus: 'true', class: 'form-control input-sm sub-cat-look new-item-look-sub-category-' + @item_count.to_s + ' item-shop-the-look-' + @item_count.to_s} %>
-
-              <span>brand</span>
-              <%= shop_item.text_field :brand, class: 'form-control item-shop-the-look-' + @item_count.to_s, placeholder: @shop_the_look_image.shop_the_look_items[@item_count-1].brand  %>
-
-              <span>Recommended Retail Price ($US)</span>
-              <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
-              <div class="input-group">
-                <div class="input-group-addon">$</div>
-              <%= shop_item.number_field :price, :step => 'any', class: 'form-control fashion-item-price item-shop-the-look-' + @item_count.to_s,  placeholder: "Amount"%>
-              </div>
-
-              <span>sale</span>
-              <% sale_array = [["", nil],["Yes", true],["No", false]] %>
-              <%= shop_item.select "sale", options_for_select(sale_array, @shop_the_look_image.shop_the_look_items[@item_count-1].sale), {}, { autofocus: 'true', class: 'form-control input-sm item-shop-the-look-child-' + @item_count.to_s} %>
-
-
-              <span>Product URL</span>
-              <%= shop_item.text_field :unique_affiliate_url, class: 'form-control item-shop-the-look-' + @item_count.to_s ,  type: 'url' %>
-
-            </div>
+            <%= render "shop_the_look_edit_fields", f: shop_item %>
           <% end %>
+          <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-link" %>
         </div>
+      </div>
+
       <div class="col-md-12">
         <%= submit_tag "Edit", class: "btn btn-default btn-lg accept-button" %>
       </div>
 
     <% end %>
+    </div>
   </div>
 </div>
-<br><br><br><br><br><br><br>
 
 

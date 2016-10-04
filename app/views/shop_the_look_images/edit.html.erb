@@ -2,53 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= form_for @shop_the_look_image, url: {action: "update"}, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
-        <div class="new_look_item">
-          <div class="col-md-12">
-            <div class="col-md-2">
-              <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
-              <span>Image</span>
-              <%= f.file_field :shop_look_image %>
-            </div>
-          </div>
-        </div>
-
-      <div class="col-md-12">
-        <div class="col-md-2">
-          <span>Sex</span>
-          <% if @shop_the_look_image.gender == 'Mens' %>
-            <% gender_array = [[@shop_the_look_image.gender],["Womens"]] %>
-          <% elsif @shop_the_look_image.gender == 'Womens' %>
-            <% gender_array = [[@shop_the_look_image.gender],["Mens"]] %>
-          <% end %>
-          <%= f.select "gender", options_for_select(gender_array, @shop_the_look_image.gender), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look new-item-look-sex'} %>
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <div class="col-md-2">
-          <span>Ships Worldwide From</span>
-          <% ships_from = [['U.S.A'],["Canada"],["UK / Europe"],["Asia"],["NZ / AUS"]] %>
-          <%= f.select "ww_shipping", options_for_select(ships_from, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <div id="form-for-shop-look">
-          <%= f.fields_for :shop_the_look_items do |shop_item| %>
-            <%= render "shop_the_look_edit_fields", f: shop_item %>
-          <% end %>
-          <%= link_to_add_association '+ Item', f, :shop_the_look_items, class: "add-button-link" %>
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <%= submit_tag "Edit", class: "btn btn-default btn-lg accept-button" %>
-      </div>
-
-    <% end %>
+      <%= render "form" %>
     </div>
   </div>
 </div>
-
-

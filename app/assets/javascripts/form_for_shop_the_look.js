@@ -1,15 +1,27 @@
 $(document).ready(function() {
   $(document).on('page:change', function () {
-
     womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     mensLookCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+
+    if ($('.gender-look').val() == "Womens") {
+      changeEditCats(womensLookCategories);
+    }else if ($('.gender-look').val() == "Mens") {
+      changeEditCats(mensLookCategories);
+    }
+
 
     if (!Array.prototype.last) {
       Array.prototype.last = function() {
           return this[this.length - 1];
       };
     };
+
+    function changeEditCats(categoriesMensOrWomens){
+      $.each( categoriesMensOrWomens, function( key, value ) {
+        $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
+      });
+    }
 
     $('#form-for-shop-look')
       .on('cocoon:before-insert', function(e,task_to_be_added) {
@@ -23,6 +35,7 @@ $(document).ready(function() {
           var catVal = $(this).val();
           var subCat = $(this).next().next();
           subCategories(subCat, catVal, mensLookCategories, womensLookCategories);
+
         })
       })
 

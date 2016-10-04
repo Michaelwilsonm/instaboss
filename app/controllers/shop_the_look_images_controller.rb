@@ -6,7 +6,7 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def new
-    @image_item = current_user.shop_the_look_images.build
+    @shop_the_look_image = current_user.shop_the_look_images.build
   end
 
   def create

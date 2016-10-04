@@ -1,9 +1,15 @@
 <%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
+
   <div class="new_look_item">
     <div class="col-md-12">
       <div class="col-md-2">
         <span>Image</span>
-        <%= f.file_field :shop_look_image, {required: 'true'} %>
+        <% if current_page?(controller: 'shop_the_look_images', action: 'edit') %>
+          <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
+          <%= f.file_field :shop_look_image %>
+        <% else %>
+          <%= f.file_field :shop_look_image, {required: 'true'} %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -23,14 +29,18 @@
       <%= f.select "ww_shipping", options_for_select(ships_from, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
     </div>
   </div>
+
   <div class="col-md-12">
-    <%= f.fields_for :shop_the_look_items do |task| %>
-      <%= render 'shop_the_look_item_fields', :f => task %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'add item', f, :shop_the_look_items %>
+    <div id="form-for-shop-look">
+      <%= f.fields_for :shop_the_look_items do |task| %>
+        <%= render 'shop_the_look_item_fields', :f => task %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add item', f, :shop_the_look_items %>
+      </div>
     </div>
   </div>
+
   <div class="col-md-12">
     <%= f.button :submit, class: "btn btn-default btn-lg accept-button" %>
   </div>

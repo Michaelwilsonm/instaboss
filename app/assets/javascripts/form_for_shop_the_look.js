@@ -17,6 +17,78 @@ $(document).ready(function() {
       };
     };
 
+    $("#shop_the_look_image_shop_the_look_items_attributes_0_category").change(function(){
+      $("#shop_the_look_image_shop_the_look_items_attributes_0_sub_category").children().remove();
+        var catValue = $("#shop_the_look_image_shop_the_look_items_attributes_0_category").val()
+      if ($(".gender-look").val() == 'Mens') {
+        $.each( mensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_0_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      } else if ($(".gender-look").val() == 'Womens') {
+        $.each( womensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_0_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      }
+    })
+
+    $("#shop_the_look_image_shop_the_look_items_attributes_1_category").change(function(){
+      $("#shop_the_look_image_shop_the_look_items_attributes_1_sub_category").children().remove();
+        var catValue = $("#shop_the_look_image_shop_the_look_items_attributes_1_category").val()
+      if ($(".gender-look").val() == 'Mens') {
+        $.each( mensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_1_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      } else if ($(".gender-look").val() == 'Womens') {
+        $.each( womensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_1_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      }
+    })
+
+    $("#shop_the_look_image_shop_the_look_items_attributes_2_category").change(function(){
+      $("#shop_the_look_image_shop_the_look_items_attributes_2_sub_category").children().remove();
+        var catValue = $("#shop_the_look_image_shop_the_look_items_attributes_2_category").val()
+      if ($(".gender-look").val() == 'Mens') {
+        $.each( mensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_2_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      } else if ($(".gender-look").val() == 'Womens') {
+        $.each( womensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_2_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      }
+    })
+
     function changeEditCats(categoriesMensOrWomens){
       $.each( categoriesMensOrWomens, function( key, value ) {
         $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
@@ -30,7 +102,7 @@ $(document).ready(function() {
       .on('cocoon:after-insert', function(e, added_task) {
         var thisForm = added_task.find(".cat-look");
         categories(mensLookCategories, womensLookCategories, thisForm);
-
+        console.log('hello')
         thisForm.change(function(){
           var catVal = $(this).val();
           var subCat = $(this).next().next();

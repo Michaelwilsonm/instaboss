@@ -1,35 +1,34 @@
 <div class="nested-fields">
-  <div class="form-for-shop-look">
-     <div class="col-md-4">
+  <div class="shop-the-look-items-wrapper">
+    <div class="col-md-4">
 
-        <div class="shop-the-look-items-wrapper">
-          <%= link_to_remove_association("- Item", f, { wrapper_class: 'shop-the-look-items-wrapper' }) %>
-          <%= f.text_field :description, required: 'true', class: 'form-control item-shop-the-look' %>
+        <%= link_to_remove_association("- Item", f, { wrapper_class: 'shop-the-look-items-wrapper' }) %>
 
-          <% dddd = [['U.S.A'],["Canada"],["UK / Europe"],["Asia"],["NZ / AUS"]] %>
-          <span>category</span>
-          <%= f.select "category", options_for_select(dddd, "Asia"), {}, { autofocus: 'true', required: 'true', class: 'form-control input-sm cat-look' } %>
+        <%= f.text_field :description, required: 'true', class: 'form-control item-shop-the-look' %>
 
-          <span>sub-category</span>
-          <%= f.select "sub_category", options_for_select(dddd, "Asia"), {}, { autofocus: 'true', required: 'false', class: 'form-control input-sm sub-cat-look' } %>
+        <span>category</span>
+        <%= f.select "category", options_for_select(""), {}, { autofocus: 'true', required: 'true', class: 'form-control input-sm cat-look' } %>
 
-          <span>brand</span>
-          <%= f.text_field :brand, required: 'true', class: 'form-control' %>
+        <span>sub-category</span>
+        <%= f.select "sub_category", options_for_select(""), {}, { autofocus: 'true', required: 'false', class: 'form-control input-sm sub-cat-look' } %>
 
-          <span>Recommended Retail Price ($US)</span>
-          <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
-          <div class="input-group">
-            <div class="input-group-addon">$</div>
-            <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount", required: 'true' %>
-          </div>
+        <span>brand</span>
+        <%= f.text_field :brand, required: 'true', class: 'form-control' %>
 
-          <span>sale</span>
-           <% sale_array = [["Yes", true],["No", false]] %>
-           <%= f.select "sale", options_for_select(sale_array, false), {}, { autofocus: 'true', class: 'form-control input-sm' } %>
-
-          <span>Product URL</span>
-          <%= f.text_field :unique_affiliate_url, class: 'form-control',  type: 'url', required: 'true' %>
+        <span>Recommended Retail Price ($US)</span>
+        <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount", required: 'true' %>
         </div>
-      </div>
+
+        <span>sale</span>
+         <% sale_array = [["Yes", true],["No", false]] %>
+         <%= f.select "sale", options_for_select(sale_array, false), {}, { autofocus: 'true', class: 'form-control input-sm' } %>
+
+        <span>Product URL</span>
+        <%= f.text_field :unique_affiliate_url, class: 'form-control',  type: 'url', required: 'true' %>
+
     </div>
+  </div>
 </div>

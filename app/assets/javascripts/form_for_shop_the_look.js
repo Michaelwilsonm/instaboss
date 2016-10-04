@@ -90,6 +90,7 @@ $(document).ready(function() {
     })
 
     function changeEditCats(categoriesMensOrWomens){
+      $(".cat-look").append("<option value=''>"+"</option>");
       $.each( categoriesMensOrWomens, function( key, value ) {
         $(".cat-look").append("<option value=" + key + ">"  +  key + "</option>");
       });
@@ -102,7 +103,7 @@ $(document).ready(function() {
       .on('cocoon:after-insert', function(e, added_task) {
         var thisForm = added_task.find(".cat-look");
         categories(mensLookCategories, womensLookCategories, thisForm);
-        console.log('hello')
+
         thisForm.change(function(){
           var catVal = $(this).val();
           var subCat = $(this).next().next();
@@ -130,10 +131,12 @@ $(document).ready(function() {
 
     function categories(menCat, womenCat, thisForm){
       if ($(".gender-look").val() == "Mens") {
+        thisForm.append("<option value=''>"+"</option>");
         $.each( menCat, function( key, value ) {
           thisForm.append("<option value=" + key + ">"  +  key + "</option>");
         });
       } else if ($(".gender-look").val() == "Womens") {
+        thisForm.append("<option value=''>"+"</option>");
         $.each( womenCat, function( key, value ) {
           thisForm.append("<option value=" + key + ">"  +  key + "</option>");
         });
@@ -159,5 +162,17 @@ $(document).ready(function() {
         }
       });
     }
+
+    $('.shop-the-look-new-form').validate({
+      rules: {
+        'shop_the_look_image[shop_look_image]' : {
+          required: true
+        }
+      }
+    });
+
+
+
+
   });
 });

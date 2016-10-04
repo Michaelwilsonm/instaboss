@@ -1,14 +1,14 @@
-<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
+<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form shop-the-look-new-form" } do |f| %>
 
   <div class="new_look_item">
     <div class="col-md-12">
       <div class="col-md-2">
         <span>Image</span>
-        <% if current_page?(controller: 'shop_the_look_images', action: 'edit') %>
+        <% if request.path === "/shop_the_look_images/" + @shop_the_look_image.id.to_s + "/edit" %>
           <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
           <%= f.file_field :shop_look_image %>
         <% else %>
-          <%= f.file_field :shop_look_image, {required: 'true'} %>
+          <%= f.file_field :shop_look_image, {requred: 'true', class: "error"} %>
         <% end %>
       </div>
     </div>

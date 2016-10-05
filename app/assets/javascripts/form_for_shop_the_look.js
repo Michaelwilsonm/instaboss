@@ -104,6 +104,16 @@ $(document).ready(function() {
         var thisForm = added_task.find(".cat-look");
         categories(mensLookCategories, womensLookCategories, thisForm);
 
+
+        // $(".shop-look-sale").change(function(){
+        //   var saleVal = $(this).val()
+        //   if (saleVal == "true") {
+        //     $(this).next().next().css({display: "block"})
+        //   } else if (saleVal == "false") {
+        //     $(this).next().next().css({display: "none"})
+        //   }
+        // })
+
         thisForm.change(function(){
           var catVal = $(this).val();
           var subCat = $(this).next().next();
@@ -162,6 +172,8 @@ $(document).ready(function() {
         }
       });
     }
+
+
 
 
     if ($(".error-handling-js").hasClass("error")) {

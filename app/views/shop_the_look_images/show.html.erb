@@ -54,7 +54,13 @@
           <p><em><%= word_branding(shop_the_look_items.brand) %></em></p>
         <% end %>
 
-          <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.price) %></em></p>
+          <% if shop_the_look_items.sale == true %>
+            <p class="shop-the-look-price"><em><strike>US $<%= zeros(shop_the_look_items.price) %></strike></em></p>
+            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.sale_price) %></em></p>
+          <% else %>
+            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.price) %></em></p>
+          <% end %>
+
 
           <div class="show-button-shop-look">
             <a href="<%= shop_the_look_items.unique_affiliate_url %>" target="_blank">

@@ -8,7 +8,7 @@
           <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
           <%= f.file_field :shop_look_image %>
         <% else %>
-          <%= f.file_field :shop_look_image, {requred: 'true', class: "error"} %>
+          <%= f.file_field :shop_look_image, class: "error error-handling-js" %>
         <% end %>
       </div>
     </div>

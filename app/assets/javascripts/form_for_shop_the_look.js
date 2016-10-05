@@ -163,13 +163,16 @@ $(document).ready(function() {
       });
     }
 
-    $('.shop-the-look-new-form').validate({
-      rules: {
-        'shop_the_look_image[shop_look_image]' : {
-          required: true
+
+    if ($(".error-handling-js").hasClass("error")) {
+      $('.shop-the-look-new-form').validate({
+        rules: {
+          'shop_the_look_image[shop_look_image]' : {
+            required: true
+          }
         }
-      }
-    });
+      });
+    }
 
 
 

@@ -6,7 +6,7 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def new
-    @image_item = current_user.shop_the_look_images.build
+    @shop_the_look_image = current_user.shop_the_look_images.build
   end
 
   def create
@@ -40,7 +40,7 @@ class ShopTheLookImagesController < ApplicationController
   private
 
     def shop_look_image_params
-      params.require(:shop_the_look_image).permit(:gender, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :description, :brand, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])
+      params.require(:shop_the_look_image).permit(:gender, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :description, :brand, :sale_price, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])
     end
 
     def find_shop_look_image

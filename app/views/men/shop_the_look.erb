@@ -13,7 +13,7 @@
 </div>
 <div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
   <div class="row">
-    <div class="i_love_ugly_mens">
+    <div class="shop_the_look_mens">
     </div>
   </div>
 </div>
@@ -35,17 +35,11 @@
             <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>
           <div class="description_content">
             <table>
-              <tr class="specials_table">
-                <td><strike><em></em></strike></td>
-                <td></td>
+              <tr class="shop_look_table">
+                <td>SHOP THE LOOK</td>
               </tr>
             </table>
-            <table>
-              <tr class="normal_table">
-                <td></td>
-              </tr>
-            </table>
-            <p></p>
+            <p><%= shop_the_look_items.shop_the_look_items.first.brand %></p>
             <p></p>
           </div>
           </a>

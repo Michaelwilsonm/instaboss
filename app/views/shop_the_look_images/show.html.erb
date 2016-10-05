@@ -1,6 +1,6 @@
-<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike"] %>
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
 
-<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo","jo mercer", "princess polly"] %>
+<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
@@ -47,14 +47,20 @@
           <h2 class="shop-the-look-description"><em><%= shop_the_look_items.description %></em></h2>
 
         <% if all_men_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Mens" %>
-          <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, shop_the_look_items.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
+          <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, @shop_the_look_image.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
         <% elsif all_women_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Womens" %>
           <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, shop_the_look_items.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
         <% else %>
           <p><em><%= word_branding(shop_the_look_items.brand) %></em></p>
         <% end %>
 
-          <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.price) %></em></p>
+          <% if shop_the_look_items.sale == true %>
+            <p class="shop-the-look-price"><em><strike>US $<%= zeros(shop_the_look_items.price) %></strike></em></p>
+            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.sale_price) %></em></p>
+          <% else %>
+            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.price) %></em></p>
+          <% end %>
+
 
           <div class="show-button-shop-look">
             <a href="<%= shop_the_look_items.unique_affiliate_url %>" target="_blank">
@@ -62,10 +68,6 @@
             </a>
           </div>
 
-        <% end %>
-
-        <% if @shop_the_look_image.ww_shipping == true %>
-          <p>Free Worldwide Shipping</p>
         <% end %>
       </div>
       <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>

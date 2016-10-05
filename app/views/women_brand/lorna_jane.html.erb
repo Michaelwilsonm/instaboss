@@ -29,28 +29,42 @@
     <%= render "templates/horizontal_line" %>
     <% @lorna_jane.each do |lorna_jane_item| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
-          <div class="image_div">
-          <a href="/item/<%= lorna_jane_item.id %>">
-            <%= image_tag lorna_jane_item.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if lorna_jane_item.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(lorna_jane_item.price) %></em></strike></td>
-                <td>$<%= zeros(lorna_jane_item.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(lorna_jane_item.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= lorna_jane_item.short_description %></p>
-            <p><%= word_branding(lorna_jane_item.brand) %></p>
-          </div>
-          </a>
+        <div class="image_div">
+          <% if lorna_jane_item.class == FashionItem %>
+            <a href="/item/<%= lorna_jane_item.id %>">
+              <%= image_tag lorna_jane_item.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if lorna_jane_item.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(lorna_jane_item.price) %></em></strike></td>
+                    <td>$<%= zeros(lorna_jane_item.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(lorna_jane_item.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= lorna_jane_item.short_description %></p>
+                <p><%= word_branding(lorna_jane_item.brand) %></p>
+              </div>
+            </a>
+          <% elsif lorna_jane_item.class == ShopTheLookImage %>
+            <a href="/shop_the_look_images/<%= lorna_jane_item.id %>">
+              <%= image_tag lorna_jane_item.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                    <td>SHOP THE LOOK</td>
+                  </tr>
+                </table>
+                <p><%= word_branding(lorna_jane_item.shop_the_look_items.first.brand) %></p>
+              </div>
+            </a>
+          <% end %>
         </div>
       </div>
     <% end %>

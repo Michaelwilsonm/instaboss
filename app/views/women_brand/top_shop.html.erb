@@ -30,27 +30,41 @@
     <% @top_shop.each do |top_shop_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= top_shop_items.id %>">
-            <%= image_tag top_shop_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if top_shop_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(top_shop_items.price) %></em></strike></td>
-                <td>$<%= zeros(top_shop_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(top_shop_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= top_shop_items.short_description %></p>
-            <p><%= word_branding(top_shop_items.brand) %></p>
-          </div>
-          </a>
+          <% if top_shop_items.class == FashionItem %>
+            <a href="/item/<%= top_shop_items.id %>">
+              <%= image_tag top_shop_items.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if top_shop_items.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(top_shop_items.price) %></em></strike></td>
+                    <td>$<%= zeros(top_shop_items.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(top_shop_items.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= top_shop_items.short_description %></p>
+                <p><%= word_branding(top_shop_items.brand) %></p>
+              </div>
+            </a>
+          <% elsif top_shop_items.class == ShopTheLookImage %>
+            <a href="/shop_the_look_images/<%= top_shop_items.id %>">
+              <%= image_tag top_shop_items.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                    <td>SHOP THE LOOK</td>
+                  </tr>
+                </table>
+                <p><%= word_branding(top_shop_items.shop_the_look_items.first.brand) %></p>
+              </div>
+            </a>
+          <% end %>
         </div>
       </div>
     <% end %>

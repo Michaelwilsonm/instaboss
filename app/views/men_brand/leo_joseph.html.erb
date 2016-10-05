@@ -30,27 +30,41 @@
     <% @leo_joseph.each do |leo_joseph_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= leo_joseph_items.id %>">
-            <%= image_tag leo_joseph_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if leo_joseph_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(leo_joseph_items.price) %></em></strike></td>
-                <td>$<%= zeros(leo_joseph_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(leo_joseph_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= leo_joseph_items.short_description %></p>
-            <p><%= word_branding(leo_joseph_items.brand) %></p>
-          </div>
-          </a>
+          <% if leo_joseph_items.class == FashionItem %>
+            <a href="/item/<%= leo_joseph_items.id %>">
+              <%= image_tag leo_joseph_items.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if leo_joseph_items.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(leo_joseph_items.price) %></em></strike></td>
+                    <td>$<%= zeros(leo_joseph_items.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(leo_joseph_items.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= leo_joseph_items.short_description %></p>
+                <p><%= word_branding(leo_joseph_items.brand) %></p>
+              </div>
+            </a>
+          <% elsif leo_joseph_items.class == ShopTheLookImage %>
+            <a href="/shop_the_look_images/<%= leo_joseph_items.id %>">
+              <%= image_tag leo_joseph_items.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                    <td>SHOP THE LOOK</td>
+                  </tr>
+                </table>
+                <p><%= word_branding(leo_joseph_items.shop_the_look_items.first.brand) %></p>
+              </div>
+            </a>
+          <% end %>
         </div>
       </div>
     <% end %>

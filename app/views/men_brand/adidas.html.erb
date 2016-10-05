@@ -25,32 +25,46 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items mob-ul">Adidas</h1>
+    <h1 class="your-items mob-ul">Adidas Originals</h1>
     <%= render "templates/horizontal_line" %>
     <% @adidas.each do |adidas_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
-          <a href="/item/<%= adidas_items.id %>">
-            <%= image_tag adidas_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if adidas_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(adidas_items.price) %></em></strike></td>
-                <td>$<%= zeros(adidas_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(adidas_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= adidas_items.short_description %></p>
-            <p><%= word_branding(adidas_items.brand) %></p>
-          </div>
-          </a>
+          <% if adidas_items.class == FashionItem %>
+            <a href="/item/<%= adidas_items.id %>">
+              <%= image_tag adidas_items.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if adidas_items.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(adidas_items.price) %></em></strike></td>
+                    <td>$<%= zeros(adidas_items.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(adidas_items.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= adidas_items.short_description %></p>
+                <p><%= word_branding(adidas_items.brand) %></p>
+              </div>
+            </a>
+          <% elsif adidas_items.class == ShopTheLookImage %>
+            <a href="/shop_the_look_images/<%= adidas_items.id %>">
+              <%= image_tag adidas_items.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                    <td>SHOP THE LOOK</td>
+                  </tr>
+                </table>
+                <p><%= word_branding(adidas_items.shop_the_look_items.first.brand) %></p>
+              </div>
+            </a>
+          <% end %>
         </div>
       </div>
     <% end %>

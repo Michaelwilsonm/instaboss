@@ -19,8 +19,8 @@ class WomenBrandController < ApplicationController
 
   def windsor_smith
     @windsor_smith = @women_items.women_windsor_smith
-    @brand = @shop_the_look_image_all.find_brand('i love ugly')
-    add_brand(@brand, @i_love_ugly)
+    @brand = @shop_the_look_image_all.find_brand_womens('windsor smith')
+    add_brand(@brand, @windsor_smith)
   end
 
   def bronze_snake

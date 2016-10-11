@@ -13,7 +13,7 @@
 .side_nav_mens, .no_picture_side_nav_mens, .no_picture_side_nav_mens_extra_margin   {
   position: absolute;
   width: 150px;
-  margin-top: 149px;
+  margin-top: 128px;
   list-style-type: none;
   h4{
     font-family: "Calisto MT Regular";
@@ -26,6 +26,10 @@
       color: black;
     }
   }
+}
+
+ul>.side_nav_mens{
+  margin-top: 200px;
 }
 
 .menu-side-search-bar{

@@ -1,29 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# User.delete_all
-# FashionItem.delete_all
-
 img = File.open(File.join(Rails.root, '/app/assets/images/dog.jpg'))
 
 User.create(email: "mike@mike.com", password: "hello123")
 User.create(email: "mike@email.com", password: "hello123")
 Admin.create(email: "josh@josh.com", password: "hello123")
 
-ShopTheLookImage.create(
-    shop_look_image: img,
-    user_id: 1,
-)
+10.times do
+    ShopTheLookImage.create(
+        shop_look_image: img,
+        user_id: 1,
+    )
 
-ShopTheLookItem.create(
-    shop_the_look_image_id: 1,
-    brand: "michael"
-)
+    ShopTheLookItem.create(
+        shop_the_look_image_id: 103,
+        brand: "michael"
+    )
+end
 
 25.times do
 

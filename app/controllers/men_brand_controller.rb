@@ -15,6 +15,7 @@ class MenBrandController < ApplicationController
     @shop_men = ShopTheLookImage.where(:gender => "Mens").joins(:shop_the_look_items)
     @shop_look_image_query = @shop_men.where("description LIKE ? or brand LIKE ?", @query,@brand_query).reverse
     @shop_look_image_query.each { |f| @query_all << f }
+    @query_all.uniq!
   end
 
   def mobile_men_search

@@ -16,6 +16,7 @@ class WomenBrandController < ApplicationController
     @shop_women = ShopTheLookImage.where(:gender => "Womens").joins(:shop_the_look_items)
     @shop_look_image_query = @shop_women.where("description LIKE ? or brand LIKE ?", @query,@brand_query).reverse
     @shop_look_image_query.each { |f| @query_all << f }
+    @query_all.uniq!
   end
 
   def mobile_women_search
@@ -159,6 +160,7 @@ class WomenBrandController < ApplicationController
 
     def add_brand(brand, item_brand)
       brand.each { |f| item_brand << f }
+      item_brand.uniq!
       item_brand.sort! { |a,b| b.created_at <=> a.created_at }
     end
 end

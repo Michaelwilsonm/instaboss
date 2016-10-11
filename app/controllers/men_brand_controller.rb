@@ -134,6 +134,7 @@ class MenBrandController < ApplicationController
 
     def add_brand(brand, item_brand)
       brand.each { |f| item_brand << f }
+      item_brand.uniq!
       item_brand.sort! { |a,b| b.created_at <=> a.created_at }
     end
 end

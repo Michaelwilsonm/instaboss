@@ -3,6 +3,10 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .mens-main-menu-search{
+    display: none;
+  }
+
   .description-shop-the-look-show-box{
     right: 220px;
     margin-top: -20px;

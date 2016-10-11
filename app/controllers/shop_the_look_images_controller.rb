@@ -2,7 +2,7 @@ class ShopTheLookImagesController < ApplicationController
   before_action :find_shop_look_image, only: [:show, :edit, :destroy, :update]
 
   def index
-    @users_items = current_user.shop_the_look_images
+    @users_items = current_user.shop_the_look_images.reverse
   end
 
   def new
@@ -19,6 +19,8 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def show
+    session[:my_previous_url] = URI(request.referer || '').path
+    @back_url = session[:my_previous_url]
   end
 
   def edit

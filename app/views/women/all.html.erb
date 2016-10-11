@@ -8,7 +8,6 @@
   <%= render "templates/navigation_mobile_womens" %>
 <% end %>
 <%= render "/templates/mobile_navigation_sliding_div_women" %>
-
 <div class="item_navigation_top_womens">
   <%= render "templates/item_navigation_womens" %>
 </div>
@@ -18,8 +17,6 @@
     </div>
   </div>
 </div>
-
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens_extra_margin" %>
@@ -30,8 +27,8 @@
       <%= render "templates/item_navigation_womens_subcat" %>
     </div><br>
     <h1 class="your-items">All Women's</h1>
-    <div class="item_sub_cat_all"></div>
     <%= render "templates/horizontal_line" %>
+    <div class="item_sub_cat" style="margin-top: -60px;"></div>
     <% @womens.each do |all| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">

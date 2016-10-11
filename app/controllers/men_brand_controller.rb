@@ -12,6 +12,9 @@ class MenBrandController < ApplicationController
     @brand_query = "%#{params[:query]}%".split.map(&:downcase).join(' ')
     @men = FashionItem.where(:sex => "Mens")
     @query_all = @men.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query).reverse
+    @shop_men = ShopTheLookImage.where(:gender => "Mens").joins(:shop_the_look_items)
+    @shop_look_image_query = @shop_men.where("description LIKE ? or brand LIKE ?", @query,@brand_query).reverse
+    @shop_look_image_query.each { |f| @query_all << f }
   end
 
   def mobile_men_search
@@ -56,7 +59,7 @@ class MenBrandController < ApplicationController
   def nike
     @nike = @men_items.nike_mens
     @brand = @shop_the_look_image_all.find_brand_mens('nike')
-    add_brand(@brand, @nike_mens)
+    add_brand(@brand, @nike)
   end
 
   def leo_joseph

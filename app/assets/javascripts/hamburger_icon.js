@@ -12,14 +12,18 @@ $(document).ready(function() {
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
+        $(".mobile_container").css({display: "block"})
         $(".hamburger-slider").animate({
           right: "1000px"
-        },300)
+        },300, function(){
+        })
       }else if (toggleNavCount % 2 != 0) {
         $(".logo-image").fadeOut()
         $(".hamburger-slider").animate({
           right: "-5px"
-        },300)
+        },300, function(){
+          $(".mobile_container").css({display: "none"})
+        })
       }
     })
 

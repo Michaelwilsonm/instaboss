@@ -5,6 +5,12 @@ $(document).ready(function() {
       var windowScroll = $(window).scrollTop();
       var windowHeight = $(window).height();
 
+      if (windowScroll > 170) {
+        $(".search-side").css({position: "fixed", marginTop: "-125px"});
+      } else {
+        $(".search-side").css({position: "absolute", marginTop: "65px"});
+      }
+
       if (windowScroll > 603) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-470px"});
       } else {

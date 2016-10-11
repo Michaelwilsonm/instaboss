@@ -17,8 +17,6 @@
     </div>
   </div>
 </div>
-
-
 <div class="mens-main-menu-side">
   <%= render "templates/side_nav_womens_main"%>
 </div>
@@ -60,10 +58,12 @@
               <div class="description_content">
                 <table>
                   <tr class="shop_look_table">
-                    <td>SHOP THE LOOK</td>
                   </tr>
                 </table>
-                <p><%= word_branding(showpo_boutique.shop_the_look_items.first.brand) %></p>
+                <div class="shop-the-look-description">
+                  <h2>Shop The Look</h2>
+                  <p><%= word_branding(showpo_boutique.shop_the_look_items.first.brand) %></p>
+                </div>
               </div>
             </a>
           <% end %>

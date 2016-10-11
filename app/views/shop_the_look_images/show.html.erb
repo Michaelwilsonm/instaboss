@@ -1,4 +1,4 @@
-<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "mj bale", "adidas originals"] %>
 
 <% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
@@ -49,7 +49,7 @@
         <% if all_men_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Mens" %>
           <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, @shop_the_look_image.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
         <% elsif all_women_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Womens" %>
-          <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, shop_the_look_items.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
+          <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, @shop_the_look_image.gender) %>"><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
         <% else %>
           <p><em><%= word_branding(shop_the_look_items.brand) %></em></p>
         <% end %>

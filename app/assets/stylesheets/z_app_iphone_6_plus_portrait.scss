@@ -1,0 +1,42 @@
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait) {
+  .hamburger-slider{
+    display: none;
+    top: 130px;
+    background-color: rgba(255,255,255, 1);
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    height: 1800px;
+    width: 105vw;
+    right: 1000px;
+  }
+  .box{
+    left: 0px;
+  }
+
+  .women-slider{
+    height: 1900px;
+  }
+
+  .hr_main{
+    display: block;
+    width: 136%;
+    margin-left: 0px;
+  }
+
+  .navigation{
+    width: 132%;
+    margin-left: -120px;
+  }
+
+  .show-box{
+    margin-left: 75px;
+  }
+
+  .instagram_logo>a>img{
+    margin-right: -70px;
+  }
+}

@@ -43,7 +43,7 @@ class MenBrandController < ApplicationController
 
   def adidas
     @adidas = @men_items.adidas
-    @brand = @shop_the_look_image_all.find_brand_mens('adidas')
+    @brand = @shop_the_look_image_all.find_brand_mens('adidas originals')
     add_brand(@brand, @adidas)
   end
 
@@ -87,7 +87,7 @@ class MenBrandController < ApplicationController
   def morepork
     @morepork = @men_items.morepork
     @brand = @shop_the_look_image_all.find_brand_mens('moreporks')
-    add_brand(@brand, @moreporks)
+    add_brand(@brand, @morepork)
   end
 
   def new_balance

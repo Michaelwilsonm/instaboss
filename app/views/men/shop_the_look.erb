@@ -35,12 +35,11 @@
             <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>
           <div class="description_content">
             <table>
-              <tr class="shop_look_table">
-              </tr>
+              <tr class="shop_look_table"></tr>
             </table>
             <div class="shop-the-look-description">
               <h2>Shop The Look</h2>
-              <p><%= shop_the_look_items.shop_the_look_items.first.brand %></p>
+              <p><%= word_branding(shop_the_look_items.shop_the_look_items.first.brand) %></p>
             </div>
           </div>
           </a>

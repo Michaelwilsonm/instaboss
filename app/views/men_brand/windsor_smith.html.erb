@@ -17,14 +17,14 @@
     </div>
   </div>
 </div>
-<div class="mens-main-menu-side">
-  <%= render "templates/side_navigation_mens" %>
+<div class="menu-side">
+  <%= render "templates/side_navigation_mens_extra_margin" %>
 </div>
 <div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
+    </div><br>
     <h1 class="your-items mob-ul">Windsor Smith</h1>
     <%= render "templates/horizontal_line" %>
     <% @windsor_smith.each do |windsor_smith_items| %>

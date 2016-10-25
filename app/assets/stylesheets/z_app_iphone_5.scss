@@ -351,11 +351,9 @@
 
   .item_sub_cat{
     margin: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     border-bottom: 1px solid;
   }
-
-
 
   .sale_women{
     margin: 0px;
@@ -371,9 +369,28 @@
 
   .sorting_class{
      li{
-      font-size: 27px;
+      font-size: 45px;
       margin: 5px 20px 0px 20px;
     }
+  }
+
+  .sorting_class_womens{
+     li{
+      font-size: 45px;
+      margin: 5px 20px 0px 20px;
+    }
+  }
+
+  .women_sub_cat_acc_pad {
+    padding-bottom: 140px;
+  }
+
+  .men_shoe_sub_cat_pad {
+    padding-bottom: 140px;
+  }
+
+  .men_top_sub_cat_pad {
+    padding-bottom: 140px;
   }
 
   .specials_table > td:nth-child(2){
@@ -541,7 +558,7 @@
   }
 
   .womens_top {
-    padding-bottom: 90px;
+    padding-bottom: 130px;
     li{
       padding-left: 16px;
       padding-right: 16px;

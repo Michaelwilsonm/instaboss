@@ -1,7 +1,7 @@
 class MenController < ApplicationController
   before_action :all_fashion
   helper_method :sort_column, :sort_direction
-  before_action :all_shop_the_look_images, only: [:shop_the_look]
+  before_action :all_shop_the_look_images
 
   def index
     @mens = @items.all_mens_items
@@ -16,7 +16,10 @@ class MenController < ApplicationController
   end
 
   def all
-    @mens = @items.all_mens_items_ALL
+    @all_men = @items.all_mens_items_ALL
+    @shop_the_look_mens = @shop_look_images.shop_the_look_men
+    @mens = @all_men + @shop_the_look_mens
+    sort_by_created_at(@mens)
   end
 
   def formal
@@ -62,6 +65,10 @@ class MenController < ApplicationController
   end
 
   private
+
+    def sort_by_created_at(all_items)
+      all_items.sort! { |a,b| b.created_at <=> a.created_at }
+    end
 
     def all_fashion
       @items = FashionItem.all

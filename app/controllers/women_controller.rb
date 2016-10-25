@@ -1,6 +1,6 @@
 class WomenController < ApplicationController
   before_action :all_women
-  before_action :all_shop_the_look_images, only: [:shop_the_look]
+  before_action :all_shop_the_look_images
 
   def index
     @womens = @items.all_womens_items
@@ -11,7 +11,10 @@ class WomenController < ApplicationController
   end
 
   def all
-    @womens = @items.all_womens_items_ALL
+    @womens_items = @items.all_womens_items_ALL
+    @shop_the_look_womens = @shop_look_images.shop_the_look_women
+    @womens = @womens_items + @shop_the_look_womens
+    sort_by_created_at(@womens)
   end
 
   def accessorie
@@ -65,6 +68,10 @@ class WomenController < ApplicationController
   end
 
   private
+
+    def sort_by_created_at(all_items)
+      all_items.sort! { |a,b| b.created_at <=> a.created_at }
+    end
 
     def all_shop_the_look_images
       @shop_look_images = ShopTheLookImage.all

@@ -51,10 +51,10 @@
           <p><em><%= word_branding(@item.brand) %></em></p>
         <% end %>
         <% if @item.sale == true %>
-          <h3><strike><em>US $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>US $<%= zeros(@item.sale_price) %></em></h3>
+          <h3><strike><em>AUD $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(@item.sale_price) %></em></h3>
           <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>
         <% else %>
-          <h3><em>US $<%= zeros(@item.price) %></em></h3>
+          <h3><em>AUD $<%= zeros(@item.price) %></em></h3>
         <% end %>
         <p><%= @item.description %></p>
         <p><em>Ships worldwide from <%= @item.shipped_from %></em></p>

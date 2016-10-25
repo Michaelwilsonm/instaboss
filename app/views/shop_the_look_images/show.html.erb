@@ -55,10 +55,10 @@
         <% end %>
 
           <% if shop_the_look_items.sale == true %>
-            <p class="shop-the-look-price"><em><strike>US $<%= zeros(shop_the_look_items.price) %></strike></em></p>
-            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.sale_price) %></em></p>
+            <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(shop_the_look_items.price) %></strike></em></p>
+            <p class="shop-the-look-price"><em>AUD $<%= zeros(shop_the_look_items.sale_price) %></em></p>
           <% else %>
-            <p class="shop-the-look-price"><em>US $<%= zeros(shop_the_look_items.price) %></em></p>
+            <p class="shop-the-look-price"><em>AUD $<%= zeros(shop_the_look_items.price) %></em></p>
           <% end %>
 
 

@@ -62,8 +62,8 @@ Rails.application.routes.draw do
   get 'women_brand/alice_mccall'
   get 'women_brand/auguste'
   get 'women_brand/sea_folly'
-  get 'women_brand/top_shop'
-  get 'women_brand/victorias_secret'
+  # get 'women_brand/top_shop'
+  # get 'women_brand/victorias_secret'
 
 
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'

@@ -547,4 +547,83 @@
       padding-right: 16px;
     }
   }
+  .box_featured{
+    width: 980px !important;
+    position: relative;
+    left: 0px;
+  }
+
+  .image_div_featured{
+    position: relative;
+    width: 940px;
+    height: 940px;
+    margin: 10px 5px 10px 5px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #eee;
+    a{
+      text-decoration: none !important;
+    }
+  }
+
+  .image_div_featured img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 980px;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
+
+  .brands_image_div_featured{
+    border-color: #fff;
+      img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100px;
+        width: auto;
+        -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+      }
+  }
+
+  .description_content_featured{
+    color: white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: "Calisto MT Regular";
+    p{
+      font-size: 65px;
+      position: relative;
+      top: 600px;
+    }
+  }
+
+  .specials_table_featured>td{
+    color: white;
+    padding: 0px 34px 0px 34px;
+  }
+
+  .specials_table_featured>td:nth-child(1){
+    font-size: 50px;
+    margin-left: 5px;
+  }
+
+  .specials_table_featured>td:nth-child(2){
+    font-size: 95px;
+  }
+
+  .normal_table_featured>td{
+    padding: 0px 34px 0px 34px;
+    color: white;
+    font-size: 95px
+  }
 }

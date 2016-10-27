@@ -1,0 +1,31 @@
+<%= render "templates/admin_navigation" %>
+<div class="affiliate-portal-item">
+  <h1 class="your-items">All Shop The Look Items</h1>
+  <div style="overflow-x: auto;">
+    <table class="sort-table">
+      <tr class="sorting-table-rows">
+        <th>Image</th>
+        <th><%= sortable "user_email" %></th>
+        <th><%= sortable "gender" %></th>
+        <th><%= sortable "created_at" %></th>
+        <th>Action</th>
+      </tr>
+      <% @shop_look_image_item.each do |item| %>
+        <tr class="users-sorting-items">
+          <td>
+            <div class="table-image">
+              <%= image_tag item.shop_look_image.url(:thumb), class: "thumbnail" %>
+            </div>
+            <td><%= item.user.email %></td>
+            <td><%= item.gender %></td>
+            <td>
+              <p><%= item.created_at.strftime("%m/%d/%y") %></p>
+              <p><%= item.created_at.strftime("%I:%M%p") %></p>
+            </td>
+            <td>
+              <p><%= link_to 'Delete', shop_the_look_image_path(item.id, :from=>"admin-page"), method: :delete %></p>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>

@@ -1,6 +1,6 @@
 <% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
 
-<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "topshop", "victoria's secret", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
+<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
 <% if current_admin %>
   <%= render "templates/admin_navigation" %>
@@ -51,10 +51,10 @@
           <p><em><%= word_branding(@item.brand) %></em></p>
         <% end %>
         <% if @item.sale == true %>
-          <h3><strike><em>US $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>US $<%= zeros(@item.sale_price) %></em></h3>
+          <h3><strike><em>AUD $<%= zeros(@item.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(@item.sale_price) %></em></h3>
           <p><em><%= percentage(@item.price, @item.sale_price) %>% off!</em></p>
         <% else %>
-          <h3><em>US $<%= zeros(@item.price) %></em></h3>
+          <h3><em>AUD $<%= zeros(@item.price) %></em></h3>
         <% end %>
         <p><%= @item.description %></p>
         <p><em>Ships worldwide from <%= @item.shipped_from %></em></p>

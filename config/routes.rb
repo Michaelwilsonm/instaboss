@@ -8,12 +8,24 @@ Rails.application.routes.draw do
   resources :client
 
   devise_for :admins
-  resources :admin
+  resources :admin do
+    collection do
+      get 'shop_look_image'
+    end
+  end
+
+
+  get 'admin/shop_look_image'
 
   post 'admin/:id/update_staff_true' => 'admin#update_staff_true'
   post 'admin/:id/update_featured_true' => 'admin#update_featured_true'
   post 'admin/:id/update_staff_false' => 'admin#update_staff_false'
   post 'admin/:id/update_featured_false' => 'admin#update_featured_false'
+
+  post 'admin/:id/update_shop_staff_true' => 'admin#update_shop_staff_true'
+  post 'admin/:id/update_shop_featured_true' => 'admin#update_shop_featured_true'
+  post 'admin/:id/update_shop_staff_false' => 'admin#update_shop_staff_false'
+  post 'admin/:id/update_shop_featured_false' => 'admin#update_shop_featured_false'
 
   # post 'admin/featured_item'
   # post 'admin/update_staff'
@@ -62,8 +74,8 @@ Rails.application.routes.draw do
   get 'women_brand/alice_mccall'
   get 'women_brand/auguste'
   get 'women_brand/sea_folly'
-  get 'women_brand/top_shop'
-  get 'women_brand/victorias_secret'
+  # get 'women_brand/top_shop'
+  # get 'women_brand/victorias_secret'
 
 
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'

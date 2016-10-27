@@ -17,8 +17,6 @@
     </div>
   </div>
 </div>
-
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_nav_mens_main" %>
@@ -29,37 +27,11 @@
       <%= render "templates/item_navigation_mens_subcat" %>
     </div><br>
     <h1 class="your-items">Tops</h1>
-    <div class="item_sub_cat">
+    <div class="item_sub_cat men_top_sub_cat_pad">
       <%= render "templates/top_sub_cat_mens" %>
     </div>
     <%= render "templates/horizontal_line" %>
-    <% @top.each do |top_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12 <%= top_items.sub_category %>">
-        <div class="image_div">
-          <a href="/item/<%= top_items.id %>">
-            <%= image_tag top_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if top_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(top_items.price) %></em></strike></td>
-                <td>$<%= zeros(top_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(top_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= top_items.short_description %></p>
-            <p><%= word_branding(top_items.brand) %></p>
-          </div>
-          </a>
-        </div>
-      </div>
-    <% end %>
+    <%= render "templates/all_items_display" %>
     </div>
   </div>
 </div>

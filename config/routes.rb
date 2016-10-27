@@ -8,7 +8,14 @@ Rails.application.routes.draw do
   resources :client
 
   devise_for :admins
-  resources :admin
+  resources :admin do
+    collection do
+      get 'shop_look_image'
+    end
+  end
+
+
+  get 'admin/shop_look_image'
 
   post 'admin/:id/update_staff_true' => 'admin#update_staff_true'
   post 'admin/:id/update_featured_true' => 'admin#update_featured_true'

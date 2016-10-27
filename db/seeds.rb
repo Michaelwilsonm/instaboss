@@ -4,17 +4,6 @@ User.create(email: "mike@mike.com", password: "hello123")
 User.create(email: "mike@email.com", password: "hello123")
 Admin.create(email: "josh@josh.com", password: "hello123")
 
-10.times do
-    ShopTheLookImage.create(
-        shop_look_image: img,
-        user_id: 1,
-    )
-
-    ShopTheLookItem.create(
-        shop_the_look_image_id: 103,
-        brand: "michael"
-    )
-end
 
 25.times do
 

@@ -1,10 +1,14 @@
 class AdminController < ApplicationController
-  before_action :find_item, only: [:destroy, :edit, :update]
+  before_action :find_item, only: [:destroy, :edit, :update, :show]
   before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 
   def index
     @all_items = FashionItem.all.order(sort_column + ' ' + sort_direction)
+  end
+
+  def shop_look_image
+    @shop_look_image_item = ShopTheLookImage.all
   end
 
   def destroy
@@ -25,13 +29,7 @@ class AdminController < ApplicationController
 
   def update_staff_true
     @item = FashionItem.find(params[:id])
-    puts "*" * 30
-    puts @item.staff_picks
-    puts "*" * 30
     @item.update!(staff_picks: false)
-    puts "*" * 30
-    puts @item.staff_picks
-    puts "*" * 30
      respond_to do |format|
       format.json { render json: @item }
     end

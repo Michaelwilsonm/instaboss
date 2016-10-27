@@ -32,33 +32,7 @@
       <%= render "templates/formal_mens_sub_cat" %>
     </div>
     <%= render "templates/horizontal_line" %>
-    <% @formal.each do |formal_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12 <%= formal_items.sub_category %>">
-        <div class="image_div">
-          <a href="/item/<%= formal_items.id %>">
-            <%= image_tag formal_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if formal_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(formal_items.price) %></em></strike></td>
-                <td>$<%= zeros(formal_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(formal_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= formal_items.short_description %></p>
-            <p><%= word_branding(formal_items.brand) %></p>
-          </div>
-          </a>
-        </div>
-      </div>
-    <% end %>
+    <%= render "templates/all_items_display" %>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :find_item, only: [:destroy, :edit, :update, :show]
+  before_action :find_item, only: [:destroy, :edit, :update]
   before_action :authenticate_admin!
   helper_method :sort_column, :sort_direction
 
@@ -25,6 +25,38 @@ class AdminController < ApplicationController
 
   def show
     @item = FashionItem.find(params[:id])
+  end
+
+  def update_shop_staff_true
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(staff_picks: false)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+  def update_shop_staff_false
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(staff_picks: true)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+    def update_shop_featured_true
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(featured_item: false)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+  def update_shop_featured_false
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(featured_item: true)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
   end
 
   def update_staff_true

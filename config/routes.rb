@@ -22,6 +22,11 @@ Rails.application.routes.draw do
   post 'admin/:id/update_staff_false' => 'admin#update_staff_false'
   post 'admin/:id/update_featured_false' => 'admin#update_featured_false'
 
+  post 'admin/:id/update_shop_staff_true' => 'admin#update_shop_staff_true'
+  post 'admin/:id/update_shop_featured_true' => 'admin#update_shop_featured_true'
+  post 'admin/:id/update_shop_staff_false' => 'admin#update_shop_staff_false'
+  post 'admin/:id/update_shop_featured_false' => 'admin#update_shop_featured_false'
+
   # post 'admin/featured_item'
   # post 'admin/update_staff'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005002912) do
+ActiveRecord::Schema.define(version: 20161027031210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20161005002912) do
     t.datetime "shop_look_image_updated_at"
     t.string   "gender"
     t.string   "ww_shipping"
+    t.boolean  "featured_item"
+    t.boolean  "staff_picks"
   end
 
   add_index "shop_the_look_images", ["user_id"], name: "index_shop_the_look_images_on_user_id", using: :btree

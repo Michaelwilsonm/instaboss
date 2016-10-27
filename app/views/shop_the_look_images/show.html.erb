@@ -68,6 +68,34 @@
             </a>
           </div>
 
+        <% if current_admin %>
+          <div class="admin-delete-edit">
+            <% if @shop_the_look_image.staff_picks == true %>
+              <br>
+              <div class="button_staff_path">
+                <a href="#" method="post" id="<%= @shop_the_look_image.id %>" class="staff-shop-<%= @shop_the_look_image.staff_picks %> btn btn-success">Currently IS Staff Picked<br>(click to change)</a>
+              </div>
+            <% elsif @shop_the_look_image.staff_picks == false || @shop_the_look_image.staff_picks == nil %>
+              <br>
+              <div class="button_staff_path">
+                <a href="#" method="post" id="<%= @shop_the_look_image.id %>" class="staff-shop <%= @shop_the_look_image.staff_picks %> btn btn-danger">Currently NOT Staff Picked<br>(click to change)</a>
+              </div>
+            <% end %>
+
+            <% if @shop_the_look_image.featured_item == true %>
+              <br>
+              <div class="button_staff_path">
+                <a href="#" method="post" id="<%= @shop_the_look_image.id %>" class="feature-shop-<%= @shop_the_look_image.featured_item %> btn btn-success">Currently IS Feature Picked<br>(click to change)</a>
+              </div>
+            <% elsif @shop_the_look_image.featured_item == false || @shop_the_look_image.featured_item == nil %>
+              <br>
+              <div class="button_staff_path">
+                <a href="#" method="post" id="<%= @shop_the_look_image.id %>" class="feature-shop <%= @shop_the_look_image.featured_item %> btn btn-danger">Currently NOT Feature Picked<br>(click to change)</a>
+              </div>
+              <br>
+            <% end %>
+          <% end %>
+
         <% end %>
       </div>
       <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>

@@ -13644,23 +13644,27 @@ $(document).ready(function() {
         $(".search-side").css({position: "absolute", marginTop: "65px"});
       }
 
-      if (windowScroll > 603) {
-        $(".side_nav_mens").css({position: "fixed", marginTop: "-470px"});
+      if (windowScroll > 643) {
+        $(".side_nav_mens").css({position: "fixed", marginTop: "-525px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "137px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "122px"});
       }
 
       if (windowScroll > 634){
         $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-520px"})
+        $(".main_men_feat").css({position: "fixed", marginTop: "-500px"})
       } else if (windowScroll < 634){
         $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "114px"})
+        $(".main_men_feat").css({position: "fixed", marginTop: "100"})
       }
 
-      if (windowScroll > 615){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "70px"})
-      } else if (windowScroll < 615){
+      if (windowScroll > 604){
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "114px"})
+      } else if (windowScroll < 604){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }
+
+      // console.log(windowScroll)
 
       if (windowScroll > 184){
         $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
@@ -13679,6 +13683,72 @@ $(document).ready(function() {
 
   });
 });
+$(document).on('page:change', function() {
+
+
+  $(".staff-shop-true").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently NOT Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".staff-shop").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently IS Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop-true").click(function(e){
+    console.log("feature-true")
+    e.preventDefault()
+    $(this).html("Currently NOT Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop").click(function(e){
+    console.log("feature-false")
+    e.preventDefault()
+    $(this).html("Currently IS Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+});
 $(document).ready(function() {
   $(document).on('page:change',function() {
     $(".image_div").hover(function(){
@@ -13686,6 +13756,14 @@ $(document).ready(function() {
         $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
     }, function(){
         var $description = $(".description_content")
+        $(this).find($description).stop().animate({opacity: 0}, 400);
+    });
+
+    $(".image_div_featured").hover(function(){
+        var $description = $(".description_content_featured")
+        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
+    }, function(){
+        var $description = $(".description_content_featured")
         $(this).find($description).stop().animate({opacity: 0}, 400);
     });
 

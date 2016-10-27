@@ -24,10 +24,13 @@ class MenController < ApplicationController
 
   def formal
     @formal = @items.men_formal
+
   end
 
   def accessorie
-    @accessorie = @items.men_accessorie
+    @accessorie_fashion_item = @items.men_accessorie
+    @accessorie_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
+    @accessorie = @accessorie_shop_look + @accessorie_fashion_item
   end
 
   def lifestyle

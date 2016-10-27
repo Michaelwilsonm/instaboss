@@ -10,7 +10,7 @@
           <div>
             <%= image_tag @item.item_image.url(:thumb) %>
           </div>
-            <span>Image</span>
+            <span>Image (640 x 640 pixels only)</span>
             <div>
               <input type="file" name="FashionItem[item_image]" accept="image/*" class="error">
             </div>
@@ -88,10 +88,10 @@
           </div>
 
           <div class="col-md-10">
-            <span>Recommended Retail Price ($US)</span>
-            <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
+            <span>Recommended Retail Price ($AUD)</span>
+            <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
             <div class="input-group">
-              <div class="input-group-addon">$USD</div>
+              <div class="input-group-addon">$AUD</div>
               <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
             </div>
           </div>
@@ -111,10 +111,10 @@
 
           <div class="col-md-10">
             <div id="item-sale-price">
-            <span>Sale Price ($USD)</span>
-              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($US)</label>
+            <span>Sale Price ($AUD)</span>
+              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
               <div class="input-group">
-                <div class="input-group-addon">$USD</div>
+                <div class="input-group-addon">$AUD</div>
                 <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
               </div>
             </div>

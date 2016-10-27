@@ -7,7 +7,7 @@
 
         <div class="new_fashion_item">
           <div class="col-md-10">
-            <span>Image</span>
+            <span>Image (640 x 640 pixels only)</span>
               <input type="file" id="fashion-item-image" name="FashionItem[item_image]" accept="image/*" class="error">
           </div>
 
@@ -67,8 +67,8 @@
           </div>
 
           <div class="col-md-10">
-            <span>Recommended Retail Price ($US)</span>
-            <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
+            <span>Recommended Retail Price ($AUD)</span>
+            <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
             <div class="input-group">
               <div class="input-group-addon">$</div>
               <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
@@ -84,9 +84,9 @@
           </div>
 
           <div class="col-md-10">
-            <span>Sale Price ($USD)</span>
+            <span>Sale Price ($AUD)</span>
             <div id="item-sale-price">
-              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($US)</label>
+              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>

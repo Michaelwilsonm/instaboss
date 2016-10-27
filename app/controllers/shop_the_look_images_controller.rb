@@ -36,7 +36,11 @@ class ShopTheLookImagesController < ApplicationController
 
   def destroy
     @shop_the_look_image.destroy!
-    redirect_to shop_the_look_images_path
+    if params[:from]=="admin-page"
+      redirect_to shop_look_image_admin_index_path
+    else
+      redirect_to shop_the_look_images_path
+    end
   end
 
   private

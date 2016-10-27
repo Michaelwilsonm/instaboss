@@ -7,6 +7,10 @@ class AdminController < ApplicationController
     @all_items = FashionItem.all.order(sort_column + ' ' + sort_direction)
   end
 
+  def shop_look_image
+    @shop_look_image_item = ShopTheLookImage.all
+  end
+
   def destroy
     @item.destroy
     if params[:from]=="show-page"
@@ -23,15 +27,41 @@ class AdminController < ApplicationController
     @item = FashionItem.find(params[:id])
   end
 
+  def update_shop_staff_true
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(staff_picks: false)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+  def update_shop_staff_false
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(staff_picks: true)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+    def update_shop_featured_true
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(featured_item: false)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
+  def update_shop_featured_false
+    @shop_look_image = ShopTheLookImage.find(params[:id])
+    @shop_look_image.update!(featured_item: true)
+     respond_to do |format|
+      format.json { render json: @shop_look_image }
+    end
+  end
+
   def update_staff_true
     @item = FashionItem.find(params[:id])
-    puts "*" * 30
-    puts @item.staff_picks
-    puts "*" * 30
     @item.update!(staff_picks: false)
-    puts "*" * 30
-    puts @item.staff_picks
-    puts "*" * 30
      respond_to do |format|
       format.json { render json: @item }
     end

@@ -33,33 +33,7 @@
       <%= render "templates/long_sub_cat_mens" %>
     </div>
     <%= render "templates/horizontal_line" %>
-      <% @long.each do |long_items| %>
-        <div class="box col-md-4 col-sm-6 col-xs-12 <%= long_items.sub_category %>">
-          <div class="image_div">
-            <a href="/item/<%= long_items.id %>">
-              <%= image_tag long_items.item_image.url(:medium) %>
-            <div class="description_content">
-              <% if long_items.sale == true %>
-              <table>
-                <tr class="specials_table">
-                  <td><strike><em>$<%= zeros(long_items.price) %></em></strike></td>
-                  <td>$<%= zeros(long_items.sale_price) %></td>
-                </tr>
-              </table>
-              <% else %>
-              <table>
-                <tr class="normal_table">
-                  <td>$<%= zeros(long_items.price) %></td>
-                </tr>
-              </table>
-              <% end %>
-              <p><%= long_items.short_description %></p>
-              <p><%= word_branding(long_items.brand) %></p>
-            </div>
-            </a>
-          </div>
-        </div>
-      <% end %>
+    <%= render "templates/all_items_display" %>
     </div>
   </div>
 </div>

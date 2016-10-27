@@ -3,7 +3,7 @@
   <div class="new_look_item">
     <div class="col-md-12">
       <div class="col-md-2">
-        <span>Image</span>
+        <span>Image (640 x 640 pixels only)</span>
         <% if request.path === "/shop_the_look_images/" + @shop_the_look_image.id.to_s + "/edit" %>
           <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
           <%= f.file_field :shop_look_image %>

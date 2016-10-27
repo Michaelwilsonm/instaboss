@@ -351,11 +351,9 @@
 
   .item_sub_cat{
     margin: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     border-bottom: 1px solid;
   }
-
-
 
   .sale_women{
     margin: 0px;
@@ -371,9 +369,28 @@
 
   .sorting_class{
      li{
-      font-size: 27px;
+      font-size: 45px;
       margin: 5px 20px 0px 20px;
     }
+  }
+
+  .sorting_class_womens{
+     li{
+      font-size: 45px;
+      margin: 5px 20px 0px 20px;
+    }
+  }
+
+  .women_sub_cat_acc_pad {
+    padding-bottom: 140px;
+  }
+
+  .men_shoe_sub_cat_pad {
+    padding-bottom: 140px;
+  }
+
+  .men_top_sub_cat_pad {
+    padding-bottom: 140px;
   }
 
   .specials_table > td:nth-child(2){
@@ -541,10 +558,89 @@
   }
 
   .womens_top {
-    padding-bottom: 90px;
+    padding-bottom: 130px;
     li{
       padding-left: 16px;
       padding-right: 16px;
     }
+  }
+  .box_featured{
+    width: 980px !important;
+    position: relative;
+    left: 0px;
+  }
+
+  .image_div_featured{
+    position: relative;
+    width: 940px;
+    height: 940px;
+    margin: 10px 5px 10px 5px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: #eee;
+    a{
+      text-decoration: none !important;
+    }
+  }
+
+  .image_div_featured img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 980px;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+  }
+
+  .brands_image_div_featured{
+    border-color: #fff;
+      img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100px;
+        width: auto;
+        -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+      }
+  }
+
+  .description_content_featured{
+    color: white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: "Calisto MT Regular";
+    p{
+      font-size: 65px;
+      position: relative;
+      top: 600px;
+    }
+  }
+
+  .specials_table_featured>td{
+    color: white;
+    padding: 0px 34px 0px 34px;
+  }
+
+  .specials_table_featured>td:nth-child(1){
+    font-size: 50px;
+    margin-left: 5px;
+  }
+
+  .specials_table_featured>td:nth-child(2){
+    font-size: 95px;
+  }
+
+  .normal_table_featured>td{
+    padding: 0px 34px 0px 34px;
+    color: white;
+    font-size: 95px
   }
 }

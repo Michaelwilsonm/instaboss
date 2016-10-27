@@ -17,8 +17,6 @@
     </div>
   </div>
 </div>
-
-
 <div class="menu-side">
   <div class="margin_menu_side"></div>
   <%= render "templates/side_navigation_womens" %>
@@ -33,33 +31,7 @@
       <%= render "templates/shoe_sub_cat" %>
     </div>
     <%= render "templates/horizontal_line" %>
-    <% @shoe.each do |shoe_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12 <%= shoe_items.sub_category %>">
-        <div class="image_div">
-          <a href="/item/<%= shoe_items.id %>">
-            <%= image_tag shoe_items.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if shoe_items.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(shoe_items.price) %></em></strike></td>
-                <td>$<%= zeros(shoe_items.sale_price) %></td>
-              </tr>
-            </table>
-            <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= zeros(shoe_items.price) %></td>
-              </tr>
-            </table>
-            <% end %>
-            <p><%= shoe_items.short_description %></p>
-            <p><%= word_branding(shoe_items.brand) %></p>
-          </div>
-          </a>
-        </div>
-      </div>
-    <% end %>
+    <%= render "templates/all_items_display" %>
     </div>
   </div>
 </div>

@@ -14,7 +14,7 @@ $(document).ready(function() {
       if (windowScroll > 643) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-525px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "122px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "127px"});
       }
 
       if (windowScroll > 634){
@@ -26,7 +26,7 @@ $(document).ready(function() {
       }
 
       if (windowScroll > 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "114px"})
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "120px"})
       } else if (windowScroll < 604){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }

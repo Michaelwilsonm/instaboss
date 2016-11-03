@@ -40,7 +40,7 @@
       <div class="image-show-box">
         <%= image_tag @item.item_image.url(:original) %>
       </div>
-      <div class="description-show-box">
+      <div class="description-show-box scrollable-box">
         <h3><em><%= @item.short_description %></em></h3>
         <% if all_men_brands_array.include?(@item.brand) && @item.sex == "Mens" %>
           <p><a href="<%= link_to_brand_page(@item.brand, @item.sex) %> "><em><%= word_branding(@item.brand) %></em></a></p>
@@ -103,3 +103,4 @@
     </div>
   </div>
 </div>
+<br><br><br><br><br><br><br>

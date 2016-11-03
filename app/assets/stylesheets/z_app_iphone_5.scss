@@ -7,6 +7,15 @@
     display: none;
   }
 
+  .men_shoe_sub_cat_pad{
+    .sorting_class{
+      li{
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
+
   .description-shop-the-look-show-box{
     right: 130px;
     margin-top: -20px;
@@ -368,13 +377,6 @@
   }
 
   .sorting_class{
-     li{
-      font-size: 45px;
-      margin: 5px 20px 0px 20px;
-    }
-  }
-
-  .sorting_class_womens{
      li{
       font-size: 45px;
       margin: 5px 20px 0px 20px;

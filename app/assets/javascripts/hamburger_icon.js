@@ -13,6 +13,7 @@ $(document).ready(function() {
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
         $(".mobile_container").css({display: "block"})
+        $(".mobile_container_show").css({display: "block"})
         $(".hamburger-slider").animate({
           right: "1000px"
         },300, function(){
@@ -23,6 +24,7 @@ $(document).ready(function() {
           right: "-5px"
         },300, function(){
           $(".mobile_container").css({display: "none"})
+          $(".mobile_container_show").css({display: "none"})
         })
       }
     })

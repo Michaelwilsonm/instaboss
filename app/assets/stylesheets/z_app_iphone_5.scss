@@ -3,15 +3,13 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-  // .scrollable-box::-webkit-scrollbar {
-    // display: none;
-  // }
-
   .scrollable-box {
-    // height: 100vh;
     overflow-y: visible;
     overflow-x: visible ;
     float: none;
+    h3{
+      margin-top: 15px;
+    }
   }
 
 .image-show-box{

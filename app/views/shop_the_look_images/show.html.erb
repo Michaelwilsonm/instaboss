@@ -34,13 +34,13 @@
     <%= render "templates/item_navigation_womens_subcat" %>
   </div>
 <% end %>
-<div class="container">
+<div class="container mobile_container_show">
   <div class="row">
     <div class="show-box">
       <div class="image-show-box">
         <%= image_tag @shop_the_look_image.shop_look_image.url(:original) %>
       </div>
-      <div class="description-shop-the-look-show-box">
+      <div class="description-shop-the-look-show-box scrollable-box">
         <% @shop_the_look_image.shop_the_look_items.each do |shop_the_look_items| %>
 
           <h2 class="shop-the-look-description"><em><%= shop_the_look_items.description %></em></h2>
@@ -105,3 +105,5 @@
     </div>
   </div>
 </div>
+<br><br><br><br><br><br><br>
+

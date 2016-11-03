@@ -13579,6 +13579,7 @@ $(document).ready(function() {
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
         $(".mobile_container").css({display: "block"})
+        $(".mobile_container_show").css({display: "block"})
         $(".hamburger-slider").animate({
           right: "1000px"
         },300, function(){
@@ -13589,6 +13590,7 @@ $(document).ready(function() {
           right: "-5px"
         },300, function(){
           $(".mobile_container").css({display: "none"})
+          $(".mobile_container_show").css({display: "none"})
         })
       }
     })
@@ -13647,7 +13649,7 @@ $(document).ready(function() {
       if (windowScroll > 643) {
         $(".side_nav_mens").css({position: "fixed", marginTop: "-525px"});
       } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "122px"});
+        $(".side_nav_mens").css({position: "absolute", marginTop: "127px"});
       }
 
       if (windowScroll > 634){
@@ -13659,7 +13661,7 @@ $(document).ready(function() {
       }
 
       if (windowScroll > 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "114px"})
+        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "120px"})
       } else if (windowScroll < 604){
         $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
       }
@@ -13683,6 +13685,72 @@ $(document).ready(function() {
 
   });
 });
+$(document).on('page:change', function() {
+
+
+  $(".staff-shop-true").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently NOT Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".staff-shop").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently IS Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop-true").click(function(e){
+    console.log("feature-true")
+    e.preventDefault()
+    $(this).html("Currently NOT Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop").click(function(e){
+    console.log("feature-false")
+    e.preventDefault()
+    $(this).html("Currently IS Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+});
 $(document).ready(function() {
   $(document).on('page:change',function() {
     $(".image_div").hover(function(){
@@ -13690,6 +13758,14 @@ $(document).ready(function() {
         $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
     }, function(){
         var $description = $(".description_content")
+        $(this).find($description).stop().animate({opacity: 0}, 400);
+    });
+
+    $(".image_div_featured").hover(function(){
+        var $description = $(".description_content_featured")
+        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
+    }, function(){
+        var $description = $(".description_content_featured")
         $(this).find($description).stop().animate({opacity: 0}, 400);
     });
 

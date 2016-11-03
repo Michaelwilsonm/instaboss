@@ -3,6 +3,28 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  // .scrollable-box::-webkit-scrollbar {
+    // display: none;
+  // }
+
+  .scrollable-box {
+    // height: 100vh;
+    overflow-y: visible;
+    overflow-x: visible ;
+    float: none;
+  }
+
+.image-show-box{
+  float: none;
+  img{
+    width: 430px;
+  }
+}
+
+.show-box{
+  border: none;
+}
+
   .mens-main-menu-search{
     display: none;
   }
@@ -17,10 +39,6 @@
   }
 
   .description-shop-the-look-show-box{
-    right: 130px;
-    margin-top: -20px;
-    margin-left: 400px;
-    margin-right: 50px;
     h2{
       text-align: center;
     }
@@ -106,7 +124,7 @@
     border: 65px solid black;
     border-width: 5px 5px 0 0;
     transform: rotate(225deg);
-    margin-top: 100px;
+    margin-top: 250px;
     margin-left: 350px;
   }
 
@@ -285,7 +303,7 @@
 
   .description-shop-the-look-show-box{
     position: relative;
-    margin: 20px 0px 0px 350px;
+    margin: 20px 0px 0px 160px;
     text-align: center;
     display: block;
     display: inline-block;

@@ -149,6 +149,11 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 
+  .description_content_featured p {
+    top: 410px;
+    font-size: 35px;
+  }
+
   .sorting_class {
     width: 560px
   }
@@ -293,11 +298,7 @@ and (orientation : portrait) {
     height: 320px;
     border-color: #ccc;
   }
-
-
 }
-
-
 
 
 
@@ -306,6 +307,11 @@ and (orientation : portrait) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
+
+  .description_content_featured p {
+    top: 185px;
+    font-size: 25px;
+  }
 
   .womens_top_pad{
     height: 60px;
@@ -376,7 +382,8 @@ and (orientation : landscape) {
   }
 
   .description_content p{
-    top: 215px;
+    top: 185px;
+    font-size: 25px;
   }
 
   .box{

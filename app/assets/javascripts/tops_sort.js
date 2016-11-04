@@ -10,6 +10,7 @@ $(document).ready(function() {
       if (box.hasClass(subCategory)){
         box.css({"display": "none"});
         $("." + subCategory).slideDown(0);
+        console.log($("." + subCategory))
       } else if (subCategory == "All"){
         box.css({"display": "none"});
         box.slideDown(0);

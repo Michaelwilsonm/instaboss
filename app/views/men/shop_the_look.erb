@@ -25,11 +25,13 @@
     <div class="item_navigation">
       <%= render "templates/item_navigation_mens_subcat" %>
     </div>
-    <h1 class="your-items mob-ul">Shop The Look</h1>
-    <!-- this is where the sub cat for items was  -->
+    <h1 class="your-items">Shop The Look</h1>
+    <div class="item_sub_cat">
+      <%= render "templates/shop_the_look_mens_sub_cat" %>
+    </div>
     <%= render "templates/horizontal_line" %>
     <% @shop_the_look_mens.each do |shop_the_look_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12">
+      <div class="box col-md-4 col-sm-6 col-xs-12 <%= shop_the_look_items.describe_the_look %>">
         <div class="image_div">
           <a href="/shop_the_look_images/<%= shop_the_look_items.id %>">
             <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>

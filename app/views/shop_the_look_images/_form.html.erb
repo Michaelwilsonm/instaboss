@@ -24,9 +24,9 @@
 
   <div class="col-md-12">
     <div class="col-md-2">
-      <span>Ships Worldwide From</span>
-      <% ships_from = [['U.S.A'],["Canada"],["UK / Europe"],["Asia"],["NZ / AUS"]] %>
-      <%= f.select "ww_shipping", options_for_select(ships_from, @shop_the_look_image.ww_shipping), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
+      <span>Describe the Look</span>
+      <% describe_options = [['Casual'],["Going Out"],["Working Out"],["Other"]] %>
+      <%= f.select "describe_the_look", options_for_select(describe_options, @shop_the_look_image.describe_the_look), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
     </div>
   </div>
 

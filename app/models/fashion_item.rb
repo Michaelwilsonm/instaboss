@@ -7,6 +7,10 @@ class FashionItem < ActiveRecord::Base
     self.brand = brand.split.map(&:downcase).join(' ')
   end
 
+  def self.more_you_might_like type_of_item, sex_of_item
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = " + "'" + sex_of_item + "'" + " AND category = " + "'" + type_of_item + "'" + " ORDER BY RANDOM() LIMIT 6")
+  end
+
   def self.sales
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sale = true ORDER BY created_at DESC")
   end

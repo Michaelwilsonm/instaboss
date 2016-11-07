@@ -1,0 +1,31 @@
+<div class="search_bar">
+    <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container mobile_container"  style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div><br>
+    <h1 class="your-items">Blog</h1>
+    <!-- <%= render "templates/horizontal_line" %> -->
+
+    <a href="/men_brand/adidas">
+      <div class="box col-md-4 col-sm-6 col-xs-12">
+        <div class="image_div brands_image_div">
+          <img src="/assets/adidas_v2.jpg" border="0" alt="adidas">
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>

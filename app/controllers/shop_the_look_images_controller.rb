@@ -1,5 +1,6 @@
 class ShopTheLookImagesController < ApplicationController
   before_action :find_shop_look_image, only: [:show, :edit, :destroy, :update]
+  before_action :all_shop_look_image, only: [:show]
 
   def index
     @users_items = current_user.shop_the_look_images.reverse
@@ -18,10 +19,6 @@ class ShopTheLookImagesController < ApplicationController
     end
   end
 
-  def show
-    session[:my_previous_url] = URI(request.referer || '').path
-    @back_url = session[:my_previous_url]
-  end
 
   def edit
   end
@@ -43,7 +40,22 @@ class ShopTheLookImagesController < ApplicationController
     end
   end
 
+  def show
+    session[:my_previous_url] = URI(request.referer || '').path
+    @back_url = session[:my_previous_url]
+    if @shop_the_look_image.gender == "Mens"
+      @more_you_might_like = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
+    elsif @shop_the_look_image.gender == "Womens"
+      @more_you_might_like = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
+    end
+
+  end
+
   private
+
+    def all_shop_look_image
+      @all_shop_the_look_image = ShopTheLookImage.all
+    end
 
     def shop_look_image_params
       params.require(:shop_the_look_image).permit(:gender, :describe_the_look, :shop_look_image, :ww_shipping, shop_the_look_items_attributes: [:id, :_destroy, :description, :brand, :sale_price, :sub_category, :category, :price, :sale, :unique_affiliate_url, :percentage_off, :shipped_from, :shop_the_look_image_id])

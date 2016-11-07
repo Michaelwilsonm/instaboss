@@ -8,7 +8,7 @@ class ShopTheLookImage < ActiveRecord::Base
   accepts_nested_attributes_for :shop_the_look_items, reject_if: :all_blank,allow_destroy: true
 
   def self.more_items(gender)
-    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = " +"'" + gender + "'" + " ORDER BY created_at DESC")
+    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE gender = " +"'" + gender + "'" + " ORDER BY RANDOM() LIMIT 6")
   end
 
   def self.shop_the_look_women

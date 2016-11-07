@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   end
 
 
+  get 'blog/index'
+
+
   get 'admin/shop_look_image'
 
   post 'admin/:id/update_staff_true' => 'admin#update_staff_true'

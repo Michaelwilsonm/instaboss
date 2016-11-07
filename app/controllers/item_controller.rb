@@ -1,5 +1,6 @@
 class ItemController < ApplicationController
   before_action :find_item, only: [:destroy, :show, :edit, :update]
+  before_action :all_items, only: [:show]
   before_action :require_permission, only: [:edit]
   before_action :authenticate_user!, only: [:destroy, :edit, :update, :create]
   helper_method :sort_column, :sort_direction
@@ -48,9 +49,18 @@ class ItemController < ApplicationController
   def show
     session[:my_previous_url] = URI(request.referer || '').path
     @back_url = session[:my_previous_url]
+    if @item.sex == "Mens"
+      @more_you_might_like = @all.more_you_might_like(@item.category, @item.sex)
+    elsif @item.sex == "Womens"
+      @more_you_might_like = @all.more_you_might_like(@item.category, @item.sex)
+    end
   end
 
   private
+
+    def all_items
+      @all = FashionItem.all
+    end
 
     def require_permission
       if current_user != FashionItem.find(params[:id]).user

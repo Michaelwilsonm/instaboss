@@ -40,6 +40,7 @@
       <div class="image-show-box">
         <%= image_tag @item.item_image.url(:original) %>
       </div>
+
       <div class="description-show-box scrollable-box">
         <h3><em><%= @item.short_description %></em></h3>
         <% if all_men_brands_array.include?(@item.brand) && @item.sex == "Mens" %>
@@ -93,18 +94,18 @@
               </div>
               <br>
             <% end %>
+          </div>
         <% end %>
+        <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>
       </div>
-      <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1"></div></a>
-      <br>
-      <br>
-      <br>
-      <br>
     </div>
   </div>
 </div>
 <br>
 
+<!-- <div>
+  FUCK A BIG DICOKSMKADJHSADAS
+</div> -->
 <div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
     <h1 class="your-items mob-ul">More You Might Like...</h1>

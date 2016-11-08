@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
 
   get 'blog/index'
+  get 'blog/mvp_blog'
+  get 'blog/jaf_blog'
+  get 'blog/retromarine_blog'
 
 
   get 'admin/shop_look_image'

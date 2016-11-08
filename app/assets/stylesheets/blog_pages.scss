@@ -1,0 +1,20 @@
+.blog-header{
+  font-family: "Calisto MT Regular";
+  text-align: center;
+}
+
+.photo-blog-container{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  p{
+    margin-top: 20px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

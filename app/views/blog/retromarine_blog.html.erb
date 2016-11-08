@@ -1,0 +1,38 @@
+<div class="search_bar">
+    <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container mobile_container"  style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div><br>
+  </div>
+</div>
+<div class="photo-blog-container ">
+  <h1 class="blog-header">Spanish Vacation Swimwear by Retro Marine</h1>
+  <img src="/assets/retro_blog/retro_3.jpg" border="0" alt="mvp_bag" class="img-responsive center-block">
+  <p>At retromarine, our top priority is to capture our customer’s imagination by demanding the highest standards of ourselves and the materials we work with. Founded and based in New York City, our distinctive, handmade trunks are crafted for the modern man who values passion and confidence in every facet of his life. they are perfect aesthetics for the mantelpiece or pool room.</p>
+  <img src="/assets/retro_blog/retro_7.jpg" border="0" alt="retro_7" class="img-responsive center-block">
+  <img src="/assets/retro_blog/retro_4.jpg" border="0" alt="retro_4" class="img-responsive center-block">
+  <img src="/assets/retro_blog/retro_2.jpg" border="0" alt="retro_2" class="img-responsive center-block">
+  <img src="/assets/retro_blog/retro_8.jpg" border="0" alt="retro_8" class="img-responsive center-block">
+  <p class="shop-more-blog">Shop more from Retromarine</p>
+</div>
+
+<div class="show-button">
+  <a href="/men_brand/retro_marine" target="_blank">
+    <img src="/assets/shop now.png">
+  </a>
+</div>
+
+  <footer style="margin-bottom: 100px;"></footer>

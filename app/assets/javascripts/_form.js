@@ -111,17 +111,40 @@ $(document).ready(function() {
       }
     });
 
-    $("#item-on-sale").change(function(){
-      if ($("#item-on-sale").val() === 'true' ) {
-        $('#item-sale-price').show();
-      } else if ($("#item-on-sale").val() === 'false' ) {
-        $('#item-sale-price').hide();
+
+    var toggleSalePriceDuration = (function() {
+      var $sale = $("#item-on-sale");
+      var $saleDuration = $("#item-sale-duration");
+      var $salePrice = $("#item-sale-price");
+
+      $sale.change(hideShowFields);
+      displaySaleFields()
+
+      function hideShowFields() {
+        if ($sale.val() === 'true') {
+          showFields();
+        } else if ($sale.val() === 'false') {
+          hideFields();
+        }
+      }
+
+      function showFields(){
+        $saleDuration.show();
+        $salePrice.show();
+      }
+
+      function hideFields(){
+        $saleDuration.hide();
+        $salePrice.hide();
+      }
+
+      function displaySaleFields() {
+        if ($sale.val() === 'false') {
+          hideFields()
+        }
       }
     });
-
-    if ($("#item-on-sale").val() === 'false' ) {
-      $('#item-sale-price').hide();
-    }
+    toggleSalePriceDuration();
 
   });
 });

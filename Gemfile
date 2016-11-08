@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'cocoon'
 gem 'turbolinks'
+gem 'whenever', :require => false
 gem 'jbuilder', '~> 2.0'
 gem "wice_grid", '3.6.0.pre4'
 gem 'font-awesome-sass',  '~> 4.3'

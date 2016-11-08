@@ -83,13 +83,26 @@
             </select>
           </div>
 
-          <div class="col-md-10">
-            <span>Sale Price ($AUD)</span>
-            <div id="item-sale-price">
+          <div id="item-sale-price">
+            <div class="col-md-10">
+              <span>Sale Price ($AUD)</span>
               <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
+              </div>
+            </div>
+          </div>
+
+          <div id="item-sale-duration">
+            <div class="col-md-10">
+              <span>Sale Duration</span>
+              <div class="input-group">
+              <select class="form-control input-sm" id='item-on-sale' name="FashionItem[duration]">
+                <option value="<%= DateTime.now + 7%>">1 week</option>
+                <option value="<%= DateTime.now + 14%>">2 weeks</option>
+                <option value="<%= DateTime.now + 21%>">3 weeks</option>
+              </select>
               </div>
             </div>
           </div>

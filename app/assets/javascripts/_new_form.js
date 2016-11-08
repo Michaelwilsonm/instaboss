@@ -60,23 +60,5 @@ $(document).ready(function() {
           });
         }
     });
-
-    //item on sale id changes
-
-    $("#item-on-sale").change(function(){
-      if ($("#item-on-sale").val() === 'true' ) {
-        $('#item-sale-price').show();
-        //show the sale price form
-      } else if ($("#item-on-sale").val() === 'false' ) {
-        $('#item-sale-price').hide();
-      }
-      //else hide it
-    });
-
-    //hide it at the beginning of page
-    if ($("#item-on-sale").val() === 'false' ) {
-      $('#item-sale-price').hide();
-    }
-
   });
 });

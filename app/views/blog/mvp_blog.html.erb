@@ -1,0 +1,42 @@
+<div class="search_bar">
+    <%= render "templates/men_side_search_bar" %>
+</div>
+<% if current_admin %>
+  <%= render "templates/admin_navigation" %>
+<% else %>
+  <%= render "templates/navigation" %>
+  <%= render "templates/navigation_mobile_mens" %>
+<% end %>
+<%= render "/templates/mobile_navigation_sliding_div_mens" %>
+<div class="item_navigation_top_womens">
+  <%= render "templates/item_navigation_mens" %>
+</div>
+<div class="container mobile_container"  style="padding: 0px;">
+  <div class="row" style="margin: 0px; padding: 0px;">
+    <div class="item_navigation">
+      <%= render "templates/item_navigation_mens_subcat" %>
+    </div><br>
+  </div>
+</div>
+<div class="photo-blog-container ">
+  <h1 class="blog-header">Designer Leather Vintage Sporting Gear by The Modest Vintage Player</h1>
+  <img src="/assets/mvp_blog/bbag1.jpg" border="0" alt="mvp_bag" class="img-responsive center-block">
+  <p>The Modest Vintage Player was created to cater for the discerning recreational sports dabbler with an eye for quality and class.</p>
+  <p>Inspired through a fascination in the history of sport and a passion for traditional sports and recreation from around the world The MVP set out to design and re-create vintage sporting masterpieces using the timeless materials of leather and wood with a touch of class.</p>
+  <p>We strive to create traditional sporting accessories with vintage qualities with our products suited as much for practical use as they are perfect aesthetics for the mantelpiece or pool room.</p>
+  <img src="/assets/mvp_blog/mvp_ball.jpg" border="0" alt="mvp_ball" class="img-responsive center-block">
+  <img src="/assets/mvp_blog/mvp_ball_3.jpg" border="0" alt="mvp_ball_3" class="img-responsive center-block">
+  <img src="/assets/mvp_blog/mvp_glove_2.jpg" border="0" alt="mvp_glove_2" class="img-responsive center-block">
+  <img src="/assets/mvp_blog/mvp_glove.jpg" border="0" alt="mvp_glove" class="img-responsive center-block">
+  <img src="/assets/mvp_blog/mvp_bag_2.jpg" border="0" alt="mvp_bag_2" class="img-responsive center-block">
+  <img src="/assets/mvp_blog/mvp_rugby.jpg" border="0" alt="mvp_rugby" class="img-responsive center-block">
+  <p class="shop-more-blog">Shop more from The Modest Vintage Player</p>
+</div>
+
+<div class="show-button">
+  <a href="/men_brand/the_modest_vintage_player" target="_blank">
+    <img src="/assets/shop now.png">
+  </a>
+</div>
+
+<footer style="margin-bottom: 100px;"></footer>

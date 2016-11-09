@@ -3,6 +3,13 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .sticky-nav-mens{
+    display: none;
+  }
+  .banner-nav-space{
+    display: none;
+  }
+
   .image_bee{
     width: 70px;
     height: 70px;

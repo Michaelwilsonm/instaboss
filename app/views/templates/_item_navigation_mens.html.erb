@@ -3,37 +3,39 @@
 <% mens_brands = {'Adidas Originals': '/men_brand/adidas', 'Bronze Snake': '/men_brand/bronze_snake', 'I Love Ugly': '/men_brand/i_love_ugly', 'Just Another Fisherman': '/men_brand/just_another_fisherman', 'MJ Bale': '/men_brand/mj_bale', 'Moreporks': '/men_brand/morepork', 'New Balance': '/men_brand/new_balance','retromarine': '/men_brand/retro_marine', 'Sunday Somewhere': '/men_brand/sunday_somewhere', 'The Modest Vintage Player': '/men_brand/the_modest_vintage_player', 'Windsor Smith': '/men_brand/windsor_smith'} %>
 
 
-<div class="container">
-  <div class="row">
-    <div class="mens_top">
-      <%= link_to "HOME", men_path%>
-      <%= link_to "ABOUT", men_about_path %>
-      <div class="item_nav_top">
-        <%= link_to "SHOP BY",  class: "shop_by" %>
-        <div class="item_drop_shop_by" id="my_drop_down">
-          <% mens_categories.each do |keys, values| %>
-            <%= link_to keys, values %>
-          <% end %>
-        </div>
-      </div>
-        <%= link_to "ON SALE", site_sale_mens_path %>
-      <div class="item_nav_top_brand">
-        <%= link_to "BRANDS", men_brand_path, class: "shop_by_brand" %>
-        <div class="item_drop_shop_by_brand" id="my_drop_down_brand">
-          <% mens_brands.each do |keys, values| %>
-            <%= link_to keys, values %>
-          <% end %>
-        <%= link_to "ALL BRANDS", men_brand_path %>
-        </div>
-      </div>
-        <%= link_to "BLOG", blog_index_path %>
-        <%= link_to "CONTACT", men_contact_path %>
-        <div class="instagram_logo">
-          <a href="https://www.instagram.com/instaboss.mens/" target="_blank">
-            <img src="../assets/instagram_black.jpg" alt="insta">
-          </a>
-        </div>
+<div class="sticky-nav-mens">
+  <div class="image-b">
+    <img src="assets/BEEEE.jpg" alt="none">
+    <span class="instaboss-logo-nav">
+      <p><i>INSTA</i></p>
+      <p>B O S S</p>
+    </span>
+  </div>
+  <div class="all-nav-link">
+    <%= link_to "HOME", men_path%>
+    <%= link_to "MENS", blog_index_path %>
+    <%= link_to "WOMENS", blog_index_path %>
+    <div class="item_nav_top">
+      <%= link_to "SHOP BY",  class: "shop_by" %>
+      <div class="item_drop_shop_by" id="my_drop_down">
+        <% mens_categories.each do |keys, values| %>
+          <%= link_to keys, values %>
+        <% end %>
       </div>
     </div>
+    <%= link_to "SALE", site_sale_mens_path %>
+    <div class="item_nav_top_brand">
+      <%= link_to "BRANDS", men_brand_path, class: "shop_by_brand" %>
+      <div class="item_drop_shop_by_brand">
+        <% mens_brands.each do |keys, values| %>
+          <%= link_to keys, values %>
+        <% end %>
+      <%= link_to "ALL BRANDS", men_brand_path %>
+      </div>
+    </div>
+    <%= link_to "CONTACT", men_contact_path %>
+    <%= link_to "ABOUT", men_about_path %>
+    <%= link_to "BLOG", blog_index_path %>
   </div>
 </div>
+<div class="banner-nav-space"></div>

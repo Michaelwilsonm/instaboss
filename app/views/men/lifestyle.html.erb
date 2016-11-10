@@ -1,40 +1,23 @@
-<div class="search_bar">
-  <%= render "templates/men_side_search_bar" %>
-</div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_mens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_mens" %>
-<div class="item_navigation_top_mens">
-  <%= render "templates/item_navigation_mens" %>
-</div>
-<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/item_navigation_mens" %>
+
+<div class="lifestyle_hero_mens"></div>
+<!-- <div class="desktop-categories"><h1>LifeStyle</h1></div> -->
+
+<div class="container mobile_container">
   <div class="row">
-    <div class="life_style_hero_mens">
-    </div>
-  </div>
-</div>
-<div class="menu-side">
-  <div class="margin_menu_side"></div>
-  <%= render "templates/side_nav_mens_main" %>
-</div>
-<div class="container mobile_container" style="padding: 0px;">
-  <div class="row" style="margin: 0px; padding: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_mens_subcat" %>
-    </div><br>
-    <h1 class="your-items">Lifestyle</h1>
+
+    <h1 class="your-items">LifeStyle</h1>
+
     <div class="item_sub_cat">
-      <%= render "templates/lifestyle_mens_sub_cat" %>
+      <%= render "templates/lifestyle_sub_cat_mens" %>
     </div>
+
     <%= render "templates/horizontal_line" %>
-    <%= render "templates/all_items_display" %>
-    </div>
+    <%= render "templates/all_items_display"  %>
+
   </div>
 </div>
-
-
 <%= render 'templates/mail_chimp_form_mens' %>

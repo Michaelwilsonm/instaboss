@@ -43,7 +43,10 @@
   a{
     color: black;
     font-family: "Calisto MT Regular";
-    padding: 10px 20px 10px 20px;
+    padding: 10px 30px 10px 30px;
+    &:hover{
+      color: black;
+    }
   }
 }
 
@@ -80,13 +83,14 @@
   background-color: white;
   min-width: 180px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.8);
   margin-top: 8px;
   a{
     text-align: left;
     font-family: "Calisto MT Regular";
     color: black;
-    padding: 5px 5px;
+    padding: 4px 5px;
+    margin: 0px 5px 0px 5px;
     text-decoration: none;
     display: block;
   }
@@ -105,8 +109,40 @@
     text-align: left;
     font-family: "Calisto MT Regular";
     color: black;
-    padding: 5px 5px;
+    padding: 4px 5px;
     text-decoration: none;
     display: block;
   }
+}
+
+.arrow-down-shop {
+  position: relative;
+  left: 95px;
+  bottom: 12px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+}
+
+.arrow-down-brand {
+  position: relative;
+  left: 95px;
+  bottom: 12px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  }
+
+.arrow-active{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }

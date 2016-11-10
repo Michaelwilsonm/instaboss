@@ -14,4 +14,13 @@ $(document).ready(function() {
     });
 
   });
+
+
+  $(".item_nav_top").hover(function(){
+    $(".arrow-down-shop").toggleClass("arrow-active")
+  })
+
+  $(".item_nav_top_brand").hover(function(){
+    $(".arrow-down-brand").toggleClass("arrow-active")
+  })
 });

@@ -36,6 +36,9 @@
     padding: 2px;
     a{
       color: black;
+      &:hover{
+        color: black;
+      }
     }
   }
 }

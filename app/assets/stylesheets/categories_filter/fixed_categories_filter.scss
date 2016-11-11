@@ -1,0 +1,32 @@
+.categorise{
+  position: absolute;
+  margin-left: 30px;
+  width: 130px;
+  // font-family: "Calisto MT Regular";
+  ul{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 15px;
+    font-size: 15px;
+    li{
+      cursor: pointer;
+    }
+  }
+  ul>li:before {
+    display: inline-block;
+    content: "-";
+    width: 15px;
+  }
+  h1{
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
+.all-categories{
+  border-bottom: 1px solid;
+}
+
+.categorie-sort{
+  font-weight: bold;
+}

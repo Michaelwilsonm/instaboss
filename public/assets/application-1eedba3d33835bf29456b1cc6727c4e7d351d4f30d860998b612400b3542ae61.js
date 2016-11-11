@@ -13225,17 +13225,40 @@ $(document).ready(function() {
       }
     });
 
-    $("#item-on-sale").change(function(){
-      if ($("#item-on-sale").val() === 'true' ) {
-        $('#item-sale-price').show();
-      } else if ($("#item-on-sale").val() === 'false' ) {
-        $('#item-sale-price').hide();
+
+    var toggleSalePriceDuration = (function() {
+      var $sale = $("#item-on-sale");
+      var $saleDuration = $("#item-sale-duration");
+      var $salePrice = $("#item-sale-price");
+
+      $sale.change(hideShowFields);
+      displaySaleFields()
+
+      function hideShowFields() {
+        if ($sale.val() === 'true') {
+          showFields();
+        } else if ($sale.val() === 'false') {
+          hideFields();
+        }
+      }
+
+      function showFields(){
+        $saleDuration.show();
+        $salePrice.show();
+      }
+
+      function hideFields(){
+        $saleDuration.hide();
+        $salePrice.hide();
+      }
+
+      function displaySaleFields() {
+        if ($sale.val() === 'false') {
+          hideFields()
+        }
       }
     });
-
-    if ($("#item-on-sale").val() === 'false' ) {
-      $('#item-sale-price').hide();
-    }
+    toggleSalePriceDuration();
 
   });
 });
@@ -13316,24 +13339,6 @@ $(document).ready(function() {
           });
         }
     });
-
-    //item on sale id changes
-
-    $("#item-on-sale").change(function(){
-      if ($("#item-on-sale").val() === 'true' ) {
-        $('#item-sale-price').show();
-        //show the sale price form
-      } else if ($("#item-on-sale").val() === 'false' ) {
-        $('#item-sale-price').hide();
-      }
-      //else hide it
-    });
-
-    //hide it at the beginning of page
-    if ($("#item-on-sale").val() === 'false' ) {
-      $('#item-sale-price').hide();
-    }
-
   });
 });
 (function() {
@@ -13611,18 +13616,27 @@ $(document).ready(function() {
   $(document).on('page:change',function() {
 
     $(".item_nav_top").hover(function(){
-      $(".item_drop_shop_by").show(100)
+      $(".item_drop_shop_by").stop().fadeIn(300)
     },function(){
-      $(".item_drop_shop_by").hide(100)
+      $(".item_drop_shop_by").stop().fadeOut(300)
     });
 
     $(".item_nav_top_brand").hover(function(){
-      $(".item_drop_shop_by_brand").show(100)
+      $(".item_drop_shop_by_brand").stop().fadeIn(300)
     },function(){
-      $(".item_drop_shop_by_brand").hide(100)
+      $(".item_drop_shop_by_brand").stop().fadeOut(300)
     });
 
   });
+
+
+  $(".item_nav_top").hover(function(){
+    $(".arrow-down-shop").toggleClass("arrow-active")
+  })
+
+  $(".item_nav_top_brand").hover(function(){
+    $(".arrow-down-brand").toggleClass("arrow-active")
+  })
 });
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
@@ -13771,6 +13785,57 @@ $(document).ready(function() {
 
   });
 });
+$(document).ready(function() {
+  $(document).on('page:change', function () {
+
+    var sortSubCategories = (function(){
+      var $box = $(".box");
+      var $mobileCategories = $(".sorting_class>li");
+      var $desktopCategories = $(".sorting-class-desktop>li");
+      //click handler
+      $mobileCategories.click(handleClickMob);
+      $desktopCategories.click(handleClickDesktop);
+
+      function handleClickDesktop(){
+        var subCategory = $(this.id).selector;
+        $desktopCategories.removeClass("categorie-sort");
+        $(this).addClass("categorie-sort");
+        sortCategories(subCategory);
+      }
+
+      function handleClickMob(){
+        var subCategory = $(this.id).selector;
+        $mobileCategories.removeClass("btn-active");
+        $(this).addClass("btn-active");
+        sortCategories(subCategory);
+      }
+
+      function sortCategories(subCategory){
+        var removeBox = $box.css({"display": "none"});
+        if ($box.hasClass(subCategory)){
+          removeBox
+          $("." + subCategory).slideDown(0);
+        } else if (subCategory == "All"){
+          $box.show();
+        }
+      }
+    })
+    sortSubCategories();
+
+    var showSortItems = (function(){
+      var $categorieHeader = $(".all-categories>h1");
+      var $listElements = $(".sorting-class-desktop");
+      //click handler
+      $categorieHeader.click(showList)
+
+      function showList(){
+        $listElements.stop().slideToggle(100)
+      }
+    });
+    showSortItems();
+
+  });
+});
 $(document).on('page:change', function() {
 
 
@@ -13838,29 +13903,6 @@ $(document).on('page:change', function() {
     })
   })
 
-});
-$(document).ready(function() {
-  $(document).on('page:change', function () {
-
-    $(".sorting_class>li").click(function(){
-      var subCategory = $(this.id).selector;
-      var box = $(".box");
-      $(".sorting_class>li.btn-active").removeClass("btn-active");
-      $(this).addClass("btn-active");
-
-      if (box.hasClass(subCategory)){
-        box.css({"display": "none"});
-        $("." + subCategory).slideDown(0);
-        console.log($("." + subCategory))
-      } else if (subCategory == "All"){
-        box.css({"display": "none"});
-        box.slideDown(0);
-      } else {
-        box.css({"display": "none"});
-      }
-
-    });
-  });
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

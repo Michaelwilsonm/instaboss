@@ -13616,18 +13616,27 @@ $(document).ready(function() {
   $(document).on('page:change',function() {
 
     $(".item_nav_top").hover(function(){
-      $(".item_drop_shop_by").show(100)
+      $(".item_drop_shop_by").stop().fadeIn(300)
     },function(){
-      $(".item_drop_shop_by").hide(100)
+      $(".item_drop_shop_by").stop().fadeOut(300)
     });
 
     $(".item_nav_top_brand").hover(function(){
-      $(".item_drop_shop_by_brand").show(100)
+      $(".item_drop_shop_by_brand").stop().fadeIn(300)
     },function(){
-      $(".item_drop_shop_by_brand").hide(100)
+      $(".item_drop_shop_by_brand").stop().fadeOut(300)
     });
 
   });
+
+
+  $(".item_nav_top").hover(function(){
+    $(".arrow-down-shop").toggleClass("arrow-active")
+  })
+
+  $(".item_nav_top_brand").hover(function(){
+    $(".arrow-down-brand").toggleClass("arrow-active")
+  })
 });
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
@@ -13645,46 +13654,14 @@ $(document).ready(function() {
       var windowScroll = $(window).scrollTop();
       var windowHeight = $(window).height();
 
-      if (windowScroll > 170) {
-        $(".search-side").css({position: "fixed", marginTop: "-125px"});
+        console.log(windowScroll)
+      if (windowScroll > 333) {
+        $(".desktop-categories").addClass("scroll-fixed-categories")
+        $(".categorise").addClass("scroll-fixed-categorise")
       } else {
-        $(".search-side").css({position: "absolute", marginTop: "65px"});
+        $(".desktop-categories").removeClass("scroll-fixed-categories")
+        $(".categorise").removeClass("scroll-fixed-categorise");
       }
-
-      if (windowScroll > 643) {
-        $(".side_nav_mens").css({position: "fixed", marginTop: "-525px"});
-      } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "127px"});
-      }
-
-      if (windowScroll > 634){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-520px"})
-        $(".main_men_feat").css({position: "fixed", marginTop: "-500px"})
-      } else if (windowScroll < 634){
-        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "114px"})
-        $(".main_men_feat").css({position: "fixed", marginTop: "100"})
-      }
-
-      if (windowScroll > 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "120px"})
-      } else if (windowScroll < 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
-      }
-
-      // console.log(windowScroll)
-
-      if (windowScroll > 184){
-        $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
-      } else if (windowScroll < 184){
-        $(".menu-side-search-bar").css({position: "absolute", marginTop: "85px"})
-      }
-
-      if (windowScroll < 10) {
-        $(".search_bar").css({display: "none"})
-      }else{
-        $(".search_bar").fadeIn(800)
-      }
-
     })
 
 
@@ -13776,6 +13753,57 @@ $(document).ready(function() {
 
   });
 });
+$(document).ready(function() {
+  $(document).on('page:change', function () {
+
+    var sortSubCategories = (function(){
+      var $box = $(".box");
+      var $mobileCategories = $(".sorting_class>li");
+      var $desktopCategories = $(".sorting-class-desktop>li");
+      //click handler
+      $mobileCategories.click(handleClickMob);
+      $desktopCategories.click(handleClickDesktop);
+
+      function handleClickDesktop(){
+        var subCategory = $(this.id).selector;
+        $desktopCategories.removeClass("categorie-sort");
+        $(this).addClass("categorie-sort");
+        sortCategories(subCategory);
+      }
+
+      function handleClickMob(){
+        var subCategory = $(this.id).selector;
+        $mobileCategories.removeClass("btn-active");
+        $(this).addClass("btn-active");
+        sortCategories(subCategory);
+      }
+
+      function sortCategories(subCategory){
+        var removeBox = $box.css({"display": "none"});
+        if ($box.hasClass(subCategory)){
+          removeBox
+          $("." + subCategory).slideDown(0);
+        } else if (subCategory == "All"){
+          $box.show();
+        }
+      }
+    });
+    sortSubCategories();
+
+    var showSortItems = (function(){
+      var $categorieHeader = $(".all-categories>h1");
+      var $listElements = $(".sorting-class-desktop");
+      //click handler
+      $categorieHeader.click(showList)
+
+      function showList(){
+        $listElements.stop().slideToggle(100)
+      }
+    });
+    showSortItems();
+
+  });
+});
 $(document).on('page:change', function() {
 
 
@@ -13843,29 +13871,6 @@ $(document).on('page:change', function() {
     })
   })
 
-});
-$(document).ready(function() {
-  $(document).on('page:change', function () {
-
-    $(".sorting_class>li").click(function(){
-      var subCategory = $(this.id).selector;
-      var box = $(".box");
-      $(".sorting_class>li.btn-active").removeClass("btn-active");
-      $(this).addClass("btn-active");
-
-      if (box.hasClass(subCategory)){
-        box.css({"display": "none"});
-        $("." + subCategory).slideDown(0);
-        console.log($("." + subCategory))
-      } else if (subCategory == "All"){
-        box.css({"display": "none"});
-        box.slideDown(0);
-      } else {
-        box.css({"display": "none"});
-      }
-
-    });
-  });
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

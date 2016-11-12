@@ -32,7 +32,7 @@ $(document).ready(function() {
           $box.show();
         }
       }
-    })
+    });
     sortSubCategories();
 
     var showSortItems = (function(){

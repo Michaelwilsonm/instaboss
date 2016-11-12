@@ -5,17 +5,19 @@
   height:400px;
   background-size:cover;
   background-repeat:no-repeat;
+  margin-bottom: 10px;
 }
 
 .your-items{
   display: none;
 }
 
+
 .desktop-categories{
   display: block;
   position: absolute;
   top: 429px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.8);
   font-family: "Calisto MT Regular";
   width: 100%;
   h1{
@@ -24,6 +26,13 @@
     font-size: 27px;
     margin: 0px;
   }
+}
+
+.scroll-fixed-categories{
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 95px;
+  z-index: 1;
 }
 
 .accessories_hero_mens{

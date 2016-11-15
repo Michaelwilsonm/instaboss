@@ -13345,37 +13345,6 @@ $(document).ready(function() {
 
 
 }).call(this);
-// $(document).ready(function() {
-//   $(document).on('page:change',function() {
-
-//     $(".featured-button").click(function(e){
-//       e.preventDefault();
-//       e.stopPropagation();
-//       var href = $(this).attr("href")
-//       var id = $(this).attr("id")
-//       console.log(id)
-//       console.log(href)
-
-//     $.ajax({
-//       type: "POST",
-//       url: href,
-//       data: true,
-//       success: function(data){
-//       },
-//       error: function(error){
-//       }
-//     })
-//     })
-
-
-
-
-
-
-
-
-//   });
-// });
 $(document).ready(function() {
   $(document).on('page:change', function () {
     womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
@@ -13615,28 +13584,51 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(".item_nav_top").hover(function(){
-      $(".item_drop_shop_by").stop().fadeIn(300)
-    },function(){
-      $(".item_drop_shop_by").stop().fadeOut(300)
-    });
+    var shopByDropDown = (function(){
+      var shopByMenu = $(".item_nav_top");
+      var shopByDiv = $(".item_drop_shop_by");
+      var shopByArrow = $(".arrow-down-shop");
 
-    $(".item_nav_top_brand").hover(function(){
-      $(".item_drop_shop_by_brand").stop().fadeIn(300)
-    },function(){
-      $(".item_drop_shop_by_brand").stop().fadeOut(300)
+      shopByMenu.hover(fadeInDiv, fadeOutDiv);
+      shopByMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        shopByArrow.toggleClass("arrow-active")
+      }
+
+      function fadeInDiv(){
+        shopByDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        shopByDiv.stop().fadeOut(300);
+      }
     });
+    shopByDropDown();
+
+    var brandsDropDown = (function(){
+      var brandsMenu = $(".item_nav_top_brand");
+      var brandsDiv = $(".item_drop_shop_by_brand");
+      var brandArrow = $(".arrow-down-brand")
+
+      brandsMenu.hover(fadeInDiv, fadeOutDiv);
+      brandsMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        brandArrow.toggleClass("arrow-active");
+      }
+
+      function fadeInDiv(){
+        brandsDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        brandsDiv.stop().fadeOut(300);
+      }
+    });
+    brandsDropDown();
 
   });
-
-
-  $(".item_nav_top").hover(function(){
-    $(".arrow-down-shop").toggleClass("arrow-active")
-  })
-
-  $(".item_nav_top_brand").hover(function(){
-    $(".arrow-down-brand").toggleClass("arrow-active")
-  })
 });
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
@@ -13650,51 +13642,32 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(window).scroll(function(){
-      var windowScroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+    var scrollingFixedNav = (function(){
+      var bannerTitle = $(".desktop-categories")
+      var categorySubCats = $(".categorise")
 
-      if (windowScroll > 170) {
-        $(".search-side").css({position: "fixed", marginTop: "-125px"});
-      } else {
-        $(".search-side").css({position: "absolute", marginTop: "65px"});
+      $(window).scroll(toggleNavigation)
+
+      function toggleNavigation(){
+        var windowScroll = $(window).scrollTop();
+        if (windowScroll > 333) {
+          navigationFixed()
+        } else if (windowScroll < 333) {
+          navigationAbsolute()
+        }
       }
 
-      if (windowScroll > 643) {
-        $(".side_nav_mens").css({position: "fixed", marginTop: "-525px"});
-      } else {
-        $(".side_nav_mens").css({position: "absolute", marginTop: "127px"});
+      function navigationFixed(){
+        bannerTitle.addClass("scroll-fixed-categories")
+        categorySubCats.addClass("scroll-fixed-categorise")
       }
 
-      if (windowScroll > 634){
-        $(".no_picture_side_nav_mens").css({position: "fixed", marginTop: "-520px"})
-        $(".main_men_feat").css({position: "fixed", marginTop: "-500px"})
-      } else if (windowScroll < 634){
-        $(".no_picture_side_nav_mens").css({position: "absolute", marginTop: "114px"})
-        $(".main_men_feat").css({position: "fixed", marginTop: "100"})
+      function navigationAbsolute(){
+        bannerTitle.removeClass("scroll-fixed-categories")
+        categorySubCats.removeClass("scroll-fixed-categorise");
       }
-
-      if (windowScroll > 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "fixed", marginTop: "120px"})
-      } else if (windowScroll < 604){
-        $(".no_picture_side_nav_mens_extra_margin").css({position: "absolute", marginTop: "144px"})
-      }
-
-      // console.log(windowScroll)
-
-      if (windowScroll > 184){
-        $(".menu-side-search-bar").css({position: "fixed", marginTop: "-110px"})
-      } else if (windowScroll < 184){
-        $(".menu-side-search-bar").css({position: "absolute", marginTop: "85px"})
-      }
-
-      if (windowScroll < 10) {
-        $(".search_bar").css({display: "none"})
-      }else{
-        $(".search_bar").fadeIn(800)
-      }
-
-    })
+    });
+    scrollingFixedNav()
 
 
   });
@@ -13785,6 +13758,57 @@ $(document).ready(function() {
 
   });
 });
+$(document).ready(function() {
+  $(document).on('page:change', function () {
+
+    var sortSubCategories = (function(){
+      var $box = $(".box");
+      var $mobileCategories = $(".sorting_class>li");
+      var $desktopCategories = $(".sorting-class-desktop>li");
+      //click handler
+      $mobileCategories.click(handleClickMob);
+      $desktopCategories.click(handleClickDesktop);
+
+      function handleClickDesktop(){
+        var subCategory = $(this.id).selector;
+        $desktopCategories.removeClass("categorie-sort");
+        $(this).addClass("categorie-sort");
+        sortCategories(subCategory);
+      }
+
+      function handleClickMob(){
+        var subCategory = $(this.id).selector;
+        $mobileCategories.removeClass("btn-active");
+        $(this).addClass("btn-active");
+        sortCategories(subCategory);
+      }
+
+      function sortCategories(subCategory){
+        var removeBox = $box.css({"display": "none"});
+        if ($box.hasClass(subCategory)){
+          removeBox
+          $("." + subCategory).slideDown(0);
+        } else if (subCategory == "All"){
+          $box.show();
+        }
+      }
+    });
+    sortSubCategories();
+
+    var showSortItems = (function(){
+      var $categorieHeader = $(".all-categories>h1");
+      var $listElements = $(".sorting-class-desktop");
+      //click handler
+      $categorieHeader.click(showList)
+
+      function showList(){
+        $listElements.stop().slideToggle(100)
+      }
+    });
+    showSortItems();
+
+  });
+});
 $(document).on('page:change', function() {
 
 
@@ -13852,29 +13876,6 @@ $(document).on('page:change', function() {
     })
   })
 
-});
-$(document).ready(function() {
-  $(document).on('page:change', function () {
-
-    $(".sorting_class>li").click(function(){
-      var subCategory = $(this.id).selector;
-      var box = $(".box");
-      $(".sorting_class>li.btn-active").removeClass("btn-active");
-      $(this).addClass("btn-active");
-
-      if (box.hasClass(subCategory)){
-        box.css({"display": "none"});
-        $("." + subCategory).slideDown(0);
-        console.log($("." + subCategory))
-      } else if (subCategory == "All"){
-        box.css({"display": "none"});
-        box.slideDown(0);
-      } else {
-        box.css({"display": "none"});
-      }
-
-    });
-  });
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

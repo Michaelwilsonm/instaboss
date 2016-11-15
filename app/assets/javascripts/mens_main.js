@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    scrollingFixedNav = (function(){
+    var scrollingFixedNav = (function(){
       var bannerTitle = $(".desktop-categories")
       var categorySubCats = $(".categorise")
 

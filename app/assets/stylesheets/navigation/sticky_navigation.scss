@@ -4,19 +4,6 @@ $calisto: "Calisto MT Regular";
   height: 68px;
 }
 
-.your-items{
-  margin-top: 10px;
-  padding-top: 0px;
-  text-align: center;
-  margin-bottom: -8px;
-}
-
-.item_sub_cat{
-  margin-bottom: -10px;
-}
-
-
-
 /***********************
 STICKY NAVIGATION FIRST DIV
 ***********************/
@@ -91,18 +78,18 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
 }
 
 .item_drop_shop_by {
-  @mixin .item-drop-down-scss;
+  @extend .item-drop-down-scss;
   min-width: 180px;
   a{
-    @mixin .item-drop-down-anchor-tags-scss
+    @extend .item-drop-down-anchor-tags-scss;
   }
 }
 
 .item_drop_shop_by_brand {
-  @mixin .item-drop-down-scss;
+  @extend .item-drop-down-scss;
   min-width: 160px;
   a{
-    @mixin .item-drop-down-anchor-tags-scss
+    @extend .item-drop-down-anchor-tags-scss;
   }
 }
 

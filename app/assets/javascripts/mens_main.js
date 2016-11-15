@@ -1,19 +1,32 @@
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(window).scroll(function(){
-      var windowScroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+    scrollingFixedNav = (function(){
+      var bannerTitle = $(".desktop-categories")
+      var categorySubCats = $(".categorise")
 
-        console.log(windowScroll)
-      if (windowScroll > 333) {
-        $(".desktop-categories").addClass("scroll-fixed-categories")
-        $(".categorise").addClass("scroll-fixed-categorise")
-      } else {
-        $(".desktop-categories").removeClass("scroll-fixed-categories")
-        $(".categorise").removeClass("scroll-fixed-categorise");
+      $(window).scroll(toggleNavigation)
+
+      function toggleNavigation(){
+        var windowScroll = $(window).scrollTop();
+        if (windowScroll > 333) {
+          navigationFixed()
+        } else if (windowScroll < 333) {
+          navigationAbsolute()
+        }
       }
-    })
+
+      function navigationFixed(){
+        bannerTitle.addClass("scroll-fixed-categories")
+        categorySubCats.addClass("scroll-fixed-categorise")
+      }
+
+      function navigationAbsolute(){
+        bannerTitle.removeClass("scroll-fixed-categories")
+        categorySubCats.removeClass("scroll-fixed-categorise");
+      }
+    });
+    scrollingFixedNav()
 
 
   });

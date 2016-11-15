@@ -1,28 +1,19 @@
 <%= render "templates/mobile_nav/navigation_main" %>
 <%= render "templates/mobile_nav/navigation_mobile_mens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
-<%= render "templates/item_navigation_mens" %>
-
+<%= render "templates/mens/navigation/navigation" %>
 <div class="lifestyle_hero_mens"></div>
-
 <div class="desktop-categories"><h1>LifeStyle</h1></div>
-
 <div class="categorise desktop-sort">
   <%= render "templates/mens/sub_categories_sort/lifestyle" %>
 </div>
-
 <div class="container mobile_container">
   <div class="row">
-
     <h1 class="your-items">LifeStyle</h1>
-
-    <div class="item_sub_cat">
-      <%= render "templates/lifestyle_sub_cat_mens" %>
+    <div class="item_sub_cat mobile-sort">
+      <%= render "templates/mens/mobile_sub_categories_sort/lifestyle" %>
     </div>
-
-    <%= render "templates/horizontal_line" %>
     <%= render "templates/all_items_display"  %>
-
   </div>
 </div>
 <%= render 'templates/mail_chimp_form_mens' %>

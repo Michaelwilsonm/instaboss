@@ -1,7 +1,7 @@
 <%= render "templates/mobile_nav/navigation_main" %>
 <%= render "templates/mobile_nav/navigation_mobile_mens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
-<%= render "templates/item_navigation_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
 
 <div class="banner-photos">
   <div class="mens_main_photo"></div>
@@ -10,7 +10,7 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <% if @featured_men.length >= 1 %>
-      <h1 class="your-items mob-ul">Featured Men's</h1>
+      <h1 class="your-items-main mob-ul">Featured Men's</h1>
       <%= render "templates/featured_mens" %>
     <% end %>
   </div>
@@ -20,7 +20,7 @@
   <div class="row mobile_row">
     <% if @staff_picked_men.length >= 1 %>
     <div class="sale_feat_h1">
-      <h1 class="your-items mob-ul">Staff Picks</h1>
+      <h1 class="your-items-main mob-ul">Staff Picks</h1>
     </div>
       <%= render "templates/staff_picked_mens" %>
     <% end %>
@@ -30,7 +30,7 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <div class="sale_feat_h1">
-      <h1 class="your-items mob-ul">Featured Sale</h1>
+      <h1 class="your-items-main mob-ul">Featured Sale</h1>
     </div>
     <%= render "templates/on_sale_nine" %>
   </div>

@@ -1,49 +1,28 @@
+$calisto: "Calisto MT Regular";
+
 .sticky-nav-mens{
   background-color: rgba(255,255,255,0.8);
   background-color: white;
   -moz-box-shadow:0px 3px 3px rgba(0,0,0,0.3);
   -webkit-box-shadow:0px 3px 3px rgba(0,0,0,0.3);
   box-shadow:0px 3px 3px rgba(0,0,0,0.3);
-  height: 98px;
+  height: 68px;
   position: fixed;
   width: 100%;
   z-index: 100;
-}
-
-.image-b {
-  img{
-    width: 50px;
-    height: 50px;
-    margin-left: 50px;
-    margin-top: 10px;
+  h1{
+    position: absolute;
+    font-family: $calisto;
+    margin-left: 20px;
   }
-}
-
-.instaboss-logo-nav{
-  p{
-    margin-left: 50px;
-  }
-  p:first-child{
-    margin-top: -6px;
-    font-size: 18px;
-  }
-  p:last-child{
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: -20px;
-  }
-}
-
-.banner-nav-space{
-  height: 98px;
 }
 
 .all-nav-link{
   text-align: center;
-  margin-top: -30px;
+  margin-top: 35px;
   a{
     color: black;
-    font-family: "Calisto MT Regular";
+    font-family: $calisto;
     padding: 10px 30px 10px 30px;
     &:hover{
       color: black;
@@ -59,7 +38,7 @@
 }
 
 .your-items-all{
-  font-family: "Calisto MT Regular";
+  font-family: $calisto;
   text-align: center;
 }
 
@@ -88,7 +67,7 @@
   margin-top: 8px;
   a{
     text-align: left;
-    font-family: "Calisto MT Regular";
+    font-family: $calisto;
     color: black;
     padding: 4px 5px;
     margin: 0px 5px 0px 5px;
@@ -108,7 +87,7 @@
   margin-top: 8px;
   a{
     text-align: left;
-    font-family: "Calisto MT Regular";
+    font-family: $calisto;
     color: black;
     padding: 4px 5px;
     text-decoration: none;
@@ -116,20 +95,7 @@
   }
 }
 
-.arrow-down-shop {
-  position: relative;
-  left: 95px;
-  bottom: 12px;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s;
-}
-
-.arrow-down-brand {
+.arrow-down-brand, .arrow-down-shop {
   position: relative;
   left: 95px;
   bottom: 12px;
@@ -146,4 +112,8 @@
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.banner-nav-space{
+  height: 68px;
 }

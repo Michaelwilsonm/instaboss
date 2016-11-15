@@ -12,26 +12,25 @@
   display: none;
 }
 
-
 .desktop-categories{
   display: block;
   position: absolute;
-  top: 429px;
+  top: 399px;
   background-color: rgba(0,0,0,0.8);
   font-family: "Calisto MT Regular";
   width: 100%;
   h1{
-    padding: 20px;
+    padding: 5px 0px 5px 0px;
     color: white;
     font-size: 27px;
-    margin: 0px;
+    margin-left: 20px;
   }
 }
 
 .scroll-fixed-categories{
   background-color: rgba(0,0,0,0.8);
   position: fixed;
-  top: 95px;
+  top: 68px;
   z-index: 1;
 }
 

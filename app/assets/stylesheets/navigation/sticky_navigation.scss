@@ -1,5 +1,25 @@
 $calisto: "Calisto MT Regular";
 
+.banner-nav-space{
+  height: 68px;
+}
+
+.your-items{
+  margin-top: 10px;
+  padding-top: 0px;
+  text-align: center;
+  margin-bottom: -8px;
+}
+
+.item_sub_cat{
+  margin-bottom: -10px;
+}
+
+
+
+/***********************
+STICKY NAVIGATION FIRST DIV
+***********************/
 .sticky-nav-mens{
   background-color: rgba(255,255,255,0.8);
   background-color: white;
@@ -30,20 +50,14 @@ $calisto: "Calisto MT Regular";
   }
 }
 
-.your-items{
-  margin-top: 10px;
-  padding-top: 0px;
-  text-align: center;
-  margin-bottom: -8px;
-}
 
+
+/***********************
+DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
+***********************/
 .your-items-all{
   font-family: $calisto;
   text-align: center;
-}
-
-.item_sub_cat{
-  margin-bottom: -10px;
 }
 
 .item_nav_top{
@@ -56,48 +70,50 @@ $calisto: "Calisto MT Regular";
   display: inline-block;
 }
 
-.item_drop_shop_by {
+.item-drop-down-scss{
   z-index: 1;
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 180px;
   overflow: auto;
-  box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.8);
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
   margin-top: 8px;
+}
+
+.item-drop-down-anchor-tags-scss{
+  text-align: left;
+  font-family: $calisto;
+  color: black;
+  padding: 4px 5px;
+  margin: 0px 5px 0px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.item_drop_shop_by {
+  @mixin .item-drop-down-scss;
+  min-width: 180px;
   a{
-    text-align: left;
-    font-family: $calisto;
-    color: black;
-    padding: 4px 5px;
-    margin: 0px 5px 0px 5px;
-    text-decoration: none;
-    display: block;
+    @mixin .item-drop-down-anchor-tags-scss
   }
 }
 
 .item_drop_shop_by_brand {
-  z-index: 1;
-  display: none;
-  position: absolute;
-  overflow: auto;
-  background-color: white;
+  @mixin .item-drop-down-scss;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
-  margin-top: 8px;
   a{
-    text-align: left;
-    font-family: $calisto;
-    color: black;
-    padding: 4px 5px;
-    text-decoration: none;
-    display: block;
+    @mixin .item-drop-down-anchor-tags-scss
   }
 }
 
-.arrow-down-brand, .arrow-down-shop {
+
+
+
+/*********************
+DROP DOWN ARROWS ON NAVIGATION
+*********************/
+.arrow-drop-down-scss {
   position: relative;
-  left: 95px;
   bottom: 12px;
   width: 0;
   height: 0;
@@ -106,14 +122,20 @@ $calisto: "Calisto MT Regular";
   border-top: 5px solid black;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
-  }
+}
+
+.arrow-down-brand{
+  left: 95px;
+  @extend .arrow-drop-down-scss;
+}
+
+.arrow-down-shop {
+  left: 73px;
+  @extend .arrow-drop-down-scss;
+}
 
 .arrow-active{
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
-}
-
-.banner-nav-space{
-  height: 68px;
 }

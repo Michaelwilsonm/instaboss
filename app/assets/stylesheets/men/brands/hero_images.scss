@@ -1,0 +1,105 @@
+.brand-banner-scss {
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  height:400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.bronze_snake{
+  @extend .brand-banner-scss;
+  background-image: url("../../bronze snake men.jpg");
+  background-position: 50% 75%;
+}
+
+.windsor_smith{
+  @extend .brand-banner-scss;
+  background-image: url("../../windsor hero.jpg");
+  background-position: 50% 95%;
+}
+
+.leo_joseph{
+  @extend .brand-banner-scss;
+  background-image: url("../../leo joseph hero.jpg");
+  background-position: 50% 75%;
+}
+
+.adidas_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../adidas hero.jpg");
+  background-position: 50% 75%;
+}
+
+.the_modest_vintage_player{
+  @extend .brand-banner-scss;
+  background-image: url("../../mvp hero.jpg");
+  background-position: 50% 25%;
+}
+
+.mj_bale{
+  @extend .brand-banner-scss;
+  background-image: url("../../mj bale hero.jpg");
+  background-position: 50% 25%;
+}
+
+.nike_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../nike hero.jpg");
+  background-position: 50% 75%;
+}
+
+.bjorn_borg_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../bjornborghero.jpg");
+  background-position: 50% 75%;
+}
+
+.new_balance_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../New Balance hero a.jpg");
+  background-position: 50% 90%;
+}
+
+.sunday_somewhere_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../sundaysomewhere hero.jpg");
+  background-position: 50% 25%;
+}
+
+.mvmt_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../mvmt.jpg");
+  background-position: 50% 45%;
+}
+
+.morepork_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../moreporks.jpg");
+  background-position: 50% 75%;
+}
+
+.just_another_fisherman_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../justanotherfisherman.jpg");
+  background-position: 50% 25%;
+}
+
+.nautica_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../nauticahero.jpg");
+  background-position: 50% 25%;
+}
+
+.retro_marine_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../retromarine hero1.jpg");
+  background-position: 50% 25%;
+}
+
+.i_love_ugly_mens{
+  @extend .brand-banner-scss;
+  background-image: url("../../iloveugly.jpg");
+  background-position: 50% 35%;
+}

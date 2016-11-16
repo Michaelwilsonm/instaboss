@@ -11,7 +11,8 @@
   <div class="row mobile_row">
     <% if @featured_men.length >= 1 %>
       <h1 class="your-items-main mob-ul">Featured Men's</h1>
-      <%= render "templates/featured_mens" %>
+      <%= render "templates/horizontal_line" %>
+      <%= render "templates/mens/index_page/featured" %>
     <% end %>
   </div>
 </div>
@@ -22,7 +23,8 @@
     <div class="sale_feat_h1">
       <h1 class="your-items-main mob-ul">Staff Picks</h1>
     </div>
-      <%= render "templates/staff_picked_mens" %>
+      <%= render "templates/horizontal_line" %>
+      <%= render "templates/mens/index_page/staff_picked" %>
     <% end %>
   </div>
 </div>
@@ -32,8 +34,9 @@
     <div class="sale_feat_h1">
       <h1 class="your-items-main mob-ul">Featured Sale</h1>
     </div>
-    <%= render "templates/on_sale_nine" %>
+    <%= render "templates/horizontal_line" %>
+    <%= render "templates/mens/index_page/on_sale_nine" %>
   </div>
 </div>
 
-<%= render 'templates/mail_chimp_form_mens' %>
+<%= render 'templates/footer/footer' %>

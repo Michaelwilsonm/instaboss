@@ -1,0 +1,46 @@
+.mail-chimp-form{
+  margin-top: 20px;
+}
+
+.social-media{
+  margin-top: 40px;
+  text-align: center;
+  img{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px 0px 10px;
+    width: 70px;
+  }
+}
+
+.complete-footer{
+  height: 100%;
+}
+
+.footer-navigation{
+  margin-top: 50px;
+  width: 100%;
+  ul{
+    font-family: "Calisto MT Regular";
+    font-weight: bold;
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+  }
+  li{
+    display: inline;
+    margin: 50px;
+  }
+  a{
+    color: black;
+    &:hover{
+      color: black;
+    }
+  }
+}
+
+.copyright{
+  margin-top: 50px;
+  text-align: center;
+}

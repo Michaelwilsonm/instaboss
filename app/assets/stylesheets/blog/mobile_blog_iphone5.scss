@@ -1,0 +1,36 @@
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .photo-blog-container{
+    width: 100%;
+    p{
+      font-size: 40px;
+      padding: 10px;
+    }
+  }
+
+  .blog-header{
+    font-size: 60px;
+    width: 100%;
+  }
+
+  .all-blogs{
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .blog-img{
+    width: 100%;
+  }
+
+  .blog-description{
+    margin-top: 10px;
+    margin-bottom: 80px;
+    font-family: "Calisto MT Regular";
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+}

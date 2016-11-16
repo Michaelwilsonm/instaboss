@@ -1,40 +1,18 @@
-<div class="search_bar">
-  <%= render "templates/men_side_search_bar" %>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
+<div class="sale_hero_mens"></div>
+<div class="desktop-categories"><h1>Sale</h1></div>
+<div class="categorise desktop-sort">
+  <%= render "templates/mens/sub_categories_sort/sale" %>
 </div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_mens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_mens" %>
-
-<div class="item_navigation_top_mens">
-  <%= render "templates/item_navigation_mens" %>
-</div>
-<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+<div class="container mobile_container">
   <div class="row">
-    <div class="sale_hero_mens">
+    <h1 class="your-items">Sale</h1>
+    <div class="item_sub_cat mobile-sort">
+      <%= render "templates/mens/mobile_sub_categories_sort/sale" %>
     </div>
-  </div>
-</div>
-
-
-<div class="menu-side">
-  <div class="margin_menu_side"></div>
-  <%= render "templates/side_navigation_mens" %>
-</div>
-<div class="container mobile_container" style="padding: 0px;">
-  <div class="row" style="margin: 0px; padding: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_womens_subcat" %>
-    </div>
-    <h1 class="your-items">Men's Sale</h1>
-    <div class="item_sub_cat sale_men">
-      <%= render "templates/sale_mens_sub_cat" %>
-    </div>
-    <br>
-    <%= render "templates/horizontal_line" %>
     <% @sale_mens.each do |all_specials| %>
       <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">
         <div class="image_div">
@@ -64,5 +42,4 @@
     <% end %>
   </div>
 </div>
-
-<%= render 'templates/mail_chimp_form_mens' %>
+<%= render "templates/footer/footer" %>

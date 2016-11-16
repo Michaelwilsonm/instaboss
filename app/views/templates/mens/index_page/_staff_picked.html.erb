@@ -1,0 +1,31 @@
+<div class="container mobile_container">
+  <div class="row">
+  <% @staff_picked_men.each do |staff_picks| %>
+    <div class="box col-md-4 col-sm-6 col-xs-12">
+      <div class="image_div">
+        <a href="/item/<%= staff_picks.id %>">
+          <%= image_tag staff_picks.item_image.url(:medium) %>
+        <div class="description_content">
+          <% if staff_picks.sale == true %>
+          <table>
+            <tr class="specials_table">
+              <td><strike><em>$<%= zeros(staff_picks.price) %></em></strike></td>
+              <td>$<%= zeros(staff_picks.sale_price) %></td>
+            </tr>
+          </table>
+          <% else %>
+          <table>
+            <tr class="normal_table">
+              <td>$<%= zeros(staff_picks.price) %></td>
+            </tr>
+          </table>
+        <% end %>
+        <p><%= staff_picks.short_description %></p>
+        <p><%= word_branding(staff_picks.brand) %></p>
+        </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

@@ -1,50 +1,39 @@
-<div class="search_bar">
-  <%= render "templates/women_side_search_bar" %>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_womens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
+<%= render "templates/womens/navigation/navigation" %>
+
+<div class="banner-photos">
+  <div class="womens_main_photo"></div>
 </div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_womens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_women" %>
-<div class="item_navigation_top_womens">
-  <%= render "templates/item_navigation_womens" %>
-</div>
-<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
-  <div class="row">
-    <div class="womens_main_photo">
-    </div>
-  </div>
-</div>
-<div class="menu-side">
-  <%= render "templates/side_navigation_womens_extra_margin" %>
-</div>
+
 <div class="container mobile_container">
   <div class="row mobile_row">
     <% if @featured_women.length >= 1 %>
-      <h1 class="your-items mob-ul">Featured Women's</h1>
-      <%= render "templates/featured_womens" %>
+      <h1 class="your-items-main mob-ul">Featured Women's</h1>
+      <%= render "templates/horizontal_line" %>
+      <%= render "templates/womens/index_page/featured" %>
     <% end %>
-  </div>
-</div>
-<div class="container mobile_container">
-  <div class="row mobile_row">
-    <% if @staff_picked_women.length >= 1 %>
-    <div class="sale_feat_h1">
-      <h1 class="your-items mob-ul">Staff Picks</h1>
-    </div>
-      <%= render "templates/staff_picked_womens" %>
-    <% end %>
-  </div>
-</div>
-<div class="container mobile_container">
-  <div class="row mobile_row">
-    <div class="sale_feat_h1">
-      <h1 class="your-items mob-ul">Featured Sale</h1>
-    </div>
-    <%= render "templates/on_sale_nine" %>
   </div>
 </div>
 
-<%= render 'templates/mail_chimp_form_womens' %>
+<div class="container mobile_container">
+  <div class="row mobile_row">
+    <% if @staff_picked_women.length >= 1 %>
+      <h1 class="your-items-main mob-ul">Staff Picks</h1>
+      <%= render "templates/horizontal_line" %>
+      <%= render "templates/womens/index_page/staff_picks" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container mobile_container">
+  <div class="row mobile_row">
+    <div class="sale_feat_h1">
+      <h1 class="your-items-main mob-ul">Featured Sale</h1>
+    </div>
+    <%= render "templates/horizontal_line" %>
+    <%= render "templates/womens/index_page/on_sale_nine" %>
+  </div>
+</div>
+

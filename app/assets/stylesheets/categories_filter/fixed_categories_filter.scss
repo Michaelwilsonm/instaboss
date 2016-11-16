@@ -1,0 +1,35 @@
+.categorise{
+  position: absolute;
+  margin-left: 20px;
+  width: 175px;
+  top: 465px;
+  font-family: "Calisto MT Regular";
+  ul{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 15px;
+    font-size: 15px;
+    li{
+      cursor: pointer;
+    }
+  }
+  ul>li:before {
+    display: inline-block;
+    content: "-";
+    margin-left: -10px;
+    width: 15px;
+  }
+  h1{
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
+.scroll-fixed-categorise{
+  position: fixed;
+  top: 133px;
+}
+
+.categorie-sort{
+  font-weight: bold;
+}

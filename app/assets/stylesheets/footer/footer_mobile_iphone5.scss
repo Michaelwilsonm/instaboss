@@ -1,0 +1,28 @@
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .footer-navigation{
+    ul{
+      font-size: 25px;
+    }
+    li{
+      margin: 30px;
+    }
+  }
+
+  .copyright{
+    font-size: 25px;
+  }
+
+  .social-media{
+    img{
+      padding: 0px 10px 0px 10px;
+      width: 100px;
+    }
+  }
+
+
+
+  }

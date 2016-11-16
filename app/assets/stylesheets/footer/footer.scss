@@ -32,6 +32,12 @@
     display: inline;
     margin: 50px;
   }
+  a{
+    color: black;
+    &:hover{
+      color: black;
+    }
+  }
 }
 
 .copyright{

@@ -1,7 +1,7 @@
 .categorise{
   position: absolute;
   margin-left: 20px;
-  width: 130px;
+  width: 175px;
   top: 465px;
   font-family: "Calisto MT Regular";
   ul{
@@ -16,6 +16,7 @@
   ul>li:before {
     display: inline-block;
     content: "-";
+    margin-left: -10px;
     width: 15px;
   }
   h1{

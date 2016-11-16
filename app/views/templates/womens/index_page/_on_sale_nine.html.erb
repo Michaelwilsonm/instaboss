@@ -1,0 +1,23 @@
+<div class="container mobile_container">
+  <div class="row">
+  <% @special_three.each do |specials| %>
+    <div class="box col-md-4 col-sm-6 col-xs-12">
+      <div class="image_div">
+        <a href="/item/<%= specials.id %>">
+          <%= image_tag specials.item_image.url(:medium) %>
+        <div class="description_content">
+          <table>
+            <tr class="specials_table">
+              <td><strike><em>$<%= zeros(specials.price) %></em></strike></td>
+              <td>$<%= zeros(specials.sale_price) %></td>
+            </tr>
+          </table>
+          <p><%= specials.short_description %></p>
+          <p><%= word_branding(specials.brand) %></p>
+        </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

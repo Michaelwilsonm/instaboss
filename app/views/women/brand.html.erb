@@ -1,23 +1,10 @@
-<div class="search_bar">
-    <%= render "templates/women_side_search_bar" %>
-</div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_womens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_women" %>
-<div class="item_navigation_top_womens">
-  <%= render "templates/item_navigation_womens" %>
-</div>
-<div class="container mobile_container" style="padding: 0px;">
-  <div class="row" style="margin: 0px; padding: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_womens_subcat" %>
-    </div><br>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_womens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
+<%= render "templates/womens/navigation/navigation" %>
+<div class="container mobile_container">
+  <div class="row">
     <h1 class="your-items">Featured Brands</h1>
-    <!-- <%= render "templates/horizontal_line" %> -->
 
     <a href="/women_brand/alice_mccall">
       <div class="box col-md-4 col-sm-6 col-xs-12">
@@ -157,3 +144,4 @@
 
   </div>
 </div>
+<%= render "templates/footer/footer_women" %>

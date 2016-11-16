@@ -1,0 +1,31 @@
+<div class="container mobile_container">
+  <div class="row">
+  <% @featured_women.each do |feature| %>
+    <div class="box_featured col-md-4 col-sm-6 col-xs-12">
+      <div class="image_div_featured">
+        <a href="/item/<%= feature.id %>">
+          <%= image_tag feature.item_image.url(:original) %>
+        <div class="description_content_featured">
+          <% if feature.sale == true %>
+          <table>
+            <tr class="specials_table_featured">
+              <td><strike><em>$<%= zeros(feature.price) %></em></strike></td>
+              <td>$<%= zeros(feature.sale_price) %></td>
+            </tr>
+          </table>
+          <% else %>
+          <table>
+            <tr class="normal_table_featured">
+              <td>$<%= zeros(feature.price) %></td>
+            </tr>
+          </table>
+        <% end %>
+        <p><%= feature.short_description %></p>
+        <p><%= word_branding(feature.brand) %></p>
+        </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

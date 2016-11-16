@@ -1,123 +1,77 @@
+.banner-scss {
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  height:400px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  margin-bottom: 10px;
+}
+
 .all_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("All Womens 1.jpg");
-  // background-size: 100% 450px;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 100% 0%;
 }
 
 .all_accessorie_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Accessories_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 15%;
+  margin-bottom: 10px;
 }
 
 .dress_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Dresses1_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 35%;
 }
 
 .jean_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("JeansLeggings_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 75%;
 }
 
 .life_style_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Home & lifestyle_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 75%;
 }
 
 .shoe_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("shoes 1.jpg");
   // background-size: 100% 500px;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 95%;
 }
 
 .skirt_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Shorts & Skirts 2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 38%;
 }
 
 .sunglass_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("sunglasses and watches 1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 25%;
 }
 
 .swim_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Swim & Beach_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 75%;
 }
 
 .top_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("Tops_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 25%;
 }
 
 .on_sale_women{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 400px;
+  @extend .banner-scss;
   background-image: url("On Sale_women.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: 50% 35%;
-  margin-bottom: 20px;
 }

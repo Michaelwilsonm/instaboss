@@ -1,35 +1,18 @@
-<div class="search_bar">
-  <%= render "templates/women_side_search_bar" %>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_womens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
+<%= render "templates/womens/navigation/navigation" %>
+<div class="shop_the_look_womens"></div>
+<div class="desktop-categories"><h1>Shop The Look</h1></div>
+<div class="categorise desktop-sort">
+  <%= render "templates/mens/sub_categories_sort/shop_the_look" %>
 </div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_womens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_women" %>
-<div class="item_navigation_top_womens">
-  <%= render "templates/item_navigation_womens" %>
-</div>
-<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+<div class="container mobile_container">
   <div class="row">
-    <div class="shop_the_look_womens">
-    </div>
-  </div>
-</div>
-<div class="menu-side">
-  <%= render "templates/side_navigation_womens_extra_margin" %>
-</div>
-<div class="container mobile_container" style="padding: 0px;">
-  <div class="row" style="margin: 0px; padding: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_womens_subcat" %>
-    </div>
     <h1 class="your-items">Shop The Look</h1>
-    <div class="item_sub_cat">
-      <%= render "templates/shop_the_look_mens_sub_cat" %>
+    <div class="item_sub_cat mobile-sort">
+      <%= render "templates/mens/mobile_sub_categories_sort/shop_the_look" %>
     </div>
-    <%= render "templates/horizontal_line" %>
     <% @shop_the_look_womens.each do |shop_the_look_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
@@ -52,4 +35,4 @@
   </div>
 </div>
 
-<%= render 'templates/mail_chimp_form_womens' %>
+<%= render "templates/footer/footer_women" %>

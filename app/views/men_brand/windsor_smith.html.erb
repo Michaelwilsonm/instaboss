@@ -1,32 +1,12 @@
-<div class="search_bar">
-  <%= render "templates/men_side_search_bar" %>
-</div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_mens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_mens" %>
-<div class="item_navigation_top_mens">
-  <%= render "templates/item_navigation_mens" %>
-</div>
-<div class="container" style="padding: 0px; margin: 0px; width: 98.8%;">
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
+<div class="windsor_smith"></div>
+<div class="desktop-categories"><h1>Windsor Smith</h1></div>
+<div class="container mobile_container">
   <div class="row">
-    <div class="windsor_smith">
-    </div>
-  </div>
-</div>
-<div class="menu-side">
-  <%= render "templates/side_navigation_mens_extra_margin" %>
-</div>
-<div class="container mobile_container" style="padding: 0px;">
-  <div class="row" style="margin: 0px; padding: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
     <h1 class="your-items mob-ul">Windsor Smith</h1>
-    <%= render "templates/horizontal_line" %>
     <% @windsor_smith.each do |windsor_smith_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">
@@ -73,4 +53,4 @@
     <% end %>
   </div>
 </div>
-<%= render 'templates/mail_chimp_form_mens' %>
+<%= render 'templates/footer/footer' %>

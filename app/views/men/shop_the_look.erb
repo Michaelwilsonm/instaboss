@@ -5,13 +5,13 @@
 <div class="shop_the_look_mens"></div>
 <div class="desktop-categories"><h1>Shop The Look</h1></div>
 <div class="categorise desktop-sort">
-  <%= render "templates/mens/sub_categories_sort/shop_the_look" %>
+  <%= render "templates/womens/sub_categories_sort/shop_the_look" %>
 </div>
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Shop The Look</h1>
     <div class="item_sub_cat mobile-sort">
-      <%= render "templates/mens/mobile_sub_categories_sort/shop_the_look" %>
+      <%= render "templates/womens/mobile_sub_categories_sort/shop_the_look" %>
     </div>
     <% @shop_the_look_mens.each do |shop_the_look_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= shop_the_look_items.describe_the_look %>">

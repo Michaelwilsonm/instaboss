@@ -1,21 +1,7 @@
-<div class="search_bar">
-  <%= render "templates/men_side_search_bar" %>
-</div>
-<% if current_admin %>
-  <%= render "templates/admin_navigation" %>
-<% else %>
-  <%= render "templates/navigation" %>
-  <%= render "templates/navigation_mobile_mens" %>
-<% end %>
-<%= render "/templates/mobile_navigation_sliding_div_mens" %>
-<div class="item_navigation_top_mens">
-  <%= render "templates/item_navigation_mens" %>
-</div>
-
-
-<div class="mens-main-menu-search">
-  <%= render "templates/side_nav_mens_search" %>
-</div>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
 <div class="container mobile_container">
   <div class="row" style="margin-left: 0px;">
     <div class="item_navigation">

@@ -8,7 +8,7 @@ $(document).ready(function() {
       $(window).scroll(toggleNavigation)
 
       function toggleNavigation(){
-        var windowScroll = $(window).scrollTop();
+        var windowScroll = $(this).scrollTop();
         if (windowScroll > 333) {
           navigationFixed()
         } else if (windowScroll < 333) {

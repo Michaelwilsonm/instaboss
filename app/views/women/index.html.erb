@@ -4,14 +4,13 @@
 <%= render "templates/womens/navigation/navigation" %>
 
 <div class="banner-photos">
-  <div class="womens_main_photo"></div>
+  <div class="womens_main_photo women-page"></div>
 </div>
-
+<div class="desktop-categories"><h1>Featured Women's</h1></div>
 <div class="container mobile_container">
   <div class="row mobile_row">
     <% if @featured_women.length >= 1 %>
-      <h1 class="your-items-main mob-ul">Featured Women's</h1>
-      <%= render "templates/horizontal_line" %>
+      <h1 class="your-items mob-ul">Featured Women's</h1>
       <%= render "templates/womens/index_page/featured" %>
     <% end %>
   </div>
@@ -20,8 +19,7 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <% if @staff_picked_women.length >= 1 %>
-      <h1 class="your-items-main mob-ul">Staff Picks</h1>
-      <%= render "templates/horizontal_line" %>
+      <h1 class="your-items mob-ul">Staff Picks</h1>
       <%= render "templates/womens/index_page/staff_picks" %>
     <% end %>
   </div>
@@ -30,9 +28,8 @@
 <div class="container mobile_container">
   <div class="row mobile_row">
     <div class="sale_feat_h1">
-      <h1 class="your-items-main mob-ul">Featured Sale</h1>
+      <h1 class="your-items mob-ul">Featured Sale</h1>
     </div>
-    <%= render "templates/horizontal_line" %>
     <%= render "templates/womens/index_page/on_sale_nine" %>
   </div>
 </div>

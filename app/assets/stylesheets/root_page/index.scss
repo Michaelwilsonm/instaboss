@@ -42,6 +42,7 @@ $calisto: "Calisto MT Regular";
   text-align: center;
   padding: 20px;
   p{
+    text-decoration: underline;
     margin: 0px;
     background-color: rgba(255,255,255,1);
     color: black;
@@ -56,6 +57,12 @@ $calisto: "Calisto MT Regular";
   height: 250px;
   background-size: cover;
   background-position: 50% 5%;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }
 
 .shop-mens-banner{
@@ -65,6 +72,12 @@ $calisto: "Calisto MT Regular";
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
 }
 
 .no-padding{

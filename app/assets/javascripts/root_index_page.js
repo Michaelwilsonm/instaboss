@@ -4,7 +4,6 @@ $(document).ready(function() {
   setInterval(function(){
       $(".brand-images").animate({marginLeft: "-=804px"}, 8000,function(){
         count ++
-        console.log(count)
         if (count == 3){
           count = 0
           $(".brand-images").css({marginLeft: "0px"})

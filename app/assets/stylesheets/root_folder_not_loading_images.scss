@@ -1,0 +1,39 @@
+.main_page_photo{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 400px;
+  background-image: url("main_splash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20% 65%;
+  position: relative;
+}
+.shop-womens-banner{
+  background-image: url("womens_items.jpg");
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: 50% 5%;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.shop-mens-banner{
+  background-image: url("men_items.png");
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

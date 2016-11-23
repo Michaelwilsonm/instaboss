@@ -1,49 +1,55 @@
 $calisto: "Calisto MT Regular";
 
-.index-divider{
-  height: 70px;
-}
 .index-main{
-  position: fixed;
   height: 70px;
   font-family: $calisto;
   width: 100%;
-  background-color:white;
-  z-index: 10;
+  background-color: rgba(255,255,255,1);
   h1{
     text-align: center;
-    margin-top: 10px;
-    font-size: 55px;
+    color: black;
+    font-size: 60px;
+    margin: 0px;
   }
 }
 
+.social-icons-root{
+  text-align: center;
+  margin-top: 0px;
+  img{
+    display: inline-block;
+    height: 70px;
+    padding: 10px;
+  }
+  p{
+    font-size: 15px;
+  }
+}
 
 .main_page_photo{
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 350px;
+  height: 400px;
   background-image: url("../main_splash.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 20% 65%;
   position: relative;
-  .root-paragraph-one{
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    p{
-      margin: 0px;
-      background-color: rgba(255,255,255,1);
-      color: black;
-      box-shadow: 0px 0px 5px 5px rgba(255,255,255,1);
-      font-family: $calisto;
-      font-size: 25px;
-    }
+}
+
+.root-paragraph-one{
+  text-align: center;
+  padding: 20px;
+  p{
+    margin: 0px;
+    background-color: rgba(255,255,255,1);
+    color: black;
+    font-family: $calisto;
+    font-size: 25px;
   }
 }
+
 .shop-womens-banner{
   background-image: url("../womens_items.jpg");
   width: 100%;
@@ -66,7 +72,8 @@ $calisto: "Calisto MT Regular";
 }
 
 .main-root-index-mens-womens{
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   h2{
     margin-top: 0px;
     position: relative;
@@ -101,7 +108,7 @@ $calisto: "Calisto MT Regular";
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   height: 150px;
 }
 
@@ -113,7 +120,7 @@ $calisto: "Calisto MT Regular";
   padding: 0px;
 }
 
-.slide{
+.slide-brands{
   float: left;
   margin: 0px;
   list-style-type: none;
@@ -122,29 +129,34 @@ $calisto: "Calisto MT Regular";
   }
 }
 
-.root-hr{
-  margin: 0px 0px 5px 0px;
+#carosel-retail{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  width: 90%;
+  height: 150px;
+}
 
+.retail-images{
+  display: block;
+  width: 5224px;
+  height: 150px;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.slide-retail{
+  float: left;
+  margin: 0px;
+  list-style-type: none;
+  img{
+    height: 125px;
+  }
 }
 
 .root-paragraph-two{
+  margin-top: 50px;
   text-align: center;
   font-size: 20px;
-}
-
-
-
-
-.worldwide_shipping_main{
-  p{
-    text-align: center;
-    font-size: 20px;
-    font-family: "Calisto MT Regular";
-    margin-bottom: 50px;
-  }
-  [alt="shipping-icon"]{
-    width: 130px;
-    display: block;
-    margin: 0px auto 0px auto;
-  }
 }

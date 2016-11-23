@@ -13112,6 +13112,10 @@ return jQuery;
 
 
 
+(function() {
+
+
+}).call(this);
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
@@ -13262,120 +13266,6 @@ $(document).ready(function() {
 
   });
 });
-$(document).ready(function() {
-  $(document).on('page:change',function() {
-
-    var click = 0;
-    $(".refine").click(function(e){
-      e.preventDefault();
-      click ++;
-      if ( click % 2 == 1 ) {
-        $(".nav-cat-ul").slideDown(300);
-      }else{
-        $(".nav-cat-ul").slideUp(300);
-      }
-    });
-  });
-});
-$(document).ready(function() {
-  $(document).on('page:change', function () {
-
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
-
-    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
-
-      // if the value in the form is changed to "Mens" append the objects keys to the item category option
-    if ($("#new-item-sex").val() === 'Mens') {
-      $.each( mensCategories, function( key, value ) {
-        $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
-      });
-
-      // if womens do same but for womens
-    } else if ($("#new-item-sex").val() === 'Womens') {
-      $.each( womensCategories, function( key, value ) {
-        $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-      });
-    }
-
-    //if the sex changes remove all of the options in categorys and it's children
-    $("#new-item-sex").change(function(){
-      $('#new-item-category').children().remove()
-      var sexNewItem = $('#new-item-sex').val();
-      //get new sex value "mens or womens"
-      if ( sexNewItem === 'Mens') {
-        $.each( mensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
-        // same as above, append values to option
-      } else if (sexNewItem === 'Womens') {
-        $.each( womensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
-      }
-    });
-
-    // if the category or sex values change, change the subcategory values
-    $("#new-item-category, #new-item-sex").change(function(){
-      $('#new-item-sub-category').children().remove()
-      var sexNewItem = $('#new-item-sex').val();
-
-      if ( sexNewItem === 'Mens' ) {
-          $.each( mensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, subCatValues ) {
-                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-              });
-            }
-          });
-        } else if (sexNewItem === 'Womens') {
-          $.each( womensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, subCatValues ) {
-                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-              });
-            }
-          });
-        }
-    });
-  });
-});
-(function() {
-
-
-}).call(this);
-// $(document).ready(function() {
-//   $(document).on('page:change',function() {
-
-//     $(".featured-button").click(function(e){
-//       e.preventDefault();
-//       e.stopPropagation();
-//       var href = $(this).attr("href")
-//       var id = $(this).attr("id")
-//       console.log(id)
-//       console.log(href)
-
-//     $.ajax({
-//       type: "POST",
-//       url: href,
-//       data: true,
-//       success: function(data){
-//       },
-//       error: function(error){
-//       }
-//     })
-//     })
-
-
-
-
-
-
-
-
-//   });
-// });
 $(document).ready(function() {
   $(document).on('page:change', function () {
     womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
@@ -13615,28 +13505,66 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(".item_nav_top").hover(function(){
-      $(".item_drop_shop_by").stop().fadeIn(300)
-    },function(){
-      $(".item_drop_shop_by").stop().fadeOut(300)
+    var click = 0;
+    $(".refine").click(function(e){
+      e.preventDefault();
+      click ++;
+      if ( click % 2 == 1 ) {
+        $(".nav-cat-ul").slideDown(300);
+      }else{
+        $(".nav-cat-ul").slideUp(300);
+      }
     });
+  });
+});
+$(document).ready(function() {
+  $(document).on('page:change',function() {
 
-    $(".item_nav_top_brand").hover(function(){
-      $(".item_drop_shop_by_brand").stop().fadeIn(300)
-    },function(){
-      $(".item_drop_shop_by_brand").stop().fadeOut(300)
+    var shopByDropDown = (function(){
+      var shopByMenu = $(".item_nav_top");
+      var shopByDiv = $(".item_drop_shop_by");
+      var shopByArrow = $(".arrow-down-shop");
+
+      shopByMenu.hover(fadeInDiv, fadeOutDiv);
+      shopByMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        shopByArrow.toggleClass("arrow-active")
+      }
+
+      function fadeInDiv(){
+        shopByDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        shopByDiv.stop().fadeOut(300);
+      }
     });
+    shopByDropDown();
+
+    var brandsDropDown = (function(){
+      var brandsMenu = $(".item_nav_top_brand");
+      var brandsDiv = $(".item_drop_shop_by_brand");
+      var brandArrow = $(".arrow-down-brand")
+
+      brandsMenu.hover(fadeInDiv, fadeOutDiv);
+      brandsMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        brandArrow.toggleClass("arrow-active");
+      }
+
+      function fadeInDiv(){
+        brandsDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        brandsDiv.stop().fadeOut(300);
+      }
+    });
+    brandsDropDown();
 
   });
-
-
-  $(".item_nav_top").hover(function(){
-    $(".arrow-down-shop").toggleClass("arrow-active")
-  })
-
-  $(".item_nav_top_brand").hover(function(){
-    $(".arrow-down-brand").toggleClass("arrow-active")
-  })
 });
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
@@ -13650,22 +13578,129 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
-    $(window).scroll(function(){
-      var windowScroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+    var scrollingFixedNav = (function(){
+      var bannerTitle = $(".desktop-categories")
+      var categorySubCats = $(".categorise")
 
-        console.log(windowScroll)
-      if (windowScroll > 333) {
-        $(".desktop-categories").addClass("scroll-fixed-categories")
-        $(".categorise").addClass("scroll-fixed-categorise")
-      } else {
-        $(".desktop-categories").removeClass("scroll-fixed-categories")
-        $(".categorise").removeClass("scroll-fixed-categorise");
+      $(window).scroll(toggleNavigation)
+
+      function toggleNavigation(){
+        var windowScroll = $(this).scrollTop();
+        if (windowScroll > 333) {
+          navigationFixed()
+        } else if (windowScroll < 333) {
+          navigationAbsolute()
+        }
       }
-    })
+
+      function navigationFixed(){
+        bannerTitle.addClass("scroll-fixed-categories")
+        categorySubCats.addClass("scroll-fixed-categorise")
+      }
+
+      function navigationAbsolute(){
+        bannerTitle.removeClass("scroll-fixed-categories")
+        categorySubCats.removeClass("scroll-fixed-categorise");
+      }
+    });
+    scrollingFixedNav()
 
 
   });
+});
+$(document).ready(function() {
+  $(document).on('page:change', function () {
+
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+
+    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+
+      // if the value in the form is changed to "Mens" append the objects keys to the item category option
+    if ($("#new-item-sex").val() === 'Mens') {
+      $.each( mensCategories, function( key, value ) {
+        $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
+      });
+
+      // if womens do same but for womens
+    } else if ($("#new-item-sex").val() === 'Womens') {
+      $.each( womensCategories, function( key, value ) {
+        $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
+      });
+    }
+
+    //if the sex changes remove all of the options in categorys and it's children
+    $("#new-item-sex").change(function(){
+      $('#new-item-category').children().remove()
+      var sexNewItem = $('#new-item-sex').val();
+      //get new sex value "mens or womens"
+      if ( sexNewItem === 'Mens') {
+        $.each( mensCategories, function( key, value ) {
+          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
+        });
+        // same as above, append values to option
+      } else if (sexNewItem === 'Womens') {
+        $.each( womensCategories, function( key, value ) {
+          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
+        });
+      }
+    });
+
+    // if the category or sex values change, change the subcategory values
+    $("#new-item-category, #new-item-sex").change(function(){
+      $('#new-item-sub-category').children().remove()
+      var sexNewItem = $('#new-item-sex').val();
+
+      if ( sexNewItem === 'Mens' ) {
+          $.each( mensCategories, function( key, value ) {
+            if (key.includes( $("#new-item-category").val() ) ) {
+              var subCategory = value;
+              $.each( subCategory, function( index, subCatValues ) {
+                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+              });
+            }
+          });
+        } else if (sexNewItem === 'Womens') {
+          $.each( womensCategories, function( key, value ) {
+            if (key.includes( $("#new-item-category").val() ) ) {
+              var subCategory = value;
+              $.each( subCategory, function( index, subCatValues ) {
+                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+              });
+            }
+          });
+        }
+    });
+  });
+});
+$(document).ready(function() {
+
+  count = 0
+  setInterval(function(){
+      $(".brand-images").animate({marginLeft: "-=804px"}, 8000,function(){
+        count ++
+        console.log(count)
+        if (count == 3){
+          count = 0
+          $(".brand-images").css({marginLeft: "0px"})
+        }
+
+      })
+
+  }, 10000);
+
+    count3 = 0
+  setInterval(function(){
+      $(".retail-images").animate({marginLeft: "-=604px"}, 8000,function(){
+        count3 ++
+        if (count3 == 3){
+          count3 = 0
+          $(".retail-images").css({marginLeft: "0px"})
+        }
+
+      })
+
+  }, 10000);
+
 });
 $(document).on('page:change', function() {
 
@@ -13735,6 +13770,7 @@ $(document).on('page:change', function() {
 });
 $(document).ready(function() {
   $(document).on('page:change',function() {
+
     $(".image_div").hover(function(){
         var $description = $(".description_content")
         $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)

@@ -9,9 +9,9 @@ $(document).ready(function() {
 
       function toggleNavigation(){
         var windowScroll = $(this).scrollTop();
-        if (windowScroll > 333) {
+        if (windowScroll > 350) {
           navigationFixed()
-        } else if (windowScroll < 333) {
+        } else if (windowScroll < 350) {
           navigationAbsolute()
         }
       }

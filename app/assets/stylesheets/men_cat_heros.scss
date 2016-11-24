@@ -104,3 +104,23 @@
   background-image: url("On Sale.jpg");
   background-position: 50% 75%;
 }
+
+@media only screen and (max-width: 960px) {
+  .desktop-categories{
+    top: 450px;
+  }
+
+  .scroll-fixed-categories{
+    top: 100px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .desktop-categories{
+    top: 460px;
+  }
+
+  .scroll-fixed-categories{
+    top: 110px;
+  }
+}

@@ -88,7 +88,6 @@ $calisto: "Calisto MT Regular";
   h2{
     margin-top: 0px;
     position: relative;
-    transition: background-color 0.5s ease;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -98,9 +97,9 @@ $calisto: "Calisto MT Regular";
     line-height: 250px;
     font-family: $calisto;
     font-size: 50px;
+    background-color: rgba(0,0,0,0.5);
     &:hover{
       cursor: pointer;
-      background-color: rgba(0,0,0,0.5);
     }
   }
 }

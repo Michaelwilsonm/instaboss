@@ -13125,18 +13125,29 @@ $(document).ready(function() {
       var womensPage = $(".womens_main_photo").hasClass('women-page');
       var mensPage = $(".mens_main_photo").hasClass('men-page');
 
-      if (scrollHeight < 1685){
-        if (mensPage){
-        $(".desktop-categories>h1").text("Featured Men's");
-        } else if (womensPage){
-          $(".desktop-categories>h1").text("Featured Women's");
+      if (mensPage){
+        if (scrollHeight < 1685){
+          $(".desktop-categories>h1").text("Featured Men's");
+        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
+          $(".desktop-categories>h1").text("Staff Picks");
+        } else if (scrollHeight > 2942) {
+          $(".desktop-categories>h1").text("Featured Sale");
         }
-      } else if (scrollHeight > 1685 && scrollHeight < 2942) {
-        $(".desktop-categories>h1").text("Staff Picks");
-      } else if (scrollHeight > 2942) {
-        $(".desktop-categories>h1").text("Featured Sale");
       }
+
+      if (womensPage){
+          if (scrollHeight < 1685){
+            $(".desktop-categories>h1").text("Featured Women's");
+          } else if (scrollHeight > 1685 && scrollHeight < 2942) {
+            $(".desktop-categories>h1").text("Staff Picks");
+          } else if (scrollHeight > 2942) {
+            $(".desktop-categories>h1").text("Featured Sale");
+          }
+        }
+
+
     })
+
 
 
   })
@@ -13601,9 +13612,9 @@ $(document).ready(function() {
 
       function toggleNavigation(){
         var windowScroll = $(this).scrollTop();
-        if (windowScroll > 333) {
+        if (windowScroll > 350) {
           navigationFixed()
-        } else if (windowScroll < 333) {
+        } else if (windowScroll < 350) {
           navigationAbsolute()
         }
       }
@@ -13691,7 +13702,7 @@ $(document).ready(function() {
 
   count = 0
   setInterval(function(){
-      $(".brand-images").animate({marginLeft: "-=804px"}, 8000,function(){
+      $(".brand-images").animate({marginLeft: "-=804px"}, 12000,function(){
         count ++
         if (count == 3){
           count = 0
@@ -13700,11 +13711,11 @@ $(document).ready(function() {
 
       })
 
-  }, 10000);
+  }, 0);
 
     count3 = 0
   setInterval(function(){
-      $(".retail-images").animate({marginLeft: "-=604px"}, 8000,function(){
+      $(".retail-images").animate({marginLeft: "-=604px"}, 12000,function(){
         count3 ++
         if (count3 == 3){
           count3 = 0
@@ -13713,7 +13724,7 @@ $(document).ready(function() {
 
       })
 
-  }, 10000);
+  }, 0);
 
 });
 $(document).on('page:change', function() {

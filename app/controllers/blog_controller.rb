@@ -10,4 +10,10 @@ class BlogController < ApplicationController
 
   def jaf_blog
   end
+
+  def showpo_blog
+  end
+
+  def auguste_blog
+  end
 end

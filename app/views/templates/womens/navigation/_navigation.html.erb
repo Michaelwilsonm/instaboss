@@ -6,7 +6,7 @@
   <h1>InstaBoss</h1>
   <div class="all-nav-link">
     <%= link_to "MENS", men_path %>
-    <%= link_to "WOMENS", women_path %>
+    <u><%= link_to "WOMENS", women_path %></u>
     <div class="item_nav_top">
       <%= link_to "SHOP",  class: "shop_by" %>
       <div class="item_drop_shop_by" id="my_drop_down">
@@ -16,6 +16,7 @@
       </div>
       <div class="arrow-down-shop"></div>
     </div>
+    <%= link_to "SHOP THE LOOK", women_shop_the_look_path %>
     <%= link_to "SALE", site_sale_womens_path %>
     <div class="item_nav_top_brand">
       <%= link_to "BRANDS", women_brand_path, class: "shop_by_brand" %>
@@ -27,9 +28,8 @@
       </div>
       <div class="arrow-down-brand"></div>
     </div>
-    <%= link_to "CONTACT", women_contact_path %>
     <%= link_to "ABOUT", women_about_path %>
-    <%= link_to "BLOG", blog_index_path %>
+    <%= link_to "CONTACT", women_contact_path %>
   </div>
 </div>
 <div class="banner-nav-space"></div>

@@ -126,3 +126,39 @@ DROP DOWN ARROWS ON NAVIGATION
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
+/***********************
+RESPONSIVE LAYOUT OF NAVIGATION
+***********************/
+
+@media only screen and (max-width: 1220px) {
+  .sticky-nav-mens{
+    h1{
+      display: none;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 960px) {
+  .sticky-nav-mens{
+    height: 100px;
+  }
+
+  .banner-nav-space{
+    height: 100px;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .sticky-nav-mens{
+    font-size: 15px;
+    padding: 0px;
+    height: 110px;
+  }
+
+  .banner-nav-space{
+    height: 110px;
+  }
+}

@@ -1,6 +1,13 @@
-<%= render "templates/admin_navigation" %>
+<%= render "templates/mobile_nav/navigation_main" %>
+<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
+<div style="margin-top: 50px;"></div>
 <div class="affiliate-portal-item">
   <h1 class="your-items">All Admin Items</h1>
+
+   <p><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></p>
+
 
   <p><em><%= link_to 'Shop The Look Items', shop_look_image_admin_index_path, class: "add-new-client" %></em></p>
 

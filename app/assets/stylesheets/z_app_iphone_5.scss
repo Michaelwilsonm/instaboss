@@ -13,6 +13,7 @@
 
   .mobile-sort{
     display: block;
+    background-color: yellow;
   }
 
   .sticky-nav-mens{
@@ -428,9 +429,10 @@
   }
 
   .item_sub_cat{
-    margin: 20px;
-    padding-bottom: 70px;
-    border-bottom: 1px solid;
+    background-color:white;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
   }
 
   .sale_women{
@@ -447,7 +449,7 @@
 
   .sorting_class{
      li{
-      font-size: 45px;
+      font-size: 44px;
       margin: 5px 20px 0px 20px;
     }
   }

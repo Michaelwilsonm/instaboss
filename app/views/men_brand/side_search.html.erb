@@ -3,12 +3,8 @@
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
 <%= render "templates/mens/navigation/navigation" %>
 <div class="container mobile_container">
-  <div class="row" style="margin-left: 0px;">
-    <div class="item_navigation">
-      <%= render "templates/item_navigation_mens_subcat" %>
-    </div>
+  <div class="row">
     <h1 class="your-items mob-ul">Search Results Men's</h1>
-    <%= render "templates/horizontal_line" %>
       <% @query_all.each do |query_items| %>
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">
@@ -56,4 +52,4 @@
   </div>
 </div>
 
-<%= render 'templates/mail_chimp_form_mens' %>
+<%= render 'templates/footer/footer' %>

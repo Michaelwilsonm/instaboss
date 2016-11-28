@@ -30,7 +30,7 @@ STICKY NAVIGATION FIRST DIV
   a{
     color: black;
     font-family: $calisto;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 15px 10px 15px;
     &:hover{
       color: black;
     }
@@ -112,12 +112,12 @@ DROP DOWN ARROWS ON NAVIGATION
 }
 
 .arrow-down-brand{
-  left: 95px;
+  left: 75px;
   @extend .arrow-drop-down-scss;
 }
 
 .arrow-down-shop {
-  left: 73px;
+  left: 55px;
   @extend .arrow-drop-down-scss;
 }
 
@@ -125,6 +125,31 @@ DROP DOWN ARROWS ON NAVIGATION
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.search-tag{
+  font-style: italic;
+}
+
+.search-btn{
+  right: 30px;
+  top: 25px;
+  position: absolute;
+  i{
+    cursor: pointer;
+  }
+}
+
+.search-input{
+  input{
+    border: none;
+    border-bottom: 1px solid;
+    padding: 3px;
+    border-color: #ddd;
+  }
+  position: absolute;
+  right: -152px;
+  top: 25px;
 }
 
 /***********************

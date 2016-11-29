@@ -3,15 +3,13 @@
 <% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
 <% if @item.sex == 'Mens' %>
-  <%= render "templates/mobile_nav/navigation_main" %>
-  <%= render "templates/mobile_nav/navigation_mobile_mens" %>
-  <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
-  <%= render "templates/mens/navigation/navigation" %>
+<%= render "templates/mobile_nav/navigation_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
 <% elsif @item.sex == 'Womens' %>
-  <%= render "templates/mobile_nav/navigation_main" %>
-  <%= render "templates/mobile_nav/navigation_mobile_womens" %>
-  <%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
-  <%= render "templates/womens/navigation/navigation" %>
+<%= render "templates/mobile_nav/navigation_womens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
+<%= render "templates/womens/navigation/navigation" %>
 <% end %>
 <div class="container">
   <div class="row">

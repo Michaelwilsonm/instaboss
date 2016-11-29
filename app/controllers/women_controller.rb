@@ -3,11 +3,17 @@ class WomenController < ApplicationController
   before_action :all_shop_the_look_images
 
   def index
+    @all_shop_look_featured = @shop_look_images.shop_the_look_featured_women
+    @featured_womens = @items.featured_womens
+    @all_featured = index_sorting(@featured_womens, @all_shop_look_featured).take(6)
+
     @womens = @items.all_womens_items
     @sale_womens = @items.all_womens_on_sale
     @special_three = @items.nine_special_items_womens.sample(12)
-    @featured_women = @items.featured_womens.take(6)
-    @staff_picked_women = @items.staff_picked_women_items.take(12)
+
+    @staff_picked_women = @items.staff_picked_women_items
+    @all_shop_look_staff = @shop_look_images.shop_the_look_staff_women
+    @staff_picked_men = index_sorting(@staff_picked_women, @all_shop_look_staff).take(12)
   end
 
   def all
@@ -86,6 +92,11 @@ class WomenController < ApplicationController
   end
 
   private
+
+    def index_sorting(fashion_items, shop_look_items)
+      all = fashion_items + shop_look_items
+      all.sort! { |a,b| b.created_at <=> a.created_at }
+    end
 
     def join_items_and_sort(fashion_items, shop_look_items)
       @all_items = fashion_items + shop_look_items

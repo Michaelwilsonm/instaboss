@@ -4,15 +4,13 @@
 
 
 <% if @shop_the_look_image.gender == 'Mens' %>
-  <%= render "templates/mobile_nav/navigation_main" %>
-  <%= render "templates/mobile_nav/navigation_mobile_mens" %>
-  <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
-  <%= render "templates/mens/navigation/navigation" %>
+<%= render "templates/mobile_nav/navigation_mens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
+<%= render "templates/mens/navigation/navigation" %>
 <% elsif @shop_the_look_image.gender == 'Womens' %>
-  <%= render "templates/mobile_nav/navigation_main" %>
-  <%= render "templates/mobile_nav/navigation_mobile_womens" %>
-  <%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
-  <%= render "templates/womens/navigation/navigation" %>
+<%= render "templates/mobile_nav/navigation_womens" %>
+<%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
+<%= render "templates/womens/navigation/navigation" %>
 <% end %>
 
 <div class="container mobile_container_show">

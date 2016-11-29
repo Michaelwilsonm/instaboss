@@ -1,5 +1,4 @@
-<%= render "templates/mobile_nav/navigation_main" %>
-<%= render "templates/mobile_nav/navigation_mobile_mens" %>
+<%= render "templates/mobile_nav/navigation_mens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
 <%= render "templates/mens/navigation/navigation" %>
 
@@ -10,10 +9,8 @@
 <div class="desktop-categories"><h1>Featured Men's</h1></div>
 <div class="container mobile_container">
   <div class="row mobile_row">
-    <% if @featured_men.length >= 1 %>
-      <h1 class="your-items mob-ul">Featured Men's</h1>
-      <%= render "templates/mens/index_page/featured" %>
-    <% end %>
+    <h1 class="your-items mob-ul">Featured Men's</h1>
+    <%= render "templates/mens/index_page/featured" %>
   </div>
 </div>
 

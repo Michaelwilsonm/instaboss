@@ -30,7 +30,7 @@ STICKY NAVIGATION FIRST DIV
   a{
     color: black;
     font-family: $calisto;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 20px 10px 20px;
     &:hover{
       color: black;
     }
@@ -112,12 +112,12 @@ DROP DOWN ARROWS ON NAVIGATION
 }
 
 .arrow-down-brand{
-  left: 75px;
+  left: 80px;
   @extend .arrow-drop-down-scss;
 }
 
 .arrow-down-shop {
-  left: 55px;
+  left: 60px;
   @extend .arrow-drop-down-scss;
 }
 

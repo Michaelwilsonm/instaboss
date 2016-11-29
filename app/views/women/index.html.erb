@@ -1,5 +1,4 @@
-<%= render "templates/mobile_nav/navigation_main" %>
-<%= render "templates/mobile_nav/navigation_mobile_womens" %>
+<%= render "templates/mobile_nav/navigation_womens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
 <%= render "templates/womens/navigation/navigation" %>
 
@@ -9,19 +8,15 @@
 <div class="desktop-categories"><h1>Featured Women's</h1></div>
 <div class="container mobile_container">
   <div class="row mobile_row">
-    <% if @featured_women.length >= 1 %>
-      <h1 class="your-items mob-ul">Featured Women's</h1>
-      <%= render "templates/womens/index_page/featured" %>
-    <% end %>
+    <h1 class="your-items mob-ul">Featured Women's</h1>
+    <%= render "templates/womens/index_page/featured" %>
   </div>
 </div>
 
 <div class="container mobile_container">
   <div class="row mobile_row">
-    <% if @staff_picked_women.length >= 1 %>
-      <h1 class="your-items mob-ul">Staff Picks</h1>
-      <%= render "templates/womens/index_page/staff_picks" %>
-    <% end %>
+    <h1 class="your-items mob-ul">Staff Picks</h1>
+    <%= render "templates/womens/index_page/staff_picks" %>
   </div>
 </div>
 

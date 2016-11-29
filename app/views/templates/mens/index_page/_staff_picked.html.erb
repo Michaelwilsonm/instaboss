@@ -1,31 +1,51 @@
 <div class="container mobile_container">
   <div class="row">
-  <% @staff_picked_men.each do |staff_picks| %>
-    <div class="box col-md-4 col-sm-6 col-xs-12">
-      <div class="image_div">
-        <a href="/item/<%= staff_picks.id %>">
-          <%= image_tag staff_picks.item_image.url(:medium) %>
-        <div class="description_content">
-          <% if staff_picks.sale == true %>
-          <table>
-            <tr class="specials_table">
-              <td><strike><em>$<%= zeros(staff_picks.price) %></em></strike></td>
-              <td>$<%= zeros(staff_picks.sale_price) %></td>
-            </tr>
-          </table>
-          <% else %>
-          <table>
-            <tr class="normal_table">
-              <td>$<%= zeros(staff_picks.price) %></td>
-            </tr>
-          </table>
-        <% end %>
-        <p><%= staff_picks.short_description %></p>
-        <p><%= word_branding(staff_picks.brand) %></p>
+    <% @staff_picked_men.each do |f| %>
+      <% if f.class == FashionItem %>
+        <div class="box col-md-4 col-sm-6 col-xs-12">
+          <div class="image_div">
+            <a href="/item/<%= f.id %>">
+              <%= image_tag f.item_image.url(:medium) %>
+              <div class="description_content">
+                <% if f.sale == true %>
+                  <table>
+                    <tr class="specials_table">
+                    <td><strike><em>$<%= zeros(f.price) %></em></strike></td>
+                    <td>$<%= zeros(f.sale_price) %></td>
+                    </tr>
+                  </table>
+                <% else %>
+                  <table>
+                    <tr class="normal_table">
+                    <td>$<%= zeros(f.price) %></td>
+                    </tr>
+                  </table>
+                <% end %>
+                <p><%= f.short_description %></p>
+                <p><%= word_branding(f.brand) %></p>
+              </div>
+            </a>
+          </div>
         </div>
-        </a>
-      </div>
-    </div>
-  <% end %>
+      <% elsif f.class == ShopTheLookImage %>
+        <div class="box col-md-4 col-sm-6 col-xs-12">
+          <div class="image_div">
+            <a href="/shop_the_look_images/<%= f.id %>">
+              <%= image_tag f.shop_look_image.url(:medium) %>
+              <div class="description_content">
+                <table>
+                  <tr class="shop_look_table">
+                  </tr>
+                </table>
+                <div class="shop-the-look-description">
+                  <h2>Shop The Look</h2>
+                  <p><%= word_branding(f.shop_the_look_items.first.brand) %></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

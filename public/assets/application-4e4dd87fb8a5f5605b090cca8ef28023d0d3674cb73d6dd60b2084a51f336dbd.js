@@ -13119,7 +13119,6 @@ return jQuery;
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-
     $(window).scroll(function(){
       var scrollHeight = $(this).scrollTop();
       var womensPage = $(".womens_main_photo").hasClass('women-page');
@@ -13136,16 +13135,14 @@ $(document).ready(function() {
       }
 
       if (womensPage){
-          if (scrollHeight < 1685){
-            $(".desktop-categories>h1").text("Featured Women's");
-          } else if (scrollHeight > 1685 && scrollHeight < 2942) {
-            $(".desktop-categories>h1").text("Staff Picks");
-          } else if (scrollHeight > 2942) {
-            $(".desktop-categories>h1").text("Featured Sale");
-          }
+        if (scrollHeight < 1685){
+          $(".desktop-categories>h1").text("Featured Women's");
+        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
+          $(".desktop-categories>h1").text("Staff Picks");
+        } else if (scrollHeight > 2942) {
+          $(".desktop-categories>h1").text("Featured Sale");
         }
-
-
+      }
     })
 
 
@@ -13507,6 +13504,7 @@ $(document).ready(function() {
 
     $("#nav-toggle").click(function(){
     toggleNavCount ++
+    $(".hamburger-slider").css({zIndex: "10"})
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
@@ -13525,8 +13523,19 @@ $(document).ready(function() {
           $(".mobile_container_show").css({display: "none"})
         })
       }
-    })
+    });
 
+    var spacingHeight = $(".sorting_class").height()
+    $(".sorting-spacing").height(spacingHeight)
+
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop();
+      if (scroll > 400){
+        $(".sorting_class").css({position: "fixed", top: "128px"})
+      } else {
+        $(".sorting_class").css({position: "absolute", top: "0px"})
+      }
+    })
 
 
   });
@@ -13702,7 +13711,7 @@ $(document).ready(function() {
 
   count = 0
   setInterval(function(){
-      $(".brand-images").animate({marginLeft: "-=804px"}, 12000,function(){
+      $(".brand-images").animate({marginLeft: "-=804px"}, 17000,function(){
         count ++
         if (count == 3){
           count = 0
@@ -13715,7 +13724,7 @@ $(document).ready(function() {
 
     count3 = 0
   setInterval(function(){
-      $(".retail-images").animate({marginLeft: "-=604px"}, 12000,function(){
+      $(".retail-images").animate({marginLeft: "-=604px"}, 17000,function(){
         count3 ++
         if (count3 == 3){
           count3 = 0
@@ -13726,6 +13735,24 @@ $(document).ready(function() {
 
   }, 0);
 
+});
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+
+    jQuery.fn.clickToggle = function(a,b) {
+      function cb(){ [b,a][this._tog^=1].call(this); }
+      return this.on("click", cb);
+    };
+
+    $(".search-btn>i").clickToggle(function(e){
+      $(".search-btn").animate({right: "172px"}, 500)
+      $(".search-input").animate({right: "10px"}, 500)
+    }, function(){
+      $(".search-btn").animate({right: "30px"}, 500)
+      $(".search-input").animate({right: "-152px"}, 500)
+    })
+
+  });
 });
 $(document).on('page:change', function() {
 

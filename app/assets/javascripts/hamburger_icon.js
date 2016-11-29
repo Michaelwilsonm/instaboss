@@ -33,6 +33,14 @@ $(document).ready(function() {
     var spacingHeight = $(".sorting_class").height()
     $(".sorting-spacing").height(spacingHeight)
 
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop();
+      if (scroll > 400){
+        $(".sorting_class").css({position: "fixed", top: "128px"})
+      } else {
+        $(".sorting_class").css({position: "absolute", top: "0px"})
+      }
+    })
 
 
   });

@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     $("#nav-toggle").click(function(){
     toggleNavCount ++
+    $(".hamburger-slider").css({zIndex: "10"})
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
@@ -27,7 +28,10 @@ $(document).ready(function() {
           $(".mobile_container_show").css({display: "none"})
         })
       }
-    })
+    });
+
+    var spacingHeight = $(".sorting_class").height()
+    $(".sorting-spacing").height(spacingHeight)
 
 
 

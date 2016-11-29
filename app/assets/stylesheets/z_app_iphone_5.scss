@@ -38,8 +38,34 @@
     margin-left: 8%;
   }
 
+  .mobile-spacing{
+    height: 130px;
+  }
+
   .mobile-navigation-main{
     display: block;
+    position: fixed;
+    height: 130px;
+    background-color: white;
+    width: 100%;
+    z-index: 10;
+    h1{
+      font-size: 100px;
+    }
+    h2{
+      font-family: "Calisto MT Regular";
+      float: right;
+      position: relative;
+      color:black;
+      right: 30px;
+      top: -70px;
+      font-size: 50px;
+      a{
+        text-decoration: none;
+        color:black;
+
+      }
+    }
   }
 
   .border-bottom-navigation-mobile{
@@ -240,10 +266,6 @@
     height: 2000px;
   }
 
-  .mobile_nav{
-    display: block;
-  }
-
   .lap_nav{
     display: none;
   }
@@ -300,15 +322,6 @@
     color: #ccc;
     background-color: #ccc;
     display: block;
-  }
-
-  .navigation{
-    width: 132%;
-    margin-left: -120px;
-    ul{
-      margin-top: -50px;
-      font-size: 50px;
-    }
   }
 
   .logo-image{
@@ -491,13 +504,6 @@
     display: none;
   }
 
-  .navigation{
-    h1{
-    font-size: 90px;
-
-    }
-  }
-
   .logos{
     h3{
       font-size: 50px;
@@ -581,30 +587,6 @@
     background-color: black;
     bottom: 25px;
     transform: rotate(45deg);
-  }
-
-  .mobile_nav{
-    ul {
-      list-style-type: none;
-      float: right;
-      margin-top: -100px;
-      margin-bottom: 0px;
-      li {
-        display: inline;
-        margin-right: 30px;
-        font-weight: bold;
-        font-size: 50px;
-        font-family: "Calisto MT Regular";
-      }
-      a {
-        text-decoration: none;
-        color: black;
-        &:hover {
-          text-decoration: underline;
-          color: black;
-        }
-      }
-    }
   }
 
   .index_men_women{

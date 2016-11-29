@@ -1,6 +1,11 @@
 .sorting_class{
   text-align: center;
   list-style-type: none;
+  display: block;
+  position:fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
   li{
     font-family: "Calisto MT Regular";
     font-size: 20px;

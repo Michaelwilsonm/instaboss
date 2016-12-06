@@ -1,6 +1,6 @@
 <div class="nested-fields">
   <div class="shop-the-look-items-wrapper">
-    <div class="col-md-4">
+    <div class="col-md-4 stl-form-wrapper">
 
         <%= link_to_remove_association("- Item", f, { wrapper_class: 'shop-the-look-items-wrapper' }) %><br>
 
@@ -23,15 +23,19 @@
           <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount" %>
         </div>
 
-        <span>On Sale?</span>
-         <% sale_array = [["", false],["Yes", true],["No", false]] %>
-         <%= f.select "sale", options_for_select(sale_array), {}, { autofocus: 'true', class: 'form-control input-sm shop-look-sale'} %>
+        <div class="stl-on-sale">
+          <span>On Sale?</span>
+           <% sale_array = [["No", false],["Yes", true]] %>
+           <%= f.select "sale", options_for_select(sale_array), {}, { autofocus: 'true', class: 'form-control input-sm shop-look-sale'} %>
+        </div>
 
-        <span>Sale Price ($AUD)</span>
-        <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
-        <div class="input-group">
-          <div class="input-group-addon">$</div>
-          <%= f.number_field "sale_price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount" %>
+        <div class="stl-on-sale-price">
+          <span>Sale Price ($AUD)</span>
+          <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <%= f.number_field "sale_price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount" %>
+          </div>
         </div>
 
         <span>Product URL</span>

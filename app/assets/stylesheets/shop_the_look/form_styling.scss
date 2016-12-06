@@ -1,0 +1,37 @@
+.stl-form-container{
+  margin-top: 50px;
+  border-radius: 25px;
+  box-shadow: 1px 1px 1px 1px #bbb;
+  padding: 10px 25px 10px 25px;
+}
+
+.stl-form-wrapper{
+  margin-top: 20px;
+  a{
+    font-family: "Calisto MT Regular";
+    color: black;
+    &:hover{
+    color: black;
+    }
+  }
+}
+
+.accept-button{
+  margin-top: 15px;
+}
+
+
+.links{
+  margin-top: 20px;
+  font-family: "Calisto MT Regular";
+  a{
+    color: black;
+    &:hover{
+    color: black;
+    }
+  }
+}
+
+.stl-on-sale-price{
+  display: none;
+}

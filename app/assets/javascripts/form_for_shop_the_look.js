@@ -89,6 +89,30 @@ $(document).ready(function() {
       }
     })
 
+    $("#shop_the_look_image_shop_the_look_items_attributes_3_category").change(function(){
+      $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").children().remove();
+        var catValue = $("#shop_the_look_image_shop_the_look_items_attributes_3_category").val()
+      if ($(".gender-look").val() == 'Mens') {
+        $.each( mensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      } else if ($(".gender-look").val() == 'Womens') {
+        $.each( womensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      }
+    })
+
     function changeEditCats(categoriesMensOrWomens){
       $(".cat-look").append("<option value=''>"+"</option>");
       $.each( categoriesMensOrWomens, function( key, value ) {
@@ -102,25 +126,38 @@ $(document).ready(function() {
       })
       .on('cocoon:after-insert', function(e, added_task) {
         var thisForm = added_task.find(".cat-look");
+        var thisSaleForm = added_task.find(".shop-look-sale");
         categories(mensLookCategories, womensLookCategories, thisForm);
 
+        thisSaleForm.change(function(){
+          var str = $(this).val()
+          var myBool = JSON.parse(str);
+          var _thisSale = $(this)
+          myBool ? showSale(_thisSale) : hideSale(_thisSale);
 
-        // $(".shop-look-sale").change(function(){
-        //   var saleVal = $(this).val()
-        //   if (saleVal == "true") {
-        //     $(this).next().next().css({display: "block"})
-        //   } else if (saleVal == "false") {
-        //     $(this).next().next().css({display: "none"})
-        //   }
-        // })
+          function showSale(sale){
+            sale.parent().next().show()
+          }
+
+          function hideSale(sale){
+            sale.parent().next().hide()
+          }
+          // squares[i] = this.state.xIsNext ? 'X' : 'O';
+
+          // console.log($(this).next())
+        })
 
         thisForm.change(function(){
           var catVal = $(this).val();
           var subCat = $(this).next().next();
           subCategories(subCat, catVal, mensLookCategories, womensLookCategories);
-
         })
       })
+
+      // function saleDiv(thisy, form ){
+      //   console.log(thisy)
+      //   console.log(form)
+      // }
 
     $(".gender-look").change(function(){
         $(".cat-look").children().remove();
@@ -172,9 +209,6 @@ $(document).ready(function() {
         }
       });
     }
-
-
-
 
     if ($(".error-handling-js").hasClass("error")) {
       $('.shop-the-look-new-form').validate({

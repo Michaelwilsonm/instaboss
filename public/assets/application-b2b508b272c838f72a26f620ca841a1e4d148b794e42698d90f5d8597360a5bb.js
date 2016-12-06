@@ -13112,10 +13112,72 @@ return jQuery;
 
 
 
-(function() {
+$(document).on('page:change', function() {
 
 
-}).call(this);
+  $(".staff-shop-true").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently NOT Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".staff-shop").click(function(e){
+    e.preventDefault()
+    $(this).html("Currently IS Staff Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_staff_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop-true").click(function(e){
+    console.log("feature-true")
+    e.preventDefault()
+    $(this).html("Currently NOT Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-succes").addClass("btn-danger")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_true",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+  $(".feature-shop").click(function(e){
+    console.log("feature-false")
+    e.preventDefault()
+    $(this).html("Currently IS Feature Picked<br>(click to change)")
+    $(this).removeClass("btn-danger").addClass("btn-success")
+    var id = $(this).attr('id')
+    $.ajax({
+      method: "POST",
+      url: "/admin/" + id + "/update_shop_featured_false",
+      success: function(data){
+      },
+      error : function(err){
+      }
+    })
+  })
+
+});
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
@@ -13160,42 +13222,7 @@ $(document).ready(function() {
 ;
 $(document).ready(function() {
   $(document).on('page:change', function () {
-
-    $(window).scroll(function(){
-      var scrollHeight = $(this).scrollTop();
-      var womensPage = $(".womens_main_photo").hasClass('women-page');
-      var mensPage = $(".mens_main_photo").hasClass('men-page');
-
-      if (mensPage){
-        if (scrollHeight < 1685){
-          $(".desktop-categories>h1").text("Featured Men's");
-        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
-          $(".desktop-categories>h1").text("Staff Picks");
-        } else if (scrollHeight > 2942) {
-          $(".desktop-categories>h1").text("Featured Sale");
-        }
-      }
-
-      if (womensPage){
-        if (scrollHeight < 1685){
-          $(".desktop-categories>h1").text("Featured Women's");
-        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
-          $(".desktop-categories>h1").text("Staff Picks");
-        } else if (scrollHeight > 2942) {
-          $(".desktop-categories>h1").text("Featured Sale");
-        }
-      }
-    })
-
-
-
-  })
-})
-;
-$(document).ready(function() {
-  $(document).on('page:change', function () {
-
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -13254,58 +13281,6 @@ $(document).ready(function() {
         }
       });
 
-
-    $('.fashion_item_form').validate({
-      rules: {
-        'FashionItem[short_description]' : {
-              required: true,
-              maxlength: 25
-          },
-          'FashionItem[item_image]' : {
-              required: true
-          },
-          'FashionItem[category]': {
-              required: true
-          },
-          'FashionItem[sub_category]': {
-              required: true
-          },
-          'FashionItem[price]': {
-              required: true,
-              number : true
-          },
-          'FashionItem[unique_affiliate_url]': {
-              required: true
-          }
-      }
-    });
-
-    $('.edit_fashion_item').validate({
-      rules: {
-        'FashionItem[short_description]' : {
-              required: true,
-              maxlength: 25
-          },
-        'FashionItem[item_image]' : {
-              required: false
-          },
-          'FashionItem[category]': {
-              required: true
-          },
-          'FashionItem[sub_category]': {
-              required: true
-          },
-          'FashionItem[price]': {
-              required: true,
-              number : true
-          },
-          'FashionItem[unique_affiliate_url]': {
-              required: true
-          }
-      }
-    });
-
-
     var toggleSalePriceDuration = (function() {
       var $sale = $("#item-on-sale");
       var $saleDuration = $("#item-sale-duration");
@@ -13344,7 +13319,7 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {
-    womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    womensLookCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     mensLookCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -13433,6 +13408,30 @@ $(document).ready(function() {
       }
     })
 
+    $("#shop_the_look_image_shop_the_look_items_attributes_3_category").change(function(){
+      $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").children().remove();
+        var catValue = $("#shop_the_look_image_shop_the_look_items_attributes_3_category").val()
+      if ($(".gender-look").val() == 'Mens') {
+        $.each( mensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      } else if ($(".gender-look").val() == 'Womens') {
+        $.each( womensLookCategories, function( key, value ) {
+          if (key.includes(catValue)) {
+            var subCategory = value;
+            $.each( subCategory, function( index, subCatValues ) {
+              $("#shop_the_look_image_shop_the_look_items_attributes_3_sub_category").append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+            });
+          }
+        });
+      }
+    })
+
     function changeEditCats(categoriesMensOrWomens){
       $(".cat-look").append("<option value=''>"+"</option>");
       $.each( categoriesMensOrWomens, function( key, value ) {
@@ -13446,25 +13445,22 @@ $(document).ready(function() {
       })
       .on('cocoon:after-insert', function(e, added_task) {
         var thisForm = added_task.find(".cat-look");
+        var thisSaleForm = added_task.find(".shop-look-sale");
         categories(mensLookCategories, womensLookCategories, thisForm);
 
-
-        // $(".shop-look-sale").change(function(){
-        //   var saleVal = $(this).val()
-        //   if (saleVal == "true") {
-        //     $(this).next().next().css({display: "block"})
-        //   } else if (saleVal == "false") {
-        //     $(this).next().next().css({display: "none"})
-        //   }
-        // })
+        thisSaleForm.change(function(){
+          var str = $(this).val()
+          var myBool = JSON.parse(str);
+          myBool ? $(this).parent().next().show() : $(this).parent().next().hide();
+        })
 
         thisForm.change(function(){
           var catVal = $(this).val();
           var subCat = $(this).next().next();
           subCategories(subCat, catVal, mensLookCategories, womensLookCategories);
-
         })
       })
+
 
     $(".gender-look").change(function(){
         $(".cat-look").children().remove();
@@ -13517,72 +13513,83 @@ $(document).ready(function() {
       });
     }
 
+  });
+});
+$(document).ready(function() {
+  $(document).on('page:change', function () {
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
+    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
-
-    if ($(".error-handling-js").hasClass("error")) {
-      $('.shop-the-look-new-form').validate({
-        rules: {
-          'shop_the_look_image[shop_look_image]' : {
-            required: true
-          }
-        }
+    if ($("#new-item-sex").val() === 'Mens') {
+      $.each( mensCategories, function( key, value ) {
+        $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
+      });
+    } else if ($("#new-item-sex").val() === 'Womens') {
+      $.each( womensCategories, function( key, value ) {
+        $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
       });
     }
+    $("#new-item-sex").change(function(){
+      $('#new-item-category').children().remove()
+      var sexNewItem = $('#new-item-sex').val();
+      if ( sexNewItem === 'Mens') {
+        $.each( mensCategories, function( key, value ) {
+          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
+        });
+      } else if (sexNewItem === 'Womens') {
+        $.each( womensCategories, function( key, value ) {
+          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
+        });
+      }
+    });
+    $("#new-item-category, #new-item-sex").change(function(){
+      $('#new-item-sub-category').children().remove()
+      var sexNewItem = $('#new-item-sex').val();
 
-
-
-
+      if ( sexNewItem === 'Mens' ) {
+          $.each( mensCategories, function( key, value ) {
+            if (key.includes( $("#new-item-category").val() ) ) {
+              var subCategory = value;
+              $.each( subCategory, function( index, subCatValues ) {
+                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+              });
+            }
+          });
+        } else if (sexNewItem === 'Womens') {
+          $.each( womensCategories, function( key, value ) {
+            if (key.includes( $("#new-item-category").val() ) ) {
+              var subCategory = value;
+              $.each( subCategory, function( index, subCatValues ) {
+                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
+              });
+            }
+          });
+        }
+    });
   });
 });
 $(document).ready(function() {
   $(document).on('page:change',function() {
-    var toggleNavCount = 0
 
-    document.querySelector( "#nav-toggle" )
-    .addEventListener( "click", function() {
-      this.classList.toggle( "active" );
+    $(".image_div").hover(function(){
+        var $description = $(".description_content")
+        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
+    }, function(){
+        var $description = $(".description_content")
+        $(this).find($description).stop().animate({opacity: 0}, 400);
     });
 
-    $("#nav-toggle").click(function(){
-    toggleNavCount ++
-    $(".hamburger-slider").css({zIndex: "10"})
-    $(".hamburger-slider").show()
-      if (toggleNavCount % 2 == 0) {
-        $(".logo-image").fadeIn()
-        $(".mobile_container").css({display: "block"})
-        $(".mobile_container_show").css({display: "block"})
-        $(".hamburger-slider").animate({
-          right: "1000px"
-        },300, function(){
-        })
-      }else if (toggleNavCount % 2 != 0) {
-        $(".logo-image").fadeOut()
-        $(".hamburger-slider").animate({
-          right: "-5px"
-        },300, function(){
-          $(".mobile_container").css({display: "none"})
-          $(".mobile_container_show").css({display: "none"})
-        })
-      }
+    $(".image_div_featured").hover(function(){
+        var $description = $(".description_content_featured")
+        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
+    }, function(){
+        var $description = $(".description_content_featured")
+        $(this).find($description).stop().animate({opacity: 0}, 400);
     });
-
-    var spacingHeight = $(".sorting_class").height()
-    $(".sorting-spacing").height(spacingHeight)
-
-    $(window).scroll(function(){
-      var scroll = $(this).scrollTop();
-      if (scroll > 400){
-        $(".sorting_class").css({position: "fixed", top: "128px"})
-      } else {
-        $(".sorting_class").css({position: "absolute", top: "0px"})
-      }
-    })
-
 
   });
-}); //end
-;
+});
 $(document).ready(function() {
   $(document).on('page:change',function() {
 
@@ -13596,6 +13603,8 @@ $(document).ready(function() {
         $(".nav-cat-ul").slideUp(300);
       }
     });
+
+
   });
 });
 $(document).ready(function() {
@@ -13687,72 +13696,86 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {
-    console.log('hello')
 
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    $(window).scroll(function(){
+      var scrollHeight = $(this).scrollTop();
+      var womensPage = $(".womens_main_photo").hasClass('women-page');
+      var mensPage = $(".mens_main_photo").hasClass('men-page');
 
-    var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+      if (mensPage){
+        if (scrollHeight < 1685){
+          $(".desktop-categories>h1").text("Featured Men's");
+        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
+          $(".desktop-categories>h1").text("Staff Picks");
+        } else if (scrollHeight > 2942) {
+          $(".desktop-categories>h1").text("Featured Sale");
+        }
+      }
 
-      // if the value in the form is changed to "Mens" append the objects keys to the item category option
-      console.log('hello')
-    if ($("#new-item-sex").val() === 'Mens') {
-      console.log('hello')
-      $.each( mensCategories, function( key, value ) {
-        $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
-      });
+      if (womensPage){
+        if (scrollHeight < 1685){
+          $(".desktop-categories>h1").text("Featured Women's");
+        } else if (scrollHeight > 1685 && scrollHeight < 2942) {
+          $(".desktop-categories>h1").text("Staff Picks");
+        } else if (scrollHeight > 2942) {
+          $(".desktop-categories>h1").text("Featured Sale");
+        }
+      }
+    })
 
-      // if womens do same but for womens
-    } else if ($("#new-item-sex").val() === 'Womens') {
-      console.log('hello')
-      $.each( womensCategories, function( key, value ) {
-        $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-      });
-    }
 
-    //if the sex changes remove all of the options in categorys and it's children
-    $("#new-item-sex").change(function(){
-      $('#new-item-category').children().remove()
-      var sexNewItem = $('#new-item-sex').val();
-      //get new sex value "mens or womens"
-      if ( sexNewItem === 'Mens') {
-        $.each( mensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
-        // same as above, append values to option
-      } else if (sexNewItem === 'Womens') {
-        $.each( womensCategories, function( key, value ) {
-          $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
-        });
+
+  })
+})
+;
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+    var toggleNavCount = 0
+
+    // document.querySelector( "#nav-toggle" )
+    // .addEventListener( "click", function() {
+    //   this.classList.toggle( "active" );
+    // });
+
+    $("#nav-toggle").click(function(){
+    toggleNavCount ++
+    $(".hamburger-slider").css({zIndex: "10"})
+    $(".hamburger-slider").show()
+      if (toggleNavCount % 2 == 0) {
+        $(".logo-image").fadeIn()
+        $(".mobile_container").css({display: "block"})
+        $(".mobile_container_show").css({display: "block"})
+        $(".hamburger-slider").animate({
+          right: "1000px"
+        },300, function(){
+        })
+      }else if (toggleNavCount % 2 != 0) {
+        $(".logo-image").fadeOut()
+        $(".hamburger-slider").animate({
+          right: "-5px"
+        },300, function(){
+          $(".mobile_container").css({display: "none"})
+          $(".mobile_container_show").css({display: "none"})
+        })
       }
     });
 
-    // if the category or sex values change, change the subcategory values
-    $("#new-item-category, #new-item-sex").change(function(){
-      $('#new-item-sub-category').children().remove()
-      var sexNewItem = $('#new-item-sex').val();
+    var spacingHeight = $(".sorting_class").height()
+    $(".sorting-spacing").height(spacingHeight)
 
-      if ( sexNewItem === 'Mens' ) {
-          $.each( mensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, subCatValues ) {
-                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-              });
-            }
-          });
-        } else if (sexNewItem === 'Womens') {
-          $.each( womensCategories, function( key, value ) {
-            if (key.includes( $("#new-item-category").val() ) ) {
-              var subCategory = value;
-              $.each( subCategory, function( index, subCatValues ) {
-                $('#new-item-sub-category').append("<option value=" + subCatValues + ">" + subCatValues + "</option>");
-              });
-            }
-          });
-        }
-    });
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop();
+      if (scroll > 400){
+        $(".sorting_class").css({position: "fixed", top: "128px"})
+      } else {
+        $(".sorting_class").css({position: "absolute", top: "0px"})
+      }
+    })
+
+
   });
-});
+}); //end
+;
 $(document).ready(function() {
 
   count = 0
@@ -13797,93 +13820,6 @@ $(document).ready(function() {
       $(".search-btn").animate({right: "30px"}, 500)
       $(".search-input").animate({right: "-152px"}, 500)
     })
-
-  });
-});
-$(document).on('page:change', function() {
-
-
-  $(".staff-shop-true").click(function(e){
-    e.preventDefault()
-    $(this).html("Currently NOT Staff Picked<br>(click to change)")
-    $(this).removeClass("btn-succes").addClass("btn-danger")
-    var id = $(this).attr('id')
-    $.ajax({
-      method: "POST",
-      url: "/admin/" + id + "/update_shop_staff_true",
-      success: function(data){
-      },
-      error : function(err){
-      }
-    })
-  })
-
-  $(".staff-shop").click(function(e){
-    e.preventDefault()
-    $(this).html("Currently IS Staff Picked<br>(click to change)")
-    $(this).removeClass("btn-danger").addClass("btn-success")
-    var id = $(this).attr('id')
-    $.ajax({
-      method: "POST",
-      url: "/admin/" + id + "/update_shop_staff_false",
-      success: function(data){
-      },
-      error : function(err){
-      }
-    })
-  })
-
-  $(".feature-shop-true").click(function(e){
-    console.log("feature-true")
-    e.preventDefault()
-    $(this).html("Currently NOT Feature Picked<br>(click to change)")
-    $(this).removeClass("btn-succes").addClass("btn-danger")
-    var id = $(this).attr('id')
-    $.ajax({
-      method: "POST",
-      url: "/admin/" + id + "/update_shop_featured_true",
-      success: function(data){
-      },
-      error : function(err){
-      }
-    })
-  })
-
-  $(".feature-shop").click(function(e){
-    console.log("feature-false")
-    e.preventDefault()
-    $(this).html("Currently IS Feature Picked<br>(click to change)")
-    $(this).removeClass("btn-danger").addClass("btn-success")
-    var id = $(this).attr('id')
-    $.ajax({
-      method: "POST",
-      url: "/admin/" + id + "/update_shop_featured_false",
-      success: function(data){
-      },
-      error : function(err){
-      }
-    })
-  })
-
-});
-$(document).ready(function() {
-  $(document).on('page:change',function() {
-
-    $(".image_div").hover(function(){
-        var $description = $(".description_content")
-        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
-    }, function(){
-        var $description = $(".description_content")
-        $(this).find($description).stop().animate({opacity: 0}, 400);
-    });
-
-    $(".image_div_featured").hover(function(){
-        var $description = $(".description_content_featured")
-        $(this).find($description).stop().css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 400)
-    }, function(){
-        var $description = $(".description_content_featured")
-        $(this).find($description).stop().animate({opacity: 0}, 400);
-    });
 
   });
 });
@@ -14003,6 +13939,61 @@ $(document).on('page:change', function() {
     })
   })
 
+});
+$(document).ready(function() {
+  $(document).on('page:change',function() {
+
+    $('.fashion_item_form').validate({
+      rules: {
+        'FashionItem[short_description]' : {
+          required: true,
+          maxlength: 25
+        },
+        'FashionItem[item_image]' : {
+          required: true
+        },
+        'FashionItem[category]': {
+          required: true
+        },
+        'FashionItem[sub_category]': {
+          required: true
+        },
+        'FashionItem[price]': {
+          required: true,
+          number : true
+        },
+        'FashionItem[unique_affiliate_url]': {
+          required: true
+        }
+      }
+    });
+
+    $('.edit_fashion_item').validate({
+      rules: {
+        'FashionItem[short_description]' : {
+          required: true,
+          maxlength: 25
+        },
+        'FashionItem[item_image]' : {
+          required: false
+        },
+        'FashionItem[category]': {
+          required: true
+        },
+        'FashionItem[sub_category]': {
+          required: true
+        },
+        'FashionItem[price]': {
+          required: true,
+          number : true
+        },
+        'FashionItem[unique_affiliate_url]': {
+          required: true
+        }
+      }
+    });
+
+  });
 });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

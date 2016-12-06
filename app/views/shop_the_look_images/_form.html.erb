@@ -1,4 +1,4 @@
-<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form shop-the-look-new-form" } do |f| %>
+<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
 
   <div class="new_look_item">
     <div class="col-md-12">
@@ -8,7 +8,7 @@
           <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
           <%= f.file_field :shop_look_image %>
         <% else %>
-          <%= f.file_field :shop_look_image, class: "error error-handling-js" %>
+          <%= f.file_field :shop_look_image, required: 'true', class: "error error-handling-js" %>
         <% end %>
       </div>
 

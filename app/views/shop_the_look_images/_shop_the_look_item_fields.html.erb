@@ -5,7 +5,7 @@
         <%= link_to_remove_association("- Item", f, { wrapper_class: 'shop-the-look-items-wrapper' }) %><br>
 
         <span>Description</span>
-        <%= f.text_field :description, class: 'form-control item-shop-the-look' %>
+        <%= f.text_field :description, required: 'true', class: 'form-control item-shop-the-look' %>
 
         <span>Category</span>
         <%= f.select "category", options_for_select(""), {}, { autofocus: 'true', class: 'form-control input-sm cat-look' } %>
@@ -14,19 +14,19 @@
         <%= f.select "sub_category", options_for_select(""), {}, { autofocus: 'true', class: 'form-control input-sm sub-cat-look' } %>
 
         <span>Brand</span>
-        <%= f.text_field :brand, class: 'form-control' %>
+        <%= f.text_field :brand, required: 'true', class: 'form-control' %>
 
         <span>Recommended Retail Price ($AUD)</span>
         <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount" %>
+          <%= f.number_field "price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount", required: 'true' %>
         </div>
 
         <div class="stl-on-sale">
           <span>On Sale?</span>
-           <% sale_array = [["No", false],["Yes", true]] %>
-           <%= f.select "sale", options_for_select(sale_array), {}, { autofocus: 'true', class: 'form-control input-sm shop-look-sale'} %>
+           <% sale_array = [["Yes", true],["No", false]] %>
+           <%= f.select "sale", options_for_select(sale_array), {}, { autofocus: 'true', required: 'true', class: 'form-control input-sm shop-look-sale'} %>
         </div>
 
         <div class="stl-on-sale-price">
@@ -34,12 +34,12 @@
           <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
-            <%= f.number_field "sale_price", :step => 'any', class: 'form-control fashion-item-price',  placeholder: "Amount" %>
+            <%= f.number_field "sale_price", :step => 'any', required: 'true',class: 'form-control fashion-item-price',  placeholder: "Amount" %>
           </div>
         </div>
 
         <span>Product URL</span>
-        <%= f.text_field :unique_affiliate_url, class: 'form-control',  type: 'url', placeholder: "eg. https://www.instaboss/product.co" %>
+        <%= f.text_field :unique_affiliate_url, required: 'true', class: 'form-control',  type: 'url', placeholder: "eg. https://www.instaboss/product.co" %>
         <br>
         <br>
 

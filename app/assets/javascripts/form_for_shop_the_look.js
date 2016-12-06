@@ -132,19 +132,7 @@ $(document).ready(function() {
         thisSaleForm.change(function(){
           var str = $(this).val()
           var myBool = JSON.parse(str);
-          var _thisSale = $(this)
-          myBool ? showSale(_thisSale) : hideSale(_thisSale);
-
-          function showSale(sale){
-            sale.parent().next().show()
-          }
-
-          function hideSale(sale){
-            sale.parent().next().hide()
-          }
-          // squares[i] = this.state.xIsNext ? 'X' : 'O';
-
-          // console.log($(this).next())
+          myBool ? $(this).parent().next().show() : $(this).parent().next().hide();
         })
 
         thisForm.change(function(){
@@ -154,10 +142,6 @@ $(document).ready(function() {
         })
       })
 
-      // function saleDiv(thisy, form ){
-      //   console.log(thisy)
-      //   console.log(form)
-      // }
 
     $(".gender-look").change(function(){
         $(".cat-look").children().remove();
@@ -209,19 +193,6 @@ $(document).ready(function() {
         }
       });
     }
-
-    if ($(".error-handling-js").hasClass("error")) {
-      $('.shop-the-look-new-form').validate({
-        rules: {
-          'shop_the_look_image[shop_look_image]' : {
-            required: true
-          }
-        }
-      });
-    }
-
-
-
 
   });
 });

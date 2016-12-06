@@ -32,8 +32,7 @@ $(document).ready(function() {
           $box.show();
         }
       }
-    });
-    sortSubCategories();
+    })();
 
     var showSortItems = (function(){
       var $categorieHeader = $(".all-categories>h1");
@@ -44,8 +43,7 @@ $(document).ready(function() {
       function showList(){
         $listElements.stop().slideToggle(100)
       }
-    });
-    showSortItems();
+    })();
 
   });
 });

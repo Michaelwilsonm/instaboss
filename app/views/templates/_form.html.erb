@@ -1,133 +1,125 @@
-  <div class="container">
+<div class="container">
   <div class="row">
-    <div class="col-md-4"></div>
-      <div class="col-md-4">
+    <div class="col-md-12 form-box">
+      <div class="new_fashion_item">
+        <%= form_for @item, url: {action: "create"}, html: {class: "fashion_item_form", multipart: true} do |f| %>
+          <div class="col-md-4">
+            <div class="col-md-10">
+              <span>Image (640 x 640 pixels only)</span>
+                <input type="file" id="fashion-item-image" name="FashionItem[item_image]" accept="image/*" class="error">
+            </div>
 
-    <%= form_for @item, url: {action: "create"}, html: {class: "fashion_item_form", multipart: true} do |f| %>
+            <div class="col-md-10">
+              <span>Short Description</span>
+              <p class="descrip_paragraph">Title of product customers will first see</p>
+                <input class="form-control" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="" required>
+              <p class="descrip_paragraph"> Must be between 0 & 25 characters</p>
+            </div>
 
-        <div class="new_fashion_item">
-          <div class="col-md-10">
-            <span>Image (640 x 640 pixels only)</span>
-              <input type="file" id="fashion-item-image" name="FashionItem[item_image]" accept="image/*" class="error">
-          </div>
-
-          <div class="col-md-10">
-            <span>Short Description</span>
-            <p class="descrip_paragraph">Title of product customers will first see</p>
-              <input class="form-control" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="" required>
-            <p class="descrip_paragraph"> Must be between 0 & 25 characters</p>
-          </div>
-
-          <div class="col-md-10">
-            <span>Gender</span>
-            <select class="form-control input-sm" id="new-item-sex" name="FashionItem[sex]">
-              <option value="Mens" selected>Mens</option>
-              <option value="Womens" >Womens </option>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Category</span>
-            <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
-            <option value="Accessories" selected></option>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Sub-category</span>
-            <select class="form-control input-sm" id="new-item-sub-category" name="FashionItem[sub_category]">
-              <option value="<%= @item.sub_category %>" selected><%= @item.sub_category %> </option>
-            </select>
-          </div>
-
-
-          <div class="col-md-10">
-            <span>Shipping From</span>
-            <select class="form-control input-sm" id="new-item-shipped-from" name="FashionItem[shipped_from]">
-              <option value="U.S.A" selected>U.S.A </option>
-              <option value="Canada">Canada</option>
-              <option value="UK / Europe">UK / Europe</option>
-              <option value="Asia">Asia</option>
-              <option value="NZ / Aus">NZ / AUS</option>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Free worldwide Shipping?</span>
-            <select class="form-control input-sm" id="wwshipping-item" name="FashionItem[wwshipping]">
-              <option value="true" selected>Yes</option>
-              <option value="false" selected>No</option>
-            </select>
-          </div>
-
-
-          <div class="col-md-10">
-            <span>Brand</span>
-            <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="" required>
-          </div>
-
-          <div class="col-md-10">
-            <span>Recommended Retail Price ($AUD)</span>
-            <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
-            <div class="input-group">
-              <div class="input-group-addon">$</div>
-              <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
+            <div class="col-md-10">
+              <span>Gender</span>
+              <select class="form-control input-sm" id="new-item-sex" name="FashionItem[sex]">
+                <option value="Mens" selected>Mens</option>
+                <option value="Womens" >Womens </option>
+              </select>
             </div>
           </div>
 
-          <div class="col-md-10">
-            <span>On Sale?</span>
-            <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
+
+          <div class="col-md-4">
+            <div class="col-md-10">
+              <span>Category</span>
+              <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
+              <option value="Accessories" selected></option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <span>Sub-category</span>
+              <select class="form-control input-sm" id="new-item-sub-category" name="FashionItem[sub_category]">
+                <option value="<%= @item.sub_category %>" selected><%= @item.sub_category %> </option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <span>Shipping From</span>
+              <select class="form-control input-sm" id="new-item-shipped-from" name="FashionItem[shipped_from]">
+                <option value="NZ / Aus" selected>AUS / NZ</option>
+                <option value="U.S.A">U.S.A </option>
+                <option value="Canada">Canada</option>
+                <option value="UK / Europe">UK / Europe</option>
+                <option value="Asia">Asia</option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <span>Free worldwide Shipping?</span>
+              <select class="form-control input-sm" id="wwshipping-item" name="FashionItem[wwshipping]">
+                <option value="true" selected>Yes</option>
+                <option value="false" selected>No</option>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <span>Brand</span>
+              <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="" required>
+            </div>
           </div>
 
-          <div id="item-sale-price">
+          <div class="col-md-4">
             <div class="col-md-10">
-              <span>Sale Price ($AUD)</span>
-              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
+              <span>Recommended Retail Price ($AUD)</span>
+              <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
               <div class="input-group">
                 <div class="input-group-addon">$</div>
-                <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
+                <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
               </div>
             </div>
-          </div>
 
-          <div id="item-sale-duration">
             <div class="col-md-10">
-              <span>Sale Duration</span>
-              <div class="input-group">
-              <select class="form-control input-sm" id='item-on-sale' name="FashionItem[duration]">
-                <option value="<%= DateTime.now + 7%>">1 week</option>
-                <option value="<%= DateTime.now + 14%>">2 weeks</option>
-                <option value="<%= DateTime.now + 21%>">3 weeks</option>
+              <span>On Sale?</span>
+              <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
               </select>
+            </div>
+
+            <div id="item-sale-price">
+              <div class="col-md-10">
+                <span>Sale Price ($AUD)</span>
+                <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-10">
-            <span>Item Description</span>
-            <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" value="<%= @item.description %>"  required></textarea>
-          </div>
+            <div id="item-sale-duration">
+              <div class="col-md-10">
+                <span>Sale Duration</span>
+                <div class="input-group">
+                <select class="form-control input-sm" id='item-on-sale' name="FashionItem[duration]">
+                  <option value="<%= DateTime.now + 7%>">1 week</option>
+                  <option value="<%= DateTime.now + 14%>">2 weeks</option>
+                  <option value="<%= DateTime.now + 21%>">3 weeks</option>
+                </select>
+                </div>
+              </div>
+            </div>
 
-          <div class="col-md-10">
-            <span>Product URL (direct URL please)</span>
-            <input class="form-control" type="text" id="fashion-item-url" name="FashionItem[unique_affiliate_url]" placeholder="eg. https://www.instaboss/product.co" required>
-          </div>
+            <div class="col-md-10">
+              <span>Item Description</span>
+              <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" value="<%= @item.description %>"  required></textarea>
+            </div>
 
-        </div>
-        <div class="col-md-10"><br>
-          <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
-        </div>
-    <% end %>
-    <div class="col-md-4"></div>
+            <div class="col-md-10">
+              <span>Product URL (direct URL please)</span>
+              <input class="form-control" type="text" id="fashion-item-url" name="FashionItem[unique_affiliate_url]" placeholder="eg. https://www.instaboss/product.co" required>
+            </div>
+
+            <div class="col-md-10"><br>
+              <input type="submit" class="btn btn-default sub-button" value="submit" />
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-
-<%= javascript_include_tag 'jq-validate' %>
-<%= javascript_include_tag 'fashion_item' %>
-
-

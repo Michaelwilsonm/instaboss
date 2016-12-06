@@ -1,4 +1,4 @@
-<% item_options = {'All Items': '/item', 'Add Item': '/item/new', 'All Shop Look Items': '/shop_the_look_images', 'Add Shop Look Item': '/shop_the_look_images/new' }%>
+<% item_options = {'All Single Listings': '/item', 'Add Single Listing': '/item/new', 'All Shop Look Listings': '/shop_the_look_images', 'Add Shop Look Listing': '/shop_the_look_images/new' }%>
 
 
 <div class="sticky-nav-mens">
@@ -14,7 +14,7 @@
           <% item_options.each do |keys, values| %>
             <%= link_to keys, values %>
           <% end %>
-          <%= link_to "LOG OUT", destroy_user_session_path, :method => :delete %>
+          <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
         </div>
       <div class="arrow-down-client"></div>
     </div>

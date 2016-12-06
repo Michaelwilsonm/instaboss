@@ -13117,6 +13117,48 @@ return jQuery;
 
 }).call(this);
 $(document).ready(function() {
+  $(document).on('page:change',function() {
+
+    var hoverClient = (function(){
+      var $clientNav = $(".client-nav");
+      var $clientDropDown = $(".client-dropdown");
+      var $arrowDown = $(".arrow-down-client");
+
+      $clientNav.hover(clientMenuDown, clientMenuUp)
+
+      function clientMenuDown(){
+        $arrowDown.toggleClass('arrow-active');
+        $clientDropDown.stop().fadeIn(300);
+      }
+
+      function clientMenuUp(){
+        $arrowDown.toggleClass('arrow-active');
+        $clientDropDown.stop().fadeOut(300);
+      }
+    })();
+
+    var hoverAdmin = (function(){
+      var $adminNav = $(".admin-nav");
+      var $adminDropDown = $(".admin-dropdown");
+      var $arrowDown = $(".arrow-down-admin");
+
+      $adminNav.hover(adminMenuDown, adminMenuUp);
+
+      function adminMenuDown(){
+        $arrowDown.toggleClass('arrow-active');
+        $adminDropDown.stop().fadeIn(300);
+      }
+
+      function adminMenuUp(){
+        $arrowDown.toggleClass('arrow-active');
+        $adminDropDown.stop().fadeOut(300);
+      }
+
+    })();
+  })
+})
+;
+$(document).ready(function() {
   $(document).on('page:change', function () {
 
     $(window).scroll(function(){
@@ -13504,6 +13546,7 @@ $(document).ready(function() {
 
     $("#nav-toggle").click(function(){
     toggleNavCount ++
+    $(".hamburger-slider").css({zIndex: "10"})
     $(".hamburger-slider").show()
       if (toggleNavCount % 2 == 0) {
         $(".logo-image").fadeIn()
@@ -13522,8 +13565,19 @@ $(document).ready(function() {
           $(".mobile_container_show").css({display: "none"})
         })
       }
-    })
+    });
 
+    var spacingHeight = $(".sorting_class").height()
+    $(".sorting-spacing").height(spacingHeight)
+
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop();
+      if (scroll > 400){
+        $(".sorting_class").css({position: "fixed", top: "128px"})
+      } else {
+        $(".sorting_class").css({position: "absolute", top: "0px"})
+      }
+    })
 
 
   });
@@ -13633,19 +13687,23 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {
+    console.log('hello')
 
     var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Living'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
       // if the value in the form is changed to "Mens" append the objects keys to the item category option
+      console.log('hello')
     if ($("#new-item-sex").val() === 'Mens') {
+      console.log('hello')
       $.each( mensCategories, function( key, value ) {
         $('#new-item-category').append("<option value=" + key + ">"  +  key + "</option>");
       });
 
       // if womens do same but for womens
     } else if ($("#new-item-sex").val() === 'Womens') {
+      console.log('hello')
       $.each( womensCategories, function( key, value ) {
         $('#new-item-category').append("<option value=" + key + ">" + key + "</option>");
       });
@@ -13863,8 +13921,7 @@ $(document).ready(function() {
           $box.show();
         }
       }
-    });
-    sortSubCategories();
+    })();
 
     var showSortItems = (function(){
       var $categorieHeader = $(".all-categories>h1");
@@ -13875,8 +13932,7 @@ $(document).ready(function() {
       function showList(){
         $listElements.stop().slideToggle(100)
       }
-    });
-    showSortItems();
+    })();
 
   });
 });

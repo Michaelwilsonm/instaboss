@@ -13,7 +13,7 @@
       <% if admin_signed_in? %>
         <%= link_to 'ADMIN', admin_index_path, class: "admin-page-link" %>
       <% else %>
-        <a href="users/sign_in"><li>CLIENT</li></a>
+        <a href="/users/sign_in"><li>CLIENT</li></a>
       <% end %>
     </ul>
   </div>

@@ -175,6 +175,15 @@ $(document).ready(function() {
         task_to_be_added.fadeIn('slow');
       })
       .on('cocoon:after-insert', function(e, added_task) {
+        $(".remove_fields").click(function(){
+          $(".add_fields").show()
+        })
+        var addFourMaxLength = $(".stl-form-wrapper").length;
+        if (addFourMaxLength > 3) {
+          $(".add_fields").hide()
+        }else{
+          $(".add_fields").show()
+        }
         var thisForm = added_task.find(".cat-look");
         var thisSaleForm = added_task.find(".shop-look-sale");
         categories(mensLookCategories, womensLookCategories, thisForm);

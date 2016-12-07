@@ -32,14 +32,15 @@
           <td><%= item.description.slice(0..50) + "...." %></td>
           <td><%= item.shipped_from %></td>
           <td>$<%= zeros(item.price) %></td>
-          <td>
             <%if item.sale == false %>
-              <%= 'No' %>
+              <td class="sale-false-admin">
+              </td>
             <% else %>
-              <%= 'Yes' %><br>
-              $<%= zeros(item.sale_price) %>
+              <td class="sale-true-admin">
+                <p>$<%= zeros(item.sale_price) %></p>
+                <p>expires <%= item.try(:duration).try(:strftime, ("%D")) %></p>
+              </td>
             <% end %>
-          </td>
           <td>
             <%if item.featured_item != true %>
               <%= 'Featured No' %>

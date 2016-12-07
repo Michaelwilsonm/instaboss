@@ -4,12 +4,12 @@
       <tr class="sorting-table-rows">
         <th>Image</th>
         <th>gender</th>
-        <th>created at></th>
+        <th>created at</th>
         <th>Action</th>
       </tr>
       <% @users_items.each do |item| %>
         <tr class="users-sorting-items">
-          <td>
+          <td class="table-image-client">
             <div class="table-image">
               <%= image_tag item.shop_look_image.url(:thumb), class: "thumbnail" %>
             </div>

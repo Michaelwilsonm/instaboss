@@ -1,0 +1,42 @@
+.admin-nav{
+  position: relative;
+  display: inline-block;
+}
+
+.admin-dropdown{
+  display: none;
+  top: 33px;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  a{
+    color: black;
+    padding: 0px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.arrow-down-admin{
+  position: relative;
+  bottom: 12px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+}
+
+.arrow-down-admin {
+  left: 140px;
+}
+
+.admin-page-link{
+  // position: fixed;
+  // z-index: 1000;
+  // color: black;
+  // font-family: "Calisto MT Regular";
+}

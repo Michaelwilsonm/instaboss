@@ -3,15 +3,13 @@
 <%= render "templates/mens/navigation/navigation" %>
 <div class="sale_hero_mens"></div>
 <div class="desktop-categories"><h1>Sale</h1></div>
+<div class="mobile-categories"><h1>On Sale</h1></div>
 <div class="categorise desktop-sort">
   <%= render "templates/mens/sub_categories_sort/sale" %>
 </div>
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Sale</h1>
-    <div class="item_sub_cat mobile-sort">
-      <%= render "templates/mens/mobile_sub_categories_sort/sale" %>
-    </div>
     <% @sale_mens.each do |all_specials| %>
       <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">
         <div class="image_div">

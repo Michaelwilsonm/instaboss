@@ -34,7 +34,7 @@
           <h3><em>AUD $<%= zeros(@item.price) %></em></h3>
         <% end %>
         <p><%= @item.description %></p>
-        <p><em>Ships worldwide from <%= @item.shipped_from %></em></p>
+        <p><em>Ships from <%= @item.shipped_from %></em></p>
         <% if @item.wwshipping == true %>
           <p>Free Worldwide Shipping</p>
         <% end %>

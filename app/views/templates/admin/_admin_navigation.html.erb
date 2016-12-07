@@ -1,0 +1,22 @@
+<% item_options = {'All Items': '/admin','All Shop Look Items': '/admin/shop_look_image','Add Client': '/client/new', 'All Clients': '/client/all'}%>
+
+<div class="sticky-nav-mens">
+  <h1>InstaBoss</h1>
+  <div class="all-nav-link">
+    <%= link_to "MENS", men_path %>
+    <%= link_to "WOMENS", women_path %>
+    <%= link_to "SHOP THE LOOK", men_shop_the_look_path %>
+    <%= link_to "SALE", site_sale_mens_path %>///
+    <div class="admin-nav">
+      <%= link_to "ADMIN OPTIONS", class: "client-opt" %>
+        <div class="admin-dropdown">
+          <% item_options.each do |keys, values| %>
+            <%= link_to keys, values %>
+          <% end %>
+          <%= link_to('Log out', destroy_admin_session_path, :method => :delete) %>
+        </div>
+      <div class="arrow-down-admin"></div>
+    </div>
+  </div>
+</div>
+<div class="banner-nav-space"></div>

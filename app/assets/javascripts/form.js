@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $(document).on('page:change', function () {
-
-    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
+    var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
     var mensCategories = {'Accessories': ['Hats', 'Bags', 'Jewellery', 'Other'], 'Formal': ['Jackets & Coats','Suits', 'Accessories'], 'Lifestyle': ['Lifestyle'], 'Longs': ['Jeans', 'Chinos', 'Joggers'], 'Shoes': ['Boat & Loafers', 'Boots', 'Trainers', 'Formal', 'Other'], 'Shorts & Swimwear': ['Shorts', 'Swimwear'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'] , 'Tops': ['T-Shirts & Polos', 'Shirts', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -59,58 +58,6 @@ $(document).ready(function() {
           });
         }
       });
-
-
-    $('.fashion_item_form').validate({
-      rules: {
-        'FashionItem[short_description]' : {
-              required: true,
-              maxlength: 25
-          },
-          'FashionItem[item_image]' : {
-              required: true
-          },
-          'FashionItem[category]': {
-              required: true
-          },
-          'FashionItem[sub_category]': {
-              required: true
-          },
-          'FashionItem[price]': {
-              required: true,
-              number : true
-          },
-          'FashionItem[unique_affiliate_url]': {
-              required: true
-          }
-      }
-    });
-
-    $('.edit_fashion_item').validate({
-      rules: {
-        'FashionItem[short_description]' : {
-              required: true,
-              maxlength: 25
-          },
-        'FashionItem[item_image]' : {
-              required: false
-          },
-          'FashionItem[category]': {
-              required: true
-          },
-          'FashionItem[sub_category]': {
-              required: true
-          },
-          'FashionItem[price]': {
-              required: true,
-              number : true
-          },
-          'FashionItem[unique_affiliate_url]': {
-              required: true
-          }
-      }
-    });
-
 
     var toggleSalePriceDuration = (function() {
       var $sale = $("#item-on-sale");

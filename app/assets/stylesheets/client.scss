@@ -29,15 +29,16 @@
     height: 50px;
     text-align: center;
     background-color: white;
-    border: 1px solid;
-    border-color: black;
+    border-bottom: 1px solid;
+    border-color: #eee;
     a{
       padding: 2px;
       color: black;
     }
   }
   td{
-    border: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #eee;
     padding: 10px;
     text-align: left;
     height: 100px;

@@ -1,4 +1,4 @@
-<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form shop-the-look-new-form" } do |f| %>
+<%= form_for @shop_the_look_image, html: {multipart: true, class: "shop_look_item_form" } do |f| %>
 
   <div class="new_look_item">
     <div class="col-md-12">
@@ -8,21 +8,16 @@
           <%= image_tag @shop_the_look_image.shop_look_image.url(:thumb) %>
           <%= f.file_field :shop_look_image %>
         <% else %>
-          <%= f.file_field :shop_look_image, class: "error error-handling-js" %>
+          <%= f.file_field :shop_look_image, required: 'true', class: "error error-handling-js" %>
         <% end %>
       </div>
-    </div>
-  </div>
 
-  <div class="col-md-12">
     <div class="col-md-2">
       <span>Sex</span>
       <% gender_array = [['Mens'],["Womens"]] %>
       <%= f.select "gender", options_for_select(gender_array, @shop_the_look_image.gender), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm gender-look'} %>
     </div>
-  </div>
 
-  <div class="col-md-12">
     <div class="col-md-2">
       <span>Describe the Look</span>
       <% describe_options = [['Casual'],["Going Out"],["Working Out"],["Other"]] %>
@@ -35,13 +30,16 @@
       <%= f.fields_for :shop_the_look_items do |task| %>
         <%= render 'shop_the_look_item_fields', :f => task %>
       <% end %>
-      <div class='links'>
+      <div class='col-md-2 links'>
         <%= link_to_add_association 'add item', f, :shop_the_look_items %>
       </div>
     </div>
   </div>
 
   <div class="col-md-12">
-    <%= f.button :submit, class: "btn btn-default btn-lg accept-button" %>
+    <div class="col-md-2">
+      <%= f.button :submit, class: "btn btn-default btn-lg accept-button" %>
+    </div>
   </div>
+
 <% end %>

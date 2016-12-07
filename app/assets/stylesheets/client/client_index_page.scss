@@ -1,0 +1,42 @@
+.table-image-client{
+  padding: 0px;
+  width: 100px;
+  img{
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.arrow-down-sort-gender{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #000;
+  position: relative;
+  left: 45px;
+  top: 10px;
+  margin-top: -7px;
+}
+
+.arrow-down-sort-sale{
+  margin-top: -7px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #000;
+  position: relative;
+  left: 40px;
+  top: 10px;
+}
+
+.sale-true-client{
+  background-color: rgba(255,0,0,0.2);
+}
+
+.users-sorting-items{
+  td{
+    text-align: center;
+  }
+}

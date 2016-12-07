@@ -11,5 +11,7 @@ $(document).ready(function() {
         $(".nav-cat-ul").slideUp(300);
       }
     });
+
+
   });
 });

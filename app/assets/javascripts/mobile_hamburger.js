@@ -2,10 +2,10 @@ $(document).ready(function() {
   $(document).on('page:change',function() {
     var toggleNavCount = 0
 
-    document.querySelector( "#nav-toggle" )
-    .addEventListener( "click", function() {
-      this.classList.toggle( "active" );
-    });
+    // document.querySelector( "#nav-toggle" )
+    // .addEventListener( "click", function() {
+    //   this.classList.toggle( "active" );
+    // });
 
     $("#nav-toggle").click(function(){
     toggleNavCount ++

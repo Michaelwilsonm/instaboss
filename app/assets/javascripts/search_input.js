@@ -7,11 +7,11 @@ $(document).ready(function() {
     };
 
     $(".search-btn>i").clickToggle(function(e){
-      $(".search-btn").animate({right: "172px"}, 500)
-      $(".search-input").animate({right: "10px"}, 500)
+      $(".search-btn").animate({marginRight: "190px"}, 500)
+      $(".search-input").animate({marginRight: "20px"}, 500)
     }, function(){
-      $(".search-btn").animate({right: "30px"}, 500)
-      $(".search-input").animate({right: "-152px"}, 500)
+      $(".search-btn").animate({marginRight: "20px"}, 500)
+      $(".search-input").animate({marginRight: "-160px"}, 500)
     })
 
   });

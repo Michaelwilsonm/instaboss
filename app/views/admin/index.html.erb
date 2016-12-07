@@ -10,9 +10,8 @@
         <th><%= sortable "sex" %></th>
         <th><%= sortable "brand" %></th>
         <th><%= sortable "description" %></th>
-        <th><%= sortable "shipped_from" %></th>
-        <th><%= sortable "price" %></th>
-        <th><%= sortable "sale", "On Sale" %></th>
+        <th><%= sortable "price", "PRICE" %></th>
+        <th><%= sortable "sale", "ON SALE" %></th>
         <th><%= sortable "featured_item" %></th>
         <th><%= sortable "staff_picks" %></th>
         <th><%= sortable "created_at" %></th>
@@ -20,17 +19,15 @@
       </tr>
       <% @all_items.each do |item| %>
         <tr class="users-sorting-items">
-          <td>
+          <td class="table-image-admin">
             <div class="table-image">
               <%= image_tag item.item_image.url(:thumb), class: "thumbnail" %>
-              <p><%= item.short_description %></p>
             </div>
           </td>
           <td><%= item.user.email %></td>
           <td><%= item.sex %></td>
           <td><%= word_branding(item.brand) %></td>
           <td><%= item.description.slice(0..50) + "...." %></td>
-          <td><%= item.shipped_from %></td>
           <td>$<%= zeros(item.price) %></td>
             <%if item.sale == false %>
               <td class="sale-false-admin">

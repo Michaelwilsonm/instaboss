@@ -1,18 +1,14 @@
 <%= render "templates/client/client_navigation" %>
-
-
-
-
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">
-        <th>Image</th>
-        <th><%= sortable "sex", "gender" %><div class="arrow-down-sort-gender"></div></th>
-        <th><%= sortable "brand" %></th>
-        <th><%= sortable "description" %></th>
-        <th><%= sortable "price" %></th>
-        <th><%= sortable "sale", "On Sale" %><div class="arrow-down-sort-sale"></div></th>
-        <th><%= sortable "created_at" %></th>
+        <th>IMAGE</th>
+        <th><%= sortable "sex", "GENDER" %><div class="arrow-down-sort-gender"></div></th>
+        <th><%= sortable "brand", "BRAND" %></th>
+        <th><%= sortable "description", "DESCRIPTION" %></th>
+        <th><%= sortable "price", "PRICE" %></th>
+        <th><%= sortable "sale", "ON SALE" %><div class="arrow-down-sort-sale"></div></th>
+        <th><%= sortable "created_at", "CREATED ON" %></th>
         <th>Action</th>
       </tr>
       <% @users_items.each do |item| %>

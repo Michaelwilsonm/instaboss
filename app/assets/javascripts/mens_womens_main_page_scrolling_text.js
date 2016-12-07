@@ -16,6 +16,16 @@ $(document).ready(function() {
         }
       }
 
+      if (mensPage){
+        if (scrollHeight < 5675){
+          $(".mobile-categories-feat>h1").text("Featured Men's")
+        } else if (scrollHeight > 5675 && scrollHeight < 8475) {
+          $(".mobile-categories-feat>h1").text("Staff Pick's")
+        } else if (scrollHeight > 8475) {
+          $(".mobile-categories-feat>h1").text("Featured Sale")
+        }
+      }
+
       if (womensPage){
         if (scrollHeight < 1685){
           $(".desktop-categories>h1").text("Featured Women's");
@@ -23,6 +33,16 @@ $(document).ready(function() {
           $(".desktop-categories>h1").text("Staff Picks");
         } else if (scrollHeight > 2942) {
           $(".desktop-categories>h1").text("Featured Sale");
+        }
+      }
+
+      if (womensPage){
+        if (scrollHeight < 5675){
+          $(".mobile-categories-feat>h1").text("Featured Women's")
+        } else if (scrollHeight > 5675 && scrollHeight < 8475) {
+          $(".mobile-categories-feat>h1").text("Staff Pick's")
+        } else if (scrollHeight > 8475) {
+          $(".mobile-categories-feat>h1").text("Featured Sale")
         }
       }
     })

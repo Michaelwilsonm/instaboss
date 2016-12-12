@@ -13221,6 +13221,31 @@ $(document).ready(function() {
 })
 ;
 $(document).ready(function() {
+  $(document).on('page:change',function() {
+
+
+    $(".box").click(function(e){
+      e.preventDefault()
+      $(".on-click-enlarge").hide()
+      $(".tint").fadeIn(500)
+      $(this).next().fadeIn(500)
+    });
+
+    $(".close-button-enlarged").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+    $(".tint").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+
+
+  });
+});
+$(document).ready(function() {
   $(document).on('page:change', function () {
     var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -13735,10 +13760,21 @@ $(document).ready(function() {
   $(document).on('page:change',function() {
 
     var scrollingFixedNav = (function(){
-      var bannerTitle = $(".desktop-categories")
-      var categorySubCats = $(".categorise")
+      var $bannerTitle = $(".desktop-categories")
+      var $mobBanner = $(".mobile-categories")
+      var $categorySubCats = $(".categorise")
 
       $(window).scroll(toggleNavigation)
+      $(window).scroll(toggleMobileNavigation)
+
+      function toggleMobileNavigation(){
+        var windowScroll = $(this).scrollTop();
+        if (windowScroll > 300) {
+          $mobBanner.css({position: 'fixed', top: "125px"})
+        } else if (windowScroll < 300) {
+          $mobBanner.css({position: 'absolute', top: "430px"})
+        }
+      }
 
       function toggleNavigation(){
         var windowScroll = $(this).scrollTop();
@@ -13750,13 +13786,13 @@ $(document).ready(function() {
       }
 
       function navigationFixed(){
-        bannerTitle.addClass("scroll-fixed-categories")
-        categorySubCats.addClass("scroll-fixed-categorise")
+        $bannerTitle.addClass("scroll-fixed-categories")
+        $categorySubCats.addClass("scroll-fixed-categorise")
       }
 
       function navigationAbsolute(){
-        bannerTitle.removeClass("scroll-fixed-categories")
-        categorySubCats.removeClass("scroll-fixed-categorise");
+        $bannerTitle.removeClass("scroll-fixed-categories")
+        $categorySubCats.removeClass("scroll-fixed-categorise");
       }
     });
     scrollingFixedNav()
@@ -13782,6 +13818,16 @@ $(document).ready(function() {
         }
       }
 
+      if (mensPage){
+        if (scrollHeight < 5675){
+          $(".mobile-categories-feat>h1").text("Featured Men's")
+        } else if (scrollHeight > 5675 && scrollHeight < 8475) {
+          $(".mobile-categories-feat>h1").text("Staff Pick's")
+        } else if (scrollHeight > 8475) {
+          $(".mobile-categories-feat>h1").text("Featured Sale")
+        }
+      }
+
       if (womensPage){
         if (scrollHeight < 1685){
           $(".desktop-categories>h1").text("Featured Women's");
@@ -13789,6 +13835,16 @@ $(document).ready(function() {
           $(".desktop-categories>h1").text("Staff Picks");
         } else if (scrollHeight > 2942) {
           $(".desktop-categories>h1").text("Featured Sale");
+        }
+      }
+
+      if (womensPage){
+        if (scrollHeight < 5675){
+          $(".mobile-categories-feat>h1").text("Featured Women's")
+        } else if (scrollHeight > 5675 && scrollHeight < 8475) {
+          $(".mobile-categories-feat>h1").text("Staff Pick's")
+        } else if (scrollHeight > 8475) {
+          $(".mobile-categories-feat>h1").text("Featured Sale")
         }
       }
     })
@@ -13874,24 +13930,6 @@ $(document).ready(function() {
 
   }, 0);
 
-});
-$(document).ready(function() {
-  $(document).on('page:change',function() {
-
-    jQuery.fn.clickToggle = function(a,b) {
-      function cb(){ [b,a][this._tog^=1].call(this); }
-      return this.on("click", cb);
-    };
-
-    $(".search-btn>i").clickToggle(function(e){
-      $(".search-btn").animate({right: "172px"}, 500)
-      $(".search-input").animate({right: "10px"}, 500)
-    }, function(){
-      $(".search-btn").animate({right: "30px"}, 500)
-      $(".search-input").animate({right: "-152px"}, 500)
-    })
-
-  });
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {

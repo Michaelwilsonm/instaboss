@@ -13221,6 +13221,38 @@ $(document).ready(function() {
 })
 ;
 $(document).ready(function() {
+  $(document).on('page:change',function() {
+
+
+    $(".box").click(function(e){
+      e.preventDefault()
+      $(".on-click-enlarge").hide()
+      $(".tint").fadeIn(500)
+      $(this).next().fadeIn(500)
+    });
+
+    $(".box_featured").click(function(e){
+      e.preventDefault()
+      $(".on-click-enlarge").hide()
+      $(".tint").fadeIn(500)
+      $(this).next().fadeIn(500)
+    });
+
+    $(".close-button-enlarged").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+    $(".tint").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+
+
+  });
+});
+$(document).ready(function() {
   $(document).on('page:change', function () {
     var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -13699,8 +13731,7 @@ $(document).ready(function() {
       function fadeOutDiv(){
         shopByDiv.stop().fadeOut(300);
       }
-    });
-    shopByDropDown();
+    })();
 
     var brandsDropDown = (function(){
       var brandsMenu = $(".item_nav_top_brand");
@@ -13721,11 +13752,36 @@ $(document).ready(function() {
       function fadeOutDiv(){
         brandsDiv.stop().fadeOut(300);
       }
-    });
-    brandsDropDown();
+    })();
+
+    var brandsDropDown = (function(){
+      var brandsMenu = $(".shop_look_nav_top");
+      var brandsDiv = $(".shop_drop_shop_by");
+      var brandArrow = $(".arrow-down-shop-look")
+
+      brandsMenu.hover(fadeInDiv, fadeOutDiv);
+      brandsMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        brandArrow.toggleClass("arrow-active");
+      }
+
+      function fadeInDiv(){
+        brandsDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        brandsDiv.stop().fadeOut(300);
+      }
+    })();
 
   });
 });
+
+
+
+
+
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
  * Copyright (c) 2015 JÃ¶rn Zaefferer; Licensed MIT */
@@ -13905,10 +13961,6 @@ $(document).ready(function() {
 
   }, 0);
 
-});
-$(document).ready(function() {
-  $(document).on('page:change',function() {
-  });
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {

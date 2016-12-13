@@ -6,49 +6,7 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">Just Another Fisherman</h1>
-    <% @just_another_fisherman.each do |just_another_fisherman_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12">
-        <div class="image_div">
-          <% if just_another_fisherman_items.class == FashionItem %>
-            <a href="/item/<%= just_another_fisherman_items.id %>">
-              <%= image_tag just_another_fisherman_items.item_image.url(:medium) %>
-              <div class="description_content">
-                <% if just_another_fisherman_items.sale == true %>
-                  <table>
-                    <tr class="specials_table">
-                    <td><strike><em>$<%= zeros(just_another_fisherman_items.price) %></em></strike></td>
-                    <td>$<%= zeros(just_another_fisherman_items.sale_price) %></td>
-                    </tr>
-                  </table>
-                <% else %>
-                  <table>
-                    <tr class="normal_table">
-                    <td>$<%= zeros(just_another_fisherman_items.price) %></td>
-                    </tr>
-                  </table>
-                <% end %>
-                <p><%= just_another_fisherman_items.short_description %></p>
-                <p><%= word_branding(just_another_fisherman_items.brand) %></p>
-              </div>
-            </a>
-          <% elsif just_another_fisherman_items.class == ShopTheLookImage %>
-            <a href="/shop_the_look_images/<%= just_another_fisherman_items.id %>">
-              <%= image_tag just_another_fisherman_items.shop_look_image.url(:medium) %>
-              <div class="description_content">
-                <table>
-                  <tr class="shop_look_table">
-                  </tr>
-                </table>
-                <div class="shop-the-look-description">
-                  <h2>Shop The Look</h2>
-                  <p><%= word_branding(just_another_fisherman_items.shop_the_look_items.first.brand) %></p>
-                </div>
-              </div>
-            </a>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'templates/all_brands_display' %>
   </div>
 </div>
 <%= render 'templates/footer/footer' %>

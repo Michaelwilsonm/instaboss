@@ -52,6 +52,11 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
   display: inline-block;
 }
 
+.shop_look_nav_top{
+  position: relative;
+  display: inline-block;
+}
+
 .item_nav_top_brand{
   position: relative;
   display: inline-block;
@@ -75,6 +80,14 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
   margin: 0px 5px 0px 5px;
   text-decoration: none;
   display: block;
+}
+
+.shop_drop_shop_by {
+  @extend .item-drop-down-scss;
+  min-width: 180px;
+  a{
+    @extend .item-drop-down-anchor-tags-scss;
+  }
 }
 
 .item_drop_shop_by {
@@ -109,6 +122,11 @@ DROP DOWN ARROWS ON NAVIGATION
   border-top: 5px solid black;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
+}
+
+.arrow-down-shop-look{
+  left: 133px;
+  @extend .arrow-drop-down-scss;
 }
 
 .arrow-down-brand{

@@ -13221,6 +13221,38 @@ $(document).ready(function() {
 })
 ;
 $(document).ready(function() {
+  $(document).on('page:change',function() {
+
+
+    $(".box").click(function(e){
+      e.preventDefault()
+      $(".on-click-enlarge").hide()
+      $(".tint").fadeIn(500)
+      $(this).next().fadeIn(500)
+    });
+
+    $(".box_featured").click(function(e){
+      e.preventDefault()
+      $(".on-click-enlarge").hide()
+      $(".tint").fadeIn(500)
+      $(this).next().fadeIn(500)
+    });
+
+    $(".close-button-enlarged").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+    $(".tint").click(function(){
+      $(".on-click-enlarge").fadeOut(500)
+      $(".tint").fadeOut(500)
+    });
+
+
+
+  });
+});
+$(document).ready(function() {
   $(document).on('page:change', function () {
     var womensCategories = {'Accessories': ['Lingerie & Underwear', 'Hats', 'Bags & Purses', 'Jewellery', 'Other'], 'Dresses': ['Day Dresses', 'Evening Dresses', 'Playsuits'], 'Jeans Trousers & Leggings': ['Jeans', 'Trousers','Leggings'], 'Home & Lifestyle': ['Home & Lifestyle'], 'Shoes': ['Boots', 'Trainers', 'Heels', 'Flats'], 'Shorts & Skirts': ['Shorts', 'Skirts'], 'Sunglasses & Watches': ['Sunglasses', 'Watches'], 'Swim & Beachwear': ['Bikinis', 'Swimsuits', 'Other'], 'Tops': ['T-Shirts & Vests', 'Shirts & Blouses', 'Hoodies & Sweatshirts', 'Jackets & Coats'] };
 
@@ -13905,24 +13937,6 @@ $(document).ready(function() {
 
   }, 0);
 
-});
-$(document).ready(function() {
-  $(document).on('page:change',function() {
-
-    jQuery.fn.clickToggle = function(a,b) {
-      function cb(){ [b,a][this._tog^=1].call(this); }
-      return this.on("click", cb);
-    };
-
-    $(".search-btn>i").clickToggle(function(e){
-      $(".search-btn").animate({marginRight: "190px"}, 500)
-      $(".search-input").animate({marginRight: "20px"}, 500)
-    }, function(){
-      $(".search-btn").animate({marginRight: "20px"}, 500)
-      $(".search-input").animate({marginRight: "-160px"}, 500)
-    })
-
-  });
 });
 $(document).ready(function() {
   $(document).on('page:change', function () {

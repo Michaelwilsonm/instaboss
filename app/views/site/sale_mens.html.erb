@@ -1,3 +1,6 @@
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
+
+
 <%= render "templates/mobile_nav/navigation_mens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_mens" %>
 <%= render "templates/mens/navigation/navigation" %>
@@ -34,6 +37,39 @@
             <p><%= word_branding(all_specials.brand) %></p>
           </div>
           </a>
+        </div>
+      </div>
+      <div class="on-click-enlarge">
+        <span class="close-button-enlarged">X</span>
+        <div class="enlarge-left">
+          <%= image_tag all_specials.item_image.url(:original) %>
+        </div>
+        <div class="enlarge-right">
+          <h3><em><%= all_specials.short_description %></em></h3>
+          <% if all_men_brands_array.include?(all_specials.brand) %>
+            <p><a href="<%= link_to_brand_page(all_specials.brand, all_specials.sex) %> "><em><%= word_branding(all_specials.brand) %></em></a></p>
+          <% else %>
+            <p><em><%= word_branding(all_specials.brand) %></em></p>
+          <% end %>
+          <% if all_specials.sale == true %>
+            <h3><strike><em>AUD $<%= zeros(all_specials.price) %></em></strike> &nbsp&nbsp<em>AUD $<%= zeros(all_specials.sale_price) %></em></h3>
+            <p><em><%= percentage(all_specials.price, all_specials.sale_price) %>% off!</em></p>
+          <% else %>
+            <h3><em>AUD $<%= zeros(all_specials.price) %></em></h3>
+          <% end %>
+
+          <p><%= all_specials.description %></p>
+
+          <p><em>Ships from <%= all_specials.shipped_from %></em></p>
+
+          <% if all_specials.wwshipping == true %>
+            <p>Free Worldwide Shipping</p>
+          <% end %>
+
+          <div class="show-button">
+            <a href="<%= all_specials.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
+            <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
+          </div>
         </div>
       </div>
     <% end %>

@@ -6,49 +6,7 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">Daniel Wellington</h1>
-    <% @daniel_wellington.each do |daniel_wellington_items| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12">
-        <div class="image_div">
-          <% if daniel_wellington_items.class == FashionItem %>
-            <a href="/item/<%= daniel_wellington_items.id %>">
-              <%= image_tag daniel_wellington_items.item_image.url(:medium) %>
-              <div class="description_content">
-                <% if daniel_wellington_items.sale == true %>
-                  <table>
-                    <tr class="specials_table">
-                    <td><strike><em>$<%= zeros(daniel_wellington_items.price) %></em></strike></td>
-                    <td>$<%= zeros(daniel_wellington_items.sale_price) %></td>
-                    </tr>
-                  </table>
-                <% else %>
-                  <table>
-                    <tr class="normal_table">
-                    <td>$<%= zeros(daniel_wellington_items.price) %></td>
-                    </tr>
-                  </table>
-                <% end %>
-                <p><%= daniel_wellington_items.short_description %></p>
-                <p><%= word_branding(daniel_wellington_items.brand) %></p>
-              </div>
-            </a>
-          <% elsif daniel_wellington_items.class == ShopTheLookImage %>
-            <a href="/shop_the_look_images/<%= daniel_wellington_items.id %>">
-              <%= image_tag daniel_wellington_items.shop_look_image.url(:medium) %>
-              <div class="description_content">
-                <table>
-                  <tr class="shop_look_table">
-                  </tr>
-                </table>
-                <div class="shop-the-look-description">
-                  <h2>Shop The Look</h2>
-                  <p><%= word_branding(daniel_wellington_items.shop_the_look_items.first.brand) %></p>
-                </div>
-              </div>
-            </a>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'templates/all_brands_display' %>
   </div>
 </div>
 <%= render "templates/footer/footer_women" %>

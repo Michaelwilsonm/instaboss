@@ -6,49 +6,7 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">Showpo</h1>
-    <% @showpo.each do |showpo_boutique| %>
-      <div class="box col-md-4 col-sm-6 col-xs-12">
-        <div class="image_div">
-          <% if showpo_boutique.class == FashionItem %>
-            <a href="/item/<%= showpo_boutique.id %>">
-              <%= image_tag showpo_boutique.item_image.url(:medium) %>
-              <div class="description_content">
-                <% if showpo_boutique.sale == true %>
-                  <table>
-                    <tr class="specials_table">
-                    <td><strike><em>$<%= zeros(showpo_boutique.price) %></em></strike></td>
-                    <td>$<%= zeros(showpo_boutique.sale_price) %></td>
-                    </tr>
-                  </table>
-                <% else %>
-                  <table>
-                    <tr class="normal_table">
-                    <td>$<%= zeros(showpo_boutique.price) %></td>
-                    </tr>
-                  </table>
-                <% end %>
-                <p><%= showpo_boutique.short_description %></p>
-                <p><%= word_branding(showpo_boutique.brand) %></p>
-              </div>
-            </a>
-          <% elsif showpo_boutique.class == ShopTheLookImage %>
-            <a href="/shop_the_look_images/<%= showpo_boutique.id %>">
-              <%= image_tag showpo_boutique.shop_look_image.url(:medium) %>
-              <div class="description_content">
-                <table>
-                  <tr class="shop_look_table">
-                  </tr>
-                </table>
-                <div class="shop-the-look-description">
-                  <h2>Shop The Look</h2>
-                  <p><%= word_branding(showpo_boutique.shop_the_look_items.first.brand) %></p>
-                </div>
-              </div>
-            </a>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'templates/all_brands_display' %>
   </div>
 </div>
 <%= render "templates/footer/footer_women" %>

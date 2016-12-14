@@ -2,6 +2,8 @@
 
 <% womens_brands = {'Alice McCall': '/women_brand/alice_mccall' , 'Auguste': '/women_brand/auguste','Bronze Snake': '/women_brand/bronze_snake','Cooper St': '/women_brand/coopers_st','Lorna Jane': '/women_brand/lorna_jane', 'Mura Boutique': '/women_brand/mura','New Balance': '/women_brand/new_balance','Samantha Wills': '/women_brand/samantha_wills', 'Seafolly': '/women_brand/sea_folly', 'Showpo': '/women_brand/showpo', 'Sunday Somewhere': '/women_brand/sunday_somewhere', 'Tony Bianco': '/women_brand/tony_bianco'} %>
 
+<% shop_look_brands = ['Casual', 'Going Out', 'Working Out', 'Other'] %>
+
 <div class="sticky-nav-mens">
   <h1>InstaBoss</h1>
   <div class="all-nav-link">
@@ -16,7 +18,15 @@
       </div>
       <div class="arrow-down-shop"></div>
     </div>
-    <%= link_to "SHOP THE LOOK", women_shop_the_look_path %>
+    <div class="shop_look_nav_top">
+    <%= link_to "SHOP THE LOOK", women_shop_the_look_path, class: "shop-look-nav"%>
+      <div class="shop_drop_shop_by">
+        <% shop_look_brands.each do |cats| %>
+          <%= link_to cats, women_shop_the_look_path %>
+        <% end %>
+      </div>
+      <div class="arrow-down-shop-look"></div>
+    </div>
     <%= link_to "SALE", site_sale_womens_path %>
     <div class="item_nav_top_brand">
       <%= link_to "BRANDS", women_brand_path, class: "shop_by_brand" %>

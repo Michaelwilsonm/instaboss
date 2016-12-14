@@ -23,129 +23,129 @@ class WomenBrandController < ApplicationController
   end
 
   def windsor_smith
-    @windsor_smith = @women_items.women_windsor_smith
+    @all_brand_display = @women_items.women_windsor_smith
     @brand = @shop_the_look_image_all.find_brand_womens('windsor smith')
-    add_brand(@brand, @windsor_smith)
+    add_brand(@brand, @all_brand_display)
   end
 
   def bronze_snake
-    @bronze_snake = @women_items.women_bronze_snake
+    @all_brand_display = @women_items.women_bronze_snake
     @brand = @shop_the_look_image_all.find_brand_womens('bronze snake')
-    add_brand(@brand, @bronze_snake)
+    add_brand(@brand, @all_brand_display)
   end
 
   def new_balance
-    @new_balance = @women_items.women_new_balance
+    @all_brand_display = @women_items.women_new_balance
     @brand = @shop_the_look_image_all.find_brand_womens('new balance')
-    add_brand(@brand, @new_balance)
+    add_brand(@brand, @all_brand_display)
   end
 
   def coopers_st
-    @coopers_st = @women_items.women_coopers_st
+    @all_brand_display = @women_items.women_coopers_st
     @brand = @shop_the_look_image_all.find_brand_womens('cooper st')
-    add_brand(@brand, @coopers_st)
+    add_brand(@brand, @all_brand_display)
   end
 
   def mura
-    @mura = @women_items.women_mura
+    @all_brand_display = @women_items.women_mura
     @brand = @shop_the_look_image_all.find_brand_womens('mura')
-    add_brand(@brand, @mura)
+    add_brand(@brand, @all_brand_display)
   end
 
   def princess_polly
-    @princess_polly = @women_items.women_princess_polly
+    @all_brand_display = @women_items.women_princess_polly
     @brand = @shop_the_look_image_all.find_brand_womens('princess polly')
-    add_brand(@brand, @princess_polly)
+    add_brand(@brand, @all_brand_display)
   end
 
   def jo_mercer
-    @jo_mercer = @women_items.women_jo_mercer
+    @all_brand_display = @women_items.women_jo_mercer
     @brand = @shop_the_look_image_all.find_brand_womens('jo mercer')
-    add_brand(@brand, @jo_mercer)
+    add_brand(@brand, @all_brand_display)
   end
 
   def showpo
-    @showpo = @women_items.women_showpo
+    @all_brand_display = @women_items.women_showpo
     @brand = @shop_the_look_image_all.find_brand_womens('showpo')
-    add_brand(@brand, @showpo)
+    add_brand(@brand, @all_brand_display)
   end
 
   def samantha_wills
-    @samantha_willis = @women_items.women_samantha_willis
+    @all_brand_display = @women_items.women_samantha_willis
     @brand = @shop_the_look_image_all.find_brand_womens('samantha wills')
-    add_brand(@brand, @samantha_willis)
+    add_brand(@brand, @all_brand_display)
   end
 
   def esther
-    @esther = @women_items.women_esther
+    @all_brand_display = @women_items.women_esther
     @brand = @shop_the_look_image_all.find_brand_womens('esther')
-    add_brand(@brand, @esther)
+    add_brand(@brand, @all_brand_display)
   end
 
   def senso
-    @senso = @women_items.women_senso
+    @all_brand_display = @women_items.women_senso
     @brand = @shop_the_look_image_all.find_brand_womens('senso')
-    add_brand(@brand, @senso)
+    add_brand(@brand, @all_brand_display)
   end
 
   def lorna_jane
-    @lorna_jane = @women_items.women_lorna_jane
+    @all_brand_display = @women_items.women_lorna_jane
     @brand = @shop_the_look_image_all.find_brand_womens('lorna jane')
-    add_brand(@brand, @lorna_jane)
+    add_brand(@brand, @all_brand_display)
   end
 
   def sunday_somewhere
-    @sunday_somewhere = @women_items.women_sunday_somewhere
+    @all_brand_display = @women_items.women_sunday_somewhere
     @brand = @shop_the_look_image_all.find_brand_womens('sunday somewhere')
-    add_brand(@brand, @sunday_somewhere)
+    add_brand(@brand, @all_brand_display)
   end
 
   def forever_21
-    @forever_21 = @women_items.women_forever_21
+    @all_brand_display = @women_items.women_forever_21
     @brand = @shop_the_look_image_all.find_brand_womens('forever 21')
-    add_brand(@brand, @showpo)
+    add_brand(@brand, @all_brand_display)
   end
 
   def tony_bianco
-    @tony_bianco = @women_items.women_tony_bianco
+    @all_brand_display = @women_items.women_tony_bianco
     @brand = @shop_the_look_image_all.find_brand_womens('tony bianco')
-    add_brand(@brand, @tony_bianco)
+    add_brand(@brand, @all_brand_display)
   end
 
   def daniel_wellington
-    @daniel_wellington = @women_items.women_daniel_wellington
+    @all_brand_display = @women_items.women_daniel_wellington
     @brand = @shop_the_look_image_all.find_brand_womens('daniel wellington')
-    add_brand(@brand, @daniel_wellington)
+    add_brand(@brand, @all_brand_display)
   end
 
   def alice_mccall
-    @alice_mccall = @women_items.women_alice_mccall
+    @all_brand_display = @women_items.women_alice_mccall
     @brand = @shop_the_look_image_all.find_brand_womens('alice mccall')
-    add_brand(@brand, @alice_mccall)
+    add_brand(@brand, @all_brand_display)
   end
 
   def auguste
-    @auguste = @women_items.women_auguste
+    @all_brand_display = @women_items.women_auguste
     @brand = @shop_the_look_image_all.find_brand_womens('auguste')
-    add_brand(@brand, @auguste)
+    add_brand(@brand, @all_brand_display)
   end
 
   def sea_folly
-    @sea_folly = @women_items.women_sea_folly
+    @all_brand_display = @women_items.women_sea_folly
     @brand = @shop_the_look_image_all.find_brand_womens('seafolly')
-    add_brand(@brand, @sea_folly)
+    add_brand(@brand, @all_brand_display)
   end
 
   def top_shop
-    @top_shop = @women_items.women_top_shop
+    @all_brand_display = @women_items.women_top_shop
     @brand = @shop_the_look_image_all.find_brand_womens('topshop')
-    add_brand(@brand, @top_shop)
+    add_brand(@brand, @all_brand_display)
   end
 
   def victorias_secret
-    @victorias_secret = @women_items.women_victorias_secret
+    @all_brand_display = @women_items.women_victorias_secret
     @brand = @shop_the_look_image_all.find_brand_womens("victoria's secret")
-    add_brand(@brand, @victorias_secret)
+    add_brand(@brand, @all_brand_display)
   end
 
   private

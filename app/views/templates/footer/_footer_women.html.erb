@@ -6,10 +6,9 @@
 
   <div class="footer-navigation">
     <ul>
-      <a href="search"><li>SEARCH</li></a>
-      <a href="blog/blog_women"><li>BLOG</li></a>
-      <a href="men/about"><li>ABOUT</li></a>
-      <a href="men/contact"><li>CONTACT</li></a>
+      <a href="/blog/blog_women"><li>BLOG</li></a>
+      <a href="/women/about"><li>ABOUT</li></a>
+      <a href="/women/contact"><li>CONTACT</li></a>
       <% if admin_signed_in? %>
         <%= link_to 'ADMIN', admin_index_path, class: "admin-page-link" %>
       <% else %>
@@ -19,8 +18,8 @@
   </div>
 
   <div class="social-media">
-    <img src="/assets/social_media_icons/fb-icon.png" alt="">
-    <a href="https://www.instagram.com/instaboss.mens/?hl=en" target="_blank"><img src="/assets/social_media_icons/instagram-icon.png" alt=""></a>
+    <a href="https://www.instagram.com/instaboss.mens/?hl=en" target="_blank"><img src="/assets/instagram-logo.png" alt=""></a>
+    <img src="/assets/facebook-logo.png" alt="">
   </div>
 
   <div class="copyright">

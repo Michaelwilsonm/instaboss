@@ -3,6 +3,10 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .spacer-featured{
+    height: 100px;
+  }
+
   .your-items-main{
     font-size: 50px;
   }
@@ -153,6 +157,7 @@
 
   .men_shoe_sub_cat_pad{
     .sorting_class{
+      padding-bottom: 40px;
       li{
         margin-left: 30px;
         margin-right: 30px;

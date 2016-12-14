@@ -6,10 +6,9 @@
 
   <div class="footer-navigation">
     <ul>
-      <a href="search"><li>SEARCH</li></a>
-      <a href="blog/blog_women"><li>BLOG</li></a>
-      <a href="men/about"><li>ABOUT</li></a>
-      <a href="men/contact"><li>CONTACT</li></a>
+      <a href="/blog/blog_women"><li>BLOG</li></a>
+      <a href="/women/about"><li>ABOUT</li></a>
+      <a href="/women/contact"><li>CONTACT</li></a>
       <% if admin_signed_in? %>
         <%= link_to 'ADMIN', admin_index_path, class: "admin-page-link" %>
       <% else %>

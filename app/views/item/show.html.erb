@@ -112,3 +112,9 @@
     <% end %>
   </div>
 </div>
+
+<% if @item.sex == 'Mens' %>
+  <%= render "templates/footer/footer" %>
+<% elsif @item.sex == 'Womens' %>
+  <%= render "templates/footer/footer_women" %>
+<% end %>

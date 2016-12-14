@@ -104,3 +104,8 @@
     <% end %>
   </div>
 </div>
+<% if @shop_the_look_image.gender == 'Mens' %>
+  <%= render "templates/footer/footer" %>
+<% elsif @shop_the_look_image.gender == 'Womens' %>
+  <%= render "templates/footer/footer_women" %>
+<% end %>

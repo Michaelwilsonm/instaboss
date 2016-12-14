@@ -13224,22 +13224,33 @@ $(document).ready(function() {
   $(document).on('page:change',function() {
 
 
-    $(".box").click(function(e){
-      e.preventDefault()
-      $(".on-click-enlarge").hide()
-      $(".tint").fadeIn(500)
-      $(this).next().fadeIn(500)
-    });
+    if (screen.width > 770){
+      $(".box").click(function(e){
+        e.preventDefault()
+        $(".on-click-enlarge").hide()
+        $(".tint").fadeIn(500)
+        $(this).next().fadeIn(500)
+      });
 
-    $(".close-button-enlarged").click(function(){
-      $(".on-click-enlarge").fadeOut(500)
-      $(".tint").fadeOut(500)
-    });
+      $(".box_featured").click(function(e){
+        e.preventDefault()
+        $(".on-click-enlarge").hide()
+        $(".tint").fadeIn(500)
+        $(this).next().fadeIn(500)
+      });
 
-    $(".tint").click(function(){
-      $(".on-click-enlarge").fadeOut(500)
-      $(".tint").fadeOut(500)
-    });
+      $(".close-button-enlarged").click(function(){
+        $(".on-click-enlarge").fadeOut(500)
+        $(".tint").fadeOut(500)
+      });
+
+      $(".tint").click(function(){
+        $(".on-click-enlarge").fadeOut(500)
+        $(".tint").fadeOut(500)
+      });
+    }
+
+
 
 
 
@@ -13724,8 +13735,7 @@ $(document).ready(function() {
       function fadeOutDiv(){
         shopByDiv.stop().fadeOut(300);
       }
-    });
-    shopByDropDown();
+    })();
 
     var brandsDropDown = (function(){
       var brandsMenu = $(".item_nav_top_brand");
@@ -13746,11 +13756,36 @@ $(document).ready(function() {
       function fadeOutDiv(){
         brandsDiv.stop().fadeOut(300);
       }
-    });
-    brandsDropDown();
+    })();
+
+    var brandsDropDown = (function(){
+      var brandsMenu = $(".shop_look_nav_top");
+      var brandsDiv = $(".shop_drop_shop_by");
+      var brandArrow = $(".arrow-down-shop-look")
+
+      brandsMenu.hover(fadeInDiv, fadeOutDiv);
+      brandsMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        brandArrow.toggleClass("arrow-active");
+      }
+
+      function fadeInDiv(){
+        brandsDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        brandsDiv.stop().fadeOut(300);
+      }
+    })();
 
   });
 });
+
+
+
+
+
 /*! jQuery Validation Plugin - v1.14.0 - 6/30/2015
  * http://jqueryvalidation.org/
  * Copyright (c) 2015 JÃ¶rn Zaefferer; Licensed MIT */

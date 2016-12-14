@@ -4,7 +4,6 @@ $(document).ready(function() {
 
     if (screen.width > 770){
       $(".box").click(function(e){
-        console.log(e)
         e.preventDefault()
         $(".on-click-enlarge").hide()
         $(".tint").fadeIn(500)

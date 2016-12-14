@@ -1,7 +1,10 @@
 .scrollable-box {
-  width: 430px;
-  height: 430px;
   overflow-y: scroll;
+}
+
+.description-show-box{
+  width: 430px;
+  height: 100%;
   overflow-x:hidden;
   float: left;
   margin-left: 10px;

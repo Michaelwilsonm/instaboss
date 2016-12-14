@@ -20,8 +20,7 @@ $(document).ready(function() {
       function fadeOutDiv(){
         shopByDiv.stop().fadeOut(300);
       }
-    });
-    shopByDropDown();
+    })();
 
     var brandsDropDown = (function(){
       var brandsMenu = $(".item_nav_top_brand");
@@ -42,8 +41,33 @@ $(document).ready(function() {
       function fadeOutDiv(){
         brandsDiv.stop().fadeOut(300);
       }
-    });
-    brandsDropDown();
+    })();
+
+    var brandsDropDown = (function(){
+      var brandsMenu = $(".shop_look_nav_top");
+      var brandsDiv = $(".shop_drop_shop_by");
+      var brandArrow = $(".arrow-down-shop-look")
+
+      brandsMenu.hover(fadeInDiv, fadeOutDiv);
+      brandsMenu.hover(toggleArrow);
+
+      function toggleArrow(){
+        brandArrow.toggleClass("arrow-active");
+      }
+
+      function fadeInDiv(){
+        brandsDiv.stop().fadeIn(300);
+      }
+
+      function fadeOutDiv(){
+        brandsDiv.stop().fadeOut(300);
+      }
+    })();
 
   });
 });
+
+
+
+
+

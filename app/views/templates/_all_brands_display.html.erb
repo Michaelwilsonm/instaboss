@@ -43,11 +43,13 @@
         <% else %>
           <p><em><%= word_branding(f.brand) %></em></p>
         <% end %>
-        <% if f.sale == true %>
+        <% if f.sale === true %>
           <h3><strike><em>AUD $<%= zeros(f.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(f.sale_price) %></em></h3>
           <p><em><%= percentage(f.price, f.sale_price) %>% off!</em></p>
-        <% else %>
+        <% elsif f.sale === false %>
           <h3><em>AUD $<%= zeros(f.price) %></em></h3>
+        <% else %>
+          <p>!price</p>
         <% end %>
 
         <p><%= f.description %></p>
@@ -90,19 +92,21 @@
       <div class="enlarge-right">
       <% f.shop_the_look_items.each do |j| %>
         <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
-        <% if all_men_brands_array.include?(j.brand) && @all_items.gender == "Mens" %>
-          <p><a href="<%= link_to_brand_page(j.brand, @all_items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
-        <% elsif all_women_brands_array.include?(j.brand) && @all_items.gender == "Womens" %>
-          <p><a href="<%= link_to_brand_page(j.brand, @all_items.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
+        <% if all_men_brands_array.include?(j.brand) && f.gender == "Mens" %>
+          <p><a href="<%= link_to_brand_page(j.brand, f.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
+        <% elsif all_women_brands_array.include?(j.brand) && f.gender == "Womens" %>
+          <p><a href="<%= link_to_brand_page(j.brand, f.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
         <% else %>
           <p><em><%= word_branding(j.brand) %></em></p>
         <% end %>
 
-        <% if j.sale == true %>
+        <% if j.sale === true %>
           <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>
           <p class="shop-the-look-price"><em>AUD $<%= zeros(j.sale_price) %></em></p>
-        <% else %>
+        <% elsif j.sale === false %>
           <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
+        <% else %>
+        <p>!price</p>
         <% end %>
 
         <div class="show-button-shop-look">

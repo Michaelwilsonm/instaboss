@@ -21,7 +21,7 @@
       </div>
       <div class="description-shop-the-look-show-box scrollable-box">
         <% @shop_the_look_image.shop_the_look_items.each do |shop_the_look_items| %>
-          <h2 class="shop-the-look-description"><em><%= shop_the_look_items.description %></em></h2>
+          <h3 class="shop-the-look-description"><em><%= shop_the_look_items.description %></em></h3>
           <% if all_men_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Mens" %>
             <p><a href="<%= link_to_brand_page(shop_the_look_items.brand, @shop_the_look_image.gender) %> "><em><%= word_branding(shop_the_look_items.brand) %></em></a></p>
           <% elsif all_women_brands_array.include?(shop_the_look_items.brand) && @shop_the_look_image.gender == "Womens" %>
@@ -81,7 +81,7 @@
 
 <div class="container mobile_container">
   <div class="row">
-    <h1 class="your-items-main mob-ul">More You Might Like..</h1>
+    <h1 class="your-items-main">More You Might Like..</h1>
     <%= render "templates/horizontal_line" %>
     <% @more_you_might_like.each do |more_item| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">

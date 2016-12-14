@@ -3,6 +3,10 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .your-items-main{
+    font-size: 50px;
+  }
+
   .mens_main_photo{
     display: none;
   }
@@ -156,15 +160,6 @@
     }
   }
 
-  .description-shop-the-look-show-box{
-    h2{
-      text-align: center;
-    }
-    p{
-      text-align: center;
-    }
-  }
-
   .show-button-shop-look{
     img{
       cursor: pointer;
@@ -248,7 +243,7 @@
   }
 
   .shop-look-arrow{
-    margin-left: 200px;
+    margin-left: 400px;
   }
 
   .arrow-left { transform:rotate(45deg) }
@@ -396,6 +391,7 @@
     display: inline-block;
     width: 755px;
     h3{
+      margin-top: 20px;
       font-size: 45px;
     }
     p{
@@ -413,15 +409,21 @@
 
   .description-shop-the-look-show-box{
     position: relative;
-    margin: 20px 0px 0px 160px;
+    width: 100%;
+    margin-left: -60px;
     text-align: center;
     display: block;
     display: inline-block;
-    h2{
-      font-size: 85px;
+    h3{
+      margin-top: 20px;
+      font-size: 45px;
     }
     p{
-      font-size: 60px;
+      font-size: 30px;
+      padding: 5px;
+      a{
+        font-size: 50px;
+      }
     }
   }
 

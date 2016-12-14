@@ -16,6 +16,9 @@ module ApplicationHelper
     str_price = price.to_s
     split = str_price.split(".")
 
+    puts split.last.length
+    puts split
+
     if split.last.to_i < 10 && split.last.length != 2
       price = str_price + "#{0}"
     else

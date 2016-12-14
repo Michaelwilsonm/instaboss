@@ -45,10 +45,10 @@
             <p><em><%= word_branding(j.brand) %></em></p>
           <% end %>
 
-          <% if j.sale == true && j.sale != nil %>
+          <% if j.sale == true %>
             <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>
             <p class="shop-the-look-price"><em>AUD $<%= zeros(j.sale_price) %></em></p>
-          <% elsif j.sale == false && j.sale != nil %>
+          <% elsif j.sale == false %>
             <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
           <% else %>
             <p>!price</p>

@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $(document).on('page:change',function() {
-
-    var THIS_PAGE_URL = window.location.href
+    THIS_PAGE_URL = window.location.href
 
     if (screen.width > 770){
       $(".box").click(function(e){

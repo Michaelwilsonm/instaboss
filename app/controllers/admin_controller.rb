@@ -4,11 +4,11 @@ class AdminController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @all_items = FashionItem.all.order(sort_column + ' ' + sort_direction)
+    @all_items = FashionItem.paginate(:page => params[:page], :per_page => 20).all.order(sort_column + ' ' + sort_direction)
   end
 
   def shop_look_image
-    @shop_look_image_item = ShopTheLookImage.all
+    @shop_look_image_item = ShopTheLookImage.paginate(:page => params[:page], :per_page => 20)
   end
 
   def destroy
@@ -69,7 +69,6 @@ class AdminController < ApplicationController
 
   def update_staff_false
     @item = FashionItem.find(params[:id])
-    puts @item.staff_picks
     @item.update!(staff_picks: true)
      respond_to do |format|
       format.json { render json: @item }

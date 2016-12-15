@@ -2,6 +2,12 @@
 <div class="affiliate-portal-item">
   <h1 class="your-items">All Admin Items</h1>
 
+  <div class="admin-paginate-container">
+    <div class="admin-paginate">
+      <%= page_entries_info @all_items %><br>
+      <%= will_paginate @all_items, :container => false %>
+    </div>
+  </div>
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">
@@ -59,11 +65,12 @@
           <td>
             <p><%= link_to 'Edit', edit_admin_path(item.id) %></p>
             <p><%= link_to 'Delete', admin_path(item.id), method: :delete %></p>
-            <!-- <p><%= link_to 'Show', admin_path(item) %></p></td> -->
+            <p><%= link_to 'Show', item_path(item) %></p></td>
           </td>
         </tr>
       <% end %>
     </table>
+
   </div>
 
 

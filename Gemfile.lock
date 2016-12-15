@@ -188,6 +188,7 @@ GEM
       activerecord (> 3.2)
       coffee-rails (> 3.2)
       kaminari (~> 0.16)
+    will_paginate (3.1.5)
 
 PLATFORMS
   ruby
@@ -213,9 +214,10 @@ DEPENDENCIES
   web-console (~> 2.0)
   whenever
   wice_grid (= 3.6.0.pre4)
+  will_paginate (~> 3.1.0)
 
 RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.13.1
+   1.13.6

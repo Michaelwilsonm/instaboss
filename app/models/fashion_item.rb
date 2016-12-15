@@ -1,11 +1,11 @@
 class FashionItem < ActiveRecord::Base
-  # validates :short_description, length: { in: 0..25 }
   belongs_to :user
   has_attached_file :item_image, styles: { original: "600x600>", medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :item_image, content_type: /\Aimage\/.*\Z/
   before_save do
     self.brand = brand.split.map(&:downcase).join(' ')
   end
+  puts to_param
 
   def self.more_you_might_like type_of_item, sex_of_item
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = " + "'" + sex_of_item + "'" + " AND category = " + "'" + type_of_item + "'" + " ORDER BY RANDOM() LIMIT 6")

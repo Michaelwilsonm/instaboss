@@ -1,6 +1,12 @@
 <%= render "templates/admin/admin_navigation" %>
 <div class="affiliate-portal-item">
   <h1 class="your-items">All Shop The Look Items</h1>
+    <div class="admin-paginate-container">
+    <div class="admin-paginate">
+      <%= page_entries_info @shop_look_image_item %><br>
+      <%= will_paginate @shop_look_image_item, :container => false %>
+    </div>
+  </div>
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">
@@ -23,7 +29,10 @@
               <p><%= item.created_at.strftime("%I:%M%p") %></p>
             </td>
             <td>
+
+            <p><%= link_to 'Edit', edit_shop_the_look_image_path(item.id) %></p>
               <p><%= link_to 'Delete', shop_the_look_image_path(item.id, :from=>"admin-page"), method: :delete %></p>
+            <p><%= link_to 'Show', shop_the_look_image_path(item) %></p></td>
           </td>
         </tr>
       <% end %>

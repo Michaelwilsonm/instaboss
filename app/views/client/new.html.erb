@@ -1,16 +1,15 @@
 <%= render "templates/admin/admin_navigation" %>
 <div class="col-md-4 col-sm-4 col-xs-3"></div>
 <div class="col-md-4 col-sm-4 col-xs-6">
-<h2 class="login">Create NEW Client Login</h2>
+  <h2 class="login">Create NEW Client Login</h2>
   <%= form_for @user, url: {action: "create"} do |f| %>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, class: "form-control", autofocus: true %>
     </div>
-
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      <%= f.text_field :password, class: "form-control", autocomplete: "off" %>
     </div><br />
 
     <div class="actions">

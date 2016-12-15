@@ -1,6 +1,7 @@
 class ShopTheLookImagesController < ApplicationController
   before_action :find_shop_look_image, only: [:show, :edit, :destroy, :update]
   before_action :all_shop_look_image, only: [:show]
+  before_action :check_admin_or_user, only: [:edit, :destroy, :update]
 
   def index
     @users_items = current_user.shop_the_look_images.reverse
@@ -24,7 +25,11 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   def update
-    if @shop_the_look_image.update_attributes(shop_look_image_params)
+    if current_admin
+      @shop_the_look_image.update_attributes(shop_look_image_params)
+      redirect_to shop_look_image_admin_index_path
+    elsif current_user
+      @shop_the_look_image.update_attributes(shop_look_image_params)
       redirect_to shop_the_look_images_path
     else
       redirect_to shop_the_look_image_path
@@ -52,6 +57,12 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   private
+
+    def check_admin_or_user
+      if !current_user || !current_admin
+        redirect_to root_path
+      end
+    end
 
     def all_shop_look_image
       @all_shop_the_look_image = ShopTheLookImage.all

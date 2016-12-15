@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @all_items = FashionItem.all.order(sort_column + ' ' + sort_direction)
+    @all_items = FashionItem.paginate(:page => params[:page], :per_page => 20).all.order(sort_column + ' ' + sort_direction)
   end
 
   def shop_look_image

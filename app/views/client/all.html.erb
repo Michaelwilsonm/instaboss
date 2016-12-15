@@ -1,17 +1,27 @@
 <%= render "templates/admin/admin_navigation" %>
 <div class="container">
   <div class="row">
-    <div class="col-md-3 col-sm-3 col-xs-12"></div>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-        <h1>All Clients</h1><hr>
-        <% @user.each do |user| %>
-          <h3 style="margin: 0px;"><%= user.email %></h3>
-          <%= user.id %>
-          <%= link_to 'Delete', client_path(user), method: :delete, class: "btn btn-danger", style: "float: right; margin-top: -30px;" %>
-          <hr><br>
-        <% end %>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="create-client">All Clients</h1>
+        <table class="all-client-table">
+          <tr>
+            <th>Users</th>
+            <th>Delete</th>
+          </tr>
+          <% @user.each do |user| %>
+          <tr>
+            <td><h3><%= user.email %></h3></td>
+            <td><%= link_to 'Delete', client_path(user), method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+          <% end %>
+        </table>
+        <div class="admin-paginate-container">
+          <div class="admin-paginate">
+            <%= page_entries_info @user %><br>
+            <%= will_paginate @user, :container => false %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-12"></div>
   </div>
 </div>

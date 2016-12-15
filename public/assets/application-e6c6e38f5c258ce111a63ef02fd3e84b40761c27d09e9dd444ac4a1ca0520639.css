@@ -49,13 +49,20 @@
   color: black;
 }
 /* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
-.box {
+.box_brands {
   width: 300px !important;
   position: relative;
   left: 125px;
 }
 
 /* line 7, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+.box {
+  width: 300px !important;
+  position: relative;
+  left: 125px;
+}
+
+/* line 13, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .image_div {
   position: relative;
   width: 280px;
@@ -65,12 +72,12 @@
   border: 1px solid;
   border-color: #eee;
 }
-/* line 15, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 21, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .image_div a {
   text-decoration: none !important;
 }
 
-/* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .image_div img {
   position: absolute;
   left: 50%;
@@ -82,11 +89,11 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 31, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 37, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .brands_image_div {
   border-color: #fff;
 }
-/* line 33, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .brands_image_div img {
   position: absolute;
   left: 50%;
@@ -98,7 +105,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 51, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .description_content {
   color: white;
   position: relative;
@@ -109,31 +116,31 @@
   height: 100%;
   font-family: "Calisto MT Regular";
 }
-/* line 54, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 60, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .description_content p {
   font-size: 15px;
   position: relative;
-  top: 190px;
+  top: 180px;
 }
 
-/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 67, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .specials_table > td {
   color: white;
   padding: 0px 4px 0px 4px;
 }
 
-/* line 66, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 72, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .specials_table > td:nth-child(1) {
   font-size: 12px;
   margin-left: 5px;
 }
 
-/* line 71, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 77, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .specials_table > td:nth-child(2) {
   font-size: 25px;
 }
 
-/* line 75, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
+/* line 81, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/_mens_womens_item_cards.scss */
 .normal_table > td {
   padding: 0px 4px 0px 4px;
   color: white;
@@ -332,11 +339,28 @@ ul > .side_nav_mens {
   font-weight: bold;
 }
 /* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+.description-shop-the-look-show-box {
+  width: 430px;
+  height: 100%;
+  overflow-x: hidden;
+  float: left;
+  margin-left: 10px;
+}
+/* line 7, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+.description-shop-the-look-show-box h2 {
+  margin-top: 0px;
+}
+/* line 10, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+.description-shop-the-look-show-box h3 {
+  margin-top: 0px;
+}
+
+/* line 15, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .scrollable-box {
   overflow-y: scroll;
 }
 
-/* line 5, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 19, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .description-show-box {
   width: 430px;
   height: 100%;
@@ -344,25 +368,25 @@ ul > .side_nav_mens {
   float: left;
   margin-left: 10px;
 }
-/* line 11, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 25, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .description-show-box h2 {
   margin-top: 0px;
 }
-/* line 14, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 28, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .description-show-box h3 {
   margin-top: 0px;
 }
 
-/* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .image-show-box {
   float: left;
 }
-/* line 22, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 36, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .image-show-box img {
   width: 430px;
 }
 
-/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 41, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .show-box {
   margin-top: 50px;
   padding-top: 10px;
@@ -374,7 +398,7 @@ ul > .side_nav_mens {
   border-color: #ccc;
 }
 
-/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 53, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .show-button img {
   cursor: pointer;
   width: 100px;
@@ -382,12 +406,12 @@ ul > .side_nav_mens {
   margin: 40px auto 0px auto;
 }
 
-/* line 47, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .arrowed-desktop {
   position: relative;
 }
 
-/* line 51, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 65, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .arrow-1-desktop {
   height: 40px;
   width: 40px;
@@ -399,17 +423,17 @@ ul > .side_nav_mens {
   margin-top: 60px;
 }
 
-/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 75, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .scrollable-box::-webkit-scrollbar {
   width: 1em;
 }
 
-/* line 65, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 79, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .scrollable-box::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-/* line 69, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
+/* line 83, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/a_show.scss */
 .scrollable-box::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
@@ -1866,6 +1890,89 @@ RESPONSIVE LAYOUT OF NAVIGATION
   right: 0;
   margin-right: 10px;
 }
+/* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination {
+  display: block;
+  margin-top: 10px;
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  cursor: default;
+  /* self-clearing method: */
+}
+
+/* line 10, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.2em 0.5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+
+/* line 15, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination .disabled {
+  color: #999999;
+  border: 1px solid #dddddd;
+}
+
+/* line 18, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #2e6ab1;
+  color: white;
+  border: 1px solid #2e6ab1;
+}
+
+/* line 24, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination a {
+  text-decoration: none;
+  color: #105cb6;
+  border: 1px solid #9aafe5;
+}
+
+/* line 28, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #000033;
+  border-color: #000033;
+}
+
+/* line 31, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination .page_info {
+  background: #2e6ab1;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 23em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+
+/* line 38, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination .page_info b {
+  color: #000033;
+  background: #6aa6ed;
+  padding: 0.1em 0.25em;
+}
+
+/* line 42, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 48, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+* html .digg_pagination {
+  height: 1%;
+}
+
+/* line 50, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
+*:first-child + html .digg_pagination {
+  overflow: hidden;
+}
 /* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_folder_not_loading_images.scss */
 .main_page_photo {
   margin-left: auto;
@@ -2034,23 +2141,27 @@ RESPONSIVE LAYOUT OF NAVIGATION
 .main-root-index-mens-womens h2:hover {
   cursor: pointer;
 }
+/* line 104, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+.main-root-index-mens-womens h2 a {
+  text-decoration: none;
+}
 
-/* line 106, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 109, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .womens-root {
   padding-left: 5px;
 }
 
-/* line 109, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 112, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .mens-root {
   padding-right: 5px;
 }
 
-/* line 112, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 115, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .main-root-shop {
   padding: 0px;
 }
 
-/* line 116, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 119, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 #carosel-brands {
   display: block;
   margin-left: auto;
@@ -2060,7 +2171,7 @@ RESPONSIVE LAYOUT OF NAVIGATION
   height: 150px;
 }
 
-/* line 125, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 128, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .brand-images {
   display: block;
   width: 5224px;
@@ -2069,18 +2180,18 @@ RESPONSIVE LAYOUT OF NAVIGATION
   padding: 0px;
 }
 
-/* line 133, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 136, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .slide-brands {
   float: left;
   margin: 0px;
   list-style-type: none;
 }
-/* line 137, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 140, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .slide-brands img {
   height: 125px;
 }
 
-/* line 142, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 145, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 #carosel-retail {
   display: block;
   margin-left: auto;
@@ -2090,7 +2201,7 @@ RESPONSIVE LAYOUT OF NAVIGATION
   height: 150px;
 }
 
-/* line 151, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 154, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .retail-images {
   display: block;
   width: 5224px;
@@ -2099,18 +2210,18 @@ RESPONSIVE LAYOUT OF NAVIGATION
   padding: 0px;
 }
 
-/* line 159, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 162, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .slide-retail {
   float: left;
   margin: 0px;
   list-style-type: none;
 }
-/* line 163, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 166, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .slide-retail img {
   height: 125px;
 }
 
-/* line 168, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
+/* line 171, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/root_page/index.scss */
 .root-paragraph-two {
   margin-top: 50px;
   text-align: center;

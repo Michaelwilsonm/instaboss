@@ -1,171 +1,187 @@
 <%= render "templates/admin/admin_navigation" %>
 <div class="container">
   <div class="row">
-    <div class="col-md-4"></div>
-    <%= form_for @item, url: {action: "update"}, html: {class: "edit_fashion_item", multipart: true} do |f| %>
-
-      <div class="col-md-4">
-        <div class="new_fashion_item">
-          <div class="col-md-10">
-          <div>
-            <%= image_tag @item.item_image.url(:thumb) %>
-          </div>
-            <span>Image</span>
+    <div class="col-md-12 form-box">
+      <div class="new_fashion_item">
+        <%= form_for @item, url: {action: "update"}, html: {class: "edit_fashion_item", multipart: true} do |f| %>
+          <div class="col-md-4">
+            <div class="col-md-10">
             <div>
-              <input type="file" name="FashionItem[item_image]" accept="image/*" class="error">
+              <%= image_tag @item.item_image.url(:thumb) %>
             </div>
-          </div>
-
-          <div class="col-md-10">
-            <span>Short Description</span>
-            <p class="descrip_paragraph">Title of product customers will first see</p>
-              <input class="form-control" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="<%= @item.short_description %>" required>
-            <p class="descrip_paragraph"> Must be between 0 & 25 characters</p>
-          </div>
-
-          <div class="col-md-10">
-            <span>Gender</span>
-            <select class="form-control input-sm" id="new-item-sex" name="FashionItem[sex]">
-              <% if @item.sex == 'Mens' %>
-                <option value="<%= @item.sex %>" selected><%= @item.sex %> (already selected click to change)</option>
-                <option value="Womens">Womens </option>
-              <% elsif @item.sex == 'Womens' %>
-                <option value="Mens">Mens </option>
-                <option value="<%= @item.sex %>" selected><%= @item.sex %> (already selected, click to change)</option>
-              <% end %>
-            </select>
-          </div>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Category</span>
-            <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
-              <option value="<%= @item.category %>" selected><%= @item.category %> (already selected, click to change)</option>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Sub-category</span>
-            <select class="form-control input-sm" id="new-item-sub-category" name="FashionItem[sub_category]">
-              <option value="<%= @item.sub_category %>" selected><%= @item.sub_category %></option>
-            </select>
-          </div>
-
-
-          <div class="col-md-10">
-            <span>Shipping From</span>
-            <select class="form-control input-sm" id="new-item-shipped-from" name="FashionItem[shipped_from]">
-              <% countries = ["U.S.A", "Canada", "UK / Europe", "Asia", "NZ / Aus"] %>
-
-              <% if countries.include?(@item.shipped_from) %>
-                <option value="<%= @item.shipped_from%>" selected><%=@item.shipped_from %> (already selected, click to change)</option>
-              <% end %>
-
-              <% countries.delete(@item.shipped_from) %>
-              <% countries.each do |all_countries| %>
-                <option value="<%= all_countries %>"><%= all_countries %></option>
-              <% end %>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Free worldwide Shipping?</span>
-            <select class="form-control input-sm" id="wwshipping-item" name="FashionItem[wwshipping]">
-              <% if @item.wwshipping == true %>
-                <option value="true" selected>Yes (already selected, click to change)</option>
-                <option value="false">No</option>
-              <% elsif @item.wwshipping == false %>
-                <option value="true">Yes</option>
-                <option value="false" selected>No (already selected, click to change)</option>
-              <% end %>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <span>Brand</span>
-            <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="<%= @item.brand %>" required>
-          </div>
-
-          <div class="col-md-10">
-            <span>Recommended Retail Price ($US)</span>
-            <label class="sr-only" for="exampleInputAmount">Sell Price ($US)</label>
-            <div class="input-group">
-              <div class="input-group-addon">$USD</div>
-              <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
-            </div>
-          </div>
-
-          <div class="col-md-10">
-            <span>On Sale?</span>
-            <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
-              <% if @item.sale == true %>
-                <option value="true" selected>Yes</option>
-                <option value="false">No</option>
-              <% elsif @item.sale == false %>
-                <option value="true">Yes</option>
-                <option value="false" selected>No</option>
-              <% end %>
-            </select>
-          </div>
-
-          <div class="col-md-10">
-            <div id="item-sale-price">
-            <span>Sale Price ($USD)</span>
-              <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($US)</label>
-              <div class="input-group">
-                <div class="input-group-addon">$USD</div>
-                <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
+              <span>Image (640 x 640 pixels only)</span>
+              <div>
+                <input type="file" name="FashionItem[item_image]" accept="image/*" class="error">
               </div>
             </div>
+
+            <div class="col-md-10">
+              <span>Short Description</span>
+              <p class="descrip_paragraph">Title of product customers will first see</p>
+                <input class="form-control" type="text" id='fashion-item-description' name="FashionItem[short_description]" value="<%= @item.short_description %>" required>
+              <p class="descrip_paragraph"> Must be between 0 & 25 characters</p>
+            </div>
+
+            <div class="col-md-10">
+              <span>Gender</span>
+              <select class="form-control input-sm" id="new-item-sex" name="FashionItem[sex]">
+                <% if @item.sex == 'Mens' %>
+                  <option value="<%= @item.sex %>" selected><%= @item.sex %> (already selected click to change)</option>
+                  <option value="Womens">Womens </option>
+                <% elsif @item.sex == 'Womens' %>
+                  <option value="Mens">Mens </option>
+                  <option value="<%= @item.sex %>" selected><%= @item.sex %> (already selected, click to change)</option>
+                <% end %>
+              </select>
+            </div>
+            <div class="col-md-10"><br>
+              <span>Featured Item</span><br>
+              <% if @item.featured_item == true %>
+                <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Featured<br>
+                <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured</br>
+              <% elsif @item.featured_item == false %>
+                <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
+                <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Not Featured<br>
+              <% else %>
+                <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
+                <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured<br>
+              <% end %>
+            </div>
           </div>
 
-          <div class="col-md-10">
-            <span>Item Description</span>
-            <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" value="<%= @item.description %>"  required><%= @item.description %></textarea>
-          </div>
 
-          <div class="col-md-10">
-            <span>Unique URL</span>
-            <input class="form-control" type="text" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
-          </div>
+          <div class="col-md-4">
+            <div class="col-md-10">
+              <span>Category</span>
+              <select class="form-control input-sm" id="new-item-category" name="FashionItem[category]">
+                <option value="<%= @item.category %>" selected><%= @item.category %> (already selected, click to change)</option>
+              </select>
+            </div>
 
-          <div class="col-md-5"><br>
-            <span>Featured Item</span><br>
-            <% if @item.featured_item == true %>
-            <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Featured<br>
-            <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured</br>
+            <div class="col-md-10">
+              <span>Sub-category</span>
+              <select class="form-control input-sm" id="new-item-sub-category" name="FashionItem[sub_category]">
+                <option value="<%= @item.sub_category %>" selected><%= @item.sub_category %></option>
+              </select>
+            </div>
 
-            <% elsif @item.featured_item == false %>
-            <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
-            <input type="radio" name="FashionItem[featured_item]" value="<%= @item.featured_item %>" checked> Not Featured<br>
-            <% else %>
-              <input type="radio" name="FashionItem[featured_item]" value="true"> Featured</br>
-              <input type="radio" name="FashionItem[featured_item]" value="false"> Not Featured<br>
-            <% end %>
-          </div>
 
-          <div class="col-md-5"><br>
-            <span>Staff Pick</span><br>
-            <% if @item.staff_picks == true %>
-              <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Staff Picked<br>
-              <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked</br>
-            <% elsif @item.staff_picks == false %>
+            <div class="col-md-10">
+              <span>Shipping From</span>
+              <select class="form-control input-sm" id="new-item-shipped-from" name="FashionItem[shipped_from]">
+                <% countries = ["U.S.A", "Canada", "UK / Europe", "Asia", "NZ / Aus"] %>
+
+                <% if countries.include?(@item.shipped_from) %>
+                  <option value="<%= @item.shipped_from%>" selected><%=@item.shipped_from %> (already selected, click to change)</option>
+                <% end %>
+
+                <% countries.delete(@item.shipped_from) %>
+                <% countries.each do |all_countries| %>
+                  <option value="<%= all_countries %>"><%= all_countries %></option>
+                <% end %>
+              </select>
+            </div>
+
+            <div class="col-md-10">
+              <span>Free worldwide Shipping?</span>
+              <select class="form-control input-sm" id="wwshipping-item" name="FashionItem[wwshipping]">
+                <% if @item.wwshipping == true %>
+                  <option value="true" selected>Yes (already selected, click to change)</option>
+                  <option value="false">No</option>
+                <% elsif @item.wwshipping == false %>
+                  <option value="true">Yes</option>
+                  <option value="false" selected>No (already selected, click to change)</option>
+                <% end %>
+              </select>
+            </div>
+            <div class="col-md-10">
+              <span>Brand</span>
+              <input class="form-control" type="text" id='fashion-item-brand' name="FashionItem[brand]" value="<%= @item.brand %>" required>
+            </div>
+
+            <div class="col-md-10"><br>
+              <span>Staff Pick</span><br>
+              <% if @item.staff_picks == true %>
+                <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Staff Picked<br>
+                <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked</br>
+              <% elsif @item.staff_picks == false %>
+                <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
+                <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Not Staff Picked<br>
+              <% else %>
               <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
-              <input type="radio" name="FashionItem[staff_picks]" value="<%= @item.staff_picks %>" checked> Not Staff Picked<br>
-            <% else %>
-            <input type="radio" name="FashionItem[staff_picks]" value="true"> Staff Picked</br>
-              <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked<br>
-            <% end %>
+                <input type="radio" name="FashionItem[staff_picks]" value="false"> Not Staff Picked<br>
+              <% end %>
+            </div>
           </div>
 
-        <div class="col-md-10"><br>
-          <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
-        </div>
-    <% end %>
-    <div class="col-md-4"></div>
+
+          <div class="col-md-4">
+            <div class="col-md-10">
+              <span>Recommended Retail Price ($AUD)</span>
+              <label class="sr-only" for="exampleInputAmount">Sell Price ($AUD)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$AUD</div>
+                <input type="text" class="form-control" id="fashion-item-price" name="FashionItem[price]" placeholder="Amount" value="<%= @item.price %>" required>
+              </div>
+            </div>
+
+            <div class="col-md-10">
+              <span>On Sale?</span>
+              <select class="form-control input-sm" id='item-on-sale' name="FashionItem[sale]">
+                <% if @item.sale == true %>
+                  <option value="true" selected>Yes</option>
+                  <option value="false">No</option>
+                <% elsif @item.sale == false %>
+                  <option value="true">Yes</option>
+                  <option value="false" selected>No</option>
+                <% end %>
+              </select>
+            </div>
+
+            <div id="item-sale-price">
+              <div class="col-md-10">
+              <span>Sale Price ($AUD)</span>
+                <label class="sr-only" for="exampleInputAmount">Recomended Retail Price ($AUD)</label>
+                <div class="input-group">
+                  <div class="input-group-addon">$AUD</div>
+                  <input class="form-control" type="text" name="FashionItem[sale_price]" value="<%= @item.sale_price %>"  required>
+                </div>
+              </div>
+            </div>
+
+            <div id="item-sale-duration">
+              <div class="col-md-10">
+                <span>Sale Duration</span>
+                <div class="input-group">
+                <select class="form-control input-sm" id='item-on-sale' name="FashionItem[duration]">
+                  <option value="<%= DateTime.now + 7%>">1 week</option>
+                  <option value="<%= DateTime.now + 14%>">2 weeks</option>
+                  <option value="<%= DateTime.now + 21%>">3 weeks</option>
+                </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-10">
+              <span>Item Description</span>
+              <textarea class="form-control" type="text" id='fashion-item-description' name="FashionItem[description]" value="<%= @item.description %>"  required><%= @item.description %></textarea>
+            </div>
+
+            <div class="col-md-10">
+              <span>Unique URL</span>
+              <input class="form-control" type="text" name="FashionItem[unique_affiliate_url]" value="<%= @item.unique_affiliate_url %>"  required>
+            </div>
+
+            <div class="col-md-10"><br>
+              <input type="submit" class="btn btn-default" style="float: right; margin-bottom: 50px;" value="submit" />
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
 
 
 <%= javascript_include_tag 'jq-validate' %>

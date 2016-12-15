@@ -43,6 +43,8 @@
             </a>
           </div>
 
+        <% end %>
+        <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1 shop-look-arrow"></div></a>
         <% if current_admin %>
           <div class="admin-delete-edit">
             <% if @shop_the_look_image.staff_picks == true %>
@@ -71,8 +73,6 @@
             <% end %>
             </div>
           <% end %>
-        <% end %>
-        <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1 shop-look-arrow"></div></a>
       </div>
     </div>
   </div>

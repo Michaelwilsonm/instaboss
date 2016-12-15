@@ -1,0 +1,32 @@
+.create-client{
+  font-family: "Calisto MT Regular";
+}
+
+.all-client-table{
+  font-family: "Calisto MT Regular";
+  width: 100%;
+  tr{
+    border-bottom: 1px solid;
+    border-color: #eee;
+
+  }
+}
+
+.admin-paginate-container{
+}
+
+.admin-paginate{
+  margin-top: 20px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Calisto MT Regular";
+  font-size: 15px;
+  em{
+    padding: 10px;
+  }
+  a{
+    padding: 10px;
+  }
+
+}

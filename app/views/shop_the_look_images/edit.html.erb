@@ -1,4 +1,8 @@
-<%= render "templates/client/client_navigation" %>
+<% if current_user %>
+  <%= render "templates/client/client_navigation" %>
+<% elsif current_admin %>
+  <%= render "templates/admin/admin_navigation" %>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-12 stl-form-container">

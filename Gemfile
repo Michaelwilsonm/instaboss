@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem "wice_grid", '3.6.0.pre4'
 gem 'font-awesome-sass',  '~> 4.3'
 gem 'devise'
+gem 'will_paginate', '~> 3.1.0'
 gem 'aws-sdk', '~> 2'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'sdoc', '~> 0.4.0', group: :doc

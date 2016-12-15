@@ -15,7 +15,7 @@ class ClientController < ApplicationController
   end
 
   def all
-    @user = User.all
+    @user = User.paginate(:page => params[:page], :per_page => 10)
   end
 
   def destroy

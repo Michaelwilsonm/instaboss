@@ -8,7 +8,7 @@ class AdminController < ApplicationController
   end
 
   def shop_look_image
-    @shop_look_image_item = ShopTheLookImage.all
+    @shop_look_image_item = ShopTheLookImage.paginate(:page => params[:page], :per_page => 20)
   end
 
   def destroy
@@ -69,7 +69,6 @@ class AdminController < ApplicationController
 
   def update_staff_false
     @item = FashionItem.find(params[:id])
-    puts @item.staff_picks
     @item.update!(staff_picks: true)
      respond_to do |format|
       format.json { render json: @item }

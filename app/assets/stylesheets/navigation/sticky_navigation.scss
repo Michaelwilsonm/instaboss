@@ -17,6 +17,13 @@ STICKY NAVIGATION FIRST DIV
   position: fixed;
   width: 100%;
   z-index: 100;
+  a{
+    color: black;
+    text-decoration: none;
+    &:hover{
+      color: black;
+    }
+  }
   h1{
     position: absolute;
     font-family: $calisto;

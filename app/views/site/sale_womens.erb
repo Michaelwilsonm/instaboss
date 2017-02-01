@@ -6,9 +6,9 @@
 <div class="on_sale_women"></div>
 <div class="desktop-categories"><h1>Sale</h1></div>
 <div class="mobile-categories"><h1>On Sale</h1></div>
-<div class="categorise desktop-sort">
+<!-- <div class="categorise desktop-sort">
   <%= render "templates/womens/sub_categories_sort/sale" %>
-</div>
+</div> -->
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Sale</h1>
@@ -62,7 +62,7 @@
           <p><em>Ships from <%= all_specials.shipped_from %></em></p>
 
           <% if all_specials.wwshipping == true %>
-            <p>Free Worldwide Shipping</p>
+            <p>Free AUS/NZ Shipping</p>
           <% end %>
 
           <div class="show-button">
@@ -74,4 +74,4 @@
     <% end %>
   </div>
 </div>
-<%= render 'templates/mail_chimp_form_womens' %>
+<%= render "templates/footer/footer_women" %>

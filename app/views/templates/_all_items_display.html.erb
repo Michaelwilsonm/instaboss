@@ -1,6 +1,6 @@
-<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "windsor smith", "adidas", "mj bale"] %>
 
-<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
+<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "cooper st"] %>
 
 <% @all_items.each do |f| %>
   <% if f.class == FashionItem %>
@@ -57,7 +57,7 @@
         <p><em>Ships from <%= f.shipped_from %></em></p>
 
         <% if f.wwshipping == true %>
-          <p>Free Worldwide Shipping</p>
+          <p>Free AUS/NZ Shipping</p>
         <% end %>
 
         <div class="show-button">

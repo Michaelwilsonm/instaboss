@@ -1,19 +1,19 @@
 .box_brands{
-  width: 300px !important;
+  width: 330px !important;
   position: relative;
-  left: 125px;
+  left: 80px;
 }
 
 .box{
-  width: 300px !important;
+  width: 330px !important;
   position: relative;
-  left: 125px;
+  left: 80px;
 }
 
 .image_div{
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 310px;
+  height: 310px;
   margin: 10px 5px 10px 5px;
   overflow: hidden;
   border: 1px solid;
@@ -27,7 +27,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 300px;
+  height: 330px;
   width: auto;
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
@@ -60,13 +60,13 @@
   p{
     font-size: 15px;
     position: relative;
-    top: 180px;
+    top: 200px;
   }
 }
 
 .specials_table>td{
   color: white;
-  padding: 0px 4px 0px 4px;
+  padding: 0px 5px 0px 5px;
 }
 
 .specials_table>td:nth-child(1){
@@ -79,7 +79,7 @@
 }
 
 .normal_table>td{
-  padding: 0px 4px 0px 4px;
+  padding: 0px 5px 0px 5px;
   color: white;
   font-size: 25px
 }

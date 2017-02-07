@@ -25,23 +25,30 @@
 
 .on-click-enlarge{
   overflow-y: scroll;
-  width: 900px;
-  height: 450px;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 550;
 }
 
 .image-holder{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   img{
-    width: 50%;
     position: absolute;
     top: 0;
+    max-width: 50%;
   }
 }
 
 .enlarge-left{
   float: left;
   width: 50%;
+  img{
+    width: 100%;
+  }
 }
 
 .enlarge-right{

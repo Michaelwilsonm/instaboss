@@ -7,9 +7,9 @@
 <div class="sale_hero_mens"></div>
 <div class="desktop-categories"><h1>Sale</h1></div>
 <div class="mobile-categories"><h1>On Sale</h1></div>
-<div class="categorise desktop-sort">
+<!-- <div class="categorise desktop-sort">
   <%= render "templates/mens/sub_categories_sort/sale" %>
-</div>
+</div> -->
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Sale</h1>
@@ -39,7 +39,7 @@
           </a>
         </div>
       </div>
-      <div class="on-click-enlarge">
+      <div class="outside-container">
         <span class="close-button-enlarged">X</span>
         <div class="enlarge-left">
           <%= image_tag all_specials.item_image.url(:original) %>
@@ -63,7 +63,7 @@
           <p><em>Ships from <%= all_specials.shipped_from %></em></p>
 
           <% if all_specials.wwshipping == true %>
-            <p>Free Worldwide Shipping</p>
+            <p>Free AUS/NZ Shipping</p>
           <% end %>
 
           <div class="show-button">

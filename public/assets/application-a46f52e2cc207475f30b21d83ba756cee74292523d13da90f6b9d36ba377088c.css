@@ -1676,24 +1676,33 @@ STICKY NAVIGATION FIRST DIV
   z-index: 100;
 }
 /* line 20, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+.sticky-nav-mens a {
+  color: black;
+  text-decoration: none;
+}
+/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+.sticky-nav-mens a:hover {
+  color: black;
+}
+/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .sticky-nav-mens h1 {
   position: absolute;
   font-family: "Calisto MT Regular";
   margin-left: 20px;
 }
 
-/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .all-nav-link {
   text-align: center;
   margin-top: 35px;
 }
-/* line 30, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 37, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .all-nav-link a {
   color: black;
   font-family: "Calisto MT Regular";
   padding: 10px 20px 10px 20px;
 }
-/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 41, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .all-nav-link a:hover {
   color: black;
 }
@@ -1701,31 +1710,31 @@ STICKY NAVIGATION FIRST DIV
 /***********************
 DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
 ***********************/
-/* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 52, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .your-items-all {
   font-family: "Calisto MT Regular";
   text-align: center;
 }
 
-/* line 50, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 57, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item_nav_top {
   position: relative;
   display: inline-block;
 }
 
-/* line 55, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 62, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .shop_look_nav_top {
   position: relative;
   display: inline-block;
 }
 
-/* line 60, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 67, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item_nav_top_brand {
   position: relative;
   display: inline-block;
 }
 
-/* line 65, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 72, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item-drop-down-scss, .shop_drop_shop_by, .item_drop_shop_by, .item_drop_shop_by_brand {
   z-index: 1;
   display: none;
@@ -1736,7 +1745,7 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
   margin-top: 8px;
 }
 
-/* line 75, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 82, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item-drop-down-anchor-tags-scss, .shop_drop_shop_by a, .item_drop_shop_by a, .item_drop_shop_by_brand a {
   text-align: left;
   font-family: "Calisto MT Regular";
@@ -1747,17 +1756,17 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
   display: block;
 }
 
-/* line 85, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 92, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .shop_drop_shop_by {
   min-width: 180px;
 }
 
-/* line 93, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 100, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item_drop_shop_by {
   min-width: 180px;
 }
 
-/* line 101, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 108, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .item_drop_shop_by_brand {
   min-width: 160px;
 }
@@ -1765,7 +1774,7 @@ DROP DOWNS BRAND AND SHOP BY NAVIGATIOn
 /*********************
 DROP DOWN ARROWS ON NAVIGATION
 *********************/
-/* line 115, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 122, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-drop-down-scss, .arrow-down-shop-look, .arrow-down-brand, .arrow-down-shop {
   position: relative;
   bottom: 12px;
@@ -1778,34 +1787,34 @@ DROP DOWN ARROWS ON NAVIGATION
   -webkit-transition-duration: 0.3s;
 }
 
-/* line 127, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 134, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-shop-look {
   left: 133px;
 }
 
-/* line 132, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 139, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-brand {
   left: 80px;
 }
 
-/* line 137, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 144, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-shop {
   left: 60px;
 }
 
-/* line 142, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 149, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-active {
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-/* line 148, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 155, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .search-tag {
   font-style: italic;
 }
 
-/* line 152, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 159, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .search-btn {
   position: relative;
   float: right;
@@ -1813,14 +1822,14 @@ DROP DOWN ARROWS ON NAVIGATION
   margin-right: 200px;
 }
 
-/* line 159, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 166, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .search-input {
   position: relative;
   float: right;
   margin-top: -30px;
   margin-right: 30px;
 }
-/* line 160, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+/* line 167, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .search-input input {
   border: none;
   border-bottom: 1px solid;
@@ -1832,36 +1841,51 @@ DROP DOWN ARROWS ON NAVIGATION
 RESPONSIVE LAYOUT OF NAVIGATION
 ***********************/
 @media only screen and (max-width: 1220px) {
-  /* line 178, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+  /* line 185, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
   .sticky-nav-mens h1 {
     display: none;
   }
 }
 @media only screen and (max-width: 960px) {
-  /* line 186, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+  /* line 193, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
   .sticky-nav-mens {
     height: 100px;
   }
 
-  /* line 190, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+  /* line 197, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
   .banner-nav-space {
     height: 100px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 197, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+  /* line 204, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
   .sticky-nav-mens {
     font-size: 15px;
     padding: 0px;
     height: 110px;
   }
 
-  /* line 203, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
+  /* line 210, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
   .banner-nav-space {
     height: 110px;
   }
 }
 /* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.outside-container {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+  width: 900px;
+  height: 450px;
+  position: fixed;
+  z-index: 550;
+  display: none;
+  background: white;
+}
+
+/* line 15, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .tint {
   position: fixed;
   top: 0;
@@ -1873,49 +1897,44 @@ RESPONSIVE LAYOUT OF NAVIGATION
   display: none;
 }
 
-/* line 12, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .on-click-enlarge {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   overflow-y: scroll;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
   width: 900px;
   height: 450px;
   position: fixed;
   z-index: 550;
-  display: none;
-  background: white;
 }
 
-/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.image-holder img {
+  width: 50%;
+  position: absolute;
+  top: 0;
+}
+
+/* line 42, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-left {
   float: left;
   width: 50%;
 }
-/* line 30, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
-.enlarge-left img {
-  padding: 10px;
-  width: 100%;
-}
 
-/* line 36, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 47, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right {
   width: 50%;
   float: right;
   padding: 10px;
 }
-/* line 40, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 51, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right h2 {
   font-size: 24px;
 }
-/* line 43, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 54, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right p {
   font-size: 14px;
 }
 
-/* line 48, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 59, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .close-button-enlarged {
   cursor: pointer;
   font-size: 30px;
@@ -2287,21 +2306,21 @@ RESPONSIVE LAYOUT OF NAVIGATION
   margin-top: 15px;
 }
 
-/* line 24, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
+/* line 23, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
 .links {
   margin-top: 20px;
   font-family: "Calisto MT Regular";
 }
-/* line 27, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
+/* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
 .links a {
   color: black;
 }
-/* line 29, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
+/* line 28, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
 .links a:hover {
   color: black;
 }
 
-/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
+/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/shop_the_look/form_styling.scss */
 .stl-on-sale-price {
   display: none;
 }

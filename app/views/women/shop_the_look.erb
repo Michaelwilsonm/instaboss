@@ -31,35 +31,38 @@
           </a>
         </div>
       </div>
-      <div class="on-click-enlarge">
-        <span class="close-button-enlarged">X</span>
-        <div class="enlarge-left">
-          <%= image_tag shop_the_look_items.shop_look_image.url(:original) %>
-        </div>
-        <div class="enlarge-right">
-        <% shop_the_look_items.shop_the_look_items.each do |j| %>
-          <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
-          <% if all_women_brands_array.include?(j.brand) %>
-            <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
-          <% else %>
-            <p><em><%= word_branding(j.brand) %></em></p>
-          <% end %>
-
-          <% if j.sale == true %>
-            <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>
-            <p class="shop-the-look-price"><em>AUD $<%= zeros(j.sale_price) %></em></p>
-          <% elsif j.sale == false %>
-            <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
-          <% else %>
-            <p>!price</p>
-          <% end %>
-
-          <div class="show-button-shop-look">
-            <a href="<%= j.unique_affiliate_url %>" target="_blank">
-              <img src="/assets/shop now.png">
-            </a>
+        <div class="outside-container">
+          <div class="image-holder">
+            <%= image_tag shop_the_look_items.shop_look_image.url(:original) %>
           </div>
-        <% end %>
+          <span class="close-button-enlarged">X</span>
+          <div class="enlarge-left">
+          </div>
+          <div class="enlarge-right">
+          <% shop_the_look_items.shop_the_look_items.each do |j| %>
+            <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
+            <% if all_women_brands_array.include?(j.brand) %>
+              <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
+            <% else %>
+              <p><em><%= word_branding(j.brand) %></em></p>
+            <% end %>
+
+            <% if j.sale == true %>
+              <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>
+              <p class="shop-the-look-price"><em>AUD $<%= zeros(j.sale_price) %></em></p>
+            <% elsif j.sale == false %>
+              <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
+            <% else %>
+              <p>!price</p>
+            <% end %>
+
+            <div class="show-button-shop-look">
+              <a href="<%= j.unique_affiliate_url %>" target="_blank">
+                <img src="/assets/shop now.png">
+              </a>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     <% end %>

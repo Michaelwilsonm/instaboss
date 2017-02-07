@@ -13222,30 +13222,36 @@ $(document).ready(function() {
 ;
 $(document).ready(function() {
   $(document).on('page:change',function() {
-
+    THIS_PAGE_URL = window.location.href
 
     if (screen.width > 770){
       $(".box").click(function(e){
         e.preventDefault()
-        $(".on-click-enlarge").hide()
+        var href = $(this).find("a").attr('href');
+        window.history.pushState('page2', 'Title', href);
+        $(".outside-container").hide()
         $(".tint").fadeIn(500)
         $(this).next().fadeIn(500)
       });
 
       $(".box_featured").click(function(e){
         e.preventDefault()
-        $(".on-click-enlarge").hide()
+        var href = $(this).find("a").attr('href');
+        window.history.pushState('page2', 'Title', href);
+        $(".outside-container").hide()
         $(".tint").fadeIn(500)
         $(this).next().fadeIn(500)
       });
 
       $(".close-button-enlarged").click(function(){
-        $(".on-click-enlarge").fadeOut(500)
+        window.history.pushState('page2', 'Title', THIS_PAGE_URL);
+        $(".outside-container").fadeOut(500)
         $(".tint").fadeOut(500)
       });
 
       $(".tint").click(function(){
-        $(".on-click-enlarge").fadeOut(500)
+        window.history.pushState('page2', 'Title', THIS_PAGE_URL);
+        $(".outside-container").fadeOut(500)
         $(".tint").fadeOut(500)
       });
     }

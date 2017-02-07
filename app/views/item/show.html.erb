@@ -36,7 +36,7 @@
         <p><%= @item.description %></p>
         <p><em>Ships from <%= @item.shipped_from %></em></p>
         <% if @item.wwshipping == true %>
-          <p>Free Worldwide Shipping</p>
+          <p>Free AUS/NZ Shipping</p>
         <% end %>
         <div class="show-button">
           <a href="<%= @item.unique_affiliate_url %>" target="_blank">
@@ -81,8 +81,7 @@
 <br>
 <div class="container mobile_container" style="padding: 0px;">
   <div class="row" style="margin: 0px; padding: 0px;">
-    <h1 class="your-items-main">More You Might Like...</h1>
-    <%= render "templates/horizontal_line" %>
+    <h1 class="your-items-main">More You Might Like...</h1><br>
     <% @more_you_might_like.each do |more_items| %>
       <div class="box col-md-4 col-sm-6 col-xs-12">
         <div class="image_div">

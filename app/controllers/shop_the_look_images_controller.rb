@@ -21,7 +21,7 @@ class ShopTheLookImagesController < ApplicationController
 
 
   def edit
-    if @shop_the_look_image.user_id == current_user.id
+    if current_admin != nil || @shop_the_look_image.user_id === current_user.id
       render 'edit'
     else
       redirect_to root_path

@@ -12,7 +12,7 @@ class ItemController < ApplicationController
     if !current_user
       redirect_to root_path
     else
-      @users_items = current_user.fashion_items.order(sort_column + ' ' + sort_direction)
+      @all_items = current_user.fashion_items.paginate(:page => params[:page], :per_page => 20).all.order(sort_column + ' ' + sort_direction)
     end
   end
 

@@ -1,4 +1,10 @@
 <%= render "templates/client/client_navigation" %>
+<div class="admin-paginate-container">
+    <div class="admin-paginate">
+      <%= page_entries_info @all_items %><br>
+      <%= will_paginate @all_items, :container => false %>
+    </div>
+  </div>
   <div style="overflow-x: auto;">
     <table class="sort-table">
       <tr class="sorting-table-rows">
@@ -7,7 +13,7 @@
         <th>created at</th>
         <th>Action</th>
       </tr>
-      <% @users_items.each do |item| %>
+      <% @all_items.each do |item| %>
         <tr class="users-sorting-items">
           <td class="table-image-client">
             <div class="table-image">

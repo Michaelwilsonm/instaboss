@@ -48,7 +48,7 @@ class WomenBrandController < ApplicationController
 
   def mura
     @all_brand_display = @women_items.women_mura
-    @brand = @shop_the_look_image_all.find_brand_womens('mura')
+    @brand = @shop_the_look_image_all.find_brand_womens('mura boutique')
     add_brand(@brand, @all_brand_display)
   end
 

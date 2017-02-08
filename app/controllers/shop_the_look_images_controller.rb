@@ -1,10 +1,9 @@
 class ShopTheLookImagesController < ApplicationController
   before_action :find_shop_look_image, only: [:show, :edit, :destroy, :update]
   before_action :all_shop_look_image, only: [:show]
-  before_action :check_admin_or_user, only: [:edit, :destroy, :update]
 
   def index
-    @users_items = current_user.shop_the_look_images.reverse
+    @all_items = current_user.shop_the_look_images.paginate(:page => params[:page], :per_page => 20).all.order(created_at: :desc)
   end
 
   def new
@@ -22,6 +21,11 @@ class ShopTheLookImagesController < ApplicationController
 
 
   def edit
+    if @shop_the_look_image.user_id == current_user.id
+      render 'edit'
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -57,12 +61,6 @@ class ShopTheLookImagesController < ApplicationController
   end
 
   private
-
-    def check_admin_or_user
-      if !current_user || !current_admin
-        redirect_to root_path
-      end
-    end
 
     def all_shop_look_image
       @all_shop_the_look_image = ShopTheLookImage.all

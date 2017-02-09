@@ -118,7 +118,15 @@ Rails.application.routes.draw do
   get 'women/brand'
 
 
-  get 'men' => 'men#index'
+# namespace :men do
+#   namespace :formal do
+#     get 'hat'
+#   end
+# end
+
+
+
+  get 'men' => 'men/men#index'
   get 'men/shop_the_look'
   get 'men/brand'
   get 'men/all'
@@ -132,4 +140,9 @@ Rails.application.routes.draw do
   get 'men/accessorie'
   get 'men/about'
   get 'men/contact'
+
+  get 'men/formal/jacket_coat' => 'men/formal#jacket_coat'
+  get 'men/formal/suit' => 'men/formal#suit'
+  get 'men/formal/accessorie' => 'men/formal#accessorie'
+
 end

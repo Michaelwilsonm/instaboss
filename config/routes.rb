@@ -117,24 +117,22 @@ Rails.application.routes.draw do
   get 'women/contact'
   get 'women/brand'
 
-
-# namespace :men do
-#   namespace :formal do
-#     get 'hat'
-#   end
-# end
-
-
-
-  get 'men/shop_the_look'
+  get 'men' => 'men#index'
   get 'men/brand'
-  get 'men/all'
-  get 'men/short_swimwear'
-  get 'men/sunglass_watch'
   get 'men/about'
   get 'men/contact'
 
-  get 'men' => 'men#index'
+
+  get 'men/shop_the_look'
+  get 'men/all'
+
+  get 'men/short_swimwear' => 'sub_cat_men/short_swimwear#short_swimwear'
+  get 'men/short_swimwear/short' => 'sub_cat_men/short_swimwear#short'
+  get 'men/short_swimwear/swimwear' => 'sub_cat_men/short_swimwear#swimwear'
+
+  get 'men/sunglass_watch' => 'sub_cat_men/sunglass_watch#sunglass_watch'
+  get 'men/sunglass_watch/sunglass' => 'sub_cat_men/sunglass_watch#sunglass'
+  get 'men/sunglass_watch/watch' => 'sub_cat_men/sunglass_watch#watch'
 
   get 'men/top' => 'sub_cat_men/top#top'
   get 'men/top/polo' => 'sub_cat_men/top#polo'

@@ -126,11 +126,9 @@ Rails.application.routes.draw do
 
 
 
-  get 'men' => 'men/men#index'
   get 'men/shop_the_look'
   get 'men/brand'
   get 'men/all'
-  get 'men/formal'
   get 'men/lifestyle'
   get 'men/long'
   get 'men/shoe'
@@ -141,8 +139,11 @@ Rails.application.routes.draw do
   get 'men/about'
   get 'men/contact'
 
-  get 'men/formal/jacket_coat' => 'men/formal#jacket_coat'
-  get 'men/formal/suit' => 'men/formal#suit'
-  get 'men/formal/accessorie' => 'men/formal#accessorie'
+  get 'men' => 'men#index'
+
+  get 'men/formal' => 'sub_cat_men/formal#formal'
+  get 'men/formal/jacket_coat' => 'sub_cat_men/formal#jacket_coat'
+  get 'men/formal/suit' => 'sub_cat_men/formal#suit'
+  get 'men/formal/accessorie' => 'sub_cat_men/formal#accessorie'
 
 end

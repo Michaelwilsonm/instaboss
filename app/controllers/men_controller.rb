@@ -1,4 +1,4 @@
-class MenController < ApplicationController
+class MenController < GenderController
   before_action :all_fashion
   helper_method :sort_column, :sort_direction
   before_action :all_shop_the_look_images
@@ -27,12 +27,6 @@ class MenController < ApplicationController
     @shop_the_look_mens = @shop_look_images.shop_the_look_men
     @mens = @all_men + @shop_the_look_mens
     sort_by_created_at(@mens)
-  end
-
-  def formal
-    @formal_fashion_item = @items.men_formal
-    @formal_shop_look = @shop_look_images.find_category_mens("Formal").uniq!
-    join_items_and_sort(@formal_fashion_item, @formal_shop_look)
   end
 
   def accessorie
@@ -87,35 +81,4 @@ class MenController < ApplicationController
   def contact
   end
 
-  private
-
-    def index_sorting(fashion_items, shop_look_items)
-      all = fashion_items + shop_look_items
-      all.sort! { |a,b| b.created_at <=> a.created_at }
-    end
-
-    def join_items_and_sort(fashion_items, shop_look_items)
-      @all_items = fashion_items + shop_look_items
-      @all_items.sort! { |a,b| b.created_at <=> a.created_at }
-    end
-
-    def sort_by_created_at(all_items)
-      all_items.sort! { |a,b| b.created_at <=> a.created_at }
-    end
-
-    def all_fashion
-      @items = FashionItem.all
-    end
-
-    def all_shop_the_look_images
-      @shop_look_images = ShopTheLookImage.all
-    end
-
-    def sort_column
-      FashionItem.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
-    end
-
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc"
-    end
 end

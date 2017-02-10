@@ -129,21 +129,37 @@ Rails.application.routes.draw do
   get 'men/shop_the_look'
   get 'men/brand'
   get 'men/all'
-  get 'men/lifestyle'
-  get 'men/long'
-  get 'men/shoe'
   get 'men/top'
   get 'men/short_swimwear'
   get 'men/sunglass_watch'
-  get 'men/accessorie'
   get 'men/about'
   get 'men/contact'
 
   get 'men' => 'men#index'
 
+  get 'men/shoe' => 'sub_cat_men/shoe#shoe'
+  get 'men/shoe/boat' => 'sub_cat_men/shoe#boat'
+  get 'men/shoe/boot' => 'sub_cat_men/shoe#boot'
+  get 'men/shoe/trainer' => 'sub_cat_men/shoe#trainer'
+  get 'men/shoe/formal' => 'sub_cat_men/shoe#formal'
+  get 'men/shoe/other' => 'sub_cat_men/shoe#other'
+
+  get 'men/long' => 'sub_cat_men/long#long'
+  get 'men/long/chino' => 'sub_cat_men/long#chino'
+  get 'men/long/jean' => 'sub_cat_men/long#jean'
+  get 'men/long/jogger' => 'sub_cat_men/long#jogger'
+
+  get 'men/lifestyle' => 'sub_cat_men/lifestyle#lifestyle'
+
   get 'men/formal' => 'sub_cat_men/formal#formal'
   get 'men/formal/jacket_coat' => 'sub_cat_men/formal#jacket_coat'
   get 'men/formal/suit' => 'sub_cat_men/formal#suit'
-  get 'men/formal/accessorie' => 'sub_cat_men/formal#accessorie'
+  get 'men/formal/accessory' => 'sub_cat_men/formal#accessory'
+
+  get 'men/accessory' => 'sub_cat_men/accessory#accessory'
+  get 'men/accessory/hat' => 'sub_cat_men/accessory#hat'
+  get 'men/accessory/bag' => 'sub_cat_men/accessory#bag'
+  get 'men/accessory/jewellery' => 'sub_cat_men/accessory#jewellery'
+  get 'men/accessory/other' => 'sub_cat_men/accessory#other'
 
 end

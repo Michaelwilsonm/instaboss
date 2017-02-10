@@ -29,12 +29,6 @@ class MenController < GenderController
     sort_by_created_at(@mens)
   end
 
-  def accessorie
-    @accessorie_fashion_item = @items.men_accessorie
-    @accessorie_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
-    join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
-  end
-
   def lifestyle
     @lifestyle_fashion_item = @items.men_lifestyle
     @lifestyle_shop_look = @shop_look_images.find_category_mens("Lifestyle").uniq!

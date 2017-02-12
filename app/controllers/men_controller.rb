@@ -18,10 +18,6 @@ class MenController < GenderController
     @staff_picked_men = index_sorting(@staff_picked_men_items, @all_shop_look_staff).take(12)
   end
 
-  def shop_the_look
-    @shop_the_look_mens = @shop_look_images.shop_the_look_men
-  end
-
   def all
     @all_men = @items.all_mens_items_ALL
     @shop_the_look_mens = @shop_look_images.shop_the_look_men

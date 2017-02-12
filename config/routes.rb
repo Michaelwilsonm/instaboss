@@ -122,9 +122,13 @@ Rails.application.routes.draw do
   get 'men/about'
   get 'men/contact'
 
-
-  get 'men/shop_the_look'
   get 'men/all'
+
+  get 'men/shop_the_look' => 'sub_cat_men/shop_the_look#shop_the_look'
+  get 'men/shop_the_look/casual' => 'sub_cat_men/shop_the_look#casual'
+  get 'men/shop_the_look/going_out' => 'sub_cat_men/shop_the_look#going_out'
+  get 'men/shop_the_look/working_out' => 'sub_cat_men/shop_the_look#working_out'
+  get 'men/shop_the_look/other' => 'sub_cat_men/shop_the_look#other'
 
   get 'men/short_swimwear' => 'sub_cat_men/short_swimwear#short_swimwear'
   get 'men/short_swimwear/short' => 'sub_cat_men/short_swimwear#short'

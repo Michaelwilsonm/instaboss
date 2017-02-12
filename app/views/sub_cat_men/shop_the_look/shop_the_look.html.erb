@@ -6,7 +6,7 @@
 <div class="shop_the_look_mens"></div>
 <div class="desktop-categories"><h1>Shop The Look</h1></div>
 <div class="categorise desktop-sort">
-  <%= render "templates/womens/sub_categories_sort/shop_the_look" %>
+  <%= render "templates/mens/sub_categories_sort/shop_the_look" %>
 </div>
 <div class="container mobile_container">
   <div class="row">
@@ -18,7 +18,7 @@
       <div class="box col-md-4 col-sm-6 col-xs-12 <%= shop_the_look_items.describe_the_look %>">
         <div class="image_div">
           <a href="/shop_the_look_images/<%= shop_the_look_items.id %>">
-            <%= image_tag shop_the_look_items.shop_look_image.url(:original) %>
+            <%= image_tag shop_the_look_items.shop_look_image.url(:medium) %>
           <div class="description_content">
             <table>
               <tr class="shop_look_table"></tr>

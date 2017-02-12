@@ -6,7 +6,15 @@ class FashionItem < ActiveRecord::Base
     self.brand = brand.split.map(&:downcase).join(' ')
   end
 
-  def self.more_you_might_like type_of_item, sex_of_item
+  def self.men_categories(category_item)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category =" + "'" + category_item + "'" + "ORDER BY created_at DESC")
+  end
+
+  def self.men_sub_categories(sub_category_item)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sub_category =" + "'" + sub_category_item + "'" + "ORDER BY created_at DESC")
+  end
+
+  def self.more_you_might_like(type_of_item, sex_of_item)
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = " + "'" + sex_of_item + "'" + " AND category = " + "'" + type_of_item + "'" + " ORDER BY RANDOM() LIMIT 6")
   end
 
@@ -40,10 +48,6 @@ class FashionItem < ActiveRecord::Base
 
   def self.men_accessorie
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Accessories' ORDER BY created_at DESC")
-  end
-
-  def self.men_formal
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Formal' ORDER BY created_at DESC")
   end
 
   def self.men_lifestyle

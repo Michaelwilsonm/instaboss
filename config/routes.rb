@@ -117,19 +117,56 @@ Rails.application.routes.draw do
   get 'women/contact'
   get 'women/brand'
 
-
   get 'men' => 'men#index'
-  get 'men/shop_the_look'
   get 'men/brand'
-  get 'men/all'
-  get 'men/formal'
-  get 'men/lifestyle'
-  get 'men/long'
-  get 'men/shoe'
-  get 'men/top'
-  get 'men/short_swimwear'
-  get 'men/sunglass_watch'
-  get 'men/accessorie'
   get 'men/about'
   get 'men/contact'
+
+  get 'men/all'
+
+  get 'men/shop_the_look' => 'sub_cat_men/shop_the_look#shop_the_look'
+  get 'men/shop_the_look/casual' => 'sub_cat_men/shop_the_look#casual'
+  get 'men/shop_the_look/going_out' => 'sub_cat_men/shop_the_look#going_out'
+  get 'men/shop_the_look/working_out' => 'sub_cat_men/shop_the_look#working_out'
+  get 'men/shop_the_look/other' => 'sub_cat_men/shop_the_look#other'
+
+  get 'men/short_swimwear' => 'sub_cat_men/short_swimwear#short_swimwear'
+  get 'men/short_swimwear/short' => 'sub_cat_men/short_swimwear#short'
+  get 'men/short_swimwear/swimwear' => 'sub_cat_men/short_swimwear#swimwear'
+
+  get 'men/sunglass_watch' => 'sub_cat_men/sunglass_watch#sunglass_watch'
+  get 'men/sunglass_watch/sunglass' => 'sub_cat_men/sunglass_watch#sunglass'
+  get 'men/sunglass_watch/watch' => 'sub_cat_men/sunglass_watch#watch'
+
+  get 'men/top' => 'sub_cat_men/top#top'
+  get 'men/top/polo' => 'sub_cat_men/top#polo'
+  get 'men/top/shirt' => 'sub_cat_men/top#shirt'
+  get 'men/top/hoodie' => 'sub_cat_men/top#hoodie'
+  get 'men/top/jacket' => 'sub_cat_men/top#jacket'
+
+  get 'men/shoe' => 'sub_cat_men/shoe#shoe'
+  get 'men/shoe/boat' => 'sub_cat_men/shoe#boat'
+  get 'men/shoe/boot' => 'sub_cat_men/shoe#boot'
+  get 'men/shoe/trainer' => 'sub_cat_men/shoe#trainer'
+  get 'men/shoe/formal' => 'sub_cat_men/shoe#formal'
+  get 'men/shoe/other' => 'sub_cat_men/shoe#other'
+
+  get 'men/long' => 'sub_cat_men/long#long'
+  get 'men/long/chino' => 'sub_cat_men/long#chino'
+  get 'men/long/jean' => 'sub_cat_men/long#jean'
+  get 'men/long/jogger' => 'sub_cat_men/long#jogger'
+
+  get 'men/lifestyle' => 'sub_cat_men/lifestyle#lifestyle'
+
+  get 'men/formal' => 'sub_cat_men/formal#formal'
+  get 'men/formal/jacket_coat' => 'sub_cat_men/formal#jacket_coat'
+  get 'men/formal/suit' => 'sub_cat_men/formal#suit'
+  get 'men/formal/accessory' => 'sub_cat_men/formal#accessory'
+
+  get 'men/accessory' => 'sub_cat_men/accessory#accessory'
+  get 'men/accessory/hat' => 'sub_cat_men/accessory#hat'
+  get 'men/accessory/bag' => 'sub_cat_men/accessory#bag'
+  get 'men/accessory/jewellery' => 'sub_cat_men/accessory#jewellery'
+  get 'men/accessory/other' => 'sub_cat_men/accessory#other'
+
 end

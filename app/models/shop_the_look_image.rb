@@ -47,6 +47,10 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.where(gender: "Mens").joins(:shop_the_look_items).where('shop_the_look_items.category' => category)
   end
 
+  def self.find_sub_category_mens(category)
+    ShopTheLookImage.where(gender: "Mens").joins(:shop_the_look_items).where('shop_the_look_items.sub_category' => category)
+  end
+
   def self.find_category_womens(category)
     ShopTheLookImage.where(gender: "Womens").joins(:shop_the_look_items).where('shop_the_look_items.category' => category)
   end

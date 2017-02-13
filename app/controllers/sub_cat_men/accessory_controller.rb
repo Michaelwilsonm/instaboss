@@ -1,4 +1,5 @@
 class SubCatMen::AccessoryController < MenController
+  require 'will_paginate/array'
 
   def accessory
     @formal_fashion_item = @items.men_categories("Accessories")

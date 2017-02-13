@@ -1,4 +1,5 @@
 class GenderController < ApplicationController
+  require 'will_paginate/array'
 
   def index_sorting(fashion_items, shop_look_items)
     all = fashion_items + shop_look_items
@@ -6,8 +7,9 @@ class GenderController < ApplicationController
   end
 
   def join_items_and_sort(fashion_items, shop_look_items)
-    @all_items = fashion_items + shop_look_items
-    @all_items.sort! { |a,b| b.created_at <=> a.created_at }
+    combine_querys = (fashion_items + shop_look_items).flatten
+    @sorted_items = combine_querys.sort_by { |items| items.created_at }
+    @all_items = (@sorted_items).paginate(:page =>params[:page], :per_page => 12)
   end
 
   def sort_by_created_at(all_items)

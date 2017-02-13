@@ -14,7 +14,12 @@
     <div class="item_sub_cat mobile-sort">
       <%= render "templates/mens/mobile_sub_categories_sort/accessories" %>
     </div>
-    <%= render "templates/all_items_display"  %>
+    <div id="products">
+      <%= render "templates/all_items_display"  %>
+    </div>
   </div>
 </div>
+
+<%= will_paginate @all_items %>
+
 <%= render "templates/footer/footer" %>

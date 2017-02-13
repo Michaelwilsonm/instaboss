@@ -1,6 +1,7 @@
-$(document).ready(function() {
-  $(document).on('page:change', function () {
+// $(document).ready(function() {
+//   $(document).on('page:change', function () {
 
+// });
     // var sortSubCategories = (function(){
     //   var $box = $(".box");
     //   var $mobileCategories = $(".sorting_class>li");
@@ -45,5 +46,5 @@ $(document).ready(function() {
     //   }
     // })();
 
-  });
-});
+//   });
+// });

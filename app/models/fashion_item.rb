@@ -8,7 +8,6 @@ class FashionItem < ActiveRecord::Base
 
   def self.men_categories(category_item)
     FashionItem.where(["sex = ? and category = ?", "Mens", category_item]).order("created_at DESC")
-    # FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category =" + "'" + category_item + "'" + "ORDER BY created_at DESC")
   end
 
   def self.men_sub_categories(sub_category_item)

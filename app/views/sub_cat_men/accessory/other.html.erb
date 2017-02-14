@@ -3,7 +3,7 @@
 <%= render "templates/mens/navigation/navigation" %>
 
 <div class="accessories_hero_mens"></div>
-<div class="desktop-categories"><h1>Accessories - Other</h1></div>
+<div class="desktop-categories"><h1>Other</h1></div>
 <div class="categorise desktop-sort">
   <%= render "templates/mens/sub_categories_sort/accessories" %>
 </div>
@@ -14,7 +14,14 @@
     <div class="item_sub_cat mobile-sort">
       <%= render "templates/mens/mobile_sub_categories_sort/accessories" %>
     </div>
-    <%= render "templates/all_items_display"  %>
+    <div id="products">
+      <%= render "templates/all_items_display"  %>
+    </div>
   </div>
+</div>
+
+<img src="/assets/load_more_icon.png" alt="" id="paginate_page">
+<div id="hide-page-numbers">
+  <%= will_paginate @all_items %>
 </div>
 <%= render "templates/footer/footer" %>

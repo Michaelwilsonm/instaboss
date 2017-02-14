@@ -44,10 +44,5 @@
 //         $listElements.stop().slideToggle(100)
 //       }
 //     })();
-
-
-
-
-
 //   });
 // });

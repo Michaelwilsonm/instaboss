@@ -1550,7 +1550,7 @@ input:-webkit-autofill {
   display: block;
   position: absolute;
   top: 418px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
   font-family: "Calisto MT Regular";
   width: 100%;
   height: 50px;
@@ -1952,6 +1952,21 @@ RESPONSIVE LAYOUT OF NAVIGATION
   position: absolute;
   right: 0;
   margin-right: 10px;
+}
+/* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagination_scrolling.scss */
+#hide-page-numbers {
+  visibility: hidden;
+}
+
+/* line 5, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagination_scrolling.scss */
+#paginate_page {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  cursor: pointer;
 }
 /* line 1, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/pagnation/pagnation.scss */
 .digg_pagination {

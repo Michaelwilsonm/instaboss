@@ -1,7 +1,10 @@
 $('#products').append(("<%= j render(:partial => 'templates/all_items_display') %>"));
 
 <% if @all_items.next_page %>
+  console.log("hello")
+  console.log("<%= @all_items.next_page %>")
   $('.pagination').replaceWith('<%= j will_paginate(@all_items) %>');
 <% else %>
   $('.pagination').remove();
+  $('#paginate_page').remove();
 <% end %>

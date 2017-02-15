@@ -21,7 +21,7 @@ $(document).ready(function() {
         $tint.fadeIn(500)
       });
 
-      $tint.click(function(){
+      $(document).on( "click", ".tint", function(e) {
         window.history.pushState('page2', 'Title', THIS_PAGE_URL);
         $outsideContainer.fadeOut(500)
         $tint.fadeOut(500)

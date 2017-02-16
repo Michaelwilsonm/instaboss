@@ -6,6 +6,10 @@ class FashionItem < ActiveRecord::Base
     self.brand = brand.split.map(&:downcase).join(' ')
   end
 
+  def self.all_mens_items_page
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' ORDER BY created_at DESC")
+  end
+
   def self.men_categories(category_item)
     FashionItem.where(["sex = ? and category = ?", "Mens", category_item]).order("created_at DESC")
   end
@@ -20,10 +24,6 @@ class FashionItem < ActiveRecord::Base
 
   def self.sales
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sale = true ORDER BY created_at DESC")
-  end
-
-  def self.all_mens_items_ALL
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' ORDER BY created_at DESC")
   end
 
   def self.all_mens_items

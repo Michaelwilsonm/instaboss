@@ -83,15 +83,11 @@ Rails.application.routes.draw do
   get 'women_brand/alice_mccall'
   get 'women_brand/auguste'
   get 'women_brand/sea_folly'
-  # get 'women_brand/top_shop'
-  # get 'women_brand/victorias_secret'
-
 
   post 'brand/search_men' => 'brand#search_men', as: 'search_brand_men'
 
   get 'site/about'
   get 'site/contact'
-
 
   devise_for :users
 
@@ -168,5 +164,58 @@ Rails.application.routes.draw do
   get 'men/accessory/bag' => 'sub_cat_men/accessory#bag'
   get 'men/accessory/jewellery' => 'sub_cat_men/accessory#jewellery'
   get 'men/accessory/other' => 'sub_cat_men/accessory#other'
+
+  # WOMEN ROUTES
+
+  get 'women/shop_the_look' => 'sub_cat_women/shop_the_look#shop_the_look'
+  get 'women/shop_the_look/casual' => 'sub_cat_women/shop_the_look#casual'
+  get 'women/shop_the_look/going_out' => 'sub_cat_women/shop_the_look#going_out'
+  get 'women/shop_the_look/working_out' => 'sub_cat_women/shop_the_look#working_out'
+  get 'women/shop_the_look/other' => 'sub_cat_women/shop_the_look#other'
+
+  get 'women/short_swimwear' => 'sub_cat_women/short_swimwear#short_swimwear'
+  get 'women/short_swimwear/bikini' => 'sub_cat_women/short_swimwear#bikini'
+  get 'women/short_swimwear/other' => 'sub_cat_women/short_swimwear#other'
+  get 'women/short_swimwear/swimsuit' => 'sub_cat_women/short_swimwear#swimsuit'
+
+  get 'women/sunglass_watch' => 'sub_cat_women/sunglass_watch#sunglass_watch'
+  get 'women/sunglass_watch/sunglass' => 'sub_cat_women/sunglass_watch#sunglass'
+  get 'women/sunglass_watch/watch' => 'sub_cat_women/sunglass_watch#watch'
+
+  get 'women/short' => 'sub_cat_women/short#short'
+  get 'women/short/short' => 'sub_cat_women/short#short'
+  get 'women/short/skirt' => 'sub_cat_women/short#skirt'
+
+  get 'women/shoe' => 'sub_cat_women/shoe#shoe'
+  get 'women/shoe/boot' => 'sub_cat_women/shoe#boot'
+  get 'women/shoe/trainer' => 'sub_cat_women/shoe#trainer'
+  get 'women/shoe/heel' => 'sub_cat_women/shoe#heel'
+  get 'women/shoe/flat' => 'sub_cat_women/shoe#flat'
+
+  get 'women/jean_trouser' => 'sub_cat_women/jean_trouser#jean_trouser'
+  get 'women/jean_troser/jean' => 'sub_cat_women/jean_troser#jean'
+  get 'women/jean_troser/trouser' => 'sub_cat_women/jean_troser#trouser'
+  get 'women/jean_troser/legging' => 'sub_cat_women/jean_troser#legging'
+
+  get 'women/home' => 'sub_cat_women/home#home'
+
+  get 'women/dress' => 'sub_cat_women/dress#dress'
+  get 'women/dress/day' => 'sub_cat_women/dress#day'
+  get 'women/dress/evening' => 'sub_cat_women/dress#evening'
+  get 'women/dress/playsuit' => 'sub_cat_women/dress#playsuit'
+
+
+  get 'women/accessory' => 'sub_cat_women/accessory#accessory'
+  get 'women/accessory/lingerie' => 'sub_cat_women/accessory#lingerie'
+  get 'women/accessory/hat' => 'sub_cat_women/accessory#hat'
+  get 'women/accessory/jewellery' => 'sub_cat_women/accessory#jewellery'
+  get 'women/accessory/bag' => 'sub_cat_women/accessory#bag'
+  get 'women/accessory/other' => 'sub_cat_women/accessory#other'
+
+  get 'women/top' => 'sub_cat_women/top#top'
+  get 'women/top/tshirt_vest' => 'sub_cat_women/top#tshirt_vest'
+  get 'women/top/shirt_blouse' => 'sub_cat_women/top#shirt_blouse'
+  get 'women/top/hoodie_sweat_shirt' => 'sub_cat_women/top#hoodie_sweat_shirt'
+  get 'women/top/jacket_coat' => 'sub_cat_women/top#jacket_coat'
 
 end

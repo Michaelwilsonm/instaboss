@@ -8,7 +8,8 @@ class GenderController < ApplicationController
 
   def join_items_and_sort(fashion_items, shop_look_items)
     combine_querys = (fashion_items + shop_look_items).flatten
-    p combine_querys
+    puts "*" * 1000
+    puts "*" * 1000
     sorted_items = combine_querys.sort { |a,b| b.created_at <=> a.created_at }
     @all_items = (sorted_items).paginate(:page =>params[:page], :per_page => 33)
   end
@@ -20,6 +21,10 @@ class GenderController < ApplicationController
   def all_fashion
     @items = FashionItem.all
   end
+
+    def all_women
+      @items = FashionItem.all
+    end
 
   def all_shop_the_look_images
     @shop_look_images = ShopTheLookImage.all

@@ -121,6 +121,14 @@ class FashionItem < ActiveRecord::Base
 
 
 #WOMENS
+  def self.women_categories(category_item)
+    FashionItem.where(["sex = ? and category = ?", "Womens", category_item]).order("created_at DESC")
+  end
+
+  def self.women_sub_categories(category_item)
+    FashionItem.where(["sex = ? and sub_category = ?", "Womens", category_item]).order("created_at DESC")
+  end
+
   def self.all_womens_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'false' ORDER BY created_at DESC")
   end
@@ -133,45 +141,8 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND featured_item = 'true' ORDER BY created_at DESC")
   end
 
-
   def self.nine_special_items_womens
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'")
-  end
-
-  def self.women_accessorie
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Accessories' ORDER BY created_at DESC")
-  end
-
-  def self.women_jean_legging
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Jeans' ORDER BY created_at DESC")
-  end
-
-  def self.women_lifestyle
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Home' ORDER BY created_at DESC")
-  end
-
-  def self.women_dress
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Dresses' ORDER BY created_at DESC")
-  end
-
-  def self.women_shoe
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Shoes' ORDER BY created_at DESC")
-  end
-
-  def self.women_short_skirt
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Shorts' ORDER BY created_at DESC")
-  end
-
-  def self.women_sunglass_watch
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Sunglasses' ORDER BY created_at DESC")
-  end
-
-  def self.women_swim_beachwear
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Swim' ORDER BY created_at DESC")
-  end
-
-  def self.women_top
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND category = 'Tops' ORDER BY created_at DESC")
   end
 
 

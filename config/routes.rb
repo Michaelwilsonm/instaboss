@@ -98,17 +98,6 @@ Rails.application.routes.draw do
   root "site#index"
 
   get 'women' => 'women#index'
-  get 'women/shop_the_look'
-  get 'women/all'
-  get 'women/accessorie'
-  get 'women/dress'
-  get 'women/jean_legging'
-  get 'women/lifestyle'
-  get 'women/shoe'
-  get 'women/short_skirt'
-  get 'women/sunglass_watch'
-  get 'women/swim_beachwear'
-  get 'women/top'
   get 'women/about'
   get 'women/contact'
   get 'women/brand'
@@ -183,7 +172,7 @@ Rails.application.routes.draw do
   get 'women/sunglass_watch/watch' => 'sub_cat_women/sunglass_watch#watch'
 
   get 'women/short' => 'sub_cat_women/short#short'
-  get 'women/short/short' => 'sub_cat_women/short#short'
+  get 'women/short/short_only' => 'sub_cat_women/short#short_only'
   get 'women/short/skirt' => 'sub_cat_women/short#skirt'
 
   get 'women/shoe' => 'sub_cat_women/shoe#shoe'

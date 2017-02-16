@@ -46,38 +46,6 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = 'true'")
   end
 
-  def self.men_accessorie
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Accessories' ORDER BY created_at DESC")
-  end
-
-  def self.men_lifestyle
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Lifestyle' ORDER BY created_at DESC")
-  end
-
-  def self.men_long
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Longs' ORDER BY created_at DESC")
-  end
-
-  def self.men_shoe
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Shoes' ORDER BY created_at DESC")
-  end
-
-  def self.men_top
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Tops' ORDER BY created_at DESC")
-  end
-
-  def self.men_short
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Shorts' ORDER BY created_at DESC")
-  end
-
-  def self.men_short_swimwear
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Shorts' ORDER BY created_at DESC")
-  end
-
-  def self.men_sunglass_watch
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND category = 'Sunglasses' ORDER BY created_at DESC")
-  end
-
   def self.bjorn_borg
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'bjorn borg' ORDER BY created_at DESC")
   end

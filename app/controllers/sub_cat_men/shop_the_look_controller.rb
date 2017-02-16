@@ -1,22 +1,42 @@
 class SubCatMen::ShopTheLookController < MenController
 
   def shop_the_look
-    @shop_the_look_mens = @shop_look_images.shop_the_look_men
+    @shop_the_look_mens = @shop_look_images.shop_the_look_men.paginate(:page =>params[:page], :per_page => 33)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def other
-    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Other")
+    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Other").paginate(:page =>params[:page], :per_page => 33)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def going_out
-    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Going")
+    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Going Out").paginate(:page =>params[:page], :per_page => 33)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def working_out
-    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Working")
+    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Working Out").paginate(:page =>params[:page], :per_page => 33)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def casual
-    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Casual")
+    @shop_the_look_mens = @shop_look_images.find_sub_category_mens("Casual").paginate(:page =>params[:page], :per_page => 33)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 end

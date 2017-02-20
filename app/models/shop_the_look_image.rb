@@ -52,6 +52,10 @@ class ShopTheLookImage < ActiveRecord::Base
   end
 
   def self.find_category_womens(category)
-    ShopTheLookImage.where(gender: "Womens").joins(:shop_the_look_items).where('shop_the_look_items.category' => category)
+    ShopTheLookImage.where(gender: "Womens").joins(:shop_the_look_items).where('shop_the_look_items.category' => category).order("created_at DESC")
+  end
+
+  def self.find_sub_category_womens(category)
+    ShopTheLookImage.where(["gender = ? and describe_the_look = ?", "Womens", category]).order("created_at DESC")
   end
 end

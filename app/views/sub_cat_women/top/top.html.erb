@@ -1,7 +1,6 @@
 <%= render "templates/mobile_nav/navigation_womens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
 <%= render "templates/womens/navigation/navigation" %>
-
 <div class="top_women"></div>
 <div class="desktop-categories"><h1>Tops</h1></div>
 <div class="categorise desktop-sort">
@@ -13,8 +12,16 @@
     <div class="item_sub_cat mobile-sort">
       <%= render "templates/womens/mobile_sub_categories_sort/tops" %>
     </div>
-    <%= render "templates/all_items_display" %>
+    <div id="products">
+      <%= render "templates/all_items_display" %>
+    </div>
   </div>
+</div>
+<% if @all_items.length > 32 %>
+  <img src="/assets/load_more_icon.png" alt="" id="paginate_page">
+<% end %>
+<div id="hide-page-numbers">
+  <%= will_paginate @all_items %>
 </div>
 
 <%= render "templates/footer/footer_women" %>

@@ -182,9 +182,9 @@ Rails.application.routes.draw do
   get 'women/shoe/flat' => 'sub_cat_women/shoe#flat'
 
   get 'women/jean_trouser' => 'sub_cat_women/jean_trouser#jean_trouser'
-  get 'women/jean_troser/jean' => 'sub_cat_women/jean_troser#jean'
-  get 'women/jean_troser/trouser' => 'sub_cat_women/jean_troser#trouser'
-  get 'women/jean_troser/legging' => 'sub_cat_women/jean_troser#legging'
+  get 'women/jean_trouser/jean' => 'sub_cat_women/jean_trouser#jean'
+  get 'women/jean_trouser/trouser' => 'sub_cat_women/jean_trouser#trouser'
+  get 'women/jean_trouser/legging' => 'sub_cat_women/jean_trouser#legging'
 
   get 'women/home' => 'sub_cat_women/home#home'
 

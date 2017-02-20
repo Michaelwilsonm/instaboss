@@ -1,4 +1,4 @@
-class SubCatWomen::TopController < WomenController
+class SubCatWomen::ShortController < WomenController
 
   def short
     @short_item = @items.women_categories("Shorts & Skirts")

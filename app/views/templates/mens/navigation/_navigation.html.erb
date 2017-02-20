@@ -2,7 +2,7 @@
 
 <% mens_brands = {'Adidas Originals': '/men_brand/adidas', 'I Love Ugly': '/men_brand/i_love_ugly', 'Just Another Fisherman': '/men_brand/just_another_fisherman', 'MJ Bale': '/men_brand/mj_bale', 'New Balance': '/men_brand/new_balance','retromarine': '/men_brand/retro_marine', 'Sunday Somewhere': '/men_brand/sunday_somewhere', 'The Modest Vintage Player': '/men_brand/the_modest_vintage_player', 'Windsor Smith': '/men_brand/windsor_smith'} %>
 
-<% shop_look_brands = ['Casual', 'Going Out', 'Working Out', 'Other'] %>
+<% shop_look_brands = {'All': '/men/shop_the_look/', 'Casual': '/men/shop_the_look/casual', 'Going Out': '/men/shop_the_look/going_out', 'Working Out': '/men/shop_the_look/working_out', 'Other': '/men/shop_the_look/other' } %>
 
 <div class="sticky-nav-mens">
   <a href="/"><h1>InstaBoss</h1></a>
@@ -21,8 +21,8 @@
     <div class="shop_look_nav_top">
     <%= link_to "SHOP THE LOOK", men_shop_the_look_path, class: "shop-look-nav"%>
       <div class="shop_drop_shop_by">
-        <% shop_look_brands.each do |cats| %>
-          <%= link_to cats, men_shop_the_look_path %>
+        <% shop_look_brands.each do |shop_look_cats, link| %>
+          <%= link_to shop_look_cats, link %>
         <% end %>
       </div>
       <div class="arrow-down-shop-look"></div>

@@ -1,4 +1,4 @@
-class WomenController < ApplicationController
+class WomenController < GenderController
   before_action :all_women
   before_action :all_shop_the_look_images
 
@@ -21,12 +21,6 @@ class WomenController < ApplicationController
     @shop_the_look_womens = @shop_look_images.shop_the_look_women
     @womens = @womens_items + @shop_the_look_womens
     sort_by_created_at(@womens)
-  end
-
-  def accessorie
-    @accessorie_fashion_item = @items.women_accessorie
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
-    join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
   end
 
   def dress
@@ -98,11 +92,6 @@ class WomenController < ApplicationController
       all.sort! { |a,b| b.created_at <=> a.created_at }
     end
 
-    def join_items_and_sort(fashion_items, shop_look_items)
-      @all_items = fashion_items + shop_look_items
-      @all_items.sort! { |a,b| b.created_at <=> a.created_at }
-    end
-
     def sort_by_created_at(all_items)
       all_items.sort! { |a,b| b.created_at <=> a.created_at }
     end
@@ -110,9 +99,4 @@ class WomenController < ApplicationController
     def all_shop_the_look_images
       @shop_look_images = ShopTheLookImage.all
     end
-
-    def all_women
-      @items = FashionItem.all
-    end
-
 end

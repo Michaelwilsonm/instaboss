@@ -1,0 +1,8 @@
+$('#products').append(("<%= j render(:partial => 'templates/all_items_display') %>"));
+
+<% if @all_items.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@shop_the_look_mens) %>');
+<% else %>
+  $('.pagination').remove();
+  $('#paginate_page').remove();
+<% end %>

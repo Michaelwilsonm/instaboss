@@ -19,14 +19,16 @@ class MenController < GenderController
   end
 
   def all
-    @all_men = @items.all_mens_items_ALL
+    @all_men = @items.all_mens_items_page
     @shop_the_look_mens = @shop_look_images.shop_the_look_men
-    @mens = @all_men + @shop_the_look_mens
-    sort_by_created_at(@mens)
+    join_items_and_sort(@all_men, @shop_the_look_mens)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def brand
-    @all_mens = @items.all_mens_items_ALL
   end
 
   def about

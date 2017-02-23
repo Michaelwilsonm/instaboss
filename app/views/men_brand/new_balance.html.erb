@@ -6,7 +6,15 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">New Balance</h1>
-    <%= render 'templates/all_brands_display' %>
+    <div id="products">
+      <%= render 'templates/all_brands_display' %>
+    </div>
   </div>
+</div>
+<% if @all_items.length > 12 %>
+  <img src="/assets/load_more_icon.png" alt="" id="paginate_page">
+<% end %>
+<div id="hide-page-numbers">
+  <%= will_paginate @all_items %>
 </div>
 <%= render 'templates/footer/footer' %>

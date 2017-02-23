@@ -25,7 +25,7 @@ class WomenBrandController < ApplicationController
 
   def windsor_smith
     @all_brand_display = @women_items.women_brand('windsor smith')
-    @brand = @shop_the_look_images.find_brand_womens('windsor smith')
+    @brand = @shop_the_look_images.find_brand_womens('windsor smith').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -35,7 +35,7 @@ class WomenBrandController < ApplicationController
 
   def bronze_snake
     @all_brand_display = @women_items.women_brand('bronze snake')
-    @brand = @shop_the_look_images.find_brand_womens('bronze snake')
+    @brand = @shop_the_look_images.find_brand_womens('bronze snake').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -45,7 +45,7 @@ class WomenBrandController < ApplicationController
 
   def new_balance
     @all_brand_display = @women_items.women_brand('new balance')
-    @brand = @shop_the_look_images.find_brand_womens('new balance')
+    @brand = @shop_the_look_images.find_brand_womens('new balance').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -55,7 +55,7 @@ class WomenBrandController < ApplicationController
 
   def coopers_st
     @all_brand_display = @women_items.women_brand('cooper st')
-    @brand = @shop_the_look_images.find_brand_womens('cooper st')
+    @brand = @shop_the_look_images.find_brand_womens('cooper st').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -65,7 +65,7 @@ class WomenBrandController < ApplicationController
 
   def mura
     @all_brand_display = @women_items.women_brand('mura boutique')
-    @brand = @shop_the_look_images.find_brand_womens('mura boutique')
+    @brand = @shop_the_look_images.find_brand_womens('mura boutique').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -75,7 +75,7 @@ class WomenBrandController < ApplicationController
 
   def princess_polly
     @all_brand_display = @women_items.women_brand('princess polly')
-    @brand = @shop_the_look_images.find_brand_womens('princess polly')
+    @brand = @shop_the_look_images.find_brand_womens('princess polly').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -85,7 +85,7 @@ class WomenBrandController < ApplicationController
 
   def jo_mercer
     @all_brand_display = @women_items.women_brand('jo mercer')
-    @brand = @shop_the_look_images.find_brand_womens('jo mercer')
+    @brand = @shop_the_look_images.find_brand_womens('jo mercer').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -95,7 +95,7 @@ class WomenBrandController < ApplicationController
 
   def showpo
     @all_brand_display = @women_items.women_brand('showpo')
-    @brand = @shop_the_look_images.find_brand_womens('showpo')
+    @brand = @shop_the_look_images.find_brand_womens('showpo').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -105,7 +105,7 @@ class WomenBrandController < ApplicationController
 
   def samantha_wills
     @all_brand_display = @women_items.women_brand('samantha wills')
-    @brand = @shop_the_look_images.find_brand_womens('samantha wills')
+    @brand = @shop_the_look_images.find_brand_womens('samantha wills').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -115,7 +115,7 @@ class WomenBrandController < ApplicationController
 
   def esther
     @all_brand_display = @women_items.women_brand('esther')
-    @brand = @shop_the_look_images.find_brand_womens('esther')
+    @brand = @shop_the_look_images.find_brand_womens('esther').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -125,7 +125,7 @@ class WomenBrandController < ApplicationController
 
   def senso
     @all_brand_display = @women_items.women_brand('senso')
-    @brand = @shop_the_look_images.find_brand_womens('senso')
+    @brand = @shop_the_look_images.find_brand_womens('senso').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -135,7 +135,7 @@ class WomenBrandController < ApplicationController
 
   def lorna_jane
     @all_brand_display = @women_items.women_brand('lorna jane')
-    @brand = @shop_the_look_images.find_brand_womens('lorna jane')
+    @brand = @shop_the_look_images.find_brand_womens('lorna jane').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -145,7 +145,7 @@ class WomenBrandController < ApplicationController
 
   def sunday_somewhere
     @all_brand_display = @women_items.women_brand('sunday somewhere')
-    @brand = @shop_the_look_images.find_brand_womens('sunday somewhere')
+    @brand = @shop_the_look_images.find_brand_womens('sunday somewhere').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -155,7 +155,7 @@ class WomenBrandController < ApplicationController
 
   def forever_21
     @all_brand_display = @women_items.women_brand('forever 21')
-    @brand = @shop_the_look_images.find_brand_womens('forever 21')
+    @brand = @shop_the_look_images.find_brand_womens('forever 21').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -165,7 +165,7 @@ class WomenBrandController < ApplicationController
 
   def tony_bianco
     @all_brand_display = @women_items.women_brand('tony bianco')
-    @brand = @shop_the_look_images.find_brand_womens('tony bianco')
+    @brand = @shop_the_look_images.find_brand_womens('tony bianco').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -175,7 +175,7 @@ class WomenBrandController < ApplicationController
 
   def daniel_wellington
     @all_brand_display = @women_items.women_brand('daniel wellington')
-    @brand = @shop_the_look_images.find_brand_womens('daniel wellington')
+    @brand = @shop_the_look_images.find_brand_womens('daniel wellington').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -185,7 +185,7 @@ class WomenBrandController < ApplicationController
 
   def alice_mccall
     @all_brand_display = @women_items.women_brand('alice mccall')
-    @brand = @shop_the_look_images.find_brand_womens('alice mccall')
+    @brand = @shop_the_look_images.find_brand_womens('alice mccall').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -195,7 +195,7 @@ class WomenBrandController < ApplicationController
 
   def auguste
     @all_brand_display = @women_items.women_brand('auguste')
-    @brand = @shop_the_look_images.find_brand_womens('auguste')
+    @brand = @shop_the_look_images.find_brand_womens('auguste').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -205,7 +205,7 @@ class WomenBrandController < ApplicationController
 
   def sea_folly
     @all_brand_display = @women_items.women_brand('seafolly')
-    @brand = @shop_the_look_images.find_brand_womens('seafolly')
+    @brand = @shop_the_look_images.find_brand_womens('seafolly').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -215,7 +215,7 @@ class WomenBrandController < ApplicationController
 
   def top_shop
     @all_brand_display = @women_items.women_brand('topshop')
-    @brand = @shop_the_look_images.find_brand_womens('topshop')
+    @brand = @shop_the_look_images.find_brand_womens('topshop').uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
@@ -225,7 +225,7 @@ class WomenBrandController < ApplicationController
 
   def victorias_secret
     @all_brand_display = @women_items.women_brand("victoria's secret")
-    @brand = @shop_the_look_images.find_brand_womens("victoria's secret")
+    @brand = @shop_the_look_images.find_brand_womens("victoria's secret").uniq!
     join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html

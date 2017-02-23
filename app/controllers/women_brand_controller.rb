@@ -26,7 +26,7 @@ class WomenBrandController < ApplicationController
   def windsor_smith
     @all_brand_display = @women_items.women_brand('windsor smith')
     @brand = @shop_the_look_images.find_brand_womens('windsor smith')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -36,7 +36,7 @@ class WomenBrandController < ApplicationController
   def bronze_snake
     @all_brand_display = @women_items.women_brand('bronze snake')
     @brand = @shop_the_look_images.find_brand_womens('bronze snake')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -46,7 +46,7 @@ class WomenBrandController < ApplicationController
   def new_balance
     @all_brand_display = @women_items.women_brand('new balance')
     @brand = @shop_the_look_images.find_brand_womens('new balance')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -56,7 +56,7 @@ class WomenBrandController < ApplicationController
   def coopers_st
     @all_brand_display = @women_items.women_brand('cooper st')
     @brand = @shop_the_look_images.find_brand_womens('cooper st')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -66,7 +66,7 @@ class WomenBrandController < ApplicationController
   def mura
     @all_brand_display = @women_items.women_brand('mura boutique')
     @brand = @shop_the_look_images.find_brand_womens('mura boutique')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -76,7 +76,7 @@ class WomenBrandController < ApplicationController
   def princess_polly
     @all_brand_display = @women_items.women_brand('princess polly')
     @brand = @shop_the_look_images.find_brand_womens('princess polly')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -86,7 +86,7 @@ class WomenBrandController < ApplicationController
   def jo_mercer
     @all_brand_display = @women_items.women_brand('jo mercer')
     @brand = @shop_the_look_images.find_brand_womens('jo mercer')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -96,7 +96,7 @@ class WomenBrandController < ApplicationController
   def showpo
     @all_brand_display = @women_items.women_brand('showpo')
     @brand = @shop_the_look_images.find_brand_womens('showpo')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -106,7 +106,7 @@ class WomenBrandController < ApplicationController
   def samantha_wills
     @all_brand_display = @women_items.women_brand('samantha wills')
     @brand = @shop_the_look_images.find_brand_womens('samantha wills')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -116,7 +116,7 @@ class WomenBrandController < ApplicationController
   def esther
     @all_brand_display = @women_items.women_brand('esther')
     @brand = @shop_the_look_images.find_brand_womens('esther')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -126,7 +126,7 @@ class WomenBrandController < ApplicationController
   def senso
     @all_brand_display = @women_items.women_brand('senso')
     @brand = @shop_the_look_images.find_brand_womens('senso')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -136,7 +136,7 @@ class WomenBrandController < ApplicationController
   def lorna_jane
     @all_brand_display = @women_items.women_brand('lorna jane')
     @brand = @shop_the_look_images.find_brand_womens('lorna jane')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -146,7 +146,7 @@ class WomenBrandController < ApplicationController
   def sunday_somewhere
     @all_brand_display = @women_items.women_brand('sunday somewhere')
     @brand = @shop_the_look_images.find_brand_womens('sunday somewhere')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -156,7 +156,7 @@ class WomenBrandController < ApplicationController
   def forever_21
     @all_brand_display = @women_items.women_brand('forever 21')
     @brand = @shop_the_look_images.find_brand_womens('forever 21')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -166,7 +166,7 @@ class WomenBrandController < ApplicationController
   def tony_bianco
     @all_brand_display = @women_items.women_brand('tony bianco')
     @brand = @shop_the_look_images.find_brand_womens('tony bianco')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -176,7 +176,7 @@ class WomenBrandController < ApplicationController
   def daniel_wellington
     @all_brand_display = @women_items.women_brand('daniel wellington')
     @brand = @shop_the_look_images.find_brand_womens('daniel wellington')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -186,7 +186,7 @@ class WomenBrandController < ApplicationController
   def alice_mccall
     @all_brand_display = @women_items.women_brand('alice mccall')
     @brand = @shop_the_look_images.find_brand_womens('alice mccall')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -196,7 +196,7 @@ class WomenBrandController < ApplicationController
   def auguste
     @all_brand_display = @women_items.women_brand('auguste')
     @brand = @shop_the_look_images.find_brand_womens('auguste')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -206,7 +206,7 @@ class WomenBrandController < ApplicationController
   def sea_folly
     @all_brand_display = @women_items.women_brand('seafolly')
     @brand = @shop_the_look_images.find_brand_womens('seafolly')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -216,7 +216,7 @@ class WomenBrandController < ApplicationController
   def top_shop
     @all_brand_display = @women_items.women_brand('topshop')
     @brand = @shop_the_look_images.find_brand_womens('topshop')
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js
@@ -226,7 +226,7 @@ class WomenBrandController < ApplicationController
   def victorias_secret
     @all_brand_display = @women_items.women_brand("victoria's secret")
     @brand = @shop_the_look_images.find_brand_womens("victoria's secret")
-    join_items_and_sort(@brand, @all_brand_display)
+    join_items_and_sort(@all_brand_display, @brand)
     respond_to do |format|
         format.html
         format.js

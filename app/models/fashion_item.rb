@@ -74,8 +74,8 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'new balance' ORDER BY created_at DESC")
   end
 
-  def self.bronze_snake
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'bronze snake' ORDER BY created_at DESC")
+  def self.men_brand(brand)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand =" + "'" + brand + "'" + "ORDER BY created_at DESC")
   end
 
   def self.mj_bale

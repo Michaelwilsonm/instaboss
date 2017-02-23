@@ -1,5 +1,6 @@
 class MenBrandController < ApplicationController
-  before_action :all_men, :all_shop_the_look_images
+  before_action :all_men, :shop_the_look_images
+  require 'will_paginate/array'
 
   def search
     @query_brand = "#{params[:query]}".split.map(&:downcase).join(' ')
@@ -22,106 +23,174 @@ class MenBrandController < ApplicationController
   end
 
   def windsor_smith
-    @all_brand_display = @men_items.windsor_smith
-    @brand = @shop_the_look_image_all.find_brand_mens('windsor smith')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('windsor smith')
+    @brand = @shop_look_images.find_brand_mens('windsor smith')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def bronze_snake
-    @all_brand_display = @men_items.bronze_snake
-    @brand = @shop_the_look_image_all.find_brand_mens('bronze snake')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('bronze snake')
+    @brand = @shop_look_images.find_brand_mens('bronze snake')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def mj_bale
-    @all_brand_display = @men_items.mj_bale
-    @brand = @shop_the_look_image_all.find_brand_mens('mj bale')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('mj bale')
+    @brand = @shop_look_images.find_brand_mens('mj bale')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def the_modest_vintage_player
-    @all_brand_display = @men_items.the_modest_vintage_player
-    @brand = @shop_the_look_image_all.find_brand_mens('the modest vintage player')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('the modest vintage player')
+    @brand = @shop_look_images.find_brand_mens('the modest vintage player')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def adidas
-    @all_brand_display = @men_items.adidas
-    @brand = @shop_the_look_image_all.find_brand_mens('adidas originals')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('adidas originals')
+    @brand = @shop_look_images.find_brand_mens('adidas originals')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def bjorn_borg
-    @all_brand_display = @men_items.bjorn_borg
-    @brand = @shop_the_look_image_all.find_brand_mens('bjorn borg')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('bjorn borg')
+    @brand = @shop_look_images.find_brand_mens('bjorn borg')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def nike
-    @all_brand_display = @men_items.nike_mens
-    @brand = @shop_the_look_image_all.find_brand_mens('nike')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('nike')
+    @brand = @shop_look_images.find_brand_mens('nike')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def leo_joseph
-    @all_brand_display = @men_items.leo_joseph
-    @brand = @shop_the_look_image_all.find_brand_mens('leo joseph')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('leo joseph')
+    @brand = @shop_look_images.find_brand_mens('leo joseph')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def daniel_wellington
-    @all_brand_display = @men_items.daniel_wellington
-    @brand = @shop_the_look_image_all.find_brand_mens('daniel wellington')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('daniel wellington')
+    @brand = @shop_look_images.find_brand_mens('daniel wellington')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def just_another_fisherman
-    @all_brand_display = @men_items.just_another_fisherman
-    @brand = @shop_the_look_image_all.find_brand_mens('just another fisherman')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('just another fisherman')
+    @brand = @shop_look_images.find_brand_mens('just another fisherman')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def mvmt
-    @all_brand_display = @men_items.mvmt
-    @brand = @shop_the_look_image_all.find_brand_mens('mvmt')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('mvmt')
+    @brand = @shop_look_images.find_brand_mens('mvmt')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
 
   def morepork
-    @all_brand_display = @men_items.morepork
-    @brand = @shop_the_look_image_all.find_brand_mens('moreporks')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('moreporks')
+    @brand = @shop_look_images.find_brand_mens('moreporks')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new_balance
-    @all_brand_display = @men_items.new_balance
-    @brand = @shop_the_look_image_all.find_brand_mens('new balance')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('new balance')
+    @brand = @shop_look_images.find_brand_mens('new balance')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def nautica
-    @all_brand_display = @men_items.nautica
-    @brand = @shop_the_look_image_all.find_brand_mens('nautica')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('nautica')
+    @brand = @shop_look_images.find_brand_mens('nautica')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def retro_marine
-    @all_brand_display = @men_items.retro_marine
-    @brand = @shop_the_look_image_all.find_brand_mens('retro marine')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('retro marine')
+    @brand = @shop_look_images.find_brand_mens('retro marine')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def sunday_somewhere
-    @all_brand_display = @men_items.sunday_somewhere
-    @brand = @shop_the_look_image_all.find_brand_mens('sunday somewhere')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('sunday somewhere')
+    @brand = @shop_look_images.find_brand_mens('sunday somewhere')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def i_love_ugly
-    @all_brand_display = @men_items.i_love_ugly
-    @brand = @shop_the_look_image_all.find_brand_mens('i love ugly')
-    add_brand(@brand, @all_brand_display)
+    @all_brand_display = @men_items.men_brand('i love ugly')
+    @brand = @shop_look_images.find_brand_mens('i love ugly')
+    join_items_and_sort(@brand, @all_brand_display)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private
@@ -129,14 +198,14 @@ class MenBrandController < ApplicationController
       @men_items = FashionItem.all
     end
 
-    def all_shop_the_look_images
-      @shop_the_look_image_all = ShopTheLookImage.all
+    def shop_the_look_images
+      @shop_look_images = ShopTheLookImage.all
     end
 
-    def add_brand(brand, item_brand)
-      brand.each { |f| item_brand << f }
-      item_brand.uniq!
-      item_brand.sort! { |a,b| b.created_at <=> a.created_at }
-    end
+    def join_items_and_sort(fashion_items, shop_look_items)
+      combine_querys = (fashion_items + shop_look_items).flatten
+      sorted_items = combine_querys.sort { |a,b| b.created_at <=> a.created_at }
+      @all_items = (sorted_items).paginate(:page =>params[:page], :per_page => 33)
+  end
 end
 

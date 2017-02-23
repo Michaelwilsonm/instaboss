@@ -24,7 +24,7 @@ class MenBrandController < ApplicationController
 
   def windsor_smith
     @all_brand_display = @men_items.men_brand('windsor smith')
-    @brand = @shop_look_images.find_brand_mens('windsor smith')
+    @brand = @shop_look_images.find_brand_mens('windsor smith').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -34,7 +34,7 @@ class MenBrandController < ApplicationController
 
   def bronze_snake
     @all_brand_display = @men_items.men_brand('bronze snake')
-    @brand = @shop_look_images.find_brand_mens('bronze snake')
+    @brand = @shop_look_images.find_brand_mens('bronze snake').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -44,7 +44,7 @@ class MenBrandController < ApplicationController
 
   def mj_bale
     @all_brand_display = @men_items.men_brand('mj bale')
-    @brand = @shop_look_images.find_brand_mens('mj bale')
+    @brand = @shop_look_images.find_brand_mens('mj bale').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -54,7 +54,7 @@ class MenBrandController < ApplicationController
 
   def the_modest_vintage_player
     @all_brand_display = @men_items.men_brand('the modest vintage player')
-    @brand = @shop_look_images.find_brand_mens('the modest vintage player')
+    @brand = @shop_look_images.find_brand_mens('the modest vintage player').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -64,7 +64,7 @@ class MenBrandController < ApplicationController
 
   def adidas
     @all_brand_display = @men_items.men_brand('adidas originals')
-    @brand = @shop_look_images.find_brand_mens('adidas originals')
+    @brand = @shop_look_images.find_brand_mens('adidas originals').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -74,7 +74,7 @@ class MenBrandController < ApplicationController
 
   def bjorn_borg
     @all_brand_display = @men_items.men_brand('bjorn borg')
-    @brand = @shop_look_images.find_brand_mens('bjorn borg')
+    @brand = @shop_look_images.find_brand_mens('bjorn borg').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -84,7 +84,7 @@ class MenBrandController < ApplicationController
 
   def nike
     @all_brand_display = @men_items.men_brand('nike')
-    @brand = @shop_look_images.find_brand_mens('nike')
+    @brand = @shop_look_images.find_brand_mens('nike').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -94,7 +94,7 @@ class MenBrandController < ApplicationController
 
   def leo_joseph
     @all_brand_display = @men_items.men_brand('leo joseph')
-    @brand = @shop_look_images.find_brand_mens('leo joseph')
+    @brand = @shop_look_images.find_brand_mens('leo joseph').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -104,7 +104,7 @@ class MenBrandController < ApplicationController
 
   def daniel_wellington
     @all_brand_display = @men_items.men_brand('daniel wellington')
-    @brand = @shop_look_images.find_brand_mens('daniel wellington')
+    @brand = @shop_look_images.find_brand_mens('daniel wellington').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -114,7 +114,7 @@ class MenBrandController < ApplicationController
 
   def just_another_fisherman
     @all_brand_display = @men_items.men_brand('just another fisherman')
-    @brand = @shop_look_images.find_brand_mens('just another fisherman')
+    @brand = @shop_look_images.find_brand_mens('just another fisherman').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -124,7 +124,7 @@ class MenBrandController < ApplicationController
 
   def mvmt
     @all_brand_display = @men_items.men_brand('mvmt')
-    @brand = @shop_look_images.find_brand_mens('mvmt')
+    @brand = @shop_look_images.find_brand_mens('mvmt').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -135,7 +135,7 @@ class MenBrandController < ApplicationController
 
   def morepork
     @all_brand_display = @men_items.men_brand('moreporks')
-    @brand = @shop_look_images.find_brand_mens('moreporks')
+    @brand = @shop_look_images.find_brand_mens('moreporks').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -145,7 +145,7 @@ class MenBrandController < ApplicationController
 
   def new_balance
     @all_brand_display = @men_items.men_brand('new balance')
-    @brand = @shop_look_images.find_brand_mens('new balance')
+    @brand = @shop_look_images.find_brand_mens('new balance').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -155,7 +155,7 @@ class MenBrandController < ApplicationController
 
   def nautica
     @all_brand_display = @men_items.men_brand('nautica')
-    @brand = @shop_look_images.find_brand_mens('nautica')
+    @brand = @shop_look_images.find_brand_mens('nautica').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -165,7 +165,7 @@ class MenBrandController < ApplicationController
 
   def retro_marine
     @all_brand_display = @men_items.men_brand('retro marine')
-    @brand = @shop_look_images.find_brand_mens('retro marine')
+    @brand = @shop_look_images.find_brand_mens('retro marine').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -175,7 +175,7 @@ class MenBrandController < ApplicationController
 
   def sunday_somewhere
     @all_brand_display = @men_items.men_brand('sunday somewhere')
-    @brand = @shop_look_images.find_brand_mens('sunday somewhere')
+    @brand = @shop_look_images.find_brand_mens('sunday somewhere').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -185,7 +185,7 @@ class MenBrandController < ApplicationController
 
   def i_love_ugly
     @all_brand_display = @men_items.men_brand('i love ugly')
-    @brand = @shop_look_images.find_brand_mens('i love ugly')
+    @brand = @shop_look_images.find_brand_mens('i love ugly').uniq!
     join_items_and_sort(@brand, @all_brand_display)
     respond_to do |format|
       format.html
@@ -205,7 +205,7 @@ class MenBrandController < ApplicationController
     def join_items_and_sort(fashion_items, shop_look_items)
       combine_querys = (fashion_items + shop_look_items).flatten
       sorted_items = combine_querys.sort { |a,b| b.created_at <=> a.created_at }
-      @all_items = (sorted_items).paginate(:page =>params[:page], :per_page => 13)
+      @all_items = (sorted_items).paginate(:page =>params[:page], :per_page => 33)
   end
 end
 

@@ -7,7 +7,7 @@
     <div class="box col-md-4 col-sm-6 col-xs-12 <%= f.sub_category %>">
       <div class="image_div">
         <a href="/item/<%= f.id %>">
-          <%= image_tag f.item_image.url(:medium) %>
+          <%= image_tag f.item_image.url(:original) %>
           <div class="description_content">
             <% if f.sale == true %>
               <table>
@@ -62,7 +62,6 @@
 
         <div class="show-button">
           <a href="<%= f.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
-          <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
         </div>
       </div>
     </div>
@@ -70,7 +69,7 @@
     <div class="box col-md-4 col-sm-6 col-xs-12 <% f.shop_the_look_items.each { |j| %> <%= j.sub_category %> <% } %>" >
       <div class="image_div">
         <a href="/shop_the_look_images/<%= f.id %>">
-          <%= image_tag f.shop_look_image.url(:medium) %>
+          <%= image_tag f.shop_look_image.url(:original) %>
           <div class="description_content">
             <table>
               <tr class="shop_look_table">
@@ -109,7 +108,7 @@
           <% elsif j.sale === false %>
             <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
           <% else %>
-          <p>!price</p>
+            <p>!price</p>
           <% end %>
 
           <div class="show-button-shop-look">

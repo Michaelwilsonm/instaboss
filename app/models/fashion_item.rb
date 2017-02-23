@@ -78,10 +78,6 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'bronze snake' ORDER BY created_at DESC")
   end
 
-  def self.windsor_smith
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'windsor smith' ORDER BY created_at DESC")
-  end
-
   def self.mj_bale
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND brand = 'mj bale' ORDER BY created_at DESC")
   end
@@ -137,6 +133,10 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true' ORDER BY created_at DESC")
   end
 
+  def self.women_brand(brand)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand =" + "'" + brand + "'" + "ORDER BY created_at DESC")
+  end
+
   def self.featured_womens
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND featured_item = 'true' ORDER BY created_at DESC")
   end
@@ -144,7 +144,6 @@ class FashionItem < ActiveRecord::Base
   def self.nine_special_items_womens
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'true'")
   end
-
 
   def self.staff_picked_women_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND staff_picks = 'true' ORDER BY created_at DESC")
@@ -154,90 +153,90 @@ class FashionItem < ActiveRecord::Base
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' ORDER BY created_at DESC")
   end
 
-  def self.women_lorna_jane
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'lorna jane' ORDER BY created_at DESC")
-  end
+  # def self.women_lorna_jane
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'lorna jane' ORDER BY created_at DESC")
+  # end
 
-  def self.women_daniel_wellington
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'daniel wellington' ORDER BY created_at DESC")
-  end
+  # def self.women_daniel_wellington
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'daniel wellington' ORDER BY created_at DESC")
+  # end
 
 
-  def self.women_forever_21
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'forever21' ORDER BY created_at DESC")
-  end
+  # def self.women_forever_21
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'forever21' ORDER BY created_at DESC")
+  # end
 
-  def self.women_sunday_somewhere
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sunday somewhere' ORDER BY created_at DESC")
-  end
+  # def self.women_sunday_somewhere
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'sunday somewhere' ORDER BY created_at DESC")
+  # end
 
-  def self.women_sea_folly
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'seafolly' ORDER BY created_at DESC")
-  end
+  # def self.women_sea_folly
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'seafolly' ORDER BY created_at DESC")
+  # end
 
-  def self.women_top_shop
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'topshop' ORDER BY created_at DESC")
-  end
+  # def self.women_top_shop
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'topshop' ORDER BY created_at DESC")
+  # end
 
-  def self.women_victorias_secret
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'victoria''s secret' ORDER BY created_at DESC")
-  end
+  # def self.women_victorias_secret
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'victoria''s secret' ORDER BY created_at DESC")
+  # end
 
-  def self.women_auguste
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'auguste' ORDER BY created_at DESC")
-  end
+  # def self.women_auguste
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'auguste' ORDER BY created_at DESC")
+  # end
 
-  def self.women_tony_bianco
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'tony bianco' ORDER BY created_at DESC")
-  end
+  # def self.women_tony_bianco
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'tony bianco' ORDER BY created_at DESC")
+  # end
 
-  def self.women_alice_mccall
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'alice mccall' ORDER BY created_at DESC")
-  end
+  # def self.women_alice_mccall
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'alice mccall' ORDER BY created_at DESC")
+  # end
 
-  def self.women_senso
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'senso' ORDER BY created_at DESC")
-  end
+  # def self.women_senso
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'senso' ORDER BY created_at DESC")
+  # end
 
-  def self.women_samantha_willis
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'samantha wills' ORDER BY created_at DESC")
-  end
+  # def self.women_samantha_willis
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'samantha wills' ORDER BY created_at DESC")
+  # end
 
-  def self.women_mura
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'mura boutique' ORDER BY created_at DESC")
-  end
+  # def self.women_mura
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'mura boutique' ORDER BY created_at DESC")
+  # end
 
-  def self.women_jo_mercer
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'jo mercer' ORDER BY created_at DESC")
-  end
+  # def self.women_jo_mercer
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'jo mercer' ORDER BY created_at DESC")
+  # end
 
-  def self.women_princess_polly
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'princess polly' ORDER BY created_at DESC")
-  end
+  # def self.women_princess_polly
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'princess polly' ORDER BY created_at DESC")
+  # end
 
-  def self.women_esther
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'esther boutique' ORDER BY created_at DESC")
-  end
+  # def self.women_esther
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'esther boutique' ORDER BY created_at DESC")
+  # end
 
-  def self.women_showpo
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'showpo' ORDER BY created_at DESC")
-  end
+  # def self.women_showpo
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'showpo' ORDER BY created_at DESC")
+  # end
 
-  def self.women_windsor_smith
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'windsor smith' ORDER BY created_at DESC")
-  end
+  # def self.women_windsor_smith
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'windsor smith' ORDER BY created_at DESC")
+  # end
 
-  def self.women_bronze_snake
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'bronze snake' ORDER BY created_at DESC")
-  end
+  # def self.women_bronze_snake
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'bronze snake' ORDER BY created_at DESC")
+  # end
 
-  def self.women_new_balance
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'new balance' ORDER BY created_at DESC")
-  end
+  # def self.women_new_balance
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'new balance' ORDER BY created_at DESC")
+  # end
 
-  def self.women_coopers_st
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'cooper st' ORDER BY created_at DESC")
-  end
+  # def self.women_coopers_st
+  #   FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND brand = 'cooper st' ORDER BY created_at DESC")
+  # end
 
 
 end

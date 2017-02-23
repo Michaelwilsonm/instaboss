@@ -5,7 +5,5 @@ $(document).ready(function() {
       var url = $('.pagination .next_page').attr('href');
       return $.getScript(url);
     })
-
-
   });
 });

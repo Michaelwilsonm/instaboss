@@ -2,7 +2,7 @@
 
 <% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "cooper st"] %>
 
-<% @all_brand_display.each do |f| %>
+<% @all_items.each do |f| %>
   <% if f.class == FashionItem %>
     <div class="box col-md-4 col-sm-6 col-xs-12 <%= f.sub_category %>">
       <div class="image_div">

@@ -1,5 +1,6 @@
 class WomenBrandController < ApplicationController
   before_action :all_women, :shop_the_look_images
+  require 'will_paginate/array'
 
   def search
     @query_brand = "#{params[:query]}".split.map(&:downcase).join(' ')

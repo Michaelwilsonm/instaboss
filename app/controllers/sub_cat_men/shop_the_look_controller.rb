@@ -2,6 +2,7 @@ class SubCatMen::ShopTheLookController < MenController
 
   def shop_the_look
     @shop_the_look = @shop_look_images.shop_the_look_men.paginate(:page =>params[:page], :per_page => 33)
+    @all_featured = @shop_look_images.featured_four_categories_shop_look_womens
     respond_to do |format|
         format.html
         format.js

@@ -20,7 +20,7 @@
 
     <div class="col-md-2">
       <span>Describe the Look</span>
-      <% describe_options = [['Casual'],["Going Out"],["Working Out"],["Other"]] %>
+      <% describe_options = [['Casual'],["Going Out"],["Working Out"],["Beach & Swim"],["Other"]] %>
       <%= f.select "describe_the_look", options_for_select(describe_options, @shop_the_look_image.describe_the_look), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
     </div>
   </div>

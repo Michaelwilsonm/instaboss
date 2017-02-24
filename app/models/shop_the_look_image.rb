@@ -27,6 +27,14 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE staff_picks = 'true' AND gender = 'Mens' ORDER BY created_at DESC")
   end
 
+  def self.featured_four_categories_shop_look_mens
+    ShopTheLookImage.where(featured_item: "true", gender: "Mens")
+  end
+
+  def self.featured_four_categories_shop_look_womens
+    ShopTheLookImage.where(featured_item: "true", gender: "Womens")
+  end
+
   def self.shop_the_look_featured_women
     ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE featured_item = 'true' AND gender = 'Womens' ORDER BY created_at DESC")
   end
@@ -34,6 +42,7 @@ class ShopTheLookImage < ActiveRecord::Base
   def self.shop_the_look_staff_women
     ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE staff_picks = 'true' AND gender = 'Womens' ORDER BY created_at DESC")
   end
+
 
   def self.find_brand_mens(brand)
     ShopTheLookImage.where(gender: "Mens").joins(:shop_the_look_items).where('shop_the_look_items.brand' => brand)

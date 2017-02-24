@@ -4,6 +4,7 @@ class SubCatWomen::ShortController < WomenController
     @short_item = @items.women_categories("Shorts & Skirts")
     @short_shop_the_look_items = @shop_look_images.find_category_womens("Shorts & Skirts").uniq!
     join_items_and_sort(@short_item, @short_shop_the_look_items)
+    @all_featured = @items.featured_womens_categorys_four("Accessories").sample(4)
     respond_to do |format|
         format.html
         format.js

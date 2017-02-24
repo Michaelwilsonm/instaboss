@@ -90,4 +90,8 @@ class FashionItem < ActiveRecord::Base
   def self.all_womens_items_ALL
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' ORDER BY created_at DESC")
   end
+
+  def self.featured_womens_categorys_four(category_for_featured_four)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND featured_item = 'true' AND category =" + "'" + category_for_featured_four + "'" + "ORDER BY created_at DESC")
+  end
 end

@@ -15,7 +15,6 @@ $(document).ready(function() {
       e.preventDefault()
       var href = $(this).find("a").attr('href');
       window.history.pushState('page2', 'Title', href);
-      console.log(href)
       $(".outside-container").hide()
       $(this).next().fadeIn(500)
       $(".tint").fadeIn(500)
@@ -26,7 +25,6 @@ $(document).ready(function() {
       e.preventDefault()
       var href = $(this).find("a").attr('href');
       window.history.pushState('page2', 'Title', href);
-      console.log(href)
       $(".outside-container").hide()
       $(this).next().fadeIn(500)
       $(".tint").fadeIn(500)

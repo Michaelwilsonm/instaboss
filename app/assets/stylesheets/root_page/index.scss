@@ -58,6 +58,7 @@ $calisto: "Calisto MT Regular";
   background-position: 50% 5%;
   a{
     text-decoration: none;
+    text-decoration: none !important;
     &:hover{
       text-decoration: none;
     }
@@ -72,6 +73,7 @@ $calisto: "Calisto MT Regular";
   position: relative;
   a{
     text-decoration: none;
+    text-decoration: none !important;
     &:hover{
       text-decoration: none;
     }

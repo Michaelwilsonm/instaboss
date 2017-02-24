@@ -12,66 +12,74 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Sale</h1>
-    <% @sale_womens.each do |all_specials| %>
-      <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">
-        <div class="image_div">
-          <a href="/item/<%= all_specials.id %>">
-            <%= image_tag all_specials.item_image.url(:medium) %>
-          <div class="description_content">
-            <% if all_specials.sale == true %>
-            <table>
-              <tr class="specials_table">
-                <td><strike><em>$<%= zeros(all_specials.price) %></em></strike></td>
-                <td>$<%= zeros(all_specials.sale_price) %></td>
-              </tr>
-            </table>
+    <div id="products">
+      <% @all_items.each do |all_specials| %>
+        <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">
+          <div class="image_div">
+            <a href="/item/<%= all_specials.id %>">
+              <%= image_tag all_specials.item_image.url(:medium) %>
+            <div class="description_content">
+              <% if all_specials.sale == true %>
+              <table>
+                <tr class="specials_table">
+                  <td><strike><em>$<%= zeros(all_specials.price) %></em></strike></td>
+                  <td>$<%= zeros(all_specials.sale_price) %></td>
+                </tr>
+              </table>
+              <% else %>
+              <table>
+                <tr class="normal_table">
+                  <td>$<%= all_specials.price %></td>
+                </tr>
+              </table>
+              <% end %>
+              <p><%= all_specials.short_description %></p>
+              <p><%= word_branding(all_specials.brand) %></p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="outside-container">
+          <span class="close-button-enlarged">X</span>
+          <div class="enlarge-left">
+            <%= image_tag all_specials.item_image.url(:original) %>
+          </div>
+          <div class="enlarge-right">
+            <h3><em><%= all_specials.short_description %></em></h3>
+            <% if all_women_brands_array.include?(all_specials.brand) %>
+              <p><a href="<%= link_to_brand_page(all_specials.brand, all_specials.sex) %> "><em><%= word_branding(all_specials.brand) %></em></a></p>
             <% else %>
-            <table>
-              <tr class="normal_table">
-                <td>$<%= all_specials.price %></td>
-              </tr>
-            </table>
+              <p><em><%= word_branding(all_specials.brand) %></em></p>
             <% end %>
-            <p><%= all_specials.short_description %></p>
-            <p><%= word_branding(all_specials.brand) %></p>
-          </div>
-          </a>
-        </div>
-      </div>
-      <div class="outside-container">
-        <span class="close-button-enlarged">X</span>
-        <div class="enlarge-left">
-          <%= image_tag all_specials.item_image.url(:original) %>
-        </div>
-        <div class="enlarge-right">
-          <h3><em><%= all_specials.short_description %></em></h3>
-          <% if all_women_brands_array.include?(all_specials.brand) %>
-            <p><a href="<%= link_to_brand_page(all_specials.brand, all_specials.sex) %> "><em><%= word_branding(all_specials.brand) %></em></a></p>
-          <% else %>
-            <p><em><%= word_branding(all_specials.brand) %></em></p>
-          <% end %>
-          <% if all_specials.sale == true %>
-            <h3><strike><em>AUD $<%= zeros(all_specials.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(all_specials.sale_price) %></em></h3>
-            <p><em><%= percentage(all_specials.price, all_specials.sale_price) %>% off!</em></p>
-          <% else %>
-            <h3><em>AUD $<%= zeros(all_specials.price) %></em></h3>
-          <% end %>
+            <% if all_specials.sale == true %>
+              <h3><strike><em>AUD $<%= zeros(all_specials.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(all_specials.sale_price) %></em></h3>
+              <p><em><%= percentage(all_specials.price, all_specials.sale_price) %>% off!</em></p>
+            <% else %>
+              <h3><em>AUD $<%= zeros(all_specials.price) %></em></h3>
+            <% end %>
 
-          <p><%= all_specials.description %></p>
+            <p><%= all_specials.description %></p>
 
-          <p><em>Ships from <%= all_specials.shipped_from %></em></p>
+            <p><em>Ships from <%= all_specials.shipped_from %></em></p>
 
-          <% if all_specials.wwshipping == true %>
-            <p>Free AUS/NZ Shipping</p>
-          <% end %>
+            <% if all_specials.wwshipping == true %>
+              <p>Free AUS/NZ Shipping</p>
+            <% end %>
 
-          <div class="show-button">
-            <a href="<%= all_specials.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
-            <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
+            <div class="show-button">
+              <a href="<%= all_specials.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
+              <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
+<% if @all_items.length > 32 %>
+  <img src="/assets/load_more_icon.png" alt="" id="paginate_page">
+<% end %>
+<div id="hide-page-numbers">
+  <%= will_paginate @all_items %>
 </div>
 <%= render "templates/footer/footer_women" %>

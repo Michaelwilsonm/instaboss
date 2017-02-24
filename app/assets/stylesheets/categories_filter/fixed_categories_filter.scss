@@ -5,7 +5,7 @@
 .categorise{
   position: absolute;
   margin-left: 20px;
-  width: 175px;
+  width: 135px;
   top: 465px;
   font-family: "Calisto MT Regular";
   ul{
@@ -17,6 +17,7 @@
       cursor: pointer;
       a{
         color: black;
+        margin-left: -5px;
       }
     }
   }

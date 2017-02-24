@@ -4,6 +4,13 @@ class SubCatMen::AccessoryController < MenController
     @formal_fashion_item = @items.men_categories("Accessories")
     @formal_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
+
+
+    @all_shop_look_featured = @shop_look_images.shop_the_look_featured_men
+    @featured_mens = @items.featured_mens
+    @all_featured = index_sorting(@featured_mens, @all_shop_look_featured).take(4)
+
+
     respond_to do |format|
         format.html
         format.js

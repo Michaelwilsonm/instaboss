@@ -31,7 +31,7 @@ class SubCatMen::ShoeController < MenController
   end
 
   def trainer
-    @formal_fashion_item = @items.men_sub_categories("Trainers")
+    @formal_fashion_item = @items.men_sub_categories("Sneakers")
     @formal_shop_look = @shop_look_images.find_category_mens("Shoes").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|

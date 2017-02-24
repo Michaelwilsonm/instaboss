@@ -160,6 +160,7 @@ Rails.application.routes.draw do
   get 'women/shop_the_look/casual' => 'sub_cat_women/shop_the_look#casual'
   get 'women/shop_the_look/going_out' => 'sub_cat_women/shop_the_look#going_out'
   get 'women/shop_the_look/working_out' => 'sub_cat_women/shop_the_look#working_out'
+  get 'women/shop_the_look/beach_swim' => 'sub_cat_women/shop_the_look#beach_swim'
   get 'women/shop_the_look/other' => 'sub_cat_women/shop_the_look#other'
 
   get 'women/short_swimwear' => 'sub_cat_women/short_swimwear#short_swimwear'

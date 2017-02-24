@@ -21,7 +21,7 @@ class SubCatWomen::ShoeController < WomenController
   end
 
   def trainer
-    @shoe_item = @items.women_sub_categories("Trainers")
+    @shoe_item = @items.women_sub_categories("Sneakers")
     @shoe_shop_look_item = @shop_look_images.find_category_womens("Shoes").uniq!
     join_items_and_sort(@shoe_item, @shoe_shop_look_item)
     respond_to do |format|

@@ -6,6 +6,10 @@ class FashionItem < ActiveRecord::Base
     self.brand = brand.split.map(&:downcase).join(' ')
   end
 
+  def self.featured_mens_categorys_four(category_for_featured_four)
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND featured_item = 'true' AND category =" + "'" + category_for_featured_four + "'" + "ORDER BY created_at DESC")
+  end
+
   def self.all_mens_items_page
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' ORDER BY created_at DESC")
   end

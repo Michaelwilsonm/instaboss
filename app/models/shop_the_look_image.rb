@@ -35,6 +35,10 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE staff_picks = 'true' AND gender = 'Womens' ORDER BY created_at DESC")
   end
 
+  def self.featured_four_categories(shop_the_look_four_category)
+    ShopTheLookImage.where(featured_item: "true", gender: "Mens").joins(:shop_the_look_items).where('shop_the_look_items.category' => shop_the_look_four_category)
+  end
+
   def self.find_brand_mens(brand)
     ShopTheLookImage.where(gender: "Mens").joins(:shop_the_look_items).where('shop_the_look_items.brand' => brand)
   end

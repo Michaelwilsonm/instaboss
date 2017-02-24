@@ -4,6 +4,7 @@ class SubCatMen::ShoeController < MenController
     @formal_fashion_item = @items.men_categories("Shoes")
     @formal_shop_look = @shop_look_images.find_category_mens("Shoes").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
+    @all_featured = @items.featured_mens_categorys_four("Shoes").sample(4)
     respond_to do |format|
         format.html
         format.js

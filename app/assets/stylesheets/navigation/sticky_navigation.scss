@@ -34,6 +34,10 @@ STICKY NAVIGATION FIRST DIV
 .all-nav-link{
   text-align: center;
   margin-top: 35px;
+  width:800px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
   a{
     color: black;
     font-family: $calisto;
@@ -156,24 +160,27 @@ DROP DOWN ARROWS ON NAVIGATION
   font-style: italic;
 }
 
+.search-container{
+  width: 200px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
 .search-btn{
   position: relative;
-  float: right;
-  margin-top: -30px;
-  margin-right: 200px;
+  float: left;
 }
 
 .search-input{
+  position: relative;
+  margin-left: 50px;
   input{
     border: none;
     border-bottom: 1px solid;
     padding: 3px;
     border-color: #ddd;
   }
-  position: relative;
-  float: right;
-  margin-top: -30px;
-  margin-right: 30px;
 }
 
 /***********************
@@ -181,33 +188,70 @@ RESPONSIVE LAYOUT OF NAVIGATION
 ***********************/
 
 @media only screen and (max-width: 1220px) {
+  .all-nav-link{
+    margin-left: 10px;
+  }
   .sticky-nav-mens{
     h1{
       display: none;
     }
   }
-
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1027px) {
+  .all-nav-link{
+    width: 600px;
+  }
   .sticky-nav-mens{
     height: 100px;
   }
-
   .banner-nav-space{
     height: 100px;
   }
+}
 
+
+@media only screen and (max-width: 840px) {
+  .all-nav-link{
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .sticky-nav-mens{
+    height: 140px;
+  }
+  .banner-nav-space{
+    height: 140px;
+  }
+  .all-nav-link{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 75px;
+  }
+  .search-container{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .sticky-nav-mens{
     font-size: 15px;
     padding: 0px;
-    height: 110px;
+    height: 140px;
   }
-
   .banner-nav-space{
-    height: 110px;
+    height: 140px;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .sticky-nav-mens{
+    height: 160px;
+  }
+  .banner-nav-space{
+    height: 160px;
   }
 }

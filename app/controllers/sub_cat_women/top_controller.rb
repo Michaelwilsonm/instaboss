@@ -42,7 +42,7 @@ class SubCatWomen::TopController < WomenController
   end
 
   def jacket_coat
-    @top_item = @items.women_sub_categories("Jakets & Coats")
+    @top_item = @items.women_sub_categories("Jackets & Coats")
     @top_shop_the_look_item = @shop_look_images.find_category_womens("Tops").uniq!
     join_items_and_sort(@top_item, @top_shop_the_look_item)
     respond_to do |format|

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // $(document).on('page:change', function () {
+
   if (screen.width > 770){
 
   THIS_PAGE_URL = ''

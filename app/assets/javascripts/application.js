@@ -15,4 +15,5 @@
 //= require cocoon
 //= require turbolinks
 //= require wice_grid
+//= require social-share-button
 //= require_tree .

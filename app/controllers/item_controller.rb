@@ -50,9 +50,9 @@ class ItemController < ApplicationController
     session[:my_previous_url] = URI(request.referer || '').path
     @back_url = session[:my_previous_url]
     if @item.sex == "Mens"
-      @all_items = @all.more_you_might_like(@item.category, @item.sex)
+      @all_items = @all.more_you_might_like(@item.sub_category, @item.sex)
     elsif @item.sex == "Womens"
-      @all_items = @all.more_you_might_like(@item.category, @item.sex)
+      @all_items = @all.more_you_might_like(@item.sub_category, @item.sex)
     end
   end
 
@@ -84,4 +84,3 @@ class ItemController < ApplicationController
       %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc"
     end
 end
-

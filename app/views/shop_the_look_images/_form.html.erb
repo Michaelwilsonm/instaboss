@@ -23,6 +23,26 @@
       <% describe_options = [['Casual'],["Going Out"],["Working Out"],["Beach & Swim"],["Other"]] %>
       <%= f.select "describe_the_look", options_for_select(describe_options, @shop_the_look_image.describe_the_look), {}, {required: 'true', autofocus: 'true', class: 'form-control input-sm new-item-look-shipping'} %>
     </div>
+    <% if current_admin %>
+      <div class="col-md-2"><br>
+        <span>Featured Item</span><br>
+        <%= f.label :featured_item %>
+        <%= f.label :featured_item, "Yes", :value => "true"  %>
+        <%= f.radio_button :featured_item, true %><br />
+        <%= f.label :featured_item %>
+        <%= f.label :featured_item, "NO", :value => "false"  %>
+        <%= f.radio_button :featured_item, false %>
+      </div>
+      <div class="col-md-2"><br>
+        <span>Staff Picked Item</span><br>
+        <%= f.label :staff_picks %>
+        <%= f.label :staff_picks, "Yes", :value => "true"  %>
+        <%= f.radio_button :staff_picks, true %><br />
+        <%= f.label :staff_picks %>
+        <%= f.label :staff_picks, "NO", :value => "false"  %>
+        <%= f.radio_button :staff_picks, false %>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-md-12">

@@ -41,13 +41,15 @@
     <%= link_to "ABOUT", women_about_path %>
     <%= link_to "CONTACT", women_contact_path %>
   </div>
-  <div class="search-btn">
-    <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-  </div>
-  <div class="search-input">
-    <%= form_tag women_side_search_brand_path, method: "post" do %>
-      <%= text_field_tag :query, nil, placeholder: "search...", class: "search-tag" %>
-    <% end %>
+  <div class="search-container">
+    <div class="search-btn">
+      <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+    </div>
+    <div class="search-input">
+      <%= form_tag women_side_search_brand_path, method: "post" do %>
+        <%= text_field_tag :query, nil, placeholder: "search...", class: "search-tag" %>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="banner-nav-space"></div>

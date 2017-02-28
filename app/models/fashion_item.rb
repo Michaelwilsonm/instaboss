@@ -23,11 +23,15 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.more_you_might_like(type_of_item, sex_of_item)
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = " + "'" + sex_of_item + "'" + " AND category = " + "'" + type_of_item + "'" + " ORDER BY RANDOM() LIMIT 6")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = " + "'" + sex_of_item + "'" + " AND sub_category = " + "'" + type_of_item + "'" + " ORDER BY RANDOM() LIMIT 6")
   end
 
   def self.sales
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sale = true ORDER BY created_at DESC")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' featured_item = true ORDER BY created_at DESC")
+  end
+
+  def self.sales_women
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND featured_item = true ORDER BY created_at DESC")
   end
 
   def self.all_mens_items

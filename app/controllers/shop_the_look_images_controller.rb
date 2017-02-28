@@ -54,9 +54,9 @@ class ShopTheLookImagesController < ApplicationController
     session[:my_previous_url] = URI(request.referer || '').path
     @back_url = session[:my_previous_url]
     if @shop_the_look_image.gender == "Mens"
-      @more_you_might_like = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
+      @all_items = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
     elsif @shop_the_look_image.gender == "Womens"
-      @more_you_might_like = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
+      @all_items = @all_shop_the_look_image.more_items(@shop_the_look_image.gender)
     end
 
   end

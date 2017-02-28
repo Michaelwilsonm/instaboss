@@ -12,6 +12,7 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items">Sale</h1>
+    <%= render "templates/womens/index_page/featured" %>
     <div id="products">
       <% @all_items.each do |all_specials| %>
         <div class="box col-md-3 col-sm-4 col-xs-6 <%= all_specials.category %>">

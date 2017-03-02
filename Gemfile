@@ -17,6 +17,7 @@ gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem 'aws-sdk', '~> 2'
 gem "paperclip", "~> 5.0.0.beta1"
+gem 'social-share-button', '~> 0.1.6'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

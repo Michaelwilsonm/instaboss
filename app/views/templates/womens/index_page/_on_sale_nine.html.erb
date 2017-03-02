@@ -107,6 +107,7 @@
                 <div class="show-button-shop-look">
                   <a href="<%= j.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
                 </div>
+                <%= social_share_button_tag(f.brand, :url => "http://www.instaboss.co/item/" + f.id.to_s) %>
               <% end %>
             </div>
           </div>

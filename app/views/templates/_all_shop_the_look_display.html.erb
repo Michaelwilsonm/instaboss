@@ -48,8 +48,8 @@
             <img src="/assets/shop now.png">
           </a>
         </div>
-        <%= social_share_button_tag(f.brand, :url => "http://www.instaboss.co/item/" + f.id.to_s) %>
       <% end %>
+      <%= social_share_button_tag(shop_the_look_items.shop_the_look_items.first.brand, :url => "http://www.instaboss.co/shop_the_look_item/" + shop_the_look_items.id.to_s) %>
       </div>
     </div>
   </div>

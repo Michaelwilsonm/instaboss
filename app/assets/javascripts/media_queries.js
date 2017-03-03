@@ -1,9 +1,7 @@
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-
-    console.log(matchMedia)
-    if (matchMedia) {
+    if (matchMedia && (screen.width > 770)) {
       var mq = window.matchMedia("(min-width: 1199px)");
       mq.addListener(WidthChange);
       WidthChange(mq);

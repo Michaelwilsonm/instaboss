@@ -30,37 +30,39 @@
           </div>
         </div>
         <div class="outside-container">
-          <span class="close-button-enlarged">X</span>
-          <div class="enlarge-left">
-            <%= image_tag f.item_image.url(:original) %>
-          </div>
-          <div class="enlarge-right">
-            <h3><em><%= f.short_description %></em></h3>
-            <% if all_men_brands_array.include?(f.brand) %>
-              <p><a href="<%= link_to_brand_page(f.brand, f.sex) %> "><em><%= word_branding(f.brand) %></em></a></p>
-            <% else %>
-              <p><em><%= word_branding(f.brand) %></em></p>
-            <% end %>
-            <% if f.sale == true %>
-              <h3><strike><em>AUD $<%= zeros(f.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(f.sale_price) %></em></h3>
-              <p><em><%= percentage(f.price, f.sale_price) %>% off!</em></p>
-            <% else %>
-              <h3><em>AUD $<%= zeros(f.price) %></em></h3>
-            <% end %>
-
-            <p><%= f.description %></p>
-
-            <p><em>Ships from <%= f.shipped_from %></em></p>
-
-            <% if f.wwshipping == true %>
-              <p>Free AUS/NZ Shipping</p>
-            <% end %>
-
-            <div class="show-button">
-              <a href="<%= f.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
-              <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
+          <div class="on-click-enlarge">
+            <span class="close-button-enlarged">X</span>
+            <div class="enlarge-left">
+              <%= image_tag f.item_image.url(:original) %>
             </div>
-            <%= social_share_button_tag(f.brand, :url => "http://www.instaboss.co/item/" + f.id.to_s) %>
+            <div class="enlarge-right">
+              <h3><em><%= f.short_description %></em></h3>
+              <% if all_men_brands_array.include?(f.brand) %>
+                <p><a href="<%= link_to_brand_page(f.brand, f.sex) %> "><em><%= word_branding(f.brand) %></em></a></p>
+              <% else %>
+                <p><em><%= word_branding(f.brand) %></em></p>
+              <% end %>
+              <% if f.sale == true %>
+                <h3><strike><em>AUD $<%= zeros(f.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(f.sale_price) %></em></h3>
+                <p><em><%= percentage(f.price, f.sale_price) %>% off!</em></p>
+              <% else %>
+                <h3><em>AUD $<%= zeros(f.price) %></em></h3>
+              <% end %>
+
+              <p><%= f.description %></p>
+
+              <p><em>Ships from <%= f.shipped_from %></em></p>
+
+              <% if f.wwshipping == true %>
+                <p>Free AUS/NZ Shipping</p>
+              <% end %>
+
+              <div class="show-button">
+                <a href="<%= f.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
+                <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
+              </div>
+              <%= social_share_button_tag(f.brand, :url => "http://www.instaboss.co/item/" + f.id.to_s) %>
+            </div>
           </div>
         </div>
       <% elsif f.class == ShopTheLookImage %>
@@ -108,7 +110,9 @@
                   <a href="<%= j.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
                 </div>
               <% end %>
-              <%= social_share_button_tag(f.shop_the_look_items.first.brand, :url => "http://www.instaboss.co/shop_the_look_item/" + f.id.to_s) %>
+              <div class="social-media-stl">
+                <%= social_share_button_tag(f.shop_the_look_items.first.brand, :url => "http://www.instaboss.co/shop_the_look_images/" + f.id.to_s) %>
+              </div>
             </div>
           </div>
         </div>

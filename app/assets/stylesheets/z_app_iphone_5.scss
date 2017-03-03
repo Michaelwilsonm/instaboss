@@ -3,6 +3,10 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  .hide-banner-mobile{
+    display: none;
+  }
+
   .spacer-featured{
     height: 100px;
   }
@@ -32,8 +36,8 @@
       padding: 0px;
       margin: 0px;
       color: white;
-      font-size: 90px;
-      margin-left: 20px;
+      font-size: 75px;
+      text-align: center;
     }
   }
 
@@ -51,8 +55,8 @@
       padding: 0px;
       margin: 0px;
       color: white;
-      font-size: 100px;
-      margin-left: 20px;
+      font-size: 75px;
+      text-align: center;
     }
   }
 
@@ -279,7 +283,7 @@
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    height: 1900px;
+    height: 2000px;
     width: 105vw;
     right: 1000px;
     ul{
@@ -315,7 +319,7 @@
     display: none;
   }
 
-  .col-sm-6{
+  .col-sm-width{
     width: 100% !important;
   }
 
@@ -353,10 +357,6 @@
     h3{
       font-size: 40px;
     }
-  }
-
-  .description_content p{
-    top: 250px;
   }
 
   .hr_main{
@@ -442,8 +442,8 @@
   }
 
   .description_content p{
-    font-size: 35px;
-    top: 280px;
+    font-size: 45px;
+    top: 210px;
   }
 
   .your-items{
@@ -532,12 +532,12 @@
   }
 
   .specials_table > td:nth-child(2){
-    font-size: 40px;
+    font-size: 50px;
     margin-left: 20px;
   }
 
   .specials_table > td:nth-child(1){
-    font-size: 35px;
+    font-size: 50px;
   }
 
   .specials_table > td{
@@ -545,7 +545,7 @@
   }
 
   .normal_table > td{
-    font-size: 45px;
+    font-size: 65px;
   }
 
   .item_navigation_top_mens{
@@ -731,7 +731,7 @@
     p{
       font-size: 65px;
       position: relative;
-      top: 700px;
+      top: 580px;
     }
   }
 
@@ -753,5 +753,9 @@
     padding: 0px 34px 0px 34px;
     color: white;
     font-size: 95px
+  }
+
+  .footer-mobile{
+    display: none;
   }
 }

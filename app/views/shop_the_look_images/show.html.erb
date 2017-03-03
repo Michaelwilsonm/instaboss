@@ -42,6 +42,7 @@
               <img src="/assets/shop now.png">
             </a>
           </div>
+          <%= social_share_button_tag(shop_the_look_items.brand.first, :url => "http://www.instaboss.co/shop_the_look_images/" + shop_the_look_items.id.to_s) %>
 
         <% end %>
         <a class="arrowed" title="Back" href="<%= @back_url %>"><div class="arrow-1 shop-look-arrow"></div></a>

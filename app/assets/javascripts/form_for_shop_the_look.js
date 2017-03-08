@@ -272,6 +272,15 @@ $(document).ready(function() {
       }
     });
 
+    $(".new-item-look-shipping").click(function(){
+      $(".new-item-look-shipping").children().remove();
+      if ($(".gender-look").val() == 'Mens' ){
+        describeLookChange(menDescribeCat);
+      } else if ($(".gender-look").val() == 'Womens' ) {
+        describeLookChange(womenDescribeCat);
+      }
+    })
+
     function describeLookChange(describeMenWomen){
       $(".new-item-look-shipping").append("<option value="+">"+"</option>");
       $.each( describeMenWomen, function( index, theLook ) {
@@ -281,6 +290,8 @@ $(document).ready(function() {
 
     var womenDescribeCat = ["Casual", "Going Out", "Working Out", "Beach & Swim", "Other"]
     var menDescribeCat = ["Casual", "Going Out", "Working Out", "Other"]
+
+
 
   });
 });

@@ -1,8 +1,18 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", men_sunglass_watch_path %></li>
-    <li><%= link_to "Sunglasses", men_sunglass_watch_sunglass_path %></li>
-    <li><%= link_to "Watches", men_sunglass_watch_watch_path %></li>
+    <% if current_page?("/men/sunglass_watch") %>
+      <li><b><%= link_to "All", men_sunglass_watch_path %></b></li>
+      <li><%= link_to "Sunglasses", men_sunglass_watch_sunglass_path %></li>
+      <li><%= link_to "Watches", men_sunglass_watch_watch_path %></li>
+    <% elsif current_page?("/men/sunglass_watch/sunglass") %>
+      <li><%= link_to "All", men_sunglass_watch_path %></li>
+      <li><b><%= link_to "Sunglasses", men_sunglass_watch_sunglass_path %></b></li>
+      <li><%= link_to "Watches", men_sunglass_watch_watch_path %></li>
+    <% elsif current_page?("/men/sunglass_watch/watch") %>
+      <li><%= link_to "All", men_sunglass_watch_path %></li>
+      <li><%= link_to "Sunglasses", men_sunglass_watch_sunglass_path %></li>
+      <li><b><%= link_to "Watches", men_sunglass_watch_watch_path %></b></li>
+    <% end %>
   </ul>
 </div>

@@ -1,11 +1,48 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", women_shop_the_look_path %></li>
-    <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
-    <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
-    <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
-    <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
-    <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+    <% if current_page?("/women/shop_the_look") %>
+      <li><b><%= link_to "All", women_shop_the_look_path %></b></li>
+      <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+      <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
+      <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
+      <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
+      <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+    <% elsif current_page?("/women/shop_the_look/beach_swim") %>
+      <li><%= link_to "All", women_shop_the_look_path %></li>
+      <li><b><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></b></li>
+      <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
+      <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
+      <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
+      <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+    <% elsif current_page?("/women/shop_the_look/casual") %>
+      <li><%= link_to "All", women_shop_the_look_path %></li>
+      <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+      <li><b><%= link_to "Casual", women_shop_the_look_casual_path %></b></li>
+      <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
+      <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
+      <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+    <% elsif current_page?("/women/shop_the_look/working_out") %>
+      <li><%= link_to "All", women_shop_the_look_path %></li>
+      <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+      <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
+      <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
+      <li><b><%= link_to "Working Out", women_shop_the_look_working_out_path %></b></li>
+      <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+    <% elsif current_page?("/women/shop_the_look/going_out") %>
+      <li><%= link_to "All", women_shop_the_look_path %></li>
+      <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+      <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
+      <li><b><%= link_to "Going Out", women_shop_the_look_going_out_path %></b></li>
+      <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
+      <li><%= link_to "Other", women_shop_the_look_other_path %></li>
+      <% elsif current_page?("/women/shop_the_look/other") %>
+        <li><%= link_to "All", women_shop_the_look_path %></li>
+        <li><%= link_to "Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+        <li><%= link_to "Casual", women_shop_the_look_casual_path %></li>
+        <li><%= link_to "Going Out", women_shop_the_look_going_out_path %></li>
+        <li><%= link_to "Working Out", women_shop_the_look_working_out_path %></li>
+        <li><b><%= link_to "Other", women_shop_the_look_other_path %></b></li>
+    <% end %>
   </ul>
 </div>

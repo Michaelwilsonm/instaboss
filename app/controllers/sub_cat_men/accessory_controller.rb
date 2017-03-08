@@ -13,7 +13,7 @@ class SubCatMen::AccessoryController < MenController
 
   def hat
     @acces_item = @items.men_sub_categories("Hats")
-    @access_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
+    @access_shop_look = @shop_look_images.find_category_mens("Hats").uniq!
     join_items_and_sort(@acces_item, @access_shop_look)
     respond_to do |format|
         format.html
@@ -23,7 +23,7 @@ class SubCatMen::AccessoryController < MenController
 
   def bag
     @acces_item = @items.men_sub_categories("Bags")
-    @access_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
+    @access_shop_look = @shop_look_images.find_category_mens("Bags").uniq!
     join_items_and_sort(@acces_item, @access_shop_look)
     respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ class SubCatMen::AccessoryController < MenController
 
   def jewellery
     @acces_item = @items.men_sub_categories("Jewellery")
-    @access_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
+    @access_shop_look = @shop_look_images.find_category_mens("Jewellery").uniq!
     join_items_and_sort(@acces_item, @access_shop_look)
     respond_to do |format|
         format.html
@@ -43,7 +43,7 @@ class SubCatMen::AccessoryController < MenController
 
   def other
     @acces_item = @items.men_sub_categories("Other")
-    @access_shop_look = @shop_look_images.find_category_mens("Accessories").uniq!
+    @access_shop_look = @shop_look_images.find_category_mens("Other").uniq!
     join_items_and_sort(@acces_item, @access_shop_look)
     respond_to do |format|
         format.html

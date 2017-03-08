@@ -13,7 +13,7 @@ class SubCatMen::SunglassWatchController < MenController
 
   def watch
     @formal_fashion_item = @items.men_sub_categories("Watches")
-    @formal_shop_look = @shop_look_images.find_category_mens("Sunglasses").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Watches").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html

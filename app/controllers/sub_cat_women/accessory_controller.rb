@@ -13,7 +13,7 @@ class SubCatWomen::AccessoryController < WomenController
 
   def lingerie
     @accessorie_fashion_item = @items.women_sub_categories("Lingerie")
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
+    @accessorie_shop_look = @shop_look_images.find_category_womens("Lingerie").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
         format.html
@@ -23,7 +23,7 @@ class SubCatWomen::AccessoryController < WomenController
 
   def hat
     @accessorie_fashion_item = @items.women_sub_categories("Hats")
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
+    @accessorie_shop_look = @shop_look_images.find_category_womens("Hats").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ class SubCatWomen::AccessoryController < WomenController
 
   def jewellery
     @accessorie_fashion_item = @items.women_sub_categories("Jewellery")
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
+    @accessorie_shop_look = @shop_look_images.find_category_womens("Jewellery").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
         format.html
@@ -43,7 +43,7 @@ class SubCatWomen::AccessoryController < WomenController
 
   def bag
     @accessorie_fashion_item = @items.women_sub_categories("Bags")
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
+    @accessorie_shop_look = @shop_look_images.find_category_womens("Bags").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
         format.html
@@ -53,7 +53,7 @@ class SubCatWomen::AccessoryController < WomenController
 
   def other
     @accessorie_fashion_item = @items.women_sub_categories("Other")
-    @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
+    @accessorie_shop_look = @shop_look_images.find_category_womens("Other").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
         format.html

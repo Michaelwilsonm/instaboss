@@ -1,4 +1,6 @@
-<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas", "mj bale"] %>
+<% all_men_brands_array = ["i love ugly", "just another fisherman", "mvmt", "moreporks", "new balance", "retromarine", "sunday somewhere","leo joseph","nike", "the modest vintage player", "bronze snake", "windsor smith", "adidas originals", "mj bale"] %>
+
+<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
 <% @shop_the_look.each do |shop_the_look_items| %>
   <div class="box col-md-4 col-sm-6 col-xs-12 <%= shop_the_look_items.describe_the_look %>">
@@ -28,10 +30,13 @@
       <div class="enlarge-right">
       <% shop_the_look_items.shop_the_look_items.each do |j| %>
         <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
-        <% if all_men_brands_array.include?(j.brand) %>
+        <% if all_men_brands_array.include?(j.brand) && @shop_the_look_items.gender == "Mens" %>
           <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
+        <% elsif all_women_brands_array.include?(j.brand) && @shop_the_look_items.gender == "Womens" %>
+          <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
         <% else %>
           <p><em><%= word_branding(j.brand) %></em></p>
+
         <% end %>
 
         <% if j.sale === true %>

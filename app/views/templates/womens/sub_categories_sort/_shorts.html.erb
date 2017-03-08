@@ -1,8 +1,18 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", women_short_path %></li>
-    <li><%= link_to "Shorts", women_short_short_only_path %></li>
-    <li><%= link_to "Skirts", women_short_skirt_path %></li>
+    <% if current_page?("/women/short") %>
+      <li><b><%= link_to "All", women_short_path %></b></li>
+      <li><%= link_to "Shorts", women_short_short_only_path %></li>
+      <li><%= link_to "Skirts", women_short_skirt_path %></li>
+    <% elsif current_page?("/women/short/short_only") %>
+      <li><%= link_to "All", women_short_path %></li>
+      <li><b><%= link_to "Shorts", women_short_short_only_path %></b></li>
+      <li><%= link_to "Skirts", women_short_skirt_path %></li>
+    <% elsif current_page?("/women/short/skirt") %>
+      <li><%= link_to "All", women_short_path %></li>
+      <li><%= link_to "Shorts", women_short_short_only_path %></li>
+      <li><b><%= link_to "Skirts", women_short_skirt_path %></b></li>
+    <% end %>
   </ul>
 </div>

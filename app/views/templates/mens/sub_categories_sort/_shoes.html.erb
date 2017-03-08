@@ -1,11 +1,48 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", men_shoe_path %></li>
-    <li><%= link_to "Boats & Loafers", men_shoe_boat_path %></li>
-    <li><%= link_to "Boots", men_shoe_boot_path %></li>
-    <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
-    <li><%= link_to "Formal", men_shoe_formal_path %></li>
-    <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% if current_page?("/men/shoe") %>
+      <li><b><%= link_to "All", men_shoe_path %></b></li>
+      <li><%= link_to "Boat & Loafer", men_shoe_boat_path %></li>
+      <li><%= link_to "Boots", men_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
+      <li><%= link_to "Formal", men_shoe_formal_path %></li>
+      <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% elsif current_page?("/men/shoe/boat") %>
+      <li><%= link_to "All", men_shoe_path %></li>
+      <li><b><%= link_to "Boat & Loafer", men_shoe_boat_path %></b></li>
+      <li><%= link_to "Boots", men_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
+      <li><%= link_to "Formal", men_shoe_formal_path %></li>
+      <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% elsif current_page?("/men/shoe/boot") %>
+      <li><%= link_to "All", men_shoe_path %></li>
+      <li><%= link_to "Boat & Loafer", men_shoe_boat_path %></li>
+      <li><b><%= link_to "Boots", men_shoe_boot_path %></b></li>
+      <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
+      <li><%= link_to "Formal", men_shoe_formal_path %></li>
+      <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% elsif current_page?("/men/shoe/trainer") %>
+      <li><%= link_to "All", men_shoe_path %></li>
+      <li><%= link_to "Boat & Loafer", men_shoe_boat_path %></li>
+      <li><%= link_to "Boots", men_shoe_boot_path %></li>
+      <li><b><%= link_to "Sneakers", men_shoe_trainer_path %></b></li>
+      <li><%= link_to "Formal", men_shoe_formal_path %></li>
+      <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% elsif current_page?("/men/shoe/formal") %>
+      <li><%= link_to "All", men_shoe_path %></li>
+      <li><%= link_to "Boat & Loafer", men_shoe_boat_path %></li>
+      <li><%= link_to "Boots", men_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
+      <li><b><%= link_to "Formal", men_shoe_formal_path %></b></li>
+      <li><%= link_to "Other", men_shoe_other_path %></li>
+    <% elsif current_page?("/men/shoe/other") %>
+      <li><%= link_to "All", men_shoe_path %></li>
+      <li><%= link_to "Boat & Loafer", men_shoe_boat_path %></li>
+      <li><%= link_to "Boots", men_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", men_shoe_trainer_path %></li>
+      <li><%= link_to "Formal", men_shoe_formal_path %></li>
+      <li><b><%= link_to "Other", men_shoe_other_path %></b></li>
+    <% end %>
   </ul>
 </div>

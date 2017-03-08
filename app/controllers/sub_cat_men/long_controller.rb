@@ -13,7 +13,7 @@ class SubCatMen::LongController < MenController
 
   def jean
     @formal_fashion_item = @items.men_sub_categories("Jeans")
-    @formal_shop_look = @shop_look_images.find_category_mens("Longs").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Jeans").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -23,7 +23,7 @@ class SubCatMen::LongController < MenController
 
   def chino
     @formal_fashion_item = @items.men_sub_categories("Chinos")
-    @formal_shop_look = @shop_look_images.find_category_mens("Longs").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Chinos").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ class SubCatMen::LongController < MenController
 
   def jogger
     @formal_fashion_item = @items.men_sub_categories("Joggers")
-    @formal_shop_look = @shop_look_images.find_category_mens("Longs").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Joggers").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html

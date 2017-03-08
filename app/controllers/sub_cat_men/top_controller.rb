@@ -13,7 +13,7 @@ class SubCatMen::TopController < MenController
 
   def polo
     @formal_fashion_item = @items.men_sub_categories("T-Shirts")
-    @formal_shop_look = @shop_look_images.find_category_mens("Tops").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("T-Shirts").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -23,7 +23,7 @@ class SubCatMen::TopController < MenController
 
   def shirt
     @formal_fashion_item = @items.men_sub_categories("Shirts")
-    @formal_shop_look = @shop_look_images.find_category_mens("Tops").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Shirts").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ class SubCatMen::TopController < MenController
 
   def jacket
     @formal_fashion_item = @items.men_sub_categories("Jackets")
-    @formal_shop_look = @shop_look_images.find_category_mens("Tops").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Jackets").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -43,7 +43,7 @@ class SubCatMen::TopController < MenController
 
   def hoodie
     @formal_fashion_item = @items.men_sub_categories("Hoodies")
-    @formal_shop_look = @shop_look_images.find_category_mens("Tops").uniq!
+    @formal_shop_look = @shop_look_images.find_category_mens("Hoodies").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html

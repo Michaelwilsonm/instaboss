@@ -4,7 +4,7 @@ class SubCatWomen::DressController < WomenController
     @dress_item = @items.women_categories("Dresses")
     @dress_shop_look_items = @shop_look_images.find_category_womens("Dresses").uniq!
     join_items_and_sort(@dress_item, @dress_shop_look_items)
-    @all_featured = @items.featured_womens_categorys_four("Accessories").sample(4)
+    @all_featured = @items.featured_womens_categorys_four("Dresses").sample(4)
     respond_to do |format|
         format.html
         format.js
@@ -13,7 +13,7 @@ class SubCatWomen::DressController < WomenController
 
   def day
     @dress_item = @items.women_sub_categories("Day Dresses")
-    @dress_shop_look_items = @shop_look_images.find_category_womens("Dresses").uniq!
+    @dress_shop_look_items = @shop_look_images.find_category_womens("Day Dresses").uniq!
     join_items_and_sort(@dress_item, @dress_shop_look_items)
     respond_to do |format|
         format.html
@@ -23,7 +23,7 @@ class SubCatWomen::DressController < WomenController
 
   def evening
     @dress_item = @items.women_sub_categories("Evening Dresses")
-    @dress_shop_look_items = @shop_look_images.find_category_womens("Dresses").uniq!
+    @dress_shop_look_items = @shop_look_images.find_category_womens("Evening Dresses").uniq!
     join_items_and_sort(@dress_item, @dress_shop_look_items)
     respond_to do |format|
         format.html
@@ -33,7 +33,7 @@ class SubCatWomen::DressController < WomenController
 
   def playsuit
     @dress_item = @items.women_sub_categories("Playsuits")
-    @dress_shop_look_items = @shop_look_images.find_category_womens("Dresses").uniq!
+    @dress_shop_look_items = @shop_look_images.find_category_womens("PlaySuits").uniq!
     join_items_and_sort(@dress_item, @dress_shop_look_items)
     respond_to do |format|
         format.html

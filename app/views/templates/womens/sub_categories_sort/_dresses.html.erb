@@ -1,9 +1,27 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", women_dress_path %></li>
-    <li><%= link_to "Day Dresses", women_dress_day_path %></li>
-    <li><%= link_to "Evening Dresses", women_dress_evening_path %></li>
-    <li><%= link_to "Playsuits", women_dress_playsuit_path %></li>
+    <% if current_page?("/women/dress") %>
+      <li><b><%= link_to "All", women_dress_path %></b></li>
+      <li><%= link_to "Day Dresses", women_dress_day_path %></li>
+      <li><%= link_to "Evening Dresses", women_dress_evening_path %></li>
+      <li><%= link_to "Playsuits", women_dress_playsuit_path %></li>
+    <% elsif current_page?("/women/dress/day") %>
+      <li><%= link_to "All", women_dress_path %></li>
+      <li><b><%= link_to "Day Dresses", women_dress_day_path %></b></li>
+      <li><%= link_to "Evening Dresses", women_dress_evening_path %></li>
+      <li><%= link_to "Playsuits", women_dress_playsuit_path %></li>
+      <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% elsif current_page?("/women/dress/evening") %>
+      <li><%= link_to "All", women_dress_path %></li>
+      <li><%= link_to "Day Dresses", women_dress_day_path %></li>
+      <li><b><%= link_to "Evening Dresses", women_dress_evening_path %></b></li>
+      <li><%= link_to "Playsuits", women_dress_playsuit_path %></li>
+    <% elsif current_page?("/women/dress/playsuit") %>
+      <li><%= link_to "All", women_dress_path %></li>
+      <li><%= link_to "Day Dresses", women_dress_day_path %></li>
+      <li><%= link_to "Evening Dresses", women_dress_evening_path %></li>
+      <li><b><%= link_to "Playsuits", women_dress_playsuit_path %></b></li>
+    <% end %>
   </ul>
 </div>

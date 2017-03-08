@@ -1,10 +1,36 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", women_top_path %></li>
-    <li><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></li>
-    <li><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></li>
-    <li><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
-    <li><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></li>
+    <% if current_page?("/women/top") %>
+      <li><b><%= link_to "All", women_top_path %></b></li>
+      <li><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></li>
+      <li><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></li>
+      <li><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
+      <li><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></li>
+    <% elsif current_page?("/women/top/tshirt_vest") %>
+      <li><%= link_to "All", women_top_path %></li>
+      <li><b><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></b></li>
+      <li><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></li>
+      <li><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
+      <li><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></li>
+    <% elsif current_page?("/women/top/shirt_blouse") %>
+      <li><%= link_to "All", women_top_path %></li>
+      <li><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></li>
+      <li><b><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></b></li>
+      <li><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
+      <li><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></li>
+    <% elsif current_page?("/women/top/hoodie_sweat_shirt") %>
+      <li><%= link_to "All", women_top_path %></li>
+      <li><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></li>
+      <li><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></li>
+      <li><b><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></b></li>
+      <li><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></li>
+    <% elsif current_page?("/women/top/jacket_coat") %>
+      <li><%= link_to "All", women_top_path %></li>
+      <li><%= link_to "T-Shirts & Vests", women_top_tshirt_vest_path %></li>
+      <li><%= link_to "Shirts & Blouses", women_top_shirt_blouse_path %></li>
+      <li><%= link_to "Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
+      <li><b><%= link_to "Jackets & Coats", women_top_jacket_coat_path %></b></li>
+    <% end %>
   </ul>
 </div>

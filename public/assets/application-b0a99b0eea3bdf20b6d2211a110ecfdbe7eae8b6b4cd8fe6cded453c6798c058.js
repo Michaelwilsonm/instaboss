@@ -13334,7 +13334,7 @@ $(document).ready(function() {
 })
 ;
 $(document).ready(function() {
-  // $(document).on('page:change', function () {
+
   if (screen.width > 770){
 
   THIS_PAGE_URL = ''
@@ -13755,6 +13755,25 @@ $(document).ready(function() {
       });
     }
 
+    $(".gender-look").change(function(){
+        $(".new-item-look-shipping").children().remove();
+      if ( $(this).val() == 'Mens' ){
+        describeLookChange(menDescribeCat);
+      } else if ( $(this).val() == 'Womens' ) {
+        describeLookChange(womenDescribeCat);
+      }
+    });
+
+    function describeLookChange(describeMenWomen){
+      $(".new-item-look-shipping").append("<option value="+">"+"</option>");
+      $.each( describeMenWomen, function( index, theLook ) {
+        $(".new-item-look-shipping").append("<option value=" + theLook + ">"  +  theLook + "</option>");
+      });
+    }
+
+    var womenDescribeCat = ["Casual", "Going Out", "Working Out", "Beach & Swim", "Other"]
+    var menDescribeCat = ["Casual", "Going Out", "Working Out", "Other"]
+
   });
 });
 $(document).ready(function() {
@@ -13954,9 +13973,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(document).on('page:change', function () {
 
-
-    console.log(matchMedia)
-    if (matchMedia) {
+    if (matchMedia && (screen.width > 770)) {
       var mq = window.matchMedia("(min-width: 1199px)");
       mq.addListener(WidthChange);
       WidthChange(mq);

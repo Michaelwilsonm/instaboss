@@ -27,11 +27,11 @@ class FashionItem < ActiveRecord::Base
   end
 
   def self.sales
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND featured_item = true ORDER BY created_at DESC")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Mens' AND sale = true ORDER BY created_at DESC")
   end
 
   def self.sales_women
-    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND featured_item = true ORDER BY created_at DESC")
+    FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = true ORDER BY created_at DESC")
   end
 
   def self.all_mens_items

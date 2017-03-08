@@ -263,5 +263,24 @@ $(document).ready(function() {
       });
     }
 
+    $(".gender-look").change(function(){
+        $(".new-item-look-shipping").children().remove();
+      if ( $(this).val() == 'Mens' ){
+        describeLookChange(menDescribeCat);
+      } else if ( $(this).val() == 'Womens' ) {
+        describeLookChange(womenDescribeCat);
+      }
+    });
+
+    function describeLookChange(describeMenWomen){
+      $(".new-item-look-shipping").append("<option value="+">"+"</option>");
+      $.each( describeMenWomen, function( index, theLook ) {
+        $(".new-item-look-shipping").append("<option value=" + theLook + ">"  +  theLook + "</option>");
+      });
+    }
+
+    var womenDescribeCat = ["Casual", "Going Out", "Working Out", "Beach & Swim", "Other"]
+    var menDescribeCat = ["Casual", "Going Out", "Working Out", "Other"]
+
   });
 });

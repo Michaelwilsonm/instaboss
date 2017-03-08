@@ -1,9 +1,26 @@
 <div class="all-categories">
   <h1>Filter By +</h1>
   <ul class="sorting-class-desktop">
-    <li><%= link_to "All", men_formal_path %></li>
-    <li><%= link_to "Jackets & Coats", men_formal_jacket_coat_path %></li>
-    <li><%= link_to "Suits", men_formal_suit_path %></li>
-    <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% if current_page?("/men/formal") %>
+      <li><b><%= link_to "All", men_formal_path %></b></li>
+      <li><%= link_to "Jackets & Coats", men_formal_jacket_coat_path %></li>
+      <li><%= link_to "Suits", men_formal_suit_path %></li>
+      <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% elsif current_page?("/men/formal/jacket_coat") %>
+      <li><%= link_to "All", men_formal_path %></li>
+      <li><b><%= link_to "Jackets & Coats", men_formal_jacket_coat_path %></b></li>
+      <li><%= link_to "Suits", men_formal_suit_path %></li>
+      <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% elsif current_page?("/men/formal/suit") %>
+      <li><%= link_to "All", men_formal_path %></li>
+      <li><%= link_to "Jackets & Coats", men_formal_jacket_coat_path %></li>
+      <li><b><%= link_to "Suits", men_formal_suit_path %></b></li>
+      <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% elsif current_page?("/men/formal/accessory") %>
+      <li><%= link_to "All", men_formal_path %></li>
+      <li><%= link_to "Jackets & Coats", men_formal_jacket_coat_path %></li>
+      <li><%= link_to "Suits", men_formal_suit_path %></li>
+      <li><b><%= link_to "Accessories", men_formal_accessory_path %></b></li>
+    <% end %>
   </ul>
 </div>

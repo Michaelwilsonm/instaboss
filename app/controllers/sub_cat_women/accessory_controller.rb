@@ -12,7 +12,7 @@ class SubCatWomen::AccessoryController < WomenController
   end
 
   def lingerie
-    @accessorie_fashion_item = @items.women_sub_categories("Lingerie & Underwear")
+    @accessorie_fashion_item = @items.women_sub_categories("Lingerie")
     @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|
@@ -42,7 +42,7 @@ class SubCatWomen::AccessoryController < WomenController
   end
 
   def bag
-    @accessorie_fashion_item = @items.women_sub_categories("Bags & Purses")
+    @accessorie_fashion_item = @items.women_sub_categories("Bags")
     @accessorie_shop_look = @shop_look_images.find_category_womens("Accessories").uniq!
     join_items_and_sort(@accessorie_fashion_item, @accessorie_shop_look)
     respond_to do |format|

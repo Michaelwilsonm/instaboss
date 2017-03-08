@@ -12,8 +12,8 @@ class SubCatMen::TopController < MenController
   end
 
   def polo
-    @formal_fashion_item = @items.men_sub_categories("T-Shirts")
-    @formal_shop_look = @shop_look_images.find_category_mens("T-Shirts").uniq!
+    @formal_fashion_item = @items.men_sub_categories("Shirts")
+    @formal_shop_look = @shop_look_images.find_category_mens("Shirts").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html
@@ -22,8 +22,8 @@ class SubCatMen::TopController < MenController
   end
 
   def shirt
-    @formal_fashion_item = @items.men_sub_categories("Shirts")
-    @formal_shop_look = @shop_look_images.find_category_mens("Shirts").uniq!
+    @formal_fashion_item = @items.men_sub_categories("Tanks")
+    @formal_shop_look = @shop_look_images.find_category_mens("Tanks").uniq!
     join_items_and_sort(@formal_fashion_item, @formal_shop_look)
     respond_to do |format|
         format.html

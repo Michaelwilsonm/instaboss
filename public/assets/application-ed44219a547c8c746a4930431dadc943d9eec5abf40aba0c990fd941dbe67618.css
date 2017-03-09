@@ -1919,7 +1919,7 @@ STICKY NAVIGATION FIRST DIV
 .all-nav-link {
   text-align: center;
   margin-top: 35px;
-  width: 800px;
+  width: 835px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -2022,12 +2022,12 @@ DROP DOWN ARROWS ON NAVIGATION
 
 /* line 143, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-brand {
-  left: 80px;
+  left: 83px;
 }
 
 /* line 148, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-shop {
-  left: 60px;
+  left: 63px;
 }
 
 /* line 153, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
@@ -2183,53 +2183,77 @@ RESPONSIVE LAYOUT OF NAVIGATION
 
 /* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .on-click-enlarge {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   height: 100%;
   position: fixed;
+  border: 1px solid black;
   z-index: 550;
 }
 
-/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar:vertical {
+  width: 0px;
+}
+
+/* line 43, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+/* line 47, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 53, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .image-holder {
   position: absolute;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 58, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .image-holder img {
   position: absolute;
   top: 0;
   max-width: 50%;
 }
 
-/* line 46, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 65, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-left {
   float: left;
   width: 50%;
 }
-/* line 49, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 68, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-left img {
-  width: 100%;
+  width: 50%;
+  position: fixed;
 }
 
-/* line 54, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 74, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right {
   width: 50%;
   float: right;
   padding: 10px;
 }
-/* line 58, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 78, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right h2 {
   font-size: 24px;
 }
-/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 81, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right p {
   font-size: 14px;
 }
 
-/* line 66, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 86, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .close-button-enlarged {
   cursor: pointer;
   font-size: 30px;
@@ -3499,96 +3523,96 @@ RESPONSIVE LAYOUT OF NAVIGATION
     position: absolute;
     z-index: 1;
     overflow: hidden;
-    height: 2000px;
     width: 105vw;
     right: 1000px;
   }
-  /* line 289, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 288, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hamburger-slider ul {
     margin-left: -50px;
     list-style-type: none;
     margin-top: 90px;
   }
-  /* line 294, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 293, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hamburger-slider li {
     font-size: 65px;
     padding: 5px;
     font-family: "Calisto MT Regular";
   }
-  /* line 298, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 297, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hamburger-slider li a {
     color: black;
   }
-  /* line 302, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 301, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hamburger-slider .bottom_list_tags {
     margin: 50px 0px 50px 0px;
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px 130px 0px;
     border-top: 2px solid;
     border-bottom: 2px solid;
   }
-  /* line 308, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 307, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hamburger-slider .about_contact_list_tags {
     text-align: center;
+    margin-bottom: 70px;
   }
 
-  /* line 314, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 313, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .women-slider {
     height: 2000px;
   }
 
-  /* line 318, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 317, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .lap_nav {
     display: none;
   }
 
-  /* line 322, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 321, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .col-sm-width {
     width: 100% !important;
   }
 
-  /* line 326, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 325, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .rectangle_left {
     width: 100%;
     border-right: 0px;
   }
 
-  /* line 331, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 330, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .rectangle_right {
     margin-top: -50px;
     width: 100%;
   }
 
-  /* line 336, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 335, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mens-main-menu-side {
     display: none;
   }
 
-  /* line 340, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 339, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mens_main {
     height: 350px;
   }
 
-  /* line 344, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 343, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mens_main:hover > .overlay {
     height: 350px;
   }
 
-  /* line 348, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 347, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .womens_main {
     height: 350px;
   }
 
-  /* line 352, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 351, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .womens_main:hover > .overlay {
     height: 350px;
   }
 
-  /* line 357, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 356, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .call_to_action h3 {
     font-size: 40px;
   }
 
-  /* line 362, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 361, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .hr_main {
     height: 1px;
     margin: -10px 0px 0px -20px;
@@ -3599,30 +3623,30 @@ RESPONSIVE LAYOUT OF NAVIGATION
     display: block;
   }
 
-  /* line 372, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 371, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .logo-image {
     margin-left: 18%;
     margin-top: 10px;
   }
 
-  /* line 377, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 376, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .show-box {
     margin-left: 0px;
     height: 100%;
   }
 
-  /* line 382, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 381, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image-show-box {
     margin-left: -80px;
     position: relative;
     float: left;
   }
-  /* line 386, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 385, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image-show-box img {
     width: 915px;
   }
 
-  /* line 391, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 390, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-show-box {
     position: relative;
     margin: 0px;
@@ -3631,27 +3655,27 @@ RESPONSIVE LAYOUT OF NAVIGATION
     display: inline-block;
     width: 755px;
   }
-  /* line 398, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 397, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-show-box h3 {
     margin-top: 20px;
     font-size: 45px;
   }
-  /* line 402, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 401, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-show-box p {
     font-size: 30px;
     padding: 5px;
   }
-  /* line 405, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 404, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-show-box p a {
     font-size: 50px;
   }
-  /* line 409, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 408, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-show-box .btn {
     margin-top: 20px;
     font-size: 45px;
   }
 
-  /* line 415, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 414, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-shop-the-look-show-box {
     position: relative;
     width: 100%;
@@ -3660,22 +3684,22 @@ RESPONSIVE LAYOUT OF NAVIGATION
     display: block;
     display: inline-block;
   }
-  /* line 422, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 421, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-shop-the-look-show-box h3 {
     margin-top: 20px;
     font-size: 45px;
   }
-  /* line 426, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 425, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-shop-the-look-show-box p {
     font-size: 30px;
     padding: 5px;
   }
-  /* line 429, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 428, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description-shop-the-look-show-box p a {
     font-size: 50px;
   }
 
-  /* line 436, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 435, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .show-button-shop-look img {
     cursor: pointer;
     width: 300px;
@@ -3683,13 +3707,13 @@ RESPONSIVE LAYOUT OF NAVIGATION
     margin: 30px auto 60px auto;
   }
 
-  /* line 444, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 443, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description_content p {
     font-size: 45px;
     top: 210px;
   }
 
-  /* line 449, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 448, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .your-items {
     margin-left: 130px;
     margin-right: 130px;
@@ -3697,17 +3721,17 @@ RESPONSIVE LAYOUT OF NAVIGATION
     font-size: 70px;
   }
 
-  /* line 456, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 455, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mob-ul {
     border-bottom: 1px solid;
   }
 
-  /* line 460, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 459, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image_div img {
     height: 460px;
   }
 
-  /* line 464, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 463, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image_div {
     width: 465px;
     height: 460px;
@@ -3716,36 +3740,36 @@ RESPONSIVE LAYOUT OF NAVIGATION
     border: 0px;
   }
 
-  /* line 472, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 471, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .box {
     left: 0px;
     width: 470px !important;
   }
 
-  /* line 477, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 476, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .instagram_logo > a > img {
     margin-right: -70px;
   }
 
-  /* line 481, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 480, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mobile_container {
     width: 100% !important;
     position: relative;
   }
 
-  /* line 486, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 485, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .mobile_row {
     width: 100% !important;
     padding: 0px;
     margin: 0px;
   }
 
-  /* line 492, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 491, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .menu-side {
     display: none;
   }
 
-  /* line 496, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 495, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .item_sub_cat {
     background-color: white;
     width: 100%;
@@ -3753,98 +3777,98 @@ RESPONSIVE LAYOUT OF NAVIGATION
     height: 100%;
   }
 
-  /* line 503, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 502, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .sale_women {
     margin: 0px;
     height: 360px;
     border-bottom: 1px solid;
   }
 
-  /* line 509, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 508, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .sale_men {
     margin: 0px;
     height: 210px;
     border-bottom: 1px solid;
   }
 
-  /* line 516, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 515, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .sorting_class li {
     font-size: 44px;
     margin: 5px 20px 0px 20px;
   }
 
-  /* line 522, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 521, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .women_sub_cat_acc_pad {
     padding-bottom: 140px;
   }
 
-  /* line 526, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 525, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .men_shoe_sub_cat_pad {
     padding-bottom: 140px;
   }
 
-  /* line 530, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 529, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .men_top_sub_cat_pad {
     padding-bottom: 140px;
   }
 
-  /* line 534, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 533, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table > td:nth-child(2) {
     font-size: 50px;
     margin-left: 20px;
   }
 
-  /* line 539, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 538, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table > td:nth-child(1) {
     font-size: 50px;
   }
 
-  /* line 543, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 542, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table > td {
     padding: 0px 4px 0px 70px;
   }
 
-  /* line 547, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 546, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .normal_table > td {
     font-size: 65px;
   }
 
-  /* line 551, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 550, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .item_navigation_top_mens {
     display: none;
   }
 
-  /* line 555, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 554, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .item_navigation_top_womens {
     display: none;
   }
 
-  /* line 560, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 559, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .logos h3 {
     font-size: 50px;
     margin-top: 0px;
   }
 
-  /* line 566, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 565, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .home-page {
     margin-left: 5%;
   }
 
-  /* line 570, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 569, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle {
     position: absolute;
     left: 50px;
     top: 50px;
   }
 
-  /* line 572, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 571, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle {
     cursor: pointer;
     padding: 15px 100px 35px 0px;
     margin-left: -20px;
   }
 
-  /* line 578, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 577, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
     cursor: pointer;
     border-radius: 1px;
@@ -3856,42 +3880,42 @@ RESPONSIVE LAYOUT OF NAVIGATION
     content: '';
   }
 
-  /* line 588, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 587, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle span:before {
     top: -20px;
   }
 
-  /* line 591, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 590, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle span:after {
     bottom: -20px;
   }
 
-  /* line 595, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 594, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
     transition: all 250ms ease-in-out;
   }
 
-  /* line 598, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 597, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle.active span {
     background-color: transparent;
   }
 
-  /* line 601, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 600, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle.active span:before, #nav-toggle.active span:after {
     top: 0;
   }
 
-  /* line 604, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 603, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle.active span:before {
     transform: rotate(45deg);
   }
 
-  /* line 607, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 606, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #nav-toggle.active span:after {
     transform: rotate(-45deg);
   }
 
-  /* line 611, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 610, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #close-cross span, #close-cross span:before, #close-cross span:after {
     margin-top: 0px;
     position: absolute;
@@ -3908,68 +3932,68 @@ RESPONSIVE LAYOUT OF NAVIGATION
     width: 65px;
   }
 
-  /* line 627, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 626, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #close-cross span {
     background-color: white;
     height: 27px;
     right: -34px;
   }
 
-  /* line 633, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 632, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #close-cross span:before {
     background-color: black;
     bottom: 25px;
     transform: rotate(-45deg);
   }
 
-  /* line 638, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 637, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   #close-cross span:after {
     background-color: black;
     bottom: 25px;
     transform: rotate(45deg);
   }
 
-  /* line 645, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 644, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .index_men_women h2 {
     font-size: 50px;
   }
 
-  /* line 650, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 649, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .worldwide_shipping_main > p {
     font-size: 35px;
   }
 
-  /* line 655, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 654, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .shop-the-look-description h2 {
     position: relative;
     top: 280px;
     font-size: 60px;
   }
-  /* line 660, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 659, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .shop-the-look-description p {
     top: 280px;
     position: relative;
     font-size: 40px;
   }
 
-  /* line 667, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 666, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .womens_top {
     padding-bottom: 135px;
   }
-  /* line 669, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 668, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .womens_top li {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  /* line 674, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 673, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .box_featured {
     width: 980px !important;
     position: relative;
     left: 0px;
   }
 
-  /* line 680, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 679, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image_div_featured {
     position: relative;
     width: 940px;
@@ -3979,12 +4003,12 @@ RESPONSIVE LAYOUT OF NAVIGATION
     border: 1px solid;
     border-color: #eee;
   }
-  /* line 688, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 687, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image_div_featured a {
     text-decoration: none !important;
   }
 
-  /* line 693, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 692, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .image_div_featured img {
     position: absolute;
     left: 50%;
@@ -3996,11 +4020,11 @@ RESPONSIVE LAYOUT OF NAVIGATION
     transform: translate(-50%, -50%);
   }
 
-  /* line 704, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 703, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .brands_image_div_featured {
     border-color: #fff;
   }
-  /* line 706, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 705, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .brands_image_div_featured img {
     position: absolute;
     left: 50%;
@@ -4012,7 +4036,7 @@ RESPONSIVE LAYOUT OF NAVIGATION
     transform: translate(-50%, -50%);
   }
 
-  /* line 718, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 717, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description_content_featured {
     color: white;
     position: relative;
@@ -4023,43 +4047,43 @@ RESPONSIVE LAYOUT OF NAVIGATION
     height: 100%;
     font-family: "Calisto MT Regular";
   }
-  /* line 727, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 726, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description_content_featured h2 {
     top: 700px;
     font-size: 100px;
   }
-  /* line 731, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 730, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .description_content_featured p {
     font-size: 65px;
     position: relative;
     top: 580px;
   }
 
-  /* line 738, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 737, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table_featured > td {
     color: white;
     padding: 0px 34px 0px 34px;
   }
 
-  /* line 743, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 742, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table_featured > td:nth-child(1) {
     font-size: 50px;
     margin-left: 5px;
   }
 
-  /* line 748, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 747, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .specials_table_featured > td:nth-child(2) {
     font-size: 95px;
   }
 
-  /* line 752, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 751, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .normal_table_featured > td {
     padding: 0px 34px 0px 34px;
     color: white;
     font-size: 95px;
   }
 
-  /* line 758, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
+  /* line 757, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/z_app_iphone_5.scss */
   .footer-mobile {
     display: none;
   }

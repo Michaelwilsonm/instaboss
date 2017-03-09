@@ -37,11 +37,14 @@
 }
 
 .on-click-enlarge::-webkit-scrollbar:vertical {
-    width: 0px;
+    position:absolute;
+    width: 10px;
+    left: 100px;
 }
 
 .on-click-enlarge::-webkit-scrollbar:horizontal {
-    height: 11px;
+    height: 0px;
+    // none;
 }
 
 .on-click-enlarge::-webkit-scrollbar-thumb {
@@ -66,14 +69,15 @@
   float: left;
   width: 50%;
   img{
-    width: 100%;
+    width: 50%;
+    position:fixed;
   }
 }
 
 .enlarge-right{
   width: 50%;
   float: right;
-  padding: 10px;
+  padding: 5px 5px 5px 20px;
   h2{
     font-size: 24px;
   }

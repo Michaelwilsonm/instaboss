@@ -1,8 +1,34 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Boots">Boots</li>
-  <li id="Trainers">Trainers</li>
-  <li id="Heels">Heels</li>
-  <li id="Flats">Flats</li>
+    <% if current_page?("/women/shoe") %>
+      <li><b><%= link_to "All", women_shoe_path %></b></li>
+      <li><%= link_to "Boots", women_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", women_shoe_trainer_path %></li>
+      <li><%= link_to "Heels", women_shoe_heel_path %></li>
+      <li><%= link_to "Flats", women_shoe_flat_path %></li>
+    <% elsif current_page?("/women/shoe/boot") %>
+      <li><%= link_to "All", women_shoe_path %></li>
+      <li><b><%= link_to "Boots", women_shoe_boot_path %></b></li>
+      <li><%= link_to "Sneakers", women_shoe_trainer_path %></li>
+      <li><%= link_to "Heels", women_shoe_heel_path %></li>
+      <li><%= link_to "Flats", women_shoe_flat_path %></li>
+    <% elsif current_page?("/women/shoe/trainer") %>
+      <li><%= link_to "All", women_shoe_path %></li>
+      <li><%= link_to "Boots", women_shoe_boot_path %></li>
+      <li><b><%= link_to "Sneakers", women_shoe_trainer_path %></b></li>
+      <li><%= link_to "Heels", women_shoe_heel_path %></li>
+      <li><%= link_to "Flats", women_shoe_flat_path %></li>
+    <% elsif current_page?("/women/shoe/heel") %>
+      <li><%= link_to "All", women_shoe_path %></li>
+      <li><%= link_to "Boots", women_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", women_shoe_trainer_path %></li>
+      <li><b><%= link_to "Heels", women_shoe_heel_path %></b></li>
+      <li><%= link_to "Flats", women_shoe_flat_path %></li>
+    <% elsif current_page?("/women/shoe/flat") %>
+      <li><%= link_to "All", women_shoe_path %></li>
+      <li><%= link_to "Boots", women_shoe_boot_path %></li>
+      <li><%= link_to "Sneakers", women_shoe_trainer_path %></li>
+      <li><%= link_to "Heels", women_shoe_heel_path %></li>
+      <li><b><%= link_to "Flats", women_shoe_flat_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

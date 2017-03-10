@@ -68,6 +68,39 @@
   margin: -20px 20px 0px 0px;
 }
 
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .social-share-button{
+    margin: 100px 0px 20px -5px;
+   }
+
+   .social-share-button-facebook{
+    height: 100px;
+    width: 100px;
+   }
+
+   .social-share-button-pinterest{
+    height: 100px;
+    width: 100px;
+   }
+
+   .social-share-button-twitter{
+    height: 100px;
+    width: 100px;
+    margin:0px 60px 0px 60px;
+   }
+
+
+  .all-share-img{
+    width: 120px;
+    height: 120px;
+    margin: -85px 60px 0px 0px;
+  }
+}
+
 .container{
   padding: 0px;
   margin: 0px;

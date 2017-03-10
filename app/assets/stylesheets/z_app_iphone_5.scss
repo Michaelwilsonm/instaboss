@@ -3,6 +3,12 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+
+  #paginate_page{
+    height: 250px;
+    width: 250px;
+  }
+
   .hide-banner-mobile{
     display: none;
   }

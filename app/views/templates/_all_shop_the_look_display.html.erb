@@ -12,7 +12,7 @@
           <tr class="shop_look_table"></tr>
         </table>
         <div class="shop-the-look-description">
-          <h2>Shop The Look</h2>
+          <h2>Shop The Look <%= items.gender %></h2>
           <p><%= word_branding(items.shop_the_look_items.first.brand) %></p>
         </div>
       </div>
@@ -31,6 +31,13 @@
       <% items.shop_the_look_items.each do |j| %>
         <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
 
+          <% if all_men_brands_array.include?(j.brand) && items.gender == "Mens" %>
+            <p><a href="<%= link_to_brand_page(j.brand, items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
+          <% elsif all_women_brands_array.include?(j.brand) && items.gender == "Womens" %>
+            <p><a href="<%= link_to_brand_page(j.brand, items.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
+          <% else %>
+            <p><em><%= word_branding(j.brand) %></em></p>
+          <% end %>
 
         <% if j.sale === true %>
           <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>

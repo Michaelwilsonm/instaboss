@@ -1919,7 +1919,7 @@ STICKY NAVIGATION FIRST DIV
 .all-nav-link {
   text-align: center;
   margin-top: 35px;
-  width: 800px;
+  width: 835px;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -2017,17 +2017,17 @@ DROP DOWN ARROWS ON NAVIGATION
 
 /* line 138, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-shop-look {
-  left: 133px;
+  left: 136px;
 }
 
 /* line 143, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-brand {
-  left: 80px;
+  left: 83px;
 }
 
 /* line 148, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
 .arrow-down-shop {
-  left: 60px;
+  left: 63px;
 }
 
 /* line 153, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/navigation/sticky_navigation.scss */
@@ -2183,53 +2183,79 @@ RESPONSIVE LAYOUT OF NAVIGATION
 
 /* line 26, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .on-click-enlarge {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   height: 100%;
   position: fixed;
+  border: 1px solid black;
   z-index: 550;
 }
 
-/* line 34, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 35, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar:vertical {
+  position: absolute;
+  width: 10px;
+  left: 100px;
+}
+
+/* line 45, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar:horizontal {
+  height: 0px;
+}
+
+/* line 50, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+.on-click-enlarge::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 56, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .image-holder {
   position: absolute;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-/* line 39, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .image-holder img {
   position: absolute;
   top: 0;
   max-width: 50%;
 }
 
-/* line 46, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 68, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-left {
   float: left;
   width: 50%;
 }
-/* line 49, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 71, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-left img {
-  width: 100%;
+  width: 50%;
+  position: fixed;
 }
 
-/* line 54, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 77, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right {
   width: 50%;
   float: right;
-  padding: 10px;
+  padding: 5px 5px 5px 20px;
 }
-/* line 58, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 81, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right h2 {
   font-size: 24px;
 }
-/* line 61, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 84, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .enlarge-right p {
   font-size: 14px;
 }
 
-/* line 66, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
+/* line 89, /Users/w1Lsonm/Desktop/Workspaces/ruby/Josh_work/instaboss/app/assets/stylesheets/on_click_enlarge.scss */
 .close-button-enlarged {
   cursor: pointer;
   font-size: 30px;

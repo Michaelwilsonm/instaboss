@@ -1,9 +1,45 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Lingerie">Lingerie & Underwear</li>
-  <li id="Hats">Hats</li>
-  <li id="Bags">Bags & Purses</li>
-  <li id="Jewellery">Jewellery</li>
-  <li id="Other">Other</li>
+    <% if current_page?("/women/accessory") %>
+      <li><b><%= link_to "All", women_accessory_path %></b></li>
+      <li><%= link_to "Bags & Purses", women_accessory_bag_path %></li>
+      <li><%= link_to "Hats", women_accessory_hat_path %></li>
+      <li><%= link_to "Jewellery", women_accessory_jewellery_path %></li>
+      <li><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></li>
+      <li><%= link_to "Other", women_accessory_other_path %></li>
+    <% elsif current_page?("/women/accessory/bag") %>
+      <li><%= link_to "All", women_accessory_path %></li>
+      <li><b><%= link_to "Bags & Purses", women_accessory_bag_path %></b></li>
+      <li><%= link_to "Hats", women_accessory_hat_path %></li>
+      <li><%= link_to "Jewellery", women_accessory_jewellery_path %></li>
+      <li><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></li>
+      <li><%= link_to "Other", women_accessory_other_path %></li>
+    <% elsif current_page?("/women/accessory/hat") %>
+      <li><%= link_to "All", women_accessory_path %></li>
+      <li><%= link_to "Bags & Purses", women_accessory_bag_path %></li>
+      <li><b><%= link_to "Hats", women_accessory_hat_path %></b></li>
+      <li><%= link_to "Jewellery", women_accessory_jewellery_path %></li>
+      <li><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></li>
+      <li><%= link_to "Other", women_accessory_other_path %></li>
+    <% elsif current_page?("/women/accessory/jewellery") %>
+      <li><%= link_to "All", women_accessory_path %></li>
+      <li><%= link_to "Bags & Purses", women_accessory_bag_path %></li>
+      <li><%= link_to "Hats", women_accessory_hat_path %></li>
+      <li><b><%= link_to "Jewellery", women_accessory_jewellery_path %></b></li>
+      <li><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></li>
+      <li><%= link_to "Other", women_accessory_other_path %></li>
+    <% elsif current_page?("/women/accessory/lingerie") %>
+      <li><%= link_to "All", women_accessory_path %></li>
+      <li><%= link_to "Bags & Purses", women_accessory_bag_path %></li>
+      <li><%= link_to "Hats", women_accessory_hat_path %></li>
+      <li><%= link_to "Jewellery", women_accessory_jewellery_path %></li>
+      <li><b><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></b></li>
+      <li><%= link_to "Other", women_accessory_other_path %></li>
+    <% elsif current_page?("/women/accessory/other") %>
+      <li><%= link_to "All", women_accessory_path %></li>
+      <li><%= link_to "Bags & Purses", women_accessory_bag_path %></li>
+      <li><%= link_to "Hats", women_accessory_hat_path %></li>
+      <li><%= link_to "Jewellery", women_accessory_jewellery_path %></li>
+      <li><%= link_to "Lingerie & Underwear", women_accessory_lingerie_path %></li>
+      <li><b><%= link_to "Other", women_accessory_other_path %></b></li>
 </ul>
 <div class="sorting-spacing"></div>

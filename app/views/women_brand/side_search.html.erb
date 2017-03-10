@@ -1,131 +1,19 @@
-<% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
-
-
-
 <%= render "templates/mobile_nav/navigation_womens" %>
 <%= render "templates/mobile_nav/mobile_navigation_sliding_div_women" %>
 <%= render "templates/womens/navigation/navigation" %>
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">Search Results Women's</h1>
-    <% @query_all.each do |f| %>
-      <% if f.class == FashionItem %>
-        <div class="box col-md-4 col-sm-6 col-xs-12 <%= f.sub_category %>">
-          <div class="image_div">
-            <a href="/item/<%= f.id %>">
-              <%= image_tag f.item_image.url(:medium) %>
-              <div class="description_content">
-                <% if f.sale == true %>
-                  <table>
-                    <tr class="specials_table">
-                    <td><strike><em>$<%= zeros(f.price) %></em></strike></td>
-                    <td>$<%= zeros(f.sale_price) %></td>
-                    </tr>
-                  </table>
-                <% else %>
-                  <table>
-                    <tr class="normal_table">
-                    <td>$<%= zeros(f.price) %></td>
-                    </tr>
-                  </table>
-                <% end %>
-                <p><%= f.short_description %></p>
-                <p><%= word_branding(f.brand) %></p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="outside-container">
-          <span class="close-button-enlarged">X</span>
-          <div class="enlarge-left">
-            <%= image_tag f.item_image.url(:original) %>
-          </div>
-          <div class="enlarge-right">
-            <h3><em><%= f.short_description %></em></h3>
-            <% if all_women_brands_array.include?(f.brand) && f.sex == "Womens" %>
-              <p><a href="<%= link_to_brand_page(f.brand, f.sex) %> "><em><%= word_branding(f.brand) %></em></a></p>
-            <% else %>
-              <p><em><%= word_branding(f.brand) %></em></p>
-            <% end %>
-            <% if f.sale === true %>
-              <h3><strike><em>AUD $<%= zeros(f.price) %></em></strike>&nbsp&nbsp<em>AUD $<%= zeros(f.sale_price) %></em></h3>
-              <p><em><%= percentage(f.price, f.sale_price) %>% off!</em></p>
-            <% elsif f.sale === false %>
-              <h3><em>AUD $<%= zeros(f.price) %></em></h3>
-            <% else %>
-              <p>!price</p>
-            <% end %>
-
-            <p><%= f.description %></p>
-
-            <p><em>Ships from <%= f.shipped_from %></em></p>
-
-            <% if f.wwshipping == true %>
-              <p>Free Worldwide Shipping</p>
-            <% end %>
-
-            <div class="show-button">
-              <a href="<%= f.unique_affiliate_url %>" target="_blank"><img src="/assets/shop now.png"></a>
-              <a class="arrowed-desktop" title="Back" href="<%= @back_url %>"><div class="arrow-1-desktop"></div></a>
-            </div>
-          </div>
-        </div>
-      <% elsif f.class == ShopTheLookImage %>
-        <div class="box col-md-4 col-sm-6 col-xs-12 <% f.shop_the_look_items.each { |j| %> <%= j.sub_category %> <% } %>" >
-          <div class="image_div">
-            <a href="/shop_the_look_images/<%= f.id %>">
-              <%= image_tag f.shop_look_image.url(:medium) %>
-              <div class="description_content">
-                <table>
-                  <tr class="shop_look_table">
-                  </tr>
-                </table>
-                <div class="shop-the-look-description">
-                  <h2>Shop The Look</h2>
-                  <p><%= word_branding(f.shop_the_look_items.first.brand) %></p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="outside-container">
-          <div class="image-holder">
-            <%= image_tag f.shop_look_image.url(:original) %>
-          </div>
-          <div class="on-click-enlarge">
-            <span class="close-button-enlarged">X</span>
-            <div class="enlarge-left">
-            </div>
-            <div class="enlarge-right">
-            <% f.shop_the_look_items.each do |j| %>
-              <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
-              <% if all_women_brands_array.include?(j.brand) && f.gender == "Womens" %>
-                <p><a href="<%= link_to_brand_page(j.brand, f.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
-              <% else %>
-                <p><em><%= word_branding(j.brand) %></em></p>
-              <% end %>
-
-              <% if j.sale === true %>
-                <p class="shop-the-look-price"><em><strike>AUD $<%= zeros(j.price) %></strike></em></p>
-                <p class="shop-the-look-price"><em>AUD $<%= zeros(j.sale_price) %></em></p>
-              <% elsif j.sale === false %>
-                <p class="shop-the-look-price"><em>AUD $<%= zeros(j.price) %></em></p>
-              <% else %>
-              <p>!price</p>
-              <% end %>
-
-              <div class="show-button-shop-look">
-                <a href="<%= j.unique_affiliate_url %>" target="_blank">
-                  <img src="/assets/shop now.png">
-                </a>
-              </div>
-            <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+    <div id="products">
+      <%= render "templates/all_items_display"  %>
+    </div>
+    </div>
   </div>
 </div>
-
+<% if @all_items.length > 23 %>
+  <img src="/assets/load_more_icon.png" alt="" id="paginate_page">
+<% end %>
+<div id="hide-page-numbers">
+  <%= will_paginate @all_items %>
+</div>
 <%= render "templates/footer/footer_women" %>

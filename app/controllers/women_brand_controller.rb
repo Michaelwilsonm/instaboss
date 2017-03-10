@@ -12,12 +12,13 @@ class WomenBrandController < ApplicationController
     @query = "%#{params[:query]}%"
     @brand_query = "%#{params[:query]}%".split.map(&:downcase).join(' ')
     @women = FashionItem.where(:sex => "Womens")
-    @query_all = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query).reverse
+    @all_items = @women.where("description LIKE ? or short_description LIKE ? or brand LIKE ?", @query,@query,@brand_query).reverse
 
     @shop_women = ShopTheLookImage.where(:gender => "Womens").joins(:shop_the_look_items)
     @shop_look_image_query = @shop_women.where("description LIKE ? or brand LIKE ?", @query,@brand_query).reverse
-    @shop_look_image_query.each { |f| @query_all << f }
-    @query_all.uniq!
+    @shop_look_image_query.each { |f| @all_items << f }
+    @all_items.uniq!
+    @all_items = (@all_items).paginate(:page =>params[:page], :per_page => 24)
   end
 
   def mobile_women_search

@@ -1,7 +1,24 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Jeans">Jeans</li>
-  <li id="Chinos">Chinos</li>
-  <li id="Joggers">Joggers</li>
+    <% if current_page?("/men/long") %>
+      <li><b><%= link_to "All", men_long_path %></b></li>
+      <li><%= link_to "Jeans", men_long_jean_path %></li>
+      <li><%= link_to "Chinos", men_long_chino_path %></li>
+      <li><%= link_to "Joggers", men_long_jogger_path %></li>
+    <% elsif current_page?("/men/long/jean") %>
+      <li><%= link_to "All", men_long_path %></li>
+      <li><b><%= link_to "Jeans", men_long_jean_path %></b></li>
+      <li><%= link_to "Chinos", men_long_chino_path %></li>
+      <li><%= link_to "Joggers", men_long_jogger_path %></li>
+    <% elsif current_page?("/men/long/chino") %>
+      <li><%= link_to "All", men_long_path %></li>
+      <li><%= link_to "Jeans", men_long_jean_path %></li>
+      <li><b><%= link_to "Chinos", men_long_chino_path %></b></li>
+      <li><%= link_to "Joggers", men_long_jogger_path %></li>
+    <% elsif current_page?("/men/long/jogger") %>
+      <li><%= link_to "All", men_long_path %></li>
+      <li><%= link_to "Jeans", men_long_jean_path %></li>
+      <li><%= link_to "Chinos", men_long_chino_path %></li>
+      <li><b><%= link_to "Joggers", men_long_jogger_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

@@ -1,8 +1,34 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="T-Shirts">T-Shirts & Polos</li>
-  <li id="Shirts">Shirts</li>
-  <li id="Hoodies">Hoodies & Sweatshirts</li>
-  <li id="Jackets">Jackets & Coats</li>
+  <% if current_page?("/men/top") %>
+    <li><b><%= link_to "All", men_top_path %></b></li>
+    <li><%= link_to "Tanks & Tees", men_top_shirt_path %></li>
+    <li><%= link_to "Shirts & Polos", men_top_polo_path %></li>
+    <li><%= link_to "Hoodies & Sweatshirts", men_top_hoodie_path %></li>
+    <li><%= link_to "Jackets & Coats", men_top_jacket_path %></li>
+  <% elsif current_page?("/men/top/polo") %>
+    <li><%= link_to "All", men_top_path %></li>
+    <li><%= link_to "Tanks & Tees", men_top_shirt_path %></li>
+    <li><b><%= link_to "Shirts & Polos", men_top_polo_path %></b></li>
+    <li><%= link_to "Hoodies & Sweatshirts", men_top_hoodie_path %></li>
+    <li><%= link_to "Jackets & Coats", men_top_jacket_path %></li>
+  <% elsif current_page?("/men/top/shirt") %>
+    <li><%= link_to "All", men_top_path %></li>
+    <li><b><%= link_to "Tanks & Tees", men_top_shirt_path %></b></li>
+    <li><%= link_to "Shirts & Polos", men_top_polo_path %></li>
+    <li><%= link_to "Hoodies & Sweatshirts", men_top_hoodie_path %></li>
+    <li><%= link_to "Jackets & Coats", men_top_jacket_path %></li>
+  <% elsif current_page?("/men/top/hoodie") %>
+    <li><%= link_to "All", men_top_path %></li>
+    <li><%= link_to "Tanks & Tees", men_top_shirt_path %></li>
+    <li><%= link_to "Shirts & Polos", men_top_polo_path %></li>
+    <li><b><%= link_to "Hoodies & Sweatshirts", men_top_hoodie_path %></b></li>
+    <li><%= link_to "Jackets & Coats", men_top_jacket_path %></li>
+  <% elsif current_page?("/men/top/jacket") %>
+    <li><%= link_to "All", men_top_path %></li>
+    <li><%= link_to "Tanks & Tees", men_top_shirt_path %></li>
+    <li><%= link_to "Shirts & Polos", men_top_polo_path %></li>
+    <li><%= link_to "Hoodies & Sweatshirts", men_top_hoodie_path %></li>
+    <li><b><%= link_to "Jackets & Coats", men_top_jacket_path %></b></li>
+  <% end %>
 </ul>
 <div class="sorting-spacing"></div>

@@ -1,8 +1,34 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Hats">Hats</li>
-  <li id="Bags">Bags</li>
-  <li id="Jewellery">Jewellery</li>
-  <li id="Other">Other</li>
+    <% if current_page?("/men/accessory") %>
+      <li><b><%= link_to "All", men_accessory_path %></b></li>
+      <li><%= link_to "Hats", men_accessory_hat_path %></li>
+      <li><%= link_to "Bags", men_accessory_bag_path %></li>
+      <li><%= link_to "Jewellery", men_accessory_jewellery_path %></li>
+      <li><%= link_to "Other", men_accessory_other_path %></li>
+    <% elsif current_page?("/men/accessory/hat") %>
+      <li><%= link_to "All", men_accessory_path %></li>
+      <li><b><%= link_to "Hats", men_accessory_hat_path %></b></li>
+      <li><%= link_to "Bags", men_accessory_bag_path %></li>
+      <li><%= link_to "Jewellery", men_accessory_jewellery_path %></li>
+      <li><%= link_to "Other", men_accessory_other_path %></li>
+    <% elsif current_page?("/men/accessory/bag") %>
+      <li><%= link_to "All", men_accessory_path %></li>
+      <li><%= link_to "Hats", men_accessory_hat_path %></li>
+      <li><b><%= link_to "Bags", men_accessory_bag_path %></b></li>
+      <li><%= link_to "Jewellery", men_accessory_jewellery_path %></li>
+      <li><%= link_to "Other", men_accessory_other_path %></li>
+    <% elsif current_page?("/men/accessory/jewellery") %>
+      <li><%= link_to "All", men_accessory_path %></li>
+      <li><%= link_to "Hats", men_accessory_hat_path %></li>
+      <li><%= link_to "Bags", men_accessory_bag_path %></li>
+      <li><b><%= link_to "Jewellery", men_accessory_jewellery_path %></b></li>
+      <li><%= link_to "Other", men_accessory_other_path %></li>
+    <% elsif current_page?("/men/accessory/other") %>
+      <li><%= link_to "All", men_accessory_path %></li>
+      <li><%= link_to "Hats", men_accessory_hat_path %></li>
+      <li><%= link_to "Bags", men_accessory_bag_path %></li>
+      <li><%= link_to "Jewellery", men_accessory_jewellery_path %></li>
+      <li><b><%= link_to "Other", men_accessory_other_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

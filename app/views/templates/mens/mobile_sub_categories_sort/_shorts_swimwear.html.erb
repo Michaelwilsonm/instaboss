@@ -1,6 +1,16 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Shorts">Shorts</li>
-  <li id="Swimwear">Swimwear</li>
+    <% if current_page?("/men/short_swimwear") %>
+      <li><b><%= link_to "All", men_short_swimwear_path %></b></li>
+      <li><%= link_to "Shorts", men_short_swimwear_short_path %></li>
+      <li><%= link_to "Swimwear", men_short_swimwear_swimwear_path %></li>
+    <% elsif current_page?("/men/short_swimwear/short") %>
+      <li><%= link_to "All", men_short_swimwear_path %></li>
+      <li><b><%= link_to "Shorts", men_short_swimwear_short_path %></b></li>
+      <li><%= link_to "Swimwear", men_short_swimwear_swimwear_path %></li>
+    <% elsif current_page?("/men/short_swimwear/swimwear") %>
+      <li><%= link_to "All", men_short_swimwear_path %></li>
+      <li><%= link_to "Shorts", men_short_swimwear_short_path %></li>
+      <li><b><%= link_to "Swimwear", men_short_swimwear_swimwear_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

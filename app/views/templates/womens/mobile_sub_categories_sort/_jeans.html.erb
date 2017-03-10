@@ -1,7 +1,25 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Jeans">Jeans</li>
-  <li id="Trousers">Trousers</li>
-  <li id="Leggings">Leggings</li>
+    <% if current_page?("/women/jean_trouser") %>
+      <li><b><%= link_to "All", women_jean_trouser_path %></b></li>
+      <li><%= link_to "Jeans", women_jean_trouser_jean_path %></li>
+      <li><%= link_to "Trousers", women_jean_trouser_trouser_path %></li>
+      <li><%= link_to "Leggings", women_jean_trouser_legging_path %></li>
+    <% elsif current_page?("/women/jean_trouser/jean") %>
+      <li><%= link_to "All", women_jean_trouser_path %></li>
+      <li><b><%= link_to "Jeans", women_jean_trouser_jean_path %></b></li>
+      <li><%= link_to "Trousers", women_jean_trouser_trouser_path %></li>
+      <li><%= link_to "Leggings", women_jean_trouser_legging_path %></li>
+      <li><%= link_to "Accessories", men_formal_accessory_path %></li>
+    <% elsif current_page?("/women/jean_trouser/trouser") %>
+      <li><%= link_to "All", women_jean_trouser_path %></li>
+      <li><%= link_to "Jeans", women_jean_trouser_jean_path %></li>
+      <li><b><%= link_to "Trousers", women_jean_trouser_trouser_path %></b></li>
+      <li><%= link_to "Leggings", women_jean_trouser_legging_path %></li>
+    <% elsif current_page?("/women/jean_trouser/legging") %>
+      <li><%= link_to "All", women_jean_trouser_path %></li>
+      <li><%= link_to "Jeans", women_jean_trouser_jean_path %></li>
+      <li><%= link_to "Trousers", women_jean_trouser_trouser_path %></li>
+      <li><b><%= link_to "Leggings", women_jean_trouser_legging_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

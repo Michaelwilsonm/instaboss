@@ -1,6 +1,24 @@
 <ul class="sorting_class">
-  <li id="All">All</li>
-  <li id="Bikinis">Bikinis</li>
-  <li id="Swimsuits">Swimsuits</li>
+    <% if current_page?("/women/short_swimwear") %>
+      <li><b><%= link_to "All", women_short_swimwear_path %></b></li>
+      <li><%= link_to "Bikinis", women_short_swimwear_bikini_path %></li>
+      <li><%= link_to "Swimsuits", women_short_swimwear_swimsuit_path %></li>
+      <li><%= link_to "Other", women_short_swimwear_other_path %></li>
+    <% elsif current_page?("/women/short_swimwear/bikini") %>
+      <li><%= link_to "All", women_short_swimwear_path %></li>
+      <li><b><%= link_to "Bikinis", women_short_swimwear_bikini_path %></b></li>
+      <li><%= link_to "Swimsuits", women_short_swimwear_swimsuit_path %></li>
+      <li><%= link_to "Other", women_short_swimwear_other_path %></li>
+    <% elsif current_page?("/women/short_swimwear/swimsuit") %>
+      <li><%= link_to "All", women_short_swimwear_path %></li>
+      <li><%= link_to "Bikinis", women_short_swimwear_bikini_path %></li>
+      <li><b><%= link_to "Swimsuits", women_short_swimwear_swimsuit_path %></b></li>
+      <li><%= link_to "Other", women_short_swimwear_other_path %></li>
+    <% elsif current_page?("/women/short_swimwear/other") %>
+      <li><%= link_to "All", women_short_swimwear_path %></li>
+      <li><%= link_to "Bikinis", women_short_swimwear_bikini_path %></li>
+      <li><%= link_to "Swimsuits", women_short_swimwear_swimsuit_path %></li>
+      <li><b><%= link_to "Other", women_short_swimwear_other_path %></b></li>
+    <% end %>
 </ul>
 <div class="sorting-spacing"></div>

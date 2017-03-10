@@ -2,18 +2,18 @@
 
 <% all_women_brands_array = ["esther boutique", "mura boutique", "samantha wills","alice mccall", "auguste", "lorna jane", "seafolly", "sunday somewhere", "tony bianco", "senso", "showpo","jo mercer", "princess polly", "new balance", "bronze snake", "cooper st"] %>
 
-<% @shop_the_look.each do |shop_the_look_items| %>
-  <div class="box col-md-4 col-sm-6 col-xs-12 <%= shop_the_look_items.describe_the_look %>">
+<% @shop_the_look.each do |items| %>
+  <div class="box col-md-4 col-sm-6 col-xs-12 <%= items.describe_the_look %>">
     <div class="image_div">
-      <a href="/shop_the_look_images/<%= shop_the_look_items.id %>">
-        <%= image_tag shop_the_look_items.shop_look_image.url(:original) %>
+      <a href="/shop_the_look_images/<%= items.id %>">
+        <%= image_tag items.shop_look_image.url(:original) %>
       <div class="description_content">
         <table>
           <tr class="shop_look_table"></tr>
         </table>
         <div class="shop-the-look-description">
           <h2>Shop The Look</h2>
-          <p><%= word_branding(shop_the_look_items.shop_the_look_items.first.brand) %></p>
+          <p><%= word_branding(items.shop_the_look_items.first.brand) %></p>
         </div>
       </div>
       </a>
@@ -21,18 +21,18 @@
   </div>
   <div class="outside-container">
     <div class="image-holder">
-      <%= image_tag shop_the_look_items.shop_look_image.url(:original) %>
+      <%= image_tag items.shop_look_image.url(:original) %>
     </div>
     <div class="on-click-enlarge">
       <span class="close-button-enlarged">X</span>
       <div class="enlarge-left">
       </div>
       <div class="enlarge-right">
-      <% shop_the_look_items.shop_the_look_items.each do |j| %>
+      <% items.shop_the_look_items.each do |j| %>
         <h2 class="shop-the-look-description"><em><%= j.description %></em></h2>
-        <% if all_men_brands_array.include?(j.brand) && @shop_the_look_items.gender == "Mens" %>
+        <% if all_men_brands_array.include?(j.brand) && @shop_the_look.gender == "Mens" %>
           <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %> "><em><%= word_branding(j.brand) %></em></a></p>
-        <% elsif all_women_brands_array.include?(j.brand) && @shop_the_look_items.gender == "Womens" %>
+        <% elsif all_women_brands_array.include?(j.brand) && @shop_the_look.gender == "Womens" %>
           <p><a href="<%= link_to_brand_page(j.brand, shop_the_look_items.gender) %>"><em><%= word_branding(j.brand) %></em></a></p>
         <% else %>
           <p><em><%= word_branding(j.brand) %></em></p>
@@ -55,7 +55,7 @@
         </div>
       <% end %>
       <div class="social-media-stl">
-      <%= social_share_button_tag(shop_the_look_items.shop_the_look_items.first.brand, :url => "http://www.instaboss.co/shop_the_look_images/" + shop_the_look_items.id.to_s) %>
+      <%= social_share_button_tag(items.shop_the_look_items.first.brand, :url => "http://www.instaboss.co/shop_the_look_images/" + items.id.to_s) %>
       </div>
       </div>
     </div>

@@ -279,7 +279,7 @@ $(document).ready(function() {
       } else if ($(".gender-look").val() == 'Womens' ) {
         describeLookChange(womenDescribeCat);
       }
-    })
+    });
 
     function describeLookChange(describeMenWomen){
       $(".new-item-look-shipping").append("<option value="+">"+"</option>");

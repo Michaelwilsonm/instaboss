@@ -263,20 +263,13 @@ $(document).ready(function() {
       });
     }
 
+    var womenDescribeCat = ["Casual", "Going Out", "Working Out", "Beach & Swim", "Other"]
+    var menDescribeCat = ["Casual", "Going Out", "Working Out", "Other"]
     $(".gender-look").change(function(){
         $(".new-item-look-shipping").children().remove();
       if ( $(this).val() == 'Mens' ){
         describeLookChange(menDescribeCat);
       } else if ( $(this).val() == 'Womens' ) {
-        describeLookChange(womenDescribeCat);
-      }
-    });
-
-    $(".new-item-look-shipping").click(function(){
-      $(".new-item-look-shipping").children().remove();
-      if ($(".gender-look").val() == 'Mens' ){
-        describeLookChange(menDescribeCat);
-      } else if ($(".gender-look").val() == 'Womens' ) {
         describeLookChange(womenDescribeCat);
       }
     });
@@ -288,8 +281,6 @@ $(document).ready(function() {
       });
     }
 
-    var womenDescribeCat = ["Casual", "Going Out", "Working Out", "Beach & Swim", "Other"]
-    var menDescribeCat = ["Casual", "Going Out", "Working Out", "Other"]
 
 
 

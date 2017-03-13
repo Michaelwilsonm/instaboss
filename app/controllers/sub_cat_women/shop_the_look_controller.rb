@@ -10,7 +10,7 @@ class SubCatWomen::ShopTheLookController < WomenController
   end
 
   def beach_swim
-    @shop_the_look = @shop_look_images.find_sub_category_womens("Beach").paginate(:page =>params[:page], :per_page => 33)
+    @shop_the_look = @shop_look_images.find_sub_category_womens("Beach", "Beach & Swimwear").paginate(:page =>params[:page], :per_page => 33)
     respond_to do |format|
         format.html
         format.js
@@ -26,7 +26,7 @@ class SubCatWomen::ShopTheLookController < WomenController
   end
 
   def going_out
-    @shop_the_look = @shop_look_images.find_sub_category_womens("Going").paginate(:page =>params[:page], :per_page => 33)
+    @shop_the_look = @shop_look_images.find_sub_category_womens("Going", "Going Out").paginate(:page =>params[:page], :per_page => 33)
     respond_to do |format|
         format.html
         format.js
@@ -34,7 +34,7 @@ class SubCatWomen::ShopTheLookController < WomenController
   end
 
   def working_out
-    @shop_the_look = @shop_look_images.find_sub_category_womens("Working").paginate(:page =>params[:page], :per_page => 33)
+    @shop_the_look = @shop_look_images.find_sub_category_womens("Working", "Working Out").paginate(:page =>params[:page], :per_page => 33)
     respond_to do |format|
         format.html
         format.js

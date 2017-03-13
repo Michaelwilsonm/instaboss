@@ -73,8 +73,7 @@ class ShopTheLookImage < ActiveRecord::Base
   end
 
   def self.find_sub_category_womens(category, *old_category)
-  ShopTheLookImage.where(["gender = ? and describe_the_look = ? OR describe_the_look = ?", "Womens", category, old_category]).order("created_at DESC")
+    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE (describe_the_look = " + "'" + category + "'" + " OR describe_the_look = " + "'" + old_category + "'" + ") AND gender = 'Womens'")
   end
-
 
 end

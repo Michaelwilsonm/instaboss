@@ -72,8 +72,23 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.where(gender: "Womens").joins(:shop_the_look_items).where('shop_the_look_items.sub_category' => sub_category).order("created_at DESC")
   end
 
-  def self.find_sub_category_womens(category, *old_category)
-    ShopTheLookImage.find_by_sql("SELECT * FROM shop_the_look_images WHERE (describe_the_look = " + "'" + category + "'" + " OR describe_the_look = " + "'" + old_category + "'" + ") AND gender = 'Womens'")
+  def self.find_sub_category_womens_beach
+    ShopTheLookImage.where("(describe_the_look = 'Beach' or describe_the_look = 'Beach & Swim') and gender = 'Womens'").order("created_at DESC")
   end
 
+  def self.find_sub_category_womens_other
+    ShopTheLookImage.where("(describe_the_look = 'Other') and gender = 'Womens'").order("created_at DESC")
+  end
+
+  def self.find_sub_category_womens_going_out
+    ShopTheLookImage.where("(describe_the_look = 'Going' or describe_the_look = 'Going Out') and gender = 'Womens'").order("created_at DESC")
+  end
+
+  def self.find_sub_category_womens_working_out
+    ShopTheLookImage.where("(describe_the_look = 'Working' or describe_the_look = 'Working Out') and gender = 'Womens'").order("created_at DESC")
+  end
+
+  def self.find_sub_category_womens_casual
+    ShopTheLookImage.where("(describe_the_look = 'Casual') and gender = 'Womens'").order("created_at DESC")
+  end
 end

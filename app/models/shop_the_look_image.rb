@@ -60,6 +60,10 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.where(gender: "Mens").joins("INNER JOIN shop_the_look_items ON shop_the_look_items.shop_the_look_image_id = shop_the_look_images.id AND shop_the_look_items.sub_category = 'Other' AND shop_the_look_items.category = 'Shoes'")
   end
 
+  def self.find_category_mens_access
+    ShopTheLookImage.where(gender: "Mens").joins("INNER JOIN shop_the_look_items ON shop_the_look_items.shop_the_look_image_id = shop_the_look_images.id AND shop_the_look_items.sub_category = 'Other' AND shop_the_look_items.category = 'Accessories'")
+  end
+
   def self.find_sub_category_mens(category)
     ShopTheLookImage.where(["gender = ? and describe_the_look = ?", "Mens", category]).order("created_at DESC")
   end
@@ -68,7 +72,9 @@ class ShopTheLookImage < ActiveRecord::Base
     ShopTheLookImage.where(gender: "Womens").joins(:shop_the_look_items).where('shop_the_look_items.sub_category' => sub_category).order("created_at DESC")
   end
 
-  def self.find_sub_category_womens(category)
-    ShopTheLookImage.where(["gender = ? and describe_the_look = ?", "Womens", category]).order("created_at DESC")
+  def self.find_sub_category_womens(category, *old_category)
+  ShopTheLookImage.where(["gender = ? and describe_the_look = ? OR describe_the_look = ?", "Womens", category, old_category]).order("created_at DESC")
   end
+
+
 end

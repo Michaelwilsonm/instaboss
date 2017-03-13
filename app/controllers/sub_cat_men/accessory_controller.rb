@@ -42,8 +42,8 @@ class SubCatMen::AccessoryController < MenController
   end
 
   def other
-    @acces_item = @items.men_sub_categories("Other")
-    @access_shop_look = @shop_look_images.find_category_mens("Other").uniq!
+    @acces_item = @items.find_sub_cat_accessories
+    @access_shop_look = @shop_look_images.find_category_mens_access.uniq!
     join_items_and_sort(@acces_item, @access_shop_look)
     respond_to do |format|
         format.html

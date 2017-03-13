@@ -30,7 +30,6 @@ class ShopTheLookImagesController < ApplicationController
 
   def update
     if current_admin
-      puts params
       @shop_the_look_image.update_attributes(shop_look_image_params)
       redirect_to shop_look_image_admin_index_path
     elsif current_user

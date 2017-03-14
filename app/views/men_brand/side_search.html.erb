@@ -4,11 +4,17 @@
 <div class="container mobile_container">
   <div class="row">
     <h1 class="your-items mob-ul">Search Results Men's</h1>
+    <% if @all_items.length == 0 %>
+      <div class="no-search-results">
+        <h1>No Results Found</h1>
+      </div>
+    <% end %>
     <div id="products">
       <%= render "templates/all_items_display"  %>
     </div>
     </div>
   </div>
 </div>
+
 <%= render "templates/image_loader" %>
 <%= render 'templates/footer/footer' %>

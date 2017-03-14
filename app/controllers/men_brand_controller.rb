@@ -18,8 +18,10 @@ class MenBrandController < ApplicationController
     @shop_look_image_query.each { |f| @all_items << f }
     @all_items.uniq!
     @all_items = (@all_items).paginate(:page =>params[:page], :per_page => 24)
-    puts "*" * 100
-    puts @all_items.length
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def mobile_men_search

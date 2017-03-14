@@ -19,6 +19,10 @@ class WomenBrandController < ApplicationController
     @shop_look_image_query.each { |f| @all_items << f }
     @all_items.uniq!
     @all_items = (@all_items).paginate(:page =>params[:page], :per_page => 24)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def mobile_women_search

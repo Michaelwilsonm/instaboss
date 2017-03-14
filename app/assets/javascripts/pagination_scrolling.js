@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     $("#paginate_page").click(function(e){
       var url = $('.pagination .next_page').attr('href');
+      console.log(url)
       return $.getScript(url);
     })
   });

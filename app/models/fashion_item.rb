@@ -75,6 +75,14 @@ class FashionItem < ActiveRecord::Base
     FashionItem.where(["sex = ? and sub_category = ?", "Womens", category_item]).order("created_at DESC")
   end
 
+  def self.women_sub_categories_beach_other
+    FashionItem.where(["sex = ? and sub_category = ? and category = ?", "Womens", "Other", "Swim"]).order("created_at DESC")
+  end
+
+  def self.women_sub_categories_access_other
+    FashionItem.where(["sex = ? and sub_category = ? and category = ?", "Womens", "Other", "Accessories"]).order("created_at DESC")
+  end
+
   def self.all_womens_items
     FashionItem.find_by_sql("SELECT * FROM fashion_items WHERE sex = 'Womens' AND sale = 'false' ORDER BY created_at DESC")
   end

@@ -1,29 +1,92 @@
-  <% womens_categories = {'All': '/women/all', 'Accessories': '/women/accessory', 'Dresses': '/women/dress','Jeans Trousers & Leggings': '/women/jean_trouser' , 'Home & Lifestyle': '/women/home', 'Shoes': '/women/shoe' , 'Shorts & Skirts': '/women/short', 'Sunglasses & Watches': '/women/sunglass_watch' , 'Swim & Beachwear': '/women/short_swimwear', 'Tops': '/women/top', 'SHOP THE LOOK': '/women/shop_the_look' }; %>
-
-
-<div class="hamburger-slider women-slider">
+<div class="hamburger-slider">
   <div class="container">
     <div class="row">
       <ul>
         <li><b>Shop by</b></li>
-        <% womens_categories.each do |keys, values| %>
-          <li><%= link_to keys, values %></li>
-        <% end %>
+          <li><%= link_to 'All', women_all_path %></li>
+          <li class="on-click-reveal-sub-categories">Accessories</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_accessory_path %></li>
+            <li><%= link_to "- Bags & Purses", women_accessory_bag_path %></li>
+            <li><%= link_to "- Hats", women_accessory_hat_path %></li>
+            <li><%= link_to "- Jewellery", women_accessory_jewellery_path %></li>
+            <li><%= link_to "- Lingerie & Underwear", women_accessory_lingerie_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Dresses</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_dress_path %></li>
+            <li><%= link_to "- Day Dresses", women_dress_day_path %></li>
+            <li><%= link_to "- Evening Dresses", women_dress_evening_path %></li>
+            <li><%= link_to "- Playsuits", women_dress_playsuit_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Jeans Trousers & Leggings</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_jean_trouser_path %></li>
+            <li><%= link_to "- Jeans", women_jean_trouser_jean_path %></li>
+            <li><%= link_to "- Trousers", women_jean_trouser_trouser_path %></li>
+            <li><%= link_to "- Leggings", women_jean_trouser_legging_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Home & Lifestyle</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- Lifestyle", women_home_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Shoes</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_shoe_path %></li>
+            <li><%= link_to "- Boots", women_shoe_boot_path %></li>
+            <li><%= link_to "- Sneakers", women_shoe_trainer_path %></li>
+            <li><%= link_to "- Heels", women_shoe_heel_path %></li>
+            <li><%= link_to "- Flats", women_shoe_flat_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Shorts & Skirts</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_short_path %></li>
+            <li><%= link_to "- Shorts", women_short_short_only_path %></li>
+            <li><%= link_to "- Skirts", women_short_skirt_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Sunglasses & Watches</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_short_swimwear_path %></li>
+            <li><%= link_to "- Bikinis", women_short_swimwear_bikini_path %></li>
+            <li><%= link_to "- Swimsuits", women_short_swimwear_swimsuit_path %></li>
+            <li><%= link_to "- Other", women_short_swimwear_other_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Tops</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_top_path %></li>
+            <li><%= link_to "- T-Shirts & Vests", women_top_tshirt_vest_path %></li>
+            <li><%= link_to "- Shirts & Blouses", women_top_shirt_blouse_path %></li>
+            <li><%= link_to "- Hoodies & Sweatshirts", women_top_hoodie_sweat_shirt_path %></li>
+            <li><%= link_to "- Jackets & Coats", women_top_jacket_coat_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">SHOP THE LOOK</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_shop_the_look_path %></li>
+            <li><%= link_to "- Beach & Swim", women_shop_the_look_beach_swim_path %></li>
+            <li><%= link_to "- Casual", women_shop_the_look_casual_path %></li>
+            <li><%= link_to "- Going Out", women_shop_the_look_going_out_path %></li>
+            <li><%= link_to "- Working Out", women_shop_the_look_working_out_path %></li>
+            <li><%= link_to "- Other", women_shop_the_look_other_path %></li>
+          </ul>
 
 
         <div class="bottom_list_tags">
-          <li><%= link_to "ALL BRANDS", women_brand_path %></li>
+          <li><%= link_to "Featured Brands", women_brand_path %></li>
           <li><%= link_to "ON SALE", site_sale_womens_path %></li>
           <li><%= link_to "SEARCH", women_brand_mobile_women_search_path %></li>
-          <li><%= link_to "BLOG", blog_blog_women_path %></li>
+          <li><%= link_to "BLOG", blog_index_path %></li>
         </div>
         <div class="about_contact_list_tags">
-          <li><%= link_to "About", women_about_path%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Contact", women_contact_path %></li>
+          <li><%= link_to "About", women_about_path%></li>
+          <li><%= link_to "Contact", women_contact_path %></li>
         </div>
       </ul>
     </div>

@@ -1,0 +1,13 @@
+.on-click-reveal-sub-categories{
+  cursor: pointer;
+}
+
+.all-hidden-sub-cats {
+  position: relative;
+  left: 70px;
+  top: -80px;
+  display: none;
+  li{
+    list-style-type: none;
+  }
+}

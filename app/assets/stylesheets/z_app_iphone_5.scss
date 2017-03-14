@@ -3,9 +3,9 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-    .footer-navigation{
-      display: none;
-    }
+  .footer-navigation{
+    display: none;
+  }
 
   .sorting-spacing{
     display: none;
@@ -57,7 +57,7 @@
   .mobile-categories{
     display: block;
     position: absolute;
-    top: 430px;
+    top: 125px;
     background-color: rgba(0,0,0,0.7);
     font-family: "Calisto MT Regular";
     width: 100%;

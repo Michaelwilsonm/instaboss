@@ -9,7 +9,7 @@
         <div class="box col-md-4 col-sm-6 col-xs-12">
           <div class="image_div">
             <a href="/item/<%= f.id %>">
-              <%= image_tag f.item_image.url(:medium) %>
+              <%= image_tag f.item_image.url(:original) %>
               <div class="description_content">
                 <% if f.sale == true %>
                   <table>
@@ -72,7 +72,7 @@
           <div class="box col-md-4 col-sm-6 col-xs-12">
             <div class="image_div">
               <a href="/shop_the_look_images/<%= f.id %>">
-                <%= image_tag f.shop_look_image.url(:medium) %>
+                <%= image_tag f.shop_look_image.url(:original) %>
                 <div class="description_content">
                   <table>
                     <tr class="shop_look_table">

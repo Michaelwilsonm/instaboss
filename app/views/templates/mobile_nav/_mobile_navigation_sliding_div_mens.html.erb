@@ -1,15 +1,79 @@
-<% mens_categories = {'All': '/men/all', 'Accessories': '/men/accessory', 'Formal': '/men/formal', 'Lifestyle': '/men/lifestyle', 'Longs': '/men/long' , 'Shoes': '/men/shoe' , 'Shorts & Swimwear': '/men/short_swimwear', 'Sunglasses & Watches': '/men/sunglass_watch' , 'Tops': '/men/top', 'SHOP THE LOOK': '/men/shop_the_look' }; %>
-
 <div class="hamburger-slider">
   <div class="container">
     <div class="row">
       <ul>
         <li><b>Shop by</b></li>
-        <% mens_categories.each do |keys, values| %>
-          <li><%= link_to keys, values %></li>
-        <% end %>
-        <div class="bottom_list_tags">
+          <li><%= link_to 'All', men_all_path %></li>
+          <li class="on-click-reveal-sub-categories">Accessories</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_accessory_path %></li>
+            <li><%= link_to "- Hats", men_accessory_hat_path %></li>
+            <li><%= link_to "- Bags", men_accessory_bag_path %></li>
+            <li><%= link_to "- Jewellery", men_accessory_jewellery_path %></li>
+            <li><%= link_to "- Other", men_accessory_other_path %></li>
+          </ul>
 
+          <li class="on-click-reveal-sub-categories">Formal</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_formal_path %></li>
+            <li><%= link_to "- Jackets & Coats", men_formal_jacket_coat_path %></li>
+            <li><%= link_to "- Suits", men_formal_suit_path %></li>
+            <li><%= link_to "- Accessories", men_formal_accessory_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Lifestyle</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- Lifestyle", men_lifestyle_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Longs</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_long_path %></li>
+            <li><%= link_to "- Jeans", men_long_jean_path %></li>
+            <li><%= link_to "- Chinos", men_long_chino_path %></li>
+            <li><%= link_to "- Joggers", men_long_jogger_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Shoes</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_shoe_path %></li>
+            <li><%= link_to "- Boat & Loafers", men_shoe_boat_path %></li>
+            <li><%= link_to "- Boots", men_shoe_boot_path %></li>
+            <li><%= link_to "- Sneakers", men_shoe_trainer_path %></li>
+            <li><%= link_to "- Formal", men_shoe_formal_path %></li>
+            <li><%= link_to "- Other", men_shoe_other_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Shorts & Swimwear</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_short_swimwear_path %></li>
+            <li><%= link_to "- Shorts", men_short_swimwear_short_path %></li>
+            <li><%= link_to "- Swimwear", men_short_swimwear_swimwear_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Sunglasses & Watches</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_sunglass_watch_path %></li>
+            <li><%= link_to "- Sunglasses", men_sunglass_watch_sunglass_path %></li>
+            <li><%= link_to "- Watches", men_sunglass_watch_watch_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Tops</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_top_path %></li>
+            <li><%= link_to "- Tanks & Tees", men_top_shirt_path %></li>
+            <li><%= link_to "- Shirts & Polos", men_top_polo_path %></li>
+            <li><%= link_to "- Hoodies & Sweatshirts", men_top_hoodie_path %></li>
+            <li><%= link_to "- Jackets & Coats", men_top_jacket_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">SHOP THE LOOK</li>
+          <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", men_shop_the_look_path %></li>
+          </ul>
+
+
+        <div class="bottom_list_tags">
           <li><%= link_to "ALL BRANDS", men_brand_path %></li>
           <li><%= link_to "ON SALE", site_sale_mens_path %></li>
           <li><%= link_to "SEARCH", men_brand_mobile_men_search_path %></li>

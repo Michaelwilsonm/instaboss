@@ -1,11 +1,7 @@
 $(document).ready(function() {
   $(document).on('page:change',function() {
-    var toggleNavCount = 0
 
-    // document.querySelector( "#nav-toggle" )
-    // .addEventListener( "click", function() {
-    //   this.classList.toggle( "active" );
-    // });
+    var toggleNavCount = 0
 
     $("#nav-toggle").click(function(){
     toggleNavCount ++
@@ -41,6 +37,12 @@ $(document).ready(function() {
         $(".sorting_class").css({position: "absolute", top: "0px"})
       }
     })
+
+
+    $(".on-click-reveal-sub-categories").click(function(){
+      $(this).next().slideToggle(200)
+    })
+
 
 
   });

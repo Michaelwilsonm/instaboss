@@ -14,7 +14,7 @@ $(document).ready(function() {
         if (windowScroll > 300) {
           $mobBanner.css({position: 'fixed', top: "125px"})
         } else if (windowScroll < 300) {
-          $mobBanner.css({position: 'absolute', top: "430px"})
+          $mobBanner.css({position: 'fixed', top: "125px"})
         }
       }
 

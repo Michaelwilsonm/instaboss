@@ -19,8 +19,11 @@ class WomenController < GenderController
   def all
     @womens_items = @items.all_womens_items_ALL
     @shop_the_look_womens = @shop_look_images.shop_the_look_women
-    @womens = @womens_items + @shop_the_look_womens
-    sort_by_created_at(@womens)
+    join_items_and_sort(@womens_items, @shop_the_look_womens)
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def brand

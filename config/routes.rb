@@ -112,6 +112,7 @@ Rails.application.routes.draw do
   get 'men/contact'
 
   get 'men/all'
+  get 'women/all'
 
   get 'men/shop_the_look' => 'sub_cat_men/shop_the_look#shop_the_look'
   get 'men/shop_the_look/casual' => 'sub_cat_men/shop_the_look#casual'

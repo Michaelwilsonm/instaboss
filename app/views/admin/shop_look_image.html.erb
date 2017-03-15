@@ -38,3 +38,7 @@
       <% end %>
     </table>
   </div>
+<div class="admin-paginate">
+  <%= page_entries_info @shop_look_image_item %><br>
+  <%= will_paginate @shop_look_image_item, :container => false %>
+</div>

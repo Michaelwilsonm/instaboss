@@ -154,6 +154,35 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 
+  .item_sub_cat{
+    display: none;
+  }
+
+  #media-query-filter{
+    display: none;
+  }
+  #media-query-filter-filler{
+    display: none;
+  }
+
+  .categorise{
+    display:block;
+    top: 505px;
+  }
+  .scroll-fixed-categorise{
+    top:145px;
+  }
+
+
+  .sticky-nav-mens h1{
+    display: block;
+  }
+
+  .all-nav-link{
+    margin-left: 180px;
+    width: 570px;
+  }
+
   .mens_top{
     a{
     margin: 0px 40px 0px 10px;
@@ -201,7 +230,7 @@ and (orientation : portrait) {
     margin-left: 10px;
   }
   .box{
-    left: 75px;
+    left: 45px;
   }
   .hr_main{
     display: block;

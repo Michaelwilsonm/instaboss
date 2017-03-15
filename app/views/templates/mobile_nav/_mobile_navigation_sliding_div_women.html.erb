@@ -52,6 +52,13 @@
 
           <li class="on-click-reveal-sub-categories">Sunglasses & Watches</li>
           <ul class="all-hidden-sub-cats">
+            <li><%= link_to "- All", women_sunglass_watch_path %></li>
+            <li><%= link_to "- Sunglasses", women_sunglass_watch_sunglass_path %></li>
+            <li><%= link_to "- Watches", women_sunglass_watch_watch_path %></li>
+          </ul>
+
+          <li class="on-click-reveal-sub-categories">Swim & Beachwear</li>
+          <ul class="all-hidden-sub-cats">
             <li><%= link_to "- All", women_short_swimwear_path %></li>
             <li><%= link_to "- Bikinis", women_short_swimwear_bikini_path %></li>
             <li><%= link_to "- Swimsuits", women_short_swimwear_swimsuit_path %></li>
@@ -79,7 +86,7 @@
 
 
         <div class="bottom_list_tags">
-          <li><%= link_to "Featured Brands", women_brand_path %></li>
+          <li><%= link_to "FEATURED BRANDS", women_brand_path %></li>
           <li><%= link_to "ON SALE", site_sale_womens_path %></li>
           <li><%= link_to "SEARCH", women_brand_mobile_women_search_path %></li>
           <li><%= link_to "BLOG", blog_index_path %></li>

@@ -8,7 +8,7 @@ class AdminController < ApplicationController
   end
 
   def shop_look_image
-    @shop_look_image_item = ShopTheLookImage.paginate(:page => params[:page], :per_page => 20)
+    @shop_look_image_item = ShopTheLookImage.paginate(:page => params[:page], :per_page => 20).order("created_at DESC")
   end
 
   def destroy
